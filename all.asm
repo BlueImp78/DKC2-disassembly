@@ -1,7 +1,7 @@
 hirom
 optimize dp always
 optimize address mirrors
-!version = 1
+!version = 2
 !override_pirate_panic = 0
 !pirate_panic_replacement = $23
 
@@ -22,7 +22,7 @@ check bankcross half
 	warnpc $C07FFC
 	padbyte $00
 	pad $C07FFC
-if !version == 1
+if !version > 0
 	db $19, $3F, $AA, $C3
 else
 	db $AA, $C3, $3F, $19

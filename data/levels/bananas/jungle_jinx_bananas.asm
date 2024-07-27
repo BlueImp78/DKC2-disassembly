@@ -31,7 +31,7 @@
 	%banana($00, $37, $00, $13)
 	%banana($70, $3B, $0E, $1C)
 	%banana($C0, $BD, $06, $30)
-if !version == 1
+if !version > 0
 	%banana($E0, $C2, $0A, $0B)
 	%banana($E0, $C2, $12, $0B)
 

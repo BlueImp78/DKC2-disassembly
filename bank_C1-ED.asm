@@ -13100,6 +13100,12 @@ SPRITE_GRAPHIC_3598:
 SPRITE_GRAPHIC_359C:
 	incbin "data/objects/graphics/sprite_graphic_359C.bin"
 
+if !version == 2
+dixie_life_icon_graphic:
+	incbin "data/misc_graphics/dixie_life_icon_graphic.bin"
+endif
+
+
 check bankcross off
 ;$DEA932
 forest_level_tiledata:

@@ -630,7 +630,7 @@ endif						;	   |
 	JMP process_anim_script			;$B9D3DC  /
 
 CODE_B9D3DF:					;	  \
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSR CODE_B9D3E7				;$B9D3DF   |
 	STA $3C,x				;$B9D3E2   |
 	JMP CODE_B9D13D				;$B9D3E4   |
@@ -2887,7 +2887,7 @@ CODE_B9E200:					;	   |
 CODE_B9E20F:
 	LDX current_sprite			;$B9E20F  \
 	LDA #$000C				;$B9E211   |
-	JSL CODE_B8D1FB				;$B9E214   |
+	JSL disable_enemy_damage_global		;$B9E214   |
 	RTS					;$B9E218  /
 
 CODE_B9E219:
@@ -3080,7 +3080,7 @@ CODE_B9E354:
 
 CODE_B9E357:
 	LDA #$0011				;$B9E357  \
-	JSL CODE_B8D1FB				;$B9E35A   |
+	JSL disable_enemy_damage_global		;$B9E35A   |
 	RTS					;$B9E35E  /
 
 CODE_B9E35F:
@@ -4328,6 +4328,11 @@ CODE_B9EB2C:
 	AND #$0003				;$B9EB2E   |
 	CMP #$0003				;$B9EB31   |
 	BNE CODE_B9EB93				;$B9EB34   |
+if !version == 2 	;if sprite that landed on brown krochead isn't the main kong, don't activate it
+	LDA $34,x
+	CMP.l active_kong_sprite
+	BNE CODE_B9EB93
+endif
 	BRL CODE_B9EB90				;$B9EB36  /
 
 CODE_B9EB39:
@@ -4905,7 +4910,7 @@ CODE_B9EEF8:
 
 set_clapper_water_timer:
 	LDA $44,x				;$B9EF00  \
-if !version == 1				;	   |
+if !version > 0					;	   |
 	CMP $0915				;$B9EF02   |
 	BCC .play_clapper_breath_sound		;$B9EF05   |
 endif						;	   |

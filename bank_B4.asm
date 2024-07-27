@@ -755,7 +755,7 @@ CODE_B48620:					;	   |
 	LDA $064A				;$B48667   |
 	AND #$00FF				;$B4866A   |
 	BNE CODE_B486D5				;$B4866D   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA $07B0				;$B4866F   |
 	BNE CODE_B486D5				;$B48672   |
 	LDA $08FC				;$B48674   |
@@ -888,7 +888,7 @@ CODE_B48769:					;	  \
 	LDA $064A				;$B48769   |
 	AND #$00FF				;$B4876C   |
 	BEQ CODE_B48779				;$B4876F   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA $07B0				;$B48771   |
 	BEQ CODE_B48779				;$B48774   |
 endif						;	   |
@@ -916,7 +916,7 @@ CODE_B4878F:
 	BRL CODE_B4BE63				;$B4879F  /
 
 CODE_B487A2:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	LDA $07B0				;$B487A2   |
 	BNE CODE_B487B4				;$B487A5   |
 	LDA $08FC				;$B487A7   |
@@ -1125,7 +1125,7 @@ CODE_B48927:					;	   |
 	LDA $064A				;$B48939   |
 	AND #$00FF				;$B4893C   |
 	BNE CODE_B4896A				;$B4893F   |
-if !version == 1
+if !version > 0
 	LDA $07B0				;$B48941   |
 	BNE CODE_B4896A				;$B48944   |
 endif
@@ -3366,7 +3366,7 @@ CODE_B49CE1:					;	   |
 	BPL CODE_B49D4F				;$B49CF5   |
 CODE_B49CF7:					;	   |
 	LDA $065C				;$B49CF7   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	AND #$00FF				;$B49CFA   |
 endif						;	   |
 	CMP #$0000				;$B49CFD   |
@@ -5275,7 +5275,7 @@ CODE_B4AE4E:					;	   |
 	LDX $CE					;$B4AE55   |
 	RTS					;$B4AE57  /
 
-if !version == 1
+if !version > 0
 CODE_B4AE58:
 	LDA $08CE				;$B4AE58  \
 	BEQ CODE_B4AE84				;$B4AE5B   |

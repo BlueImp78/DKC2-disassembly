@@ -8957,7 +8957,7 @@ DATA_FDCF65:
 DATA_FDD364:
 	dw DATA_FDD4E4, DATA_FDDAD0, $0480, $0680
 	dw DATA_FDD4D6, DATA_FDDA70, $0480, $0680
-if !version == 1
+if !version > 0
 	dw DATA_FDD4C2, DATA_FDD99A, $0400, $05C0
 	dw DATA_FDD4A8, DATA_FDD96A, $0400, $0540
 	dw DATA_FDD476, DATA_FDD812, $0480, $0500
@@ -9283,17 +9283,17 @@ DATA_FDD812:
 	dw $FFFF
 
 DATA_FDD96A:
-if !version == 1
+if !version > 0
 	dw $29E0, $0040, $0540, $0004
 else
 	dw $29E0, $0040, $0500, $0004
 endif
 	dw $2A20, $0040, $0580, $0050
-if !version == 1
+if !version > 0
 	dw $2C00, $0040, $0400, $0050
 endif
 	dw $2C30, $0100
-if !version == 1
+if !version > 0
 	dw $2CC0, $0040, $0400, $0050
 endif
 	dw $2DE0, $0400
@@ -9303,18 +9303,18 @@ DATA_FDD99A:
 	dw $3370, $0040, $0500, $0004
 	dw $33B0, $0040, $05C0, $0050
 	dw $3430, $0100	
-if !version == 1
+if !version > 0
 	dw $35D0, $0040, $0540, $0004
 	dw $3620, $0040, $04C0, $0064
 else
 	dw $35D0, $0040, $05C0, $0004
 endif
 	dw $36C0, $0600
-if !version == 1
+if !version > 0
 	dw $3740, $0040, $0500, $0064
 endif
 	dw $37B0, $0100
-if !version == 1
+if !version > 0
 	dw $3800, $0040, $0500, $0064
 endif
 	dw $3860, $0400
@@ -9322,21 +9322,21 @@ endif
 	dw $3A40, $0100
 	dw $3B28, $0400
 	dw $3F40, $0100
-if !version == 1
+if !version > 0
 	dw $3FD0, $0040, $0540, $0050
 else
 	dw $3FD0, $0040, $0600, $0050
 endif
 	dw $4050, $0100
 	dw $40A0, $0100
-if !version == 1
+if !version > 0
 	dw $4180, $0040, $0540, $0004
 else
 	dw $4180, $0040, $05E0, $0004
 endif
 	dw $4280, $0600
 	dw $4380, $0600
-if !version == 1
+if !version > 0
 	dw $4500, $0040, $05C0, $0004
 else
 	dw $4500, $0040, $05E0, $0004
@@ -9350,13 +9350,13 @@ endif
 	dw $4CE0, $0400
 	dw $4E90, $0100
 	dw $4F30, $0040, $0600, $0050
-if !version == 1
+if !version > 0
 	dw $4FC0, $0040, $0540, $0004
 else
 	dw $4FC0, $0040, $0600, $0004
 endif
 	dw $4FF0, $0100
-if !version == 1
+if !version > 0
 	dw $51D0, $0040, $05C0, $0004
 else
 	dw $51D0, $0040, $0600, $0004

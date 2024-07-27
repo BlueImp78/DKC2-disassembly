@@ -3417,7 +3417,7 @@ CODE_B39A86:
 	JSL CODE_B8808E				;$B39A8D   |
 	LDX $19A8				;$B39A91   |
 	LDA $42,x				;$B39A94   |
-	JSL CODE_B8D1FB				;$B39A96   |
+	JSL disable_enemy_damage_global		;$B39A96   |
 	LDA $19CE				;$B39A9A   |
 	BNE CODE_B39AAB				;$B39A9D   |
 	LDY #$0000				;$B39A9F   |
@@ -4186,7 +4186,7 @@ no_animal_buddy_sign_main:
 	LDA #$0040				;$B3A046   |
 	TSB $052B				;$B3A049   |
 CODE_B3A04C:					;	   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSR CODE_B3A0C7				;$B3A04C   |
 endif						;	   |
 	LDX active_kong_sprite			;$B3A04F   |
@@ -4251,7 +4251,7 @@ CODE_B3A0BF:
 	JMP CODE_B38000				;$B3A0C4  /
 
 CODE_B3A0C7:
-if !version == 1
+if !version > 0
 	RTS					;$B3A0C7  /
 endif
 
@@ -5250,7 +5250,7 @@ CODE_B3A790:					;	   |
 	LDA #$FA00				;$B3A796   |
 	STA $24,x				;$B3A799   |
 	LDA #$001E				;$B3A79B   |
-if !version == 1					;	   |
+if !version > 0					;	   |
 	LDA #$FF00				;$B3A79E   |
 else						;	   |
 	LDY #$FF00				;$B3A79E   |
@@ -5353,7 +5353,7 @@ CODE_B3A858:
 	LDA #$0007				;$B3A870   |
 	STA $2E,x				;$B3A873   |
 	LDA #$001E				;$B3A875   |
-if !version == 1					;	   |
+if !version > 0					;	   |
 	LDA #$FE80				;$B3A878   |
 else						;	   |
 	LDY #$FE80				;$B3A878   |
@@ -5407,7 +5407,7 @@ CODE_B3A8D9:					;	   |
 	BCC CODE_B3A8F1				;$B3A8E3   |
 	STZ $0D7A				;$B3A8E5   |
 	LDA #$0000				;$B3A8E8   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA #$FB00				;$B3A8EB   |
 else						;	   |
 	LDY #$FB00				;$B3A8EB   |
@@ -5420,6 +5420,12 @@ CODE_B3A8F1:
 
 CODE_B3A8F8:
 	JSL CODE_B9D100				;$B3A8F8  \
+if !version == 2   ;return click clack to action 4 if kong is being knocked back to prevent invis sprite from being held  
+	LDX active_kong_sprite
+	LDA $2E,x
+	CMP #$0015
+	BEQ .set_action_4
+endif
 	LDX current_sprite			;$B3A8FC   |
 	LDA $32,x				;$B3A8FE   |
 	STZ $32,x				;$B3A900   |
@@ -5433,6 +5439,14 @@ CODE_B3A8F8:
 	LDA #$0200				;$B3A914   |
 	JSR CODE_B3A5E8				;$B3A917   |
 	JMP CODE_B38000				;$B3A91A  /
+
+if !version == 2
+.set_action_4
+	LDX current_sprite
+	LDA #$0004
+	STA $2E,x
+	JMP CODE_B38000
+endif
 
 CODE_B3A91D:
 	STZ $0D7A				;$B3A91D  \
@@ -5531,7 +5545,7 @@ CODE_B3A9EE:					;	   |
 	LDA #$003C				;$B3A9F2   |
 	STA $4E,x				;$B3A9F5   |
 	LDA #$001E				;$B3A9F7   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA #$FF00				;$B3A9FA   |
 else						;	   |
 	LDY #$FF00				;$B3A9FA   |
@@ -8097,11 +8111,11 @@ CODE_B3BC3C:					;	   |
 	LDA $46,x				;$B3BC3E   |
 	CMP $06,x				;$B3BC40   |
 	BCS CODE_B3BC49				;$B3BC42   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSR CODE_B3F265+1			;$B3BC44   |\ This is a glitch.
 else						;	   | | If this routine is called the game will crash.
 	JSR DATA_B3F31E-5			;$B3BC44   |/
-endif					;
+endif						;
 	BRA CODE_B3BC3C				;$B3BC47  /
 
 CODE_B3BC49:
@@ -9248,6 +9262,10 @@ DATA_B3C4D1:
 	dw CODE_B3C61F
 
 CODE_B3C4E1:
+if !version == 2  ;fix kutlass causing issues when another sprite that's not him is in Y
+	LDY current_sprite
+endif
+
 if !version == 0				;	  \
 	LSR					;	   |
 else						;	   |
@@ -11437,7 +11455,11 @@ CODE_B3D51E:					;	   |
 	STA $32					;$B3D52E   |
 	STA $005C,y				;$B3D530   |
 	CPY active_kong_sprite			;$B3D533   |
+if !version == 2 ;also store pointer to non-kong sprite standing on the hitbox for a bugfix later (check for side effects)
+	BNE +
+else
 	BNE CODE_B3D54A				;$B3D536   |
+endif
 	LDA $D9					;$B3D538   |
 	CLC					;$B3D53A   |
 	ADC $32					;$B3D53B   |
@@ -11446,6 +11468,7 @@ CODE_B3D51E:					;	   |
 	CLC					;$B3D542   |
 	ADC $32					;$B3D543   |
 	STA $0A28				;$B3D545   |
++:
 	STY $34,x				;$B3D548   |
 CODE_B3D54A:					;	   |
 	LDA $24,x				;$B3D54A   |
@@ -11466,7 +11489,7 @@ endif						;	   |
 	LDA #$0000				;$B3D562   |
 	STA $0008,y				;$B3D565   |
 CODE_B3D568:					;	   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA #$0000				;$B3D568   |
 endif						;	   |
 	STA $000E,y				;$B3D56B   |
@@ -12763,7 +12786,7 @@ CODE_B3DF1E:
 CODE_B3DF24:					;	   |
 	RTS					;$B3DF24  /
 
-if !version == 1				;	  \
+if !version > 0					;	  \
 CODE_B3DF25:					;	   |
 	LDA #$0621				;$B3DF25   |
 	JSL queue_sound_effect			;$B3DF28   |
@@ -14261,7 +14284,7 @@ CODE_B3E9E4:
 	STZ current_player_mount		;$B3EA09   |
 	PHK					;$B3EA0B   |
 	PLB					;$B3EA0C   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	PHX					;$B3EA0D   |
 	LDX active_kong_sprite			;$B3EA0E   |
 	LDA DATA_B3ED52,y			;$B3EA11   |
@@ -14350,7 +14373,7 @@ CODE_B3EAAF:					;	   |
 	JSL CODE_BB82B8				;$B3EAAF   |
 	JML [$05A9]				;$B3EAB3  /
 
-if !version == 1				;	  \
+if !version > 0					;	  \
 CODE_B3EAB6:					;	   |
 	LDA $46,x				;$B3EAB6   |
 	AND #$2000				;$B3EAB8   |
@@ -14832,7 +14855,7 @@ CODE_B3EE05:
 	BMI CODE_B3EE1E				;$B3EE1A   |
 	STA $0A,x				;$B3EE1C   |
 CODE_B3EE1E:					;	   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSR CODE_B3EE30				;$B3EE1E   |
 endif						;	   |
 	LDX current_sprite			;$B3EE21   |
@@ -14846,7 +14869,7 @@ endif						;	   |
 	STA $20,x				;$B3EE2D   |
 	RTS					;$B3EE2F  /
 
-if !version == 1				;	  \
+if !version > 0					;	  \
 CODE_B3EE30:					;	   |
 	LDX current_sprite			;$B3EE30   |
 	LDA $17C0				;$B3EE32   |
@@ -15183,6 +15206,18 @@ CODE_B3F0B8:
 	STZ $16,x				;$B3F0C1   |
 	LDA #$C000				;$B3F0C3   |
 	STA $1C,x				;$B3F0C6   |
+if !version == 2 				;stop kong from taking damage when inside animal barrel
+	LDY $0A84
+	LDA $0000,y 				;safety check to see if we're actually interacting with a barrel
+	CMP #$0140
+	BNE +
+	LDA $0046,y
+	AND #$8000
+	BEQ +
+	LDA #$0004
+	JSL disable_enemy_damage_global
+endif
++:
 	LDA #$0010				;$B3F0C8   |
 	STA $30,x				;$B3F0CB   |
 	LDA current_player_mount		;$B3F0CD   |

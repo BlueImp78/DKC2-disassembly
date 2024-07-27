@@ -3432,7 +3432,11 @@ DATA_BC8000:
 	dd SPRITE_GRAPHIC_3594			;3594
 	dd SPRITE_GRAPHIC_3598			;3598
 	dd SPRITE_GRAPHIC_359C			;359C
+if !version == 2
+	dd dixie_life_icon_graphic 		;35A0
+else
 	dd !null_pointer			;35A0
+endif
 	dd !null_pointer			;35A4
 	dd !null_pointer			;35A8
 	dd !null_pointer			;35AC

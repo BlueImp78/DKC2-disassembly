@@ -3446,7 +3446,7 @@ CODE_B6A1BC:
 	BRL CODE_B6A17C				;$B6A1BF  /
 
 CODE_B6A1C2:					;	  \
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDX current_sprite			;$B6A1C2   |
 	LDA $2E,x				;$B6A1C4   |
 	AND #$FFF7				;$B6A1C6   |
@@ -4095,7 +4095,7 @@ CODE_B6A60D:
 	JSL interpolate_y_velocity_global	;$B6A610   |
 	JSL apply_position_from_velocity_global	;$B6A614   |
 	LDX current_sprite			;$B6A618   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA #$0145				;$B6A61A   |
 	CMP $0A,x				;$B6A61D   |
 	BCS CODE_B6A665				;$B6A61F   |
@@ -4104,7 +4104,7 @@ else						;	   |
 	CMP #$0145				;$B6A61C   |
 	BCC CODE_B6A665				;$B6A61F   |
 endif						;	   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STA $0A,x				;$B6A621   |
 endif						;	   |
 	LDA $24,x				;$B6A623   |
@@ -8259,7 +8259,7 @@ CODE_B6CC53:
 CODE_B6CC68:					;	   |
 	LDA $2C,x				;$B6CC68   |
 	STA $000650				;$B6CC6A   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA.l $000769				;$B6CC6E   |
 	BNE CODE_B6CC77				;$B6CC72   |
 	INC $0650				;$B6CC74   |
@@ -8948,7 +8948,7 @@ CODE_B6D1A1:
 	PHB					;$B6D1A1  \
 	PHK					;$B6D1A2   |
 	PLB					;$B6D1A3   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSL CODE_BAC949				;$B6D1A4   |
 endif						;	   |
 	LDX current_sprite			;$B6D1A8   |
@@ -10587,7 +10587,7 @@ CODE_B6DE8E:
 	LDX current_sprite			;$B6DE8E  \
 	LDA $2C,x				;$B6DE90   |
 	STA $000650				;$B6DE92   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA.l $000769				;$B6DE96   |
 	BNE CODE_B6DE9F				;$B6DE9A   |
 	INC $0650				;$B6DE9C   |
@@ -13471,7 +13471,7 @@ CODE_B6F571:
 	PHB					;$B6F571  \
 	PHK					;$B6F572   |
 	PLB					;$B6F573   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSL CODE_BAC949				;$B6F574   |
 endif						;	   |
 	LDX current_sprite			;$B6F578   |

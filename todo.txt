@@ -80,7 +80,7 @@ else					;		 |
 endif					;		 |
 
 
-if !version == 1			;		 |
+if !version > 0				;		 |
 	LDX #$A40F			;$80D057	 |
 else					;		 |
 	LDX #$A402			;$80D057	 |

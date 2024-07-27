@@ -56,7 +56,7 @@
 	%sprite($0009, $0200, $1071, $0DA6)
 	%sprite($0009, $0200, $01B1, $0DA4)
 	%sprite($0009, $0200, $0D31, $0DAA)
-if !version == 1
+if !version > 0
 	%sprite($0009, $0200, $0F31, $0DB4)
 endif
 	%sprite($0001, $0230, $2031, $00A8)

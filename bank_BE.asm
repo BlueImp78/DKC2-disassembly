@@ -214,7 +214,7 @@ CODE_BEB984:
 	JML [$05A9]				;$BEB98F  /
 
 CODE_BEB992:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	LDA $052D				;$BEB992   |
 	AND #$00FF				;$BEB995   |
 	CMP #$0003				;$BEB998   |
@@ -2036,7 +2036,18 @@ CODE_BEC694:					;	   |
 	RTL					;$BEC694  /
 
 CODE_BEC695:
+if !version == 2  ;load life icon palette based on front kong
+	LDA $08A4
+	BEQ +
+	LDA #$6574
+	BRA ++
++:
+	LDA #$6484				
+++:
+
+else
 	LDA #$6484				;$BEC695  \
+endif
 	JSL CODE_BB8A65				;$BEC698   |
 	DEC $0B74,x				;$BEC69C   |
 	AND #$0E00				;$BEC69F   |
@@ -2123,7 +2134,17 @@ CODE_BEC735:
 CODE_BEC745:
 	DEC $0973				;$BEC745  \ decrement the timer
 CODE_BEC748:					;	   |
+if !version == 2  ;change life icon graphic depending on front kong
+	LDA $08A4
+	BEQ +
+	LDA #$35A0
+	BRA ++
++:
+	LDA #$20A8
+else	
 	LDA #$20A8				;$BEC748   | load sprite image to display (/4 to get actual image number)
+endif
+++:	
 	STA $0975				;$BEC74B   |
 	LDX #$1D40				;$BEC74E   |
 	LDA $0979				;$BEC751   |
@@ -5530,7 +5551,7 @@ CODE_BEE0A9:
 	STZ $1C,x				;$BEE0AF   |
 	STZ $32,x				;$BEE0B1   |
 	STZ $36,x				;$BEE0B3   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STZ $52,x				;$BEE0B5   |
 endif						;	   |
 	LDA $04,x				;$BEE0B7   |

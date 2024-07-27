@@ -2472,13 +2472,13 @@ DATA_BAABA8:
 	dw DATA_BAABC8
 	dw DATA_BAABD4
 	dw DATA_BAABE0
-if !version == 1
+if !version > 0
 	dw DATA_BAABEC
 endif
 	dw DATA_BAABF8
 	dw DATA_BAAC04
 	dw DATA_BAAC10
-if !version == 1
+if !version > 0
 	dw DATA_BAAC1C
 endif
 	dw DATA_BAAC28

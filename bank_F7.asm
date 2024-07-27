@@ -833,7 +833,7 @@ DATA_F72259:
 	db $00
 	db "    Those two hook throwing", $00
 	db "  villa"
-if !version == 1
+if !version > 0
 	db "i"
 endif
 	db "ns opposite each other", $00
@@ -2656,7 +2656,7 @@ DATA_F7861D:
 	db $00, $00
 	db "   Restez calmes, nous sommes", $00
 	db "         tous avec vous!", $00, $00
-if !version == 1
+if !version > 0
 	db $00
 endif
 
@@ -2744,7 +2744,7 @@ DATA_F78A02:
 DATA_F78A26:
 	db $00, $00
 	db "  Oh mince... je croyais que"
-if !version == 1
+if !version > 0
 	db $00
 endif
 	db "         vous saviez!", $00, $00, $00
@@ -4028,7 +4028,7 @@ DATA_F7D18D:
 	db $00, $00
 	db "   Commencez par un crochet,", $00
 	db "  "
-if !version == 1
+if !version > 0
 	db " collez-vous "
 endif
 	db "puis "

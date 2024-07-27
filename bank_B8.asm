@@ -169,7 +169,7 @@ CODE_B88126:					;	   |
 	RTS					;$B88126  /
 
 CODE_B88127:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	LDA $2E,x				;$B88127   |
 	ASL A					;$B88129   |
 	ASL A					;$B8812A   |
@@ -316,7 +316,7 @@ CODE_B88262:
 	JML CODE_B8D8BA				;$B88265  /
 
 CODE_B88269:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	LDA #$0010				;$B88269   |
 	TRB $08C4				;$B8826C   |
 endif						;	   |
@@ -367,6 +367,12 @@ CODE_B882D2:
 	RTS					;$B882D5  /
 
 CODE_B882D6:
+if !version == 2  ;dont start boss fanfare if kong is dead (check for side effects)
+	LDX active_kong_sprite
+	LDA $2E,x
+	CMP #$0005
+	BEQ .return
+endif
 	LDA #$FFFF				;$B882D6  \
 	STA $0A86				;$B882D9   |
 	JSR CODE_B88B15				;$B882DC   |
@@ -530,6 +536,11 @@ CODE_B88421:
 CODE_B8842B:
 	JSR check_if_player_has_both_kongs	;$B8842B  \
 	BCS CODE_B8848D				;$B8842E   |
+if !version == 2  ;dont initiate team-up if kong has upwards velocity (fixes 2-1 jump/plink)
+	LDX active_kong_sprite
+	LDA $24,x
+	BMI CODE_B8848D
+endif
 	LDX #$0540				;$B88430   |
 	LDY #$0540				;$B88433   |
 	JSR CODE_B89186				;$B88436   |
@@ -609,7 +620,7 @@ CODE_B884D7:
 	RTS					;$B884EB  /
 
 CODE_B884EC:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	JSR CODE_B8851B				;$B884EC   |
 	BNE CODE_B8851A				;$B884EF   |
 	LDA #$0002				;$B884F1   |
@@ -898,7 +909,15 @@ CODE_B8871B:
 	RTS					;$B88733  /
 
 CODE_B88734:
+; if !version == 2 ;if carrying a kong, don't set normal "carrying object" animation when jumping on a brown krochead
+; 	CMP follower_kong
+; 	BNE +
+; 	LDA #$0025
+; 	BRA ++
+; endif
+;+:
 	LDA #$004D				;$B88734  \
+;++:
 	JSL CODE_B9D0B8				;$B88737   |
 	RTS					;$B8873B  /
 
@@ -1129,7 +1148,7 @@ CODE_B88921:
 	RTS					;$B88928  /
 
 CODE_B88929:
-if !version == 1
+if !version > 0
 	LDX active_kong_sprite			;$B88929   |
 	LDA $2E,x				;$B8892C   |
 	CMP #$0023				;$B8892E   |
@@ -1544,7 +1563,7 @@ CODE_B88C63:
 	SEC					;$B88C63  \
 	RTS					;$B88C64  /
 CODE_B88C65:
-if !version == 1
+if !version > 0
 	LDX #main_sprite_table			;$B88C65  \
 CODE_B88C68:					;	   |
 	LDA $00,x				;$B88C68   |
@@ -1591,7 +1610,7 @@ CODE_B88CA3:					;	   |
 	JSR CODE_B88C50				;$B88CA6   |
 	BCS CODE_B88C9C				;$B88CA9   |
 	JSR work_on_active_kong			;$B88CAB   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	BIT $0D54				;$B88CAE   |
 	BMI CODE_B88CB6				;$B88CB1   |
 	JSR CODE_B8A186				;$B88CB3   |
@@ -1868,7 +1887,7 @@ endif						;	   |
 	STA $26,x				;$B88EDB   |
 	LDA #$0400				;$B88EDD   |
 	STA $24,x				;$B88EE0   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDX $0D7A				;$B88EE2   |
 	JSL CODE_B8D4AE				;$B88EE5   |
 	STZ $0D7A				;$B88EE9   |
@@ -2313,14 +2332,14 @@ CODE_B8924E:
 CODE_B8925C:					;	   |
 	CMP #$0010				;$B8925C   |
 	BPL CODE_B8924D				;$B8925F   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STZ $1C,x				;$B89261   |
 	LDX $0595				;$B89263   |
 	LDA #$0000				;$B89266   |
 	STA $14,x				;$B89269   |
 endif						;	   |
 	LDX inactive_kong_sprite		;$B8926B   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STZ $1C,x				;$B8926E   |
 endif						;	   |
 	LDA $72					;$B89270   |
@@ -2370,7 +2389,7 @@ CODE_B892BF:					;	   |
 	JSR work_on_inactive_kong		;$B892D8   |
 	LDA #$004A				;$B892DB   |
 	STA $2E,x				;$B892DE   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STZ $20,x				;$B892E0   |
 	STZ $26,x				;$B892E2   |
 	STZ $24,x				;$B892E4   |
@@ -2380,7 +2399,7 @@ endif						;	   |
 	JSR work_on_active_kong			;$B892ED   |
 	LDA #$0049				;$B892F0   |
 	STA $2E,x				;$B892F3   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STZ $20,x				;$B892F5   |
 	STZ $26,x				;$B892F7   |
 	STZ $24,x				;$B892F9   |
@@ -3259,6 +3278,9 @@ kong_behavior_07:
 	LDA #$0005				;$B89A86  \
 	JSR process_player_action		;$B89A89   |
 	JSR CODE_B8994C				;$B89A8C   |
+if !version == 2  				;fix crouch behavior not checking for water
+	JSR set_swim_behavior_if_underwater
+endif
 	JMP CODE_B8996E				;$B89A8F  /
 
 kong_behavior_08:
@@ -3289,7 +3311,7 @@ kong_behavior_09:
 	LDA #$000C				;$B89ACA   |
 	JSL CODE_BCFA9A				;$B89ACD   |
 	JSR CODE_B8994C				;$B89AD1   |
-	JSR CODE_B8B5DA				;$B89AD4   |
+	JSR set_swim_behavior_if_underwater	;$B89AD4   |
 	JMP CODE_B8996E				;$B89AD7  /
 
 .CODE_B89ADA
@@ -3320,7 +3342,7 @@ kong_behavior_0A:
 	JSR face_moving_direction		;$B89B0A   |
 	JSR set_normal_gravity_if_falling	;$B89B0D   |
 	JSR CODE_B8994C				;$B89B10   |
-	JSR CODE_B8B5DA				;$B89B13   |
+	JSR set_swim_behavior_if_underwater	;$B89B13   |
 	LDA $6E					;$B89B16   |
 	CMP #$019C				;$B89B18   |
 	BNE .CODE_B89B24			;$B89B1B   |
@@ -3416,7 +3438,7 @@ CODE_B89BB4:
 	JMP CODE_B8996E				;$B89BC4  /
 
 CODE_B89BC7:
-	JSR CODE_B8B5DA				;$B89BC7  \
+	JSR set_swim_behavior_if_underwater	;$B89BC7  \
 	JMP CODE_B8996E				;$B89BCA  /
 
 CODE_B89BCD:
@@ -3451,7 +3473,7 @@ kong_behavior_10:
 	LDA #$000B				;$B89C01   |
 	JSR process_player_action		;$B89C04   |
 	JSR CODE_B89C3C				;$B89C07   |
-	JSR CODE_B8B5DA				;$B89C0A   |
+	JSR set_swim_behavior_if_underwater	;$B89C0A   |
 	JMP CODE_B8996E				;$B89C0D  /
 
 .CODE_B89C10
@@ -3640,7 +3662,7 @@ kong_behavior_11:
 	RTS					;$B89D68  /
 
 kong_behavior_12:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	LDX #main_sprite_table			;$B89D69   |
 	LDA $54,x				;$B89D6C   |
 	STA $8E					;$B89D6E   |
@@ -3772,7 +3794,7 @@ CODE_B89E51:
 	RTS					;$B89E56  /
 
 CODE_B89E57:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	JSR CODE_B8D24A				;$B89E57   |
 	JSR CODE_B8D5E6				;$B89E5A   |
 	JSR CODE_B8B516				;$B89E5D   |
@@ -3827,7 +3849,7 @@ kong_behavior_17:
 	JSR CODE_B8B8DA				;$B89EBF   |
 	JSR CODE_B8994C				;$B89EC2   |
 	JSR CODE_B8B7F4				;$B89EC5   |
-	JSR CODE_B8B5DA				;$B89EC8   |
+	JSR set_swim_behavior_if_underwater	;$B89EC8   |
 	JMP CODE_B8996E				;$B89ECB  /
 
 kong_behavior_18:
@@ -3845,7 +3867,7 @@ kong_behavior_1A:
 	JSR set_normal_gravity_if_falling	;$B89EE4   |
 	JSR CODE_B8994C				;$B89EE7   |
 	JSR CODE_B8B7F4				;$B89EEA   |
-	JSR CODE_B8B5DA				;$B89EED   |
+	JSR set_swim_behavior_if_underwater	;$B89EED   |
 	JMP CODE_B8996E				;$B89EF0  /
 
 kong_behavior_1B:
@@ -4021,6 +4043,12 @@ kong_behavior_1F:
 	JSL CODE_BCFA9A				;$B8A011   |
 	JSL CODE_BCFB2C				;$B8A015   |
 	LDX current_sprite			;$B8A019   |
+if !version == 2
+	JSR check_thrown_kong_underwater
+	BCC +
+	JMP CODE_B89979	
+endif
++:
 	LDA $1E,x				;$B8A01B   |
 	AND #$0101				;$B8A01D   |
 	BNE CODE_B8A033				;$B8A020   |
@@ -4090,7 +4118,7 @@ kong_behavior_21:
 	JSR interpolate_x_velocity		;$B8A08B   |
 	JSR CODE_B8D5E6				;$B8A08E   |
 	JSL CODE_B9D100				;$B8A091   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDX current_sprite			;$B8A095   |
 	LDA $1E,x				;$B8A097   |
 	AND #$0080				;$B8A099   |
@@ -4197,6 +4225,12 @@ CODE_B8A14E:
 	RTS					;$B8A163  /
 
 kong_behavior_22:
+if !version == 2 
+	;set follower kong physics to default when in the follow state to fix superjumps and similar.
+	;TODO: check if this has side effects
+	JSR set_player_normal_gravity
+	JSR set_player_terminal_velocity
+endif
 	JSR CODE_B8D99E				;$B8A164  \
 	JSR CODE_B8DA84				;$B8A167   |
 	JSR CODE_B8DDB1				;$B8A16A   |
@@ -4305,6 +4339,12 @@ CODE_B8A228:
 	LDX current_sprite			;$B8A22B   |
 	LDA #$0027				;$B8A22D   |
 	STA $2E,x				;$B8A230   |
+if !version == 2
+	;set follower kong to normal physics when returning to main kong after taking damage
+	;TODO: check if this has side effects
+	JSR set_player_normal_gravity
+	JSR set_player_terminal_velocity
+endif	
 	STZ $30,x				;$B8A232   |
 	LDA #$003D				;$B8A234   |
 	JSL CODE_B9D0B8				;$B8A237   |
@@ -4493,6 +4533,20 @@ kong_behavior_2B:
 	STA $000A,y				;$B8A3C4   |
 	JSR apply_player_gravity		;$B8A3C7   |
 	LDX current_sprite			;$B8A3CA   |
+if !version == 2
+	JSR check_thrown_kong_underwater
+	BCC +
+	JMP CODE_B89979	
+endif
++:
+
+if !version == 2  ;force thrown kong to return to main kong if they're riding an animal, fixes knockback jank
+	LDA current_player_mount
+	BEQ ++
+	JSR CODE_B8A101
+	JMP CODE_B89979	
+endif
+++:
 	LDY $0595				;$B8A3CC   |
 	LDA $0004,y				;$B8A3CF   |
 	STA $0981				;$B8A3D2   |
@@ -4511,6 +4565,36 @@ CODE_B8A3EA:
 CODE_B8A3EC:					;	   |
 	STA $26,x				;$B8A3EC   |
 	BRA CODE_B8A3F4				;$B8A3EE  /
+
+if !version == 2 ;fix thrown kong not returning to main kong when touching water
+check_thrown_kong_underwater:
+	JSR check_sprite_underwater  		
+	CMP #$0002
+	BNE .not_underwater
+	LDY active_kong_sprite
+	LDA $002E,y
+	CMP #$002C  				;if main kong is not in the right behavior, dont reset it
+	BNE +
+	LDA #$0001
+	STA $002E,y
++:
+	JSR CODE_B8A101  			;set follower kong to behavior 29 (return to main kong)
+	LDY #$0018				
+	JSL CODE_BB842C                     	;spawn water splash
+	LDY alternate_sprite
+        LDA $000A,y
+        SEC
+        SBC #$0010
+        STA $000A,y
+        LDA #$0662
+        JSL queue_sound_effect  		;play splash sound
+	SEC
+	RTS
+
+.not_underwater:
+	CLC
+	RTS
+endif
 
 CODE_B8A3F0:
 	LDX current_sprite			;$B8A3F0  \
@@ -4579,6 +4663,14 @@ CODE_B8A475:
 	LDA $30,x				;$B8A479   |
 	AND #$FFF7				;$B8A47B   |
 	STA $30,x				;$B8A47E   |
+if !version == 2  ;force thrown kong to return to main if they're hitting the goal post, prevents softlock
+	LDY active_kong_sprite
+	LDA $002E,y
+	CMP #$0046
+	BNE +
+	BRA CODE_B8A463
+endif
++:
 	LDA #$002D				;$B8A480   |
 	STA $2E,x				;$B8A483   |
 	LDA #$0001				;$B8A485   |
@@ -4644,6 +4736,14 @@ kong_behavior_2D:
 
 kong_behavior_2E:
 	JSL CODE_B9D100				;$B8A4F4  \
+
+;clear main kong terrain tile interaction flags when returning to follower kong.
+;this fixes teamthrowing as dixie from a standable sprite causing you to clip through the floor.
+;no side effects so far.
+if !version == 2
+	LDX active_kong_sprite
+	STZ $1E,x
+endif
 	LDA #$0001				;$B8A4F8   |
 	TSB $08C2				;$B8A4FB   |
 	LDA $099D				;$B8A4FE   |
@@ -4686,6 +4786,10 @@ CODE_B8A522:
 
 kong_behavior_2F:
 	LDX current_sprite			;$B8A55B  \
+if !version == 2  ;update follower kong render order when entering a barrel (fix for it not updating when teamthrown)
+	LDA #$00D8
+	STA $02,x
+endif
 	LDY $42,x				;$B8A55D   |
 	LDA $0006,y				;$B8A55F   |
 	STA $06,x				;$B8A562   |
@@ -6062,7 +6166,7 @@ kong_behavior_61:
 	LDA #$0007				;$B8B022  \
 	JSR process_player_action		;$B8B025   |
 	JSR CODE_B8994C				;$B8B028   |
-	JSR CODE_B8B5DA				;$B8B02B   |
+	JSR set_swim_behavior_if_underwater	;$B8B02B   |
 	JMP CODE_B8996E				;$B8B02E  /
 
 kong_behavior_62:
@@ -6258,7 +6362,7 @@ CODE_B8B1B3:					;	   |
 	JSR process_player_action		;$B8B1B6   |
 	BCS CODE_B8B1C1				;$B8B1B9   |
 	JSR CODE_B8994C				;$B8B1BB   |
-	JSR CODE_B8B5DA				;$B8B1BE   |
+	JSR set_swim_behavior_if_underwater	;$B8B1BE   |
 CODE_B8B1C1:					;	   |
 	JMP CODE_B8996E				;$B8B1C1  /
 
@@ -6432,7 +6536,7 @@ CODE_B8B310:
 	BNE CODE_B8B377				;$B8B317   |
 	DEC $0D64				;$B8B319   |
 	BNE CODE_B8B377				;$B8B31C   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDY $0595				;$B8B31E   |
 	LDA #$0000				;$B8B321   |
 	STA $0014,y				;$B8B324   |
@@ -6450,7 +6554,7 @@ endif						;	   |
 	JSR work_on_active_kong			;$B8B33C   |
 	LDA #$003D				;$B8B33F   |
 	STA $2E,x				;$B8B342   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STZ $1C,x				;$B8B344   |
 endif						;	   |
 	LDA $0D66				;$B8B346   |
@@ -6463,7 +6567,7 @@ endif						;	   |
 	JSR work_on_inactive_kong		;$B8B358   |
 	LDA #$0022				;$B8B35B   |
 	STA $2E,x				;$B8B35E   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STZ $1C,x				;$B8B360   |
 endif						;	   |
 	LDA #$00D8				;$B8B362   |
@@ -6779,12 +6883,12 @@ CODE_B8B5C3:
 	BCS CODE_B8B5E3				;$B8B5C6   |
 	LDA $052B				;$B8B5C8   |\
 	AND #$0800				;$B8B5CB   | | check if sticky honey is enabled
-	BEQ CODE_B8B5DA				;$B8B5CE   |/
+	BEQ set_swim_behavior_if_underwater	;$B8B5CE   |/
 	JSR CODE_B8B671				;$B8B5D0   |
 	BCS CODE_B8B609				;$B8B5D3   |
 	JSR CODE_B8B65A				;$B8B5D5   |
 	BCS CODE_B8B60F				;$B8B5D8   |
-CODE_B8B5DA:					;	   |
+set_swim_behavior_if_underwater:		;	   |
 	JSR check_sprite_underwater		;$B8B5DA   |
 	CMP #$0002				;$B8B5DD   |
 	BEQ CODE_B8B5F2				;$B8B5E0   |
@@ -9538,7 +9642,7 @@ check_if_player_has_both_kongs:
 	LDA $08C2				;$B8C87C  \
 	AND #$4000				;$B8C87F   |
 	BEQ CODE_B8C88E				;$B8C882   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA #$0002				;$B8C884   |
 	BIT $08C4				;$B8C887   |
 	BNE CODE_B8C88E				;$B8C88A   |
@@ -9996,6 +10100,16 @@ update_object_pickup:
 	JSL CODE_BCFE0A				;$B8CBB1   | |
 	BCC .return				;$B8CBB5   |/
 	LDX $6A					;$B8CBB7   |\
+
+;TODO: find another fix, this has side effects of sometimes not being able to pick up krow's eggs
+if !version == 2 ;dont pickup sprite if its ID doesn't exist, or if its stuck in the wall (fixes castle crush invis)
+	LDA $00,x
+	BEQ .return
+	LDA $10,x
+	AND #$0100
+	BNE .return
+endif	
+
 	LDA $1E,x				;$B8CBB9   | |
 	AND #$1001				;$B8CBBB   | | if the object isnt on the ground return
 	BEQ .return				;$B8CBBE   |/
@@ -10301,7 +10415,7 @@ CODE_B8CDAD:					;	   |
 	EOR #$FFFF				;$B8CDBC   |
 	CLC					;$B8CDBF   |
 	ADC #$6301				;$B8CDC0   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	STA $34					;$B8CDC3   |
 	SEC					;$B8CDC5   |
 	SBC $74					;$B8CDC6   |
@@ -11107,7 +11221,7 @@ disable_bullet_time:
 	STZ $0A38				;$B8D1F7   |
 	RTS					;$B8D1FA  /
 
-CODE_B8D1FB:
+disable_enemy_damage_global:
 	JSR disable_enemy_damage		;$B8D1FB  \
 	RTL					;$B8D1FE  /
 

@@ -1,7 +1,7 @@
 	%camera($05, $00, $E0, $B3, $0C)
 	%camera($05, $60, $E6, $77, $8E)
 	%camera($02, $40, $C7, $37, $16)
-if !version == 1
+if !version > 0
 	%camera($09, $20, $EB, $83, $9D)
 	%camera($05, $C8, $EE, $43, $25)
 else
@@ -17,7 +17,7 @@ endif
 	%camera($04, $90, $BE, $B4, $3F)
 	%camera($01, $02, $E0, $7B, $81)
 	%camera($00, $22, $EB, $9B, $98)
-if !version == 1
+if !version > 0
 	%camera($05, $92, $ED, $87, $9D)
 	%camera($04, $CA, $EE, $57, $1F)
 else

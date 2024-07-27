@@ -2929,7 +2929,7 @@ CODE_BB933E:					;	   |
 	LDA #CODE_B5C60B			;$BB9345   |
 	STA $17B2				;$BB9348   |
 CODE_BB934B:					;	   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA level_number			;$BB934B   |
 	CMP #!level_kreepy_krow			;$BB934D   |
 	BNE CODE_BB9358				;$BB9350   |
@@ -7633,7 +7633,7 @@ CODE_BBBDC4:
 	PHK					;$BBBDC5   |
 	PLB					;$BBBDC6   |
 	JSR CODE_BBC0A4				;$BBBDC7   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSR CODE_BBC007				;$BBBDCA   |
 endif
 	LDA #$0003				;$BBBDCD   |
@@ -7873,7 +7873,7 @@ CODE_BBBFC8:
 	JML CODE_808C9E				;$BBBFD9  /
 
 CODE_BBBFDD:					;	  \
-if !version == 1				;	   |
+if !version > 0					;	   |
 	JSR CODE_BBC007				;$BBBFDD   |
 	JSR CODE_BBC059				;$BBBFE0   |
 CODE_BBBFE3:					;	   |
@@ -7899,7 +7899,7 @@ CODE_BBC007:
 	STA $08BC				;$BBC012   |
 	STA $096B				;$BBC015   |
 CODE_BBC018:					;	   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	RTS					;$BBC018  /
 endif
 

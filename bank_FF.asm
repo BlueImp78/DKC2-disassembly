@@ -1258,7 +1258,7 @@ DATA_FF0E42:
 	dw sprite.action, $0004
 	dw sprite.x_speed, $0000
 	dw sprite.y_speed, $0000
-if !version == 1
+if !version > 0
 	dw sprite.unknown_5A, $0088
 endif
 	dw sprite.unknown_30, $0000
@@ -16286,7 +16286,7 @@ DATA_FFC116:
 	dw sprite.unknown_4E, $2808
 	dw sprite.unknown_1C, $0002
 	dw sprite.unknown_4A, $0000
-if !version == 1
+if !version > 0
 	dw sprite.unknown_48, $0000
 endif
 	dw !initcommand_success
@@ -17598,7 +17598,7 @@ DATA_FFCE04:
 	dw sprite.number, $02D4
 	dw sprite.action, $0000
 	dw sprite.render_order, $00C8
-if !version == 1
+if !version > 0
 	dw sprite.y_speed, $0000
 endif
 	dw !initcommand_set_oam, $6000
@@ -18792,7 +18792,7 @@ DATA_FFDAB4:
 	dw !initcommand_success
 
 DATA_FFDAC6:
-if !version == 1
+if !version > 0
 	dw !initcommand_load_subconfig, DATA_FFD8D6
 	dw sprite.unknown_42, $0004
 	dw sprite.unknown_44, $00C0

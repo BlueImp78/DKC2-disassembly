@@ -32,7 +32,7 @@ base !bgm_loc
 
 ;sub-track 03 channel pointers
 .chn_ptrs_1340:
-if !version == 1
+if !version > 0
 	dw .seq_140C, .seq_1468, .seq_14BB, .seq_1511, .seq_1448, .seq_1364, .seq_1364, .seq_1510
 else
 	dw .seq_140C, .seq_1468, .seq_14BB, .seq_1511, .seq_1448, .seq_13F2, .seq_13F1, .seq_1510
@@ -44,7 +44,7 @@ endif
 	dw .seq_1365, .seq_139A, .seq_13A8, .seq_13C5, .seq_13D1, .seq_13F1, .seq_13E6, .seq_13F2
 	db $C0, $FF	;music tempo, sound effect tempo
 
-if !version == 1
+if !version > 0
 .seq_1364:
 	db !end_sequence
 endif

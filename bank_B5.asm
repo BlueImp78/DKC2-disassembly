@@ -4981,7 +4981,7 @@ CODE_B5C3ED:					;	   |
 	JMP ($17B2)				;$B5C3F1  /
 
 CODE_B5C3F4:
-if !version == 1				;	  \
+if !version > 0					;	  \
 	LDA $0A,x				;$B5C3F4   |
 	CMP #$0B50				;$B5C3F6   |
 	BPL CODE_B5C414				;$B5C3F9   |
@@ -10878,7 +10878,7 @@ endif						;	   |
 CODE_B5EFB4:					;	   |
 	CMP $DB					;$B5EFB4   |
 	BCS CODE_B5EFF3				;$B5EFB6   |
-if !version == 1
+if !version > 0
 	CPX #$FD				;$B5EFB8   |
 	BCS CODE_B5EFF3				;$B5EFBA   |
 endif

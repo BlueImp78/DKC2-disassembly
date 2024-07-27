@@ -1,7 +1,7 @@
 	%camera($04, $A0, $0E, $00, $46)
 	%camera($01, $40, $1C, $2C, $1C)
 	%camera($01, $80, $21, $1C, $09)
-if !version == 1
+if !version > 0
 	%camera($01, $60, $24, $32, $25)
 else
 	%camera($01, $60, $24, $26, $25)
@@ -34,7 +34,7 @@ endif
 	%camera($14, $2C, $1C, $0C, $38)
 	%camera($04, $0D, $29, $0A, $0E)
 	%camera($14, $8D, $0E, $00, $0E)
-if !version == 1
+if !version > 0
 	%camera($44, $0D, $00, $08, $46)
 else
 	%camera($44, $0D, $00, $10, $46)
@@ -43,12 +43,12 @@ endif
 	%camera($14, $0E, $0F, $00, $0E)
 	%camera($14, $4E, $14, $00, $28)
 	%camera($A4, $EE, $29, $04, $0C)
-if !version == 1
+if !version > 0
 	%camera($C4, $0E, $40, $22, $43)
 endif
 	%camera($D4, $0E, $22, $0F, $0E)
 	%camera($14, $EF, $0F, $0D, $4F)
-if !version == 1
+if !version > 0
 	%camera($E4, $0F, $2A, $14, $0E)
 else
 	%camera($44, $0F, $02, $1A, $36)
@@ -59,12 +59,12 @@ endif
 	%camera($C4, $10, $22, $00, $13)
 	%camera($E4, $F0, $0F, $00, $0E)
 	%camera($C1, $11, $21, $14, $20)
-if !version == 1
+if !version > 0
 	%camera($E1, $11, $03, $10, $2F)
 else
 	%camera($E1, $11, $02, $10, $61)
 endif
-if !version == 1
+if !version > 0
 	%camera($E1, $B1, $0A, $10, $1C)
 endif
 	%camera($E0, $F1, $0F, $10, $14)

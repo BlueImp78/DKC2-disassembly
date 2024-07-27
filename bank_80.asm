@@ -404,8 +404,10 @@ restart_rareware_logo:				;	   |
 	JML init_rareware_logo			;$8085EB  / Initialize the Rareware logo
 
 setup_title_screen_transition:			;	  \
+if !version < 2
 	LDA #$FFFF				;$8085EF   |\ After the title screen is reached the first time
 	STA.l enable_intro_bypass		;$8085F2   |/ allow it to be bypassed.
+endif
 	JSL disable_screen			;$8085F6   | Turn the screen off to allow for f-blank
 	LDA #init_title_screen			;$8085FA   |\ Set the active game mode to title screen init
 	STA gamemode_pointer			;$8085FD   |/
@@ -970,7 +972,7 @@ CODE_808A76:					;	   |
 	LDA $08C2				;$808A76   |
 	AND #$0040				;$808A79   |
 	BNE CODE_808AB4				;$808A7C   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDA #$0010				;$808A7E   |
 	TRB $08C4				;$808A81   |
 	BNE CODE_808A8D				;$808A84   |
@@ -979,7 +981,7 @@ endif						;	   |
 	AND #$0040				;$808A89   |
 	RTS					;$808A8C  /
 
-if !version == 1
+if !version > 0
 CODE_808A8D:
 	LDA #$0040				;$808A8D  \
 	TSB $08C2				;$808A90   |
@@ -995,9 +997,17 @@ CODE_808A8D:
 	STA $0636				;$808AB1   |
 endif						;	   |
 CODE_808AB4:					;	   |
+if !version == 2  	;check for fadeout when paused
+	JSR fade_screen
+	LDA screen_brightness
+	BEQ ++
+	CMP #$000F
+	BNE +
+endif
 	LDA player_active_pressed		;$808AB4   |
 	AND #$1000				;$808AB7   |
 	BNE CODE_808AED				;$808ABA   |
++:
 	LDA $D5					;$808ABC   |
 	SEC					;$808ABE   |
 	SBC #$0001				;$808ABF   |
@@ -1008,9 +1018,18 @@ CODE_808AB4:					;	   |
 	LDA player_active_pressed		;$808ACB   |
 	AND #$2000				;$808ACE   |
 	BEQ CODE_808AE6				;$808AD1   |
-	LDA $08A8				;$808AD3   |
+if !version == 2  				;if level is beaten, set fadeout on pressing select
+	LDA parent_level_number				
+	JSL CODE_BB825C				
+	BCC CODE_808AE6				
+	LDA #$810F				
+	JSL set_fade_global
+	BRA CODE_808AE6	
+endif
+	LDA parent_level_number			;$808AD3   |
 	JSL CODE_BB825C				;$808AD6   |
 	BCC CODE_808AE6				;$808ADA   |
+++:
 	LDA #$0040				;$808ADC   |
 	TRB $08C2				;$808ADF   |
 	JML CODE_BBBDC4				;$808AE2  /
@@ -1615,7 +1634,7 @@ CODE_808FAE:					;	   |
 	LDA $08A4				;$808FBF   |
 	JSL CODE_808837				;$808FC2   |
 	JSL CODE_B48000				;$808FC6   |
-if !version == 1				;	   |
+if !version > 0					;	   |
 	LDX #$0000				;$808FCA   |
 	LDA #$0000				;$808FCD   |
 CODE_808FD0:					;	   |
@@ -2500,8 +2519,10 @@ CODE_80973E:					;	   |
 	LDA #$0000				;$809787   |
 	STA $7E8968,x				;$80978A   |
 CODE_80978E:					;	   |
+if !version < 2 				;enable intro skip always in 1.2
 	LDA enable_intro_bypass			;$80978E   |\
 	BEQ .skip_bypass_check			;$809791   |/
+endif
 	LDA screen_brightness			;$809793   |\ If the brightness isn't at the max, don't check the player
 	CMP #$000F				;$809796   | | input, this prevents the bypass mid-transition
 	BNE .skip_bypass_check			;$809799   |/
@@ -6684,6 +6705,9 @@ CODE_80BE56:					;	   |
 	STA PPU.layer_1_scroll_y		;$80BE8D   |
 	STZ PPU.layer_1_scroll_y		;$80BE90   |
 CODE_80BE93:					;	   |
+if !version == 2  				;fix for sometimes branching here in 16bit instead of 8bit
+	SEP #$20
+endif
 	LDA screen_brightness			;$80BE93   |
 	STA PPU.screen				;$80BE96   |
 	REP #$20				;$80BE99   |

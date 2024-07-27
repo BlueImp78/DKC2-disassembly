@@ -105,6 +105,8 @@ file_select_file_to_copy = $0615
 
 language_select = $0617
 
+parent_level_number = $08A8
+
 piracy_string_result = $0907
 enable_intro_bypass = $090F
 
