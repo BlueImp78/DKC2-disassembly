@@ -584,13 +584,21 @@ CODE_80875E:					;	   |
 CODE_80876E:
 	ASL A					;$80876E  \
 	TAX					;$80876F   |
-	LDA.l DATA_FE958E,x			;$808770   |
+	LDA.l demo_level_scripts_table,x			;$808770   |
 	STA $000601				;$808774   |
 	INC $0605				;$808778   |
 	LDA.l $000601				;$80877B   |
 	STA $36					;$80877F   |
 	LDA #$00FE				;$808781   |
 	STA $38					;$808784   |
+if !version == 2 		;set dixie as active kong if in PCP demo
+	LDA.l $000605				
+	CMP #$0003				
+	BNE .not_pcp
+	LDA #$0001
+	STA $08A4
+.not_pcp:
+endif
 	LDA $05FB				;$808786   |
 	CMP #$0001				;$808789   |
 	BNE CODE_8087B8				;$80878C   |
