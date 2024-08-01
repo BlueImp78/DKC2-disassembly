@@ -495,9 +495,11 @@ CODE_B883D5:
 	AND #$2000				;$B883D8   |
 	BNE CODE_B8841B				;$B883DB   |
 	JSL CODE_BEC66F				;$B883DD   |
+if !version < 2  				;don't skip playing krool death sound
 	LDA current_song			;$B883E1   |
 	CMP #!music_k_rool			;$B883E3   |
 	BEQ CODE_B8841B				;$B883E6   |
+endif
 	BRA CODE_B88414				;$B883E8  /
 
 	CMP #$0012				;$B883EA   |
