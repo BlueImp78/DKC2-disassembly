@@ -3432,11 +3432,17 @@ DATA_BC8000:
 	dd SPRITE_GRAPHIC_3594			;3594
 	dd SPRITE_GRAPHIC_3598			;3598
 	dd SPRITE_GRAPHIC_359C			;359C
-if !version == 2
+if !version == 2   ;new sprite graphic pointers
 	dd dixie_life_icon_graphic 		;35A0
+	dd dkc3_dixie_rope_idle1 		;35A4
+	dd dkc3_dixie_rope_idle2 		;35A8
+	dd dkc3_dixie_rope_idle3		;35AC
+	dd dkc3_dixie_rope_idle4 		;35B0
+	dd dkc3_dixie_rope_idle5		;35B4
+	dd dkc3_dixie_rope_idle6		;35B8
+	dd dkc3_dixie_rope_idle7		;35BC
 else
 	dd !null_pointer			;35A0
-endif
 	dd !null_pointer			;35A4
 	dd !null_pointer			;35A8
 	dd !null_pointer			;35AC
@@ -3444,6 +3450,7 @@ endif
 	dd !null_pointer			;35B4
 	dd !null_pointer			;35B8
 	dd !null_pointer			;35BC
+endif
 	dd !null_pointer			;35C0
 	dd !null_pointer			;35C4
 	dd !null_pointer			;35C8
@@ -6895,6 +6902,15 @@ DATA_BCB600:
 	dw DATA_BCEDC8				;3598
 	dw DATA_BCEDC8				;359C
 	dw !null_pointer			;35A0
+if !version == 2   ;new sprite hitbox pointers	
+	dw DATA_BCD5D4 				;35A4 (dixie_vertical_rope_idle1)
+	dw DATA_BCD5D4				;35A8 (dixie_vertical_rope_idle2)
+	dw DATA_BCD5D4 				;35AC (dixie_vertical_rope_idle3)
+	dw DATA_BCD5D4 				;35B0 (dixie_vertical_rope_idle4)
+	dw DATA_BCD5D4 				;35B4 (dixie_vertical_rope_idle5)
+	dw DATA_BCD5D4 				;35B8 (dixie_vertical_rope_idle6)
+	dw DATA_BCD5D4  			;35BC (dixie_vertical_rope_idle7)
+else
 	dw !null_pointer			;35A4
 	dw !null_pointer			;35A8
 	dw !null_pointer			;35AC
@@ -6902,6 +6918,7 @@ DATA_BCB600:
 	dw !null_pointer			;35B4
 	dw !null_pointer			;35B8
 	dw !null_pointer			;35BC
+endif
 	dw !null_pointer			;35C0
 	dw !null_pointer			;35C4
 	dw !null_pointer			;35C8

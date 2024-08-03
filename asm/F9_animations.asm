@@ -4707,7 +4707,45 @@ DATA_F94421:
 
 DATA_F94446:
 	db !animation_command_84 : dw CODE_B9DAE0
+if !version == 2
+	db $10 : dw $35A4
+	db $08 : dw $35A8
+	db $08 : dw $35AC
+	db $18 : dw $35B0
+	db $08 : dw $35AC
+	db $08 : dw $35A8
+	db $28 : dw $35A4
+	db $08 : dw $35B4
+	db $08 : dw $35B8
+	db $18 : dw $35BC
+	db $08 : dw $35B8
+	db $08 : dw $35B4
+	db $38 : dw $35A4
+	db $08 : dw $35A8
+	db $08 : dw $35AC
+	db $10 : dw $35B0
+	db $08 : dw $35AC
+	db $08 : dw $35A8
+	db $08 : dw $35A8
+	db $08 : dw $35AC
+	db $30 : dw $35B0
+	db $08 : dw $35AC
+	db $08 : dw $35A8
+	db $40 : dw $35A4
+	db $08 : dw $35B4
+	db $08 : dw $35B8
+	db $28 : dw $35BC
+	db $08 : dw $35B8
+	db $08 : dw $35B4
+	db $08 : dw $35A4
+	db $08 : dw $35A8
+	db $08 : dw $35AC
+	db $18 : dw $35B0
+	db $08 : dw $35AC
+	db $08 : dw $35A8
+else
 	db $02 : dw $0E28
+endif
 	db !animation_command_80, $00
 
 DATA_F9444E:

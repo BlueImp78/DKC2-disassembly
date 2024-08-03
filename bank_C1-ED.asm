@@ -13100,11 +13100,6 @@ SPRITE_GRAPHIC_3598:
 SPRITE_GRAPHIC_359C:
 	incbin "data/objects/graphics/sprite_graphic_359C.bin"
 
-if !version == 2
-dixie_life_icon_graphic:
-	incbin "data/misc_graphics/dixie_life_icon_graphic.bin"
-endif
-
 
 check bankcross off
 ;$DEA932
@@ -13784,3 +13779,44 @@ DATA_EDE53C:
 ;$EDE653
 DATA_EDE653:
 	incbin "data/screens/8x8_tilemaps/piracy_text_region_8x8_tilemap.bin"
+
+
+if !version == 2   ;import new sprite graphics
+dixie_life_icon_graphic:
+	incbin "data/misc_graphics/dixie_life_icon_graphic.bin" 		;35A0
+
+dkc3_dixie_rope_idle1:
+	db $02,$07,$04,$00,$00,$0B,$10,$04,$6B,$5B,$6B,$6B,$7B,$5E,$7B,$66
+	db $7B,$6E,$7B,$76,$80,$74,$76,$7B,$7E,$7C
+	incbin "data/objects/graphics/new/GFX_Dixie_IdleOnVerticalRope1.bin"	;35A4
+
+dkc3_dixie_rope_idle2:
+	db $02,$04,$04,$00,$00,$08,$10,$04,$6E,$5C,$71,$6C,$7B,$64,$80,$71
+	db $80,$79,$78,$7C
+	incbin "data/objects/graphics/new/GFX_Dixie_IdleOnVerticalRope2.bin" 	;35A8
+
+dkc3_dixie_rope_idle3:
+	db $02,$04,$04,$00,$00,$08,$10,$04,$6E,$5C,$71,$6C,$7B,$64,$80,$71
+	db $80,$79,$78,$7C
+	incbin "data/objects/graphics/new/GFX_Dixie_IdleOnVerticalRope3.bin" 	;35AC
+
+dkc3_dixie_rope_idle4:
+	db $03,$03,$06,$00,$00,$09,$10,$06,$6D,$5C,$6E,$6C,$78,$74,$7D,$5C
+	db $7D,$64,$7B,$6C
+	incbin "data/objects/graphics/new/GFX_Dixie_IdleOnVerticalRope4.bin"	;35B0
+
+dkc3_dixie_rope_idle5:
+	db $02,$06,$04,$00,$00,$0A,$10,$04,$6C,$5D,$6C,$6D,$7B,$65,$7A,$6D
+	db $7C,$75,$79,$7D,$76,$5D,$80,$74
+	incbin "data/objects/graphics/new/GFX_Dixie_IdleOnVerticalRope5.bin"	;35B4
+
+dkc3_dixie_rope_idle6:
+	db $02,$06,$04,$00,$00,$0A,$10,$04,$6D,$5B,$6D,$6B,$7B,$63,$7A,$6B
+	db $7D,$73,$76,$7B,$7E,$7B,$80,$73
+	incbin "data/objects/graphics/new/GFX_Dixie_IdleOnVerticalRope6.bin"	;35B8
+
+dkc3_dixie_rope_idle7:
+	db $02,$07,$04,$00,$00,$0B,$10,$04,$6E,$5B,$6E,$6B,$7B,$63,$7A,$6B
+	db $7E,$73,$76,$7B,$7E,$7B,$80,$73,$71,$7B
+	incbin "data/objects/graphics/new/GFX_Dixie_IdleOnVerticalRope7.bin"	;35BC
+endif
