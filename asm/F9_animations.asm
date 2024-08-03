@@ -4707,7 +4707,7 @@ DATA_F94421:
 
 DATA_F94446:
 	db !animation_command_84 : dw CODE_B9DAE0
-if !version == 2
+if !version == 2  	;use dkc3 dixie vertical rope idle animation
 	db $10 : dw $35A4
 	db $08 : dw $35A8
 	db $08 : dw $35AC

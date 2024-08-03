@@ -1296,7 +1296,11 @@ DATA_FF0EC2:
 	dw sprite.number, $00E4
 	dw sprite.render_order, $00D8
 	dw sprite.unknown_54, DATA_FF0040
+if !version == 2 	;init diddy with 0 potential ground distance
+	dw sprite.ground_y_position, $0000
+else
 	dw sprite.ground_y_position, $FFC0
+endif
 	dw sprite.unknown_1E, $0000
 	dw sprite.action, $0000
 	dw sprite.unknown_30, $001C
@@ -1307,7 +1311,11 @@ DATA_FF0EE4:
 	dw sprite.number, $00E8
 	dw sprite.render_order, $00E4
 	dw sprite.unknown_54, DATA_FF012A
+if !version == 2 	;init dixie with 0 potential ground distance
+	dw sprite.ground_y_position, $0000
+else
 	dw sprite.ground_y_position, $FFC0
+endif
 	dw sprite.unknown_1E, $0000
 	dw sprite.action, $0000
 	dw sprite.unknown_30, $001C

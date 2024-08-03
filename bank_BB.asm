@@ -5283,7 +5283,11 @@ CODE_BBAD34:
 	LDX alternate_sprite			;$BBAD47   |
 	STX current_sprite			;$BBAD49   |
 	JSR CODE_BBAEB0				;$BBAD4B   |
+if !version == 2	;spawn diddy on idle anim instead of falling	 
+	LDA #$0001
+else
 	LDA #$0004				;$BBAD4E   |
+endif
 	JSL CODE_B9D0B8				;$BBAD51   |
 	JSR CODE_BBAEBD				;$BBAD55   |
 	LDA.l DATA_FF0040			;$BBAD58   |
@@ -5297,7 +5301,11 @@ CODE_BBAD34:
 	LDX alternate_sprite			;$BBAD72   |
 	STX current_sprite			;$BBAD74   |
 	JSR CODE_BBAEB0				;$BBAD76   |
+if !version == 2	;spawn dixie on idle anim instead of falling	
+	LDA #$0001
+else
 	LDA #$0004				;$BBAD79   |
+endif
 	JSL CODE_B9D0B8				;$BBAD7C   |
 	JSR CODE_BBAEBD				;$BBAD80   |
 	LDA.l DATA_FF012A			;$BBAD83   |
