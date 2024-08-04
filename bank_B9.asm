@@ -1652,6 +1652,19 @@ CODE_B9DA50:
 	RTS					;$B9DA5A  /
 
 CODE_B9DA5B:
+if !version == 2 	;add code to skip 2 of dixie's land anim frames if condition is met (from dkc3, originally just an RTS)
+	LDA $1A,x
+	SEC
+	SBC #$042C
+	CMP #$0019
+	BCC .skip
+	RTS
+
+.skip
+	LDA.w #dixie_land_anim_2f_skip
+	STA $3C,x
+	STA $04,s
+endif
 	RTS					;$B9DA5B  |
 
 CODE_B9DA5C:
@@ -2390,6 +2403,17 @@ CODE_B9DEE7:
 	LDA #$000D				;$B9DEE7  \
 	JSL CODE_B9D0B8				;$B9DEEA   |
 	RTS					;$B9DEEE  /
+
+
+if !version == 2    ;code to check if kong has touched ground, reset to default state if yes (from dkc3)
+b9_check_kong_touched_ground:
+	LDA $1E,x
+	AND #$0101
+	BNE CODE_B9DEEF
+	RTS	
+endif 
+
+
 
 CODE_B9DEEF:
 	LDA $0D7A				;$B9DEEF  \

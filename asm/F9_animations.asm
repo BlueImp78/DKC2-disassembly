@@ -3896,7 +3896,9 @@ DATA_F93977:
 	db !animation_command_80, $00
 
 DATA_F93982:
+if !version < 2 	;unnecessary code, we can never have negative velocity at this point in the animation
 	db !animation_command_84 : dw CODE_B9DEC1
+endif
 	db $01 : dw $0404
 	db $02 : dw $0408
 	db $02 : dw $040C
@@ -3910,6 +3912,9 @@ DATA_F93982:
 	db !animation_command_83 : dw CODE_B9D55A
 	db !animation_command_84 : dw CODE_B9DECC
 	db $03 : dw $042C
+if !version == 2	;additional check, attempt to make dixie a bit more responsive after landing from specific heights, from dkc3
+	db !animation_command_81 : dw b9_check_kong_touched_ground	
+endif
 	db $03 : dw $0430
 	db $03 : dw $0434
 	db $03 : dw $0438
@@ -3918,6 +3923,9 @@ DATA_F93982:
 	db $03 : dw $0444
 	db $03 : dw $0448
 	db !animation_command_84 : dw !null_pointer
+if !version == 2	;additional check, attempt to make dixie a bit more responsive after landing from specific heights, from dkc3
+	db !animation_command_81 : dw b9_check_kong_touched_ground	
+endif
 	db !animation_command_91, $4E : dw DATA_F939CC
 	db !animation_command_81 : dw CODE_B9DEEF
 	db !animation_command_80
@@ -3994,9 +4002,17 @@ DATA_F93A72:
 	db !animation_command_80, $00
 
 DATA_F93A90:
+if !version == 2 	;reorder commands
+	db !animation_command_81 : dw CODE_B9DA5B
+	db $02 : dw $044C
+else
 	db $02 : dw $044C
 	db !animation_command_81 : dw CODE_B9DA5B
+endif
 	db $02 : dw $0450
+if !version == 2 	;add necessary label
+dixie_land_anim_2f_skip:
+endif
 	db $02 : dw $0454
 	db $02 : dw $0458
 	db $02 : dw $045C
