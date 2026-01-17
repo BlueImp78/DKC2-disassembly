@@ -977,8 +977,8 @@
 !boss_command_shoot_fish		= $49
 
 ;Global sounds
-!sound_nothing				= $00	;00: -Nothing-
-!sound_01				= $01	;01: -Nothing?-
+!sound_nothing				= $00	;00: None
+!sound_01				= $01	;01: Mute
 !sound_knock				= $02	;02: Klomp walking, bumped by Klobber
 !sound_get_kong				= $03	;03: Kong chant (unused)
 !sound_neek_hit				= $04	;04: Neek defeated
@@ -989,8 +989,8 @@
 !sound_banana_bunch			= $09	;09: Collect Banana Bunch (unused)
 !sound_diddy_dizzy			= $0A	;0A: Dizzy stars spinning around Diddy's head
 !sound_rambi_charge			= $0B	;0B: Rambi scuffing foot on ground (readying to charge)
-!sound_0C				= $0C	;0C: Something breaking (unused?)
-!sound_0D				= $0D	;0D: Jumping sound? (unused?)
+!sound_0C				= $0C	;0C: Something breaking (unused)
+!sound_0D				= $0D	;0D: Jumping sound (unused)
 !sound_zinger_flitter_hit		= $0E	;0E: Zinger defeated
 !sound_click_clack_walk			= $0F	;0F: Click Clack walking
 !sound_click_clack_hit			= $10	;10: Click Clack defeated
@@ -1087,6 +1087,8 @@
 !sound_firework_whistle			= $68	;68: Firework whistle
 !sound_firework_blast			= $69	;69: Firework blast
 !sound_coaster_jump			= $6A	;6A: Roller coaster jumping off track
+!sound_race_ready			= $6B	;6B: Race ready-set beep
+!sound_race_go				= $6C	;6C: Race GO! beep
 !sound_kackle				= $6D	;6D: Kackle doing what he's named for
 !sound_coaster_gate_open		= $6E	;6E: Gate opening (Haunted Hall)
 
@@ -2850,6 +2852,7 @@
 !player_interaction_2C			= $002C
 !player_interaction_2D			= $002D
 
+!dynamic_graphic_range_start		= $02C4
 
 !animal_icon_graphic_range_start	= $1A98
 !animal_icon_graphic_range_end		= $1AA8

@@ -13,9 +13,9 @@ sprite_handler:
 	STZ wind_loop_sound_enabler		;$B3801B   |> Also used for flotsam swimming sound
 	STZ barrel_roll_loop_sound_enabler	;$B3801E   |
 	REP #$20				;$B38021   |
-	LDA.w #<:.sprite_return			;$B38023   |\ Write bank of sprite return address (always B3)
+	LDA.w #<:.sprite_return			;$B38023   |\ Write sprite return bank (always B3)
 	STA sprite_return_bank			;$B38026   |/
-	LDA.w #<:DATA_FF0000			;$B38029   |\ Write bank of sprite constants for current sprite (always FF)
+	LDA.w #<:DATA_FF0000			;$B38029   |\ Write sprite constants bank for current sprite (always FF)
 	STA current_sprite_constants_bank	;$B3802C   |/
 	JSL init_player_clipping		;$B3802E   |
 	LDA time_stop_flags			;$B38032   |\
@@ -41,7 +41,7 @@ sprite_handler:
 	ADC.w #sizeof(sprite)			;$B38056   | |
 	TAX					;$B38059   |/
 	CPX #main_sprite_table_end		;$B3805A   |\ If not at the last sprite
-	BNE .next_slot				;$B3805D   |/ then test if the sprite exists
+	BNE .next_slot				;$B3805D   |/ Then test if the sprite exists
 	JSL process_interactions_with_player	;$B3805F   |
 	JSR process_platform_sprites		;$B38063   |
 	JSR handle_kong_follow			;$B38066   |
@@ -60,11 +60,11 @@ sprite_handler:
 
 .time_stop_underflow:
 	STZ time_stop_timer			;$B3807F  \ \ Make sure the time stop timer doesnt underflow
-	RTL					;$B38082  / /
+	RTL					;$B38082  /_/
 
 .time_stop_done:
 	STZ time_stop_flags			;$B38083  \ \ Reset the time stop flags
-	RTL					;$B38086  / /
+	RTL					;$B38086  /_/
 
 .time_stop_sprite_handler:
 	LDA #..sprite_return			;$B38087  \ \
@@ -83,18 +83,18 @@ sprite_handler:
 ..time_stop_is_active:
 	LDA current_sprite			;$B380A1  \ \ Get current sprite
 	CMP #non_kong_sprite_slots		;$B380A3   | |
-	BPL ..sprite_is_not_kong		;$B380A6   |/ If the sprite slot isnt a kong slot then handle non kong sprites
+	BPL ..sprite_is_not_kong		;$B380A6   |/ If sprite slot isnt a kong slot, handle non kong sprites
 	CMP inactive_kong_sprite		;$B380A8   |\
-	BEQ ..sprite_is_inactive_kong		;$B380AB   |/ If the sprite is the inactive kong then determine whether it processes or not
+	BEQ ..sprite_is_inactive_kong		;$B380AB   |/ If inactive kong, determine whether it processes or not
 	LDA time_stop_flags			;$B380AD   |\
 	AND #$0008				;$B380B0   | |
-	BEQ ..jump_to_sprite_code		;$B380B3   |/ If the active kong sprite isnt time stopped then process it
+	BEQ ..jump_to_sprite_code		;$B380B3   |/ If active kong sprite isnt time stopped then process it
 	BRA ..sprite_return			;$B380B5  /> Else return and move to next slot
 
 ..sprite_is_inactive_kong:
 	LDA time_stop_flags			;$B380B7  \ \
 	AND #$0010				;$B380BA   | |
-	BEQ ..jump_to_sprite_code		;$B380BD   |/ If the inactive kong sprite isnt time stopped then process it
+	BEQ ..jump_to_sprite_code		;$B380BD   |/ If inactive kong sprite isnt time stopped then process it
 	BRA ..sprite_return			;$B380BF  /> Else return and move to next slot
 
 ..sprite_is_not_kong:
@@ -103,7 +103,7 @@ sprite_handler:
 	BEQ ..jump_to_sprite_code		;$B380C7   |/
 	LDA.l sprite_time_stop_flags_table,x	;$B380C9   |\ Get sprite timestop flags
 	AND #$0001				;$B380CD   | |
-	BEQ ..sprite_return			;$B380D0   |/ If current sprite type cant run during time stop, move to next sprite slot
+	BEQ ..sprite_return			;$B380D0   |/ If sprite type cant run in time stop, move to next slot
 ..jump_to_sprite_code:				;	   |
 	JMP (sprite_main_table,x)		;$B380D2  /> Jump to the sprites main code
 
@@ -129,22 +129,22 @@ process_looping_sounds:
 	CMP #$0100				;$B380F3   | | Set carry if this loop sound is enabled
 	LDA.w #sound(4,!sound_invincibility)	;$B380F6   | | Get the sound effect and channel for this loop sound
 	JSR .try_to_queue_looping_sound		;$B380F9   | | Try to queue it
-	BCS .play_looping_sound			;$B380FC   |/ If sound effect was queued then play it and stop processing other loop sounds
+	BCS .play_looping_sound			;$B380FC   |/ If sound queued, play it and skip other loop sounds
 	LDA zinger_loop_sound_enabler-1		;$B380FE   |\ Get zinger loop enable flag
 	CMP #$0100				;$B38101   | | Set carry if this loop sound is enabled
 	LDA.w #sound(7,!sound_zinger_drone)	;$B38104   | | Get the sound effect and channel for this loop sound
 	JSR .try_to_queue_looping_sound		;$B38107   | | Try to queue it
-	BCS .play_looping_sound			;$B3810A   |/ If sound effect was queued then play it and stop processing other loop sounds
+	BCS .play_looping_sound			;$B3810A   |/ If sound queued, play it and skip other loop sounds
 	LDA flitter_loop_sound_enabler-1	;$B3810C   |\ Get flitter loop enable flag
 	CMP #$0100				;$B3810F   | | Set carry if this loop sound is enabled
 	LDA.w #sound(7,!sound_flitter_drone)	;$B38112   | | Get the sound effect and channel for this loop sound
 	JSR .try_to_queue_looping_sound		;$B38115   | | Try to queue it
-	BCS .play_looping_sound			;$B38118   |/ If sound effect was queued then play it and stop processing other loop sounds
+	BCS .play_looping_sound			;$B38118   |/ If sound queued, play it and skip other loop sounds
 	LDA barrel_roll_loop_sound_enabler-1	;$B3811A   |\ Get barrel roll loop enable flag
 	CMP #$0100				;$B3811D   | | Set carry if this loop sound is enabled
 	LDA.w #sound(4,!sound_barrel_roll)	;$B38120   | | Get the sound effect and channel for this loop sound
 	JSR .try_to_queue_looping_sound		;$B38123   | | Try to queue it
-	BCS .play_looping_sound			;$B38126   |/ If sound effect was queued then play it and stop processing other loop sounds
+	BCS .play_looping_sound			;$B38126   |/ If sound queued, play it and skip other loop sounds
 	LDA main_level.effects			;$B38128   |\
 	AND #!wind_sound_effect			;$B3812B   | |
 	BEQ .flotsam_level			;$B3812E   |/ If level has water then use flotsam instead of wind loop
@@ -152,14 +152,14 @@ process_looping_sounds:
 	CMP #$0100				;$B38133   | | Set carry if this loop sound is enabled
 	LDA.w #sound(7,!sound_wind)		;$B38136   | | Get the sound effect and channel for this loop sound
 	JSR .try_to_queue_looping_sound		;$B38139   | | Try to queue it
-	BRA .play_looping_sound			;$B3813C  /_/ If sound effect was queued then play it and stop processing other loop sounds
+	BRA .play_looping_sound			;$B3813C  /_/ If sound queued, play it and skip other loop sounds
 
 .flotsam_level:
 	LDA flotsam_loop_sound_enabler-1	;$B3813E  \ \ Get invincible loop enable flag
 	CMP #$0100				;$B38141   | | Set carry if this loop sound is enabled
 	LDA.w #sound(6,!sound_flotsam_move)	;$B38144   | | Get the sound effect and channel for this loop sound
 	JSR .try_to_queue_looping_sound		;$B38147   | | Try to queue it
-.play_looping_sound:				;	   |/ If sound effect was queued then play it and stop processing other loop sounds
+.play_looping_sound:				;	   |/ If sound queued, play it and skip other loop sounds
 	JSL play_queued_sound_effect		;$B3814A   |\ Play the queued sound effect and return
 	RTS					;$B3814E  /_/
 
@@ -375,7 +375,7 @@ handle_kong_follow:
 ; Update follower waypoint buffer
 .update_follower_waypoint:
 	TXY					;$B382CD  \> Transfer active kong sprite to Y
-	LDX kong_follow_buffer_recording_index	;$B382CE   |> Get the next free index into the inactive kong follow buffer
+	LDX kong_follow_buffer_recording_index	;$B382CE   |> Get next free index into the inactive kong follow buffer
 	LDA.w sprite.x_position,y		;$B382D1   |\
 	STA kong_follow_last_rec_x_position	;$B382D4   | | Store active kongs x position
 	STA kong_follow_x_position_buffer,x	;$B382D7   |/ Store active kongs x position to follow buffer
@@ -387,13 +387,13 @@ handle_kong_follow:
 	STA kong_follow_facing_buffer,x		;$B382EB   |/ Store active kongs oam properties to follow buffer
 	LDA.w sprite.terrain_interaction,y	;$B382EF   |\
 	XBA					;$B382F2   | |
-	AND #$FF00				;$B382F3   | | Get active kongs terrain interaction this frame in high byte
+	AND #$FF00				;$B382F3   | | Get active kongs terrain this frame in high byte
 	STA $32					;$B382F6   |/
 	LDY current_kong_control_variables	;$B382F8   |\
 	LDA.w kong_control.animation_id,y	;$B382FA   | |
 	STA kong_follow_animation_buffer,x	;$B382FD   |/ Store active kongs current animation to follow buffer
 	AND #$00FF				;$B38301   |\ Get low byte of animation id
-	ORA $32					;$B38304   |/ Merge animation id with terrain interaction, Useless, gets overwritten in A
+	ORA $32					;$B38304   |/ Merge anim with terrain, Useless, gets overwritten in A
 	INX					;$B38306   |\
 	INX					;$B38307   | |
 	TXA					;$B38308   | |
@@ -422,7 +422,7 @@ process_platform_sprite:
 	LDX platform_sprite_table+3,y		;$B38336   |\ Get platform sprite
 	STX current_sprite			;$B38339   |/
 	PHK					;$B3833B   |\
-	%return(process_platform_sprites)	;$B3833C   |/ Set return address to logic handler so it loops through all platforms
+	%return(process_platform_sprites)	;$B3833C   |/ Set return to logic handler so it handles all platforms
 	JML [$0032]				;$B3833F  /> Execute platform logic
 
 process_platform_sprites:
@@ -434,7 +434,7 @@ sprite_main_table:
 	%offset(sprite_time_stop_flags_table, 2)
 	dw null_sprite_main,$0000		;0000
 	dw crocodile_isle_props_main,$0000	;0004 Never actually executes
-	dw map_player_main,$0000		;0008 Is also the lost world rocks
+	dw map_player_main,$0000		;0008 Also the lost world rocks
 	dw rock_main,$0000			;000C
 	dw squawks_egg_main,$0000		;0010
 	dw large_smoke_puff_timestop_main,$0001	;0014 Large smoke puff but processes during timestop
@@ -444,11 +444,11 @@ sprite_main_table:
 	dw kleever_dropping_hooks_main,$0000	;0024
 	dw air_bubble_generator_main,$0000	;0028
 	dw kleever_bone_pieces_main,$0000	;002C
-	dw unknown_sprite_0030_main,$0000	;0030 Probably a kleever piece
+	dw unknown_sprite_0030_main,$0000	;0030
 	dw kleever_pieces1_main,$0000		;0034
 	dw kleever_pieces2_main,$0000		;0038
 	dw kleever_pieces3_main,$0000		;003C
-	dw unknown_sprite_0040_main,$0000	;0040 Probably a kleever piece
+	dw unknown_sprite_0040_main,$0000	;0040
 	dw kleever_pieces4_main,$0000		;0044
 	dw kleever_pieces5_main,$0000		;0048
 	dw kreepy_krow_sparkle_main,$0000	;004C
@@ -457,7 +457,7 @@ sprite_main_table:
 	dw puftup_spikes_main,$0000		;0058
 	dw lilypad_main,$0000			;005C
 	dw barrel_pieces_main,$0000		;0060
-	dw unknown_sprite_0064_main,$0000	;0064 Barrel fragment?
+	dw unknown_sprite_0064_main,$0000	;0064
 	dw king_zing_spikes_main,$0000		;0068
 	dw kannon_main,$0000			;006C
 	dw unknown_sprite_0070_main,$0000	;0070 Something to do with kong slip velocity
@@ -491,7 +491,7 @@ sprite_main_table:
 	dw invincibility_controller_main,$0001	;00E0
 	dw diddy_kong_main,$0001		;00E4
 	dw dixie_kong_main,$0001		;00E8
-	dw unknown_sprite_00EC_main,$0000	;00EC spawn script uses dust particle graphic id
+	dw unknown_sprite_00EC_main,$0000	;00EC Spawn script uses dust particle graphic id
 	dw respawn_suppressor_main,$0000	;00F0
 	dw debug_dummy_sprite_main,$0000	;00F4
 	dw debug_spawn_group_manager_main,$0000	;00F8
@@ -501,7 +501,7 @@ sprite_main_table:
 	dw web_shot_main,$0000			;0108
 	dw water_surface_splash_main,$0000	;010C
 	dw rain_cloud_main,$0000		;0110
-	dw unknown_sprite_0114_main,$0000	;0114 Would follow kong? Animates
+	dw unknown_sprite_0114_main,$0000	;0114 Would follow the kong, Animates
 	dw web_platform_main,$0000		;0118
 	dw dkbarrel_letters_main,$0000		;011C
 	dw barrel_icons_main,$0000		;0120
@@ -530,7 +530,7 @@ sprite_main_table:
 	dw kleever_falling_canball_main,$0000	;017C
 	dw krochead_switch_barrel_main,$0000	;0180
 	dw scroll_and_float_barrel_main,$0000	;0184
-	dw npc_hud_coin_main,$0000		;0188 also doubles as some sort of controller in funky's flights?
+	dw npc_hud_coin_main,$0000		;0188 Doubles as some sort of controller in funky's flights
 	dw kong_npc_main,$0000			;018C
 	dw squitter_main,$0000			;0190
 	dw rattly_main,$0000			;0194
@@ -546,7 +546,7 @@ sprite_main_table:
 	dw wooden_box_main,$0000		;01BC
 	dw chest_main,$0000			;01C0
 	dw kreepy_krows_eggs_main,$0000		;01C4
-	dw unknown_sprite_01C8_main,$0000	;01C8 look into
+	dw unknown_sprite_01C8_main,$0000	;01C8
 	dw kong_celebrate_prop_main,$0001	;01CC
 	dw shot_canball_or_barrel_main,$0000	;01D0
 	dw large_smoke_puff_main,$0000		;01D4
@@ -575,10 +575,10 @@ sprite_main_table:
 	dw kreepy_krows_head_main,$0000		;0230
 	dw shuri_main,$0000			;0234
 	dw burst_effect_main,$0001		;0238
-	dw unknown_sprite_023C_main,$0000	;023C explosion cloud/smoke
-	dw unknown_sprite_0240_main,$0000	;0240 barrel pieces
-	dw unknown_sprite_0244_main,$0001	;0244 barrel pieces but processes in timestop
-	dw unknown_sprite_0248_main,$0001	;0248 explosion cloud but processes in timestop
+	dw unknown_sprite_023C_main,$0000	;023C Explosion cloud/smoke
+	dw unknown_sprite_0240_main,$0000	;0240 Barrel pieces
+	dw unknown_sprite_0244_main,$0001	;0244 Barrel pieces but processes in timestop
+	dw unknown_sprite_0248_main,$0001	;0248 Explosion cloud but processes in timestop
 	dw explosion_cloud_main,$0000		;024C
 	dw fireworks_main,$0000			;0250
 	dw ghost_rope_main,$0000		;0254
@@ -599,8 +599,8 @@ sprite_main_table:
 	dw defeated_krool_main,$0000		;0290
 	dw tied_up_donkey_spawner_main,$0000	;0294
 	dw lava_splash_main,$0000		;0298
-	dw krools_blinking_eyes_main,$0000	;029C is also mario, link and yoshi
-	dw spiked_canballs_main,$0000		;02A0 also krool gas clouds
+	dw krools_blinking_eyes_main,$0000	;029C Also mario, link and yoshi
+	dw spiked_canballs_main,$0000		;02A0 Also krool gas clouds
 	dw kleever_main,$0000			;02A4
 	dw krool_puddle_main,$0000		;02A8
 	dw krool_fish_main,$0000		;02AC
@@ -1035,7 +1035,7 @@ rain_cloud_main:
 	JML [sprite_return_address]		;$B38922  / Done processing sprite
 
 web_shot_main:
-	JSL CODE_BCFB58				;$B38925  \ Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B38925  \ Populate sprite clipping
 	LDA #$0020				;$B38929   |
 	LDY #$0008				;$B3892C   |
 	JSL CODE_BEBD8E				;$B3892F   | Check if collided with enemy
@@ -1069,11 +1069,11 @@ web_shot_main:
 ;bit 7 = is platform opening (set via animation code)
 
 web_platform_main:
-	LDX current_sprite			;$B38959  \ get web platform sprite
-	LDA sprite.state,x			;$B3895B   | get sprite action index
+	LDX current_sprite			;$B38959  \ Get web platform sprite
+	LDA sprite.state,x			;$B3895B   | Get sprite action index
 	ASL A					;$B3895D   |
 	TAX					;$B3895E   |
-	JMP (.state_table,x)			;$B3895F  / get sprite action from table
+	JMP (.state_table,x)			;$B3895F  / Get sprite action from table
 
 .state_table
 	dw .projectile_state			;00
@@ -1098,9 +1098,9 @@ web_platform_main:
 	LDX current_sprite			;$B38986  \ \ Get web platform sprite
 	LDX current_sprite			;$B38988   |/ Do it again because why not I guess...
 	LDA sprite.x_position,x			;$B3898A   |\ Copy X position...
-	STA sprite.unknown_22,x			;$B3898C   | | to platform sprite position variables
+	STA sprite.unknown_22,x			;$B3898C   | | To platform sprite position variables
 	LDA sprite.y_position,x			;$B3898E   | | Copy Y position...
-	STA sprite.unknown_28,x			;$B38990   |/ to platform sprite position variables
+	STA sprite.unknown_28,x			;$B38990   |/ To platform sprite position variables
 	STZ sprite.interaction_flags,x		;$B38992   |\ Clear interaction flags
 	STZ $4E,x				;$B38994   |/
 	LDA #$00C4				;$B38996   |\ Set render order
@@ -1146,13 +1146,13 @@ web_platform_main:
 	STZ $52,x				;$B389DF   |> Clear movement behavior
 	JSL CODE_B3D485				;$B389E1   |\ Set platform hitbox position
 	JSL CODE_B3D4AE				;$B389E5   |/ Set hitbox left/right X range (how far you can walk on it)
-	PHP					;$B389E9   |> Preserve carry flag (whether kong is on the platform or not)
+	PHP					;$B389E9   |> Preserve carry flag (whether kong is on platform or not)
 	LDX current_sprite			;$B389EA   |
 	ROL A					;$B389EC   |
 	STA $4E,x				;$B389ED   |> Make the platform wiggle when landed on
-	PLP					;$B389EF   |\ Recover carry flag (whether kong is on the platform or not)
+	PLP					;$B389EF   |\ Recover carry flag (whether kong is on platform or not)
 	BCC .update_time_since_on_platform	;$B389F0   |/ If not on platform then count up time since platform used
-	STZ $42,x				;$B389F2   |> kong is on platform, reset time since on platform
+	STZ $42,x				;$B389F2   |> Kong is on platform, reset time since on platform
 .update_time_since_on_platform			;	   |
 	LDA $42,x				;$B389F4   |\ Update time since kong used platform
 	INC A					;$B389F6   |/
@@ -1277,7 +1277,7 @@ squitter_main:
 	STA sprite.oam_property,x		;$B38AD1   |/ Update facing direction
 	LDA sprite.general_purpose_44,x		;$B38AD3   |\ Get x flee speed
 	BIT sprite.oam_property,x		;$B38AD5   | |
-	BVC .apply_speed			;$B38AD7   |/ If animal is facing direction that flee speed will move them, dont invert speed
+	BVC .apply_speed			;$B38AD7   |/ If animal facing flee speed direction, dont invert speed
 	EOR #$FFFF				;$B38AD9   |\
 	INC A					;$B38ADC   |/ Flip fleeing speed
 .apply_speed:					;	   |
@@ -1296,17 +1296,17 @@ squitter_main:
 ;Dead code
 	LDA main_level.type			;$B38AEE  \ \ Get level type
 	CMP #!bonus_level_type			;$B38AF1   | |
-	BEQ .in_bonus_level			;$B38AF4   |/ If level is a bonus then ensure the kong only has one animal
+	BEQ .in_bonus_level			;$B38AF4   |/ If level is bonus, ensure the kong only has one animal
 .no_animal:					;	   |
 	LDX current_sprite			;$B38AF6   |> Get animal sprite
 	STZ sprite.state,x			;$B38AF8   |\ Return to idle state
-	BRL .sprite_done			;$B38AFA  / / Sprite done
+	BRL .sprite_done			;$B38AFA  /_/ Sprite done
 
 .in_bonus_level:
 	LDA animal_type				;$B38AFD  \ \
-	BEQ .no_animal				;$B38AFF   |/ If the kong doesnt have an animal then return to idle state
-	JSL delete_sprite_handle_deallocation	;$B38B01   |\ Else delete this animal because kong already has it for the bonus
-	JML [sprite_return_address]		;$B38B05  / / Sprite done
+	BEQ .no_animal				;$B38AFF   |/ If kong doesnt have animal, return to idle state
+	JSL delete_sprite_handle_deallocation	;$B38B01   |\ Else delete this animal, kong already has it for the bonus
+	JML [sprite_return_address]		;$B38B05  /_/ Sprite done
 
 rattly_main:
 	LDX current_sprite			;$B38B08  \
@@ -1374,7 +1374,7 @@ rattly_main:
 	STA sprite.oam_property,x		;$B38B81   |/ Update facing direction
 	LDA sprite.general_purpose_44,x		;$B38B83   |\ Get x flee speed
 	BIT sprite.oam_property,x		;$B38B85   | |
-	BVC .apply_speed			;$B38B87   |/ If animal is facing direction that flee speed will move them, dont invert speed
+	BVC .apply_speed			;$B38B87   |/ If animal facing flee speed direction, dont invert speed
 	EOR #$FFFF				;$B38B89   |\
 	INC A					;$B38B8C   |/ Flip fleeing speed
 .apply_speed:					;	   |
@@ -1395,17 +1395,17 @@ rattly_main:
 .bonus_handler_state:
 	LDA main_level.type			;$B38B9B  \ \ Get level type
 	CMP #!bonus_level_type			;$B38B9E   | |
-	BEQ .in_bonus_level			;$B38BA1   |/ If level is a bonus then ensure the kong only has one animal
+	BEQ .in_bonus_level			;$B38BA1   |/ If bonus then ensure the kong only has one animal
 .no_animal:					;	   |
 	LDX current_sprite			;$B38BA3   |> Get animal sprite
 	STZ sprite.state,x			;$B38BA5   |\ Return to idle state
-	BRA .sprite_done			;$B38BA7  / / Sprite done
+	BRA .sprite_done			;$B38BA7  /_/ Sprite done
 
 .in_bonus_level:
 	LDA animal_type				;$B38BA9  \ \
-	BEQ .no_animal				;$B38BAB   |/ If the kong doesnt have an animal then return to idle state
-	JSL delete_sprite_handle_deallocation	;$B38BAD   |\ Else delete this animal because kong already has it for the bonus
-	JML [sprite_return_address]		;$B38BB1  / / Sprite done
+	BEQ .no_animal				;$B38BAB   |/ If kong doesnt have an animal then return to idle state
+	JSL delete_sprite_handle_deallocation	;$B38BAD   |\ Else delete this animal, kong already has it for the bonus
+	JML [sprite_return_address]		;$B38BB1  /_/ Sprite done
 
 ;this routine handles if an animal passes a no animal sign without the player
 handle_animal_sign_deletion:
@@ -1423,7 +1423,7 @@ handle_animal_sign_deletion:
 	SEC					;$B38BC7   | |
 	SBC #$0018				;$B38BC8   | | Move it downward
 	STA sprite.y_position,x			;$B38BCB   |/ Update y position
-	INC sprite.type,x			;$B38BCD   |> Resurrect the animal? so smoke spawns relative to it maybe?
+	INC sprite.type,x			;$B38BCD   |> Seems to resurrect animal, so smoke spawns relative to it
 	LDY #!special_sprite_spawn_id_0122	;$B38BCF   |\ Spawn 3 smoke puffs
 	JSL spawn_special_sprite_index		;$B38BD2   | |
 	LDY #!special_sprite_spawn_id_0124	;$B38BD6   | |
@@ -1433,7 +1433,7 @@ handle_animal_sign_deletion:
 	LDX current_sprite			;$B38BE4   |\ Get the current sprite
 	STZ sprite.type,x			;$B38BE6   |/ Delete it
 	SEC					;$B38BE8   |\ Report back that the animal was deleted
-	RTS					;$B38BE9  / / Return
+	RTS					;$B38BE9  /_/ Return
 
 
 ;This routine will never execute. There are no rideable animals in Castle Crush except for bonus 1...
@@ -1452,11 +1452,11 @@ handle_animal_crushing:
 	LDA #$014C				;$B38BFB   |\
 	JSL set_anim_handle_animal		;$B38BFE   |/ Set animal hurt animation
 	SEC					;$B38C02   |\ Report back that the animal is being crushed
-	RTS					;$B38C03  / / Return
+	RTS					;$B38C03  /_/ Return
 
 .not_being_crushed:
 	CLC					;$B38C04  \ \ Report back that the animal is not being crushed
-	RTS					;$B38C05  / / Return
+	RTS					;$B38C05  /_/ Return
 
 squawks_main:
 	LDX current_sprite			;$B38C06  \
@@ -1536,22 +1536,22 @@ squawks_main:
 .bonus_handler_state:
 	LDA main_level.type			;$B38C92  \ \ Get level type
 	CMP #!bonus_level_type			;$B38C95   | |
-	BEQ .in_bonus_level			;$B38C98   |/ If level is a bonus then ensure the kong only has one animal
+	BEQ .in_bonus_level			;$B38C98   |/ If level is bonus, ensure the kong only has one animal
 .no_animal:					;	   |
 	LDX current_sprite			;$B38C9A   |> Get animal sprite
 	STZ sprite.state,x			;$B38C9C   |\ Return to idle state
-	BRA .sprite_done			;$B38C9E  / / Sprite done
+	BRA .sprite_done			;$B38C9E  /_/ Sprite done
 
 .in_bonus_level:
 	LDA animal_type				;$B38CA0  \ \
-	BEQ .no_animal				;$B38CA2   |/ If the kong doesnt have an animal then return to idle state
-	JSL delete_sprite_handle_deallocation	;$B38CA4   |\ Else delete this animal because kong already has it for the bonus
-	JML [sprite_return_address]		;$B38CA8  / / Sprite done
+	BEQ .no_animal				;$B38CA2   |/ If kong doesnt have an animal, return to idle state
+	JSL delete_sprite_handle_deallocation	;$B38CA4   |\ Else delete this animal, kong already has it for the bonus
+	JML [sprite_return_address]		;$B38CA8  /_/ Sprite done
 
 snap_follower_kong_to_animal:
 	LDA game_state_flags			;$B38CAB  \ \
 	AND #$4000				;$B38CAE   | |
-	BEQ .return				;$B38CB1   |/ If player only has one kong then dont snap follower to animal
+	BEQ .return				;$B38CB1   |/ If player only has one kong, dont snap follower to animal
 	LDY inactive_kong_sprite		;$B38CB3   |
 	LDX current_player_mount		;$B38CB6   |
 	BEQ .return				;$B38CB8   |
@@ -1566,7 +1566,7 @@ snap_riding_kong_to_animal:
 	LDX current_sprite			;$B38CC5  \ \ Get animal sprite (pretending to be kong)
 	LDY active_kong_sprite			;$B38CC7   |/ Get kong sprite (pretending to be animal)
 	BIT sprite.oam_property,x		;$B38CCA   |\
-	BVS .facing_left			;$B38CCC   |/ If the animal is facing left then subtract the x riding offset
+	BVS .facing_left			;$B38CCC   |/ If the animal is facing left, subtract the x riding offset
 	LDA.w sprite.x_position,y		;$B38CCE   |\ Else, the animal is facing right, get kong x position
 	CLC					;$B38CD1   | |
 	ADC $0D76				;$B38CD2   | | Add x riding offset
@@ -1617,17 +1617,17 @@ get_state_death_and_mounting_flags:
 handle_animal_mounting:
 	LDX current_sprite			;$B38D1D  \> Get animal sprite
 	LDA sprite.general_purpose_42,x		;$B38D1F   |\
-	BEQ .can_remount_animal			;$B38D21   |/ If dismount timer is 0 then this animal can be mounted again
+	BEQ .can_remount_animal			;$B38D21   |/ If dismount timer is 0, this animal can be mounted again
 	DEC sprite.general_purpose_42,x		;$B38D23   |\ Else update the dismount timer
-	BRA .return				;$B38D25  / / Return
+	BRA .return				;$B38D25  /_/ Return
 
 .can_remount_animal:
 	LDA sprite.y_position,x			;$B38D27  \ \
 	SEC					;$B38D29   | |
-	SBC $17C0				;$B38D2A   | |
+	SBC screen_scroll_y_position		;$B38D2A   | |
 	CMP #$0110				;$B38D2D   | |
 	BPL .return				;$B38D30   |/ If the animal is offscreen then dont allow mounting
-	JSL CODE_BCFB58				;$B38D32   |> Get sprite clipping
+	JSL get_current_sprite_clipping		;$B38D32   |> Get sprite clipping
 	LDA sprite.type,x			;$B38D36   |\ Get sprite type
 	SEC					;$B38D38   | |
 	SBC #!animal_sprite_type_range_start	;$B38D39   | | Subtract animal base sprite id to generate index
@@ -1635,13 +1635,13 @@ handle_animal_mounting:
 	LSR A					;$B38D3D   | |
 	CLC					;$B38D3E   | |
 	ADC #$0001				;$B38D3F   | | + 1
-	JSL CODE_BCFB7A				;$B38D42   |/ Inject animal mount range into hitbox RAM
+	JSL get_sprite_special_clipping_slot_1	;$B38D42   |/ Inject animal mount range into hitbox RAM
 	LDA #$0004				;$B38D46   |\
 	JSL check_active_kong_collision		;$B38D49   | | Check sprite collision
-	BCS .collided_with_mount_range		;$B38D4D   |/ If a sprite collided with mount range then see if player should mount
+	BCS .collided_with_mount_range		;$B38D4D   |/ If collided with mount range, handle player mounting
 .return:					;	   |
 	CLC					;$B38D4F   |\ No collision
-	RTS					;$B38D50  / / Return
+	RTS					;$B38D50  /_/ Return
 
 .collided_with_mount_range:
 	LDA animal_type				;$B38D51  \ \ Get current animal type
@@ -1650,10 +1650,10 @@ handle_animal_mounting:
 	BNE .return				;$B38D58   |/ If the kong is holding a sprite then dont mount
 	LDY colliding_sprite			;$B38D5A   |\ Get colliding sprite
 	CPY active_kong_sprite			;$B38D5C   | | See if colliding sprite is active kong
-	BNE .return				;$B38D5F   |/ If the colliding sprite isn't the active kong so dont mount
+	BNE .return				;$B38D5F   |/ If colliding sprite isn't active kong, dont mount
 	JSR get_state_death_and_mounting_flags	;$B38D61   |\ Get the state flags for the kongs current state
 	AND #$0009				;$B38D64   | |
-	BNE .return				;$B38D67   |/ If the kongs current state doesnt allow mounting then dont mount
+	BNE .return				;$B38D67   |/ If kongs current state doesnt allow mounting, dont mount
 	LDX current_sprite			;$B38D69   |\
 	LDA sprite.type,x			;$B38D6B   |/ Get this animals type
 	CMP #!sprite_squawks			;$B38D6D   |\
@@ -1673,16 +1673,16 @@ handle_animal_mounting:
 	LDA #!player_interaction_17		;$B38D8C   |\ Set player interaction to mounting animal buddy
 	JSL set_player_interaction_global	;$B38D8F   |/
 	SEC					;$B38D93   |\ Tell the calling routine that the animal was mounted
-	RTS					;$B38D94  / / Return
+	RTS					;$B38D94  /_/ Return
 
 .handle_squawks_mounting:
 	LDA.w sprite.terrain_interaction,y	;$B38D95  \ \
-	AND #$1001				;$B38D98   | |
-	BNE .return				;$B38D9B   |/ If kong was on platform sprite last frame or grounded this frame, dont mount
+	AND #$1001				;$B38D98   | | If on platform sprite last frame or grounded this frame
+	BNE .return				;$B38D9B   |/ Then return
 	LDA #!player_interaction_17		;$B38D9D   |\ Set player interaction to mounting animal buddy
 	JSL set_player_interaction_global	;$B38DA0   |/
 	SEC					;$B38DA4   |\ Tell the calling routine that the animal was mounted
-	RTS					;$B38DA5  / / Return
+	RTS					;$B38DA5  /_/ Return
 
 enguarde_main:
 	LDX current_sprite			;$B38DA6  \
@@ -1739,11 +1739,11 @@ if !version == 0				;	   |
 else						;	   |
 	LDA level_number			;$B38DFF   |\
 	CMP #!level_clappers_cavern		;$B38E01   | |
-	BNE .sprite_done_handle_offscreen	;$B38E04   |/ If the level isnt clappers cavern then dont check if water is frozen
+	BNE .sprite_done_handle_offscreen	;$B38E04   |/ If level isnt clappers cavern, dont check for frozen water
 	LDA $0915				;$B38E06   |\
 	BEQ .sprite_done_handle_offscreen	;$B38E09   |/ If the water is thawed then dont delete enguarde
-	JSL delete_sprite_handle_deallocation	;$B38E0B   |\ Enguarde somehow made survived with frozen water, delete him
-	JML [sprite_return_address]		;$B38E0F  / / Sprite done
+	JSL delete_sprite_handle_deallocation	;$B38E0B   |\ Enguarde somehow survived with frozen water, delete him
+	JML [sprite_return_address]		;$B38E0F  /_/ Sprite done
 
 .sprite_done_handle_offscreen:
 	JSL CODE_BBBB99				;$B38E12  \
@@ -1762,9 +1762,9 @@ endif
 						;	   |
 .kong_didnt_mount:				;	   |
 	JSR .handle_enguarde_despawn_timer	;$B38E27   |\
-	BCC .turn_if_touching_wall		;$B38E2A   |/ If enguardes despawn timer is still counting then he can live
+	BCC .turn_if_touching_wall		;$B38E2A   |/ If enguarde's despawn timer is still counting, he can live
 	JSL delete_sprite_handle_deallocation	;$B38E2C   |\ Else he was offscreen for too long, delete him
-	JML [sprite_return_address]		;$B38E30  / / Sprite done
+	JML [sprite_return_address]		;$B38E30  /_/ Sprite done
 
 .turn_if_touching_wall:
 	LDX current_sprite			;$B38E33  \ \ Get animal sprite
@@ -1779,7 +1779,7 @@ endif
 	STA sprite.oam_property,x		;$B38E43   |/ Update facing direction
 	LDA #$0200				;$B38E45   |\ Get x flee speed
 	BIT sprite.oam_property,x		;$B38E48   | |
-	BVC .apply_speed			;$B38E4A   |/ If animal is facing direction that flee speed will move them, dont invert speed
+	BVC .apply_speed			;$B38E4A   |/ If animal facing flee speed direction, dont invert speed
 	EOR #$FFFF				;$B38E4C   |\
 	INC A					;$B38E4F   |/ Flip fleeing speed
 .apply_speed:					;	   |
@@ -1801,7 +1801,7 @@ endif						;	  /
 .bonus_handler_state:
 	LDA main_level.type			;$B38E64  \ \ Get level type
 	CMP #!bonus_level_type			;$B38E67   | |
-	BEQ .in_bonus_level			;$B38E6A   |/ If level is a bonus then ensure the kong only has one animal
+	BEQ .in_bonus_level			;$B38E6A   |/ If level is bonus, ensure the kong only has one animal
 .no_animal:					;	   |
 	LDX current_sprite			;$B38E6C   |> Get animal sprite
 	LDA #$0004				;$B38E6E   |\ Return to idle state
@@ -1814,37 +1814,37 @@ endif
 
 .in_bonus_level:
 	LDA animal_type				;$B38E76  \ \
-	BEQ .no_animal				;$B38E78   |/ If the kong doesnt have an animal then return to idle state
-	JSL delete_sprite_handle_deallocation	;$B38E7A   |\ Else delete this animal because kong already has it for the bonus
-	JML [sprite_return_address]		;$B38E7E  / / Sprite done
+	BEQ .no_animal				;$B38E78   |/ If kong doesnt have an animal, return to idle state
+	JSL delete_sprite_handle_deallocation	;$B38E7A   |\ Else delete this animal, kong already has it for the bonus
+	JML [sprite_return_address]		;$B38E7E  /_/ Sprite done
 
 .handle_enguarde_despawn_timer:
 	JSL check_if_sprite_offscreen_global	;$B38E81  \ \
 	BCC .reset_despawn_timer		;$B38E85   |/ If enguarde is onscreen then reset offscreen despawn timer
 	LDX current_sprite			;$B38E87   |\ Get enguarde sprite
 	DEC sprite.general_purpose_4A,x		;$B38E89   | | Update offscreen despawn timer
-	BMI .should_despawn			;$B38E8B   |/ If the timer ran out then return that enguarde should despawn
+	BMI .should_despawn			;$B38E8B   |/ If the timer ran out, return that enguarde should despawn
 	CLC					;$B38E8D   |\ Return that enguarde can still live
-	RTS					;$B38E8E  / / Return
+	RTS					;$B38E8E  /_/ Return
 
 .should_despawn:
 	SEC					;$B38E8F  \ \ Return that enguarde should despawn
-	RTS					;$B38E90  / / Return
+	RTS					;$B38E90  /_/ Return
 
 .reset_despawn_timer:
 	LDX current_sprite			;$B38E91  \> Get enguarde sprite
 	LDA #$012C				;$B38E93   |\
 	STA sprite.general_purpose_4A,x		;$B38E96   |/ Reset offscreen despawn timer
 	CLC					;$B38E98   |\ Return that enguarde can still live
-	RTS					;$B38E99  / / Return
+	RTS					;$B38E99  /_/ Return
 
 .handle_enguarde_on_land:
 	LDX current_sprite			;$B38E9A  \> Get enguarde sprite
 	STZ sprite.y_speed,x			;$B38E9C   |> Clear y speed
 	JSL check_sprite_underwater_global	;$B38E9E   |\
 	CMP #$0001				;$B38EA2   | |
-	BNE .return				;$B38EA5   |/ If enguarde is in the water than keep his y speed at 0 so he floats
-	LDA #$0400				;$B38EA7   |\ Else give enguarde a constant downward speed so he sticks to the ground
+	BNE .return				;$B38EA5   |/ If enguarde in water, keep his y speed at 0 so he floats
+	LDA #$0400				;$B38EA7   |\ Else make enguarde sink to the ground
 	STA sprite.y_speed,x			;$B38EAA   |/ Apply y speed
 .return:					;	   |
 	RTS					;$B38EAC  /> Return
@@ -1872,7 +1872,7 @@ glimmer_main:
 	JSL interpolate_y_velocity_global	;$B38ED0   |
 	JSL apply_position_from_velocity_global	;$B38ED4   |
 	LDX current_sprite			;$B38ED8   | Get Glimmer sprite
-	LDA $17BA				;$B38EDA   | Get camera X position
+	LDA screen_scroll_x_position		;$B38EDA   | Get camera X position
 	CLC					;$B38EDD   |
 	ADC #$0014				;$B38EDE   |
 	CMP sprite.x_position,x			;$B38EE1   |
@@ -1888,7 +1888,7 @@ glimmer_main:
 
 .state_02:
 	LDX current_sprite			;$B38EF4  \ Get Glimmer sprite
-	LDA $17BA				;$B38EF6   | Get camera X position
+	LDA screen_scroll_x_position		;$B38EF6   | Get camera X position
 	CLC					;$B38EF9   |
 	ADC #$0080				;$B38EFA   |
 	STA sprite.x_position,x			;$B38EFD   | Update Glimmer X position
@@ -2242,11 +2242,11 @@ spawn_follower_animal_icon:
 .not_castle_crush:				;	   |
 	LDA sprite.x_position,x			;$B3913F   | Get caller X position
 	SEC					;$B39141   |
-	SBC $17BA				;$B39142   | Subtract from camera X position
+	SBC screen_scroll_x_position		;$B39142   | Subtract from camera X position
 	STA.w sprite.x_position,y		;$B39145   | Set icon screen space X position
 	LDA sprite.y_position,x			;$B39148   | Get caller Y position
 	SEC					;$B3914A   |
-	SBC $17C0				;$B3914B   | Subtract from camera Y position
+	SBC screen_scroll_y_position		;$B3914B   | Subtract from camera Y position
 	STA.w sprite.y_position,y		;$B3914E   | Set icon screen space Y position
 	LDA #$8000				;$B39151   |
 	STA.w sprite.x_sub_position,y		;$B39154   |
@@ -2506,7 +2506,7 @@ squawks_egg_main:
 	ORA #$0200				;$B3931F   | Set bit 9 (allows it to hurt king zing's stinger)
 	STA sprite.interaction_flags,x		;$B39322   |
 .skip_interaction_flag_set:			;	   |
-	JSL CODE_BCFB58				;$B39324   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B39324   | Populate sprite clipping
 	LDA #$0020				;$B39328   |
 	LDY #$0008				;$B3932B   |
 	JSL CODE_BEBD8E				;$B3932E   | Check if collided with enemy
@@ -2573,7 +2573,7 @@ dkbarrel_main:
 .grounded_state
 	LDA cheat_enable_flags			;$B39396  \ \
 	AND #$0001				;$B39399   | |
-	BEQ .no_barralax			;$B3939C   |/ If barralax cheat is inactive then do normal dk barrel behavior
+	BEQ .no_barralax			;$B3939C   |/ If no barralax cheat, do normal dk barrel behavior
 	BRL .delete_dk_barrel			;$B3939E  /> Else barralax is active, delete the dk barrel
 
 .no_barralax
@@ -2627,7 +2627,7 @@ dkbarrel_main:
 	AND #$0101				;$B3940F   |
 	CMP #$0101				;$B39412   |
 	BEQ .break_dk_barrel			;$B39415   |
-	JSL CODE_BCFB58				;$B39417   |
+	JSL get_current_sprite_clipping		;$B39417   |
 	LDA #$0020				;$B3941B   |
 	LDY #$0008				;$B3941E   |
 	JSL CODE_BEBD8E				;$B39421   |
@@ -2654,7 +2654,7 @@ dkbarrel_main:
 	LDA game_state_flags			;$B39455   |
 	AND #$4000				;$B39458   |
 	BNE CODE_B3946A				;$B3945B   |
-	JSL CODE_BCFB58				;$B3945D   |
+	JSL get_current_sprite_clipping		;$B3945D   |
 	LDA #$0010				;$B39461   |
 	JSL check_active_kong_collision		;$B39464   |
 	BCS .break_dk_barrel			;$B39468   |
@@ -2855,19 +2855,19 @@ CODE_B395E6:					;	   |
 	JML [sprite_return_address]		;$B395F5  /
 
 lilypad_main:
-	LDX current_sprite			;$B395F8  \ get lilypad sprite
-	LDY $42,x				;$B395FA   | get address of horsetail sprite that spawned it
-	LDA.w sprite.type,y			;$B395FC   | check its ID
+	LDX current_sprite			;$B395F8  \ Get lilypad sprite
+	LDY $42,x				;$B395FA   | Get address of horsetail sprite that spawned it
+	LDA.w sprite.type,y			;$B395FC   |Check its ID
 	CMP #!sprite_horsetail			;$B395FF   |
-	BNE .delete_sprite			;$B39602   | if there's a mismatch, delete lilypad sprite
-	LDA $004C,y				;$B39604   | else get address of self from horsetail
-	CMP current_sprite			;$B39607   | check if its the currently processing sprite
-	BNE .delete_sprite			;$B39609   | if not, delete lilypad sprite
-	JML [sprite_return_address]		;$B3960B  / else done processing sprite
+	BNE .delete_sprite			;$B39602   | If there's a mismatch, delete lilypad sprite
+	LDA $004C,y				;$B39604   | Else get address of self from horsetail
+	CMP current_sprite			;$B39607   | Check if its the currently processing sprite
+	BNE .delete_sprite			;$B39609   | If not, delete lilypad sprite
+	JML [sprite_return_address]		;$B3960B  / Else done processing sprite
 
 .delete_sprite:
 	JSL delete_sprite_handle_deallocation	;$B3960E  \
-	JML [sprite_return_address]		;$B39612  / done processing sprite
+	JML [sprite_return_address]		;$B39612  / Done processing sprite
 
 ghost_rope_main:
 horsetail_main:
@@ -3097,7 +3097,7 @@ animal_box_main:
 	LDA #$0118				;$B397A4   |
 	JSR CODE_B3A364				;$B397A7   | Check throwable collision
 	BCS .collision_happened			;$B397AA   |
-	JSL CODE_BCFB58				;$B397AC   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B397AC   | Populate sprite clipping
 	LDA #$15CC				;$B397B0   |
 	JSL CODE_BEBE8B				;$B397B3   | Check complex player collision
 	BCS .collision_happened			;$B397B7   |
@@ -3147,7 +3147,7 @@ animal_box_main:
 	JML [sprite_return_address]		;$B39812  / Done processing sprite
 
 .state_03:
-	JSL CODE_BCFB58				;$B39815  \ Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B39815  \ Populate sprite clipping
 	LDA #$0008				;$B39819   |
 	PHK					;$B3981C   |
 	%return(.CODE_B39823)			;$B3981D   | Set collision return address
@@ -3348,7 +3348,7 @@ CODE_B39986:
 	BRL CODE_B39A1C				;$B39997  /
 
 CODE_B3999A:
-	JSL CODE_BCFB58				;$B3999A  \
+	JSL get_current_sprite_clipping		;$B3999A  \
 	LDA #$0008				;$B3999E   |
 	PHK					;$B399A1   |
 	%return(CODE_B399A8)			;$B399A2   |
@@ -3404,7 +3404,7 @@ CODE_B399EE:
 	RTS					;$B39A1B  /
 
 CODE_B39A1C:
-	JSL CODE_BCFB58				;$B39A1C  \
+	JSL get_current_sprite_clipping		;$B39A1C  \
 	LDA #$0008				;$B39A20   |
 	JSL check_active_kong_collision		;$B39A23   |
 	BCC CODE_B399EC				;$B39A27   |
@@ -3439,7 +3439,7 @@ CODE_B39A5F:
 	RTS					;$B39A6E  /
 
 invincibility_barrel_main:
-	JSL CODE_BCFB58				;$B39A6F  \ Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B39A6F  \ Populate sprite clipping
 	LDA #$0010				;$B39A73   | Get collision flags
 	PHK					;$B39A76   |
 	%return(.return_handler)		;$B39A77   | Set collision return handler address
@@ -3587,7 +3587,7 @@ CODE_B39B9E:
 	JML [sprite_return_address]		;$B39BA2  /
 
 CODE_B39BA5:
-	JSL CODE_BCFB58				;$B39BA5  \
+	JSL get_current_sprite_clipping		;$B39BA5  \
 	LDA #$0420				;$B39BA9   |
 	LDY #$0008				;$B39BAC   |
 	JSL CODE_BEBD8E				;$B39BAF   |
@@ -3711,7 +3711,7 @@ CODE_B39C79:
 	JSL process_sprite_animation		;$B39C79  \
 	JSL process_current_movement		;$B39C7D   |
 	LDA sprite.movement_state,x		;$B39C81   |
-	JSL CODE_BCFB58				;$B39C83   |
+	JSL get_current_sprite_clipping		;$B39C83   |
 	JSL CODE_BEBE6D				;$B39C87   |
 	BCC CODE_B39C97				;$B39C8B   |
 	JSR CODE_B39C39				;$B39C8D   |
@@ -3844,7 +3844,7 @@ endif						;	   |
 	LSR A					;$B39D90   |
 	LDY alternate_sprite			;$B39D91   |
 	STA $004E,y				;$B39D93   |
-	LDA $17C0				;$B39D96   |
+	LDA screen_scroll_y_position		;$B39D96   |
 	CLC					;$B39D99   |
 	ADC #$0070				;$B39D9A   |
 	CMP $004E,y				;$B39D9D   |
@@ -3975,21 +3975,21 @@ CODE_B39E86:
 	JML [sprite_return_address]		;$B39E8A  /
 
 CODE_B39E8D:
-	JSL CODE_BCFB58				;$B39E8D  \
+	JSL get_current_sprite_clipping		;$B39E8D  \
 	LDA #$1020				;$B39E91   |
 	LDY #$0010				;$B39E94   |
 	JSL CODE_BEBD8E				;$B39E97   |
 	RTS					;$B39E9B  /
 
 CODE_B39E9C:
-	JSL CODE_BCFB58				;$B39E9C  \
+	JSL get_current_sprite_clipping		;$B39E9C  \
 	LDA #$1020				;$B39EA0   |
 	LDY #$0008				;$B39EA3   |
 	JSL CODE_BEBD8E				;$B39EA6   |
 	RTS					;$B39EAA  /
 
 CODE_B39EAB:
-	JSL CODE_BCFB58				;$B39EAB  \
+	JSL get_current_sprite_clipping		;$B39EAB  \
 	LDA #$1020				;$B39EAF   |
 	LDY #$0108				;$B39EB2   |
 	JSL CODE_BEBD8E				;$B39EB5   |
@@ -4605,7 +4605,7 @@ level_goal_main:
 	LDA animal_type				;$B3A2AB   | Else get index of current transformed animal
 	BNE ..return				;$B3A2AD   | If it exists, return
 ..handle_collision:				;	   |
-	JSL CODE_BCFB58				;$B3A2AF   | Else populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3A2AF   | Else populate sprite clipping
 	LDA #$0008				;$B3A2B3   | Load collision flags
 	JSL check_active_kong_collision		;$B3A2B6   | Check collision with kong
 	BCS ..collision_happened		;$B3A2BA   | If collision happened
@@ -4766,9 +4766,9 @@ CODE_B3A3B4:
 	ASL A					;$B3A3B9   |
 	TAY					;$B3A3BA   |
 	TXA					;$B3A3BB   |
-	STA palette_upload_ring_buffer,y	;$B3A3BC   |
+	STA sprite_palette_DMA.source_word,y	;$B3A3BC   |
 	LDA temp_5E				;$B3A3BF   |
-	STA palette_upload_ring_buffer+$2,y	;$B3A3C1   |
+	STA sprite_palette_DMA.source_bank,y	;$B3A3C1   |
 	LDA current_palette_buffer_slot		;$B3A3C4   |
 	INC A					;$B3A3C6   |
 	AND #$000F				;$B3A3C7   |
@@ -4853,7 +4853,7 @@ zinger_main:
 	ADC #$00C0				;$B3A448   |/ Offset floor position by +192
 	LDY current_sprite			;$B3A44B   |\ Get zinger/flitter Y position
 	CMP.w sprite.y_position,y		;$B3A44D   |/
-	BCS generic_sprite_main			;$B3A450   |> If zinger/flitter is above floor dont crush it, resume normal enemy logic
+	BCS generic_sprite_main			;$B3A450   |> If zinger/flitter above floor dont crush, do normal logic
 	LDA.w sprite.state,y			;$B3A452   |\ Get zinger/flitter state
 	BNE generic_sprite_main			;$B3A455   |/ If state isnt idle then resume normal enemy logic
 	JMP .crush_flying_sprite		;$B3A457  /> Else crush the zinger/flitter
@@ -4892,7 +4892,7 @@ zinger_main:
 	JSL check_throwable_collision_global	;$B3A48B   |/ Check throwable collision
 	BCS ..sprite_collided			;$B3A48F   |
 ..kong_sprite_collision_check			;	   |
-	JSL CODE_BCFB58				;$B3A491   |> Populate kong and sprite hitboxes
+	JSL get_current_sprite_clipping		;$B3A491   |> Populate kong and sprite hitboxes
 	LDY #$0008				;$B3A495   |\
 	LDA [current_sprite_constants],y	;$B3A498   |/ Get sprite collision attributes
 	JSL CODE_BEBE8B				;$B3A49A   |> Check kong collision
@@ -4917,9 +4917,9 @@ zinger_main:
 	BEQ ..defeat_sprite			;$B3A4BF  \> If sprite can be defeated then kill it
 	CMP #$0002				;$B3A4C1   |\
 	BCC ..failed_defeat			;$B3A4C4   |/ If return status was 0001 then we couldnt defeat the enemy
-	LDY #$0012				;$B3A4C6   |\ Else an alternate event occurred from collision (like knockback)
+	LDY #$0012				;$B3A4C6   |\ Else alternate collision event (like knockback)
 	LDA [current_sprite_constants],y	;$B3A4C9   | | Get alternate collision animation
-	BEQ ..animation_and_movement_update	;$B3A4CB   |/ If no alternate collision animation defined, dont apply an animation
+	BEQ ..animation_and_movement_update	;$B3A4CB   |/ If no alt collision anim defined, dont apply an animation
 	JSL set_sprite_animation		;$B3A4CD   |> Set animation
 	LDX current_sprite			;$B3A4D1   |> Get current sprite
 	LDY #$0014				;$B3A4D3   |\
@@ -5032,7 +5032,7 @@ zinger_main:
 	STA current_sprite_constants		;$B3A59E   |/
 	LDY #$000A				;$B3A5A0   |\
 	LDA [current_sprite_constants],y	;$B3A5A3   | | Get death animation from constants
-	BEQ ..done_processing			;$B3A5A5   |/ If no death animation is defined then done processing sprite
+	BEQ ..done_processing			;$B3A5A5   |/ If no death anim is defined, done processing sprite
 	JSR defeat_sprite_using_animation	;$B3A5A7   |> Defeat sprite using animation
 ..done_processing				;	   |
 	JMP sprite_return_handle_despawn	;$B3A5AA  /> Done processing sprite
@@ -5102,18 +5102,18 @@ CODE_B3A600:
 
 CODE_B3A604:
 	CMP current_interaction			;$B3A604  \ \
-	BEQ .update_interaction_variable	;$B3A607   |/ If the interaction is already happening then dont apply it again
-	PHY					;$B3A609   |> Preserve extra interaction variable (most likely X velocity)
+	BEQ .update_interaction_variable	;$B3A607   |/ If the interaction is already applied, dont apply it again
+	PHY					;$B3A609   |> Preserve extra interaction variable
 	JSL set_player_interaction_global	;$B3A60A   |> Apply interaction
 	PLY					;$B3A60E   |> Recover extra interaction variable
-	BCS .return				;$B3A60F   |> If interaction wasnt applied then dont apply knockback velocity
+	BCS .return				;$B3A60F   |> If interaction wasnt applied, dont apply knockback speed
 .update_interaction_variable			;	   |
 	TYA					;$B3A611   |> Transfer interaction variable to A
 	PHX					;$B3A612   |
 	LDX colliding_sprite			;$B3A613   |> Get sprite we collided with
 	BIT sprite.oam_property,x		;$B3A615   |
 	PLX					;$B3A617   |> Recover sprite that triggered knockback
-	BVC .no_flip				;$B3A618   |> If collided sprite was facing right then dont invert the velocity
+	BVC .no_flip				;$B3A618   |> If collided sprite facing right, dont invert the velocity
 	EOR #$FFFF				;$B3A61A   |\ Invert X velocity
 	INC A					;$B3A61D   |/
 .no_flip					;	   |
@@ -5154,13 +5154,13 @@ make_sprite_fall_off_screen:
 	BCC .done_processing			;$B3A65D   |/ If sprite is on screen then skip splashing
 	LDA main_level.effects			;$B3A65F   |\
 	AND #!offscreen_water_splash_effect	;$B3A662   | |
-	BNE .handle_splashing			;$B3A665   |/ If sprite splash level effect is enabled then handle splashing
+	BNE .handle_splashing			;$B3A665   |/ If sprite splash level effect is enabled, handle splashing
 	JSL delete_sprite_handle_deallocation	;$B3A667   |> Else despawn sprite
 .done_processing				;	   |
 	JML [sprite_return_address]		;$B3A66B  /
 
 .handle_splashing
-	JSL CODE_BCFB58				;$B3A66E  \
+	JSL get_current_sprite_clipping		;$B3A66E  \
 	JSL CODE_BCFEE0				;$B3A672   |
 	LDA $DF					;$B3A676   |
 	SEC					;$B3A678   |
@@ -5179,7 +5179,7 @@ ship_water_splash_main:
 	LDX current_sprite			;$B3A693  \
 	LDA sprite.x_position,x			;$B3A695   |
 	SEC					;$B3A697   |
-	SBC $17BA				;$B3A698   |
+	SBC screen_scroll_x_position		;$B3A698   |
 	CLC					;$B3A69B   |
 	ADC #$0020				;$B3A69C   |
 	CMP #$0140				;$B3A69F   |
@@ -5217,7 +5217,7 @@ CODE_B3A6D5:					;	   |
 CODE_B3A6DC:
 	LDA contact_flash_x_position		;$B3A6DC  \
 	SEC					;$B3A6DF   |
-	SBC $17BA				;$B3A6E0   |
+	SBC screen_scroll_x_position		;$B3A6E0   |
 	CLC					;$B3A6E3   |
 	ADC #$0020				;$B3A6E4   |
 	CMP #$0140				;$B3A6E7   |
@@ -5237,7 +5237,7 @@ CODE_B3A707:					;	   |
 	LDX alternate_sprite			;$B3A70B   |
 	LDA #$0220				;$B3A70D   |
 	SEC					;$B3A710   |
-	SBC $17C0				;$B3A711   |
+	SBC screen_scroll_y_position		;$B3A711   |
 	BPL CODE_B3A719				;$B3A714   |
 	LDA #$0000				;$B3A716   |
 CODE_B3A719:					;	   |
@@ -5291,7 +5291,7 @@ click_clack_main:
 	LDA #$0118				;$B3A755   |\
 	JSL check_throwable_collision_global	;$B3A758   |/ Check throwable collision
 	BCS ..sprite_collided			;$B3A75C   |
-	JSL CODE_BCFB58				;$B3A75E   |> Populate kong and sprite hitboxes
+	JSL get_current_sprite_clipping		;$B3A75E   |> Populate kong and sprite hitboxes
 	LDA #$5438				;$B3A762   |\
 	JSL CODE_BEBE8B				;$B3A765   |/ Check kong collision with flags
 	BCS ..sprite_collided			;$B3A769   |> If collided with kong then handle stunning
@@ -5301,15 +5301,15 @@ click_clack_main:
 	JMP sprite_return_handle_despawn	;$B3A773  /> Done processing sprite
 
 ..sprite_collided
-	BEQ ..defeat_click_clack		;$B3A776  \> If click-clack is being defeated then apply velocities and kill it
+	BEQ ..defeat_click_clack		;$B3A776  \> If click-clack is being defeated, apply speed and kill it
 	CMP #$0001				;$B3A778   |\
-	BEQ ..animation_and_movement_update	;$B3A77B   |/ If the collision hurt the attacking sprite, continue normal logic
+	BEQ ..animation_and_movement_update	;$B3A77B   |/ If the collision hurt the attacker, continue normal logic
 	%lda_sound(5, click_clack_hit)		;$B3A77D   |\ Else stun click-clack
 	JSL queue_sound_effect			;$B3A780   |/ Play squish sound
 	LDX colliding_sprite			;$B3A784   |> Get attacking sprite
 	LDA #$0100				;$B3A786   |> Prepare a X velocity to apply to click-clack
 	BIT sprite.oam_property,x		;$B3A789   |\
-	BVC ..no_flip				;$B3A78B   |/ If attacking sprite is facing right then dont invert x velocity
+	BVC ..no_flip				;$B3A78B   |/ If attacking sprite is facing right, dont invert x speed
 	LDA #$FF00				;$B3A78D   |> Else invert X velocity
 ..no_flip					;	   |
 	LDX current_sprite			;$B3A790   |> Get click-clack sprite
@@ -5317,13 +5317,13 @@ click_clack_main:
 	STA sprite.x_speed,x			;$B3A794   |> Apply current X velocity
 	LDA #$FA00				;$B3A796   |\ Prepare a Y velocity to apply to click-clack
 	STA sprite.y_speed,x			;$B3A799   |/ Apply current Y velocity
-	LDA #$001E				;$B3A79B   |> Knockback interaction (fails to actually apply in v0 and v1)
+	LDA #$001E				;$B3A79B   |> Knockback interaction (Bug: fails to actually apply)
 if !version == 1				;	   |
 	LDA #$FF00				;$B3A79E   |> Was probably intended to be a knockback velocity
 else						;	   |
 	LDY #$FF00				;$B3A79E   |> Was probably intended to be a knockback velocity
 endif						;	   |
-	JSR CODE_B3A604				;$B3A7A1   |> Apply knockback to attacking sprite (already done in collision)
+	JSR CODE_B3A604				;$B3A7A1   |> Apply knockback to attacker (already done in collision)
 	LDY #$0164				;$B3A7A4   |> Click-clack hurt animation
 	LDA #$0002				;$B3A7A7   |> Stunned in air
 	JMP set_state_and_animation		;$B3A7AA  /> Apply state and animation to click-clack
@@ -5340,7 +5340,7 @@ endif						;	   |
 	LDX current_sprite			;$B3A7C1   |> Get click-clack sprite
 	LDA sprite.animation_id,x		;$B3A7C3   |\
 	CMP #$0164				;$B3A7C5   | | Stunned in air
-	BEQ ..done_processing_sprite		;$B3A7C8   |/ If still using stunned in air animation then done processing
+	BEQ ..done_processing_sprite		;$B3A7C8   |/ If still using stunned in air anim, done processing
 	INC sprite.state,x			;$B3A7CA   |> Update state to stunned on ground
 	LDA #$0001				;$B3A7CC   |\
 	ORA sprite.interaction_flags,x		;$B3A7CF   | | Make it so click-clack can be picked up by kong
@@ -5360,7 +5360,7 @@ endif						;	   |
 	BEQ ..not_picked_up			;$B3A7E7   |/ If wasnt just put down then continue normal logic
 	LDA #$0004				;$B3A7E9   |\
 	STA sprite.state,x			;$B3A7EC   |/ Set carried state
-	LDA #$FFFC				;$B3A7EE   |\ Disable being picked up by kong and use of platform sprites
+	LDA #$FFFC				;$B3A7EE   |\ Disable picking up by kong and use of platform sprites
 	AND sprite.interaction_flags,x		;$B3A7F1   | |
 	STA sprite.interaction_flags,x		;$B3A7F3   |/
 	LDY #$000A				;$B3A7F5   |\
@@ -5370,7 +5370,7 @@ endif						;	   |
 	LDA #$0118				;$B3A7FC   |\
 	JSL check_throwable_collision_global	;$B3A7FF   |/ Check throwable collision
 	BCS ..defeat_click_clack		;$B3A803   |> If collision was detected then defeat click-clack
-	JSL CODE_BCFB58				;$B3A805   |> Populate kong and sprite hitboxes
+	JSL get_current_sprite_clipping		;$B3A805   |> Populate kong and sprite hitboxes
 	LDA #$542C				;$B3A809   |\
 	JSL CODE_BEBE8B				;$B3A80C   |/ Check kong collision with flags
 	BCS ..defeat_click_clack		;$B3A810   |> If collision was detected then defeat click-clack
@@ -5410,23 +5410,23 @@ endif						;	   |
 ..still_stunned
 	LDA #$0167				;$B3A858  \ \
 	CMP sprite.animation_id,x		;$B3A85B   | |
-	BNE ..not_stunned			;$B3A85D   |/ If stun recover animation isnt playing continue normal logic
+	BNE ..not_stunned			;$B3A85D   |/ If stun recover anim isnt playing, continue normal logic
 	LDA sprite.y_speed,x			;$B3A85F   |\
 	BPL ..not_stunned			;$B3A861   |/ If Y velocity is downward continue normal logic
 	CMP #$FC00				;$B3A863   |\
-	BCS ..not_stunned			;$B3A866   |/ If click-clack isnt moving upward fast enough then normal logic
+	BCS ..not_stunned			;$B3A866   |/ If click-clack isnt moving up fast enough, do normal logic
 	STZ current_held_sprite			;$B3A868   |> Else free click-clack, clear held sprite
 	LDA #$000F				;$B3A86B   |\
 	STA $4E,x				;$B3A86E   |/ Set a small stun timer
 	LDA #$0007				;$B3A870   |\
 	STA sprite.state,x			;$B3A873   |/ Set stun recover state
-	LDA #$001E				;$B3A875   |> Knockback interaction (fails to actually apply in v0 and v1)
+	LDA #$001E				;$B3A875   |> Knockback interaction (Bug: fails to actually apply)
 if !version == 1				;	   |
 	LDA #$FE80				;$B3A878   |> Was probably intended to be a knockback velocity
 else						;	   |
 	LDY #$FE80				;$B3A878   |> Was probably intended to be a knockback velocity
 endif						;	   |
-	JSR CODE_B3A604				;$B3A87B   |> Apply knockback to attacking sprite (already done in collision)
+	JSR CODE_B3A604				;$B3A87B   |> Apply knockback to attacker (already done in collision)
 	JMP sprite_return_handle_despawn	;$B3A87E  /> Done processing sprite
 
 ..not_stunned
@@ -5458,14 +5458,14 @@ endif						;	   |
 
 ..still_held
 	JSR update_held_position_no_return	;$B3A8BA  \> Face click-clack same direction as kong and update position
-	JSL CODE_BCFB58				;$B3A8BD   |> Populate kong and sprite hitboxes
+	JSL get_current_sprite_clipping		;$B3A8BD   |> Populate kong and sprite hitboxes
 	LDY active_kong_sprite			;$B3A8C1   |\
 	LDA.w sprite.type,y			;$B3A8C4   | |
 	CMP #!sprite_dixie_kong			;$B3A8C7   | | Check if sprite id is dixie
 	BNE ..kong_is_diddy			;$B3A8CA   |/ If not dixie then continue
 	LDA sprite_clipping[6].bottom		;$B3A8CC   |\ Get bottom clipping position of held click-clack
 	SEC					;$B3A8CF   | |
-	SBC #$0008				;$B3A8D0   | | Make hitbox thinner on the Y axis by raising the bottom clipping
+	SBC #$0008				;$B3A8D0   | | Make hitbox shorter by raising the bottom clipping
 	STA sprite_clipping[6].bottom		;$B3A8D3   | | Apply new clipping position
 	STA sprite_clipping[8].bottom		;$B3A8D6   |/
 ..kong_is_diddy					;	   |
@@ -5484,7 +5484,7 @@ endif						;	   | |
 
 ..no_collision
 	JSL process_sprite_animation		;$B3A8F1  \ \ Process animation
-	JMP sprite_return_handle_despawn	;$B3A8F5  / / Done processing sprite
+	JMP sprite_return_handle_despawn	;$B3A8F5  /_/ Done processing sprite
 
 .thrown_state
 	JSL process_sprite_animation		;$B3A8F8  \> Process animation
@@ -5517,7 +5517,7 @@ endif						;	   | |
 	LDA #$0118				;$B3A934  \ \
 	JSL check_throwable_collision_global	;$B3A937   |/ Check throwable collision
 	BCS ..collided				;$B3A93B   |> If thrown click-clack collided then defeat it
-	JSL CODE_BCFB58				;$B3A93D   |> Populate kong and sprite hitboxes
+	JSL get_current_sprite_clipping		;$B3A93D   |> Populate kong and sprite hitboxes
 	LDA #$1020				;$B3A941   |\
 	LDY #$0010				;$B3A944   | |
 	JSL CODE_BEBD8E				;$B3A947   |/ Check if held click-clack collided with an enemy
@@ -5534,7 +5534,7 @@ endif						;	   | |
 	LDA #$0118				;$B3A95C  \ \
 	JSL check_throwable_collision_global	;$B3A95F   |/ Check throwable collision
 	BCS ..collided				;$B3A963   |> If thrown click-clack collided then defeat it
-	JSL CODE_BCFB58				;$B3A965   |> Populate kong and sprite hitboxes
+	JSL get_current_sprite_clipping		;$B3A965   |> Populate kong and sprite hitboxes
 	LDA #$1020				;$B3A969   |\
 	LDY #$0008				;$B3A96C   | |
 	JSL CODE_BEBD8E				;$B3A96F   |/ Check if held click-clack collided with an enemy
@@ -5589,7 +5589,7 @@ endif						;	   | |
 	LDA #$0118				;$B3A9D8  \ \
 	JSL check_throwable_collision_global	;$B3A9DB   |/ Check throwable collision
 	BCS ..collided				;$B3A9DF   |
-	JSL CODE_BCFB58				;$B3A9E1   |> Populate kong and sprite hitboxes
+	JSL get_current_sprite_clipping		;$B3A9E1   |> Populate kong and sprite hitboxes
 	LDA #$542B				;$B3A9E5   |\
 	JSL CODE_BEBE8B				;$B3A9E8   |/ Check kong collision with flags
 	BCC ..recover				;$B3A9EC   |> If no collision was detected then start recovering
@@ -5598,13 +5598,13 @@ endif						;	   | |
 	LDX current_sprite			;$B3A9F0   |> Get click-clack sprite
 	LDA #$003C				;$B3A9F2   |\
 	STA $4E,x				;$B3A9F5   |/ Set stun timer
-	LDA #$001E				;$B3A9F7   |> Knockback interaction (fails to actually apply in v0 and v1)
+	LDA #$001E				;$B3A9F7   |> Knockback interaction (Bug: fails to actually apply)
 if !version == 1				;	   |
 	LDA #$FF00				;$B3A9FA   |> Was probably intended to be a knockback velocity
 else						;	   |
 	LDY #$FF00				;$B3A9FA   |> Was probably intended to be a knockback velocity
 endif						;	   |
-	JSR CODE_B3A604				;$B3A9FD   |> Apply knockback to attacking sprite (already done in collision)
+	JSR CODE_B3A604				;$B3A9FD   |> Apply knockback to attacker (already done in collision)
 	BRA ..recover				;$B3AA00  /
 
 ..defeated
@@ -5622,7 +5622,7 @@ endif						;	   |
 	BNE ..done_processing			;$B3AA1D   |/ If not then done processing
 	LDA $48,x				;$B3AA1F   |> Get walking speed
 	BIT sprite.oam_property,x		;$B3AA21   |\
-	BVC ..no_flip				;$B3AA23   |/ If click-clack is facing right then dont invert walking speed
+	BVC ..no_flip				;$B3AA23   |/ If click-clack is facing right, dont invert walking speed
 	EOR #$FFFF				;$B3AA25   |\ Else invert walking speed
 	INC A					;$B3AA28   |/
 ..no_flip					;	   |
@@ -5664,7 +5664,7 @@ set_state_and_animation:
 defeat_click_clack_with_velocity:
 	LDX colliding_sprite			;$B3AA64  \ \ Get attacking sprite
 	BIT sprite.oam_property,x		;$B3AA66   | |
-	BVC defeat_click_clack_no_flip_velocity	;$B3AA68   |/ If attacking sprite is facing right then dont invert X velocity
+	BVC defeat_click_clack_no_flip_velocity	;$B3AA68   |/ If attacker is facing right, dont invert X velocity
 	EOR #$FFFF				;$B3AA6A   |\ Else invert X velocity
 	INC A					;$B3AA6D   |/
 defeat_click_clack_no_flip_velocity:		;	   |
@@ -5742,7 +5742,7 @@ CODE_B3AAE1:					;	   |
 	BEQ CODE_B3AB17				;$B3AAF6   |
 	CMP #$A000				;$B3AAF8   |
 	BNE CODE_B3AB0A				;$B3AAFB   |
-	JSL CODE_BCFB58				;$B3AAFD   |
+	JSL get_current_sprite_clipping		;$B3AAFD   |
 	LDA #$5004				;$B3AB01   |
 	JSL CODE_BEBE8B				;$B3AB04   |
 	BCS CODE_B3AB28				;$B3AB08   |
@@ -6144,7 +6144,7 @@ CODE_B3AE12:					;	   |
 	RTS					;$B3AE15  /
 
 CODE_B3AE16:
-	JSL CODE_BCFB58				;$B3AE16  \
+	JSL get_current_sprite_clipping		;$B3AE16  \
 	LDX current_sprite			;$B3AE1A   |
 	LDA invincibility_sprite		;$B3AE1C   |
 	BEQ CODE_B3AE2B				;$B3AE1F   |
@@ -6648,7 +6648,7 @@ CODE_B3B194:
 	LDA #$0118				;$B3B19B   |
 	JSL check_throwable_collision_global	;$B3B19E   |
 	BCS CODE_B3B1C2				;$B3B1A2   |
-	JSL CODE_BCFB58				;$B3B1A4   |
+	JSL get_current_sprite_clipping		;$B3B1A4   |
 	LDA #$577B				;$B3B1A8   |
 	LDY sprite.display_mode,x		;$B3B1AB   |
 	BEQ CODE_B3B1B9				;$B3B1AD   |
@@ -7034,7 +7034,7 @@ CODE_B3B41D:
 	STA $0D4E				;$B3B439   |
 	LDA $0915				;$B3B43C   |
 	BNE CODE_B3B452				;$B3B43F   |
-	JSL CODE_BCFB58				;$B3B441   |
+	JSL get_current_sprite_clipping		;$B3B441   |
 	LDA #$0000				;$B3B445   |
 	JSL CODE_BEBE8B				;$B3B448   |
 	BCC CODE_B3B452				;$B3B44C   |
@@ -7165,7 +7165,7 @@ CODE_B3B536:					;	   |
 	LDA #$0118				;$B3B536   |
 	JSL check_throwable_collision_global	;$B3B539   |
 	BCS CODE_B3B54C				;$B3B53D   |
-	JSL CODE_BCFB58				;$B3B53F   |
+	JSL get_current_sprite_clipping		;$B3B53F   |
 	LDA #$1400				;$B3B543   |
 	JSL CODE_BEBE8B				;$B3B546   |
 	BCC CODE_B3B551				;$B3B54A   |
@@ -7187,7 +7187,7 @@ CODE_B3B557:
 	BNE CODE_B3B5A8				;$B3B567   |
 	LDA invincibility_sprite		;$B3B569   |
 	BNE CODE_B3B5A8				;$B3B56C   |
-	JSL CODE_BCFB58				;$B3B56E   |
+	JSL get_current_sprite_clipping		;$B3B56E   |
 	LDA #$0000				;$B3B572   |
 	JSL CODE_BEBE8B				;$B3B575   |
 CODE_B3B579:					;	   |
@@ -7219,7 +7219,7 @@ CODE_B3B5B4:
 	LDA #$0118				;$B3B5B4  \
 	JSL check_throwable_collision_global	;$B3B5B7   |
 	BCS CODE_B3B5CA				;$B3B5BB   |
-	JSL CODE_BCFB58				;$B3B5BD   |
+	JSL get_current_sprite_clipping		;$B3B5BD   |
 	LDA #$1400				;$B3B5C1   |
 	JSL CODE_BEBE8B				;$B3B5C4   |
 	BCC CODE_B3B5CF				;$B3B5C8   |
@@ -7717,7 +7717,7 @@ flotsam_main:
 	LDA #$0118				;$B3B913   |
 	JSL check_throwable_collision_global	;$B3B916   |
 	BCS ..collision_happened		;$B3B91A   | If collision happened,
-	JSL CODE_BCFB58				;$B3B91C   | Else populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3B91C   | Else populate sprite clipping
 	LDA #$1400				;$B3B920   |
 	JSL CODE_BEBE8B				;$B3B923   | Check complex player collision
 	BCS ..collision_happened		;$B3B927   |
@@ -7759,7 +7759,7 @@ CODE_B3B962:					;	   |
 	LDA #$0118				;$B3B962   |
 	JSL check_throwable_collision_global	;$B3B965   |
 	BCS CODE_B3B978				;$B3B969   |
-	JSL CODE_BCFB58				;$B3B96B   |
+	JSL get_current_sprite_clipping		;$B3B96B   |
 	LDA #$1400				;$B3B96F   |
 	JSL CODE_BEBE8B				;$B3B972   |
 	BCC CODE_B3B97D				;$B3B976   |
@@ -7811,7 +7811,7 @@ CODE_B3B9BE:					;	   |
 	LDA #$0118				;$B3B9BE   |
 	JSL check_throwable_collision_global	;$B3B9C1   |
 	BCS CODE_B3B9D4				;$B3B9C5   |
-	JSL CODE_BCFB58				;$B3B9C7   |
+	JSL get_current_sprite_clipping		;$B3B9C7   |
 	LDA #$1400				;$B3B9CB   |
 	JSL CODE_BEBE8B				;$B3B9CE   |
 	BCC CODE_B3B9D9				;$B3B9D2   |
@@ -7842,7 +7842,7 @@ CODE_B3BA04:
 	LDA #$0118				;$B3BA04  \
 	JSL check_throwable_collision_global	;$B3BA07   |
 	BCS CODE_B3BA1A				;$B3BA0B   |
-	JSL CODE_BCFB58				;$B3BA0D   |
+	JSL get_current_sprite_clipping		;$B3BA0D   |
 	LDA #$1400				;$B3BA11   |
 	JSL CODE_BEBE8B				;$B3BA14   |
 	BCC CODE_B3BA1C				;$B3BA18   |
@@ -7873,7 +7873,7 @@ CODE_B3BA48:
 	LDA #$0118				;$B3BA48  \
 	JSL check_throwable_collision_global	;$B3BA4B   |
 	BCS CODE_B3BA5E				;$B3BA4F   |
-	JSL CODE_BCFB58				;$B3BA51   |
+	JSL get_current_sprite_clipping		;$B3BA51   |
 	LDA #$1400				;$B3BA55   |
 	JSL CODE_BEBE8B				;$B3BA58   |
 	BCC CODE_B3BA60				;$B3BA5C   |
@@ -8013,7 +8013,7 @@ CODE_B3BB31:
 	BCC CODE_B3BB3C				;$B3BB38   |
 	BEQ CODE_B3BB49				;$B3BB3A   |
 CODE_B3BB3C:					;	   |
-	JSL CODE_BCFB58				;$B3BB3C   |
+	JSL get_current_sprite_clipping		;$B3BB3C   |
 	LDA #$5428				;$B3BB40   |
 	JSL CODE_BEBE8B				;$B3BB43   |
 	BCC CODE_B3BB4E				;$B3BB47   |
@@ -8346,7 +8346,7 @@ CODE_B3BD78:					;	   |
 CODE_B3BD83:
 	BIT sprite.oam_property,x		;$B3BD83  \
 	BVC CODE_B3BD95				;$B3BD85   |
-	LDA $17BA				;$B3BD87   |
+	LDA screen_scroll_x_position		;$B3BD87   |
 	CLC					;$B3BD8A   |
 	ADC #$0120				;$B3BD8B   |
 	CMP sprite.x_position,x			;$B3BD8E   |
@@ -8354,7 +8354,7 @@ CODE_B3BD83:
 	JML [sprite_return_address]		;$B3BD92  /
 
 CODE_B3BD95:
-	LDA $17BA				;$B3BD95  \
+	LDA screen_scroll_x_position		;$B3BD95  \
 	SEC					;$B3BD98   |
 	SBC #$0020				;$B3BD99   |
 	CMP sprite.x_position,x			;$B3BD9C   |
@@ -8385,7 +8385,7 @@ CODE_B3BDC7:
 	LDA #$0118				;$B3BDC7  \
 	JSL check_throwable_collision_global	;$B3BDCA   |
 	BCS CODE_B3BDDE				;$B3BDCE   |
-	JSL CODE_BCFB58				;$B3BDD0   |
+	JSL get_current_sprite_clipping		;$B3BDD0   |
 	LDA #$5428				;$B3BDD4   |
 	JSL CODE_BEBE8B				;$B3BDD7   |
 	BCS CODE_B3BDDE				;$B3BDDB   |
@@ -8500,7 +8500,7 @@ kannon_main:
 	LDA #$0118				;$B3BE92  \ Get collision flags
 	JSL check_throwable_collision_global	;$B3BE95   |
 	BCS ..collision_happened		;$B3BE99   |
-	JSL CODE_BCFB58				;$B3BE9B   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3BE9B   | Populate sprite clipping
 	LDA #$5428				;$B3BE9F   | Get collision flags
 	JSL CODE_BEBE8B				;$B3BEA2   | Check complex player collision
 	BCS ..collision_happened		;$B3BEA6   | If collision happened check if should kill kannon
@@ -8758,7 +8758,7 @@ CODE_B3C07D:
 	LDA sprite.y_position,x			;$B3C083   |
 	SEC					;$B3C085   |
 	SBC #$00E0				;$B3C086   |
-	CMP $17C0				;$B3C089   |
+	CMP screen_scroll_y_position		;$B3C089   |
 	BCS CODE_B3C091				;$B3C08C   |
 	JML [sprite_return_address]		;$B3C08E  /
 
@@ -8843,12 +8843,12 @@ CODE_B3C126:					;	   |
 	BMI CODE_B3C142				;$B3C134   |
 	SEC					;$B3C136   |
 	SBC #$0100				;$B3C137   |
-	CMP $17BA				;$B3C13A   |
+	CMP screen_scroll_x_position		;$B3C13A   |
 	BCS CODE_B3C14A				;$B3C13D   |
 	JML [sprite_return_address]		;$B3C13F  /
 
 CODE_B3C142:
-	CMP $17BA				;$B3C142  \
+	CMP screen_scroll_x_position		;$B3C142  \
 	BCC CODE_B3C14A				;$B3C145   |
 	JML [sprite_return_address]		;$B3C147  /
 
@@ -8937,7 +8937,7 @@ CODE_B3C1DD:
 	LDA #$0018				;$B3C1E4   |
 	JSL check_throwable_collision_global	;$B3C1E7   |
 	BCS CODE_B3C208				;$B3C1EB   |
-	JSL CODE_BCFB58				;$B3C1ED   |
+	JSL get_current_sprite_clipping		;$B3C1ED   |
 	LDA #$0400				;$B3C1F1   |
 	LDY #$0008				;$B3C1F4   |
 	JSL CODE_BEBD8E				;$B3C1F7   |
@@ -9086,18 +9086,18 @@ water_level_changer_main:
 .CODE_B3C301:					;	   | Piracy check
 	LDY #$8080				;$B3C301   |\ Y = address to checksum (address so far: $??8080)
 	PHY					;$B3C304   | |
-	PLB					;$B3C305   |/ Also use Y as the bank for the checksum address (address so far: $808080)
+	PLB					;$B3C305   |/ Also use Y as bank for checksum address (so far: $808080)
 	LDX #$0035				;$B3C306   |> Number of bytes to checksum
 	TYA					;$B3C309   |
 	CLC					;$B3C30A   |
 .next_byte					;	   |\ Checksum data from $80848B to $8084C2
-	ADC $040B,y				;$B3C30B   | | $808080 + $040B = $80848B (this is our actual address to run the checksum on)
+	ADC $040B,y				;$B3C30B   | | $808080 + $040B = $80848B (Actual address to checksum)
 	INY					;$B3C30E   | |
 	DEX					;$B3C30F   | |
-	BPL .next_byte				;$B3C310   |/ Move onto next byte if we haven't reached the end of the data
+	BPL .next_byte				;$B3C310   |/ Moveto next byte if we haven't reached end of the data
 	PLB					;$B3C312   |
-	CMP #$20CB				;$B3C313   |\ This is the checksum to check against
-	BNE .delete_water_level_changer_sprite	;$B3C316   |/ If checksum doesn't match the anti-piracy routine was tampered. Delete water trigger sprite
+	CMP #$20CB				;$B3C313   |\ If checksum doesnt match, anti-piracy routine was tampered
+	BNE .delete_water_level_changer_sprite	;$B3C316   |/ Delete water trigger sprite
 	LDX current_sprite			;$B3C318   |
 	LDA $4E,x				;$B3C31A   |
 	STA $0D52				;$B3C31C   |
@@ -9130,7 +9130,7 @@ bananas_main:
 
 CODE_B3C350:
 	JSL process_sprite_animation		;$B3C350  \ Process animation
-	JSL CODE_BCFB58				;$B3C354   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3C354   | Populate sprite clipping
 	LDA #$1529				;$B3C358   |
 	JSL CODE_BEBE6D				;$B3C35B   | Check simple player collision
 	BCS CODE_B3C3AC				;$B3C35F   | 
@@ -9202,7 +9202,7 @@ CODE_B3C3DE:					;	   |
 	STA sprite.display_mode,x		;$B3C3E6   |
 CODE_B3C3E8:					;	   |
 	JSL process_sprite_animation		;$B3C3E8   | Process animation
-	JSL CODE_BCFB58				;$B3C3EC   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3C3EC   | Populate sprite clipping
 	LDA #$1529				;$B3C3F0   |
 	JSL CODE_BEBE6D				;$B3C3F3   | Check simple player collision
 	BCS CODE_B3C3AC				;$B3C3F7   |
@@ -9225,7 +9225,7 @@ extra_life_balloon_main:
 	LDA time_stop_flags			;$B3C40E  \ Get timestop flags
 	BIT #$0004				;$B3C411   |
 	BNE .return				;$B3C414   | If timestop running, return
-	JSL CODE_BCFB58				;$B3C416   | Else populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3C416   | Else populate sprite clipping
 	JSL CODE_BEBE6D				;$B3C41A   | Check simple player collision
 	BCS .collect_balloon			;$B3C41E   | If collision happened, collect the balloon
 .handle_floating:				;	   |
@@ -9263,7 +9263,7 @@ extra_life_balloon_main:
 	LDA #$0010				;$B3C466  \
 	BIT collected_kong_letters		;$B3C469   | Check if balloon was already collected
 	BNE .delete_balloon_sprite		;$B3C46C   | If yes, delete it
-	JSL CODE_BCFB58				;$B3C46E   | Else populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3C46E   | Else populate sprite clipping
 	JSL CODE_BEBE6D				;$B3C472   | Check simple player collision
 	BCC .handle_floating			;$B3C476   | If no collision, handle floating
 	LDA #$0010				;$B3C478   |
@@ -9495,12 +9495,12 @@ CODE_B3C62A:
 	LDA #$0118				;$B3C634   |
 	JSL check_throwable_collision_global	;$B3C637   |
 	BCS CODE_B3C65A				;$B3C63B   |
-	JSL CODE_BCFB58				;$B3C63D   |
+	JSL get_current_sprite_clipping		;$B3C63D   |
 	LDA sprite.state,x			;$B3C641   |
 	CMP #$0004				;$B3C643   |
 	BNE CODE_B3C64F				;$B3C646   |
 	LDA #$000D				;$B3C648   |
-	JSL CODE_BCFB7A				;$B3C64B   |
+	JSL get_sprite_special_clipping_slot_1	;$B3C64B   |
 CODE_B3C64F:					;	   |
 	LDA $0DC6				;$B3C64F   |
 	JSL CODE_BEBE8B				;$B3C652   |
@@ -9725,7 +9725,7 @@ CODE_B3C7C7:
 CODE_B3C7D1:					;	   |
 	JSR CODE_B3C878				;$B3C7D1   |
 	BCS CODE_B3C80E				;$B3C7D4   |
-	LDA $17C0				;$B3C7D6   |
+	LDA screen_scroll_y_position		;$B3C7D6   |
 	CMP $4C,x				;$B3C7D9   |
 	BCC CODE_B3C7E6				;$B3C7DB   |
 	LDA $4E,x				;$B3C7DD   |
@@ -9817,7 +9817,7 @@ CODE_B3C878:
 	LDA #$0118				;$B3C87F   |
 	JSL check_throwable_collision_global	;$B3C882   |
 	BCS CODE_B3C897				;$B3C886   |
-	JSL CODE_BCFB58				;$B3C888   |
+	JSL get_current_sprite_clipping		;$B3C888   |
 	LDA #$5428				;$B3C88C   |
 	JSL CODE_BEBE8B				;$B3C88F   |
 	BCS CODE_B3C897				;$B3C893   |
@@ -9974,7 +9974,7 @@ CODE_B3C9A1:
 	LDA #$0018				;$B3C9A1  \
 	JSL check_throwable_collision_global	;$B3C9A4   |
 	BCS CODE_B3C9B7				;$B3C9A8   |
-	JSL CODE_BCFB58				;$B3C9AA   |
+	JSL get_current_sprite_clipping		;$B3C9AA   |
 	LDA #$0000				;$B3C9AE   |
 	JSL CODE_BEBE8B				;$B3C9B1   |
 	BCC CODE_B3C9CA				;$B3C9B5   |
@@ -10045,7 +10045,7 @@ CODE_B3CA23:
 	LDA #$0118				;$B3CA23  \
 	JSL check_throwable_collision_global	;$B3CA26   |
 	BCS CODE_B3CA4D				;$B3CA2A   |
-	JSL CODE_BCFB58				;$B3CA2C   |
+	JSL get_current_sprite_clipping		;$B3CA2C   |
 	LDA #$1400				;$B3CA30   |
 	JSL CODE_BEBE8B				;$B3CA33   |
 	BCS CODE_B3CA4D				;$B3CA37   |
@@ -10168,7 +10168,7 @@ puftup_spikes_main:
 	LDY current_sprite			;$B3CB38  \ Get spike sprite
 	LDA.w sprite.constants_address,y	;$B3CB3A   |
 	STA current_sprite_constants		;$B3CB3D   | Set spike constants address
-	JSL CODE_BCFB58				;$B3CB3F   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3CB3F   | Populate sprite clipping
 	LDA #$0000				;$B3CB43   | Get collision flags (hurt player always)
 	JSL CODE_BEBE8B				;$B3CB46   | Check complex player collision
 	JSL process_current_movement		;$B3CB4A   |
@@ -10765,7 +10765,7 @@ CODE_B3CF41:
 	BCS CODE_B3CF7F				;$B3CF4B   |
 	JSR CODE_B3CFE6				;$B3CF4D   |
 	BCC CODE_B3CF5F				;$B3CF50   |
-	JSL CODE_BCFB58				;$B3CF52   |
+	JSL get_current_sprite_clipping		;$B3CF52   |
 	LDA $0DC6				;$B3CF56   |
 	JSL CODE_BEBE8B				;$B3CF59   |
 	BCS CODE_B3CF7F				;$B3CF5D   |
@@ -10778,7 +10778,7 @@ CODE_B3CF60:
 	BCS CODE_B3CF7F				;$B3CF67   |
 	JSR CODE_B3CFE6				;$B3CF69   |
 	BCC CODE_B3CF7E				;$B3CF6C   |
-	JSL CODE_BCFB58				;$B3CF6E   |
+	JSL get_current_sprite_clipping		;$B3CF6E   |
 	LDA #$5C00				;$B3CF72   |
 	LDY #$0010				;$B3CF75   |
 	JSL CODE_BEBE8E				;$B3CF78   |
@@ -11061,7 +11061,7 @@ CODE_B3D184:
 	LDA #$0118				;$B3D184  \
 	JSL check_throwable_collision_global	;$B3D187   |
 	BCS CODE_B3D19B				;$B3D18B   |
-	JSL CODE_BCFB58				;$B3D18D   |
+	JSL get_current_sprite_clipping		;$B3D18D   |
 	LDA #$5428				;$B3D191   |
 	JSL CODE_BEBE8B				;$B3D194   |
 	BCS CODE_B3D19B				;$B3D198   |
@@ -11236,7 +11236,7 @@ CODE_B3D2DB:
 	RTS					;$B3D2DC  /
 
 CODE_B3D2DD:
-	JSL CODE_BCFB58				;$B3D2DD  \
+	JSL get_current_sprite_clipping		;$B3D2DD  \
 	LDA #$0010				;$B3D2E1   |
 	PHK					;$B3D2E4   |
 	%return(CODE_B3D2EB)			;$B3D2E5   |
@@ -11424,7 +11424,7 @@ CODE_B3D44A:
 	LDA sprite.sub_state,x			;$B3D456   |
 	AND #$00FF				;$B3D458   |
 	BNE CODE_B3D469				;$B3D45B   |
-	JSL CODE_BCFB58				;$B3D45D   |
+	JSL get_current_sprite_clipping		;$B3D45D   |
 	LDA $0DC6				;$B3D461   |
 	JSL CODE_BEBE8B				;$B3D464   |
 CODE_B3D468:					;	   |
@@ -11472,7 +11472,7 @@ CODE_B3D485:
 CODE_B3D4AE:
 	LDX current_sprite			;$B3D4AE  \
 	STZ sprite.unknown_34,x			;$B3D4B0   |
-	JSL CODE_BCFB58				;$B3D4B2   |
+	JSL get_current_sprite_clipping		;$B3D4B2   |
 	LDA #$0002				;$B3D4B6   |
 	JSL check_for_sprite_point_collisions	;$B3D4B9   |
 	BCC CODE_B3D4CC				;$B3D4BD   |
@@ -11884,7 +11884,7 @@ krochead_switch_barrel_main:
 	INC sprite.state,x			;$B3D781   |
 .state_1:					;	   |
 	JSL process_sprite_animation		;$B3D783   |
-	JSL CODE_BCFB58				;$B3D787   |
+	JSL get_current_sprite_clipping		;$B3D787   |
 	JSL CODE_BEBE6D				;$B3D78B   |
 	BCC .state_2				;$B3D78F   |
 	LDA $42,x				;$B3D791   |
@@ -11948,7 +11948,7 @@ plus_and_minus_barrel_main:
 
 
 .state_0:
-	JSL CODE_BCFB58				;$B3D801  \
+	JSL get_current_sprite_clipping		;$B3D801  \
 	LDA #$1000				;$B3D805   |
 	LDY #$0010				;$B3D808   |
 	JSL CODE_BEBD8E				;$B3D80B   |
@@ -12006,7 +12006,7 @@ plus_and_minus_barrel_main:
 	JMP CODE_B3D8FD				;$B3D87E  /
 
 .state_1:
-	JSL CODE_BCFB58				;$B3D881  \
+	JSL get_current_sprite_clipping		;$B3D881  \
 	JSL CODE_BEBE6D				;$B3D885   |
 	BCS ..collision_happened		;$B3D889   |
 	JSL process_sprite_animation		;$B3D88B   |
@@ -12016,19 +12016,19 @@ plus_and_minus_barrel_main:
 	LDX current_sprite			;$B3D892  \
 	LDY ridden_skull_cart_sprite		;$B3D894   |
 	LDA $42,x				;$B3D897   |
-	CLC					;$B3D899   |
-	ADC.w sprite.max_y_speed,y		;$B3D89A   |
-	STA.w sprite.max_y_speed,y		;$B3D89D   | Bug: If skull kart sprite doesn't exist, this will write to the active frame counter
-	LDA.w sprite.max_x_speed,y		;$B3D8A0   |
-	CLC					;$B3D8A3   |
-	ADC $42,x				;$B3D8A4   |
-	STA.w sprite.max_x_speed,y		;$B3D8A6   | And to the low byte of temp_26
+	CLC					;$B3D899   |\
+	ADC.w sprite.max_y_speed,y		;$B3D89A   | | Bug: If skull cart doesn't exist...
+	STA.w sprite.max_y_speed,y		;$B3D89D   | | This will write to the active frame counter...
+	LDA.w sprite.max_x_speed,y		;$B3D8A0   | |
+	CLC					;$B3D8A3   | |
+	ADC $42,x				;$B3D8A4   | |
+	STA.w sprite.max_x_speed,y		;$B3D8A6   |/ And to the low byte of temp_26
 	%lda_sound(4, barrel_bad)		;$B3D8A9   |
 	JSL queue_sound_effect			;$B3D8AC   |
 	JMP CODE_B3D8FD				;$B3D8B0  /
 
 .state_2:
-	JSL CODE_BCFB58				;$B3D8B3  \
+	JSL get_current_sprite_clipping		;$B3D8B3  \
 	JSL CODE_BEBE6D				;$B3D8B7   |
 	BCS ..collision_happened		;$B3D8BB   |
 	JSL process_sprite_animation		;$B3D8BD   |
@@ -12121,7 +12121,7 @@ clapper_sprite_code:
 	LDA.w sprite.animation_id,y		;$B3D959   |\
 	CMP #$01B8				;$B3D95C   | |
 	BEQ .return				;$B3D95F   |/ If already clapping then skip collision check with kong
-	JSL CODE_BCFB58				;$B3D961   |\ Prepare hitbox for collision...
+	JSL get_current_sprite_clipping		;$B3D961   |\ Prepare hitbox for collision...
 	JSL CODE_BEBE6D				;$B3D965   |/ and check collision with player
 	BCC .return				;$B3D969   |> If no collision happened then return
 	LDA #$FE00				;$B3D96B   |\ Else apply a Y velocity to kong
@@ -12134,13 +12134,13 @@ clapper_sprite_code:
 	LDA.w sprite.animation_id,y		;$B3D979   |\
 	CMP #$01B8				;$B3D97C   |/ Check if in the clapping animation
 	BEQ .return				;$B3D97F   |> If already clapping then skip collision check with kong
-	JSL CODE_BCFB58				;$B3D981   |> Prepare hitbox for collision
+	JSL get_current_sprite_clipping		;$B3D981   |> Prepare hitbox for collision
 	LDX current_sprite			;$B3D985   |\
 	LDA sprite.oam_property,x		;$B3D987   | | Get clapper OAM properties...
-	STA $46,x				;$B3D989   |/ and preserve them (to retain facing direction when collision happens)
+	STA $46,x				;$B3D989   |/ and preserve them (to retain facing after collision)
 	LDA #$0CDC				;$B3D98B   |\
-	JSL CODE_BEBE8B				;$B3D98E   |/ Check for player collision with flags (Apply knockback if collided)
-	STA temp_32				;$B3D992   |> Store whatever value the above routine gives us into scratch ram
+	JSL CODE_BEBE8B				;$B3D98E   |/ Check player collision with flags (Knockback if collided)
+	STA temp_32				;$B3D992   |> Store result to scratch
 	BCS .collision_happened			;$B3D994   |> If collision happened
 .return						;	   |
 	JSL process_sprite_animation		;$B3D996   |> Process animations
@@ -12777,7 +12777,7 @@ CODE_B3DDBF:					;	   |
 	ASL A					;$B3DDCC   |
 	ASL A					;$B3DDCD   |
 	CLC					;$B3DDCE   |
-	ADC #$2D40				;$B3DDCF   | range/base graphic id?
+	ADC #$2D40				;$B3DDCF   | Could be a range/base graphic id
 	STA $1A,x				;$B3DDD2   |
 	LDY $4A,x				;$B3DDD4   |
 	LDA temp_33				;$B3DDD6   |
@@ -12958,16 +12958,16 @@ CODE_B3DF5F:
 	LDA #$0000				;$B3DF71   |\ Clear A and Carry so we can use them for XOR
 	CLC					;$B3DF74   |/
 .next_word					;	   |
-	EOR ($02,s),y				;$B3DF75   |\ XOR word at $8083F7+Y (this is the reset routine, we pushed its address to the stack)
+	EOR ($02,s),y				;$B3DF75   |\ XOR word at $8083F7+Y (reset routine pointer on stack)
 	ROR A					;$B3DF77   |/ Revolve XOR results to the right by 1 bit after every word
 	DEY					;$B3DF78   |\ Move to next word (move backwards by 2 bytes)
 	DEY					;$B3DF79   |/
-	BPL .next_word				;$B3DF7A   |> Move onto next word if we haven't reached the end of the data
+	BPL .next_word				;$B3DF7A   |> Move to next word if we havent reached the end of the data
 	XBA					;$B3DF7C   |\ Swap endian of our XOR result
-	EOR #$CCAB				;$B3DF7D   | | If our result after XORing against this value +1 is 0 we passed the XOR test
-	INC A					;$B3DF80   | |
+	EOR #$CCAB				;$B3DF7D   | | If result after XORing against this value +1 is 0...
+	INC A					;$B3DF80   | | Then we passed the XOR test
 	BEQ CODE_B3DF88				;$B3DF81   |/ If anti-piracy routine wasn't tampered continue as normal
-	LDA #$FFFF				;$B3DF83   |\ Else destroy exit number of bonus wall (sends player to map screen)
+	LDA #$FFFF				;$B3DF83   |\ Else destroy exit number of bonus wall (send to map)
 	STA $42,x				;$B3DF86   |/
 CODE_B3DF88:					;	   |
 	PLB					;$B3DF88   |
@@ -13040,7 +13040,7 @@ CODE_B3E006:
 	LDX current_sprite			;$B3E006  \
 	LDA sprite.carry_or_defeat_flags,x	;$B3E008   |
 	BNE CODE_B3E063				;$B3E00A   |
-	JSL CODE_BCFB58				;$B3E00C   |
+	JSL get_current_sprite_clipping		;$B3E00C   |
 	LDA #$0008				;$B3E010   |
 	JSL check_active_kong_collision		;$B3E013   |
 	BCC CODE_B3E060				;$B3E017   |
@@ -13708,7 +13708,7 @@ checkpoint_barrel_sprite_code:
 	CMP level_entrance_number		;$B3E4ED   | Check if it matches with the entrance we're taking
 	BEQ ..from_halfway			;$B3E4F0   | If yes we're starting at halfway, set shake state
 	INC sprite.state,x			;$B3E4F2   | Else set idle state
-	JMP CODE_B3D916				;$B3E4F4  / Return (routine is identical to sprite_return_handle_despawn)
+	JMP CODE_B3D916				;$B3E4F4  / Sprite return
 
 ..from_halfway:
 	LDA #$0002				;$B3E4F7  \
@@ -13716,15 +13716,15 @@ checkpoint_barrel_sprite_code:
 	LDA #$003C				;$B3E4FC   |
 	STA $44,x				;$B3E4FF   | Set how long to shake for
 	JSR .move_kong_to_barrel		;$B3E501   | Move the kong to barrel's position
-	JMP CODE_B3D916				;$B3E504  / Return
+	JMP CODE_B3D916				;$B3E504  / Sprite return
 
 .idle:
-	JSL CODE_BCFB58				;$B3E507  \ Populate sprite clipping
+	JSL get_current_sprite_clipping		;$B3E507  \ Populate sprite clipping
 	LDA #$0000				;$B3E50B   | Get collision flags
 	JSL CODE_BEBE6D				;$B3E50E   | Check collision with kong
 	BCS ..collision_happened		;$B3E512   | If collision happened, setup checkpoint
 	JSL process_sprite_animation		;$B3E514   | Else process animation
-	JMP CODE_B3D916				;$B3E518  / And return
+	JMP CODE_B3D916				;$B3E518  / Sprite return
 
 ..collision_happened:
 	LDX current_sprite			;$B3E51B  \ Get checkpoint barrel sprite
@@ -13948,11 +13948,11 @@ barrel_icons_sprite_code:
 	AND #$00FF				;$B3E6A1   | Get low byte, time value for initial graphic
 	STA $4C,x				;$B3E6A4   | And initialize the timer with it
 	JSR .handle_graphic_swap		;$B3E6A6   |
-	JML [sprite_return_address]		;$B3E6A9  / done processing sprite
+	JML [sprite_return_address]		;$B3E6A9  / Done processing sprite
 
 .delete_icon_sprite:
-	JSL delete_sprite_handle_deallocation	;$B3E6AC  \ delete sprite
-	JML [sprite_return_address]		;$B3E6B0  / done processing sprite
+	JSL delete_sprite_handle_deallocation	;$B3E6AC  \ Delete sprite
+	JML [sprite_return_address]		;$B3E6B0  / Done processing sprite
 
 .idle_state:
 	JSR .handle_orphaned_icons_and_snap	;$B3E6B3  \ Snap icon to barrel and check if sprites match
@@ -13960,10 +13960,10 @@ barrel_icons_sprite_code:
 	JSR .update_number_graphic		;$B3E6B8   | Else
 	JSR .handle_swap_timer			;$B3E6BB   |
 	JSR .handle_graphic_swap		;$B3E6BE   |
-	JML [sprite_return_address]		;$B3E6C1  / done processing sprite
+	JML [sprite_return_address]		;$B3E6C1  / Done processing sprite
 
 .handle_swap_timer:
-	LDX current_sprite			;$B3E6C4  \ get icon sprite
+	LDX current_sprite			;$B3E6C4  \ Get icon sprite
 	LDA $2A,x				;$B3E6C6   |
 	AND #$1000				;$B3E6C8   |
 	BNE ..return				;$B3E6CB   | If active kong has entered the barrel, return
@@ -13975,10 +13975,10 @@ barrel_icons_sprite_code:
 
 ..CODE_B3E6D4:
 	LDA $44,x				;$B3E6D4  \
-	EOR #$0001				;$B3E6D6   | flip flag status
+	EOR #$0001				;$B3E6D6   | Flip flag status
 	STA $44,x				;$B3E6D9   |
 	AND #$0001				;$B3E6DB   |
-	BNE ..CODE_B3E6EA			;$B3E6DE   | if flag is on
+	BNE ..CODE_B3E6EA			;$B3E6DE   | Ff flag is on
 	LDA $4E,x				;$B3E6E0   | Else
 ..CODE_B3E6E2:					;	   |
 	AND #$00FF				;$B3E6E2   | Get low byte
@@ -14030,7 +14030,7 @@ barrel_icons_sprite_code:
 	LDX current_sprite			;$B3E72C  \ Get icon sprite
 	LDY $42,x				;$B3E72E   | Get barrel sprite
 	LDA $0044,y				;$B3E730   | Get barrel timer
-	BEQ ..set_default_graphic		;$B3E733   | If 0, timer ended or it is not a number barrel. Set default graphic
+	BEQ ..set_default_graphic		;$B3E733   | If 0, timer ended or not number barrel. Set default graphic
 	LDA $44,x				;$B3E735   | Else get some flag in icon sprite
 	LSR A					;$B3E737   |
 	BCS ..set_alternate_graphic		;$B3E738   |
@@ -14059,7 +14059,7 @@ barrel_icons_sprite_code:
 	ASL A					;$B3E75C   | Else
 	ASL A					;$B3E75D   |
 	CLC					;$B3E75E   |
-	ADC #$10D0				;$B3E75F   | offset to get new graphic ID to swap to
+	ADC #$10D0				;$B3E75F   | Offset to get new graphic ID to swap to
 	STA $4A,x				;$B3E762   |
 	RTS					;$B3E764  /
 
@@ -14437,7 +14437,7 @@ endif						;	   |
 	JSL set_sprite_palette_global		;$B3EA14   |
 	LDA game_state_flags			;$B3EA18   |\
 	AND #$4000				;$B3EA1B   | |
-	BEQ .no_follower			;$B3EA1E   |/ If player doesnt have follower kong, dont spawn follower icon
+	BEQ .no_follower			;$B3EA1E   |/ If no follower kong, dont spawn follower icon
 	JSL spawn_follower_animal_icon		;$B3EA20   |> Else handle spawning follower icon
 .no_follower					;	   |
 	JSL CODE_B5E43E				;$B3EA24   |
@@ -15016,7 +15016,7 @@ endif						;	   |
 if !version == 1				;	  \
 CODE_B3EE30:					;	   |
 	LDX current_sprite			;$B3EE30   |
-	LDA $17C0				;$B3EE32   |
+	LDA screen_scroll_y_position		;$B3EE32   |
 	CLC					;$B3EE35   |
 	ADC #$00E0				;$B3EE36   |
 	SEC					;$B3EE39   |
@@ -15030,7 +15030,7 @@ CODE_B3EE43:					;	   |
 	SEC					;$B3EE45   |
 	SBC #$0010				;$B3EE46   |
 	SEC					;$B3EE49   |
-	SBC $17BA				;$B3EE4A   |
+	SBC screen_scroll_x_position		;$B3EE4A   |
 	BPL CODE_B3EE59				;$B3EE4D   |
 CODE_B3EE4F:					;	   |
 	EOR #$FFFF				;$B3EE4F   |
@@ -15117,7 +15117,7 @@ CODE_B3EEC5:
 	LDA sprite.state,x			;$B3EEC8   |
 	CMP #!kong_state_2F			;$B3EECA   |
 	BEQ CODE_B3EF46				;$B3EECD   |
-	JSL CODE_BCFB58				;$B3EECF   |
+	JSL get_current_sprite_clipping		;$B3EECF   |
 	LDA #$0008				;$B3EED3   |
 	PHK					;$B3EED6   |
 	%return(CODE_B3EEDD)			;$B3EED7   |
@@ -15178,7 +15178,7 @@ CODE_B3EF46:
 	LDA $42,x				;$B3EF49   |
 	CMP current_sprite			;$B3EF4B   |
 	BNE CODE_B3EF44				;$B3EF4D   |
-	JSL CODE_BCFB58				;$B3EF4F   |
+	JSL get_current_sprite_clipping		;$B3EF4F   |
 	LDA #$0008				;$B3EF53   |
 	PHK					;$B3EF56   |
 	%return(CODE_B3EF5D)			;$B3EF57   |

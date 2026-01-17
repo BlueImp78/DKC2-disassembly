@@ -13,7 +13,7 @@ arch spc700
 ;sound effect pointers
 .pointers_start:
 	dw .seq_2E9A	;60: 
-	dw .seq_2E9B	;61: 
+	dw .seq_2E9B	;61: A variant of the unused kong chant (sound effect 03) but with slightly different commands
 .pointers_end:
 
 .seq_2E9A:

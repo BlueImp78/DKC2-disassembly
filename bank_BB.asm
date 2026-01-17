@@ -1154,7 +1154,7 @@ CODE_BB870B:					;	   |
 	TAX					;$BB8716   |
 	CPX #main_sprite_table_end		;$BB8717   |
 	BNE CODE_BB870B				;$BB871A   |
-	LDA next_sprite_dma_buffer_slot		;$BB871C   |
+	LDA next_sprite_DMA_buffer_slot		;$BB871C   |
 	CMP #$0018				;$BB871F   |
 	BPL CODE_BB876F				;$BB8722   |
 	LDX alternate_sprite			;$BB8724   |
@@ -1162,19 +1162,19 @@ CODE_BB870B:					;	   |
 	JSR allocate_sprite_vram_slot		;$BB8727   |
 	PLY					;$BB872A   |
 	BCS CODE_BB876F				;$BB872B   |
-	LDX next_sprite_dma_buffer_slot		;$BB872D   |
+	LDX next_sprite_DMA_buffer_slot		;$BB872D   |
 	LDA $36					;$BB8730   |
-	STA $1736,x				;$BB8732   |
+	STA sprite_DMA[0].source_word,x		;$BB8732   |
 	LDA $38					;$BB8735   |
 	AND #$00FF				;$BB8737   |
 	ORA #$8000				;$BB873A   |
-	STA $1738,x				;$BB873D   |
+	STA sprite_DMA[0].source_bank,x		;$BB873D   |
 	LDA $38					;$BB8740   |
 	AND #$FF00				;$BB8742   |
 	LSR A					;$BB8745   |
 	LSR A					;$BB8746   |
 	LSR A					;$BB8747   |
-	STA sprite_dma_buffer,x			;$BB8748   |
+	STA sprite_DMA[0].size,x		;$BB8748   |
 	PHY					;$BB874B   |
 	LDY alternate_sprite			;$BB874C   |
 	LDA.w sprite.oam_property,y		;$BB874E   |
@@ -1183,12 +1183,12 @@ CODE_BB870B:					;	   |
 	ASL A					;$BB8755   |
 	ASL A					;$BB8756   |
 	ASL A					;$BB8757   |
-	STA $1734,x				;$BB8758   |
+	STA sprite_DMA[0].destination,x		;$BB8758   |
 	PLY					;$BB875B   |
 	TXA					;$BB875C   |
 	CLC					;$BB875D   |
-	ADC #$0008				;$BB875E   |
-	STA next_sprite_dma_buffer_slot		;$BB8761   |
+	ADC #sizeof(sprite_DMA)			;$BB875E   |
+	STA next_sprite_DMA_buffer_slot		;$BB8761   |
 	LDX alternate_sprite			;$BB8764   |
 	LDA $32					;$BB8766   |
 	STA sprite.type,x			;$BB8768   |
@@ -1267,7 +1267,7 @@ CODE_BB87D4:					;	   |
 	TAX					;$BB87DF   |
 	CPX #main_sprite_table_end		;$BB87E0   |
 	BNE CODE_BB87D4				;$BB87E3   |
-	LDA next_sprite_dma_buffer_slot		;$BB87E5   |
+	LDA next_sprite_DMA_buffer_slot		;$BB87E5   |
 	CMP #$0018				;$BB87E8   |
 	BPL CODE_BB8838				;$BB87EB   |
 	LDX alternate_sprite			;$BB87ED   |
@@ -1275,19 +1275,19 @@ CODE_BB87D4:					;	   |
 	JSR allocate_sprite_vram_slot		;$BB87F0   |
 	PLY					;$BB87F3   |
 	BCS CODE_BB8838				;$BB87F4   |
-	LDX next_sprite_dma_buffer_slot		;$BB87F6   |
+	LDX next_sprite_DMA_buffer_slot		;$BB87F6   |
 	LDA $36					;$BB87F9   |
-	STA $1736,x				;$BB87FB   |
+	STA sprite_DMA[0].source_word,x		;$BB87FB   |
 	LDA $38					;$BB87FE   |
 	AND #$00FF				;$BB8800   |
 	ORA #$8000				;$BB8803   |
-	STA $1738,x				;$BB8806   |
+	STA sprite_DMA[0].source_bank,x		;$BB8806   |
 	LDA $38					;$BB8809   |
 	AND #$FF00				;$BB880B   |
 	LSR A					;$BB880E   |
 	LSR A					;$BB880F   |
 	LSR A					;$BB8810   |
-	STA sprite_dma_buffer,x			;$BB8811   |
+	STA sprite_DMA[0].size,x		;$BB8811   |
 	PHY					;$BB8814   |
 	LDY alternate_sprite			;$BB8815   |
 	LDA.w sprite.oam_property,y		;$BB8817   |
@@ -1296,12 +1296,12 @@ CODE_BB87D4:					;	   |
 	ASL A					;$BB881E   |
 	ASL A					;$BB881F   |
 	ASL A					;$BB8820   |
-	STA $1734,x				;$BB8821   |
+	STA sprite_DMA[0].destination,x		;$BB8821   |
 	PLY					;$BB8824   |
 	TXA					;$BB8825   |
 	CLC					;$BB8826   |
-	ADC #$0008				;$BB8827   |
-	STA next_sprite_dma_buffer_slot		;$BB882A   |
+	ADC #sizeof(sprite_DMA)			;$BB8827   |
+	STA next_sprite_DMA_buffer_slot		;$BB882A   |
 	LDX alternate_sprite			;$BB882D   |
 	LDA $32					;$BB882F   |
 	STA sprite.type,x			;$BB8831   |
@@ -1710,7 +1710,7 @@ CODE_BB8AF6:
 	ASL A					;$BB8B01   |
 	TAX					;$BB8B02   |
 	JSR CODE_BB8B66				;$BB8B03   |
-	STA palette_upload_ring_buffer,x	;$BB8B06   |
+	STA sprite_palette_DMA.source_word,x	;$BB8B06   |
 	LDA $5E					;$BB8B09   |
 	ASL A					;$BB8B0B   |
 	ASL A					;$BB8B0C   |
@@ -1719,7 +1719,7 @@ CODE_BB8AF6:
 	ADC #$0081				;$BB8B0F   |
 	XBA					;$BB8B12   |
 	ORA.w #<:palette_data_bank		;$BB8B13   |
-	STA palette_upload_ring_buffer+$2,x	;$BB8B16   |
+	STA sprite_palette_DMA.source_bank,x	;$BB8B16   |
 	LDA current_palette_buffer_slot		;$BB8B19   |
 	INC A					;$BB8B1B   |
 	AND #$000F				;$BB8B1C   |
@@ -1741,7 +1741,7 @@ CODE_BB8AF6:
 	JSR CODE_BB8B66				;$BB8B35   |
 	CLC					;$BB8B38   |
 	ADC #!writable_palette_data_addr_offset	;$BB8B39   |> Writable palette ROM start address - writable palette RAM address
-	STA palette_upload_ring_buffer,x	;$BB8B3C   |
+	STA sprite_palette_DMA.source_word,x	;$BB8B3C   |
 	LDA $5E					;$BB8B3F   |
 	ASL A					;$BB8B41   |
 	ASL A					;$BB8B42   |
@@ -1750,7 +1750,7 @@ CODE_BB8AF6:
 	ADC #$0081				;$BB8B45   |
 	XBA					;$BB8B48   |
 	ORA.w #<:writable_palette_RAM		;$BB8B49   |> Bank of writable palette RAM
-	STA palette_upload_ring_buffer+$2,x	;$BB8B4C   |
+	STA sprite_palette_DMA.source_bank,x	;$BB8B4C   |
 	LDA current_palette_buffer_slot		;$BB8B4F   |
 	INC A					;$BB8B51   |
 	AND #$000F				;$BB8B52   |
@@ -2971,7 +2971,7 @@ endif						;	   |
 	JSR (tileset_HDMA_init_table,x)		;$BB935D   |/ run hdma init routine
 	LDA #$002C				;$BB9360   |
 	STA $0B00				;$BB9363   |
-	STZ next_sprite_dma_buffer_slot		;$BB9366   |
+	STZ next_sprite_DMA_buffer_slot		;$BB9366   |
 	JSR CODE_BB93E7				;$BB9369   |
 	LDA main_level.type			;$BB936C   |
 	CMP #!bonus_level_type			;$BB936F   |
@@ -3702,7 +3702,7 @@ CODE_BB9891:					;	   |
 
 CODE_BB98B4:
 	LDA #$6000				;$BB98B4  \
-	STA $17B6				;$BB98B7   |
+	STA level_tilemap_vram_address		;$BB98B7   |
 	JSR CODE_BB95F2				;$BB98BA   |
 	LDY #$0000				;$BB98BD   |
 	LDA #water_toxic_layer_3_palette	;$BB98C0   |
@@ -3726,17 +3726,17 @@ CODE_BB98E8:
 	PHA					;$BB98EA   |
 	LDA $9A					;$BB98EB   |
 	PHA					;$BB98ED   |
-	LDA $17B6				;$BB98EE   |
+	LDA level_tilemap_vram_address		;$BB98EE   |
 	PHA					;$BB98F1   |
 	LDA #$0100				;$BB98F2   |
-	STA $17C0				;$BB98F5   |
+	STA screen_scroll_y_position		;$BB98F5   |
 	LDA #$7800				;$BB98F8   |
-	STA $17B6				;$BB98FB   |
+	STA level_tilemap_vram_address		;$BB98FB   |
 	JSR CODE_BB9A23				;$BB98FE   |
 	LDA #$0100				;$BB9901   |
-	STA $17C0				;$BB9904   |
+	STA screen_scroll_y_position		;$BB9904   |
 	LDA #$7000				;$BB9907   |
-	STA $17B6				;$BB990A   |
+	STA level_tilemap_vram_address		;$BB990A   |
 	JSR CODE_BB9A23				;$BB990D   |
 	LDX #DATA_C2FAC9			;$BB9910   |
 	LDY.w #DATA_C2FAC9>>16			;$BB9913   |
@@ -3785,7 +3785,7 @@ CODE_BB9962:					;	   |
 	LDY #$0300				;$BB9981   |
 	JSL DMA_to_VRAM				;$BB9984   |
 	PLA					;$BB9988   |
-	STA $17B6				;$BB9989   |
+	STA level_tilemap_vram_address		;$BB9989   |
 	PLA					;$BB998C   |
 	STA $9A					;$BB998D   |
 	PLA					;$BB998F   |
@@ -3809,19 +3809,19 @@ CODE_BB99AB:
 	PHA					;$BB99AD   |
 	LDA $9A					;$BB99AE   |
 	PHA					;$BB99B0   |
-	LDA $17B6				;$BB99B1   |
+	LDA level_tilemap_vram_address		;$BB99B1   |
 	PHA					;$BB99B4   |
 	LDA #$0100				;$BB99B5   |
-	STA $17C0				;$BB99B8   |
+	STA screen_scroll_y_position		;$BB99B8   |
 	LDA #$7000				;$BB99BB   |
-	STA $17B6				;$BB99BE   |
+	STA level_tilemap_vram_address		;$BB99BE   |
 	JSR CODE_BB9A23				;$BB99C1   |
-	STZ $17C0				;$BB99C4   |
+	STZ screen_scroll_y_position		;$BB99C4   |
 	LDA #$7800				;$BB99C7   |
-	STA $17B6				;$BB99CA   |
+	STA level_tilemap_vram_address		;$BB99CA   |
 	JSR CODE_BB9A23				;$BB99CD   |
 	PLA					;$BB99D0   |
-	STA $17B6				;$BB99D1   |
+	STA level_tilemap_vram_address		;$BB99D1   |
 	PLA					;$BB99D4   |
 	STA $9A					;$BB99D5   |
 	PLA					;$BB99D7   |
@@ -3845,19 +3845,19 @@ CODE_BB99F3:
 	PHA					;$BB99F5   |
 	LDA $9A					;$BB99F6   |
 	PHA					;$BB99F8   |
-	LDA $17B6				;$BB99F9   |
+	LDA level_tilemap_vram_address		;$BB99F9   |
 	PHA					;$BB99FC   |
 	LDA #$0100				;$BB99FD   |
-	STA $17C0				;$BB9A00   |
+	STA screen_scroll_y_position		;$BB9A00   |
 	LDA #$6C00				;$BB9A03   |
-	STA $17B6				;$BB9A06   |
+	STA level_tilemap_vram_address		;$BB9A06   |
 	JSR CODE_BB9A23				;$BB9A09   |
-	STZ $17C0				;$BB9A0C   |
+	STZ screen_scroll_y_position		;$BB9A0C   |
 	LDA #$6400				;$BB9A0F   |
-	STA $17B6				;$BB9A12   |
+	STA level_tilemap_vram_address		;$BB9A12   |
 	JSR CODE_BB9A23				;$BB9A15   |
 	PLA					;$BB9A18   |
-	STA $17B6				;$BB9A19   |
+	STA level_tilemap_vram_address		;$BB9A19   |
 	PLA					;$BB9A1C   |
 	STA $9A					;$BB9A1D   |
 	PLA					;$BB9A1F   |
@@ -3876,8 +3876,8 @@ CODE_BB9A23:
 	REP #$20				;$BB9A36   |
 	STZ $17D2				;$BB9A38   |
 	STZ $17D6				;$BB9A3B   |
-	STZ $17B8				;$BB9A3E   |
-	STZ $17BA				;$BB9A41   |
+	STZ screen_scroll_x_sub_position_low	;$BB9A3E   |
+	STZ screen_scroll_x_position		;$BB9A41   |
 	LDA #$00F8				;$BB9A44   |
 	STA $17CA				;$BB9A47   |
 	STZ $17C2				;$BB9A4A   |
@@ -3888,12 +3888,12 @@ CODE_BB9A23:
 CODE_BB9A59:					;	   |
 	PHA					;$BB9A59   |
 	JSR CODE_BB9A73				;$BB9A5A   |
-	JSL update_level_x_scroll		;$BB9A5D   |
+	JSL DMA_level_columns			;$BB9A5D   |
 	LDA #$0008				;$BB9A61   |
 	STA $17D6				;$BB9A64   |
 	CLC					;$BB9A67   |
-	ADC $17BA				;$BB9A68   |
-	STA $17BA				;$BB9A6B   |
+	ADC screen_scroll_x_position		;$BB9A68   |
+	STA screen_scroll_x_position		;$BB9A6B   |
 	PLA					;$BB9A6E   |
 	DEC A					;$BB9A6F   |
 	BNE CODE_BB9A59				;$BB9A70   |
@@ -4842,18 +4842,18 @@ CODE_BBA5E1:
 	LDA level_number			;$BBA5E1  \
 	CMP #!level_gangplank_galley_bonus_2	;$BBA5E3   |
 	BNE CODE_BBA605				;$BBA5E6   |
-	LDA $17BA				;$BBA5E8   |
+	LDA screen_scroll_x_position		;$BBA5E8   |
 	PHA					;$BBA5EB   |
 	LDA $0911				;$BBA5EC   |
 	PHA					;$BBA5EF   |
 	STZ $0911				;$BBA5F0   |
 	LDA #$1C31				;$BBA5F3   |
-	STA $17BA				;$BBA5F6   |
+	STA screen_scroll_x_position		;$BBA5F6   |
 	JSR CODE_BBA605				;$BBA5F9   |
 	PLA					;$BBA5FC   |
 	STA $0911				;$BBA5FD   |
 	PLA					;$BBA600   |
-	STA $17BA				;$BBA601   |
+	STA screen_scroll_x_position		;$BBA601   |
 	RTS					;$BBA604  /
 
 CODE_BBA605:
@@ -5362,7 +5362,7 @@ CODE_BBAB05:					;	   |
 	RTS					;$BBABE1  /
 
 CODE_BBABE2:
-	LDA $17C0				;$BBABE2  \
+	LDA screen_scroll_y_position		;$BBABE2  \
 	CLC					;$BBABE5   |
 	ADC #$0020				;$BBABE6   |
 	STA $0D4E				;$BBABE9   |
@@ -5643,7 +5643,7 @@ CODE_BBAE62:
 	LDA animal_type				;$BBAE66   |
 	CMP #!sprite_enguarde			;$BBAE68   |
 	BEQ CODE_BBAE73				;$BBAE6B   |
-	JSL CODE_B8B9B8				;$BBAE6D   |
+	JSL start_player_falling_global		;$BBAE6D   |
 	BRA CODE_BBAE77				;$BBAE71  /
 
 CODE_BBAE73:
@@ -6717,7 +6717,7 @@ sprite_loader:
 	INC A					;$BBB5DF   |\
 	INC A					;$BBB5E0   | |
 	STA $0000F9				;$BBB5E1   |/ Store spawn id base address
-	LDA $17BA				;$BBB5E5   |> Get camera x position
+	LDA screen_scroll_x_position		;$BBB5E5   |> Get camera x position
 	XBA					;$BBB5E8   |\ Get only x screen number in A
 	AND #$00FF				;$BBB5E9   | |
 	DEC A					;$BBB5EC   |/ -1
@@ -6725,7 +6725,7 @@ sprite_loader:
 	INC A					;$BBB5EF   |> Else add 1 to the x screen number
 .positive_x_screen:				;	   |
 	STA $32					;$BBB5F0   |> Store x screen number in scratch
-	LDA $17C0				;$BBB5F2   |> Get camera y position
+	LDA screen_scroll_y_position		;$BBB5F2   |> Get camera y position
 	AND #$FF00				;$BBB5F5   |\ Get only y screen number in upper half of A
 	SEC					;$BBB5F8   | |
 	SBC #$0100				;$BBB5F9   |/ -1
@@ -6948,7 +6948,7 @@ CODE_BBB75D:					;	   |
 	TAX					;$BBB768   |
 	CPX #main_sprite_table_end		;$BBB769   |
 	BNE CODE_BBB75D				;$BBB76C   |
-	LDA next_sprite_dma_buffer_slot		;$BBB76E   |
+	LDA next_sprite_DMA_buffer_slot		;$BBB76E   |
 	CMP #$0018				;$BBB771   |
 	BPL CODE_BBB77F				;$BBB774   |
 	LDX alternate_sprite			;$BBB776   |
@@ -6983,19 +6983,19 @@ CODE_BBB797:
 	BRA CODE_BBB7DD				;$BBB7A4  /
 
 CODE_BBB7A6:
-	LDX next_sprite_dma_buffer_slot		;$BBB7A6  \
+	LDX next_sprite_DMA_buffer_slot		;$BBB7A6  \
 	LDA $36					;$BBB7A9   |
-	STA $1736,x				;$BBB7AB   |
+	STA sprite_DMA[0].source_word,x		;$BBB7AB   |
 	LDA $38					;$BBB7AE   |
 	AND #$00FF				;$BBB7B0   |
 	ORA #$8000				;$BBB7B3   |
-	STA $1738,x				;$BBB7B6   |
+	STA sprite_DMA[0].source_bank,x		;$BBB7B6   |
 	LDA $38					;$BBB7B9   |
 	AND #$FF00				;$BBB7BB   |
 	LSR A					;$BBB7BE   |
 	LSR A					;$BBB7BF   |
 	LSR A					;$BBB7C0   |
-	STA sprite_dma_buffer,x			;$BBB7C1   |
+	STA sprite_DMA[0].size,x		;$BBB7C1   |
 	PHY					;$BBB7C4   |
 	LDY alternate_sprite			;$BBB7C5   |
 	LDA.w sprite.oam_property,y		;$BBB7C7   |
@@ -7004,12 +7004,12 @@ CODE_BBB7A6:
 	ASL A					;$BBB7CE   |
 	ASL A					;$BBB7CF   |
 	ASL A					;$BBB7D0   |
-	STA $1734,x				;$BBB7D1   |
+	STA sprite_DMA[0].destination,x		;$BBB7D1   |
 	PLY					;$BBB7D4   |
 	TXA					;$BBB7D5   |
 	CLC					;$BBB7D6   |
 	ADC #$0008				;$BBB7D7   |
-	STA next_sprite_dma_buffer_slot		;$BBB7DA   |
+	STA next_sprite_DMA_buffer_slot		;$BBB7DA   |
 CODE_BBB7DD:					;	   |
 	LDA $3A					;$BBB7DD   |
 	PHA					;$BBB7DF   |
@@ -7437,7 +7437,7 @@ CODE_BBBAF3:
 	JMP check_placement_spawning_radius	;$BBBB11  /
 
 check_placement_spawning_radius:
-	LDA.l $0017BA				;$BBBB14  \
+	LDA.l screen_scroll_x_position		;$BBBB14  \
 	SEC					;$BBBB18   |
 	SBC.l activation_radius_left_table,x	;$BBBB19   |
 	CMP $72					;$BBBB1D   |
@@ -7446,7 +7446,7 @@ check_placement_spawning_radius:
 	ADC.l activation_radius_right_table,x	;$BBBB22   |
 	CMP $72					;$BBBB26   |
 	BCC .out_of_spawn_range			;$BBBB28   |
-	LDA.l $0017C0				;$BBBB2A   |
+	LDA.l screen_scroll_y_position		;$BBBB2A   |
 	SEC					;$BBBB2E   |
 	SBC.l activation_radius_top_table,x	;$BBBB2F   |
 	CMP $74					;$BBBB33   |

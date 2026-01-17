@@ -445,7 +445,7 @@ DATA_808633:
 
 ;Seems to be a generic return routine for tileset logic and some screens
 CODE_808636:
-	INC gameplay_frame_counter		;$808636   |
+	INC gameplay_frame_counter		;$808636  \
 	BNE .CODE_808640			;$808638   |
 	INC gameplay_frame_counter_high		;$80863A   |
 	BNE .CODE_808640			;$80863C   |
@@ -819,7 +819,7 @@ clear_wram_tables:
 	dw time_stop_flags, $0002
 	dw time_stop_timer, $0002
 	dw sprite_vram_allocation_table, $0020
-	dw palette_upload_ring_buffer, $0040
+	dw sprite_palette_DMA_buffer, $0040
 	dw previous_palette_buffer_slot, $0002
 	dw current_palette_buffer_slot, $0002
 	dw active_sprite_palettes_table, $0010
@@ -1019,7 +1019,7 @@ endif						;	   |
 	BCC .handle_debug_exit_cheat		;$808ADA   |> If not then see if the debug exit cheat was attempted
 	LDA #$0040				;$808ADC   |\
 	TRB game_state_flags			;$808ADF   | | Reset the paused flag
-	JML CODE_BBBDC4				;$808AE2  / / Then exit the level
+	JML CODE_BBBDC4				;$808AE2  /_/ Then exit the level
 
 .handle_debug_exit_cheat
 	JSR .check_for_debug_cheat		;$808AE6  \
@@ -1075,7 +1075,7 @@ endif						;	   |
 .waste_cpu_time					;	   | |
 	JSR .stall_for_time			;$808B5F   | | Waste some CPU time
 	DEC A					;$808B62   | | -1 from counter
-	BNE .waste_cpu_time			;$808B63   |/ loop back and repeat until we've done this loop 65536 times
+	BNE .waste_cpu_time			;$808B63   |/ Repeat 65536 times
 	LDA #$0040				;$808B65   |\
 	TRB game_state_flags			;$808B68   |/ Unpause the game
 	JML CODE_BBBDC4				;$808B6B  /> And exit the level
@@ -1087,7 +1087,7 @@ endif						;	   |
 	LDY $00,x				;$808B75   | |
 	LDY $00,x				;$808B77   | |
 	LDY $00,x				;$808B79   | |
-	RTS					;$808B7B  / / Return
+	RTS					;$808B7B  /_/ Return
 
 .cheat_buttons
 	%offset(.cheat_buttons_next, 2)
@@ -1391,46 +1391,46 @@ CODE_808D7D:
 
 setup_npc_screen_kongs:
 	LDA #$8000				;$808D8A  \
-	ORA game_state_flags			;$808D8D   | set bit 12 (unclear yet, related to cutscenes)
+	ORA game_state_flags			;$808D8D   |
 	STA game_state_flags			;$808D90   |
-	LDA active_kong_number			;$808D93   | get kong in front
-	JSL set_active_kong_global		;$808D96   | set kong
-	LDA #$0020				;$808D9A   |
-	ORA sprite.interaction_flags,x		;$808D9D   |
-	STA sprite.interaction_flags,x		;$808D9F   | set interaction flags
-	JSR spawn_npc_screen_diddy		;$808DA1   | spawn and setup diddy variables
-	LDA #dixie_control_variables		;$808DA4   | load address of dixie's control variables
-	STA current_kong_control_variables	;$808DA7   | update pointer to control variables of currently processed kong
-	LDY #DATA_FF136E			;$808DA9   |
-	JSL spawn_special_sprite_address	;$808DAC   | spawn dixie
+	LDA active_kong_number			;$808D93   |\
+	JSL set_active_kong_global		;$808D96   |/ Setup active kong
+	LDA #$0020				;$808D9A   |\
+	ORA sprite.interaction_flags,x		;$808D9D   | | Set interaction flags
+	STA sprite.interaction_flags,x		;$808D9F   |/
+	JSR spawn_npc_screen_diddy		;$808DA1   |> Spawn and setup diddy
+	LDA #dixie_control_variables		;$808DA4   |\ Load address of dixie's control variables
+	STA current_kong_control_variables	;$808DA7   |/
+	LDY #DATA_FF136E			;$808DA9   |\
+	JSL spawn_special_sprite_address	;$808DAC   |/ Spawn dixie
 	LDX alternate_sprite			;$808DB0   |
 	STX current_sprite			;$808DB2   |
-	LDA #$0004				;$808DB4   | load run animation
-	JSL set_anim_handle_dixie		;$808DB7   | set kong animation
-	LDA.l dixie_kong_constants		;$808DBB   |
-	STA dixie_control_variables+$8		;$808DBF   | set dixie's gravity constant
-	LDA.l DATA_FF012C			;$808DC2   |
-	STA dixie_control_variables+$A		;$808DC6   | set dixie's terminal velocity constant
-	LDX active_kong_sprite			;$808DC9   | get active kong
-	LDA #$001D				;$808DCC   |
-	STA sprite.state,x			;$808DCF   | set active kong to npc screen state
-	LDA #$00E4				;$808DD1   |
-	STA sprite.render_order,x		;$808DD4   | set render order
-	JSR CODE_808DFB				;$808DD6   | call dead code
-	LDX inactive_kong_sprite		;$808DD9   | get inactive kong
-	LDA #$001E				;$808DDC   |
-	STA sprite.state,x			;$808DDF   | set inactive kong to npc screen state
-	LDA #$00D8				;$808DE1   |
-	STA sprite.render_order,x		;$808DE4   | set render order
-	JSR CODE_808DFB				;$808DE6   | call dead code
-	LDA game_state_flags			;$808DE9   |
-	BIT #$4000				;$808DEC   | check if player has both kongs
-	BNE .return				;$808DEF   | if yes, return
-	LDY inactive_kong_sprite		;$808DF1   | else get inactive kong
-	LDA #$C000				;$808DF4   |
-	STA.w sprite.display_mode,y		;$808DF7   | make them invisible
+	LDA #$0004				;$808DB4   |\ Set kong running animation
+	JSL set_anim_handle_dixie		;$808DB7   |/
+	LDA.l dixie_kong_constants		;$808DBB   |\
+	STA dixie_control_variables+$8		;$808DBF   |/ Set dixie's gravity
+	LDA.l DATA_FF012C			;$808DC2   |\
+	STA dixie_control_variables+$A		;$808DC6   |/ Set dixie's terminal velocity
+	LDX active_kong_sprite			;$808DC9   |> Work on active kong
+	LDA #$001D				;$808DCC   |\
+	STA sprite.state,x			;$808DCF   |/ Set active kong to npc screen state
+	LDA #$00E4				;$808DD1   |\
+	STA sprite.render_order,x		;$808DD4   |/ Set render order
+	JSR CODE_808DFB				;$808DD6   |> Call dead code
+	LDX inactive_kong_sprite		;$808DD9   |> Work on inactive kong
+	LDA #$001E				;$808DDC   |\
+	STA sprite.state,x			;$808DDF   |/ Set inactive kong to npc screen state
+	LDA #$00D8				;$808DE1   |\
+	STA sprite.render_order,x		;$808DE4   |/ Set render order
+	JSR CODE_808DFB				;$808DE6   |> Call dead code
+	LDA game_state_flags			;$808DE9   |\
+	BIT #$4000				;$808DEC   | |
+	BNE .return				;$808DEF   |/ If player has both kongs then return
+	LDY inactive_kong_sprite		;$808DF1   |\
+	LDA #$C000				;$808DF4   | | Else, hide the inactive kong
+	STA.w sprite.display_mode,y		;$808DF7   |/
 .return:					;	   |
-	RTL					;$808DFA  /  return
+	RTL					;$808DFA  /> Return
 
 ;Dead code, may have been used to set terrain related variables for kongs in npc screens.
 CODE_808DFB:
@@ -2174,7 +2174,7 @@ namespace off					;	   |
 	STA $7C					;$8094D8   |\ Store the mode 7 scale factor
 	STA $7A					;$8094DA   |/
 .skip_mode_7_scale				;	   |
-	JSR intro_controller_read		;$8094DC   | Read controller data (So that the intro can be skipped later)
+	JSR intro_controller_read		;$8094DC   | Read controller data (So the intro can be skipped later)
 	INC active_frame_counter		;$8094DF   | Increment the frame counter
 	LDA active_frame_counter		;$8094E1   |\ Check if this is the first frame of the logo
 	CMP #$0001				;$8094E3   | |
@@ -2740,7 +2740,7 @@ run_game_mode_select:
 	STZ PPU.oam_address			;$8099C7   |
 	LDA #$0401				;$8099CA   |
 	STA CPU.enable_dma			;$8099CD   |
-	LDA $17C0				;$8099D0   |
+	LDA screen_scroll_y_position		;$8099D0   |
 	DEC A					;$8099D3   |
 	SEP #$20				;$8099D4   |
 	STA PPU.layer_1_scroll_y		;$8099D6   |
@@ -2864,7 +2864,7 @@ CODE_809AEE:
 CODE_809AF1:					;	   |
 	TXA					;$809AF1   |
 	SEC					;$809AF2   |
-	SBC $17C0				;$809AF3   |
+	SBC screen_scroll_y_position		;$809AF3   |
 	STZ $32					;$809AF6   |
 	CMP #$8000				;$809AF8   |
 	ROR A					;$809AFB   |
@@ -2880,10 +2880,10 @@ CODE_809AF1:					;	   |
 	CLC					;$809B0E   |
 	ADC $17C2				;$809B0F   |
 	STA $17C2				;$809B12   |
-	LDA $17C0				;$809B15   |
+	LDA screen_scroll_y_position		;$809B15   |
 	ADC $34					;$809B18   |
-	STA $17C0				;$809B1A   |
-	LDA $17C0				;$809B1D   |
+	STA screen_scroll_y_position		;$809B1A   |
+	LDA screen_scroll_y_position		;$809B1D   |
 	SEC					;$809B20   |
 	SBC #$004F				;$809B21   |
 	BCS CODE_809B46				;$809B24   |
@@ -2901,7 +2901,7 @@ CODE_809AF1:					;	   |
 	BRA CODE_809B82				;$809B44  /
 
 CODE_809B46:
-	LDA $17C0				;$809B46  \
+	LDA screen_scroll_y_position		;$809B46  \
 	SEC					;$809B49   |
 	SBC #$008F				;$809B4A   |
 	BCS CODE_809B69				;$809B4D   |
@@ -2917,7 +2917,7 @@ CODE_809B46:
 	BRA CODE_809B82				;$809B67  /
 
 CODE_809B69:
-	LDA $17C0				;$809B69  \
+	LDA screen_scroll_y_position		;$809B69  \
 	SEC					;$809B6C   |
 	SBC #$00DF				;$809B6D   |
 	EOR #$FFFF				;$809B70   |
@@ -3047,12 +3047,12 @@ CODE_809C83:					;	   |
 CODE_809C8A:
 	LDA screen_brightness			;$809C8A  \
 	CMP #$8201				;$809C8D   |
-	BNE CODE_809C96				;$809C90   |
+	BNE .wait				;$809C90   |
 	JML init_new_file			;$809C92  /
 
-CODE_809C96:
-	WAI					;$809C96  \
-	BRA CODE_809C96				;$809C97  /
+.wait
+	WAI					;$809C96  \ Wait until the next frame
+	BRA .wait				;$809C97  / Branch back sanity check
 
 music_test_text_table:
 	dw !null_pointer
@@ -3194,7 +3194,7 @@ CODE_809DE2:
 	LDY #$0000				;$809DF3   |
 	LDA #$0100				;$809DF6   |
 	SEC					;$809DF9   |
-	SBC $17C0				;$809DFA   |
+	SBC screen_scroll_y_position		;$809DFA   |
 	XBA					;$809DFD   |
 	CLC					;$809DFE   |
 	ADC #$1080				;$809DFF   |
@@ -3527,9 +3527,9 @@ CODE_80A0E9:					;	   |
 	LDA #$0000				;$80A1BC   |
 	LDY #$0800				;$80A1BF   |
 	JSL DMA_to_VRAM				;$80A1C2   |
-	STZ $17BA				;$80A1C6   |
+	STZ screen_scroll_x_position		;$80A1C6   |
 	LDA #$0100				;$80A1C9   |
-	STZ $17C0				;$80A1CC   |
+	STZ screen_scroll_y_position		;$80A1CC   |
 	LDA #$0000				;$80A1CF   |
 	STA $0D9E				;$80A1D2   |
 	LDA #$0004				;$80A1D5   |
@@ -3635,8 +3635,8 @@ run_secret_ending:
 	LDX #$0004				;$80A2EE   |
 	LDA #secret_ending_isle_sprite_palette	;$80A2F1   |
 	JSL DMA_palette				;$80A2F4   |
-	JSL update_sprite_graphics		;$80A2F8   |
-	LDA $17C0				;$80A2FC   |
+	JSL DMA_queued_sprite_graphics		;$80A2F8   |
+	LDA screen_scroll_y_position		;$80A2FC   |
 	SEP #$20				;$80A2FF   |
 	STA PPU.layer_2_scroll_y		;$80A301   |
 	STZ PPU.layer_2_scroll_y		;$80A304   |
@@ -3651,8 +3651,8 @@ run_secret_ending:
 	JSR input_and_pause_handler		;$80A31B   |
 	INC active_frame_counter		;$80A31E   |
 	BNE CODE_80A327				;$80A320   |
-	LDA $1000				;$80A322   | Bug: address instead of a constant value
-	STA active_frame_counter		;$80A325   | This will set counter to 0 and cause the camera shake + sfx to play again
+	LDA $1000				;$80A322   |\ Bug: loads an address instead of a constant value
+	STA active_frame_counter		;$80A325   |/ Zeros frame counter causing camera shake/sfx to play again
 CODE_80A327:					;	   |
 	LDX #aux_sprite_table			;$80A327   |
 	JSR CODE_80A545				;$80A32A   |
@@ -3706,7 +3706,7 @@ CODE_80A375:					;	   |
 CODE_80A399:					;	   |
 	AND #$0003				;$80A399   |
 	DEC A					;$80A39C   |
-	STA $17C0				;$80A39D   |
+	STA screen_scroll_y_position		;$80A39D   |
 	LDA active_frame_counter		;$80A3A0   |
 	CMP #$00B0				;$80A3A2   |
 	BEQ CODE_80A3AC				;$80A3A5   |
@@ -3787,7 +3787,7 @@ CODE_80A442:					;	   |
 	CPX #main_sprite_table_end		;$80A448   |
 	BNE CODE_80A429				;$80A44B   |
 CODE_80A44D:					;	   |
-	JSL CODE_B5A8DA				;$80A44D   |
+	JSL sort_sprite_render_orders		;$80A44D   |
 	LDA #$0200				;$80A451   |
 	STA $70					;$80A454   |
 	STZ oam_attribute[$00].size		;$80A456   |
@@ -3809,14 +3809,14 @@ CODE_80A44D:					;	   |
 	LDA #$0044				;$80A486   |
 	STA $78					;$80A489   |
 	JSL CODE_B59F40				;$80A48B   |
-	STZ next_sprite_dma_buffer_slot		;$80A48F   |
+	STZ next_sprite_DMA_buffer_slot		;$80A48F   |
 	JSL set_unused_oam_offscreen_global	;$80A492   |
 	JSR prepare_oam_dma_channel		;$80A496   |
 	LDA #run_secret_ending			;$80A499   |
 	STA NMI_pointer				;$80A49C   |
 -						;	   |
-	WAI					;$80A49E   |
-	BRA -					;$80A49F  /
+	WAI					;$80A49E   | Wait until the next frame
+	BRA -					;$80A49F  / Branch back sanity check
 
 CODE_80A4A1:
 	LDX #aux_sprite_table			;$80A4A1  \
@@ -5344,7 +5344,7 @@ clear_VRAM_block:
 	%offset(.VRAM_zero_fill, 1)		;	   | Generate a label for fixed VRAM data
 	LDA #$0800				;$80B115   |\ Set DMA size to $0800
 	STA DMA[0].size				;$80B118   |/
-	LDA #$1809				;$80B11B   |\ Set DMA destination to $2118, two register write once, fixed
+	LDA #$1809				;$80B11B   |\ Set DMA destination to $2118, 2 register write once, fixed
 	STA DMA[0].settings			;$80B11E   |/
 	SEP #$20				;$80B121   |
 	STZ DMA[0].source_bank			;$80B123   | Set DMA source bank to 00.
@@ -5657,7 +5657,7 @@ run_title_screen:				;	  \
 	CMP #main_sprite_table_end		;$80B4C1   | |
 	BNE .next_sprite_slot			;$80B4C4   |/
 .skip_sprite_update				;	   |
-	JSL CODE_B5A8DA				;$80B4C6   |
+	JSL sort_sprite_render_orders		;$80B4C6   |
 	LDA #oam_table				;$80B4CA   |\ Reset the OAM index to the first entry
 	STA next_oam_slot			;$80B4CD   |/
 	LDA #$0400				;$80B4CF   |\
@@ -5681,7 +5681,7 @@ run_title_screen:				;	  \
 	LDA #$001C				;$80B504   |\
 	STA $78					;$80B507   |/
 	JSL CODE_B59F40				;$80B509   |
-	STZ next_sprite_dma_buffer_slot		;$80B50D   |
+	STZ next_sprite_DMA_buffer_slot		;$80B50D   |
 	JSR set_unused_oam_offscreen		;$80B510   | Place any unused OAM tiles off the screen
 	JSR prepare_oam_dma_channel		;$80B513   | Prepare channel 1 for the OAM DMA
 	LDA screen_brightness			;$80B516   |\ If the brightness isn't full, run the fadeout routine
@@ -5892,8 +5892,8 @@ tileset_NMI_table:
 CODE_80B705:
 	LDA pending_dma_hdma_channels		;$80B705  \
 	STA CPU.enable_dma			;$80B708   |
-	JSL update_sprite_graphics		;$80B70B   |
-	JSR update_sprite_palettes		;$80B70F   |
+	JSL DMA_queued_sprite_graphics		;$80B70B   |
+	JSR DMA_queued_sprite_palette		;$80B70F   |
 	SEP #$20				;$80B712   |
 	LDA screen_brightness			;$80B714   |
 	STA PPU.screen				;$80B717   |
@@ -5910,24 +5910,24 @@ CODE_80B720:
 	REP #$20				;$80B72E   |
 	RTS					;$80B730  /
 
-update_level_and_sprite_graphics:
+DMA_level_and_sprite_graphics:
 	LDA pending_dma_hdma_channels		;$80B731  \
 	STA CPU.enable_dma			;$80B734   |
-	JSL update_sprite_graphics		;$80B737   |
-	JSL update_level_x_scroll		;$80B73B   |
-	JSL update_level_y_scroll		;$80B73F   |
-	JMP update_sprite_palettes		;$80B743  /
+	JSL DMA_queued_sprite_graphics		;$80B737   |
+	JSL DMA_level_columns			;$80B73B   |
+	JSL DMA_level_rows			;$80B73F   |
+	JMP DMA_queued_sprite_palette		;$80B743  /
 
 forest_unused_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80B746  \
-	LDA $17BA				;$80B749   |
+	JSR DMA_level_and_sprite_graphics	;$80B746  \
+	LDA screen_scroll_x_position		;$80B749   |
 	LSR A					;$80B74C   |
 	SEP #$20				;$80B74D   |
 	STA PPU.layer_3_scroll_x		;$80B74F   |
 	STZ PPU.layer_3_scroll_x		;$80B752   |
-	LDA $17BA				;$80B755   |
+	LDA screen_scroll_x_position		;$80B755   |
 	STA PPU.layer_2_scroll_x		;$80B758   |
-	LDA $17BB				;$80B75B   |
+	LDA screen_scroll_x_screen		;$80B75B   |
 	STA PPU.layer_2_scroll_x		;$80B75E   |
 	LDA $17C2				;$80B761   |
 	STA PPU.layer_2_scroll_y		;$80B764   |
@@ -5943,10 +5943,10 @@ ship_hold_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80B779  \
 	STA CPU.enable_dma			;$80B77C   |
 	JSR CODE_80B89C				;$80B77F   |
-	JSL update_sprite_graphics		;$80B782   |
-	JSL update_level_x_scroll		;$80B786   |
-	JSL update_level_y_scroll		;$80B78A   |
-	JSR update_sprite_palettes		;$80B78E   |
+	JSL DMA_queued_sprite_graphics		;$80B782   |
+	JSL DMA_level_columns			;$80B786   |
+	JSL DMA_level_rows			;$80B78A   |
+	JSR DMA_queued_sprite_palette		;$80B78E   |
 	SEP #$20				;$80B791   |
 	LDA screen_brightness			;$80B793   |
 	STA PPU.screen				;$80B796   |
@@ -5964,16 +5964,16 @@ CODE_80B79C:
 	RTS					;$80B7A5  /
 
 wasp_hive_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80B7A6  \
+	JSR DMA_level_and_sprite_graphics	;$80B7A6  \
 	JSR CODE_80CCF8				;$80B7A9   |
 	SEP #$20				;$80B7AC   |
-	LDA $17C0				;$80B7AE   |
+	LDA screen_scroll_y_position		;$80B7AE   |
 	AND #$01				;$80B7B1   |
 	EOR #$01				;$80B7B3   |
 	INC A					;$80B7B5   |
 	STA $7E80F2				;$80B7B6   |
 	REP #$20				;$80B7BA   |
-	LDA $17C0				;$80B7BC   |
+	LDA screen_scroll_y_position		;$80B7BC   |
 	EOR #$FFFF				;$80B7BF   |
 	AND #$001E				;$80B7C2   |
 	TAX					;$80B7C5   |
@@ -5982,7 +5982,7 @@ wasp_hive_tileset_NMI:
 	LSR A					;$80B7CB   |
 	LSR A					;$80B7CC   |
 	CLC					;$80B7CD   |
-	ADC $17C0				;$80B7CE   |
+	ADC screen_scroll_y_position		;$80B7CE   |
 	STA $7E80D2,x				;$80B7D1   |
 	LDY #$0008				;$80B7D5   |
 CODE_80B7D8:					;	   |
@@ -5998,27 +5998,27 @@ CODE_80B7E6:					;	   |
 	STA $7E80D2,x				;$80B7EA   |
 	DEY					;$80B7EE   |
 	BNE CODE_80B7E6				;$80B7EF   |
-	LDA $17BA				;$80B7F1   |
+	LDA screen_scroll_x_position		;$80B7F1   |
 	LSR A					;$80B7F4   |
 	LSR A					;$80B7F5   |
 	CLC					;$80B7F6   |
-	ADC $17BA				;$80B7F7   |
+	ADC screen_scroll_x_position		;$80B7F7   |
 	SEP #$20				;$80B7FA   |
 	STA PPU.layer_1_scroll_x		;$80B7FC   |
 	XBA					;$80B7FF   |
 	STA PPU.layer_1_scroll_x		;$80B800   |
-	LDA $17BA				;$80B803   |
+	LDA screen_scroll_x_position		;$80B803   |
 	STA PPU.layer_2_scroll_x		;$80B806   |
-	LDA $17BB				;$80B809   |
+	LDA screen_scroll_x_screen		;$80B809   |
 	STA PPU.layer_2_scroll_x		;$80B80C   |
 	REP #$20				;$80B80F   |
-	LDA $17C0				;$80B811   |
+	LDA screen_scroll_y_position		;$80B811   |
 	LSR A					;$80B814   |
 	SEP #$20				;$80B815   |
 	STA PPU.layer_3_scroll_y		;$80B817   |
 	STZ PPU.layer_3_scroll_y		;$80B81A   |
 	REP #$20				;$80B81D   |
-	LDA $17BA				;$80B81F   |
+	LDA screen_scroll_x_position		;$80B81F   |
 	LSR A					;$80B822   |
 	SEP #$20				;$80B823   |
 	STA PPU.layer_3_scroll_x		;$80B825   |
@@ -6035,14 +6035,14 @@ CODE_80B83D:
 	LDA active_frame_counter		;$80B83D  \
 	LSR A					;$80B83F   |
 	CLC					;$80B840   |
-	ADC $17BA				;$80B841   |
+	ADC screen_scroll_x_position		;$80B841   |
 	LSR A					;$80B844   |
 	STA $7E80D2				;$80B845   |
 	STA $7E80DE				;$80B849   |
 	INC A					;$80B84D   |
 	STA $7E80D6				;$80B84E   |
 	STA $7E80DA				;$80B852   |
-	LDA $17C0				;$80B856   |
+	LDA screen_scroll_y_position		;$80B856   |
 	LSR A					;$80B859   |
 	STA $7E80D4				;$80B85A   |
 	STA $7E80D8				;$80B85E   |
@@ -6052,7 +6052,7 @@ CODE_80B83D:
 	JMP CODE_80B8BD				;$80B86B  /
 
 CODE_80B86E:
-	LDA $17BA				;$80B86E  \
+	LDA screen_scroll_x_position		;$80B86E  \
 	LSR A					;$80B871   |
 	LSR A					;$80B872   |
 	STA $7E80D2				;$80B873   |
@@ -6060,7 +6060,7 @@ CODE_80B86E:
 	INC A					;$80B87B   |
 	STA $7E80D6				;$80B87C   |
 	STA $7E80DA				;$80B880   |
-	LDA $17C0				;$80B884   |
+	LDA screen_scroll_y_position		;$80B884   |
 	LSR A					;$80B887   |
 	STA $7E80D4				;$80B888   |
 	STA $7E80D8				;$80B88C   |
@@ -6103,7 +6103,7 @@ CODE_80B8D2:					;	   |
 	CLC					;$80B8D9   |
 	ADC $0D4E				;$80B8DA   |
 	SEC					;$80B8DD   |
-	SBC $17C0				;$80B8DE   |
+	SBC screen_scroll_y_position		;$80B8DE   |
 	BPL CODE_80B8E6				;$80B8E1   |
 	AND #$000F				;$80B8E3   |
 CODE_80B8E6:					;	   |
@@ -6137,7 +6137,7 @@ CODE_80B916:					;	   |
 	CLC					;$80B91D   |
 	ADC $0D4E				;$80B91E   |
 	SEC					;$80B921   |
-	SBC $17C0				;$80B922   |
+	SBC screen_scroll_y_position		;$80B922   |
 	BPL CODE_80B92A				;$80B925   |
 	AND #$001F				;$80B927   |
 CODE_80B92A:					;	   |
@@ -6154,13 +6154,13 @@ CODE_80B938:					;	   |
 	ADC #$00				;$80B93E   |
 	STA $7E8015				;$80B940   |
 	REP #$20				;$80B944   |
-	LDA $17BA				;$80B946   |
+	LDA screen_scroll_x_position		;$80B946   |
 	STA $B6					;$80B949   |
 	STA $C2					;$80B94B   |
 	INC A					;$80B94D   |
 	STA $BA					;$80B94E   |
 	STA $BE					;$80B950   |
-	LDA $17C0				;$80B952   |
+	LDA screen_scroll_y_position		;$80B952   |
 	STA $B8					;$80B955   |
 	STA $BC					;$80B957   |
 	DEC A					;$80B959   |
@@ -6171,7 +6171,7 @@ CODE_80B938:					;	   |
 CODE_80B95F:
 	LDA pending_dma_hdma_channels		;$80B95F  \
 	STA CPU.enable_dma			;$80B962   |
-	JSL update_sprite_graphics		;$80B965   |
+	JSL DMA_queued_sprite_graphics		;$80B965   |
 	STA PPU.layer_1_scroll_y		;$80B969   |
 	SEP #$20				;$80B96C   |
 	LDA screen_brightness			;$80B96E   |
@@ -6182,13 +6182,13 @@ CODE_80B95F:
 ship_deck_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80B977  \
 	STA CPU.enable_dma			;$80B97A   |
-	JSL update_sprite_graphics		;$80B97D   |
-	JSL CODE_B5AA88				;$80B981   |
-	JSL CODE_B5AC25				;$80B985   |
-	JSL update_level_x_scroll		;$80B989   |
-	JSL update_level_y_scroll		;$80B98D   |
-	JSR update_sprite_palettes		;$80B991   |
-	LDA $17BA				;$80B994   |
+	JSL DMA_queued_sprite_graphics		;$80B97D   |
+	JSL DMA_ship_deck_rigging_columns	;$80B981   |
+	JSL DMA_ship_deck_rigging_rows		;$80B985   |
+	JSL DMA_level_columns			;$80B989   |
+	JSL DMA_level_rows			;$80B98D   |
+	JSR DMA_queued_sprite_palette		;$80B991   |
+	LDA screen_scroll_x_position		;$80B994   |
 	SEP #$20				;$80B997   |
 	STA PPU.layer_1_scroll_x		;$80B999   |
 	XBA					;$80B99C   |
@@ -6210,12 +6210,12 @@ ship_deck_tileset_NMI:
 	RTS					;$80B9C5  /
 
 lava_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80B9C6  \
+	JSR DMA_level_and_sprite_graphics	;$80B9C6  \
 	JSR update_lava_bubble_graphics		;$80B9C9   |
 	JSR update_lava_fall_effect		;$80B9CC   |
 	JSR update_lava_palette_glow_effect	;$80B9CF   |
 	JSR CODE_80BAB1				;$80B9D2   |
-	LDA $17BA				;$80B9D5   |
+	LDA screen_scroll_x_position		;$80B9D5   |
 	LSR A					;$80B9D8   |
 	LSR A					;$80B9D9   |
 	SEP #$20				;$80B9DA   |
@@ -6324,7 +6324,7 @@ DATA_80BA91:
 	db $1F, $01, $BF, $00, $7F, $01, $1F, $02
 
 CODE_80BAB1:
-	LDA $17BA				;$80BAB1  \
+	LDA screen_scroll_x_position		;$80BAB1  \
 	STA $7E8013				;$80BAB4   |
 	STA $7E8018				;$80BAB8   |
 	STA $7E802D				;$80BABC   |
@@ -6332,9 +6332,9 @@ CODE_80BAB1:
 	STA $7E8015				;$80BAC3   |
 	STA $7E801A				;$80BAC7   |
 	STA $7E802F				;$80BACB   |
-	LDA $17B8				;$80BACF   |
+	LDA screen_scroll_x_sub_position_low	;$80BACF   |
 	ASL A					;$80BAD2   |
-	LDA $17BA				;$80BAD3   |
+	LDA screen_scroll_x_position		;$80BAD3   |
 	ROL A					;$80BAD6   |
 	STA $7E801D				;$80BAD7   |
 	LSR A					;$80BADB   |
@@ -6408,12 +6408,12 @@ CODE_80BB49:					;	   |
 	RTS					;$80BB76  /
 
 ship_mast_rain_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BB77  \
+	JSR DMA_level_and_sprite_graphics	;$80BB77  \
 	JSR update_rigging_graphics		;$80BB7A   |
 	LDA active_frame_counter		;$80BB7D   |
 	LSR A					;$80BB7F   |
 	CLC					;$80BB80   |
-	ADC $17BA				;$80BB81   |
+	ADC screen_scroll_x_position		;$80BB81   |
 	LSR A					;$80BB84   |
 	SEP #$20				;$80BB85   |
 	STA PPU.layer_2_scroll_x		;$80BB87   |
@@ -6427,17 +6427,17 @@ ship_mast_rain_tileset_NMI:
 	REP #$20				;$80BB9B   |
 	LDA active_frame_counter		;$80BB9D   |
 	CLC					;$80BB9F   |
-	ADC $17BA				;$80BBA0   |
+	ADC screen_scroll_x_position		;$80BBA0   |
 	LSR A					;$80BBA3   |
 	LSR A					;$80BBA4   |
 	CLC					;$80BBA5   |
-	ADC $17BA				;$80BBA6   |
+	ADC screen_scroll_x_position		;$80BBA6   |
 	SEP #$20				;$80BBA9   |
 	STA PPU.layer_3_scroll_x		;$80BBAB   |
 	STZ PPU.layer_3_scroll_x		;$80BBAE   |
-	LDA $17BA				;$80BBB1   |
+	LDA screen_scroll_x_position		;$80BBB1   |
 	STA PPU.layer_1_scroll_x		;$80BBB4   |
-	LDA $17BB				;$80BBB7   |
+	LDA screen_scroll_x_screen		;$80BBB7   |
 	STA PPU.layer_1_scroll_x		;$80BBBA   |
 	LDA $17C2				;$80BBBD   |
 	STA PPU.layer_1_scroll_y		;$80BBC0   |
@@ -6450,7 +6450,7 @@ ship_mast_rain_tileset_NMI:
 	RTS					;$80BBD4  /
 
 roller_coaster_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BBD5  \
+	JSR DMA_level_and_sprite_graphics	;$80BBD5  \
 	LDA $0929				;$80BBD8   |
 	BEQ CODE_80BBF7				;$80BBDB   |
 	TAY					;$80BBDD   |
@@ -6476,16 +6476,16 @@ CODE_80BBF7:					;	   |
 	STA PPU.fixed_color			;$80BC07   |
 CODE_80BC0A:					;	   |
 	REP #$20				;$80BC0A   |
-	LDA $17BA				;$80BC0C   |
+	LDA screen_scroll_x_position		;$80BC0C   |
 	LSR A					;$80BC0F   |
 	LSR A					;$80BC10   |
 	LSR A					;$80BC11   |
 	SEP #$20				;$80BC12   |
 	STA PPU.layer_2_scroll_x		;$80BC14   |
 	STZ PPU.layer_2_scroll_x		;$80BC17   |
-	LDA $17BA				;$80BC1A   |
+	LDA screen_scroll_x_position		;$80BC1A   |
 	STA PPU.layer_1_scroll_x		;$80BC1D   |
-	LDA $17BB				;$80BC20   |
+	LDA screen_scroll_x_screen		;$80BC20   |
 	STA PPU.layer_1_scroll_x		;$80BC23   |
 	REP #$20				;$80BC26   |
 	LDA $17C2				;$80BC28   |
@@ -6501,9 +6501,9 @@ CODE_80BC0A:					;	   |
 ship_deck_cabin_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80BC3D  \
 	STA CPU.enable_dma			;$80BC40   |
-	JSL update_sprite_graphics		;$80BC43   |
-	JSR update_sprite_palettes		;$80BC47   |
-	LDA $17BA				;$80BC4A   |
+	JSL DMA_queued_sprite_graphics		;$80BC43   |
+	JSR DMA_queued_sprite_palette		;$80BC47   |
+	LDA screen_scroll_x_position		;$80BC4A   |
 	SEP #$20				;$80BC4D   |
 	STA PPU.layer_1_scroll_x		;$80BC4F   |
 	XBA					;$80BC52   |
@@ -6522,7 +6522,7 @@ ship_deck_cabin_tileset_NMI:
 CODE_80BC6D:
 	LDA pending_dma_hdma_channels		;$80BC6D  \
 	STA CPU.enable_dma			;$80BC70   |
-	JSL update_sprite_graphics		;$80BC73   |
+	JSL DMA_queued_sprite_graphics		;$80BC73   |
 	STA PPU.layer_1_scroll_y		;$80BC77   |
 	SEP #$20				;$80BC7A   |
 	LDA screen_brightness			;$80BC7C   |
@@ -6531,16 +6531,16 @@ CODE_80BC6D:
 	RTS					;$80BC84  /
 
 mine_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BC85  \
-	LDA $17BA				;$80BC88   |
+	JSR DMA_level_and_sprite_graphics	;$80BC85  \
+	LDA screen_scroll_x_position		;$80BC88   |
 	LSR A					;$80BC8B   |
 	LSR A					;$80BC8C   |
 	SEP #$20				;$80BC8D   |
 	STA PPU.layer_2_scroll_x		;$80BC8F   |
 	STZ PPU.layer_2_scroll_x		;$80BC92   |
-	LDA $17BA				;$80BC95   |
+	LDA screen_scroll_x_position		;$80BC95   |
 	STA PPU.layer_1_scroll_x		;$80BC98   |
-	LDA $17BB				;$80BC9B   |
+	LDA screen_scroll_x_screen		;$80BC9B   |
 	STA PPU.layer_1_scroll_x		;$80BC9E   |
 	LDA $17C2				;$80BCA1   |
 	STA PPU.layer_1_scroll_y		;$80BCA4   |
@@ -6583,16 +6583,16 @@ update_mine_sparkle_effect:
 	TAX					;$80BD1A   |
 	LDA #$00DC				;$80BD1B   |
 	SBC.l DATA_80BCC8,x			;$80BD1E   |
-	STA $17BC				;$80BD22   |
+	STA layer_screen_scroll_x_position	;$80BD22   |
 	LDA #$00F0				;$80BD25   |
 	SBC.l DATA_80BCC9,x			;$80BD28   |
 	STA $17C4				;$80BD2C   |
 CODE_80BD2F:					;	   |
-	LDA $17BA				;$80BD2F   |
+	LDA screen_scroll_x_position		;$80BD2F   |
 	LSR A					;$80BD32   |
 	LSR A					;$80BD33   |
 	CLC					;$80BD34   |
-	ADC $17BC				;$80BD35   |
+	ADC layer_screen_scroll_x_position	;$80BD35   |
 	SEP #$20				;$80BD38   |
 	STA PPU.layer_3_scroll_x		;$80BD3A   |
 	STZ PPU.layer_3_scroll_x		;$80BD3D   |
@@ -6641,7 +6641,7 @@ CODE_80BD2F:					;	   |
 	RTS					;$80BDA9  /
 
 ship_mast_clouds_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BDAA  \
+	JSR DMA_level_and_sprite_graphics	;$80BDAA  \
 	LDA level_number			;$80BDAD   |
 	CMP #!level_krows_nest			;$80BDAF   |
 	BEQ .mast_flag_update_done		;$80BDB2   |
@@ -6709,7 +6709,7 @@ CODE_80BE46:
 CODE_80BE56:					;	   |
 	LDA active_frame_counter		;$80BE56   |
 	CLC					;$80BE58   |
-	ADC $17BA				;$80BE59   |
+	ADC screen_scroll_x_position		;$80BE59   |
 	SEP #$20				;$80BE5C   |
 	STA PPU.layer_2_scroll_x		;$80BE5E   |
 	STZ PPU.layer_2_scroll_x		;$80BE61   |
@@ -6721,13 +6721,13 @@ CODE_80BE56:					;	   |
 	ASL A					;$80BE70   |
 	ASL A					;$80BE71   |
 	CLC					;$80BE72   |
-	ADC $17BA				;$80BE73   |
+	ADC screen_scroll_x_position		;$80BE73   |
 	SEP #$20				;$80BE76   |
 	STA PPU.layer_3_scroll_x		;$80BE78   |
 	STZ PPU.layer_3_scroll_x		;$80BE7B   |
-	LDA $17BA				;$80BE7E   |
+	LDA screen_scroll_x_position		;$80BE7E   |
 	STA PPU.layer_1_scroll_x		;$80BE81   |
-	LDA $17BB				;$80BE84   |
+	LDA screen_scroll_x_screen		;$80BE84   |
 	STA PPU.layer_1_scroll_x		;$80BE87   |
 	LDA $17C2				;$80BE8A   |
 	STA PPU.layer_1_scroll_y		;$80BE8D   |
@@ -6739,16 +6739,16 @@ CODE_80BE93:					;	   |
 	RTS					;$80BE9B  /
 
 forest_lights_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BE9C  \
+	JSR DMA_level_and_sprite_graphics	;$80BE9C  \
 	JSR update_forest_light_shaft_effect	;$80BE9F   |
-	LDA $17BA				;$80BEA2   |
+	LDA screen_scroll_x_position		;$80BEA2   |
 	LSR A					;$80BEA5   |
 	SEP #$20				;$80BEA6   |
 	STA PPU.layer_3_scroll_x		;$80BEA8   |
 	STZ PPU.layer_3_scroll_x		;$80BEAB   |
-	LDA $17BA				;$80BEAE   |
+	LDA screen_scroll_x_position		;$80BEAE   |
 	STA PPU.layer_2_scroll_x		;$80BEB1   |
-	LDA $17BB				;$80BEB4   |
+	LDA screen_scroll_x_screen		;$80BEB4   |
 	STA PPU.layer_2_scroll_x		;$80BEB7   |
 	LDA $17C2				;$80BEBA   |
 	STA PPU.layer_2_scroll_y		;$80BEBD   |
@@ -6761,16 +6761,16 @@ forest_lights_tileset_NMI:
 	RTS					;$80BED1  /
 
 forest_windy_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BED2  \
+	JSR DMA_level_and_sprite_graphics	;$80BED2  \
 	JSR update_forest_leaves_effect		;$80BED5   |
-	LDA $17BA				;$80BED8   |
+	LDA screen_scroll_x_position		;$80BED8   |
 	LSR A					;$80BEDB   |
 	SEP #$20				;$80BEDC   |
 	STA PPU.layer_3_scroll_x		;$80BEDE   |
 	STZ PPU.layer_3_scroll_x		;$80BEE1   |
-	LDA $17BA				;$80BEE4   |
+	LDA screen_scroll_x_position		;$80BEE4   |
 	STA PPU.layer_2_scroll_x		;$80BEE7   |
-	LDA $17BB				;$80BEEA   |
+	LDA screen_scroll_x_screen		;$80BEEA   |
 	STA PPU.layer_2_scroll_x		;$80BEED   |
 	LDA $17C2				;$80BEF0   |
 	STA PPU.layer_2_scroll_y		;$80BEF3   |
@@ -6783,8 +6783,8 @@ forest_windy_tileset_NMI:
 	RTS					;$80BF07  /
 
 swamp_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BF08  \
-	LDA $17C0				;$80BF0B   |
+	JSR DMA_level_and_sprite_graphics	;$80BF08  \
+	LDA screen_scroll_y_position		;$80BF0B   |
 	CLC					;$80BF0E   |
 	ADC $19CA				;$80BF0F   |
 	CMP #$0080				;$80BF12   |
@@ -6792,7 +6792,7 @@ swamp_tileset_NMI:
 	LDA #$0080				;$80BF17   |
 CODE_80BF1A:					;	   |
 	STA $7E8013				;$80BF1A   |
-	LDA $17C0				;$80BF1E   |
+	LDA screen_scroll_y_position		;$80BF1E   |
 	CLC					;$80BF21   |
 	ADC.w #sizeof(sprite)			;$80BF22   |
 	SEC					;$80BF25   |
@@ -6801,23 +6801,23 @@ CODE_80BF1A:					;	   |
 	LDA #$0000				;$80BF2B   |
 CODE_80BF2E:					;	   |
 	STA $7E8019				;$80BF2E   |
-	LDA $17BA				;$80BF32   |
+	LDA screen_scroll_x_position		;$80BF32   |
 	LSR A					;$80BF35   |
 	SEP #$20				;$80BF36   |
 	STA PPU.layer_3_scroll_x		;$80BF38   |
 	STZ PPU.layer_3_scroll_x		;$80BF3B   |
 	REP #$20				;$80BF3E   |
-	LDA $17B8				;$80BF40   |
+	LDA screen_scroll_x_sub_position_low	;$80BF40   |
 	ASL A					;$80BF43   |
-	LDA $17BA				;$80BF44   |
+	LDA screen_scroll_x_position		;$80BF44   |
 	ROL A					;$80BF47   |
 	SEP #$20				;$80BF48   |
 	STA PPU.layer_1_scroll_x		;$80BF4A   |
 	XBA					;$80BF4D   |
 	STA PPU.layer_1_scroll_x		;$80BF4E   |
-	LDA $17BA				;$80BF51   |
+	LDA screen_scroll_x_position		;$80BF51   |
 	STA PPU.layer_2_scroll_x		;$80BF54   |
-	LDA $17BB				;$80BF57   |
+	LDA screen_scroll_x_screen		;$80BF57   |
 	STA PPU.layer_2_scroll_x		;$80BF5A   |
 	LDA $17C2				;$80BF5D   |
 	STA PPU.layer_2_scroll_y		;$80BF60   |
@@ -6837,8 +6837,8 @@ CODE_80BF2E:					;	   |
 	RTS					;$80BF81  /
 
 brambles_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80BF82  \
-	LDA $17BA				;$80BF85   |
+	JSR DMA_level_and_sprite_graphics	;$80BF82  \
+	LDA screen_scroll_x_position		;$80BF85   |
 	CLC					;$80BF88   |
 	ADC active_frame_counter		;$80BF89   |
 	LSR A					;$80BF8B   |
@@ -6846,12 +6846,12 @@ brambles_tileset_NMI:
 	SEP #$20				;$80BF8D   |
 	STA PPU.layer_3_scroll_x		;$80BF8F   |
 	STZ PPU.layer_3_scroll_x		;$80BF92   |
-	LDA $17BA				;$80BF95   |
+	LDA screen_scroll_x_position		;$80BF95   |
 	STA PPU.layer_1_scroll_x		;$80BF98   |
-	LDA $17BB				;$80BF9B   |
+	LDA screen_scroll_x_screen		;$80BF9B   |
 	STA PPU.layer_1_scroll_x		;$80BF9E   |
 	REP #$20				;$80BFA1   |
-	LDA $17BA				;$80BFA3   |
+	LDA screen_scroll_x_position		;$80BFA3   |
 	LSR A					;$80BFA6   |
 	SEP #$20				;$80BFA7   |
 	STA PPU.layer_2_scroll_x		;$80BFA9   |
@@ -6927,10 +6927,10 @@ CODE_80C02A:					;	   |
 	STA HDMA[2].source			;$80C03A   |
 CODE_80C03D:					;	   |
 	JSR CODE_80B89C				;$80C03D   |
-	JSL update_sprite_graphics		;$80C040   |
-	JSL update_level_x_scroll		;$80C044   |
-	JSL update_level_y_scroll		;$80C048   |
-	JSR update_sprite_palettes		;$80C04C   |
+	JSL DMA_queued_sprite_graphics		;$80C040   |
+	JSL DMA_level_columns			;$80C044   |
+	JSL DMA_level_rows			;$80C048   |
+	JSR DMA_queued_sprite_palette		;$80C04C   |
 	SEP #$20				;$80C04F   |
 	LDA screen_brightness			;$80C051   |
 	STA PPU.screen				;$80C054   |
@@ -6938,7 +6938,7 @@ CODE_80C03D:					;	   |
 	RTS					;$80C059  /
 
 lava_geyser_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80C05A  \
+	JSR DMA_level_and_sprite_graphics	;$80C05A  \
 	JSR update_lava_bubble_graphics		;$80C05D   |
 	SEP #$20				;$80C060   |
 	LDA $17C2				;$80C062   |
@@ -6950,7 +6950,7 @@ lava_geyser_tileset_NMI:
 	RTS					;$80C073  /
 
 krocodile_kore_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80C074  \
+	JSR DMA_level_and_sprite_graphics	;$80C074  \
 	LDA.l $0006A5				;$80C077   |
 	BIT #$0200				;$80C07B   |
 	BNE CODE_80C083				;$80C07E   |
@@ -7053,7 +7053,7 @@ CODE_80C141:
 	LDA $0B00				;$80C141  \
 	STA $78					;$80C144   |
 CODE_80C146:					;	   |
-	LDA $17BA				;$80C146   |
+	LDA screen_scroll_x_position		;$80C146   |
 	SEP #$20				;$80C149   |
 	STA PPU.layer_1_scroll_x		;$80C14B   |
 	XBA					;$80C14E   |
@@ -7086,10 +7086,10 @@ castle_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C180  \
 	STA CPU.enable_dma			;$80C183   |
 	JSR CODE_80B89C				;$80C186   |
-	JSL update_sprite_graphics		;$80C189   |
-	JSL update_level_x_scroll		;$80C18D   |
-	JSL update_level_y_scroll		;$80C191   |
-	JSR update_sprite_palettes		;$80C195   |
+	JSL DMA_queued_sprite_graphics		;$80C189   |
+	JSL DMA_level_columns			;$80C18D   |
+	JSL DMA_level_rows			;$80C191   |
+	JSR DMA_queued_sprite_palette		;$80C195   |
 	JSR CODE_80CA1B				;$80C198   |
 	JSR CODE_80C1A9				;$80C19B   |
 	SEP #$20				;$80C19E   |
@@ -7121,7 +7121,7 @@ CODE_80C1C5:					;	   |
 	TAX					;$80C1CF   |
 	LDA.l DATA_80C25F,x			;$80C1D0   |
 	LDY #$0380				;$80C1D4   |
-	LDX #$00F5				;$80C1D7   |
+	LDX.w #DATA_F5484A>>16			;$80C1D7   |
 	JSL DMA_to_VRAM				;$80C1DA   |
 	LDA $0B00				;$80C1DE   |
 	STA $78					;$80C1E1   |
@@ -7204,7 +7204,7 @@ DATA_80C25F:
 	dw DATA_F559CA
 
 haunted_tileset_NMI:
-	JSR update_level_and_sprite_graphics	;$80C26B  \
+	JSR DMA_level_and_sprite_graphics	;$80C26B  \
 	JSR update_kackle_graphics		;$80C26E   |
 	LDA #$0100				;$80C271   |
 	LDX $0D5A				;$80C274   |
@@ -7212,7 +7212,7 @@ haunted_tileset_NMI:
 	LDY $12,x				;$80C279   |
 	STY PPU.screens				;$80C27B   |
 	SEC					;$80C27E   |
-	LDA $17BA				;$80C27F   |
+	LDA screen_scroll_x_position		;$80C27F   |
 	SBC $06,x				;$80C282   |
 	CLC					;$80C284   |
 	ADC #$0080				;$80C285   |
@@ -7259,15 +7259,15 @@ CODE_80C2D4:					;	   |
 	STA $7E8012				;$80C2D5   |
 	TYA					;$80C2D9   |
 	STA $7E8014				;$80C2DA   |
-	LDA $17BA				;$80C2DE   |
+	LDA screen_scroll_x_position		;$80C2DE   |
 	LSR A					;$80C2E1   |
 	SEP #$20				;$80C2E2   |
 	STA PPU.layer_3_scroll_x		;$80C2E4   |
 	XBA					;$80C2E7   |
 	STA PPU.layer_3_scroll_x		;$80C2E8   |
-	LDA $17BA				;$80C2EB   |
+	LDA screen_scroll_x_position		;$80C2EB   |
 	STA PPU.layer_1_scroll_x		;$80C2EE   |
-	LDA $17BB				;$80C2F1   |
+	LDA screen_scroll_x_screen		;$80C2F1   |
 	STA PPU.layer_1_scroll_x		;$80C2F4   |
 	REP #$20				;$80C2F7   |
 	LDA $17C2				;$80C2F9   |
@@ -7312,7 +7312,7 @@ CODE_80C329:
 	LDA #$1801				;$80C346   |
 	STA DMA[1].settings			;$80C349   |
 	SEP #$20				;$80C34C   |
-	LDA #$F4				;$80C34E   |
+	LDA.b #<:DATA_F429D2			;$80C34E   |
 	STA DMA[1].source_bank			;$80C350   |
 	LDA #$02				;$80C353   |
 	STA CPU.enable_dma			;$80C355   |
@@ -7331,7 +7331,7 @@ CODE_80C329:
 	LDA #$1801				;$80C377   |
 	STA DMA[1].settings			;$80C37A   |
 	SEP #$20				;$80C37D   |
-	LDA #$F4				;$80C37F   |
+	LDA.b #<:DATA_F41852			;$80C37F   |
 	STA DMA[1].source_bank			;$80C381   |
 	LDA #$02				;$80C384   |
 	STA CPU.enable_dma			;$80C386   |
@@ -7457,18 +7457,18 @@ ship_mast_water_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C466  \
 	STA CPU.enable_dma			;$80C469   |
 	JSR CODE_80B83D				;$80C46C   |
-	JSL update_sprite_graphics		;$80C46F   |
-	JSL update_level_x_scroll		;$80C473   |
-	JSL update_level_y_scroll		;$80C477   |
-	JSR update_sprite_palettes		;$80C47B   |
+	JSL DMA_queued_sprite_graphics		;$80C46F   |
+	JSL DMA_level_columns			;$80C473   |
+	JSL DMA_level_rows			;$80C477   |
+	JSR DMA_queued_sprite_palette		;$80C47B   |
 	JSR update_ship_mast_flag_graphics	;$80C47E   |
 	LDA $17C2				;$80C481   |
 	LSR A					;$80C484   |
 	SEP #$20				;$80C485   |
 	STA PPU.layer_2_scroll_y		;$80C487   |
 	STZ PPU.layer_2_scroll_y		;$80C48A   |
-	LDA $17BA				;$80C48D   |
-	LDA $17BB				;$80C490   |
+	LDA screen_scroll_x_position		;$80C48D   |
+	LDA screen_scroll_x_screen		;$80C490   |
 	LDA $17C2				;$80C493   |
 	STA PPU.layer_1_scroll_y		;$80C496   |
 	STZ PPU.layer_1_scroll_y		;$80C499   |
@@ -7481,10 +7481,10 @@ ship_hold_hot_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C4A5  \
 	STA CPU.enable_dma			;$80C4A8   |
 	JSR CODE_80B89C				;$80C4AB   |
-	JSL update_sprite_graphics		;$80C4AE   |
-	JSL update_level_x_scroll		;$80C4B2   |
-	JSL update_level_y_scroll		;$80C4B6   |
-	JSR update_sprite_palettes		;$80C4BA   |
+	JSL DMA_queued_sprite_graphics		;$80C4AE   |
+	JSL DMA_level_columns			;$80C4B2   |
+	JSL DMA_level_rows			;$80C4B6   |
+	JSR DMA_queued_sprite_palette		;$80C4BA   |
 	LDA game_state_flags			;$80C4BD   |
 	BIT #$0140				;$80C4C0   |
 	BNE CODE_80C4F8				;$80C4C3   |
@@ -7590,11 +7590,11 @@ CODE_80C583:					;	   |
 krool_duel_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C584  \
 	STA CPU.enable_dma			;$80C587   |
-	JSL update_sprite_graphics		;$80C58A   |
-	JSL update_level_x_scroll		;$80C58E   |
-	JSL update_level_y_scroll		;$80C592   |
-	JSR update_sprite_palettes		;$80C596   |
-	LDA $17BA				;$80C599   |
+	JSL DMA_queued_sprite_graphics		;$80C58A   |
+	JSL DMA_level_columns			;$80C58E   |
+	JSL DMA_level_rows			;$80C592   |
+	JSR DMA_queued_sprite_palette		;$80C596   |
+	LDA screen_scroll_x_position		;$80C599   |
 	SEP #$20				;$80C59C   |
 	STA PPU.layer_1_scroll_x		;$80C59E   |
 	XBA					;$80C5A1   |
@@ -7617,7 +7617,7 @@ krool_duel_tileset_NMI:
 	REP #$20				;$80C5CA   |
 	LDA active_frame_counter		;$80C5CC   |
 	CLC					;$80C5CE   |
-	ADC $17BA				;$80C5CF   |
+	ADC screen_scroll_x_position		;$80C5CF   |
 	SEP #$20				;$80C5D2   |
 	STA PPU.layer_3_scroll_x		;$80C5D4   |
 	XBA					;$80C5D7   |
@@ -7628,12 +7628,12 @@ krool_duel_tileset_NMI:
 ship_deck_sunset_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C5DE  \
 	STA CPU.enable_dma			;$80C5E1   |
-	JSL update_sprite_graphics		;$80C5E4   |
-	JSL CODE_B5AA88				;$80C5E8   |
-	JSL CODE_B5AC25				;$80C5EC   |
-	JSL update_level_x_scroll		;$80C5F0   |
-	JSL update_level_y_scroll		;$80C5F4   |
-	JSR update_sprite_palettes		;$80C5F8   |
+	JSL DMA_queued_sprite_graphics		;$80C5E4   |
+	JSL DMA_ship_deck_rigging_columns	;$80C5E8   |
+	JSL DMA_ship_deck_rigging_rows		;$80C5EC   |
+	JSL DMA_level_columns			;$80C5F0   |
+	JSL DMA_level_rows			;$80C5F4   |
+	JSR DMA_queued_sprite_palette		;$80C5F8   |
 	LDA $0913				;$80C5FB   |
 	BEQ CODE_80C629				;$80C5FE   |
 	LDA #primary_palette			;$80C600   |
@@ -7652,7 +7652,7 @@ ship_deck_sunset_tileset_NMI:
 	REP #$20				;$80C624   |
 	STZ $0913				;$80C626   |
 CODE_80C629:					;	   |
-	LDA $17BA				;$80C629   |
+	LDA screen_scroll_x_position		;$80C629   |
 	SEP #$20				;$80C62C   |
 	STA PPU.layer_1_scroll_x		;$80C62E   |
 	XBA					;$80C631   |
@@ -7677,11 +7677,11 @@ ice_water_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C65B  \
 	STA CPU.enable_dma			;$80C65E   |
 	JSR CODE_80B86E				;$80C661   |
-	JSL update_sprite_graphics		;$80C664   |
-	JSL update_level_x_scroll		;$80C668   |
-	JSL update_level_y_scroll		;$80C66C   |
-	JSR update_sprite_palettes		;$80C670   |
-	LDA $17BA				;$80C673   |
+	JSL DMA_queued_sprite_graphics		;$80C664   |
+	JSL DMA_level_columns			;$80C668   |
+	JSL DMA_level_rows			;$80C66C   |
+	JSR DMA_queued_sprite_palette		;$80C670   |
+	LDA screen_scroll_x_position		;$80C673   |
 	LSR A					;$80C676   |
 	SEP #$20				;$80C677   |
 	STA PPU.layer_2_scroll_x		;$80C679   |
@@ -7792,11 +7792,11 @@ CODE_80C72E:
 jungle_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C750  \
 	STA CPU.enable_dma			;$80C753   |
-	JSL update_sprite_graphics		;$80C756   |
-	JSL update_level_x_scroll		;$80C75A   |
-	JSL update_level_y_scroll		;$80C75E   |
-	JSR update_sprite_palettes		;$80C762   |
-	LDA $17BA				;$80C765   |
+	JSL DMA_queued_sprite_graphics		;$80C756   |
+	JSL DMA_level_columns			;$80C75A   |
+	JSL DMA_level_rows			;$80C75E   |
+	JSR DMA_queued_sprite_palette		;$80C762   |
+	LDA screen_scroll_x_position		;$80C765   |
 	SEP #$20				;$80C768   |
 	STA PPU.layer_1_scroll_x		;$80C76A   |
 	XBA					;$80C76D   |
@@ -7805,20 +7805,20 @@ jungle_tileset_NMI:
 	STA PPU.layer_1_scroll_y		;$80C774   |
 	STZ PPU.layer_1_scroll_y		;$80C777   |
 	REP #$20				;$80C77A   |
-	LDA $17BA				;$80C77C   |
+	LDA screen_scroll_x_position		;$80C77C   |
 	LSR A					;$80C77F   |
 	SEP #$20				;$80C780   |
 	STA PPU.layer_2_scroll_x		;$80C782   |
 	STZ PPU.layer_2_scroll_x		;$80C785   |
 	REP #$20				;$80C788   |
-	LDA $17BA				;$80C78A   |
+	LDA screen_scroll_x_position		;$80C78A   |
 	LSR A					;$80C78D   |
 	LSR A					;$80C78E   |
 	SEP #$20				;$80C78F   |
 	STA PPU.layer_3_scroll_x		;$80C791   |
 	STZ PPU.layer_3_scroll_x		;$80C794   |
 	REP #$20				;$80C797   |
-	LDA $17C0				;$80C799   |
+	LDA screen_scroll_y_position		;$80C799   |
 	LSR A					;$80C79C   |
 	SEC					;$80C79D   |
 	SBC #$0040				;$80C79E   |
@@ -7827,7 +7827,7 @@ jungle_tileset_NMI:
 	XBA					;$80C7A6   |
 	STA PPU.layer_2_scroll_y		;$80C7A7   |
 	REP #$20				;$80C7AA   |
-	LDA $17C0				;$80C7AC   |
+	LDA screen_scroll_y_position		;$80C7AC   |
 	SEC					;$80C7AF   |
 	SBC #$0080				;$80C7B0   |
 	LSR A					;$80C7B3   |
@@ -7843,12 +7843,12 @@ jungle_tileset_NMI:
 ice_transparent_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C7C6  \
 	STA CPU.enable_dma			;$80C7C9   |
-	JSL update_sprite_graphics		;$80C7CC   |
-	JSL update_level_x_scroll		;$80C7D0   |
-	JSL update_level_y_scroll		;$80C7D4   |
-	JSR update_sprite_palettes		;$80C7D8   |
+	JSL DMA_queued_sprite_graphics		;$80C7CC   |
+	JSL DMA_level_columns			;$80C7D0   |
+	JSL DMA_level_rows			;$80C7D4   |
+	JSR DMA_queued_sprite_palette		;$80C7D8   |
 	JSR update_ice_distortion_effect	;$80C7DB   |
-	LDA $17BA				;$80C7DE   |
+	LDA screen_scroll_x_position		;$80C7DE   |
 	SEP #$20				;$80C7E1   |
 	STA PPU.layer_1_scroll_x		;$80C7E3   |
 	XBA					;$80C7E6   |
@@ -7857,7 +7857,7 @@ ice_transparent_tileset_NMI:
 	STA PPU.layer_1_scroll_y		;$80C7ED   |
 	STZ PPU.layer_1_scroll_y		;$80C7F0   |
 	REP #$20				;$80C7F3   |
-	LDA $17BA				;$80C7F5   |
+	LDA screen_scroll_x_position		;$80C7F5   |
 	LSR A					;$80C7F8   |
 	SEP #$20				;$80C7F9   |
 	STA PPU.layer_2_scroll_x		;$80C7FB   |
@@ -7881,10 +7881,10 @@ castle_toxic_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C821  \
 	STA CPU.enable_dma			;$80C824   |
 	JSR CODE_80B89C				;$80C827   |
-	JSL update_sprite_graphics		;$80C82A   |
-	JSL update_level_x_scroll		;$80C82E   |
-	JSL update_level_y_scroll		;$80C832   |
-	JSR update_sprite_palettes		;$80C836   |
+	JSL DMA_queued_sprite_graphics		;$80C82A   |
+	JSL DMA_level_columns			;$80C82E   |
+	JSL DMA_level_rows			;$80C832   |
+	JSR DMA_queued_sprite_palette		;$80C836   |
 	JSR CODE_80C1A9				;$80C839   |
 	SEP #$20				;$80C83C   |
 	LDA screen_brightness			;$80C83E   |
@@ -7895,12 +7895,12 @@ castle_toxic_tileset_NMI:
 brambles_windy_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C847  \
 	STA CPU.enable_dma			;$80C84A   |
-	JSL update_sprite_graphics		;$80C84D   |
-	JSL update_level_x_scroll		;$80C851   |
-	JSL update_level_y_scroll		;$80C855   |
-	JSR update_sprite_palettes		;$80C859   |
+	JSL DMA_queued_sprite_graphics		;$80C84D   |
+	JSL DMA_level_columns			;$80C851   |
+	JSL DMA_level_rows			;$80C855   |
+	JSR DMA_queued_sprite_palette		;$80C859   |
 	JSR update_forest_leaves_effect		;$80C85C   |
-	LDA $17BA				;$80C85F   |
+	LDA screen_scroll_x_position		;$80C85F   |
 	CLC					;$80C862   |
 	ADC active_frame_counter		;$80C863   |
 	LSR A					;$80C865   |
@@ -7908,12 +7908,12 @@ brambles_windy_tileset_NMI:
 	SEP #$20				;$80C867   |
 	STA PPU.layer_3_scroll_x		;$80C869   |
 	STZ PPU.layer_3_scroll_x		;$80C86C   |
-	LDA $17BA				;$80C86F   |
+	LDA screen_scroll_x_position		;$80C86F   |
 	STA PPU.layer_1_scroll_x		;$80C872   |
-	LDA $17BB				;$80C875   |
+	LDA screen_scroll_x_screen		;$80C875   |
 	STA PPU.layer_1_scroll_x		;$80C878   |
 	REP #$20				;$80C87B   |
-	LDA $17BA				;$80C87D   |
+	LDA screen_scroll_x_position		;$80C87D   |
 	LSR A					;$80C880   |
 	SEP #$20				;$80C881   |
 	STA PPU.layer_2_scroll_x		;$80C883   |
@@ -7936,20 +7936,20 @@ brambles_windy_tileset_NMI:
 mine_windy_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C8AA  \
 	STA CPU.enable_dma			;$80C8AD   |
-	JSL update_sprite_graphics		;$80C8B0   |
-	JSL update_level_x_scroll		;$80C8B4   |
-	JSL update_level_y_scroll		;$80C8B8   |
-	JSR update_sprite_palettes		;$80C8BC   |
+	JSL DMA_queued_sprite_graphics		;$80C8B0   |
+	JSL DMA_level_columns			;$80C8B4   |
+	JSL DMA_level_rows			;$80C8B8   |
+	JSR DMA_queued_sprite_palette		;$80C8BC   |
 	JSR update_mine_debris_effect		;$80C8BF   |
-	LDA $17BA				;$80C8C2   |
+	LDA screen_scroll_x_position		;$80C8C2   |
 	LSR A					;$80C8C5   |
 	LSR A					;$80C8C6   |
 	SEP #$20				;$80C8C7   |
 	STA PPU.layer_2_scroll_x		;$80C8C9   |
 	STZ PPU.layer_2_scroll_x		;$80C8CC   |
-	LDA $17BA				;$80C8CF   |
+	LDA screen_scroll_x_position		;$80C8CF   |
 	STA PPU.layer_1_scroll_x		;$80C8D2   |
-	LDA $17BB				;$80C8D5   |
+	LDA screen_scroll_x_screen		;$80C8D5   |
 	STA PPU.layer_1_scroll_x		;$80C8D8   |
 	LDA $17C2				;$80C8DB   |
 	STA PPU.layer_1_scroll_y		;$80C8DE   |
@@ -7970,10 +7970,10 @@ mine_windy_tileset_NMI:
 forest_misty_tileset_NMI:
 	LDA pending_dma_hdma_channels		;$80C8FF  \
 	STA CPU.enable_dma			;$80C902   |
-	JSL update_sprite_graphics		;$80C905   |
-	JSL update_level_x_scroll		;$80C909   |
-	JSL update_level_y_scroll		;$80C90D   |
-	JSR update_sprite_palettes		;$80C911   |
+	JSL DMA_queued_sprite_graphics		;$80C905   |
+	JSL DMA_level_columns			;$80C909   |
+	JSL DMA_level_rows			;$80C90D   |
+	JSR DMA_queued_sprite_palette		;$80C911   |
 	LDX #$80F2				;$80C914   |
 	STX HDMA[1].source			;$80C917   |
 	LDX #$8012				;$80C91A   |
@@ -7986,14 +7986,14 @@ forest_misty_tileset_NMI:
 	LDX #$85D2				;$80C92D   |
 	STX HDMA[2].source			;$80C930   |
 CODE_80C933:					;	   |
-	LDA $17BA				;$80C933   |
+	LDA screen_scroll_x_position		;$80C933   |
 	LSR A					;$80C936   |
 	SEP #$20				;$80C937   |
 	STA PPU.layer_3_scroll_x		;$80C939   |
 	STZ PPU.layer_3_scroll_x		;$80C93C   |
-	LDA $17BA				;$80C93F   |
+	LDA screen_scroll_x_position		;$80C93F   |
 	STA PPU.layer_2_scroll_x		;$80C942   |
-	LDA $17BB				;$80C945   |
+	LDA screen_scroll_x_screen		;$80C945   |
 	STA PPU.layer_2_scroll_x		;$80C948   |
 	LDA $17C2				;$80C94B   |
 	STA PPU.layer_2_scroll_y		;$80C94E   |
@@ -8039,7 +8039,7 @@ CODE_80C97C:
 	CLC					;$80C996   |
 	ADC $17C7				;$80C997   |
 	CLC					;$80C99A   |
-	ADC $17C0				;$80C99B   |
+	ADC screen_scroll_y_position		;$80C99B   |
 	STA $17C4				;$80C99E   |
 	%pea_use_dbr($7E8013)			;$80C9A1   |
 	PLB					;$80C9A4   |
@@ -8057,7 +8057,7 @@ CODE_80C9B3:					;	   |
 	LSR A					;$80C9BB   |
 	LSR A					;$80C9BC   |
 	CLC					;$80C9BD   |
-	ADC $17BA				;$80C9BE   |
+	ADC screen_scroll_x_position		;$80C9BE   |
 	STA $8013,y				;$80C9C1   |
 	TXA					;$80C9C4   |
 	CLC					;$80C9C5   |
@@ -8102,7 +8102,7 @@ CODE_80C9B3:					;	   |
 CODE_80CA1B:
 	LDA $0D54				;$80CA1B  \
 	SEC					;$80CA1E   |
-	SBC $17C0				;$80CA1F   |
+	SBC screen_scroll_y_position		;$80CA1F   |
 	CMP #$0038				;$80CA22   |
 	BCC CODE_80CA2A				;$80CA25   |
 	LDA #$0038				;$80CA27   |
@@ -8119,18 +8119,18 @@ CODE_80CA2A:					;	   |
 	STA $7E8834				;$80CA40   |
 	STA $7E884E				;$80CA44   |
 	REP #$20				;$80CA48   |
-	LDA $17BA				;$80CA4A   |
+	LDA screen_scroll_x_position		;$80CA4A   |
 	LSR A					;$80CA4D   |
 	LSR A					;$80CA4E   |
 	LSR A					;$80CA4F   |
 	EOR #$FFFF				;$80CA50   |
 	CLC					;$80CA53   |
-	ADC $17BA				;$80CA54   |
+	ADC screen_scroll_x_position		;$80CA54   |
 	STA $7E884C				;$80CA57   |
 	STA $7E884F				;$80CA5B   |
-	LDA $17BA				;$80CA5F   |
+	LDA screen_scroll_x_position		;$80CA5F   |
 	STA $32					;$80CA62   |
-	LDA $17B8				;$80CA64   |
+	LDA screen_scroll_x_sub_position_low	;$80CA64   |
 	LSR $32					;$80CA67   |
 	ROR A					;$80CA69   |
 	LSR $32					;$80CA6A   |
@@ -8138,19 +8138,19 @@ CODE_80CA2A:					;	   |
 	LSR $32					;$80CA6D   |
 	ROR A					;$80CA6F   |
 	CLC					;$80CA70   |
-	ADC $17B8				;$80CA71   |
+	ADC screen_scroll_x_sub_position_low	;$80CA71   |
 	LDA $32					;$80CA74   |
-	ADC $17BA				;$80CA76   |
+	ADC screen_scroll_x_position		;$80CA76   |
 	STA $7E8852				;$80CA79   |
 	RTS					;$80CA7D  /
 
 update_ice_distortion_effect:
-	LDA $17BA				;$80CA7E  \
+	LDA screen_scroll_x_position		;$80CA7E  \
 	LSR A					;$80CA81   |
 	LSR A					;$80CA82   |
 	AND #$000E				;$80CA83   |
 	TAX					;$80CA86   |
-	LDA $17BA				;$80CA87   |
+	LDA screen_scroll_x_position		;$80CA87   |
 	LSR A					;$80CA8A   |
 	CLC					;$80CA8B   |
 	ADC #$0004				;$80CA8C   |
@@ -8217,7 +8217,7 @@ CODE_80CAF5:
 update_lava_hot_air_effect:
 	LDA #$022A				;$80CAFD  \
 	SEC					;$80CB00   |
-	SBC $17C0				;$80CB01   |
+	SBC screen_scroll_y_position		;$80CB01   |
 	BEQ CODE_80CB08				;$80CB04   |
 	BPL CODE_80CB0B				;$80CB06   |
 CODE_80CB08:					;	   |
@@ -8235,35 +8235,35 @@ CODE_80CB13:					;	   |
 	LSR A					;$80CB20   |
 	LSR A					;$80CB21   |
 	TAX					;$80CB22   |
-	LDA $17BA				;$80CB23   |
+	LDA screen_scroll_x_position		;$80CB23   |
 	STA $7E8048,x				;$80CB26   |
 	JSR CODE_80CAF5				;$80CB2A   |
-	LDA $17BA				;$80CB2D   |
+	LDA screen_scroll_x_position		;$80CB2D   |
 	INC A					;$80CB30   |
 	STA $7E8048,x				;$80CB31   |
 	JSR CODE_80CAF5				;$80CB35   |
-	LDA $17BA				;$80CB38   |
+	LDA screen_scroll_x_position		;$80CB38   |
 	INC A					;$80CB3B   |
 	INC A					;$80CB3C   |
 	STA $7E8048,x				;$80CB3D   |
 	JSR CODE_80CAF5				;$80CB41   |
-	LDA $17BA				;$80CB44   |
+	LDA screen_scroll_x_position		;$80CB44   |
 	INC A					;$80CB47   |
 	INC A					;$80CB48   |
 	STA $7E8048,x				;$80CB49   |
 	JSR CODE_80CAF5				;$80CB4D   |
-	LDA $17BA				;$80CB50   |
+	LDA screen_scroll_x_position		;$80CB50   |
 	INC A					;$80CB53   |
 	STA $7E8048,x				;$80CB54   |
 	JSR CODE_80CAF5				;$80CB58   |
-	LDA $17BA				;$80CB5B   |
+	LDA screen_scroll_x_position		;$80CB5B   |
 	STA $7E8048,x				;$80CB5E   |
 	JSR CODE_80CAF5				;$80CB62   |
-	LDA $17BA				;$80CB65   |
+	LDA screen_scroll_x_position		;$80CB65   |
 	DEC A					;$80CB68   |
 	STA $7E8048,x				;$80CB69   |
 	JSR CODE_80CAF5				;$80CB6D   |
-	LDA $17BA				;$80CB70   |
+	LDA screen_scroll_x_position		;$80CB70   |
 	DEC A					;$80CB73   |
 	STA $7E8048,x				;$80CB74   |
 	LDA $84					;$80CB78   |
@@ -8401,7 +8401,7 @@ CODE_80CC72:					;	   |
 	SBC active_frame_counter		;$80CC8C   |
 	LSR A					;$80CC8E   |
 	CLC					;$80CC8F   |
-	ADC $17C0				;$80CC90   |
+	ADC screen_scroll_y_position		;$80CC90   |
 	STA $17C4				;$80CC93   |
 	%pea_use_dbr($7E8013)			;$80CC96   |
 	PLB					;$80CC99   |
@@ -8421,7 +8421,7 @@ CODE_80CCA8:					;	   |
 	CLC					;$80CCB2   |
 	ADC $17C7				;$80CCB3   |
 	CLC					;$80CCB6   |
-	ADC $17BA				;$80CCB7   |
+	ADC screen_scroll_x_position		;$80CCB7   |
 	STA $8013,y				;$80CCBA   |
 	TXA					;$80CCBD   |
 	CLC					;$80CCBE   |
@@ -8827,7 +8827,7 @@ update_forest_light_shaft_effect:
 	LSR A					;$80CFDE   |
 	LSR A					;$80CFDF   |
 	CLC					;$80CFE0   |
-	ADC $17C0				;$80CFE1   |
+	ADC screen_scroll_y_position		;$80CFE1   |
 	AND #$0007				;$80CFE4   |
 	STA $32					;$80CFE7   |
 	ASL A					;$80CFE9   |
@@ -8836,7 +8836,7 @@ update_forest_light_shaft_effect:
 	CLC					;$80CFED   |
 	ADC #DATA_BBA35F			;$80CFEE   |
 	STA HDMA[1].source			;$80CFF1   |
-	LDA $17BB				;$80CFF4   |
+	LDA screen_scroll_x_screen		;$80CFF4   |
 	AND #$00FF				;$80CFF7   |
 	DEC A					;$80CFFA   |
 	TAX					;$80CFFB   |
@@ -8844,7 +8844,7 @@ update_forest_light_shaft_effect:
 	AND #$00FF				;$80D000   |
 	EOR #$FFFF				;$80D003   |
 	SEC					;$80D006   |
-	ADC $17C0				;$80D007   |
+	ADC screen_scroll_y_position		;$80D007   |
 	STA $17C4				;$80D00A   |
 	DEC A					;$80D00D   |
 	STA $17C6				;$80D00E   |
@@ -8863,7 +8863,7 @@ CODE_80D01D:					;	   |
 	AND #$00FF				;$80D02C   |
 	LSR A					;$80D02F   |
 	STA $34					;$80D030   |
-	LDA $17BA				;$80D032   |
+	LDA screen_scroll_x_position		;$80D032   |
 	AND #$00FF				;$80D035   |
 	EOR #$00FF				;$80D038   |
 	CLC					;$80D03B   |
@@ -8886,7 +8886,7 @@ CODE_80D04B:					;	   |
 	LDX #DATA_BBA408			;$80D061   |
 CODE_80D064:					;	   |
 	STX HDMA[2].source			;$80D064   |
-	LDA $17BA				;$80D067   |
+	LDA screen_scroll_x_position		;$80D067   |
 	AND #$00FF				;$80D06A   |
 	EOR #$00FF				;$80D06D   |
 	CLC					;$80D070   |
@@ -9226,7 +9226,7 @@ wasp_hive_tileset_logic:
 	BRA .CODE_80D57D			;$80D577  /
 
 .CODE_80D579:
-	JSL CODE_B5B317				;$80D579  \ Another type of vertical level scroll handler? 
+	JSL CODE_B5B317				;$80D579  \ Seems like another type of vertical level scroll handler
 .CODE_80D57D:					;	   |
 	JSR render_sprites			;$80D57D   |
 	JSR set_unused_oam_offscreen		;$80D580   |
@@ -9248,7 +9248,7 @@ ship_deck_tileset_logic:
 	JSL sprite_handler			;$80D59E   |
 	JSL camera_handler			;$80D5A2   |
 	JSR handle_ship_deck_rigging_scroll	;$80D5A6   |
-	JSL CODE_B5B9BB				;$80D5A9   | stream rigging tilemap?
+	JSL ship_deck_rigging_scroll_handler	;$80D5A9   |
 	JSL horizontal_level_scroll_handler	;$80D5AD   |
 	JSR render_sprites			;$80D5B1   |
 	JSR set_unused_oam_offscreen		;$80D5B4   |
@@ -9855,7 +9855,7 @@ ship_deck_sunset_tileset_logic:
 	JSL sprite_handler			;$80DAA3   |
 	JSL camera_handler			;$80DAA7   |
 	JSR handle_ship_deck_rigging_scroll	;$80DAAB   |
-	JSL CODE_B5B9BB				;$80DAAE   |
+	JSL ship_deck_rigging_scroll_handler	;$80DAAE   |
 	JSL horizontal_level_scroll_handler	;$80DAB2   |
 	JSR render_sprites			;$80DAB6   |
 	JSR set_unused_oam_offscreen		;$80DAB9   |
@@ -9993,13 +9993,13 @@ mine_windy_tileset_logic:
 	JMP paused_tileset_logic		;$80DBEF  /
 
 handle_forest_mist_scroll:
-	LDA $17C0				;$80DBF2  \
+	LDA screen_scroll_y_position		;$80DBF2  \
 	CLC					;$80DBF5   |
 	ADC active_frame_counter		;$80DBF6   |
 	LSR A					;$80DBF8   |
 	LSR A					;$80DBF9   |
 	CLC					;$80DBFA   |
-	ADC $17C0				;$80DBFB   |
+	ADC screen_scroll_y_position		;$80DBFB   |
 	STA $32					;$80DBFE   |
 	LDA active_frame_counter		;$80DC00   |
 	LSR A					;$80DC02   |
@@ -10016,7 +10016,7 @@ handle_forest_mist_scroll:
 	LSR A					;$80DC1A   |
 	AND #$001E				;$80DC1B   |
 	TAX					;$80DC1E   |
-	LDA $17BA				;$80DC1F   |
+	LDA screen_scroll_x_position		;$80DC1F   |
 	CLC					;$80DC22   |
 	ADC active_frame_counter		;$80DC23   |
 	STA $54					;$80DC25   |
@@ -10197,7 +10197,7 @@ handle_ship_deck_sunset_global:
 	RTL					;$80DD66  /
 
 handle_ship_deck_sunset:
-	LDA $17BA				;$80DD67  \
+	LDA screen_scroll_x_position		;$80DD67  \
 	AND #$FFFE				;$80DD6A   |
 	SEC					;$80DD6D   |
 	SBC $0911				;$80DD6E   |
@@ -10207,7 +10207,7 @@ handle_ship_deck_sunset:
 	RTS					;$80DD75  /
 
 .CODE_80DD76:
-	LDA $17BA				;$80DD76  \
+	LDA screen_scroll_x_position		;$80DD76  \
 	EOR $0911				;$80DD79   |
 	BIT #$FF00				;$80DD7C   |
 	BEQ .CODE_80DD90			;$80DD7F   |
@@ -10219,7 +10219,7 @@ handle_ship_deck_sunset:
 	BRA .CODE_80DD96			;$80DD8E  /
 
 .CODE_80DD90:
-	LDA $17BA				;$80DD90  \
+	LDA screen_scroll_x_position		;$80DD90  \
 	AND #$FFFE				;$80DD93   |
 .CODE_80DD96:					;	   |
 	STA $32					;$80DD96   |
@@ -10291,7 +10291,7 @@ handle_lava_geyser_positioning:
 	TAX					;$80DE1E   |
 	LDA.l DATA_B3D691,x			;$80DE1F   |
 	SEC					;$80DE23   |
-	SBC $17BA				;$80DE24   |
+	SBC screen_scroll_x_position		;$80DE24   |
 	CLC					;$80DE27   |
 	ADC #$000C				;$80DE28   |
 	CMP #$0118				;$80DE2B   |
@@ -10303,7 +10303,7 @@ handle_lava_geyser_positioning:
 	DEY					;$80DE39   |
 	DEY					;$80DE3A   |
 	BPL .CODE_80DE19			;$80DE3B   |
-	LDA $17BA				;$80DE3D   |
+	LDA screen_scroll_x_position		;$80DE3D   |
 	SEC					;$80DE40   |
 	SBC #$000A				;$80DE41   |
 	STA $32					;$80DE44   |
@@ -10393,7 +10393,7 @@ handle_lava_geyser_positioning:
 	TAX					;$80DED9   |
 	LDA.l DATA_B3D691,x			;$80DEDA   |
 	SEC					;$80DEDE   |
-	SBC $17BA				;$80DEDF   |
+	SBC screen_scroll_x_position		;$80DEDF   |
 	SEC					;$80DEE2   |
 	SBC #$000C				;$80DEE3   |
 	BMI .CODE_80DF0F			;$80DEE6   |
@@ -10536,7 +10536,7 @@ handle_glimmer_light:
 	CLC					;$80E01A   |
 	ADC $0006,y				;$80E01B   |
 	SEC					;$80E01E   |
-	SBC $17BA				;$80E01F   |
+	SBC screen_scroll_x_position		;$80E01F   |
 	BPL .CODE_80E027			;$80E022   |
 	LDA #$0000				;$80E024   |
 .CODE_80E027:					;	   |
@@ -10570,7 +10570,7 @@ handle_glimmer_light:
 .CODE_80E05C:					;	   |
 	LDA $000A,y				;$80E05C   |
 	SEC					;$80E05F   |
-	SBC $17C0				;$80E060   |
+	SBC screen_scroll_y_position		;$80E060   |
 	CLC					;$80E063   |
 	ADC.l DATA_80DF36,x			;$80E064   |
 	BPL .CODE_80E06D			;$80E068   |
@@ -10904,19 +10904,19 @@ fireworks_spawn_x_positions:
 
 CODE_80E522:
 	JSR handle_ship_deck_rigging_scroll	;$80E522  \
-	LDA $17BC				;$80E525   |
+	LDA layer_screen_scroll_x_position	;$80E525   |
 	STA $B8					;$80E528   |
 	RTL					;$80E52A  /
 
 handle_ship_deck_rigging_scroll:
-	LDA $17BA				;$80E52B  \
+	LDA screen_scroll_x_position		;$80E52B  \
 	LSR A					;$80E52E   |
 	LSR A					;$80E52F   |
 	CLC					;$80E530   |
-	ADC $17BA				;$80E531   |
+	ADC screen_scroll_x_position		;$80E531   |
 	TAY					;$80E534   |
 	SEC					;$80E535   |
-	SBC $17BC				;$80E536   |
+	SBC layer_screen_scroll_x_position	;$80E536   |
 	BCS .CODE_80E550			;$80E539   |
 	CMP #$FFF8				;$80E53B   |
 	BCS .CODE_80E543			;$80E53E   |
@@ -10938,7 +10938,7 @@ handle_ship_deck_rigging_scroll:
 .CODE_80E55A:					;	   |
 	STA $B8					;$80E55A   |
 	STA $B6					;$80E55C   |
-	STY $17BC				;$80E55E   |
+	STY layer_screen_scroll_x_position	;$80E55E   |
 	LDA $B7					;$80E561   |
 	AND #$00FF				;$80E563   |
 	STA CPU.dividen				;$80E566   |
@@ -10967,7 +10967,7 @@ handle_ship_deck_water_sky_scroll:
 	LSR A					;$80E58C   |
 	LSR A					;$80E58D   |
 	STA $7E8019				;$80E58E   |
-	LDA $17BA				;$80E592   |
+	LDA screen_scroll_x_position		;$80E592   |
 	CLC					;$80E595   |
 	ADC active_frame_counter		;$80E596   |
 	STA $36					;$80E598   |
@@ -11062,7 +11062,7 @@ handle_water_and_3D_bg_scroll:
 handle_3d_bg_scroll:				;	   |
 	%pea_use_dbr($7E8070)			;$80E64E   |
 	PLB					;$80E651   |
-	LDA $17BA				;$80E652   |
+	LDA screen_scroll_x_position		;$80E652   |
 	LSR A					;$80E655   |
 	STA.l CPU.dividen			;$80E656   |
 	SEP #$20				;$80E65A   |
@@ -11184,9 +11184,9 @@ CODE_80E6DC:					;	   |
 	SBC #$0020				;$80E754   |
 	TAY					;$80E757   |
 	BPL CODE_80E6DC				;$80E758   |
-	LDA $17B8				;$80E75A   |
+	LDA screen_scroll_x_sub_position_low	;$80E75A   |
 	STA $36					;$80E75D   |
-	LDA $17BA				;$80E75F   |
+	LDA screen_scroll_x_position		;$80E75F   |
 	LSR A					;$80E762   |
 	ROR $36					;$80E763   |
 	LSR A					;$80E765   |
@@ -11224,7 +11224,7 @@ CODE_80E6DC:					;	   |
 	ADC #$0004				;$80E79B   |
 	STA $3E					;$80E79E   |
 	STA $40					;$80E7A0   |
-	LDA $17C0				;$80E7A2   |
+	LDA screen_scroll_y_position		;$80E7A2   |
 	CLC					;$80E7A5   |
 	ADC #$0080				;$80E7A6   |
 	LSR A					;$80E7A9   |
@@ -11920,7 +11920,7 @@ CODE_80ECE1:					;	   |
 handle_water_scroll:
 	LDA $0D4E				;$80ECE5  \
 	SEC					;$80ECE8   |
-	SBC $17C0				;$80ECE9   |
+	SBC screen_scroll_y_position		;$80ECE9   |
 	CLC					;$80ECEC   |
 	STA $32					;$80ECED   |
 	SEC					;$80ECEF   |
@@ -11990,11 +11990,11 @@ CODE_80ED24:
 	STA $884F				;$80ED80   |
 	LDA active_frame_counter		;$80ED83   |
 	CLC					;$80ED85   |
-	ADC $17BA				;$80ED86   |
+	ADC screen_scroll_x_position		;$80ED86   |
 	LSR A					;$80ED89   |
 	LSR A					;$80ED8A   |
 	CLC					;$80ED8B   |
-	ADC $17BA				;$80ED8C   |
+	ADC screen_scroll_x_position		;$80ED8C   |
 	AND #$00FF				;$80ED8F   |
 	XBA					;$80ED92   |
 	STA $80F3				;$80ED93   |
@@ -12126,11 +12126,11 @@ CODE_80EE18:
 CODE_80EEBC:					;	   |
 	LDA active_frame_counter		;$80EEBC   |
 	CLC					;$80EEBE   |
-	ADC $17BA				;$80EEBF   |
+	ADC screen_scroll_x_position		;$80EEBF   |
 	LSR A					;$80EEC2   |
 	LSR A					;$80EEC3   |
 	CLC					;$80EEC4   |
-	ADC $17BA				;$80EEC5   |
+	ADC screen_scroll_x_position		;$80EEC5   |
 	STA $34					;$80EEC8   |
 	LDA $34					;$80EECA   |
 	LSR A					;$80EECC   |
@@ -12360,11 +12360,11 @@ CODE_80F0AB:
 	LDA active_frame_counter		;$80F0AB  \
 CODE_80F0AD:					;	   |
 	CLC					;$80F0AD   |
-	ADC $17BA				;$80F0AE   |
+	ADC screen_scroll_x_position		;$80F0AE   |
 	LSR A					;$80F0B1   |
 	LSR A					;$80F0B2   |
 	CLC					;$80F0B3   |
-	ADC $17BA				;$80F0B4   |
+	ADC screen_scroll_x_position		;$80F0B4   |
 	STA $34					;$80F0B7   |
 	LDA $34					;$80F0B9   |
 	LSR A					;$80F0BB   |
@@ -12459,7 +12459,7 @@ handle_forest_lights_scroll:
 	LDX #$0014				;$80F172   |
 	LDA #$0004				;$80F175   |
 	JSR CODE_80F264				;$80F178   |
-	LDA $17BA				;$80F17B   |
+	LDA screen_scroll_x_position		;$80F17B   |
 	AND #$00FF				;$80F17E   |
 	STA $54					;$80F181   |
 	LDA $54					;$80F183   |
@@ -12589,7 +12589,7 @@ DATA_80F244:
 CODE_80F264:
 	STX $38					;$80F264  \
 	STA $34					;$80F266   |
-	LDA $17BB				;$80F268   |
+	LDA screen_scroll_x_screen		;$80F268   |
 	AND #$0003				;$80F26B   |
 	ASL A					;$80F26E   |
 	ASL A					;$80F26F   |
@@ -12597,7 +12597,7 @@ CODE_80F264:
 	CLC					;$80F271   |
 	ADC $34					;$80F272   |
 	TAX					;$80F274   |
-	LDA $17BA				;$80F275   |
+	LDA screen_scroll_x_position		;$80F275   |
 	AND #$00FF				;$80F278   |
 	CLC					;$80F27B   |
 	ADC.l DATA_80F244,x			;$80F27C   |
@@ -12680,11 +12680,11 @@ DATA_80F300:
 	db $07, $19, $8B, $25, $2E, $32, $62, $08
 	db $A4, $10, $07, $19, $8B, $25, $2E, $32
 
-update_sprite_palettes_global:
-	JSR update_sprite_palettes		;$80F320  \
+DMA_queued_sprite_palette_global:
+	JSR DMA_queued_sprite_palette		;$80F320  \
 	RTL					;$80F323  /
 
-update_sprite_palettes:
+DMA_queued_sprite_palette:
 	LDA previous_palette_buffer_slot	;$80F324  \
 	CMP current_palette_buffer_slot		;$80F326   |
 	BEQ .return				;$80F328   |
@@ -12699,9 +12699,9 @@ update_sprite_palettes:
 	STA DMA[0].settings			;$80F338   |
 	LDA #$001E				;$80F33B   |
 	STA DMA[0].size				;$80F33E   |
-	LDA palette_upload_ring_buffer,x	;$80F341   |
+	LDA sprite_palette_DMA.source_word,x	;$80F341   |
 	STA DMA[0].source			;$80F344   |
-	LDA palette_upload_ring_buffer+$2,x	;$80F347   |
+	LDA sprite_palette_DMA.source_bank,x	;$80F347   |
 	SEP #$20				;$80F34A   |
 	STA DMA[0].source_bank			;$80F34C   |
 	XBA					;$80F34F   |
@@ -12715,7 +12715,7 @@ update_sprite_palettes:
 render_sprites:
 	PHK					;$80F35B  \
 	PLB					;$80F35C   |
-	JSL CODE_B5A8DA				;$80F35D   |> Sort render orders
+	JSL sort_sprite_render_orders		;$80F35D   |> Sort render orders
 	LDA #oam_table				;$80F361   |
 	STA next_oam_slot			;$80F364   |
 	LDA #$0400				;$80F366   |
@@ -12743,7 +12743,7 @@ render_sprites:
 	BEQ CODE_80F3B0				;$80F3AA   |
 	JSL CODE_B59C52				;$80F3AC   |
 CODE_80F3B0:					;	   |
-	STZ next_sprite_dma_buffer_slot		;$80F3B0   |
+	STZ next_sprite_DMA_buffer_slot		;$80F3B0   |
 	RTS					;$80F3B3  /
 
 ;Unreferenced
@@ -12802,7 +12802,7 @@ init_ending_parade:
 	JSL init_sprite_render_order_global	;$80F411   |
 	LDA #!music_credits			;$80F415   |
 	JSL play_song				;$80F418   |
-	STZ next_sprite_dma_buffer_slot		;$80F41C   |
+	STZ next_sprite_DMA_buffer_slot		;$80F41C   |
 	LDA #!end_parade_ppu_config_id		;$80F41F   |
 	JSL set_PPU_registers_global		;$80F422   |
 	LDA #!end_parade_vram_payload_id	;$80F426   |
@@ -12814,10 +12814,10 @@ init_ending_parade:
 	LDA #$0100				;$80F43A   |
 	JSL set_fade_global			;$80F43D   |
 	LDA #$0100				;$80F441   |
-	STA $17BA				;$80F444   |
-	STA $17C0				;$80F447   |
+	STA screen_scroll_x_position		;$80F444   |
+	STA screen_scroll_y_position		;$80F447   |
 	LDA #$00B0				;$80F44A   |
-	STA $17B8				;$80F44D   |
+	STA screen_scroll_x_sub_position_low	;$80F44D   |
 	LDA #$0001				;$80F450   |
 	STA $84					;$80F453   |
 	LDA #ending_parade_table		;$80F455   |
@@ -12839,10 +12839,10 @@ init_ending_parade:
 CODE_80F482:
 	LDA pending_dma_hdma_channels		;$80F482  \
 	STA CPU.enable_dma			;$80F485   |
-	JSL update_sprite_graphics		;$80F488   |
-	JSR update_sprite_palettes		;$80F48C   |
+	JSL DMA_queued_sprite_graphics		;$80F488   |
+	JSR DMA_queued_sprite_palette		;$80F48C   |
 	JSL update_kackle_graphics_global	;$80F48F   |
-	LDA $17B8				;$80F493   |
+	LDA screen_scroll_x_sub_position_low	;$80F493   |
 	SEP #$20				;$80F496   |
 	STZ PPU.sprite_select			;$80F498   |
 	STA PPU.layer_2_scroll_x		;$80F49B   |
@@ -12858,7 +12858,7 @@ CODE_80F482:
 	LDA $7E					;$80F4B5   |
 	CMP #$001D				;$80F4B7   |
 	BNE CODE_80F4BF				;$80F4BA   |
-	DEC $17B8				;$80F4BC   |
+	DEC screen_scroll_x_sub_position_low	;$80F4BC   |
 CODE_80F4BF:					;	   |
 	LDA $84					;$80F4BF   |
 	CMP #$0010				;$80F4C1   |
@@ -12948,7 +12948,7 @@ CODE_80F551:					;	   |
 
 CODE_80F567:
 	JSL sprite_handler			;$80F567  \
-	JSL CODE_B5A8DA				;$80F56B   |
+	JSL sort_sprite_render_orders		;$80F56B   |
 	JSR update_ending_parade_text		;$80F56F   |
 	JSR set_unused_oam_offscreen		;$80F572   |
 	JSR fade_screen				;$80F575   |
@@ -13332,7 +13332,7 @@ update_ending_parade_text:
 	LDA #$0054				;$80FA03   |
 	STA $78					;$80FA06   |
 	JSL CODE_B59F40				;$80FA08   |
-	STZ next_sprite_dma_buffer_slot		;$80FA0C   |
+	STZ next_sprite_DMA_buffer_slot		;$80FA0C   |
 	PLB					;$80FA0F   |
 	RTS					;$80FA10  /
 

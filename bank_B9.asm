@@ -901,7 +901,7 @@ CODE_B9D541:
 	BNE CODE_B9D557				;$B9D546   |
 	LDA sprite.y_position,x			;$B9D548   |
 	SEC					;$B9D54A   |
-	SBC $0017C0				;$B9D54B   |
+	SBC.l screen_scroll_y_position		;$B9D54B   |
 	CMP #$00F0				;$B9D54F   |
 	BPL CODE_B9D557				;$B9D552   |
 	JMP CODE_B9D12B				;$B9D554  /
@@ -1441,7 +1441,7 @@ CODE_B9D846:
 CODE_B9D853:
 	CPX inactive_kong_sprite		;$B9D853  \
 	BEQ CODE_B9D85C				;$B9D856   |
-	JSL CODE_B8B9B8				;$B9D858   |
+	JSL start_player_falling_global		;$B9D858   |
 CODE_B9D85C:					;	   |
 	RTS					;$B9D85C  /
 
@@ -2587,7 +2587,7 @@ CODE_B9DFD3:
 	LDA sprite.terrain_interaction,x	;$B9DFD5   |
 	AND #$0001				;$B9DFD7   |
 	BNE CODE_B9DFE5				;$B9DFDA   |
-	JSL CODE_B8B9B4				;$B9DFDC   |
+	JSL start_player_faster_falling_global	;$B9DFDC   |
 	RTS					;$B9DFE0  /
 
 CODE_B9DFE1:
@@ -3434,7 +3434,7 @@ CODE_B9E51E:
 	LDA time_stop_flags			;$B9E51E  \
 	BIT #$0004				;$B9E521   |
 	BNE CODE_B9E534				;$B9E524   |
-	JSL CODE_BCFB58				;$B9E526   |
+	JSL get_current_sprite_clipping		;$B9E526   |
 	LDA #$0100				;$B9E52A   |
 	LDY #$0100				;$B9E52D   |
 	JSL CODE_BEBD8E				;$B9E530   |

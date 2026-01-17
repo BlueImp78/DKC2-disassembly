@@ -115,8 +115,8 @@ player_active_pressed_high		= $0511
 screen_brightness			= $0512
 screen_fade_speed			= $0513
 screen_fade_timer			= $0514
-;Main Level Config Structure		= $0515-$0552
-;Alt Level Config Structure		= $0553-$0590
+main_level_config			= $0515
+alt_level_config			= $0553
 unknown_kong_control_variables		= $0591
 active_kong_sprite			= $0593
 active_kong_control_variables		= $0595
@@ -300,7 +300,7 @@ level_palette_address			= $0A8E
 
 RAM_0B02				= $0B02	;Possible future name: player_input_action_flags
 sprite_vram_allocation_table		= $0B04
-palette_upload_ring_buffer		= $0B24
+sprite_palette_DMA_buffer		= $0B24
 active_sprite_palettes_table		= $0B64
 sprite_palette_reference_count		= $0B74
 
@@ -330,8 +330,26 @@ non_kong_sprite_slots			= $0E9E
 diddy_control_variables			= $16B2
 dixie_control_variables			= $16D8
 sprite_render_table			= $16FE	;Word Array[25]
-next_sprite_dma_buffer_slot		= $1730	;Word
-sprite_dma_buffer			= $1732	;(Word,Word,Double) Array[6]
+next_sprite_DMA_buffer_slot		= $1730	;Word
+sprite_DMA_buffer			= $1732	;(Word,Word,Double) Array[6]
+
+unknown_17B4				= $17B4
+level_tilemap_vram_address		= $17B6
+screen_scroll_x_sub_position_low	= $17B8
+screen_scroll_x_sub_position		= $17B9
+screen_scroll_x_position		= $17BA
+screen_scroll_x_screen			= $17BB
+layer_screen_scroll_x_position		= $17BC
+
+screen_scroll_y_position		= $17C0
+		
+level_row_left_DMA_buffer		= $17DA
+level_row_right_DMA_buffer		= $181A
+level_column_DMA_buffer			= $185A
+layer_column_DMA_buffer			= $189A ;Used by ship deck rigging
+layer_row_left_DMA_buffer		= $18DA ;Used by ship deck rigging
+layer_row_right_DMA_buffer		= $191A ;Used by ship deck rigging
+column_row_temp_buffer			= $195A
 
 last_squitter_web_shot_time		= $19A2
 last_squitter_platform_shot_time	= $19A4

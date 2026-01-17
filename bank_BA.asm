@@ -112,7 +112,7 @@ CODE_BA90D9:					;	   |
 	BRL CODE_BA911F				;$BA90E7  /
 
 ;Dead code
-	JSL CODE_BCFB58				;$BA90EA  \
+	JSL get_current_sprite_clipping		;$BA90EA  \
 	LDA #$0C7B				;$BA90EE   |
 	JSL check_complex_player_collision_B6	;$BA90F1   |
 	BCC CODE_BA911F				;$BA90F5   |
@@ -128,7 +128,7 @@ CODE_BA90D9:					;	   |
 	BRA CODE_BA911F				;$BA9112  /
 
 CODE_BA9114:
-	JSL CODE_BCFB58				;$BA9114  \
+	JSL get_current_sprite_clipping		;$BA9114  \
 	LDA #$0000				;$BA9118   |
 	JSL check_complex_player_collision_B6	;$BA911B   |
 CODE_BA911F:					;	   |
@@ -308,7 +308,7 @@ CODE_BA9274:
 CODE_BA92AE:					;	   |
 	PHA					;$BA92AE   |
 	LDY #DATA_FF1EAA			;$BA92AF   |
-	JSL spawn_no_gfx_special_sprite_address	;$BA92B2   | Spawn spikes?
+	JSL spawn_no_gfx_special_sprite_address	;$BA92B2   |
 	LDY alternate_sprite			;$BA92B6   |
 	PLX					;$BA92B8   |
 	LDA $0000,x				;$BA92B9   |
@@ -955,7 +955,7 @@ king_zing_ring_zinger_sprite_code:
 	LDA #$0118				;$BA982F   |
 	JSL check_throwable_collision_global	;$BA9832   |
 	BCS ..collision_happened		;$BA9836   |
-	JSL CODE_BCFB58				;$BA9838   |
+	JSL get_current_sprite_clipping		;$BA9838   |
 	LDA #$5000				;$BA983C   |
 	JSL check_complex_player_collision_B6	;$BA983F   |
 	BCC ..CODE_BA987A			;$BA9843   |
@@ -1122,7 +1122,7 @@ king_zing_stinger_sprite_code:
 	LDA $2E,x				;$BA99C0   |
 	BIT #$0200				;$BA99C2   |
 	BNE CODE_BA9A24				;$BA99C5   |
-	JSL CODE_BCFB58				;$BA99C7   | Else populate sprite clipping
+	JSL get_current_sprite_clipping		;$BA99C7   | Else populate sprite clipping
 	LDA #$0000				;$BA99CB   | Load collision flags
 	JSL check_complex_player_collision_B6	;$BA99CE   |
 	LDX $0656				;$BA99D2   | Get index of self
@@ -1167,9 +1167,9 @@ CODE_BA9A24:
 	BNE CODE_BA9A71				;$BA9A2B   |
 	BRL CODE_BA9A71				;$BA9A2D  /
 
-;dead code? looks like it would apply the knockback interaction to the player on collision
+;Dead code, looks like it would apply the knockback interaction to the player on collision
 	LDX current_sprite			;$BA9A30   |
-	JSL CODE_BCFB58				;$BA9A32   |
+	JSL get_current_sprite_clipping		;$BA9A32   |
 	LDA #$0C7B				;$BA9A36   |
 	JSL check_complex_player_collision_B6	;$BA9A39   |
 	BCC CODE_BA9A71				;$BA9A3D   |
@@ -1225,7 +1225,7 @@ king_zing_spikes_sprite_code:
 	LDA $2E,x				;$BA9AB1   |
 	BIT #$2000				;$BA9AB3   |
 	BEQ .CODE_BA9AC9			;$BA9AB6   |
-	JSL CODE_BCFB58				;$BA9AB8   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$BA9AB8   | Populate sprite clipping
 	LDA #$0000				;$BA9ABC   | Get collision flags
 	JSL check_complex_player_collision_B6	;$BA9ABF   | Check collision with player
 	JSL apply_position_from_velocity_global	;$BA9AC3   |
@@ -1357,7 +1357,7 @@ kreepy_krows_body_sprite_code:
 	BRL .CODE_BA9BF1			;$BA9BB2  /
 
 .CODE_BA9BB5:
-	JSL CODE_BCFB58				;$BA9BB5  \
+	JSL get_current_sprite_clipping		;$BA9BB5  \
 	LDA #$007B				;$BA9BB9   |
 	JSL check_complex_player_collision_B6	;$BA9BBC   |
 	BCC .CODE_BA9BF1			;$BA9BC0   |
@@ -1373,7 +1373,7 @@ kreepy_krows_body_sprite_code:
 	BRA .CODE_BA9BF1			;$BA9BDB  /
 
 .CODE_BA9BDD:
-	JSL CODE_BCFB58				;$BA9BDD  \
+	JSL get_current_sprite_clipping		;$BA9BDD  \
 	LDA #$0000				;$BA9BE1   |
 	JSL check_complex_player_collision_B6	;$BA9BE4   |
 	BCC .CODE_BA9BF1			;$BA9BE8   |
@@ -1404,7 +1404,7 @@ kreepy_krows_eggs_sprite_code:
 	LDA.l kong_state_flags_table,x		;$BA9C16   |
 	AND #$0040				;$BA9C1A   |
 	BNE .CODE_BA9C2A			;$BA9C1D   |
-	JSL CODE_BCFB58				;$BA9C1F   |
+	JSL get_current_sprite_clipping		;$BA9C1F   |
 	LDA #$0C18				;$BA9C23   |
 	JSL check_complex_player_collision_B6	;$BA9C26   |
 .CODE_BA9C2A:					;	   |
@@ -1735,7 +1735,7 @@ CODE_BA9EEE:					;	   |
 	JSR spawn_kreepy_krow_egg		;$BA9EEE   |
 	LDA $0006,y				;$BA9EF1   |
 	STA $06,x				;$BA9EF4   |
-	LDA $17C0				;$BA9EF6   |
+	LDA screen_scroll_y_position		;$BA9EF6   |
 	SEC					;$BA9EF9   |
 	SBC #$0020				;$BA9EFA   |
 	STA $0A,x				;$BA9EFD   |
@@ -1760,7 +1760,7 @@ CODE_BA9F1F:
 	JSR spawn_kreepy_krow_egg		;$BA9F25   |
 	LDA $0006,y				;$BA9F28   |
 	STA $06,x				;$BA9F2B   |
-	LDA $17C0				;$BA9F2D   |
+	LDA screen_scroll_y_position		;$BA9F2D   |
 	SEC					;$BA9F30   |
 	SBC #$0020				;$BA9F31   |
 	STA $0A,x				;$BA9F34   |
@@ -1782,7 +1782,7 @@ CODE_BA9F52:					;	   |
 	JSR spawn_kreepy_krow_egg		;$BA9F5B   |
 	LDA $000A,y				;$BA9F5E   |
 	STA $0A,x				;$BA9F61   |
-	LDA $17BA				;$BA9F63   |
+	LDA screen_scroll_x_position		;$BA9F63   |
 	SEC					;$BA9F66   |
 	SBC #$0020				;$BA9F67   |
 	STA $06,x				;$BA9F6A   |
@@ -1995,15 +1995,15 @@ mini_necky_vars_setup_table:
 .DATA_BAA142:
 	dw $0260				;X position
 	dw $0BD0 				;Y position
-	dw $0202 				;$46,x (Movement behavior related?)
-	dw $0014 				;$48,x (Movement behavior related?)
+	dw $0202 				;$46,x
+	dw $0014 				;$48,x
 	dw $0800 				;Potential terrain tile position
 	dw $FF80 				;Distance from potential ground
 	dw $0000				;$22,x
 	dw $FB00 				;$28,x
-	dw $FF00 				;Current X velocity
+	dw $FF00 				;Current X speed
 	dw $001E				;$4E,x (Time before diving)
-	dw $002D				;$50,x (Time before stops moving?)
+	dw $002D				;$50,x
 
 .DATA_BAA158:
 	dw $0100
@@ -2086,7 +2086,7 @@ kreepy_krows_head_sprite_code:
 	LDA $2E,x				;$BAA1DD   |
 	BIT #$0200				;$BAA1DF   |
 	BNE .CODE_BAA1F1			;$BAA1E2   |
-	JSL CODE_BCFB58				;$BAA1E4   |
+	JSL get_current_sprite_clipping		;$BAA1E4   |
 	LDA #$0000				;$BAA1E8   |
 	JSL check_complex_player_collision_B6	;$BAA1EB   |
 	BRA .return				;$BAA1EF  /
@@ -2096,7 +2096,7 @@ kreepy_krows_head_sprite_code:
 	LDA $04,x				;$BAA1F4   |
 	BNE .return				;$BAA1F6   |
 	LDX current_sprite			;$BAA1F8   |
-	JSL CODE_BCFB58				;$BAA1FA   |
+	JSL get_current_sprite_clipping		;$BAA1FA   |
 	LDA #$007B				;$BAA1FE   |
 	JSL check_complex_player_collision_B6	;$BAA201   |
 	BCC .return				;$BAA205   |
@@ -2558,7 +2558,7 @@ DATA_BAA7DA:
 ;k rool projectiles
 
 ;straight spike balls
-DATA_BAA7E4:
+k_rool_straight_spike_balls_shots:
 	dw $0200, $0000, $0200, $0000, $0000, $0000, $0078, $0000
 	dw $0280, $0000, $0280, $0000, $0000, $0000, $0032, $0010
 	dw $0280, $0000, $0280, $0000, $0000, $0000, $003C, $FFF0
@@ -2571,7 +2571,7 @@ DATA_BAA7E4:
 	dw $0280, $0000, $0280, $0000, $0000, $0000, $003C, $0000
 
 ;bouncing spike balls
-DATA_BAA884:
+k_rool_bouncing_spike_balls_shots:
 	dw $0200, $0000, $0200, $0400, $0000, $0005, $FC00, $0400, $0078
 	dw $0200, $0000, $0200, $0400, $0000, $0004, $F880, $0780, $003C
 	dw $0200, $0000, $0200, $0400, $0000, $0005, $FC00, $0400, $003C
@@ -2584,7 +2584,7 @@ DATA_BAA884:
 	dw $0200, $0000, $0200, $0400, $0000, $0004, $F880, $0780, $003C
 
 ;orbiting spike balls
-DATA_BAA938:
+k_rool_swirling_spike_balls_shots:
 	dw $0100, $0000, $0100, $0000, $0909, $FC00, $1500, $00B4, $FFF6
 	dw $0100, $0000, $0100, $0000, $0909, $FCC0, $2250, $00B4, $FFE8
 	dw $0100, $0000, $0100, $0000, $0909, $FD80, $3000, $00B4, $FFDA
@@ -2597,25 +2597,25 @@ DATA_BAA938:
 	dw $0100, $0000, $0100, $0000, $0909, $FC00, $1500, $00B4, $FFF6
 
 ;straight blue gas
-DATA_BAA9EC:
+k_rool_straight_gas_clouds_shots:
 	dw $0200, $0000, $0200, $0000, $0000, $0000, $0020, $0000
 	dw $0200, $0000, $0200, $0000, $0000, $0000, $0020, $0000
 	dw $0200, $0000, $0200, $0000, $0000, $0000, $0020, $0000
 
 ;bouncing red gas
-DATA_BAAA1C:
+k_rool_bouncing_gas_clouds_shots:
 	dw $0280, $0000, $0280, $0900, $0000, $0006, $FA00, $0800, $001C
 	dw $0280, $0000, $0280, $0900, $0000, $0006, $FA00, $0800, $001C
 	dw $0280, $0000, $0280, $0900, $0000, $0006, $FA00, $0800, $001C
 
 ;slow spike balls
-DATA_BAAA52:
+k_rool_slow_spike_balls_shots:
 	dw $0200, $0000, $0200, $0000, $0000, $0000, $0039, $0000, $0014
 	dw $0200, $0000, $0200, $0000, $0000, $0000, $0039, $0000, $0014
 	dw $0200, $0000, $0200, $0000, $0000, $0000, $0039, $0000, $0014
 
 ;orbiting purple gas
-DATA_BAAA88:
+k_rool_swirling_gas_clouds_shots:
 	dw $0100, $0000, $0100, $0000, $0909, $FC80, $1500, $004B, $FFF6
 	dw $0100, $0000, $0100, $0000, $0909, $FC80, $1500, $004B, $FFF6
 	dw $0100, $0000, $0100, $0000, $0909, $FC80, $1500, $004B, $FFF6
@@ -2766,7 +2766,7 @@ DATA_BAAC4C:
 	dw $0064, $0001, $0000, $0000, $0000, !null_pointer
 endif
 
-;king zing spike attack 1 projectile velocities
+;king zing spike attack 1 projectile speeds
 DATA_BAAC34:
 	dw $0000, $FD80, $0000, $FD80
 	dw $0000, $0001, $0236, $01B0
@@ -2783,7 +2783,7 @@ DATA_BAAC34:
 	dw $023C, $FE50, $FE50, $FE50
 	dw $FE50, $0001, $0001, $023D
 
-;king zing spike attack 2 projectile velocities
+;king zing spike attack 2 projectile speeds
 DATA_BAACA4:
 	dw $0000, $FD00, $0000, $FD00
 	dw $0000, $0001, $0236, $0200
@@ -2801,7 +2801,7 @@ DATA_BAACA4:
 	dw $FE00, $0001, $0001, $023D
 
 ;k rool number of projectiles for each attack phase
-DATA_BAAD14:
+k_rool_shot_count_table:
 	db $00
 	db $03
 	db $03
@@ -2814,21 +2814,19 @@ DATA_BAAD14:
 	db $01
 
 ;k rool projectile set pointers
-DATA_BAAD1E:
+k_rool_shot_table:
 	dw !null_pointer
-	dw DATA_BAAA88
-	dw DATA_BAAA52
-	dw DATA_BAA9EC
-	dw DATA_BAA938
-	dw DATA_BAA884
-	dw DATA_BAA7E4
+	dw k_rool_swirling_gas_clouds_shots
+	dw k_rool_slow_spike_balls_shots
+	dw k_rool_straight_gas_clouds_shots
+	dw k_rool_swirling_spike_balls_shots
+	dw k_rool_bouncing_spike_balls_shots
+	dw k_rool_straight_spike_balls_shots
 	dw !null_pointer
-
 
 DATA_BAAD2E:
 	dw $0018
 
-;krow 1 phase 2 falling egg data?
 DATA_BAAD30:
 	dw DATA_BAAD60
 	dw DATA_BAAD70
@@ -2955,18 +2953,15 @@ DATA_BAAEE0:
 	db $02, $00, $00, $00, $04, $00, $00, $00
 	db $04, $00, $02, $00, $04, $00, $04, $00
 
-;unused?
 DATA_BAAEF0:
 	db $02, $00, $02, $00, $00, $00, $00, $00
 	db $00, $00, $02, $00, $00, $00, $04, $00
 
-;unused?
 DATA_BAAF00:
 	db $02, $00, $04, $00, $04, $00, $04, $00
 	db $02, $00, $02, $00, $00, $00, $00, $00
 
 
-;krow 1 egg shell piece related
 DATA_BAAF10:
 	dw DATA_BAAF1C
 	dw DATA_BAAF5A
@@ -3118,9 +3113,9 @@ CODE_BAB129:					;	   |
 
 kore_sparkle_sprite_code:
 	JSL apply_position_from_velocity_global	;$BAB12C  \
-	JSL process_sprite_animation		;$BAB130   | process animation
-	JSL delete_sprite_if_offscreen		;$BAB134   | despawn sprite if offscreen
-	JML [sprite_return_address]		;$BAB138  / done processing sprite
+	JSL process_sprite_animation		;$BAB130   |
+	JSL delete_sprite_if_offscreen		;$BAB134   |
+	JML [sprite_return_address]		;$BAB138  / Sprite return
 
 sparkle_spawner_sprite_code:
 	LDX current_sprite			;$BAB13B  \
@@ -3242,7 +3237,7 @@ init_bonus_screen:
 	LDA #$0000				;$BAB257   |
 	STA $000654				;$BAB25A   |
 	STA $000658				;$BAB25E   |
-	LDA #$00B4				;$BAB262   | Might be an address
+	LDA #$00B4				;$BAB262   |
 	JSR CODE_BAB48B				;$BAB265   |
 	LDA.l $00065B				;$BAB268   |
 	AND #$00FF				;$BAB26C   |
@@ -4143,7 +4138,7 @@ krool_fish_sprite_code:
 
 
 .bounce_state:
-	JSR .interpolate_fish_velocities	;$BAC142  \
+	JSR .interpolate_fish_speeds		;$BAC142  \
 	LDA $0A,x				;$BAC145   | get fish Y position
 	CMP #$01C5				;$BAC147   | check if it reached 01C5
 	BCC .handle_timer			;$BAC14A   | if not, handle state transition timer
@@ -4190,12 +4185,12 @@ krool_fish_sprite_code:
 	JML [sprite_return_address]		;$BAC1B1  / done processing sprite
 
 .fall_state:
-	JSR .interpolate_fish_velocities	;$BAC1B4  \
+	JSR .interpolate_fish_speeds		;$BAC1B4  \
 	JSL process_sprite_animation		;$BAC1B7   | process animation
 	JSL delete_sprite_if_offscreen		;$BAC1BB   | kill sprite if offscreen
 	JML [sprite_return_address]		;$BAC1BF  / done processing sprite
 
-.interpolate_fish_velocities:
+.interpolate_fish_speeds:
 	LDX current_sprite			;$BAC1C2  \ get fish sprite
 	LDA $42,x				;$BAC1C4   | get bounce count
 	JSL interpolate_x_velocity_global	;$BAC1C6   | and use it as X interpolation preset
@@ -4421,7 +4416,7 @@ scroll_and_float_barrel_sprite_code:
 
 
 .wait_for_collision:
-	JSL CODE_BCFB58				;$BAC356  \ Populate sprite clipping
+	JSL get_current_sprite_clipping		;$BAC356  \ Populate sprite clipping
 	LDA #$0008				;$BAC35A   | Get collision flags
 	JSL check_active_kong_collision		;$BAC35D   | Check collision with kong
 	BCS ..collision_happened		;$BAC361   | If collision happened display text
@@ -4453,7 +4448,6 @@ scroll_and_float_barrel_sprite_code:
 .idle:						;	   |
 	JML [sprite_return_address]		;$BAC397  /
 
-;likely a k rool projectile (seems to be unused)
 DATA_BAC39A:
 	dw CODE_B695ED, $04B0, $0000, $04B0, $0000, $0000, $0000, $0046, $0000
 
@@ -4599,7 +4593,7 @@ DATA_BAC86B:
 	db $00, $06, $03, $00, $00, $02, $00, $40
 
 
-;kreepy krow sparkle velocities
+;kreepy krow sparkle speeds
 DATA_BAC8AB:
 	dw $FE00
 

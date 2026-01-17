@@ -12,29 +12,29 @@ arch spc700
 	dw (.pointers_end-.pointers_start)>>1	;quantity of sound effects (default $0017)
 ;sound effect pointers
 .pointers_start:
-	dw .seq_30EE	;60: 
-	dw .seq_30E4	;61: 
-	dw .seq_30CD	;62: 
-	dw .seq_30BB	;63: 
-	dw .seq_30BA	;64: 
-	dw .seq_30A2	;65: 
-	dw .seq_2FA2	;66: 
-	dw .seq_308A	;67: 
-	dw .seq_3035	;68: 
-	dw .seq_3018	;69: 
-	dw .seq_2FE1	;6A: 
-	dw .seq_2FB6	;6B: 
-	dw .seq_3072	;6C: 
-	dw .seq_305F	;6D: 
-	dw .seq_3052	;6E: 
-	dw .seq_2F8F	;6F: 
-	dw .seq_2F75	;70: 
-	dw .seq_2F61	;71: 
-	dw .seq_2F4F	;72: 
-	dw .seq_2F3D	;73: 
-	dw .seq_2F2D	;74: 
-	dw .seq_2EEC	;75: 
-	dw .seq_2EC4	;76: 
+	dw .seq_30EE	;60: Splash
+	dw .seq_30E4	;61: Splash 2
+	dw .seq_30CD	;62: Kong jumping into water
+	dw .seq_30BB	;63: Clapper barking
+	dw .seq_30BA	;64: None
+	dw .seq_30A2	;65: Enguarde bill attack 
+	dw .seq_2FA2	;66: Enguarde hit
+	dw .seq_308A	;67: Clock ticking (identical to $1C)
+	dw .seq_3035	;68: Flotsam moving
+	dw .seq_3018	;69: Puftup puffing up
+	dw .seq_2FE1	;6A: Puftup bursting
+	dw .seq_2FB6	;6B: Kong paddling
+	dw .seq_3072	;6C: Shuri spinning
+	dw .seq_305F	;6D: Clapper clapping/hurt by lava (Lava Lagoon)
+	dw .seq_3052	;6E: Clapper spitting ice
+	dw .seq_2F8F	;6F: Crocodile Isle sinking (channel 1)
+	dw .seq_2F75	;70: Crocodile Isle sinking (channel 2)
+	dw .seq_2F61	;71: Krocodile Kore beam
+	dw .seq_2F4F	;72: Krocodile Kore beam (noise channel)
+	dw .seq_2F3D	;73: Krocodile Kore beam dying
+	dw .seq_2F2D	;74: Krocodile Kore beam dying (noise channel)
+	dw .seq_2EEC	;75: K. Rool laughing
+	dw .seq_2EC4	;76: K. Rool laughing (echo)
 .pointers_end:
 
 .seq_2EC4:

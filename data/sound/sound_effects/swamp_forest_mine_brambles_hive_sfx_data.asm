@@ -12,27 +12,27 @@ arch spc700
 	dw (.pointers_end-.pointers_start)>>1	;quantity of sound effects (default $0015)
 ;sound effect pointers
 .pointers_start:
-	dw .seq_2F2C	;60: 
-	dw .seq_2F22	;61: 
-	dw .seq_2EC0	;62: 
-	dw .seq_2EC0	;63: 
-	dw .seq_2F49	;64: 
-	dw .seq_2F36	;65: 
-	dw .seq_2F2C	;66: 
-	dw .seq_2F22	;67: 
-	dw .seq_2F12	;68: 
-	dw .seq_2F11	;69: 
-	dw .seq_2F11	;6A: 
-	dw .seq_2F02	;6B: 
-	dw .seq_2EF3	;6C: 
-	dw .seq_2EE3	;6D: 
-	dw .seq_2ED2	;6E: 
-	dw .seq_2EC1	;6F: 
-	dw .seq_2FB8	;70: 
-	dw .seq_2FA0	;71: 
-	dw .seq_2F8A	;72: 
-	dw .seq_2F72	;73: 
-	dw .seq_2EC0	;74: 
+	dw .seq_2F2C	;60: Splash Small (not always correct sample)
+	dw .seq_2F22	;61: Splash Big (not always correct sample)
+	dw .seq_2EC0	;62: None
+	dw .seq_2EC0	;63: None
+	dw .seq_2F49	;64: Kloak laughing
+	dw .seq_2F36	;65: Wind
+	dw .seq_2F2C	;66: Identical to 60
+	dw .seq_2F22	;67: Identical to 61
+	dw .seq_2F12	;68: Sticking to honey
+	dw .seq_2F11	;69: None
+	dw .seq_2F11	;6A: None
+	dw .seq_2F02	;6B: Race ready-set beep
+	dw .seq_2EF3	;6C: Race GO! beep
+	dw .seq_2EE3	;6D: Krockhead rising/sinking
+	dw .seq_2ED2	;6E: Landing on a Green Krockhead / Water freeze
+	dw .seq_2EC1	;6F: Bouncing on a Brown Krockhead / Rumble (might not be an actual sound)
+	dw .seq_2FB8	;70: Ghost rope appearing
+	dw .seq_2FA0	;71: Ghost rope appearing (echo)
+	dw .seq_2F8A	;72: Ghost rope disappearing
+	dw .seq_2F72	;73: Ghost rope disappearing (echo)
+	dw .seq_2EC0	;74: None
 .pointers_end:
 
 .seq_2EC0:

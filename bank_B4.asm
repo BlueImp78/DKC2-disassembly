@@ -582,22 +582,22 @@ CODE_B484BC:					;	   |
 	STZ $0681				;$B484F6   |
 	REP #$20				;$B484F9   |
 CODE_B484FB:					;	   |
-	LDA $17BA				;$B484FB   |
+	LDA screen_scroll_x_position		;$B484FB   |
 	SEP #$20				;$B484FE   |
 	STA PPU.layer_1_scroll_x		;$B48500   |
 	XBA					;$B48503   |
 	STA PPU.layer_1_scroll_x		;$B48504   |
 	REP #$20				;$B48507   |
 	LDA $069B				;$B48509   |
-	STA $17BA				;$B4850C   |
-	LDA $17C0				;$B4850F   |
+	STA screen_scroll_x_position		;$B4850C   |
+	LDA screen_scroll_y_position		;$B4850F   |
 	SEP #$20				;$B48512   |
 	STA PPU.layer_1_scroll_y		;$B48514   |
 	XBA					;$B48517   |
 	STA PPU.layer_1_scroll_y		;$B48518   |
 	REP #$20				;$B4851B   |
 	LDA $069D				;$B4851D   |
-	STA $17C0				;$B48520   |
+	STA screen_scroll_y_position		;$B48520   |
 	REP #$20				;$B48523   |
 	LDA $06A1				;$B48525   |
 	AND #$FFEF				;$B48528   |
@@ -1694,8 +1694,8 @@ CODE_B48E49:					;	   |
 CODE_B48E6C:
 	PHK					;$B48E6C  \
 	PLB					;$B48E6D   |
-	JSL update_sprite_graphics		;$B48E6E   |
-	JSL update_sprite_palettes_global	;$B48E72   |
+	JSL DMA_queued_sprite_graphics		;$B48E6E   |
+	JSL DMA_queued_sprite_palette_global	;$B48E72   |
 	DEC $064E				;$B48E76   |
 	BEQ CODE_B48E7E				;$B48E79   |
 	BRL CODE_B48F07				;$B48E7B  /
@@ -1841,7 +1841,7 @@ CODE_B48FCB:					;	   |
 	JSR CODE_B4BC51				;$B48FDA   |
 CODE_B48FDD:					;	   |
 	JSL sprite_handler			;$B48FDD   |
-	JSL CODE_B5A8DA				;$B48FE1   |
+	JSL sort_sprite_render_orders		;$B48FE1   |
 	JSR CODE_B4AE85				;$B48FE5   |
 	RTL					;$B48FE8  /
 
@@ -2066,8 +2066,8 @@ CODE_B491D7:
 	PHK					;$B491D7  \
 	PLB					;$B491D8   |
 	JSR CODE_B4A11F				;$B491D9   |
-	JSL update_sprite_graphics		;$B491DC   |
-	JSL update_sprite_palettes_global	;$B491E0   |
+	JSL DMA_queued_sprite_graphics		;$B491DC   |
+	JSL DMA_queued_sprite_palette_global	;$B491E0   |
 	JSR CODE_B4996E				;$B491E4   |
 	LDA screen_brightness			;$B491E7   |
 	CMP #$000F				;$B491EA   |
@@ -2251,8 +2251,8 @@ CODE_B4935D:					;	   |
 CODE_B4935E:
 	PHK					;$B4935E  \
 	PLB					;$B4935F   |
-	JSL update_sprite_graphics		;$B49360   |
-	JSL update_sprite_palettes_global	;$B49364   |
+	JSL DMA_queued_sprite_graphics		;$B49360   |
+	JSL DMA_queued_sprite_palette_global	;$B49364   |
 	JSR CODE_B4996E				;$B49368   |
 	DEC $064E				;$B4936B   |
 	BEQ CODE_B49373				;$B4936E   |
@@ -2351,7 +2351,7 @@ CODE_B49444:					;	   |
 	LDX #$07A5				;$B4944D   |
 	JSR CODE_B4BB62				;$B49450   |
 	JSL sprite_handler			;$B49453   |
-	JSL CODE_B5A8DA				;$B49457   |
+	JSL sort_sprite_render_orders		;$B49457   |
 	JSR CODE_B4AE85				;$B4945B   |
 	RTL					;$B4945E  /
 
@@ -2721,46 +2721,46 @@ CODE_B49744:					;	   |
 	RTS					;$B4974E  /
 
 CODE_B4974F:
-	LDA npc_screen_type			;$B4974F  \  get npc screen type
-	BNE CODE_B49764				;$B49752   | if not 0, its not cranky, move to next check
-	LDY #DATA_B4C4F7			;$B49754   | load text pointer table for available cranky selections
-	LDX language_select			;$B49757   | get current language in use
-	BEQ CODE_B4975F				;$B4975A   | if 0, we're in english, continue with it
-	LDY #DATA_B4C80D			;$B4975C   | else load pointer table for french text
+	LDA npc_screen_type			;$B4974F  \ \ Get npc screen type
+	BNE CODE_B49764				;$B49752   |/ If not Cranky
+	LDY #DATA_B4C4F7			;$B49754   |> Else Load text pointer table for Cranky selections
+	LDX language_select			;$B49757   |\ Get current language
+	BEQ CODE_B4975F				;$B4975A   | | If English is set
+	LDY #DATA_B4C80D			;$B4975C   |/ Else load pointer table for French text
 CODE_B4975F:					;	   |
-	JSR CODE_B49875				;$B4975F   | use world number to index into the table and load the appropriate data
+	JSR CODE_B49875				;$B4975F   |> Use world number to index and load the appropriate data
 	BRA CODE_B4979C				;$B49762  /
 
 CODE_B49764:
-	CMP #!npc_screen_type_wrinkly		;$B49764  \  check if wrinkly
-	BNE CODE_B49779				;$B49767   | if not, move to next check
-	LDY #DATA_B4C513			;$B49769   | else load text pointer table for available wrinkly selections
-	LDX language_select			;$B4976C   | get current language in use
-	BEQ CODE_B4975F				;$B4976F   | if 0, we're in english, continue with it
-	LDY #DATA_B4C829			;$B49771   | else load pointer table for french text
-	JSR CODE_B49875				;$B49774   | use world number to index into the table and load the appropriate data
+	CMP #!npc_screen_type_wrinkly		;$B49764  \ \ Get npc screen type
+	BNE CODE_B49779				;$B49767   |/ If not Wrinkly
+	LDY #DATA_B4C513			;$B49769   |> Else Load text pointer table for Wrinkly selections
+	LDX language_select			;$B4976C   |\ Get current language
+	BEQ CODE_B4975F				;$B4976F   | | If English is set
+	LDY #DATA_B4C829			;$B49771   |/ Else load pointer table for French text
+	JSR CODE_B49875				;$B49774   |> Use world number to index and load the appropriate data
 	BRA CODE_B4979C				;$B49777  /
 
 CODE_B49779:
-	CMP #!npc_screen_type_swanky		;$B49779  \  check if swanky
-	BNE CODE_B4978E				;$B4977C   | if not, we must be in the funky or klubba screen
-	LDY #DATA_B4C521			;$B4977E   | else load text pointer table for available swanky selections
-	LDX language_select			;$B49781   | get current language in use
-	BEQ CODE_B49789				;$B49784   | if 0, we're in english, continue with it
-	LDY #DATA_B4C837			;$B49786   | else load pointer table for french text
+	CMP #!npc_screen_type_swanky		;$B49779  \ \ Get npc screen type
+	BNE CODE_B4978E				;$B4977C   |/ If not Swanky we must on be Funky or Klubba screen
+	LDY #DATA_B4C521			;$B4977E   |> Else Load text pointer table for Swanky selections
+	LDX language_select			;$B49781   |\ Get current language
+	BEQ CODE_B49789				;$B49784   | | If English is set
+	LDY #DATA_B4C837			;$B49786   |/ Else load pointer table for French text
 CODE_B49789:					;	   |
-	JSR CODE_B49875				;$B49789   | use world number to index into the table and load the appropriate data
+	JSR CODE_B49875				;$B49789   |> Use world number to index and load the appropriate data
 	BRA CODE_B4979C				;$B4978C  /
 
 CODE_B4978E:
-	TAX					;$B4978E  \  transfer npc screen type to X
-	LDA language_select			;$B4978F   | get current language in use
-	BEQ CODE_B49799				;$B49792   | if 0, we're in english, load pointer table for english text
-	LDA DATA_B4C803,x			;$B49794   | else load pointer table for french text
+	TAX					;$B4978E  \ Transfer npc screen type to X
+	LDA language_select			;$B4978F   |\ Get current language
+	BEQ CODE_B49799				;$B49792   | | If English is set
+	LDA DATA_B4C803,x			;$B49794   |/ Else load pointer table for French text
 	BRA CODE_B4979C				;$B49797  /
 
 CODE_B49799:
-	LDA DATA_B4C4ED,x			;$B49799  \  load text pointer table for available funky or klubba selections
+	LDA DATA_B4C4ED,x			;$B49799  \ Load text pointer table for funky or klubba selections
 CODE_B4979C:					;	   |
 	TAX					;$B4979C   |
 	JSR CODE_B4ADE5				;$B4979D   | set return address to
@@ -2771,7 +2771,7 @@ CODE_B4979C:					;	   |
 	STA $0652				;$B497A6   | set selection limit
 	DEC A					;$B497A9   |
 	DEC A					;$B497AA   | decrease A by 2
-	STA $065A				;$B497AB   | set which option no longer scrolls down the text when hovered on
+	STA $065A				;$B497AB   | set which option scrolling will stop on
 	JSR CODE_B4ADE5				;$B497AE   |
 	LDA $0000,x				;$B497B1   | read first word of text table
 	PHK					;$B497B4   |
@@ -2844,8 +2844,8 @@ CODE_B49886:
 	PHB					;$B49886  \
 	PHK					;$B49887   |
 	PLB					;$B49888   |
-	JSL update_sprite_graphics		;$B49889   |
-	JSL update_sprite_palettes_global	;$B4988D   |
+	JSL DMA_queued_sprite_graphics		;$B49889   |
+	JSL DMA_queued_sprite_palette_global	;$B4988D   |
 	JSR CODE_B4996E				;$B49891   |
 	LDA $06A1				;$B49894   |
 	BIT #$0400				;$B49897   |
@@ -2901,8 +2901,8 @@ CODE_B4990F:
 	PHB					;$B4990F  \
 	PHK					;$B49910   |
 	PLB					;$B49911   |
-	JSL update_sprite_graphics		;$B49912   |
-	JSL update_sprite_palettes_global	;$B49916   |
+	JSL DMA_queued_sprite_graphics		;$B49912   |
+	JSL DMA_queued_sprite_palette_global	;$B49916   |
 	JSR CODE_B4996E				;$B4991A   |
 	LDA $06A1				;$B4991D   |
 	BIT #$1000				;$B49920   |
@@ -2945,8 +2945,8 @@ CODE_B4996E:
 CODE_B49978:
 	PHK					;$B49978  \
 	PLB					;$B49979   |
-	JSL update_sprite_graphics		;$B4997A   |
-	JSL update_sprite_palettes_global	;$B4997E   |
+	JSL DMA_queued_sprite_graphics		;$B4997A   |
+	JSL DMA_queued_sprite_palette_global	;$B4997E   |
 	JSR CODE_B4996E				;$B49982   |
 	LDA $067A				;$B49985   |
 	BEQ CODE_B4998D				;$B49988   |
@@ -3000,7 +3000,7 @@ CODE_B499FA:					;	   |
 	LDA $06BB				;$B499FD   | get how much to move the kong icon Y positon by
 	BMI CODE_B49A3D				;$B49A00   | if negative, decrease cursor selection
 	LDA $0654				;$B49A02   | else get cursor selection
-	CMP $065A				;$B49A05   | check if reached the selection where the options should stop scrolling down
+	CMP $065A				;$B49A05   | check if reached selection where scrolling should stop
 	BCC CODE_B49A48				;$B49A08   | if not, scroll down the text
 CODE_B49A0A:					;	   |
 	SEP #$20				;$B49A0A   | 8-bit A
@@ -3028,7 +3028,7 @@ CODE_B49A20:
 CODE_B49A3D:
 	LDA $0654				;$B49A3D  \  get cursor selection
 	DEC A					;$B49A40   | decrease by 1
-	CMP $065A				;$B49A41   | check if reached the selection where the options should stop scrolling down
+	CMP $065A				;$B49A41   | check if reached selection where scrolling should stop
 	BCC CODE_B49A48				;$B49A44   | if not, scroll down the text
 	BRA CODE_B49A0A				;$B49A46  /  else continue updating cursor position
 
@@ -3063,7 +3063,7 @@ CODE_B49A76:
 	LDA $06A1				;$B49A86   | else
 	ORA #$0800				;$B49A89   |
 	STA $06A1				;$B49A8C   |
-	LDA #$FFFF				;$B49A8F   | set how much to add to cursor Y position when the selection changes
+	LDA #$FFFF				;$B49A8F   | set amount to add to cursor Y when selection changes
 	STA $06BB				;$B49A92   |
 	LDA #$0010				;$B49A95   |
 	STA $0650				;$B49A98   | set cursor move timer
@@ -3079,7 +3079,7 @@ CODE_B49A9E:
 	ORA #$0800				;$B49AAE   |
 	STA $06A1				;$B49AB1   |
 	LDA #$0001				;$B49AB4   |
-	STA $06BB				;$B49AB7   | set how much to add to kong icon Y position when the selection changes
+	STA $06BB				;$B49AB7   | set amount to add to kong icon Y when selection changes
 	LDA #$0010				;$B49ABA   |
 	STA $0650				;$B49ABD   | set cursor move timer
 	BRL CODE_B499FA				;$B49AC0  /
@@ -3096,7 +3096,7 @@ CODE_B49AC3:
 	BRL CODE_B49C71				;$B49ADA  /
 
 CODE_B49ADD:
-	JSL CODE_BAC7C0				;$B49ADD  \  update oam?
+	JSL CODE_BAC7C0				;$B49ADD  \
 	LDA #$03FC				;$B49AE1   |
 	STA $C8					;$B49AE4   |
 	LDA $067A				;$B49AE6   |
@@ -3168,8 +3168,8 @@ CODE_B49B55:
 CODE_B49B63:
 	PHK					;$B49B63  \
 	PLB					;$B49B64   |
-	JSL update_sprite_graphics		;$B49B65   |
-	JSL update_sprite_palettes_global	;$B49B69   |
+	JSL DMA_queued_sprite_graphics		;$B49B65   |
+	JSL DMA_queued_sprite_palette_global	;$B49B69   |
 	JSR CODE_B4996E				;$B49B6D   |
 	LDA screen_brightness			;$B49B70   |
 	BEQ CODE_B49BBB				;$B49B73   |
@@ -3368,17 +3368,17 @@ CODE_B49CE1:					;	   |
 	CLC					;$B49CE9   |
 	ADC $0666				;$B49CEA   | add address of price table to it
 	TAX					;$B49CED   | transfer to X to be used as index to get the right price
-	JSR get_player_coin_count_npc		;$B49CEE   | get player coin count (kremcoins if klubba, banana coins otherwise)
+	JSR get_player_coin_count_npc		;$B49CEE   | get coin count (kremcoins if klubba, or banana coins)
 	SEC					;$B49CF1   |
 	SBC $0000,x				;$B49CF2   | subtract player coin count from the requested price
-	BPL CODE_B49D4F				;$B49CF5   | if result is positive then player has enough coins, proceed to checkout
+	BPL CODE_B49D4F				;$B49CF5   | if player has enough coins, proceed to checkout
 CODE_B49CF7:					;	   |
 	LDA $065C				;$B49CF7   | else load adress of current dialogue table in use
 if !version == 1				;	   |
 	AND #$00FF				;$B49CFA   |
 endif						;	   |
 	CMP #$0000				;$B49CFD   | check if it contains anything
-	BNE CODE_B49D3D				;$B49D00   | if yes.. increase it? might be dead code, investigate more
+	BNE CODE_B49D3D				;$B49D00   |
 	LDA #CODE_808D70			;$B49D02   | else update NMI pointer
 	STA NMI_pointer				;$B49D05   |
 	LDA #CODE_808D5F			;$B49D07   |
@@ -3622,8 +3622,8 @@ CODE_B49EBF:					;	   |
 CODE_B49ED7:
 	PHK					;$B49ED7  \
 	PLB					;$B49ED8   |
-	JSL update_sprite_graphics		;$B49ED9   |
-	JSL update_sprite_palettes_global	;$B49EDD   |
+	JSL DMA_queued_sprite_graphics		;$B49ED9   |
+	JSL DMA_queued_sprite_palette_global	;$B49EDD   |
 	JSR CODE_B4996E				;$B49EE1   |
 	JSR CODE_B49EF1				;$B49EE4   |
 	LDX #$079C				;$B49EE7   |
@@ -3653,8 +3653,8 @@ CODE_B49EF1:
 CODE_B49F1D:
 	PHK					;$B49F1D  \
 	PLB					;$B49F1E   |
-	JSL update_sprite_graphics		;$B49F1F   |
-	JSL update_sprite_palettes_global	;$B49F23   |
+	JSL DMA_queued_sprite_graphics		;$B49F1F   |
+	JSL DMA_queued_sprite_palette_global	;$B49F23   |
 	JSR CODE_B4996E				;$B49F27   |
 	JSR CODE_B49EF1				;$B49F2A   |
 	LDA npc_screen_type			;$B49F2D   |
@@ -4696,7 +4696,7 @@ CODE_B4A815:
 	LDX #$07A5				;$B4A81E   |
 	JSR CODE_B4BB62				;$B4A821   |
 	JSL sprite_handler			;$B4A824   |
-	JSL CODE_B5A8DA				;$B4A828   |
+	JSL sort_sprite_render_orders		;$B4A828   |
 	JSR CODE_B4AE85				;$B4A82C   |
 	RTS					;$B4A82F  /
 
@@ -5067,8 +5067,8 @@ CODE_B4AB6D:					;	   |
 CODE_B4AB6E:
 	PHK					;$B4AB6E  \
 	PLB					;$B4AB6F   |
-	JSL update_sprite_graphics		;$B4AB70   |
-	JSL update_sprite_palettes_global	;$B4AB74   |
+	JSL DMA_queued_sprite_graphics		;$B4AB70   |
+	JSL DMA_queued_sprite_palette_global	;$B4AB74   |
 	JSR CODE_B4996E				;$B4AB78   |
 	DEC $064E				;$B4AB7B   |
 	BEQ CODE_B4AB83				;$B4AB7E   |
@@ -5332,7 +5332,7 @@ CODE_B4AE85:
 	JSL CODE_BEC695				;$B4AEA2   |
 CODE_B4AEA6:					;	   |
 	JSL CODE_B59F40				;$B4AEA6   |
-	STZ next_sprite_dma_buffer_slot		;$B4AEAA   |
+	STZ next_sprite_DMA_buffer_slot		;$B4AEAA   |
 	PLB					;$B4AEAD   |
 	RTS					;$B4AEAE  /
 
@@ -7403,8 +7403,8 @@ reset_camera_and_bg_scroll:
 	STA PPU.layer_1_scroll_y		;$B4BE51   |
 	STA PPU.layer_1_scroll_y		;$B4BE54   |
 	REP #$20				;$B4BE57   |
-	STZ $17BA				;$B4BE59   |
-	STZ $17C0				;$B4BE5C   |
+	STZ screen_scroll_x_position		;$B4BE59   |
+	STZ screen_scroll_y_position		;$B4BE5C   |
 	RTL					;$B4BE5F  /
 
 CODE_B4BE60:

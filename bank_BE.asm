@@ -67,7 +67,7 @@ coins_sprite_code:
 
 .idle:
 	JSL process_sprite_animation		;$BEB86B  \ Process animation
-	JSL CODE_BCFB58				;$BEB86F   | Populate sprite clipping
+	JSL get_current_sprite_clipping		;$BEB86F   | Populate sprite clipping
 	JSL CODE_BEBE6D				;$BEB873   | Check simple player collision
 	BCS .collect_coin			;$BEB877   |
 	JMP sprite_return_handle_despawn_BE	;$BEB879  / Return
@@ -252,7 +252,7 @@ endif						;	   |
 
 .idle_bonus_or_boss:
 	JSL process_sprite_animation		;$BEB9E4  \
-	JSL CODE_BCFB58				;$BEB9E8   |
+	JSL get_current_sprite_clipping		;$BEB9E8   |
 	JSL CODE_BEBE6D				;$BEB9EC   |
 	BCS ..CODE_BEB9F5			;$BEB9F0   |
 ..return:					;	   |
@@ -325,7 +325,7 @@ endif						;	   |
 
 .idle_kremcoin_cheat:
 	JSL process_sprite_animation		;$BEBA7D  \
-	JSL CODE_BCFB58				;$BEBA81   |
+	JSL get_current_sprite_clipping		;$BEBA81   |
 	JSL CODE_BEBE6D				;$BEBA85   |
 	BCC ..return				;$BEBA89   |
 	LDA #$004B				;$BEBA8B   |
@@ -361,7 +361,7 @@ CODE_BEBAAA:
 
 CODE_BEBAB9:
 	JSL process_sprite_animation		;$BEBAB9  \
-	JSL CODE_BCFB58				;$BEBABD   |
+	JSL get_current_sprite_clipping		;$BEBABD   |
 	JSL CODE_BEBE6D				;$BEBAC1   |
 	BCS CODE_BEBACA				;$BEBAC5   |
 	JMP sprite_return_handle_despawn_BE	;$BEBAC7  /
@@ -437,9 +437,9 @@ CODE_BEBB2A:
 	LDY #DATA_C02501			;$BEBB4D   | kong letters bottom tiledata
 	JSR CODE_BEBD5C				;$BEBB50   |
 	BCC CODE_BEBB61				;$BEBB53   |
-	LDA next_sprite_dma_buffer_slot		;$BEBB55   |
-	SBC #$0008				;$BEBB58   |
-	STA next_sprite_dma_buffer_slot		;$BEBB5B   |
+	LDA next_sprite_DMA_buffer_slot		;$BEBB55   |
+	SBC #sizeof(sprite_DMA)			;$BEBB58   |
+	STA next_sprite_DMA_buffer_slot		;$BEBB5B   |
 CODE_BEBB5E:					;	   |
 	JML [sprite_return_address]		;$BEBB5E  /
 
@@ -748,27 +748,27 @@ DATA_BEBD4C:
 
 CODE_BEBD5C:
 	STX $32					;$BEBD5C  \
-	LDX next_sprite_dma_buffer_slot		;$BEBD5E   |
+	LDX next_sprite_DMA_buffer_slot		;$BEBD5E   |
 	CPX $78					;$BEBD61   |
 	BCS CODE_BEBD8D				;$BEBD63   |
-	STA $1734,x				;$BEBD65   |
+	STA sprite_DMA[0].destination,x		;$BEBD65   |
 	TYA					;$BEBD68   |
-	STA $1736,x				;$BEBD69   |
+	STA sprite_DMA[0].source_word,x		;$BEBD69   |
 	LDA $32					;$BEBD6C   |
 	AND #$00FF				;$BEBD6E   |
 	ORA #$8000				;$BEBD71   |
-	STA $1738,x				;$BEBD74   |
+	STA sprite_DMA[0].source_bank,x		;$BEBD74   |
 	LDA $32					;$BEBD77   |
 	AND #$FF00				;$BEBD79   |
 	LSR A					;$BEBD7C   |
 	LSR A					;$BEBD7D   |
 	LSR A					;$BEBD7E   |
-	STA sprite_dma_buffer,x			;$BEBD7F   |
+	STA sprite_DMA[0].size,x		;$BEBD7F   |
 	TXA					;$BEBD82   |
 	CLC					;$BEBD83   |
-	ADC #$0008				;$BEBD84   |
-	STA next_sprite_dma_buffer_slot		;$BEBD87   |
-	STZ $1740,x				;$BEBD8A   |
+	ADC #sizeof(sprite_DMA)			;$BEBD84   |
+	STA next_sprite_DMA_buffer_slot		;$BEBD87   |
+	STZ sprite_DMA[1].terminate,x		;$BEBD8A   |
 CODE_BEBD8D:					;	   |
 	RTS					;$BEBD8D  /
 
@@ -806,11 +806,11 @@ CODE_BEBDC1:
 	STY current_sprite			;$BEBDC3   |
 	STY colliding_sprite			;$BEBDC5   |
 	PHX					;$BEBDC7   |
-	JSL CODE_BCFB58				;$BEBDC8   |
+	JSL get_current_sprite_clipping		;$BEBDC8   |
 	JSL CODE_BCFEE0				;$BEBDCC   |
 	PLX					;$BEBDD0   |
 	STX current_sprite			;$BEBDD1   |
-	JSL CODE_BCFB58				;$BEBDD3   |
+	JSL get_current_sprite_clipping		;$BEBDD3   |
 	LDA temp_sprite_clipping[0].right	;$BEBDD7   |
 	CMP sprite_clipping[6].left		;$BEBDD9   |
 	BCC CODE_BEBE01				;$BEBDDC   |
@@ -1939,7 +1939,7 @@ set_sprite_target_hud_position:
 	STA $1C,x				;$BEC5CD   | Make sprite visible
 	LDA $06,x				;$BEC5CF   |
 	SEC					;$BEC5D1   | Subtract sprite X position from camera X position
-	SBC $17BA				;$BEC5D2   |
+	SBC screen_scroll_x_position		;$BEC5D2   |
 	BCS CODE_BEC5DA				;$BEC5D5   | If sprite X position greater than camera's
 	LDA #$0000				;$BEC5D7   | Else sprite is offscreen, load cap value
 CODE_BEC5DA:					;	   |
@@ -1950,7 +1950,7 @@ CODE_BEC5E2:					;	   |
 	STA $06,x				;$BEC5E2   | Update X position
 	LDA $0A,x				;$BEC5E4   |
 	SEC					;$BEC5E6   | Repeat process for Y position
-	SBC $17C0				;$BEC5E7   |
+	SBC screen_scroll_y_position		;$BEC5E7   |
 	BCS CODE_BEC5EF				;$BEC5EA   |
 	LDA #$0000				;$BEC5EC   |
 CODE_BEC5EF:					;	   |
@@ -2506,7 +2506,7 @@ CODE_BEC9E7:
 	CMP $0D4E				;$BEC9FC   |
 	BCC CODE_BECA0E				;$BEC9FF   |
 	SEC					;$BECA01   |
-	SBC $17C0				;$BECA02   |
+	SBC screen_scroll_y_position		;$BECA02   |
 	CLC					;$BECA05   |
 	ADC #$0010				;$BECA06   |
 	CMP #$0100				;$BECA09   |
@@ -2523,7 +2523,7 @@ CODE_BECA16:
 	LSR A					;$BECA1B   |
 	LSR A					;$BECA1C   |
 	SEC					;$BECA1D   |
-	SBC $17BA				;$BECA1E   |
+	SBC screen_scroll_x_position		;$BECA1E   |
 	BCS CODE_BECA28				;$BECA21   |
 	ADC #$0020				;$BECA23   |
 	BCC CODE_BECA0E				;$BECA26   |
@@ -2617,7 +2617,7 @@ CODE_BECAB7:
 	LDX #$0000				;$BECABE   |
 	LDA $0D4E				;$BECAC1   |
 	SEC					;$BECAC4   |
-	SBC $17C0				;$BECAC5   |
+	SBC screen_scroll_y_position		;$BECAC5   |
 	BCC CODE_BECAD8				;$BECAC8   |
 	CMP #$0100				;$BECACA   |
 	BCS CODE_BECB1E				;$BECACD   |
@@ -2642,13 +2642,13 @@ CODE_BECAD8:					;	   |
 	SEC					;$BECAEC   |
 	SBC #$0020				;$BECAED   |
 	CLC					;$BECAF0   |
-	ADC $17BA				;$BECAF1   |
+	ADC screen_scroll_x_position		;$BECAF1   |
 	ASL A					;$BECAF4   |
 	ASL A					;$BECAF5   |
 	STA $7F9610,x				;$BECAF6   |
 	LDA #$00F0				;$BECAFA   |
 	CLC					;$BECAFD   |
-	ADC $17C0				;$BECAFE   |
+	ADC screen_scroll_y_position		;$BECAFE   |
 	ASL A					;$BECB01   |
 	ASL A					;$BECB02   |
 	STA $7F9620,x				;$BECB03   |
@@ -2705,7 +2705,7 @@ CODE_BECB54:					;	   |
 	LSR A					;$BECB5E   |
 	LSR A					;$BECB5F   |
 	SEC					;$BECB60   |
-	SBC $17C0				;$BECB61   |
+	SBC screen_scroll_y_position		;$BECB61   |
 	STA $0001,y				;$BECB64   |
 	LDA.l $7F9600,x				;$BECB67   |
 	STA $0002,y				;$BECB6B   |
@@ -2713,7 +2713,7 @@ CODE_BECB54:					;	   |
 	LSR A					;$BECB72   |
 	LSR A					;$BECB73   |
 	SEC					;$BECB74   |
-	SBC $17BA				;$BECB75   |
+	SBC screen_scroll_x_position		;$BECB75   |
 	SEP #$20				;$BECB78   |
 	STA $0000,y				;$BECB7A   |
 	XBA					;$BECB7D   |
@@ -2786,7 +2786,7 @@ CODE_BECBD1:					;	   |
 	STA $42,x				;$BECBDE   |
 	INC $2F,x				;$BECBE0   |
 CODE_BECBE2:					;	   |
-	JSL CODE_BCFB58				;$BECBE2   |
+	JSL get_current_sprite_clipping		;$BECBE2   |
 	LDA #$1000				;$BECBE6   |
 	LDY #$0010				;$BECBE9   |
 	JSR CODE_BEBD92				;$BECBEC   |
@@ -2983,7 +2983,7 @@ CODE_BECD50:					;	   |
 	LDA #$8000				;$BECD52   |
 	TSB $0D58				;$BECD55   |
 CODE_BECD58:					;	   |
-	JSL CODE_BCFB58				;$BECD58   |
+	JSL get_current_sprite_clipping		;$BECD58   |
 	LDA #$1000				;$BECD5C   |
 	LDY #$0010				;$BECD5F   |
 	JSR CODE_BEBD92				;$BECD62   |
@@ -3072,7 +3072,7 @@ gate_barrel_sprite_code:
 	JML [sprite_return_address]		;$BECE04  /
 
 .state_1:
-	JSL CODE_BCFB58				;$BECE07  \
+	JSL get_current_sprite_clipping		;$BECE07  \
 	LDA #$0000				;$BECE0B   |
 	JSL CODE_BEBE6D				;$BECE0E   |
 	BCS ..collision_happened		;$BECE12   |
@@ -4408,7 +4408,7 @@ CODE_BED80B:
 	RTS					;$BED80C  /
 
 CODE_BED80D:
-	JSL CODE_BCFB58				;$BED80D  \
+	JSL get_current_sprite_clipping		;$BED80D  \
 	LDA #$0010				;$BED811   |
 	PHK					;$BED814   |
 	%return(CODE_BED81B)			;$BED815   |
@@ -4798,7 +4798,7 @@ CODE_BEDB50:
 	SEC					;$BEDB59   |
 	SBC #$0120				;$BEDB5A   |
 	BCC CODE_BEDB78				;$BEDB5D   |
-	CMP $17C0				;$BEDB5F   |
+	CMP screen_scroll_y_position		;$BEDB5F   |
 	BCC CODE_BEDB78				;$BEDB62   |
 	LDA $42,x				;$BEDB64   |
 	DEC A					;$BEDB66   |
@@ -5693,9 +5693,9 @@ CODE_BEE198:					;	   |
 
 CODE_BEE1A6:
 	JSR CODE_BEE284				;$BEE1A6  \
-	JSL CODE_BCFB69				;$BEE1A9   |
+	JSL get_sprite_special_clipping_slot_0	;$BEE1A9   |
 	LDA #$000E				;$BEE1AD   |
-	JSL CODE_BCFB7A				;$BEE1B0   |
+	JSL get_sprite_special_clipping_slot_1	;$BEE1B0   |
 	LDA #$0000				;$BEE1B4   |
 	JSL CODE_BEBE8B				;$BEE1B7   |
 	BCC CODE_BEE1F8				;$BEE1BB   |
@@ -6502,7 +6502,7 @@ race_handler_sprite_code:
 
 .race_in_progress_state
 	TYX					;$BEE749  \  put handler sprite in X
-	LDA $17BA				;$BEE74A   | get camera X position
+	LDA screen_scroll_x_position		;$BEE74A   | get camera X position
 	CMP #$5C80				;$BEE74D   | check if we're at or passed the spot the race should end
 	BCC ..continue_handling_race		;$BEE750   | if not, continue handling it
 	LDA #$8000				;$BEE752   |
@@ -6634,7 +6634,7 @@ spawn_and_setup_klank_kart:
 	LDA [$32],y				;$BEE84E   | get kart X spawn position
 	BMI .return				;$BEE850   | if negative, there are no more possible spawn positions, return
 	SEC					;$BEE852   |
-	SBC $17BA				;$BEE853   | else subtract the camera X position from it
+	SBC screen_scroll_x_position		;$BEE853   | else subtract the camera X position from it
 	BCC ..get_next_position			;$BEE856   | if behind the camera, get next spawn position
 	CMP #$0120				;$BEE858   | else check if its too far ahead of the camera
 	BCS .return				;$BEE85B   | if yes, don't spawn the kart and return
@@ -7013,7 +7013,7 @@ CODE_BEEAE0:
 	LDX current_sprite			;$BEEAE3   |
 	LDA $06,x				;$BEEAE5   |
 	SEC					;$BEEAE7   |
-	SBC $17BA				;$BEEAE8   |
+	SBC screen_scroll_x_position		;$BEEAE8   |
 	CLC					;$BEEAEB   |
 	ADC #$0010				;$BEEAEC   |
 	CMP #$0120				;$BEEAEF   |
@@ -7055,7 +7055,7 @@ CODE_BEEB34:
 	JMP sprite_return_handle_despawn_BE	;$BEEB3F  /
 
 CODE_BEEB42:
-	JSL CODE_BCFB58				;$BEEB42  \
+	JSL get_current_sprite_clipping		;$BEEB42  \
 	LDA #$0000				;$BEEB46   |
 	JSL CODE_BEBE8B				;$BEEB49   |
 	RTS					;$BEEB4D  /
@@ -7336,7 +7336,7 @@ CODE_BEED3A:
 	STA current_sprite_constants		;$BEED3D   |
 	JSR CODE_BEEDEE				;$BEED3F   |
 	JSL process_current_movement		;$BEED42   |
-	JSL CODE_BCFB58				;$BEED46   |
+	JSL get_current_sprite_clipping		;$BEED46   |
 	LDY #$0030				;$BEED4A   |
 	JSL CODE_BEBE8E				;$BEED4D   |
 	JSR CODE_BEED5A				;$BEED51   |
@@ -7383,11 +7383,11 @@ CODE_BEED98:
 	SEC					;$BEED9C   |
 	SBC #$0220				;$BEED9D   |
 	BCC CODE_BEEDED				;$BEEDA0   |
-	CMP $17C0				;$BEEDA2   |
+	CMP screen_scroll_y_position		;$BEEDA2   |
 	BCS CODE_BEEDBA				;$BEEDA5   |
 	LDA $06,x				;$BEEDA7   |
 	SEC					;$BEEDA9   |
-	SBC $17BA				;$BEEDAA   |
+	SBC screen_scroll_x_position		;$BEEDAA   |
 	BIT $26,x				;$BEEDAD   |
 	BPL CODE_BEEDB4				;$BEEDAF   |
 	BCC CODE_BEEDBA				;$BEEDB1   |
@@ -9415,7 +9415,7 @@ handle_sprite_up_down:
 handle_sprite_left_right:
 	LDY #$0004				;$BEFB45  \ \ Prepare to load acceleration constant
 	LDA [current_sprite_constants],y	;$BEFB48   | | Get sprite acceleration
-	JSL interpolate_x_velocity_global	;$BEFB4A   | | Interpolate X velocity using acceleration constant
+	JSL interpolate_x_velocity_global	;$BEFB4A   | | Interpolate x velocity using acceleration constant
 	RTS					;$BEFB4E  / / Return
 
 handle_sprite_gravity:

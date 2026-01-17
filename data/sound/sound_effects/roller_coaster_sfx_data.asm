@@ -12,21 +12,21 @@ arch spc700
 	dw (.pointers_end-.pointers_start)>>1	;quantity of sound effects (default $000F)
 ;sound effect pointers
 .pointers_start:
-	dw .seq_303D	;60: 
-	dw .seq_3019	;61: 
-	dw .seq_2FF5	;62: 
-	dw .seq_2FB9	;63: 
-	dw .seq_2FA2	;64: 
-	dw .seq_2F8D	;65: 
-	dw .seq_2F74	;66: 
-	dw .seq_2F4C	;67: 
-	dw .seq_2F3B	;68: 
-	dw .seq_2F31	;69: 
-	dw .seq_2F1E	;6A: 
-	dw .seq_2F0F	;6B: 
-	dw .seq_2F00	;6C: 
-	dw .seq_2ED6	;6D: 
-	dw .seq_2EB4	;6E: 
+	dw .seq_303D	;60: Roller coaster moving
+	dw .seq_3019	;61: Breaking Check/+ Barrel
+	dw .seq_2FF5	;62: Breaking X/- Barrel
+	dw .seq_2FB9	;63: Climbing in rank (Rickety Race)
+	dw .seq_2FA2	;64: Roller coaster landing on track
+	dw .seq_2F8D	;65: Roller coaster moving (echo?)
+	dw .seq_2F74	;66: Firework fizz
+	dw .seq_2F4C	;67: Firework pop
+	dw .seq_2F3B	;68: Firework whistle
+	dw .seq_2F31	;69: Firework blast
+	dw .seq_2F1E	;6A: Roller coaster jumping off track
+	dw .seq_2F0F	;6B: Race ready-set beep
+	dw .seq_2F00	;6C: Race GO! beep
+	dw .seq_2ED6	;6D: Kackle doing what he's named for	
+	dw .seq_2EB4	;6E: Gate opening (Haunted Hall)	
 .pointers_end:
 
 .seq_2EB4:

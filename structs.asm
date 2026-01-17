@@ -101,7 +101,7 @@ struct kong_control $0000
 	.roll_gravity_delay:		skip 2	;24 Amount of time before gravity force should be applied when rolling off a ledge
 endstruct
 
-struct main_level $0515
+struct main_level main_level_config
 	.type:				skip 2	;$0515/$0553 $00,x config+$00 level type
 	.tileset_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
 	.HDMA_init_number:		skip 2	;$0519/$0557 $04,x theme+$02 HDMA init routine index
@@ -137,7 +137,7 @@ struct main_level $0515
 	.extra_unlocks_ptr:		skip 2	;$0551/$058F $3C,x config unlocks additional map unlocks data address (offset in level config varies)
 endstruct
 
-struct alt_level $0553
+struct alt_level alt_level_config
 	.type:				skip 2	;$0515/$0553 $00,x config+$00 level type
 	.tileset_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
 	.HDMA_init_number:		skip 2	;$0519/$0557 $04,x theme+$02 HDMA init routine index
@@ -214,13 +214,26 @@ endstruct
 main_sprite_table = $0DE2
 main_sprite_table_end = $0DE2+(sizeof(sprite)*24)
 
+struct sprite_DMA sprite_DMA_buffer
+	.size:		skip 2
+	.destination:	skip 2
+	.source_word:	skip 2
+	.terminate:
+	.source_bank:	skip 2
+endstruct
+
+struct sprite_palette_DMA sprite_palette_DMA_buffer
+	.source_word:	skip 2
+	.source_bank:	skip 2
+endstruct
+
 struct oam oam_table
 	.position:
-	.x:             skip 1
-	.y:             skip 1
+	.x:		skip 1
+	.y:		skip 1
 	.display:
-	.tile:          skip 1
-	.property:      skip 1
+	.tile:		skip 1
+	.property:	skip 1
 endstruct
 
 struct oam_attribute oam_attribute_table
@@ -248,6 +261,7 @@ endstruct
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;SRAM structures
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 struct subfile $0000
 	.data: skip $014E
 endstruct

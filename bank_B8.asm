@@ -69,7 +69,7 @@ process_interactions_with_player:
 	PLB					;$B8807E   |
 	LDA current_interaction			;$B8807F   |
 	BNE .process_interaction		;$B88082   |
-	RTS					;$B88084   |
+	RTS					;$B88084  /
 
 .process_interaction
 	STZ current_interaction			;$B88085  \
@@ -3074,19 +3074,19 @@ CODE_B89933:
 
 handle_player_physics:
 	JSR apply_player_gravity		;$B8994C  \
-CODE_B8994F:					;	   |
+handle_player_physics_skip_gravity:		;	   |
 	JSR get_x_acceleration			;$B8994F   |
 	LDA [current_sprite_constants],y	;$B89952   |
 	JSR interpolate_x_velocity		;$B89954   |
-CODE_B89957:					;	   |
+handle_player_physics_skip_speed:		;	   |
 	JSR handle_slope_sliding_velocity	;$B89957   |
 	JSR process_terrain_interaction		;$B8995A   |
 	JSR record_highest_y_position		;$B8995D   |
-CODE_B89960:					;	   |
+handle_player_physics_skip_terrain:		;	   |
 	JSR prevent_sprite_from_leaving_level_x	;$B89960   |
 CODE_B89963:					;	   |
 	JSR handle_player_pit_death		;$B89963   |
-CODE_B89966:					;	   |
+handle_player_damaged_invincibility:		;	   |
 	JSR update_damaged_invincibility	;$B89966   |
 	JSL process_sprite_animation		;$B89969   |
 	RTS					;$B8996D  /
@@ -3210,8 +3210,8 @@ kong_state_02:
 
 .CODE_B89A3A
 	LDX current_sprite			;$B89A3A  \
-	STZ $24,x				;$B89A3C   |
-	JSR CODE_B8994F				;$B89A3E   |
+	STZ sprite.y_speed,x			;$B89A3C   |
+	JSR handle_player_physics_skip_gravity	;$B89A3E   |
 	JSR CODE_B89A4A				;$B89A41   |
 	JSR CODE_B8B5C3				;$B89A44   |
 	JMP kong_state_return			;$B89A47  /
@@ -3389,7 +3389,7 @@ CODE_B89B49:
 	BPL .CODE_B89B9B			;$B89B8F   |
 	LDA $0A,x				;$B89B91   |
 	SEC					;$B89B93   |
-	SBC $17C0				;$B89B94   |
+	SBC screen_scroll_y_position		;$B89B94   |
 	BPL .CODE_B89B9B			;$B89B97   |
 	STZ $24,x				;$B89B99   |
 .CODE_B89B9B					;	   |
@@ -3438,7 +3438,7 @@ kong_state_0F:
 	LDA #$0012				;$B89BE7  \
 	JSR process_player_action		;$B89BEA   |
 	JSR CODE_B8A186				;$B89BED   |
-	JSR CODE_B89960				;$B89BF0   |
+	JSR handle_player_physics_skip_terrain	;$B89BF0   |
 	JMP kong_state_return			;$B89BF3  /
 
 kong_state_10:
@@ -3480,7 +3480,7 @@ CODE_B89C3C:
 	JSR slowdown_squawks_on_level_y_limit	;$B89C3F   |
 	JSR CODE_B89C4C				;$B89C42   |
 	JSR CODE_B89C70				;$B89C45   |
-	JSR CODE_B89960				;$B89C48   |
+	JSR handle_player_physics_skip_terrain	;$B89C48   |
 	RTS					;$B89C4B  /
 
 CODE_B89C4C:
@@ -3698,7 +3698,7 @@ CODE_B89DCA:
 CODE_B89DDD:					;	   |
 	JSR interpolate_x_velocity		;$B89DDD   |
 if !version == 0				;	   |
-	JSR CODE_B89957				;$B89DE0   |
+	JSR handle_player_physics_skip_speed	;$B89DE0   |
 else						;	   |
 	JSR CODE_B89E57				;$B89DE0   |
 endif						;	   |
@@ -3710,7 +3710,7 @@ CODE_B89DEB:
 	JSR CODE_B89E44				;$B89DEB  \
 	JSR interpolate_x_velocity		;$B89DEE   |
 if !version == 0				;	   |
-	JSR CODE_B89957				;$B89DF1   |
+	JSR handle_player_physics_skip_speed	;$B89DF1   |
 else						;	   |
 	JSR CODE_B89E57				;$B89DF1   |
 endif						;	   |
@@ -3776,7 +3776,7 @@ if !version == 1				;	  \
 	JSR handle_slope_sliding_velocity	;$B89E57   |
 	JSR process_terrain_interaction		;$B89E5A   |
 	JSR record_highest_y_position		;$B89E5D   |
-	JSR CODE_B89960				;$B89E60   |
+	JSR handle_player_physics_skip_terrain	;$B89E60   |
 	RTS					;$B89E63  /
 endif
 
@@ -3798,7 +3798,7 @@ kong_state_15:
 	JSR get_x_acceleration			;$B89E83   |
 	LDA #$0003				;$B89E86   |
 	JSR interpolate_x_velocity		;$B89E89   |
-	JSR CODE_B89957				;$B89E8C   |
+	JSR handle_player_physics_skip_speed	;$B89E8C   |
 	JSR CODE_B8B714				;$B89E8F   |
 	JSR CODE_B8B5C3				;$B89E92   |
 	JMP kong_state_return			;$B89E95  /
@@ -4047,7 +4047,7 @@ CODE_B8A049:
 	LDX current_sprite			;$B8A049  \
 	LDA $06,x				;$B8A04B   |
 	SEC					;$B8A04D   |
-	SBC $17BA				;$B8A04E   |
+	SBC screen_scroll_x_position		;$B8A04E   |
 	SEC					;$B8A051   |
 	SBC #$0010				;$B8A052   |
 	BMI CODE_B8A05D				;$B8A055   |
@@ -4069,7 +4069,7 @@ CODE_B8A06B:
 	LDX current_sprite			;$B8A06B  \
 	LDA $0A,x				;$B8A06D   |
 	SEC					;$B8A06F   |
-	SBC $17C0				;$B8A070   |
+	SBC screen_scroll_y_position		;$B8A070   |
 	CMP #$0100				;$B8A073   |
 	BPL CODE_B8A07A				;$B8A076   |
 	CLC					;$B8A078   |
@@ -4081,7 +4081,7 @@ CODE_B8A07A:
 
 kong_state_20:
 	JSR CODE_B8A186				;$B8A07C  \
-	JSR CODE_B89960				;$B8A07F   |
+	JSR handle_player_physics_skip_terrain	;$B8A07F   |
 	JMP kong_state_return			;$B8A082  /
 
 kong_state_21:
@@ -4153,14 +4153,14 @@ CODE_B8A101:
 	LDX current_sprite			;$B8A101  \
 	LDA #$0029				;$B8A103   |
 	STA sprite.state,x			;$B8A106   |
-	LDA $17BA				;$B8A108   |
+	LDA screen_scroll_x_position		;$B8A108   |
 	SEC					;$B8A10B   |
 	SBC #$0010				;$B8A10C   |
 	CMP $06,x				;$B8A10F   |
 	BMI CODE_B8A115				;$B8A111   |
 	STA $06,x				;$B8A113   |
 CODE_B8A115:					;	   |
-	LDA $17BA				;$B8A115   |
+	LDA screen_scroll_x_position		;$B8A115   |
 	CLC					;$B8A118   |
 	ADC #$0110				;$B8A119   |
 	CMP $06,x				;$B8A11C   |
@@ -4207,7 +4207,7 @@ kong_state_23:
 	LDA #$0011				;$B8A174  \
 	JSR process_player_action		;$B8A177   |
 	JSR CODE_B8A186				;$B8A17A   |
-	JSR CODE_B89960				;$B8A17D   |
+	JSR handle_player_physics_skip_terrain	;$B8A17D   |
 	JSR CODE_B8B7F4				;$B8A180   |
 	JMP kong_state_return			;$B8A183  /
 
@@ -4632,9 +4632,9 @@ kong_state_2C:
 	JSR process_player_action		;$B8A4E5   |
 if !version == 0				;	   |
 	JSR CODE_B8A186				;$B8A4E8   |
-	JSR CODE_B89960				;$B8A4EB   |
+	JSR handle_player_physics_skip_terrain	;$B8A4EB   |
 else						;	   |
-	JSR CODE_B89960				;$B8A4E8   |
+	JSR handle_player_physics_skip_terrain	;$B8A4E8   |
 	JSR CODE_B8A186				;$B8A4EB   |
 endif						;	   |
 	JMP kong_state_return			;$B8A4EE  /
@@ -5103,7 +5103,7 @@ kong_state_3A:
 	JSR interpolate_x_velocity		;$B8A87A   |
 	JSR handle_slope_sliding_velocity	;$B8A87D   |
 	JSR apply_position_from_velocity	;$B8A880   |
-	JSR CODE_B89960				;$B8A883   |
+	JSR handle_player_physics_skip_terrain	;$B8A883   |
 	JSR CODE_B8B714				;$B8A886   |
 	JMP kong_state_return			;$B8A889  /
 
@@ -5684,7 +5684,7 @@ kong_state_50:
 	CMP #$008F				;$B8AD2F   |
 	BEQ CODE_B8AD44				;$B8AD32   |
 	LDA #$0007				;$B8AD34   |
-	JSL CODE_BCFB69				;$B8AD37   |
+	JSL get_sprite_special_clipping_slot_0	;$B8AD37   |
 	LDA #$0020				;$B8AD3B   |
 	JSL check_for_sprite_collisions		;$B8AD3E   |
 	BCS CODE_B8AD88				;$B8AD42   |
@@ -5836,7 +5836,7 @@ kong_state_58:
 	JSR handle_slope_sliding_velocity	;$B8AE74   |
 	JSR apply_position_from_velocity	;$B8AE77   |
 	JSR record_highest_y_position		;$B8AE7A   |
-	JSR CODE_B89960				;$B8AE7D   |
+	JSR handle_player_physics_skip_terrain	;$B8AE7D   |
 	JMP kong_state_return			;$B8AE80  /
 
 kong_state_59:
@@ -5873,7 +5873,7 @@ kong_state_70:
 	STA $26,x				;$B8AEC4   |
 	LDA $06,x				;$B8AEC6   |
 	SEC					;$B8AEC8   |
-	SBC $17BA				;$B8AEC9   |
+	SBC screen_scroll_x_position		;$B8AEC9   |
 	BMI CODE_B8AED5				;$B8AECC   |
 	CMP #$0100				;$B8AECE   |
 	BPL CODE_B8AED5				;$B8AED1   |
@@ -6050,7 +6050,7 @@ kong_state_60:
 	BEQ CODE_B8B01A				;$B8B00C   |
 	LDA #$0008				;$B8B00E   |
 	JSR process_player_action		;$B8B011   |
-	JSR CODE_B89966				;$B8B014   |
+	JSR handle_player_damaged_invincibility	;$B8B014   |
 	JMP kong_state_return			;$B8B017  /
 
 CODE_B8B01A:
@@ -6115,7 +6115,7 @@ kong_state_64:
 	BNE CODE_B8B0AC				;$B8B096   |
 	LDA $0A,x				;$B8B098   |
 	SEC					;$B8B09A   |
-	SBC $17C0				;$B8B09B   |
+	SBC screen_scroll_y_position		;$B8B09B   |
 	CMP #$0120				;$B8B09E   |
 	BPL CODE_B8B0AC				;$B8B0A1   |
 CODE_B8B0A3:					;	   |
@@ -6133,7 +6133,7 @@ kong_state_65:
 	STA $26,x				;$B8B0B5   |
 	LDA $06,x				;$B8B0B7   |
 	SEC					;$B8B0B9   |
-	SBC $17BA				;$B8B0BA   |
+	SBC screen_scroll_x_position		;$B8B0BA   |
 	BMI CODE_B8B0D6				;$B8B0BD   |
 	CMP #$0100				;$B8B0BF   |
 	BPL CODE_B8B0D6				;$B8B0C2   |
@@ -6213,7 +6213,7 @@ kong_state_69:
 	LDY #$006E				;$B8B153   |
 	LDA [current_sprite_constants],y	;$B8B156   |
 	JSR interpolate_x_velocity		;$B8B158   |
-	JSR CODE_B89957				;$B8B15B   |
+	JSR handle_player_physics_skip_speed	;$B8B15B   |
 	LDY $19C4				;$B8B15E   |
 	LDA $004A,y				;$B8B161   |
 	CLC					;$B8B164   |
@@ -6249,7 +6249,7 @@ kong_state_6C:
 	CMP #$008F				;$B8B19E   |
 	BEQ CODE_B8B1B3				;$B8B1A1   |
 	LDA #$0007				;$B8B1A3   |
-	JSL CODE_BCFB69				;$B8B1A6   |
+	JSL get_sprite_special_clipping_slot_0	;$B8B1A6   |
 	LDA #$0020				;$B8B1AA   |
 	JSL check_for_sprite_collisions		;$B8B1AD   |
 	BCS CODE_B8B1C4				;$B8B1B1   |
@@ -6556,7 +6556,7 @@ CODE_B8B40A:					;	   |
 	LDY active_kong_sprite			;$B8B426   |
 	LDA $0006,y				;$B8B429   |
 	STA $06,x				;$B8B42C   |
-	LDA $17C0				;$B8B42E   |
+	LDA screen_scroll_y_position		;$B8B42E   |
 	STA $0A,x				;$B8B431   |
 	CLC					;$B8B433   |
 CODE_B8B434:					;	   |
@@ -6580,7 +6580,7 @@ CODE_B8B435:
 	LDY active_kong_sprite			;$B8B458   |
 	LDA $0006,y				;$B8B45B   |
 	STA $06,x				;$B8B45E   |
-	LDA $17C0				;$B8B460   |
+	LDA screen_scroll_y_position		;$B8B460   |
 	STA $0A,x				;$B8B463   |
 	CLC					;$B8B465   |
 	RTS					;$B8B466  /
@@ -6682,18 +6682,18 @@ CODE_B8B514:
 
 record_highest_y_position:
 	LDX current_sprite			;$B8B516  \
-	LDA $1E,x				;$B8B518   |
+	LDA sprite.terrain_interaction,x	;$B8B518   |
 	AND #$0001				;$B8B51A   |
-	BNE CODE_B8B52A				;$B8B51D   |
-	LDA $0A,x				;$B8B51F   |
+	BNE .record_new_highest_y		;$B8B51D   |
+	LDA sprite.y_position,x			;$B8B51F   |
 	CMP $0935				;$B8B521   |
-	BPL CODE_B8B529				;$B8B524   |
+	BPL .return				;$B8B524   |
 	STA $0935				;$B8B526   |
-CODE_B8B529:					;	   |
+.return:					;	   |
 	RTS					;$B8B529  /
 
-CODE_B8B52A:
-	LDA $0A,x				;$B8B52A  \
+.record_new_highest_y:
+	LDA sprite.y_position,x			;$B8B52A  \
 	STA $0935				;$B8B52C   |
 	RTS					;$B8B52F  /
 
@@ -6706,18 +6706,18 @@ CODE_B8B530:
 
 handle_player_pit_death:
 	LDX current_sprite			;$B8B53A  \
-	LDA $0A,x				;$B8B53C   |
+	LDA sprite.y_position,x			;$B8B53C   |
 	SEC					;$B8B53E   |
-	SBC $17C0				;$B8B53F   |
+	SBC screen_scroll_y_position		;$B8B53F   |
 	CMP #$0120				;$B8B542   |
 	BPL CODE_B8B586				;$B8B545   |
-	LDA $1E,x				;$B8B547   |
+	LDA sprite.terrain_interaction,x	;$B8B547   |
 	AND #$0080				;$B8B549   |
 	BNE CODE_B8B56E				;$B8B54C   |
-	LDA $10,x				;$B8B54E   |
+	LDA sprite.terrain_attributes,x		;$B8B54E   |
 	AND #$0100				;$B8B550   |
 	BEQ CODE_B8B5A6				;$B8B553   |
-	LDA $1E,x				;$B8B555   |
+	LDA sprite.terrain_interaction,x	;$B8B555   |
 	AND #$1001				;$B8B557   |
 	CMP #$0001				;$B8B55A   |
 	BNE CODE_B8B584				;$B8B55D   |
@@ -6728,7 +6728,7 @@ handle_player_pit_death:
 	CMP #$9000				;$B8B569   |
 	BCC CODE_B8B5A6				;$B8B56C   |
 CODE_B8B56E:					;	   |
-	LDA $30,x				;$B8B56E   |
+	LDA sprite.interaction_flags,x		;$B8B56E   |
 	AND #$0080				;$B8B570   |
 	BNE CODE_B8B5A6				;$B8B573   |
 	LDY #!special_sprite_spawn_id_0036	;$B8B575   |
@@ -7371,11 +7371,11 @@ start_player_falling:				;	   |
 	JSL set_anim_handle_dixie		;$B8B9AF   |
 	RTS					;$B8B9B3  /
 
-CODE_B8B9B4:
+start_player_faster_falling_global:
 	JSR start_player_faster_falling		;$B8B9B4  \
 	RTL					;$B8B9B7  /
 
-CODE_B8B9B8:
+start_player_falling_global:
 	JSR start_player_falling		;$B8B9B8  \
 	RTL					;$B8B9BB  /
 
@@ -9991,7 +9991,7 @@ update_object_pickup:
 	CMP #$0040				;$B8CBA2   | |
 	BEQ .return				;$B8CBA5   |/  if team up is happening stop checking for object to pick up
 	LDA #$0000				;$B8CBA7   |\
-	JSL CODE_BCFB69				;$B8CBAA   | |
+	JSL get_sprite_special_clipping_slot_0	;$B8CBAA   | |
 	LDA #$0001				;$B8CBAE   | | check if carryable object is near player using custom hitbox
 	JSL check_for_sprite_collisions		;$B8CBB1   | |
 	BCC .return				;$B8CBB5   |/
@@ -10608,13 +10608,13 @@ apply_player_gravity:
 	LDY current_kong_control_variables	;$B8CF6A   |
 	LDA.w kong_control.gravity_force,y	;$B8CF6C   |
 	CLC					;$B8CF6F   |
-	ADC $24,x				;$B8CF70   |
+	ADC sprite.y_speed,x			;$B8CF70   |
 	BMI .apply_velocity			;$B8CF72   |
 	CMP.w kong_control.max_fall_speed,y	;$B8CF74   |
 	BCC .apply_velocity			;$B8CF77   |
 	LDA.w kong_control.max_fall_speed,y	;$B8CF79   |
 .apply_velocity					;	   |
-	STA $24,x				;$B8CF7C   |
+	STA sprite.y_speed,x			;$B8CF7C   |
 	RTS					;$B8CF7E  /
 
 apply_position_from_velocity_global:
@@ -11142,7 +11142,7 @@ prevent_sprite_from_leaving_level_x:
 	SEC					;$B8D22B   |
 	SBC #$0010				;$B8D22C   |
 	SEC					;$B8D22F   |
-	SBC $17BA				;$B8D230   |
+	SBC screen_scroll_x_position		;$B8D230   |
 	BPL CODE_B8D23F				;$B8D233   |
 CODE_B8D235:					;	   |
 	EOR #$FFFF				;$B8D235   |
@@ -11933,8 +11933,14 @@ CODE_B8D7E7:					;	   |
 	BRA CODE_B8D795				;$B8D7EC  /
 
 DATA_B8D7EE:
-	db $00, $03, $00, $03, $00, $03, $00, $04
-	db $00, $05, $00, $06, $00, $08, $00, $08
+	dw $0300
+	dw $0300
+	dw $0300
+	dw $0400
+	dw $0500
+	dw $0600
+	dw $0800
+	dw $0800
 
 CODE_B8D7FE:
 	LDX current_sprite			;$B8D7FE  \
@@ -12929,10 +12935,10 @@ CODE_B8DE56:					;	   |
 	LDA $60					;$B8DE56   |
 	LDY current_kong_control_variables	;$B8DE58   |
 	STA $0D66				;$B8DE5A   |
-	STZ $26,x				;$B8DE5D   |
-	STZ $20,x				;$B8DE5F   |
-	STZ $24,x				;$B8DE61   |
-	LDA #$002A				;$B8DE63   |
+	STZ sprite.max_x_speed,x		;$B8DE5D   |
+	STZ sprite.x_speed,x			;$B8DE5F   |
+	STZ sprite.y_speed,x			;$B8DE61   |
+	LDA #!kong_state_2A			;$B8DE63   |
 	STA sprite.state,x			;$B8DE66   |
 	LDA kong_follow_buffer_recording_index	;$B8DE68   |
 	STA $0D6E				;$B8DE6B   |

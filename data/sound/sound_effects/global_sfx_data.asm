@@ -12,8 +12,8 @@ arch spc700
 	dw (.pointers_end-.pointers_start)>>1	;quantity of sound effects (default $0060)
 ;sound effect pointers
 .pointers_start:
-	dw .seq_2DDA	;00: 
-	dw .seq_2DDB	;01: 
+	dw .seq_2DDA	;00: None
+	dw .seq_2DDB	;01: Mute
 	dw .seq_2DCB	;02: Klomp walking, bumped by Klobber
 	dw .seq_2DB6	;03: Kong chant (unused)
 	dw .seq_2DA1	;04: Neek hit
@@ -21,11 +21,11 @@ arch spc700
 	dw .seq_2D6E	;06: Diddy hit
 	dw .seq_2D67	;07: Dixie hit
 	dw .seq_2D56	;08: Collecting Banana
-	dw .seq_2D2D	;09: Collecting Banana Bunch (UNUSED)
+	dw .seq_2D2D	;09: Collecting Banana Bunch (unused)
 	dw .seq_2CE9	;0A: Stars around Diddy's head
 	dw .seq_2CD4	;0B: Rambi scuffing foot on ground (readying to charge)
-	dw .seq_2CC2	;0C: 
-	dw .seq_2CB2	;0D: Jumping sound? 
+	dw .seq_2CC2	;0C: Something breaking (unused)
+	dw .seq_2CB2	;0D: Jumping sound (unused)
 	dw .seq_2C9C	;0E: Zinger hit
 	dw .seq_2C8E	;0F: Click Clack walking
 	dw .seq_2C7E	;10: Click Clack defeated
@@ -104,7 +104,7 @@ arch spc700
 	dw .seq_2557	;59: Kudgel hit
 	dw .seq_2539	;5A: K. Rool knocked out
 	dw .seq_252F	;5B: K. Rool falling into water
-	dw .seq_2523	;5C: K. Rool falling into water (lower pitch; unused?)
+	dw .seq_2523	;5C: K. Rool falling into water (lower pitch; unused)
 	dw .seq_2516	;5D: Klinger hit
 	dw .seq_24E5	;5E: Pause/unpause
 	dw .seq_24D2	;5F: Incorrect answer/menu unavailable option

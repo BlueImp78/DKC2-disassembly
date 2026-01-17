@@ -4055,7 +4055,7 @@ DATA_FF2A38:
 	dw sprite.render_order, $00D4
 	dw sprite.interaction_flags, $0020
 	dw sprite.state, $0000
-	dw sprite.general_purpose_46, DATA_B69097
+	dw sprite.general_purpose_46, k_rool_dk_intro_phase
 	dw sprite.general_purpose_42, $0000
 	dw !initcommand_set_oam, $6000
 	dw !initcommand_set_alt_palette, !krool_sprite_palette

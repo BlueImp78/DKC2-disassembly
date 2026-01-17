@@ -36,17 +36,17 @@ handle_CPU_data_upload:				;	 |
 	CMP X, SPC.CPUIO1			;$050A   |\
 	BNE .wait_for_CPU_data_destination	;$050C   |/ If the CPU didnt send an ARAM destination yet then wait
 	MOVW YA, SPC.CPUIO2			;$050E   |> Read ARAM destination address sent by the CPU into Y and A
-	MOV SPC.CPUIO1, X			;$0510   |\ Update transaction id (acknowledge that the APU received the destination)
+	MOV SPC.CPUIO1, X			;$0510   |\ Update transaction id (acknowledge APU has the destination)
 	INC X					;$0512   |/
-	MOV .first_byte_write_instruction+1, A	;$0513   |\ Patch address of 2 MOV instructions to point to the ARAM address...
+	MOV .first_byte_write_instruction+1, A	;$0513   |\ Patch address of 2 MOV instructions to the ARAM address...
 	MOV .second_byte_write_instruction+1, A	;$0516   | | That the CPU wants to write to
 	MOV .first_byte_write_instruction+2, Y	;$0519   | | This is done twice because the CPU sends 2 bytes at a time
 	MOV .second_byte_write_instruction+2, Y	;$051C   |/
 .wait_for_CPU_data_size				;	 |
 	CMP X, SPC.CPUIO1			;$051F   |\
-	BNE .wait_for_CPU_data_size		;$0521   |/ If the CPU didnt send the data size yet then wait until it does
+	BNE .wait_for_CPU_data_size		;$0521   |/ If the CPU didnt send data size yet then wait until it does
 	MOVW YA, SPC.CPUIO2			;$0523   |> Read data sent by the CPU into Y and A
-	MOV SPC.CPUIO1, X			;$0525   |\ Update transaction id (acknowledge that the APU received the data size)
+	MOV SPC.CPUIO1, X			;$0525   |\ Update transaction id (acknowledge APU has the data size)
 	INC X					;$0527   |/
 	MOV cpu_upload_size, A			;$0528   |\ Update remaining words
 	MOV cpu_upload_size+1, Y		;$052A   |/
@@ -57,13 +57,13 @@ handle_CPU_data_upload:				;	 |
 	CMP X, SPC.CPUIO1			;$0532   |\
 	BNE .wait_for_CPU_data			;$0534   |/ If the CPU didnt send any data yet then wait until it does
 	MOV A, SPC.CPUIO2			;$0536   |> Read data sent by the CPU into A
-.first_byte_write_instruction			;	 |\ The next instruction is dynamically patched to point to the write address
+.first_byte_write_instruction			;	 |\ Next instruction is dynamically patched with write address
 	MOV !null_pointer+Y, A			;$0538   | | Write 1st byte to dynamically patched ARAM destination
 	MOV A, SPC.CPUIO3			;$053B   |/ Get 2nd data byte sent by the CPU
 	MOV SPC.CPUIO1, X			;$053D   |\ Update the transaction id to tell the CPU we want more data
 	INC X					;$053F   | | Increment CPU transaction id
 	INC Y					;$0540   |/ Increment write offset
-.second_byte_write_instruction			;	 |\ The next instruction is dynamically patched to point to the write address
+.second_byte_write_instruction			;	 |\ Next instruction is dynamically patched with write address
 	MOV !null_pointer+Y, A			;$0541   | | Write 2nd byte to dynamically patched ARAM destination
 	INC Y					;$0544   |/ Increment write offset
 	BEQ .cross_page_boundary		;$0545   |
@@ -199,7 +199,7 @@ CPU_command_FB_transition_song:
 	MOV A, Y				;$06C7   |\ Get DSP register index in A
 	SETC					;$06C8   | |
 	SBC A, #$0F				;$06C9   |/ Move to previous channel DSP index
-	BPL .next_channel			;$06CB   |> If index greater than 0, we have more channel registers to init
+	BPL .next_channel			;$06CB   |> If index > 0, we have more channel registers to init
 	MOV SPC.DSP_addr, #DSPs.master_vol_l	;$06CD   |
 	CALL CODE_06EB				;$06D0   |
 	MOV SPC.DSP_addr, #DSPs.master_vol_r	;$06D3   |

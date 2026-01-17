@@ -127,7 +127,7 @@ CODE_B680F9:
 	LDA $2E,x				;$B680FB   |
 	BIT #$0200				;$B680FD   |
 	BEQ CODE_B6812C				;$B68100   |
-	JSL CODE_BCFB58				;$B68102   |
+	JSL get_current_sprite_clipping		;$B68102   |
 	LDA #$0C7B				;$B68106   |
 	JSL check_complex_player_collision_B6	;$B68109   |
 	BCC CODE_B68147				;$B6810D   |
@@ -143,7 +143,7 @@ CODE_B680F9:
 	BRA CODE_B68147				;$B6812A  /
 
 CODE_B6812C:
-	JSL CODE_BCFB58				;$B6812C  \
+	JSL get_current_sprite_clipping		;$B6812C  \
 	LDA #$0000				;$B68130   |
 	JSL check_complex_player_collision_B6	;$B68133   |
 	BCC CODE_B68147				;$B68137   |
@@ -395,7 +395,7 @@ CODE_B6831D:
 	BRL CODE_B683F7				;$B68327  /
 
 CODE_B6832A:
-	JSL CODE_BCFB58				;$B6832A  \
+	JSL get_current_sprite_clipping		;$B6832A  \
 	LDA #$0200				;$B6832E   |
 	LDY #$0000				;$B68331   |
 	JSL CODE_BEBD8E				;$B68334   |
@@ -428,7 +428,7 @@ CODE_B6836B:					;	   |
 	BRL CODE_B684B6				;$B68380  /
 
 CODE_B68383:
-	JSL CODE_BCFB58				;$B68383  \
+	JSL get_current_sprite_clipping		;$B68383  \
 	LDA #$0C7B				;$B68387   |
 	JSL check_complex_player_collision_B6	;$B6838A   |
 	BCC CODE_B683F7				;$B6838E   |
@@ -482,7 +482,7 @@ CODE_B68403:
 	LDA $2E,x				;$B68403  \
 	BIT #$0001				;$B68405   |
 	BEQ CODE_B6841D				;$B68408   |
-	JSL CODE_BCFB58				;$B6840A   |
+	JSL get_current_sprite_clipping		;$B6840A   |
 	LDA #$0010				;$B6840E   |
 	PHK					;$B68411   |
 	%return(CODE_B68418)			;$B68412   |
@@ -500,7 +500,7 @@ CODE_B6841D:
 	BRL CODE_B684B6				;$B68427  /
 
 CODE_B6842A:
-	JSL CODE_BCFB58				;$B6842A  \
+	JSL get_current_sprite_clipping		;$B6842A  \
 	LDA #$0000				;$B6842E   |
 	JSL check_complex_player_collision_B6	;$B68431   |
 	BCS CODE_B6843A				;$B68435   |
@@ -547,7 +547,7 @@ CODE_B68488:					;	   |
 	LDA.l $00073D				;$B6848D   |
 	BNE CODE_B684B6				;$B68491   |
 	LDX current_sprite			;$B68493   |
-	JSL CODE_BCFB58				;$B68495   |
+	JSL get_current_sprite_clipping		;$B68495   |
 	LDA #$0C7B				;$B68499   |
 	JSL check_complex_player_collision_B6	;$B6849C   |
 	BCC CODE_B684B6				;$B684A0   |
@@ -1074,8 +1074,8 @@ kudgel_set_fanfare_return_command:
 	BEQ .return				;$B68C6F   | If already done, return
 	DEC $0747				;$B68C71   | Else decrease timer
 	BNE .return				;$B68C74   | 
-	JSL set_current_level_as_cleared	;$B68C76   |\
-	LDA #!player_interaction_27		;$B68C7A   | | If timer done, set level as cleared and set "collecting kremcoin" interaction
+	JSL set_current_level_as_cleared	;$B68C76   |\ If timer done, set level as cleared 
+	LDA #!player_interaction_27		;$B68C7A   | | and set "collecting kremcoin" interaction
 	JSL set_player_interaction_global	;$B68C7D   |/
 .return:					;	   |
 	RTS					;$B68C81  /
@@ -1247,7 +1247,7 @@ CODE_B68DB3:
 	LDA #$0258				;$B68DE5   |
 	JSL set_alt_sprite_animation		;$B68DE8   |
 	LDX current_sprite			;$B68DEC   |
-	LDA #DATA_B69355			;$B68DEE   |
+	LDA #k_rool_rematch_start		;$B68DEE   |
 	STA $46,x				;$B68DF1   |
 	LDA #$0001				;$B68DF3   |
 	STA $000652				;$B68DF6   |
@@ -1293,18 +1293,18 @@ CODE_B68E56:
 	LDA #$0004				;$B68E56  \
 	BIT game_state_flags_2			;$B68E59   |
 	BEQ CODE_B68E63				;$B68E5C   |
-	LDY #DATA_B6908D			;$B68E5E   |
+	LDY #k_rool_intro_phase			;$B68E5E   |
 	BRA CODE_B68E6C				;$B68E61  /
 
 CODE_B68E63:
 	TSB game_state_flags_2			;$B68E63  \
 	JSR CODE_B68F50				;$B68E66   |
-	LDY #DATA_B69097			;$B68E69   |
+	LDY #k_rool_dk_intro_phase		;$B68E69   |
 CODE_B68E6C:					;	   |
 	LDX current_sprite			;$B68E6C   |
 	STY $46,x				;$B68E6E   |
-	LDA #$0009				;$B68E70   |
-	STA $000652				;$B68E73   |
+	LDA #$0009				;$B68E70   |\ Set K. Rool HP
+	STA $000652				;$B68E73   |/
 	LDA #$0003				;$B68E77   |
 	STA $00070B				;$B68E7A   |
 CODE_B68E7E:					;	   |
@@ -1358,7 +1358,7 @@ CODE_B68EDB:
 	LDA $2E,x				;$B68EDB  \
 	BIT #$2000				;$B68EDD   |
 	BNE CODE_B68F0F				;$B68EE0   |
-	JSL CODE_BCFB58				;$B68EE2   |
+	JSL get_current_sprite_clipping		;$B68EE2   |
 	LDA #$0000				;$B68EE6   |
 	JSL check_complex_player_collision_B6	;$B68EE9   |
 	BCC CODE_B68F0F				;$B68EED   |
@@ -1373,7 +1373,7 @@ CODE_B68EDB:
 	LDA $2E,x				;$B68F05   |
 	ORA #$0010				;$B68F07   |
 	STA $2E,x				;$B68F0A   |
-	JSR CODE_B6AD9B				;$B68F0C   |
+	JSR release_held_sprite_from_kong	;$B68F0C   |
 CODE_B68F0F:					;	   |
 	LDX current_sprite			;$B68F0F   |
 	LDA $44,x				;$B68F11   |
@@ -1539,7 +1539,6 @@ CODE_B69043:
 	RTL					;$B6905C  /
 
 
-;krool related?
 DATA_B6905D:
 	%offset(DATA_B6905F, 2)
 	dw $2000, $003C
@@ -1558,11 +1557,13 @@ DATA_B6906F:
 	dw $0016, $FFEE, $0228
 	dw $000A, $FFD3, $0227
 
-DATA_B6908D:
+;$B6908D
+k_rool_intro_phase:
 	dw !boss_command_wait, $0064
-	dw !boss_command_goto_or_reset, DATA_B690DB, DATA_B690DB
+	dw !boss_command_goto_or_reset, k_rool_phase_1_start, k_rool_phase_1_start
 
-DATA_B69097:
+;$B69097
+k_rool_dk_intro_phase:
 	dw !boss_command_dk_intro, $0003, $0000, $0000, $0000, $0000, $0000
 	dw !boss_command_wait, $003C
 	dw !boss_command_melee_dk
@@ -1579,23 +1580,24 @@ DATA_B69097:
 	dw !boss_command_wait, $0082
 	dw !boss_command_dk_intro, $0002, $0000, $0000, $0000, $0000, $0000
 
-DATA_B690DB:
+;$B690DB
+k_rool_phase_1_start:
 	dw !boss_command_shoot
 	dw !boss_command_wait, $00F0
 	dw !boss_command_dash, $0500, $0003
 	dw !boss_command_wait, $0032
 	dw !boss_command_vacuum
-
-DATA_B690ED:
+k_rool_phase_1_loop:
 	dw !boss_command_wait, $0032
 	dw !boss_command_shoot
 	dw !boss_command_wait, $0050
 	dw !boss_command_dash, $0500, $0004
 	dw !boss_command_wait, $0032
 	dw !boss_command_vacuum
-	dw !boss_command_goto_or_reset, DATA_B690ED, DATA_B690ED
+	dw !boss_command_goto_or_reset, k_rool_phase_1_loop, k_rool_phase_1_loop
 
-DATA_B69109:
+;$B69109
+k_rool_phase_2_start:
 	dw !boss_command_wait, $0032
 	dw !boss_command_shoot
 	dw !boss_command_wait, $0078
@@ -1607,7 +1609,8 @@ DATA_B69109:
 	dw !boss_command_vacuum
 	dw !boss_command_goto_or_reset, !null_pointer
 
-DATA_B6912F:
+;$B6912F
+k_rool_phase_3_start:
 	dw !boss_command_wait, $003C
 	dw !boss_command_shoot
 	dw !boss_command_wait, $0050
@@ -1621,48 +1624,45 @@ DATA_B6912F:
 	dw !boss_command_wait, $0050
 	dw !boss_command_vacuum
 	dw !boss_command_goto_or_reset, !null_pointer
-	
-DATA_B69163:
-	dw !boss_command_spawn_sprite, DATA_FF2216, $01C8, $0170, CODE_B6AD02, $0000, $FFEA
 
-DATA_B69171:
+;$B69163
+k_rool_phase_4_start:
+	dw !boss_command_spawn_sprite, DATA_FF2216, $01C8, $0170, CODE_B6AD02, $0000, $FFEA
+k_rool_phase_4_loop:
 	dw !boss_command_wait, $0050
 	dw !boss_command_shoot
 	dw !boss_command_wait, $005A
-	dw !boss_command_goto_if, DATA_B69171
+	dw !boss_command_goto_if, k_rool_phase_4_loop
 	dw !boss_command_vacuum
-	dw !boss_command_goto_or_reset, DATA_B69171, DATA_B69171
+	dw !boss_command_goto_or_reset, k_rool_phase_4_loop, k_rool_phase_4_loop
 
-DATA_B69187:
+k_rool_phase_5_start:
 	dw !boss_command_wait, $0050
 	dw !boss_command_dash, $0580, $0006
-
-DATA_B69191:
+k_rool_phase_5_loop:
 	dw !boss_command_wait, $0028
 	dw !boss_command_shoot
 	dw !boss_command_wait, $008C
-	dw !boss_command_goto_if, DATA_B69191
+	dw !boss_command_goto_if, k_rool_phase_5_loop
 	dw !boss_command_vacuum
-	dw !boss_command_goto_or_reset, DATA_B69191, DATA_B69191
+	dw !boss_command_goto_or_reset, k_rool_phase_5_loop, k_rool_phase_5_loop
 
-DATA_B691A7:
+k_rool_phase_6_start:
 	dw !boss_command_wait, $0028
 	dw !boss_command_dash, $05C0, $0006
-
-DATA_B691B1:
+k_rool_phase_6_loop:
 	dw !boss_command_wait, $0028
 	dw !boss_command_shoot
 	dw !boss_command_wait, $00B4
-	dw !boss_command_goto_if, DATA_B691B1
+	dw !boss_command_goto_if, k_rool_phase_6_loop
 	dw !boss_command_vacuum
-	dw !boss_command_goto_or_reset, DATA_B691B1, DATA_B691B1
+	dw !boss_command_goto_or_reset, k_rool_phase_6_loop, k_rool_phase_6_loop
 
-DATA_B691C7:
+k_rool_phase_7_start:
 	dw !boss_command_spawn_sprite, DATA_FF2216, $01C8, $0170, CODE_B6AD02, $0000, $FFEA
 	dw !boss_command_wait, $0032
 	dw !boss_command_dash, $0600, $0006
-
-DATA_B691DF:
+k_rool_phase_7_loop:
 	dw !boss_command_wait, $0028
 	dw !boss_command_shoot
 	dw !boss_command_wait, $005A
@@ -1681,9 +1681,9 @@ DATA_B691DF:
 	dw !boss_command_wait, $0028
 	dw !boss_command_set_visibility, $2000
 	dw !boss_command_vacuum
-	dw !boss_command_goto_or_reset, DATA_B691DF, DATA_B691DF
+	dw !boss_command_goto_or_reset, k_rool_phase_7_loop, k_rool_phase_7_loop
 
-DATA_B69241:
+k_rool_phase_8_start:
 	dw !boss_command_wait, $0028
 	dw !boss_command_dash, $0640, $0006
 	dw !boss_command_wait, $0028
@@ -1698,7 +1698,7 @@ DATA_B69241:
 	dw !boss_command_vacuum
 	dw !boss_command_goto_or_reset, !null_pointer
 
-DATA_B69279:
+k_rool_phase_9_start:
 	dw !boss_command_wait, $0028
 	dw !boss_command_dash, $0680, $0006
 	dw !boss_command_wait, $0028
@@ -1749,23 +1749,22 @@ DATA_B69279:
 	dw !boss_command_timed_vacuum, $0064
 	dw !boss_command_goto_or_reset, !null_pointer
 
-DATA_B69355:
+k_rool_rematch_start:
 	dw !boss_command_wait, $01F4
 	dw !boss_command_wait, $001E
 	dw !boss_command_shoot_fish
 	dw !boss_command_wait, $0078
-
-DATA_B69363:
+k_rool_rematch_loop:
 	dw !boss_command_wait, $0078
 	dw !boss_command_set_projectiles, $003A, DATA_BAC3AC
 	dw !boss_command_wait, $0096
-	dw !boss_command_goto_if, DATA_B69363
+	dw !boss_command_goto_if, k_rool_rematch_loop
 	dw !boss_command_wait, $004B
 	dw !boss_command_timed_vacuum, $0168
-	dw !boss_command_goto_or_reset, DATA_B69363, DATA_B69363
+	dw !boss_command_goto_or_reset, k_rool_rematch_loop, k_rool_rematch_loop
 
 ;k.rool backfire projectile x velocities
-DATA_B69383:
+k_rool_backfire_projectile_speeds:
 	dw $0000
 	dw $05B0
 	dw $0560
@@ -1805,7 +1804,7 @@ CODE_B693C4:
 	LDA $2E,x				;$B693C4  \
 	BIT #$0001				;$B693C6   |
 	BEQ CODE_B693DE				;$B693C9   |
-	JSL CODE_BCFB58				;$B693CB   |
+	JSL get_current_sprite_clipping		;$B693CB   |
 	LDA #$0010				;$B693CF   |
 	PHK					;$B693D2   |
 	%return(CODE_B693D9)			;$B693D3   |
@@ -1823,7 +1822,7 @@ CODE_B693DE:
 	BRL CODE_B6948B				;$B693E8  /
 
 CODE_B693EB:
-	JSL CODE_BCFB58				;$B693EB  \
+	JSL get_current_sprite_clipping		;$B693EB  \
 	LDA #$0000				;$B693EF   |
 	JSL check_complex_player_collision_B6	;$B693F2   |
 	BCS CODE_B693FB				;$B693F6   |
@@ -1840,7 +1839,7 @@ CODE_B693FB:
 	LDA $2E,x				;$B6940F   |
 	ORA #$0010				;$B69411   |
 	STA $2E,x				;$B69414   |
-	JSR CODE_B6AD9B				;$B69416   |
+	JSR release_held_sprite_from_kong	;$B69416   |
 CODE_B69419:					;	   |
 	LDX $0654				;$B69419   |
 	LDA $2E,x				;$B6941C   |
@@ -1876,7 +1875,7 @@ CODE_B6945B:					;	   |
 	LDA.l $00073D				;$B69460   |
 	BNE CODE_B6948B				;$B69464   |
 	LDX current_sprite			;$B69466   |
-	JSL CODE_BCFB58				;$B69468   |
+	JSL get_current_sprite_clipping		;$B69468   |
 	LDA #$0C7B				;$B6946C   |
 	JSL check_complex_player_collision_B6	;$B6946F   |
 	BCC CODE_B6948B				;$B69473   |
@@ -1908,32 +1907,32 @@ CODE_B6949C:
 	JSL queue_sound_effect			;$B6949F   |
 	LDY.w #DATA_FF1F8A			;$B694A3   |
 	JSL spawn_special_sprite_address	;$B694A6   |
-	JSR CODE_B699C5				;$B694AA   |
+	JSR init_k_rool_projectile_position	;$B694AA   |
 	LDA $002E,y				;$B694AD   |
 	ORA #$0090				;$B694B0   |
 	STA $002E,y				;$B694B3   |
-	LDA $12,x				;$B694B6   |
+	LDA sprite.oam_property,x		;$B694B6   |
 	BIT #$4000				;$B694B8   |
-	BNE CODE_B694C8				;$B694BB   |
+	BNE .facing_left			;$B694BB   |
 	LDA #$0300				;$B694BD   |
-	STA $0020,y				;$B694C0   |
+	STA.w sprite.x_speed,y			;$B694C0   |
 	LDA #$0000				;$B694C3   |
-	BRA CODE_B694D1				;$B694C6  /
+	BRA .facing_direction_handled		;$B694C6  /
 
-CODE_B694C8:
+.facing_left:
 	LDA #$FD00				;$B694C8  \
-	STA $0020,y				;$B694CB   |
+	STA.w sprite.x_speed,y			;$B694CB   |
 	LDA #$0000				;$B694CE   |
-CODE_B694D1:					;	   |
-	STA $0026,y				;$B694D1   |
-	LDA #$0005				;$B694D4   |
-	STA $0042,y				;$B694D7   |
-	LDA #$0003				;$B694DA   |
-	STA $0044,y				;$B694DD   |
+.facing_direction_handled:			;	   |
+	STA.w sprite.max_x_speed,y		;$B694D1   |
+	LDA #$0005				;$B694D4   |\ Set X acceleration
+	STA $0042,y				;$B694D7   |/
+	LDA #$0003				;$B694DA   |\ Set Y acceleration
+	STA $0044,y				;$B694DD   |/
 	LDA #$0000				;$B694E0   |
-	STA $0024,y				;$B694E3   |
+	STA.w sprite.y_speed,y			;$B694E3   |
 	LDA #$0200				;$B694E6   |
-	STA $002A,y				;$B694E9   |
+	STA.w sprite.max_y_speed,y		;$B694E9   |
 	LDA #$0001				;$B694EC   |
 	STA $0046,y				;$B694EF   |
 	RTS					;$B694F2  /
@@ -1943,7 +1942,7 @@ CODE_B694F3:
 	JSL queue_sound_effect			;$B694F6   |
 	LDY.w #DATA_FF1F8A			;$B694FA   |
 	JSL spawn_special_sprite_address	;$B694FD   |
-	JSR CODE_B699C5				;$B69501   |
+	JSR init_k_rool_projectile_position	;$B69501   |
 	LDA $002E,y				;$B69504   |
 	ORA #$0200				;$B69507   |
 	STA $002E,y				;$B6950A   |
@@ -1997,7 +1996,7 @@ CODE_B69572:
 	JSL queue_sound_effect			;$B69575   |
 	LDY.w #DATA_FF1F8A			;$B69579   |
 	JSL spawn_special_sprite_address	;$B6957C   |
-	JSR CODE_B699C5				;$B69580   |
+	JSR init_k_rool_projectile_position	;$B69580   |
 	LDA $002E,y				;$B69583   |
 	ORA #$0200				;$B69586   |
 	STA $002E,y				;$B69589   |
@@ -2054,7 +2053,7 @@ CODE_B695FB:					;	   |
 	LDA #$0282				;$B69609   |
 	JSL set_alt_sprite_animation		;$B6960C   |
 CODE_B69610:					;	   |
-	JSR CODE_B699C5				;$B69610   |
+	JSR init_k_rool_projectile_position	;$B69610   |
 	LDA level_number			;$B69613   |
 	CMP #!level_krocodile_kore		;$B69615   |
 	BNE CODE_B6961D				;$B69618   |
@@ -2144,7 +2143,7 @@ CODE_B696C3:					;	   |
 	LDA #$0282				;$B696D1   |
 	JSL set_alt_sprite_animation		;$B696D4   |
 CODE_B696D8:					;	   |
-	JSR CODE_B699C5				;$B696D8   |
+	JSR init_k_rool_projectile_position	;$B696D8   |
 	LDA $002E,y				;$B696DB   |
 	ORA #$0092				;$B696DE   |
 	STA $002E,y				;$B696E1   |
@@ -2204,7 +2203,7 @@ CODE_B69755:					;	   |
 	LDA #$0282				;$B69763   |
 	JSL set_alt_sprite_animation		;$B69766   |
 CODE_B6976A:					;	   |
-	JSR CODE_B699C5				;$B6976A   |
+	JSR init_k_rool_projectile_position	;$B6976A   |
 	LDA $002E,y				;$B6976D   |
 	ORA #$0290				;$B69770   |
 	STA $002E,y				;$B69773   |
@@ -2268,7 +2267,7 @@ CODE_B697FC:
 	JSL queue_sound_effect			;$B697FF   |
 	LDY #!special_sprite_spawn_id_0182	;$B69803   |
 	JSL spawn_special_sprite_index		;$B69806   |
-	JSR CODE_B699C5				;$B6980A   |
+	JSR init_k_rool_projectile_position	;$B6980A   |
 	LDA $002E,y				;$B6980D   |
 	ORA #$0490				;$B69810   |
 	STA $002E,y				;$B69813   |
@@ -2320,7 +2319,7 @@ CODE_B69877:
 	JSL queue_sound_effect			;$B6987A   |
 	LDY #!special_sprite_spawn_id_017E	;$B6987E   |
 	JSL spawn_special_sprite_index		;$B69881   |
-	JSR CODE_B699C5				;$B69885   |
+	JSR init_k_rool_projectile_position	;$B69885   |
 	LDA $002E,y				;$B69888   |
 	ORA #$1090				;$B6988B   |
 	STA $002E,y				;$B6988E   |
@@ -2384,7 +2383,7 @@ CODE_B69917:
 	JSL queue_sound_effect			;$B6991A   |
 	LDY #!special_sprite_spawn_id_0186	;$B6991E   |
 	JSL spawn_special_sprite_index		;$B69921   |
-	JSR CODE_B699C5				;$B69925   |
+	JSR init_k_rool_projectile_position	;$B69925   |
 	LDA $002E,y				;$B69928   |
 	ORA #$4090				;$B6992B   |
 	STA $002E,y				;$B6992E   |
@@ -2442,33 +2441,33 @@ CODE_B699A8:
 	JSL queue_sound_effect			;$B699AB   |
 	LDY #!special_sprite_spawn_id_017E	;$B699AF   |
 	JSL spawn_special_sprite_index		;$B699B2   |
-	JSR CODE_B699C5				;$B699B6   |
+	JSR init_k_rool_projectile_position	;$B699B6   |
 	LDA $002E,y				;$B699B9   |
 	ORA #$0490				;$B699BC   |
 	STA $002E,y				;$B699BF   |
 	BRL CODE_B69816				;$B699C2  /
 
-CODE_B699C5:
+init_k_rool_projectile_position:
 	LDX current_sprite			;$B699C5  \
 	LDY alternate_sprite			;$B699C7   |
-	LDA $0A,x				;$B699C9   |
+	LDA sprite.y_position,x			;$B699C9   |
 	CLC					;$B699CB   |
 	ADC #$FFF5				;$B699CC   |
-	STA $000A,y				;$B699CF   |
-	LDA $12,x				;$B699D2   |
+	STA.w sprite.y_position,y		;$B699CF   |
+	LDA sprite.oam_property,x		;$B699D2   |
 	BIT #$4000				;$B699D4   |
-	BNE CODE_B699E1				;$B699D7   |
-	LDA $06,x				;$B699D9   |
+	BNE .facing_left			;$B699D7   |
+	LDA sprite.x_position,x			;$B699D9   |
 	SEC					;$B699DB   |
 	SBC #$FFD8				;$B699DC   |
-	BRA CODE_B699E7				;$B699DF  /
+	BRA .apply_x_position			;$B699DF  /
 
-CODE_B699E1:
-	LDA $06,x				;$B699E1  \
+.facing_left:
+	LDA sprite.x_position,x			;$B699E1  \
 	CLC					;$B699E3   |
 	ADC #$FFD8				;$B699E4   |
-CODE_B699E7:					;	   |
-	STA $0006,y				;$B699E7   |
+.apply_x_position:				;	   |
+	STA.w sprite.x_position,y		;$B699E7   |
 	RTS					;$B699EA  /
 
 shot_donkey_kong_sprite_code:
@@ -2482,7 +2481,7 @@ shot_donkey_kong_sprite_code:
 	LDX current_sprite			;$B699FF   |
 	LDA $46,x				;$B69A01   |
 	BNE .return				;$B69A03   |
-	JSL CODE_BCFB58				;$B69A05   |
+	JSL get_current_sprite_clipping		;$B69A05   |
 	LDA #$0200				;$B69A09   |
 	JSL check_for_sprite_collisions		;$B69A0C   |
 	BCC .return				;$B69A10   |
@@ -2491,7 +2490,7 @@ shot_donkey_kong_sprite_code:
 	STY alternate_sprite			;$B69A18   |
 	LDA #$0001				;$B69A1A   |
 	STA $002E,y				;$B69A1D   |
-	LDA #$A609				;$B69A20   | related to knockback when being shot by krool
+	LDA #$A609				;$B69A20   |
 	STA $0042,y				;$B69A23   |
 	LDA #$0252				;$B69A26   |
 	JSL set_alt_sprite_animation		;$B69A29   |
@@ -2520,7 +2519,7 @@ krool_canball_sprite_code:
 	LDA.l $0006A3				;$B69A5D   |
 	BIT #$0100				;$B69A61   |
 	BEQ CODE_B69A76				;$B69A64   |
-	JSR CODE_B6AD9B				;$B69A66   |
+	JSR release_held_sprite_from_kong	;$B69A66   |
 	STZ $0735				;$B69A69   |
 	JSL delete_sprite_handle_deallocation	;$B69A6C   |
 	JSR CODE_B6AD29				;$B69A70   |
@@ -2546,7 +2545,7 @@ CODE_B69A8A:
 	BIT #$0080				;$B69A93   |
 	BEQ CODE_B69AA5				;$B69A96   |
 CODE_B69A98:					;	   |
-	JSL CODE_BCFB58				;$B69A98   |
+	JSL get_current_sprite_clipping		;$B69A98   |
 	LDA #$0000				;$B69A9C   |
 	JSL check_complex_player_collision_B6	;$B69A9F   |
 	LDX current_sprite			;$B69AA3   |
@@ -2565,7 +2564,7 @@ CODE_B69AB4:
 	BRL CODE_B69B58				;$B69ABB  /
 
 CODE_B69ABE:
-	JSL CODE_BCFB58				;$B69ABE  \
+	JSL get_current_sprite_clipping		;$B69ABE  \
 	LDA #$0020				;$B69AC2   |
 	JSL check_for_sprite_collisions		;$B69AC5   |
 	BCC CODE_B69B30				;$B69AC9   |
@@ -2919,7 +2918,7 @@ CODE_B69D75:					;	   |
 	LDY $0654				;$B69D82   |
 	LDA #boss_command_code_03		;$B69D85   |
 	STA $0044,y				;$B69D88   |
-	JSR CODE_B6AD9B				;$B69D8B   |
+	JSR release_held_sprite_from_kong	;$B69D8B   |
 	STZ $0735				;$B69D8E   |
 	JSL delete_sprite_handle_deallocation	;$B69D91   |
 	RTS					;$B69D95  /
@@ -3085,7 +3084,7 @@ spiked_canballs_sprite_code:
 	LDA.l $0006A3				;$B69EED   |
 	BIT #$0100				;$B69EF1   |
 	BEQ CODE_B69F06				;$B69EF4   |
-	JSR CODE_B6AD9B				;$B69EF6   |
+	JSR release_held_sprite_from_kong	;$B69EF6   |
 	STZ $0735				;$B69EF9   |
 	JSL delete_sprite_handle_deallocation	;$B69EFC   |
 	JSR CODE_B6AD29				;$B69F00   |
@@ -3110,7 +3109,7 @@ CODE_B69F1A:
 	BRL CODE_B69F96				;$B69F21  /
 
 CODE_B69F24:
-	JSL CODE_BCFB58				;$B69F24  \
+	JSL get_current_sprite_clipping		;$B69F24  \
 	LDA #$0010				;$B69F28   |
 	PHK					;$B69F2B   |
 	%return(CODE_B69F32)			;$B69F2C   |
@@ -3132,7 +3131,7 @@ CODE_B69F32:
 	STA interaction_RAM_0A86		;$B69F50   |
 	LDA current_held_sprite			;$B69F53   |
 	BEQ CODE_B69F67				;$B69F56   |
-	JSR CODE_B6AD9B				;$B69F58   |
+	JSR release_held_sprite_from_kong	;$B69F58   |
 	BCC CODE_B69F67				;$B69F5B   |
 	LDX current_sprite			;$B69F5D   |
 	JSR CODE_B6A3A1				;$B69F5F   |
@@ -3169,7 +3168,7 @@ CODE_B69F96:
 	BRL CODE_B69FFE				;$B69F9B  /
 
 CODE_B69F9E:
-	JSL CODE_BCFB58				;$B69F9E  \
+	JSL get_current_sprite_clipping		;$B69F9E  \
 	LDA.l $000735				;$B69FA2   |
 	CMP current_sprite			;$B69FA6   |
 	BNE CODE_B69FAF				;$B69FA8   |
@@ -3260,7 +3259,7 @@ CODE_B6A045:
 	LDA $2E,x				;$B6A045  \
 	BIT #$0010				;$B6A047   |
 	BNE CODE_B6A0C5				;$B6A04A   |
-	JSL CODE_BCFB58				;$B6A04C   |
+	JSL get_current_sprite_clipping		;$B6A04C   |
 	LDA #$0020				;$B6A050   |
 	JSL check_for_sprite_collisions		;$B6A053   |
 	BCC CODE_B6A0B2				;$B6A057   |
@@ -3460,7 +3459,7 @@ if !version == 1				;	   |
 	AND #$FFF7				;$B6A1C6   |
 	STA $2E,x				;$B6A1C9   |
 endif						;	   |
-	JSL CODE_BCFB58				;$B6A1CB   |
+	JSL get_current_sprite_clipping		;$B6A1CB   |
 	LDA #$0020				;$B6A1CF   |
 	JSL check_for_sprite_collisions		;$B6A1D2   |
 	BCC CODE_B6A1F7				;$B6A1D6   |
@@ -4519,7 +4518,7 @@ CODE_B6A9DD:					;	   |
 	STA $0006A3				;$B6A9E4   |
 	LDY.w #DATA_FF1F8A			;$B6A9E8   |
 	JSL spawn_special_sprite_address	;$B6A9EB   |
-	JSR CODE_B699C5				;$B6A9EF   |
+	JSR init_k_rool_projectile_position	;$B6A9EF   |
 	LDA $002E,y				;$B6A9F2   |
 	ORA #$0191				;$B6A9F5   |
 	STA $002E,y				;$B6A9F8   |
@@ -4527,14 +4526,14 @@ CODE_B6A9DD:					;	   |
 	LDA.l $000652				;$B6A9FC   |
 	ASL A					;$B6AA00   |
 	TAX					;$B6AA01   |
-	LDA DATA_B69383,x			;$B6AA02   |
+	LDA k_rool_backfire_projectile_speeds,x	;$B6AA02   |
 	PLX					;$B6AA05   |
 	PHA					;$B6AA06   |
-	LDA $12,x				;$B6AA07   |
+	LDA sprite.oam_property,x		;$B6AA07   |
 	BIT #$4000				;$B6AA09   |
 	BNE CODE_B6AA14				;$B6AA0C   |
 	PLA					;$B6AA0E   |
-	STA $0020,y				;$B6AA0F   |
+	STA.w sprite.x_speed,y			;$B6AA0F   |
 	BRA CODE_B6AA1C				;$B6AA12  /
 
 CODE_B6AA14:
@@ -4968,15 +4967,15 @@ CODE_B6AD93:
 	STA $2E,x				;$B6AD98   |
 	RTL					;$B6AD9A  /
 
-CODE_B6AD9B:
+release_held_sprite_from_kong:
 	LDA current_held_sprite			;$B6AD9B  \
 	CMP inactive_kong_sprite		;$B6AD9E   |
-	BEQ CODE_B6ADA8				;$B6ADA1   |
+	BEQ .holding_kong			;$B6ADA1   |
 	STZ current_held_sprite			;$B6ADA3   |
 	SEC					;$B6ADA6   |
 	RTS					;$B6ADA7  /
 
-CODE_B6ADA8:
+.holding_kong:
 	CLC					;$B6ADA8  \
 	RTS					;$B6ADA9  /
 
@@ -5653,7 +5652,7 @@ CODE_B6B7FE:					;	   |
 	PHA					;$B6B7FE   |
 	LDY #!special_sprite_spawn_id_0164	;$B6B7FF   |
 	JSL spawn_special_sprite_index		;$B6B802   |
-	JSR CODE_B699C5				;$B6B806   |
+	JSR init_k_rool_projectile_position	;$B6B806   |
 	PLY					;$B6B809   |
 	LDX alternate_sprite			;$B6B80A   |
 	LDA $0000,y				;$B6B80C   |
@@ -5746,7 +5745,7 @@ boss_command_code_47:
 	JSL set_alt_sprite_animation		;$B6B8D7   |
 	LDY #!special_sprite_spawn_id_0142	;$B6B8DB   |
 	JSL spawn_special_sprite_index		;$B6B8DE   |
-	JSR CODE_B699C5				;$B6B8E2   |
+	JSR init_k_rool_projectile_position	;$B6B8E2   |
 	LDA #$FA00				;$B6B8E5   |
 	STA $0020,y				;$B6B8E8   |
 	STA $0026,y				;$B6B8EB   |
@@ -6262,7 +6261,7 @@ CODE_B6BCE9:					;	   |
 	LDY #DATA_FF21B4			;$B6BD2B   |
 	JSL spawn_no_gfx_special_sprite_address	;$B6BD2E   |
 CODE_B6BD32:					;	   |
-	JSL CODE_BCFB58				;$B6BD32   |
+	JSL get_current_sprite_clipping		;$B6BD32   |
 	LDA #$0200				;$B6BD36   |
 	LDY #$0200				;$B6BD39   |
 	JSL CODE_BEBD8E				;$B6BD3C   |
@@ -6501,7 +6500,7 @@ boss_command_code_2F:
 	STA $000727				;$B6BEFD   |
 	LDA #$0001				;$B6BF01   |
 	STA $000729				;$B6BF04   |
-	LDA #DATA_BAAA1C			;$B6BF08   |
+	LDA #k_rool_bouncing_gas_clouds_shots	;$B6BF08   |
 	STA $000737				;$B6BF0B   |
 	PLY					;$B6BF0F   |
 	RTS					;$B6BF10  /
@@ -6558,7 +6557,7 @@ CODE_B6BF51:					;	   |
 	JSL set_alt_sprite_animation		;$B6BF86   |
 	LDY #!special_sprite_spawn_id_0180	;$B6BF8A   |
 	JSL spawn_special_sprite_index		;$B6BF8D   |
-	JSR CODE_B699C5				;$B6BF91   |
+	JSR init_k_rool_projectile_position	;$B6BF91   |
 	LDA $002E,y				;$B6BF94   |
 	ORA #$0890				;$B6BF97   |
 	STA $002E,y				;$B6BF9A   |
@@ -6869,7 +6868,7 @@ boss_command_code_2A:
 	LDA.l $000652				;$B6C218   |
 	TAY					;$B6C21C   |
 	JSR CODE_B6D923				;$B6C21D   |
-	LDA.w DATA_BAAD14,y			;$B6C220   |
+	LDA.w k_rool_shot_count_table,y		;$B6C220   |
 	AND #$00FF				;$B6C223   |
 	STA $000727				;$B6C226   |
 	LDA #$0001				;$B6C22A   |
@@ -6877,7 +6876,7 @@ boss_command_code_2A:
 	LDA.l $000652				;$B6C231   |
 	ASL A					;$B6C235   |
 	TAY					;$B6C236   |
-	LDA.w DATA_BAAD1E,y			;$B6C237   |
+	LDA.w k_rool_shot_table,y		;$B6C237   |
 	STA $000737				;$B6C23A   |
 	PHK					;$B6C23E   |
 	PLB					;$B6C23F   |
@@ -7286,7 +7285,7 @@ CODE_B6C543:					;	   |
 	STZ $4E,x				;$B6C54E   |
 	LDA $0002,y				;$B6C550   |
 	STA $06,x				;$B6C553   |
-	LDA $17C0				;$B6C555   |
+	LDA screen_scroll_y_position		;$B6C555   |
 	SEC					;$B6C558   |
 	SBC #$0040				;$B6C559   |
 	STA $0A,x				;$B6C55C   |
@@ -7528,14 +7527,14 @@ CODE_B6C704:					;	   |
 	LDA $2E,x				;$B6C706   |
 	BIT #$0010				;$B6C708   |
 	BEQ CODE_B6C718				;$B6C70B   |
-	LDA $17BA				;$B6C70D   |
+	LDA screen_scroll_x_position		;$B6C70D   |
 	CLC					;$B6C710   |
 	ADC #$00EA				;$B6C711   |
 	STA $48,x				;$B6C714   |
 	BRA CODE_B6C721				;$B6C716  /
 
 CODE_B6C718:
-	LDA $17BA				;$B6C718  \
+	LDA screen_scroll_x_position		;$B6C718  \
 	CLC					;$B6C71B   |
 	ADC #$001A				;$B6C71C   |
 	STA $48,x				;$B6C71F   |
@@ -7729,13 +7728,13 @@ boss_command_code_07:
 	SEC					;$B6C874   |
 	SBC [$CE]				;$B6C875   |
 	STA $000650				;$B6C877   |
-	LDA $17BA				;$B6C87B   |
+	LDA screen_scroll_x_position		;$B6C87B   |
 	CLC					;$B6C87E   |
 	ADC $000650				;$B6C87F   |
 	BRA CODE_B6C88B				;$B6C883  /
 
 CODE_B6C885:
-	LDA $17BA				;$B6C885  \
+	LDA screen_scroll_x_position		;$B6C885  \
 	CLC					;$B6C888   |
 	ADC [$CE]				;$B6C889   |
 CODE_B6C88B:					;	   |
@@ -8775,7 +8774,7 @@ CODE_B6D007:					;	   |
 parse_boss_command:
 	JSR .parse_command			;$B6D008  \> Parse the next boss command
 	LDA $44,x				;$B6D00B   |\
-	BEQ parse_boss_command			;$B6D00D   |/ If no return command code is present then process next command
+	BEQ parse_boss_command			;$B6D00D   |/ If no return command code is present, process next command
 	RTS					;$B6D00F  /> Return
 
 .parse_command
@@ -8882,31 +8881,31 @@ DATA_B6D0E5:
 	dw $0000, $0000, $0000, !null_pointer
 
 DATA_B6D0ED:
-	dw $00B4, $0390, $0100, DATA_B69279
+	dw $00B4, $0390, $0100, k_rool_phase_9_start
 
 DATA_B6D0F5:
-	dw $00F0, $0340, $0100, DATA_B69241
+	dw $00F0, $0340, $0100, k_rool_phase_8_start
 
 DATA_B6D0FD:
-	dw $00F0, $0300, $0100, DATA_B691C7
+	dw $00F0, $0300, $0100, k_rool_phase_7_start
 
 DATA_B6D105:
-	dw $00F0, $02C0, $0100, DATA_B691A7
+	dw $00F0, $02C0, $0100, k_rool_phase_6_start
 
 DATA_B6D10D:
-	dw $00F0, $0280, $0100, DATA_B69187
+	dw $00F0, $0280, $0100, k_rool_phase_5_start
 
 DATA_B6D115:
-	dw $00F0, $0240, $0100, DATA_B69163
+	dw $00F0, $0240, $0100, k_rool_phase_4_start
 
 DATA_B6D11D:
-	dw $00F0, $0200, $0100, DATA_B6912F
+	dw $00F0, $0200, $0100, k_rool_phase_3_start
 
 DATA_B6D125:
-	dw $00F0, $01C0, $0100, DATA_B69109
+	dw $00F0, $01C0, $0100, k_rool_phase_2_start
 
 DATA_B6D12D:
-	dw $0168, $0100, $0100, DATA_B69097
+	dw $0168, $0100, $0100, k_rool_dk_intro_phase
 
 ;k rool vacuum attack table (krocodile kore)
 DATA_B6D135:
@@ -8919,7 +8918,7 @@ DATA_B6D13B:
 	dw $0000, $0000, $0000, !null_pointer
 
 DATA_B6D143:
-	dw $0000, $0390, $0100, DATA_B69355
+	dw $0000, $0390, $0100, k_rool_rematch_start
 
 DATA_B6D14B:
 	db $03, $00 : dw DATA_FF2238
@@ -9263,10 +9262,9 @@ CODE_B6D44E:					;	   |
 	TAY					;$B6D44F   |
 	RTS					;$B6D450  /
 
+
 DATA_B6D451:
 	dw $0007
-
-
 kleever_canball_x_spawn_pos_left:
 	dw $0390
 	dw $03A0
@@ -9277,8 +9275,6 @@ kleever_canball_x_spawn_pos_left:
 	dw $03F0
 
 	dw $0007
-
-
 kleever_canball_x_spawn_pos_right:
 	dw $0640
 	dw $0650
@@ -9308,7 +9304,7 @@ CODE_B6D489:
 	LDA $2E,x				;$B6D48F   |
 	BIT #$0008				;$B6D491   |
 	BEQ CODE_B6D4B3				;$B6D494   |
-	JSL CODE_BCFB58				;$B6D496   |
+	JSL get_current_sprite_clipping		;$B6D496   |
 	LDA #$0C7B				;$B6D49A   |
 	STZ $065E				;$B6D49D   |
 	JSL check_complex_player_collision_B6	;$B6D4A0   |
@@ -9352,7 +9348,7 @@ CODE_B6D4DB:
 	CMP #$0006				;$B6D4F0   |
 	BEQ CODE_B6D510				;$B6D4F3   |
 CODE_B6D4F5:					;	   |
-	JSL CODE_BCFB58				;$B6D4F5   |
+	JSL get_current_sprite_clipping		;$B6D4F5   |
 	LDA #$0200				;$B6D4F9   |
 	LDY #$0200				;$B6D4FC   |
 	JSL CODE_BEBD8E				;$B6D4FF   |
@@ -9361,7 +9357,7 @@ CODE_B6D4F5:					;	   |
 	ORA #$0001				;$B6D509   |
 	STA $00065E				;$B6D50C   |
 CODE_B6D510:					;	   |
-	JSL CODE_BCFB58				;$B6D510   |
+	JSL get_current_sprite_clipping		;$B6D510   |
 	LDA #$0000				;$B6D514   |
 	JSL check_complex_player_collision_B6	;$B6D517   |
 	BCC CODE_B6D52D				;$B6D51B   |
@@ -9768,7 +9764,7 @@ CODE_B6D826:					;	   |
 	RTS					;$B6D826  /
 
 ;dead code
-	JSR CODE_B6D82F				;$B6D827   |
+	JSR CODE_B6D82F				;$B6D827  \
 	RTL					;$B6D82A  /
 
 CODE_B6D82B:
@@ -10334,10 +10330,10 @@ CODE_B6DC6E:					;	   |
 	TAX					;$B6DC7C   |\ X = $8400
 	LDY $0013,x				;$B6DC7D   |/ $808400 + $13 = $808413
 	CPY #$AB82				;$B6DC80   |\
-	BEQ CODE_B6DC8F				;$B6DC83   |/ If branch long to prepare anti-piracy isnt tampered then continue
+	BEQ CODE_B6DC8F				;$B6DC83   |/ If  prepare anti-piracy branch isnt tampered, continue
 	LDX $0654				;$B6DC85   |\
-	LDA $2E,x				;$B6DC88   | | Make kleever sword into another kleever arm breaking the fight...
-	EOR #$FFFF				;$B6DC8A   | | ... and make all the hooks drop so the player cant progress
+	LDA $2E,x				;$B6DC88   | | Make kleever sword into kleever arm breaking the fight...
+	EOR #$FFFF				;$B6DC8A   | | ... and make all hooks drop so the player cant progress
 	STA $2E,x				;$B6DC8D   |/
 CODE_B6DC8F:					;	   |
 	PLB					;$B6DC8F   |
@@ -10578,7 +10574,7 @@ CODE_B6DE4C:
 	LDX current_sprite			;$B6DE4C  \
 	LDA $32,x				;$B6DE4E   |
 	BNE CODE_B6DE61				;$B6DE50   |
-	JSL CODE_BCFB58				;$B6DE52   |
+	JSL get_current_sprite_clipping		;$B6DE52   |
 	LDA #$0000				;$B6DE56   |
 	JSL check_complex_player_collision_B6	;$B6DE59   |
 	BCC CODE_B6DE66				;$B6DE5D   |
@@ -10588,7 +10584,7 @@ CODE_B6DE61:					;	   |
 	BRL CODE_B6DF5C				;$B6DE63  /
 
 CODE_B6DE66:
-	JSL CODE_BCFB58				;$B6DE66  \
+	JSL get_current_sprite_clipping		;$B6DE66  \
 	LDA #$0010				;$B6DE6A   |
 	JSL check_for_sprite_collisions		;$B6DE6D   |
 	BCC CODE_B6DE8E				;$B6DE71   |
@@ -11657,7 +11653,7 @@ CODE_B6E69F:
 	BRL CODE_B6E733				;$B6E6A8  /
 
 CODE_B6E6AB:
-	JSL CODE_BCFB58				;$B6E6AB  \
+	JSL get_current_sprite_clipping		;$B6E6AB  \
 	LDX $0654				;$B6E6AF   |
 	LDA $12,x				;$B6E6B2   |
 	STA $32					;$B6E6B4   |
@@ -11800,7 +11796,7 @@ kleever_hand_sprite_code:
 	BRL .return				;$B6E7CB  /
 
 .CODE_B6E7CE:
-	JSL CODE_BCFB58				;$B6E7CE  \
+	JSL get_current_sprite_clipping		;$B6E7CE  \
 	LDA #$0C7B				;$B6E7D2   |
 	JSL check_complex_player_collision_B6	;$B6E7D5   |
 	BCC .return				;$B6E7D9   |
@@ -11819,7 +11815,7 @@ kleever_hand_sprite_code:
 	BRA .return				;$B6E7F5  /
 
 .CODE_B6E7F7:
-	JSL CODE_BCFB58				;$B6E7F7  \
+	JSL get_current_sprite_clipping		;$B6E7F7  \
 	LDA #$000B				;$B6E7FB   |
 	JSL CODE_BCFB8B				;$B6E7FE   |
 	LDA #$0000				;$B6E802   |
@@ -12464,7 +12460,7 @@ CODE_B6ED51:
 	BRL CODE_B6EDCC				;$B6ED51  /
 
 CODE_B6ED54:
-	JSL CODE_BCFB58				;$B6ED54  \
+	JSL get_current_sprite_clipping		;$B6ED54  \
 	LDA #$0020				;$B6ED58   |
 	JSL check_for_sprite_collisions		;$B6ED5B   |
 	BCC CODE_B6EDAD				;$B6ED5F   |
@@ -12554,7 +12550,7 @@ CODE_B6EE06:
 	LDA $2E,x				;$B6EE06  \
 	BIT #$0800				;$B6EE08   |
 	BNE CODE_B6EE63				;$B6EE0B   |
-	JSL CODE_BCFB58				;$B6EE0D   |
+	JSL get_current_sprite_clipping		;$B6EE0D   |
 	LDA #$0018				;$B6EE11   |
 	PHX					;$B6EE14   |
 	PHY					;$B6EE15   |
@@ -12961,7 +12957,7 @@ CODE_B6F11B:
 	LDA #$0001				;$B6F126   |
 	STA $000C,y				;$B6F129   |
 CODE_B6F12C:					;	   |
-	JSL CODE_BCFB58				;$B6F12C   |
+	JSL get_current_sprite_clipping		;$B6F12C   |
 	LDA #$0020				;$B6F130   |
 	JSL check_for_sprite_collisions		;$B6F133   |
 	LDX current_sprite			;$B6F137   |
@@ -13501,7 +13497,7 @@ endif						;	   |
 	STZ $06A5				;$B6F592   |
 	LDA #DATA_B6F932			;$B6F595   |\ Set krow attack pattern starting address
 	STA $00065A				;$B6F598   |/
-	LDA #$0004				;$B6F59C   |\ Set krow hp
+	LDA #$0004				;$B6F59C   |\ Set krow HP
 	STA $000652				;$B6F59F   |/
 	LDA #$0001				;$B6F5A3   |
 	STA $0006D5				;$B6F5A6   | Mainbrace fog related
@@ -13537,7 +13533,7 @@ endif						;	   |
 	BRL CODE_B6F672				;$B6F5EF  /
 
 .handle_bonking
-	JSL CODE_BCFB58				;$B6F5F2  \
+	JSL get_current_sprite_clipping		;$B6F5F2  \
 	LDA #$007B				;$B6F5F6   |
 	JSL check_complex_player_collision_B6	;$B6F5F9   |
 	BCC CODE_B6F672				;$B6F5FD   |
@@ -13553,7 +13549,7 @@ endif						;	   |
 	BRA CODE_B6F672				;$B6F618  /
 
 CODE_B6F61A:
-	JSL CODE_BCFB58				;$B6F61A  \
+	JSL get_current_sprite_clipping		;$B6F61A  \
 	LDA #$0000				;$B6F61E   |
 	PHX					;$B6F621   |
 	PHY					;$B6F622   |
@@ -13786,7 +13782,7 @@ CODE_B6F7CC:
 	LDA $2E,x				;$B6F7CF   |
 	BIT #$0200				;$B6F7D1   |
 	BNE CODE_B6F7FC				;$B6F7D4   |
-	JSL CODE_BCFB58				;$B6F7D6   |
+	JSL get_current_sprite_clipping		;$B6F7D6   |
 	LDA #$0000				;$B6F7DA   |
 	PHX					;$B6F7DD   |
 	PHY					;$B6F7DE   |
@@ -13810,7 +13806,7 @@ CODE_B6F7FC:
 	LDA $04,x				;$B6F7FF   |
 	BNE CODE_B6F824				;$B6F801   |
 	LDX current_sprite			;$B6F803   |
-	JSL CODE_BCFB58				;$B6F805   |
+	JSL get_current_sprite_clipping		;$B6F805   |
 	LDA #$007B				;$B6F809   |
 	JSL check_complex_player_collision_B6	;$B6F80C   |
 	BCC CODE_B6F824				;$B6F810   |

@@ -3,9 +3,13 @@
 This is a repository dedicated to the reverse engineering of the SNES game Donkey Kong Country 2.  
 
 Currently supported **Game Versions**:
-- **North America**
-    - Revision 0
-    - Revision 1
+- [ ] Japan (Revision 0)
+- [ ] Japan (Revision 1)
+- [x] North America (Revision 0)
+- [x] North America (Revision 1)
+- [ ] Germany (Revision 0)
+- [ ] Germany (Revision 1)
+- [ ] Europe (Revision 1)
 
 ## Accuracy
 - The disassembly strives for 100% bit for bit accuracy globally with the original game for all supported versions.
