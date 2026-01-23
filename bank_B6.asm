@@ -11655,11 +11655,11 @@ CODE_B6E69F:
 CODE_B6E6AB:
 	JSL get_current_sprite_clipping		;$B6E6AB  \
 	LDX $0654				;$B6E6AF   |
-	LDA $12,x				;$B6E6B2   |
+	LDA sprite.oam_property,x		;$B6E6B2   |
 	STA $32					;$B6E6B4   |
-	LDA $1A,x				;$B6E6B6   |
+	LDA sprite.current_graphic,x		;$B6E6B6   |
 	SEC					;$B6E6B8   |
-	SBC #$1F3C				;$B6E6B9   |
+	SBC #!kleever_attack_frame1		;$B6E6B9   |
 	LSR A					;$B6E6BC   |
 	TAY					;$B6E6BD   |
 	JSR CODE_B6D923				;$B6E6BE   |
@@ -11670,7 +11670,7 @@ CODE_B6E6AB:
 CODE_B6E6CC:					;	   |
 	JSR CODE_B6E73A				;$B6E6CC   |
 	LDX $0654				;$B6E6CF   |
-	LDA $2E,x				;$B6E6D2   |
+	LDA sprite.state,x			;$B6E6D2   |
 	BIT #$0001				;$B6E6D4   |
 	BNE CODE_B6E6DE				;$B6E6D7   |
 	LDA #$0000				;$B6E6D9   |

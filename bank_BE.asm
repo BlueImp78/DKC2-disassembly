@@ -3089,7 +3089,7 @@ gate_barrel_sprite_code:
 	PHA					;$BECE29   |
 	JSL delete_sprite_handle_deallocation	;$BECE2A   |
 	LDX current_sprite			;$BECE2E   |
-	STZ $1A,x				;$BECE30   |
+	STZ sprite.current_graphic,x		;$BECE30   |
 	STZ $18,x				;$BECE32   |
 	STZ $16,x				;$BECE34   |
 	PLA					;$BECE36   |
@@ -3811,8 +3811,8 @@ CODE_BED3A6:
 	DEC $36,x				;$BED3BB   |
 	ASL A					;$BED3BD   |
 	ASL A					;$BED3BE   |
-	ADC #$14A0				;$BED3BF   |
-	STA $1A,x				;$BED3C2   |
+	ADC #!cart_slope_frame1			;$BED3BF   |
+	STA sprite.current_graphic,x		;$BED3C2   |
 CODE_BED3C4:					;	   |
 	JSL delete_sprite_if_offscreen		;$BED3C4   |
 	JML [sprite_return_address]		;$BED3C8  /
@@ -4663,8 +4663,8 @@ CODE_BED9E3:					;	   |
 	LDA $36,x				;$BED9E5   |
 	ASL A					;$BED9E7   |
 	ASL A					;$BED9E8   |
-	ADC #$14A0				;$BED9E9   |
-	STA $1A,x				;$BED9EC   |
+	ADC #!cart_slope_frame1			;$BED9E9   |
+	STA sprite.current_graphic,x		;$BED9EC   |
 	RTS					;$BED9EE  /
 
 DATA_BED9EF:
@@ -6094,16 +6094,16 @@ CODE_BEE435:					;	   |
 	ASL A					;$BEE442   |
 	ASL A					;$BEE443   |
 	CLC					;$BEE444   |
-	ADC #$2D40				;$BEE445   |
-	STA $1A,x				;$BEE448   |
+	ADC #!timer_0_graphic			;$BEE445   |
+	STA sprite.current_graphic,x		;$BEE448   |
 	LDY $4A,x				;$BEE44A   |
 	LDA $33					;$BEE44C   |
 	AND #$00FF				;$BEE44E   |
 	ASL A					;$BEE451   |
 	ASL A					;$BEE452   |
 	CLC					;$BEE453   |
-	ADC #$2D40				;$BEE454   |
-	STA $001A,y				;$BEE457   |
+	ADC #!timer_0_graphic			;$BEE454   |
+	STA.w sprite.current_graphic,y		;$BEE457   |
 	RTS					;$BEE45A  /
 
 CODE_BEE45B:
@@ -6355,9 +6355,9 @@ CODE_BEE61C:
 	LDY #$0006				;$BEE624   |
 	LDA [current_sprite_constants],y	;$BEE627   |
 	STA $34					;$BEE629   |
-	LDA $1A,x				;$BEE62B   |
+	LDA sprite.current_graphic,x		;$BEE62B   |
 	SEC					;$BEE62D   |
-	SBC #$2B68				;$BEE62E   |
+	SBC #!klank_ride_cart_attack_frame1	;$BEE62E   |
 	CMP #$007D				;$BEE631   |
 	BCS CODE_BEE663				;$BEE634   |
 	TAY					;$BEE636   |
@@ -7346,12 +7346,12 @@ CODE_BEED3A:
 CODE_BEED5A:
 	JSL process_sprite_animation		;$BEED5A  \
 	LDX current_sprite			;$BEED5E   |
-	LDA $1A,x				;$BEED60   |
+	LDA sprite.current_graphic,x		;$BEED60   |
 	BEQ CODE_BEED97				;$BEED62   |
 	CMP $18,x				;$BEED64   |
 	BEQ CODE_BEED97				;$BEED66   |
 	SEC					;$BEED68   |
-	SBC #$2CAC				;$BEED69   |
+	SBC #!giant_tire_roll_frame1		;$BEED69   |
 	LSR A					;$BEED6C   |
 	TAY					;$BEED6D   |
 	LDA $19B4,y				;$BEED6E   |
@@ -7361,7 +7361,7 @@ CODE_BEED5A:
 	EOR $12,x				;$BEED79   |
 	STA $12,x				;$BEED7B   |
 	BCC CODE_BEED86				;$BEED7D   |
-	LDY $1A,x				;$BEED7F   |
+	LDY sprite.current_graphic,x		;$BEED7F   |
 	STY $18,x				;$BEED81   |
 	STY $16,x				;$BEED83   |
 	RTS					;$BEED85  /

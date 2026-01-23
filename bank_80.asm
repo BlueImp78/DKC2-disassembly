@@ -3737,48 +3737,48 @@ CODE_80A3CF:					;	   |
 	BNE CODE_80A41F				;$80A3E2   |
 	LDA #$0103				;$80A3E4   |
 	STA $02,x				;$80A3E7   |
-	LDA #$16DC				;$80A3E9   |
-	STA $1A,x				;$80A3EC   |
+	LDA #!tnt_explosion_frame1		;$80A3E9   |
+	STA sprite.current_graphic,x		;$80A3EC   |
 	JSR get_random_number			;$80A3EE   |
 	AND #$001F				;$80A3F1   |
 	CLC					;$80A3F4   |
 	ADC $0DEC				;$80A3F5   |
 	SEC					;$80A3F8   |
 	SBC #$0030				;$80A3F9   |
-	STA $0A,x				;$80A3FC   |
+	STA sprite.y_position,x			;$80A3FC   |
 	JSR get_random_number			;$80A3FE   |
 	AND #$001F				;$80A401   |
 	CLC					;$80A404   |
 	ADC $0DE8				;$80A405   |
 	SEC					;$80A408   |
 	SBC #$0010				;$80A409   |
-	STA $06,x				;$80A40C   |
+	STA sprite.x_position,x			;$80A40C   |
 	LDA #$0001				;$80A40E   |
-	STA $00,x				;$80A411   |
+	STA sprite.type,x			;$80A411   |
 	LDA active_frame_counter		;$80A413   |
 	ASL A					;$80A415   |
 	AND #$00E0				;$80A416   |
 	CLC					;$80A419   |
 	ADC #$2AE0				;$80A41A   |
-	STA $12,x				;$80A41D   |
+	STA sprite.oam_property,x		;$80A41D   |
 CODE_80A41F:					;	   |
 	LDA active_frame_counter		;$80A41F   |
 	BIT #$0003				;$80A421   |
 	BNE CODE_80A44D				;$80A424   |
 	LDX #aux_sprite_table			;$80A426   |
 CODE_80A429:					;	   |
-	LDA $00,x				;$80A429   |
+	LDA sprite.type,x			;$80A429   |
 	CMP #$0001				;$80A42B   |
 	BNE CODE_80A442				;$80A42E   |
-	LDA $1A,x				;$80A430   |
+	LDA sprite.current_graphic,x		;$80A430   |
 	CLC					;$80A432   |
 	ADC #$0004				;$80A433   |
-	CMP #$1718				;$80A436   |
+	CMP #!tnt_explosion_frame15+4		;$80A436   |
 	BCC CODE_80A440				;$80A439   |
 	LDA #$0000				;$80A43B   |
-	STA $00,x				;$80A43E   |
+	STA sprite.type,x			;$80A43E   |
 CODE_80A440:					;	   |
-	STA $1A,x				;$80A440   |
+	STA sprite.current_graphic,x		;$80A440   |
 CODE_80A442:					;	   |
 	TXA					;$80A442   |
 	CLC					;$80A443   |
@@ -3821,7 +3821,7 @@ CODE_80A44D:					;	   |
 CODE_80A4A1:
 	LDX #aux_sprite_table			;$80A4A1  \
 .next_slot:					;	   |
-	LDA $00,x				;$80A4A4   |
+	LDA sprite.type,x			;$80A4A4   |
 	BEQ .return				;$80A4A6   |
 	TXA					;$80A4A8   |
 	CLC					;$80A4A9   |
@@ -3855,7 +3855,7 @@ CODE_80A4DE:
 	BIT #$000F				;$80A4DE  \
 CODE_80A4E1:					;	   |
 	BNE CODE_80A4E5				;$80A4E1   |
-	INC $06,x				;$80A4E3   |
+	INC sprite.x_position,x			;$80A4E3   |
 CODE_80A4E5:					;	   |
 	LDA active_frame_counter		;$80A4E5   |
 	SEC					;$80A4E7   |
@@ -3875,13 +3875,13 @@ CODE_80A4E5:					;	   |
 CODE_80A505:
 	AND #$FFFC				;$80A505  \
 	CLC					;$80A508   |
-	ADC #$3558				;$80A509   |
+	ADC #!secret_ending_boat_frame1		;$80A509   |
 CODE_80A50C:					;	   |
-	STA $1A,x				;$80A50C   |
+	STA sprite.current_graphic,x		;$80A50C   |
 	LDA active_frame_counter		;$80A50E   |
 	BIT #$003F				;$80A510   |
 	BNE CODE_80A517				;$80A513   |
-	DEC $0A,x				;$80A515   |
+	DEC sprite.y_position,x			;$80A515   |
 CODE_80A517:					;	   |
 	RTS					;$80A517  /
 
@@ -3889,67 +3889,67 @@ CODE_80A518:
 	LDA active_frame_counter		;$80A518  \
 	AND #$001C				;$80A51A   |
 	CLC					;$80A51D   |
-	ADC #$3538				;$80A51E   |
-	STA $1A,x				;$80A521   |
+	ADC #!secret_ending_dixie_hair_frame1	;$80A51E   |
+	STA sprite.current_graphic,x		;$80A521   |
 	RTS					;$80A523  /
 
 ;dead code
-	LDA $1A,x				;$80A524   |
+	LDA sprite.current_graphic,x		;$80A524   |
 	BEQ CODE_80A544				;$80A526   |
-	CMP #$3520				;$80A528   |
+	CMP #!secret_ending_isle_top_graphic	;$80A528   |
 	BEQ CODE_80A544				;$80A52B   |
 	LDA active_frame_counter		;$80A52D   |
 	BIT #$0003				;$80A52F   |
 	BNE CODE_80A544				;$80A532   |
-	LDA $1A,x				;$80A534   |
+	LDA sprite.current_graphic,x		;$80A534   |
 	CLC					;$80A536   |
 	ADC #$0004				;$80A537   |
-	CMP #$1718				;$80A53A   |
+	CMP #!tnt_explosion_frame15+4		;$80A53A   |
 	BNE CODE_80A542				;$80A53D   |
 	LDA #$0000				;$80A53F   |
 CODE_80A542:					;	   |
-	STA $1A,x				;$80A542   |
+	STA sprite.current_graphic,x		;$80A542   |
 CODE_80A544:					;	   |
 	RTS					;$80A544  /
 
 CODE_80A545:
-	LDA $1A,x				;$80A545  \
+	LDA sprite.current_graphic,x		;$80A545  \
 	STA $32					;$80A547   |
 	LDA active_frame_counter		;$80A549   |
 	CMP #$00C0				;$80A54B   |
 	BCC CODE_80A5C2				;$80A54E   |
 	BNE CODE_80A55A				;$80A550   |
 	LDA #$0000				;$80A552   |
-	STA $0E40				;$80A555   |
+	STA dixie_sprite_slot			;$80A555   |
 	LDA active_frame_counter		;$80A558   |
 CODE_80A55A:					;	   |
 	BIT #$0003				;$80A55A   |
 	BNE CODE_80A574				;$80A55D   |
-	LDA $1A,x				;$80A55F   |
+	LDA sprite.current_graphic,x		;$80A55F   |
 	BNE CODE_80A566				;$80A561   |
-	LDA #$3520				;$80A563   |
+	LDA #!secret_ending_isle_top_graphic	;$80A563   |
 CODE_80A566:					;	   |
 	CLC					;$80A566   |
 	ADC #$0004				;$80A567   |
-	CMP #$3538				;$80A56A   |
+	CMP #!secret_ending_dixie_hair_frame1	;$80A56A   |
 	BNE CODE_80A572				;$80A56D   |
-	LDA #$3524				;$80A56F   |
+	LDA #!secret_ending_isle_beam_frame1	;$80A56F   |
 CODE_80A572:					;	   |
-	STA $1A,x				;$80A572   |
+	STA sprite.current_graphic,x		;$80A572   |
 CODE_80A574:					;	   |
 	LDA active_frame_counter		;$80A574   |
 	BIT #$000F				;$80A576   |
 	BNE CODE_80A57F				;$80A579   |
-	INC $0A,x				;$80A57B   |
-	INC $68,x				;$80A57D   |
+	INC sprite.y_position,x			;$80A57B   |
+	INC sprite[1].y_position,x		;$80A57D   |
 CODE_80A57F:					;	   |
 	JSR get_random_number			;$80A57F   |
 	AND #$000F				;$80A582   |
 	CLC					;$80A585   |
-	ADC $0A,x				;$80A586   |
+	ADC sprite.y_position,x			;$80A586   |
 	CMP #$0058				;$80A588   |
 	BCC CODE_80A5A6				;$80A58B   |
-	STZ $1A,x				;$80A58D   |
+	STZ sprite.current_graphic,x		;$80A58D   |
 	LDA $32					;$80A58F   |
 	CMP #$0000				;$80A591   |
 	BEQ CODE_80A5C2				;$80A594   |
@@ -3960,7 +3960,7 @@ CODE_80A57F:					;	   |
 	BRA CODE_80A5C2				;$80A5A4  /
 
 CODE_80A5A6:
-	LDA $0A,x				;$80A5A6  \
+	LDA sprite.y_position,x			;$80A5A6  \
 	CMP #$0032				;$80A5A8   |
 	BCC CODE_80A5C2				;$80A5AB   |
 	LDA $32					;$80A5AD   |
@@ -5569,20 +5569,20 @@ init_title_screen:
 	LDY #$0000				;$80B40B   | Load the initial sparkle frame index
 .next_sprite_slot				;	   |
 	LDA #$0001				;$80B40E   |\ Mark the sprite slot used by a sparkle
-	STA $00,x				;$80B411   |/
+	STA sprite.type,x			;$80B411   |/
 	LDA #$0180				;$80B413   |\ Set a default X/Y position.  This position is offscreen
-	STA $06,x				;$80B416   | | and thus will not render until it "Respawns"
+	STA sprite.x_position,x			;$80B416   | | and thus will not render until it "Respawns"
 	LDA #$FF88				;$80B418   | |
-	STA $0A,x				;$80B41B   |/
+	STA sprite.y_position,x			;$80B41B   |/
 	LDA #$2000				;$80B41D   |\ Set OAM size attribute
-	STA $12,x				;$80B420   |/
+	STA sprite.oam_property,x		;$80B420   |/
 	TYA					;$80B422   |\ Calculate the initial sparkle frame $0100+4*index
 	ASL A					;$80B423   | |
 	ASL A					;$80B424   | |
 	ASL A					;$80B425   | |
 	CLC					;$80B426   | |
-	ADC #$0100				;$80B427   | |
-	STA $1A,x				;$80B42A   |/ Set the sparkle frame
+	ADC #!sparkle_frame1			;$80B427   | |
+	STA sprite.current_graphic,x		;$80B42A   |/ Set the sparkle frame
 	INY					;$80B42C   | Increment the initial sparkle frame for the next sparkle
 	TXA					;$80B42D   |\ Calculate the next sprite slot
 	CLC					;$80B42E   | |
@@ -5623,10 +5623,10 @@ run_title_screen:				;	  \
 	BNE .skip_sprite_update			;$80B481   |/
 	LDX #main_sprite_table			;$80B483   |
 .next_sprite_slot				;	   |
-	LDA $1A,x				;$80B486   |\ Increment the active sparkle frame to the next frame
+	LDA sprite.current_graphic,x		;$80B486   |\ Increment the active sparkle frame to the next frame
 	CLC					;$80B488   | |
 	ADC #$0004				;$80B489   | |
-	CMP #$0120				;$80B48C   | | If not on the last frame update, otherwise fall through
+	CMP #!sparkle_frame8+4			;$80B48C   | | If not on the last frame update, otherwise fall through
 	BNE .set_sparkle_frame			;$80B48F   |/ to generate a new sparkle
 	JSR get_random_number			;$80B491   |\ Generate a random number for the sparkle X position offset
 	AND #$003F				;$80B494   | |\
@@ -5637,7 +5637,7 @@ run_title_screen:				;	  \
 	ADC $32					;$80B49C   | | |
 	CLC					;$80B49E   | | |
 	ADC #$0050				;$80B49F   | |/
-	STA $06,x				;$80B4A2   |/ Set the sparkle X position
+	STA sprite.x_position,x			;$80B4A2   |/ Set the sparkle X position
 	JSR get_random_number			;$80B4A4   |\
 	AND #$001F				;$80B4A7   | |\
 	STA $32					;$80B4AA   | | | calculate the Y position range as follows:
@@ -5646,10 +5646,10 @@ run_title_screen:				;	  \
 	ADC $32					;$80B4AE   | | | This will generate a number between $90 and $BE
 	CLC					;$80B4B0   | | |
 	ADC #$0090				;$80B4B1   | |/
-	STA $0A,x				;$80B4B4   |/ Set the sparkle Y position
-	LDA #$0100				;$80B4B6   | Load the first frame of the new sparkle
+	STA sprite.y_position,x			;$80B4B4   |/ Set the sparkle Y position
+	LDA #!sparkle_frame1			;$80B4B6   | Load the first frame of the new sparkle
 .set_sparkle_frame				;	   |
-	STA $1A,x				;$80B4B9   | Set the sparkles display frame
+	STA sprite.current_graphic,x		;$80B4B9   | Set the sparkles display frame
 	TXA					;$80B4BB   |\ Calculate the next sprite slot
 	CLC					;$80B4BC   | |
 	ADC.w #sizeof(sprite)			;$80B4BD   | |
@@ -6894,8 +6894,8 @@ CODE_80BFFA:
 	LDA #$13				;$80BFFC   |
 	STA PPU.sub_screen			;$80BFFE   |
 	REP #$20				;$80C001   |
-	LDA $1A,x				;$80C003   |
-	CMP #$1C1C				;$80C005   |
+	LDA sprite.current_graphic,x		;$80C003   |
+	CMP #!glimmer_turn_frame5		;$80C005   |
 	BNE CODE_80C015				;$80C008   |
 	SEP #$20				;$80C00A   |
 	LDA #$00				;$80C00C   |
@@ -6905,13 +6905,13 @@ CODE_80BFFA:
 
 CODE_80C015:
 	BCC CODE_80C020				;$80C015  \
-	LDA $12,x				;$80C017   |
+	LDA sprite.oam_property,x		;$80C017   |
 	BIT #$4000				;$80C019   |
 	BNE CODE_80C02A				;$80C01C   |
 	BRA CODE_80C027				;$80C01E  /
 
 CODE_80C020:
-	LDA $12,x				;$80C020  \
+	LDA sprite.oam_property,x		;$80C020  \
 	BIT #$4000				;$80C022   |
 	BEQ CODE_80C02A				;$80C025   |
 CODE_80C027:					;	   |
@@ -13341,8 +13341,8 @@ credits_dummy_sprite_code:
 	LDA $06,x				;$80FA13   |
 	INC A					;$80FA15   | Move sprite to the right 1 pixel
 	STA $06,x				;$80FA16   |
-	LDA $1A,x				;$80FA18   | Get graphic ID
-	CMP #$14C4				;$80FA1A   | Check if its the the skull cart
+	LDA sprite.current_graphic,x		;$80FA18   | Get graphic ID
+	CMP #!cart_slope_frame10		;$80FA1A   | Check if its the the skull cart
 	BEQ .check_despawn			;$80FA1D   | If yes, we're done
 	JSL process_sprite_animation		;$80FA1F   | Else process animation
 	LDA active_frame_counter		;$80FA23   | Dead instruction

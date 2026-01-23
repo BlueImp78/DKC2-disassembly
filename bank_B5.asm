@@ -715,7 +715,7 @@ assert pc() <= $B59C00 : padbyte $00 : pad $B59C00
 
 CODE_B59C00:
 	LDY current_sprite			;$B59C00  \ Y = current sprite
-	LDX $1A,y				;$B59C02   | X = current sprite graphic number
+	LDX sprite.current_graphic,y		;$B59C02   | X = current sprite graphic number
 	LDA next_sprite_DMA_buffer_slot		;$B59C04   |\ Get next free slot in sprite DMA buffer
 	CMP $78					;$B59C07   | | Compare to DMA buffer cap
 	BCC .free_slot_in_buffer		;$B59C09   |/ If there are more slots in the DMA buffer then continue
@@ -843,7 +843,7 @@ CODE_B59CCB:
 	AND #$1F				;$B59CDA   |
 	STA $56					;$B59CDC   |
 	REP #$20				;$B59CDE   |
-	LDX $1A,y				;$B59CE0   |
+	LDX sprite.current_graphic,y		;$B59CE0   |
 	BEQ CODE_B59CFF				;$B59CE2   |
 	CPX #$02C5				;$B59CE4   |
 	BCS CODE_B59D14				;$B59CE7   |
@@ -1431,7 +1431,7 @@ CODE_B59F53:					;	   |
 	LDX $62					;$B5A0EB   |
 	LDA sprite_render_table,x		;$B5A0ED   |
 	TAX					;$B5A0F0   |
-	LDA $1A,x				;$B5A0F1   |
+	LDA sprite.current_graphic,x		;$B5A0F1   |
 	CMP $16,x				;$B5A0F3   |
 	BNE .CODE_B5A0FA			;$B5A0F5   |
 .CODE_B5A0F7:					;	   |
@@ -8940,12 +8940,12 @@ CODE_B5DCBB:
 	EOR #$001C				;$B5DCDA   |
 CODE_B5DCDD:					;	   |
 	CLC					;$B5DCDD   |
-	ADC #$3154				;$B5DCDE   |
-	STA $1A,x				;$B5DCE1   |
+	ADC #!isle_k_rool_climb_frame1		;$B5DCDE   |
+	STA sprite.current_graphic,x		;$B5DCE1   |
 	LDA active_frame_counter		;$B5DCE3   |
 	BIT #$0001				;$B5DCE5   |
 	BNE CODE_B5DCF4				;$B5DCE8   |
-	DEC $0A,x				;$B5DCEA   |
+	DEC sprite.y_position,x			;$B5DCEA   |
 	BNE CODE_B5DCF4				;$B5DCEC   |
 	LDA #$0001				;$B5DCEE   |
 	TRB world_map_events			;$B5DCF1   |
@@ -9063,8 +9063,8 @@ CODE_B5DDC7:
 	EOR #$001C				;$B5DDD4   |
 CODE_B5DDD7:					;	   |
 	CLC					;$B5DDD7   |
-	ADC #$3144				;$B5DDD8   |
-	STA $1A,x				;$B5DDDB   |
+	ADC #!isle_k_rool_fall_frame1		;$B5DDD8   |
+	STA sprite.current_graphic,x		;$B5DDDB   |
 	LDA world_map_event_step_counter	;$B5DDDD   |
 	BNE CODE_B5DDE5				;$B5DDE0   |
 	JMP CODE_B5DE70				;$B5DDE2  /
@@ -9086,7 +9086,7 @@ CODE_B5DDF7:
 	BEQ CODE_B5DE12				;$B5DE01   |
 	CLC					;$B5DE03   |
 	ADC #$0004				;$B5DE04   |
-	CMP #$34CC				;$B5DE07   |
+	CMP #!isle_k_rool_splash_frame8+4	;$B5DE07   |
 	BNE CODE_B5DE0F				;$B5DE0A   |
 	LDA #$0000				;$B5DE0C   |
 CODE_B5DE0F:					;	   |
@@ -9100,12 +9100,12 @@ CODE_B5DE12:					;	   |
 	EOR #$001C				;$B5DE1D   |
 CODE_B5DE20:					;	   |
 	CLC					;$B5DE20   |
-	ADC #$34CC				;$B5DE21   |
-	STA $1A,x				;$B5DE24   |
+	ADC #!isle_k_rool_swim_frame1		;$B5DE21   |
+	STA sprite.current_graphic,x		;$B5DE24   |
 	BRA CODE_B5DE9D				;$B5DE26  /
 
 CODE_B5DE28:
-	LDA $0A,x				;$B5DE28  \
+	LDA sprite.y_position,x			;$B5DE28  \
 	CMP #$01D0				;$B5DE2A   |
 	BCC CODE_B5DE8D				;$B5DE2D   |
 	PHX					;$B5DE2F   |
@@ -9123,7 +9123,7 @@ CODE_B5DE28:
 	BRA CODE_B5DE9D				;$B5DE4F  /
 
 CODE_B5DE51:
-	LDA $0A,x				;$B5DE51  \
+	LDA sprite.y_position,x			;$B5DE51  \
 	CMP #$0140				;$B5DE53   |
 	BCC CODE_B5DE8D				;$B5DE56   |
 	PHX					;$B5DE58   |
@@ -9138,7 +9138,7 @@ CODE_B5DE51:
 	BRA CODE_B5DE8D				;$B5DE6E  /
 
 CODE_B5DE70:
-	LDA $0A,x				;$B5DE70  \
+	LDA sprite.y_position,x			;$B5DE70  \
 	CMP #$00C0				;$B5DE72   |
 	BCC CODE_B5DE8D				;$B5DE75   |
 	PHX					;$B5DE77   |

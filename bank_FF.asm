@@ -1148,7 +1148,7 @@ credits_sprite_spawn_script_table:
 
 .skull_cart:
 	dw !initcommand_load_subconfig, .credits_dummy_spawn_base
-	dw sprite.current_graphic, $14C4
+	dw sprite.current_graphic, !cart_slope_frame10
 	dw !initcommand_set_alt_palette, !skull_cart_sprite_palette
 	dw !initcommand_success
 
@@ -1535,7 +1535,7 @@ DATA_FF0C88:
 DATA_FF0CBA:
 	dw sprite.type, !sprite_kong_celebrate_prop
 	dw !initcommand_spawn_relative, $0000, $0000
-	dw sprite.current_graphic, $0000
+	dw sprite.current_graphic, !null_graphic
 	dw sprite.last_rendered_graphic, $0000
 	dw !initcommand_set_alt_palette, !boombox_sprite_palette
 	dw !initcommand_success
@@ -1543,7 +1543,7 @@ DATA_FF0CBA:
 DATA_FF0CD2:
 	dw sprite.type, !sprite_kong_celebrate_prop
 	dw !initcommand_spawn_relative, $0000, $0000
-	dw sprite.current_graphic, $0000
+	dw sprite.current_graphic, !null_graphic
 	dw sprite.last_rendered_graphic, $0000
 	dw !initcommand_set_alt_palette, !guitar_sprite_palette
 	dw !initcommand_success
@@ -1737,7 +1737,7 @@ DATA_FF0F06:
 	dw sprite.type, !sprite_unknown_00EC
 	dw sprite.x_position, $0080
 	dw sprite.y_position, $0078
-	dw sprite.current_graphic, $000C
+	dw sprite.current_graphic, !dust_frame3
 	dw !initcommand_success
 
 DATA_FF0F18:
@@ -1795,7 +1795,7 @@ DATA_FF0FAC:
 	dw sprite.type, !sprite_spawn_group_manager
 	dw sprite.x_position, $0000
 	dw sprite.y_position, $0000
-	dw sprite.current_graphic, $0000
+	dw sprite.current_graphic, !null_graphic
 	dw sprite.last_rendered_graphic, $0000
 	dw sprite.general_purpose_44, $0000
 	dw sprite.general_purpose_46, $0000
@@ -2179,7 +2179,7 @@ DATA_FF140E:
 DATA_FF1418:
 	dw sprite.type, !sprite_racing_flag
 	dw !initcommand_set_oam, $3000
-	dw sprite.current_graphic, $3300
+	dw sprite.current_graphic, !cart_race_flag_graphic
 	dw sprite.render_order, $00EC
 	dw sprite.x_position, $0073
 	dw sprite.y_position, $0041
@@ -2205,7 +2205,7 @@ DATA_FF1448:
 DATA_FF1462:
 	dw sprite.type, !sprite_racing_flag
 	dw !initcommand_set_oam, $3000
-	dw sprite.current_graphic, $3304
+	dw sprite.current_graphic, !cart_race_light_graphic
 	dw !initcommand_set_alt_palette, !traffic_light_sprite_palette
 	dw sprite.render_order, $00EC
 	dw sprite.x_position, $00E4
@@ -5235,7 +5235,7 @@ DATA_FF35F0:
 	dw sprite.unknown_5C, $0000
 	dw sprite.general_purpose_50, $0000
 	dw !initcommand_set_oam, $2000
-	dw sprite.current_graphic, $08CC
+	dw sprite.current_graphic, !barrel_cannon_frame9
 	dw !initcommand_success
 
 DATA_FF360E:
@@ -5258,7 +5258,7 @@ DATA_FF3622:
 	dw sprite.general_purpose_50, $0000
 	dw !initcommand_set_oam, $0000
 	dw !initcommand_set_alt_palette, !global_sprite_palette
-	dw sprite.current_graphic, $08CC
+	dw sprite.current_graphic, !barrel_cannon_frame9
 	dw !initcommand_success
 
 DATA_FF3648:
@@ -18482,7 +18482,7 @@ DATA_FFD18A:
 	dw sprite.general_purpose_42, $0003
 	dw sprite.general_purpose_44, $0004
 	dw sprite.general_purpose_4A, $0030
-	dw sprite.current_graphic, $2FD8
+	dw sprite.current_graphic, !ship_deck_left_wall_graphic
 	dw !initcommand_set_alt_palette, !ship_deck_wall_left_sprite_palette
 	dw !initcommand_set_oam, $3000
 	dw !initcommand_success
@@ -18492,7 +18492,7 @@ DATA_FFD1A8:
 	dw sprite.general_purpose_42, $0003
 	dw sprite.general_purpose_44, $0004
 	dw sprite.general_purpose_4A, $0030
-	dw sprite.current_graphic, $2FDC
+	dw sprite.current_graphic, !wasp_hive_right_wall_graphic
 	dw !initcommand_set_alt_palette, !wasp_hive_wall_right_sprite_palette
 	dw sprite.general_purpose_48, $0009
 	dw !initcommand_set_oam, $3000
@@ -18503,7 +18503,7 @@ DATA_FFD1CA:
 	dw sprite.general_purpose_42, $0002
 	dw sprite.general_purpose_44, $0003
 	dw sprite.general_purpose_4A, $0018
-	dw sprite.current_graphic, $2FE0
+	dw sprite.current_graphic, !forest_left_wall_graphic
 	dw !initcommand_set_alt_palette, !forest_wall_left_sprite_palette
 	dw sprite.general_purpose_48, $0001
 	dw !initcommand_set_oam, $3000
@@ -18514,7 +18514,7 @@ DATA_FFD1EC:
 	dw sprite.general_purpose_42, $0003
 	dw sprite.general_purpose_44, $0004
 	dw sprite.general_purpose_4A, $0018
-	dw sprite.current_graphic, $2FE0
+	dw sprite.current_graphic, !forest_left_wall_graphic
 	dw !initcommand_set_alt_palette, !forest_wall_left_sprite_palette
 	dw sprite.general_purpose_48, $0001
 	dw !initcommand_set_oam, $3000
@@ -18525,7 +18525,7 @@ DATA_FFD20E:
 	dw sprite.general_purpose_42, $0001
 	dw sprite.general_purpose_44, $0002
 	dw sprite.general_purpose_4A, $0030
-	dw sprite.current_graphic, $2FE8
+	dw sprite.current_graphic, !forest_right_wall_graphic
 	dw !initcommand_set_alt_palette, !forest_wall_right_sprite_palette
 	dw sprite.general_purpose_48, $0001
 	dw !initcommand_set_oam, $3000
@@ -18536,7 +18536,7 @@ DATA_FFD230:
 	dw sprite.general_purpose_42, $0001
 	dw sprite.general_purpose_44, $0002
 	dw sprite.general_purpose_4A, $0030
-	dw sprite.current_graphic, $2FFC
+	dw sprite.current_graphic, !ship_hold_high_wall_graphic
 	dw !initcommand_set_alt_palette, !ship_hold_wall_high_sprite_palette
 	dw sprite.general_purpose_48, $FFE7
 	dw !initcommand_success
@@ -18546,7 +18546,7 @@ DATA_FFD24E:
 	dw sprite.general_purpose_42, $0001
 	dw sprite.general_purpose_44, $0002
 	dw sprite.general_purpose_4A, $0020
-	dw sprite.current_graphic, $3000
+	dw sprite.current_graphic, !ship_hold_low_wall_graphic
 	dw !initcommand_set_alt_palette, !ship_hold_wall_low_sprite_palette
 	dw sprite.general_purpose_48, $0024
 	dw !initcommand_success
@@ -18556,7 +18556,7 @@ DATA_FFD26C:
 	dw sprite.general_purpose_42, $0001
 	dw sprite.general_purpose_44, $0002
 	dw sprite.general_purpose_4A, $0020
-	dw sprite.current_graphic, $2FF8
+	dw sprite.current_graphic, !ice_left_wall_graphic
 	dw !initcommand_set_alt_palette, !ice_wall_sprite_palette
 	dw sprite.general_purpose_48, $0012
 	dw !initcommand_success
@@ -18566,7 +18566,7 @@ DATA_FFD28A:
 	dw sprite.general_purpose_42, $0002
 	dw sprite.general_purpose_44, $0003
 	dw sprite.general_purpose_4A, $0020
-	dw sprite.current_graphic, $2FF8
+	dw sprite.current_graphic, !ice_left_wall_graphic
 	dw !initcommand_set_alt_palette, !ice_wall_sprite_palette
 	dw sprite.general_purpose_48, $0012
 	dw !initcommand_success
@@ -18576,7 +18576,7 @@ DATA_FFD2A8:
 	dw sprite.general_purpose_42, $0001
 	dw sprite.general_purpose_44, $0002
 	dw sprite.general_purpose_4A, $0020
-	dw sprite.current_graphic, $2FF8
+	dw sprite.current_graphic, !ice_left_wall_graphic
 	dw !initcommand_set_oam, $7000
 	dw !initcommand_set_alt_palette, !ice_wall_sprite_palette
 	dw sprite.general_purpose_48, $0012
@@ -18587,7 +18587,7 @@ DATA_FFD2CA:
 	dw sprite.general_purpose_42, $0002
 	dw sprite.general_purpose_44, $0003
 	dw sprite.general_purpose_4A, $0020
-	dw sprite.current_graphic, $2FF8
+	dw sprite.current_graphic, !ice_left_wall_graphic
 	dw !initcommand_set_oam, $7000
 	dw !initcommand_set_alt_palette, !ice_wall_sprite_palette
 	dw sprite.general_purpose_48, $0012
@@ -18598,7 +18598,7 @@ DATA_FFD2EC:
 	dw sprite.general_purpose_42, $0001
 	dw sprite.general_purpose_44, $0002
 	dw sprite.general_purpose_4A, $001E
-	dw sprite.current_graphic, $2FF4
+	dw sprite.current_graphic, !lava_right_wall_graphic
 	dw sprite.display_mode, $8001
 	dw sprite.general_purpose_50, $0008
 	dw !initcommand_set_alt_palette, !lava_wall_sprite_palette
@@ -18611,7 +18611,7 @@ DATA_FFD316:
 	dw sprite.general_purpose_42, $0001
 	dw sprite.general_purpose_44, $0002
 	dw sprite.general_purpose_4A, $0030
-	dw sprite.current_graphic, $2FEC
+	dw sprite.current_graphic, !castle_left_wall_graphic
 	dw !initcommand_set_alt_palette, !castle_wall_left_sprite_palette
 	dw sprite.general_purpose_48, $0022
 	dw !initcommand_set_oam, $2000
@@ -18622,7 +18622,7 @@ DATA_FFD338:
 	dw sprite.general_purpose_42, $0002
 	dw sprite.general_purpose_44, $0003
 	dw sprite.general_purpose_4A, $0030
-	dw sprite.current_graphic, $2FEC
+	dw sprite.current_graphic, !castle_left_wall_graphic
 	dw !initcommand_set_alt_palette, !castle_wall_left_sprite_palette
 	dw sprite.general_purpose_48, $0022
 	dw !initcommand_set_oam, $2000
@@ -19341,7 +19341,7 @@ DATA_FFDB16:
 	dw sprite.general_purpose_50, $0014
 	dw !initcommand_set_oam, $3000
 	dw !initcommand_set_alt_palette, !barrel_sprite_palette
-	dw sprite.current_graphic, $08CC
+	dw sprite.current_graphic, !barrel_cannon_frame9
 	dw !initcommand_success
 
 DATA_FFDB34:

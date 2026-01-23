@@ -3244,7 +3244,7 @@ namespace off
 	AND #$00FF				;$B9E3F7   |
 	ASL A					;$B9E3FA   |
 	ASL A					;$B9E3FB   |
-	ADC #$14EC				;$B9E3FC   |
+	ADC #!dixie_ride_cart_slope_frame1	;$B9E3FC   |
 	STA sprite.current_graphic,x		;$B9E3FF   |
 CODE_B9E401:					;	   |
 	RTS					;$B9E401  /
@@ -3283,7 +3283,7 @@ namespace off
 	AND #$00FF				;$B9E42E   |
 	ASL A					;$B9E431   |
 	ASL A					;$B9E432   |
-	ADC #$1454				;$B9E433   |
+	ADC #!diddy_ride_cart_slope_frame1	;$B9E433   |
 	STA sprite.current_graphic,x		;$B9E436   |
 CODE_B9E438:					;	   |
 	RTS					;$B9E438  /
@@ -4167,7 +4167,7 @@ CODE_B9E996:					;	   |
 	STA sprite.x_speed,x			;$B9E998   |
 	LDA sprite.current_graphic,x		;$B9E99A   |
 	SEC					;$B9E99C   |
-	SBC #$0F54				;$B9E99D   |
+	SBC #!kutlass_walk_frame1		;$B9E99D   |
 	CMP #$0020				;$B9E9A0   |
 	BCS CODE_B9E9AF				;$B9E9A3   |
 	LSR A					;$B9E9A5   |
@@ -4418,7 +4418,7 @@ CODE_B9EB0F:
 	JSL spawn_special_sprite_address	;$B9EB11   |
 	BCS CODE_B9EB23				;$B9EB15   |
 	LDY alternate_sprite			;$B9EB17   |
-	LDA #$0854				;$B9EB19   |
+	LDA #!barrel_frame1			;$B9EB19   |
 	STA.w sprite.current_graphic,y		;$B9EB1C   |
 	LDX current_sprite			;$B9EB1F   |
 	STY.b sprite.general_purpose_48,x	;$B9EB21   |
@@ -4511,7 +4511,7 @@ CODE_B9EBA4:
 	STA sprite.unknown_2C,x			;$B9EBB9   |
 	LDA sprite.current_graphic,x		;$B9EBBB   |
 	SEC					;$B9EBBD   |
-	SBC #$22D0				;$B9EBBE   |
+	SBC #!krockhead_frame5			;$B9EBBE   |
 	BCC CODE_B9EBD6				;$B9EBC1   |
 	CMP #$000C				;$B9EBC3   |
 	BCC CODE_B9EBCB				;$B9EBC6   |
@@ -4606,7 +4606,7 @@ namespace off
 	AND #$00FF				;$B9EC5C   |
 	ASL A					;$B9EC5F   |
 	ASL A					;$B9EC60   |
-	ADC #$2B08				;$B9EC61   |
+	ADC #!klank_ride_cart_slope_frame1	;$B9EC61   |
 	STA sprite.current_graphic,x		;$B9EC64   |
 CODE_B9EC66:					;	   |
 	RTS					;$B9EC66  /
@@ -4633,7 +4633,7 @@ CODE_B9EC88:					;	   |
 	AND #$00FF				;$B9EC8A   |
 	ASL A					;$B9EC8D   |
 	ASL A					;$B9EC8E   |
-	ADC #$2B08				;$B9EC8F   |
+	ADC #!klank_ride_cart_slope_frame1	;$B9EC8F   |
 	STA sprite.current_graphic,x		;$B9EC92   |
 	LDA #!default_animation_speed		;$B9EC94   |
 	STA sprite.animation_timer,x		;$B9EC97   |
@@ -4745,7 +4745,7 @@ namespace off
 	BPL CODE_B9ED5B				;$B9ED42   |
 	LDA sprite.current_graphic,x		;$B9ED44   |
 	SEC					;$B9ED46   |
-	SBC #$2CAC				;$B9ED47   |
+	SBC #!giant_tire_roll_frame1		;$B9ED47   |
 	LSR A					;$B9ED4A   |
 	STA $5E					;$B9ED4B   |
 	LSR A					;$B9ED4D   |
@@ -4762,7 +4762,7 @@ namespace off
 CODE_B9ED5B:
 	LDA sprite.current_graphic,x		;$B9ED5B  \
 	SEC					;$B9ED5D   |
-	SBC #$2CAC				;$B9ED5E   |
+	SBC #!giant_tire_roll_frame1		;$B9ED5E   |
 	LSR A					;$B9ED61   |
 	STA $5E					;$B9ED62   |
 	LSR A					;$B9ED64   |
@@ -5335,68 +5335,68 @@ CODE_B9F080:
 	RTS					;$B9F084  /
 
 launch_barrel_rotation_frames:
-	dw $08CC
-	dw $08D0
-	dw $08D4
-	dw $08D8
-	dw $08DC
-	dw $08E0
-	dw $08E4
-	dw $08E8
-	dw $08AC
-	dw $08B0
-	dw $08B4
-	dw $08B8
-	dw $08BC
-	dw $08C0
-	dw $08C4
-	dw $08C8
+	dw !barrel_cannon_frame9
+	dw !barrel_cannon_frame10
+	dw !barrel_cannon_frame11
+	dw !barrel_cannon_frame12
+	dw !barrel_cannon_frame13
+	dw !barrel_cannon_frame14
+	dw !barrel_cannon_frame15
+	dw !barrel_cannon_frame16
+	dw !barrel_cannon_frame1
+	dw !barrel_cannon_frame2
+	dw !barrel_cannon_frame3
+	dw !barrel_cannon_frame4
+	dw !barrel_cannon_frame5
+	dw !barrel_cannon_frame6
+	dw !barrel_cannon_frame7
+	dw !barrel_cannon_frame8
 
 auto_barrel_rotation_frames:
-	dw $0318
-	dw $031C
-	dw $0320
-	dw $0324
-	dw $0328
-	dw $032C
-	dw $0330
-	dw $0334
-	dw $02F8
-	dw $02FC
-	dw $0300
-	dw $0304
-	dw $0308
-	dw $030C
-	dw $0310
-	dw $0314
+	dw !auto_barrel_cannon_frame9
+	dw !auto_barrel_cannon_frame10
+	dw !auto_barrel_cannon_frame11
+	dw !auto_barrel_cannon_frame12
+	dw !auto_barrel_cannon_frame13
+	dw !auto_barrel_cannon_frame14
+	dw !auto_barrel_cannon_frame15
+	dw !auto_barrel_cannon_frame16
+	dw !auto_barrel_cannon_frame1
+	dw !auto_barrel_cannon_frame2
+	dw !auto_barrel_cannon_frame3
+	dw !auto_barrel_cannon_frame4
+	dw !auto_barrel_cannon_frame5
+	dw !auto_barrel_cannon_frame6
+	dw !auto_barrel_cannon_frame7
+	dw !auto_barrel_cannon_frame8
 
 ;level end target/chest reward frames
 item_reward_frames_table:
-	dw $1944	;00 Banana Bunch
-	dw $23B0	;01 K
-	dw $23D0	;02 O
-	dw $23F0	;03 N
-	dw $2410	;04 G
-	dw $088C	;05 Barrel
-	dw $0868	;06 TNT Barrel
-	dw $0960	;07 Invincibility Barrel
-	dw $10E4	;08 Life Balloon
-	dw $10E4	;09 Life Balloon
-	dw $10E4	;0A Life Balloon
-	dw $10E4	;0B Life Balloon
-	dw $3180	;0C Banana Coin
-	dw $3180	;0D Banana Coin
-	dw $3180	;0E Banana Coin
-	dw $3180	;0F Banana Coin
-	dw $0FCC	;10 Krem Coin
-	dw $1128	;11 DK Coin
-	dw $0984	;12 Cannonball
-	dw $095C	;13 Chest
-	dw $1944	;14 Banana Bunch
-	dw $1944	;15 Banana Bunch
-	dw $1944	;16 Banana Bunch
-	dw $1944	;17 Banana Bunch
-	dw $1944	;18 Banana Bunch
-	dw $3308	;19 Banana
-	dw $0FCC	;1A Krem Coin
-	dw $0FCC	;1B Krem Coin
+	dw !banana_bunch_frame1			;00 Banana Bunch
+	dw !kong_letter_k_frame1		;01 K
+	dw !kong_letter_o_frame1		;02 O
+	dw !kong_letter_n_frame1		;03 N
+	dw !kong_letter_g_frame1		;04 G
+	dw !dk_barrel_frame1			;05 Barrel
+	dw !tnt_barrel_graphic			;06 TNT Barrel
+	dw !invincibilty_barrel_graphic		;07 Invincibility Barrel
+	dw !life_balloon_frame1			;08 Life Balloon
+	dw !life_balloon_frame1			;09 Life Balloon
+	dw !life_balloon_frame1			;0A Life Balloon
+	dw !life_balloon_frame1			;0B Life Balloon
+	dw !banana_coin_frame2			;0C Banana Coin
+	dw !banana_coin_frame2			;0D Banana Coin
+	dw !banana_coin_frame2			;0E Banana Coin
+	dw !banana_coin_frame2			;0F Banana Coin
+	dw !token_frame2			;10 Krem Coin
+	dw !hero_coin_frame5			;11 DK Coin
+	dw !cannonball_frame1			;12 Cannonball
+	dw !chest_graphic			;13 Chest
+	dw !banana_bunch_frame1			;14 Banana Bunch
+	dw !banana_bunch_frame1			;15 Banana Bunch
+	dw !banana_bunch_frame1			;16 Banana Bunch
+	dw !banana_bunch_frame1			;17 Banana Bunch
+	dw !banana_bunch_frame1			;18 Banana Bunch
+	dw !banana_frame1			;19 Banana
+	dw !token_frame2			;1A Krem Coin
+	dw !token_frame2			;1B Krem Coin

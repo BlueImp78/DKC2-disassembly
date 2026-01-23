@@ -10197,7 +10197,14 @@ endif
 
 ;defeat prize related (indexed with player's rank in the race)
 %offset(DATA_FDD3AC, -1)
-	db $11, $0F, $03, $00, $00, $00, $19, $19
+	db $11
+	db $0F
+	db $03
+	db $00
+	db $00
+	db $00
+	db $19
+	db $19
 	db $19
 
 ;spawn location data (x position, y position, spawn time limit)

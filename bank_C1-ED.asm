@@ -1,478 +1,478 @@
 ;$C10000 (sprite graphic)
-SPRITE_GRAPHIC_0338:
-	incbin "data/objects/graphics/sprite_graphic_0338.bin"
+dixie_run_frame1:
+	incbin "data/objects/graphics/dixie_run_frame1.bin"
 
 ;$C10216 (sprite graphic)
-SPRITE_GRAPHIC_033C:
-	incbin "data/objects/graphics/sprite_graphic_033C.bin"
+dixie_run_frame2:
+	incbin "data/objects/graphics/dixie_run_frame2.bin"
 
 ;$C1046A (sprite graphic)
-SPRITE_GRAPHIC_0340:
-	incbin "data/objects/graphics/sprite_graphic_0340.bin"
+dixie_run_frame3:
+	incbin "data/objects/graphics/dixie_run_frame3.bin"
 
 ;$C10680 (sprite graphic)
-SPRITE_GRAPHIC_0344:
-	incbin "data/objects/graphics/sprite_graphic_0344.bin"
+dixie_run_frame4:
+	incbin "data/objects/graphics/dixie_run_frame4.bin"
 
 ;$C108B8 (sprite graphic)
-SPRITE_GRAPHIC_0348:
-	incbin "data/objects/graphics/sprite_graphic_0348.bin"
+dixie_run_frame5:
+	incbin "data/objects/graphics/dixie_run_frame5.bin"
 
 ;$C10B12 (sprite graphic)
-SPRITE_GRAPHIC_034C:
-	incbin "data/objects/graphics/sprite_graphic_034C.bin"
+dixie_run_frame6:
+	incbin "data/objects/graphics/dixie_run_frame6.bin"
 
 ;$C10D8E (sprite graphic)
-SPRITE_GRAPHIC_0350:
-	incbin "data/objects/graphics/sprite_graphic_0350.bin"
+dixie_run_frame7:
+	incbin "data/objects/graphics/dixie_run_frame7.bin"
 
 ;$C11048 (sprite graphic)
-SPRITE_GRAPHIC_0354:
-	incbin "data/objects/graphics/sprite_graphic_0354.bin"
+dixie_run_frame8:
+	incbin "data/objects/graphics/dixie_run_frame8.bin"
 
 ;$C112E6 (sprite graphic)
-SPRITE_GRAPHIC_0358:
-	incbin "data/objects/graphics/sprite_graphic_0358.bin"
+dixie_run_frame9:
+	incbin "data/objects/graphics/dixie_run_frame9.bin"
 
 ;$C11584 (sprite graphic)
-SPRITE_GRAPHIC_035C:
-	incbin "data/objects/graphics/sprite_graphic_035C.bin"
+dixie_run_frame10:
+	incbin "data/objects/graphics/dixie_run_frame10.bin"
 
 ;$C11822 (sprite graphic)
-SPRITE_GRAPHIC_0360:
-	incbin "data/objects/graphics/sprite_graphic_0360.bin"
+dixie_run_frame11:
+	incbin "data/objects/graphics/dixie_run_frame11.bin"
 
 ;$C11AC0 (sprite graphic)
-SPRITE_GRAPHIC_0364:
-	incbin "data/objects/graphics/sprite_graphic_0364.bin"
+dixie_run_frame12:
+	incbin "data/objects/graphics/dixie_run_frame12.bin"
 
 ;$C11D1A (sprite graphic)
-SPRITE_GRAPHIC_0368:
-	incbin "data/objects/graphics/sprite_graphic_0368.bin"
+dixie_run_frame13:
+	incbin "data/objects/graphics/dixie_run_frame13.bin"
 
 ;$C11F96 (sprite graphic)
-SPRITE_GRAPHIC_036C:
-	incbin "data/objects/graphics/sprite_graphic_036C.bin"
+dixie_run_frame14:
+	incbin "data/objects/graphics/dixie_run_frame14.bin"
 
 ;$C121B2 (sprite graphic)
-SPRITE_GRAPHIC_0370:
-	incbin "data/objects/graphics/sprite_graphic_0370.bin"
+dixie_run_frame15:
+	incbin "data/objects/graphics/dixie_run_frame15.bin"
 
 ;$C1242E (sprite graphic)
-SPRITE_GRAPHIC_0374:
-	incbin "data/objects/graphics/sprite_graphic_0374.bin"
+dixie_run_frame16:
+	incbin "data/objects/graphics/dixie_run_frame16.bin"
 
 ;$C12688 (sprite graphic)
-SPRITE_GRAPHIC_0378:
-	incbin "data/objects/graphics/sprite_graphic_0378.bin"
+dixie_walk_frame1:
+	incbin "data/objects/graphics/dixie_walk_frame1.bin"
 
 ;$C1289E (sprite graphic)
-SPRITE_GRAPHIC_037C:
-	incbin "data/objects/graphics/sprite_graphic_037C.bin"
+dixie_walk_frame2:
+	incbin "data/objects/graphics/dixie_walk_frame2.bin"
 
 ;$C12AB4 (sprite graphic)
-SPRITE_GRAPHIC_0380:
-	incbin "data/objects/graphics/sprite_graphic_0380.bin"
+dixie_walk_frame3:
+	incbin "data/objects/graphics/dixie_walk_frame3.bin"
 
 ;$C12CCA (sprite graphic)
-SPRITE_GRAPHIC_0384:
-	incbin "data/objects/graphics/sprite_graphic_0384.bin"
+dixie_walk_frame4:
+	incbin "data/objects/graphics/dixie_walk_frame4.bin"
 
 ;$C12F02 (sprite graphic)
-SPRITE_GRAPHIC_0388:
-	incbin "data/objects/graphics/sprite_graphic_0388.bin"
+dixie_walk_frame5:
+	incbin "data/objects/graphics/dixie_walk_frame5.bin"
 
 ;$C13118 (sprite graphic)
-SPRITE_GRAPHIC_038C:
-	incbin "data/objects/graphics/sprite_graphic_038C.bin"
+dixie_walk_frame6:
+	incbin "data/objects/graphics/dixie_walk_frame6.bin"
 
 ;$C1332E (sprite graphic)
-SPRITE_GRAPHIC_0390:
-	incbin "data/objects/graphics/sprite_graphic_0390.bin"
+dixie_walk_frame7:
+	incbin "data/objects/graphics/dixie_walk_frame7.bin"
 
 ;$C13544 (sprite graphic)
-SPRITE_GRAPHIC_0394:
-	incbin "data/objects/graphics/sprite_graphic_0394.bin"
+dixie_walk_frame8:
+	incbin "data/objects/graphics/dixie_walk_frame8.bin"
 
 ;$C1379E (sprite graphic)
-SPRITE_GRAPHIC_0398:
-	incbin "data/objects/graphics/sprite_graphic_0398.bin"
+dixie_walk_frame9:
+	incbin "data/objects/graphics/dixie_walk_frame9.bin"
 
 ;$C139F2 (sprite graphic)
-SPRITE_GRAPHIC_039C:
-	incbin "data/objects/graphics/sprite_graphic_039C.bin"
+dixie_walk_frame10:
+	incbin "data/objects/graphics/dixie_walk_frame10.bin"
 
 ;$C13C46 (sprite graphic)
-SPRITE_GRAPHIC_03A0:
-	incbin "data/objects/graphics/sprite_graphic_03A0.bin"
+dixie_walk_frame11:
+	incbin "data/objects/graphics/dixie_walk_frame11.bin"
 
 ;$C13E9A (sprite graphic)
-SPRITE_GRAPHIC_03A4:
-	incbin "data/objects/graphics/sprite_graphic_03A4.bin"
+dixie_walk_frame12:
+	incbin "data/objects/graphics/dixie_walk_frame12.bin"
 
 ;$C140EE (sprite graphic)
-SPRITE_GRAPHIC_03A8:
-	incbin "data/objects/graphics/sprite_graphic_03A8.bin"
+dixie_walk_frame13:
+	incbin "data/objects/graphics/dixie_walk_frame13.bin"
 
 ;$C14342 (sprite graphic)
-SPRITE_GRAPHIC_03AC:
-	incbin "data/objects/graphics/sprite_graphic_03AC.bin"
+dixie_walk_frame14:
+	incbin "data/objects/graphics/dixie_walk_frame14.bin"
 
 ;$C14574 (sprite graphic)
-SPRITE_GRAPHIC_03B0:
-	incbin "data/objects/graphics/sprite_graphic_03B0.bin"
+dixie_walk_frame15:
+	incbin "data/objects/graphics/dixie_walk_frame15.bin"
 
 ;$C147C8 (sprite graphic)
-SPRITE_GRAPHIC_03B4:
-	incbin "data/objects/graphics/sprite_graphic_03B4.bin"
+dixie_walk_frame16:
+	incbin "data/objects/graphics/dixie_walk_frame16.bin"
 
 ;$C14A1C (sprite graphic)
-SPRITE_GRAPHIC_03B8:
-	incbin "data/objects/graphics/sprite_graphic_03B8.bin"
+diddy_walk_frame1:
+	incbin "data/objects/graphics/diddy_walk_frame1.bin"
 
 ;$C14C32 (sprite graphic)
-SPRITE_GRAPHIC_03BC:
-	incbin "data/objects/graphics/sprite_graphic_03BC.bin"
+diddy_walk_frame2:
+	incbin "data/objects/graphics/diddy_walk_frame2.bin"
 
 ;$C14E48 (sprite graphic)
-SPRITE_GRAPHIC_03C0:
-	incbin "data/objects/graphics/sprite_graphic_03C0.bin"
+diddy_walk_frame3:
+	incbin "data/objects/graphics/diddy_walk_frame3.bin"
 
 ;$C15064 (sprite graphic)
-SPRITE_GRAPHIC_03C4:
-	incbin "data/objects/graphics/sprite_graphic_03C4.bin"
+diddy_walk_frame4:
+	incbin "data/objects/graphics/diddy_walk_frame4.bin"
 
 ;$C1527A (sprite graphic)
-SPRITE_GRAPHIC_03C8:
-	incbin "data/objects/graphics/sprite_graphic_03C8.bin"
+diddy_walk_frame5:
+	incbin "data/objects/graphics/diddy_walk_frame5.bin"
 
 ;$C154B2 (sprite graphic)
-SPRITE_GRAPHIC_03CC:
-	incbin "data/objects/graphics/sprite_graphic_03CC.bin"
+diddy_walk_frame6:
+	incbin "data/objects/graphics/diddy_walk_frame6.bin"
 
 ;$C1570C (sprite graphic)
-SPRITE_GRAPHIC_03D0:
-	incbin "data/objects/graphics/sprite_graphic_03D0.bin"
+diddy_walk_frame7:
+	incbin "data/objects/graphics/diddy_walk_frame7.bin"
 
 ;$C15982 (sprite graphic)
-SPRITE_GRAPHIC_03D4:
-	incbin "data/objects/graphics/sprite_graphic_03D4.bin"
+diddy_walk_frame8:
+	incbin "data/objects/graphics/diddy_walk_frame8.bin"
 
 ;$C15BDC (sprite graphic)
-SPRITE_GRAPHIC_03D8:
-	incbin "data/objects/graphics/sprite_graphic_03D8.bin"
+diddy_walk_frame9:
+	incbin "data/objects/graphics/diddy_walk_frame9.bin"
 
 ;$C15E58 (sprite graphic)
-SPRITE_GRAPHIC_03DC:
-	incbin "data/objects/graphics/sprite_graphic_03DC.bin"
+diddy_walk_frame10:
+	incbin "data/objects/graphics/diddy_walk_frame10.bin"
 
 ;$C160D4 (sprite graphic)
-SPRITE_GRAPHIC_03E0:
-	incbin "data/objects/graphics/sprite_graphic_03E0.bin"
+diddy_walk_frame11:
+	incbin "data/objects/graphics/diddy_walk_frame11.bin"
 
 ;$C1634A (sprite graphic)
-SPRITE_GRAPHIC_03E4:
-	incbin "data/objects/graphics/sprite_graphic_03E4.bin"
+diddy_walk_frame12:
+	incbin "data/objects/graphics/diddy_walk_frame12.bin"
 
 ;$C165A4 (sprite graphic)
-SPRITE_GRAPHIC_03E8:
-	incbin "data/objects/graphics/sprite_graphic_03E8.bin"
+diddy_walk_frame13:
+	incbin "data/objects/graphics/diddy_walk_frame13.bin"
 
 ;$C167E2 (sprite graphic)
-SPRITE_GRAPHIC_03EC:
-	incbin "data/objects/graphics/sprite_graphic_03EC.bin"
+diddy_walk_frame14:
+	incbin "data/objects/graphics/diddy_walk_frame14.bin"
 
 ;$C16A20 (sprite graphic)
-SPRITE_GRAPHIC_03F0:
-	incbin "data/objects/graphics/sprite_graphic_03F0.bin"
+diddy_walk_frame15:
+	incbin "data/objects/graphics/diddy_walk_frame15.bin"
 
 ;$C16C5E (sprite graphic)
-SPRITE_GRAPHIC_03F4:
-	incbin "data/objects/graphics/sprite_graphic_03F4.bin"
+diddy_walk_frame16:
+	incbin "data/objects/graphics/diddy_walk_frame16.bin"
 
 ;$C16E9C (sprite graphic)
-SPRITE_GRAPHIC_03F8:
-	incbin "data/objects/graphics/sprite_graphic_03F8.bin"
+dixie_jump_frame1:
+	incbin "data/objects/graphics/dixie_jump_frame1.bin"
 
 ;$C170B2 (sprite graphic)
-SPRITE_GRAPHIC_03FC:
-	incbin "data/objects/graphics/sprite_graphic_03FC.bin"
+dixie_jump_frame2:
+	incbin "data/objects/graphics/dixie_jump_frame2.bin"
 
 ;$C172C8 (sprite graphic)
-SPRITE_GRAPHIC_0400:
-	incbin "data/objects/graphics/sprite_graphic_0400.bin"
+dixie_jump_frame3:
+	incbin "data/objects/graphics/dixie_jump_frame3.bin"
 
 ;$C174DE (sprite graphic)
-SPRITE_GRAPHIC_0404:
-	incbin "data/objects/graphics/sprite_graphic_0404.bin"
+dixie_jump_frame4:
+	incbin "data/objects/graphics/dixie_jump_frame4.bin"
 
 ;$C176F4 (sprite graphic)
-SPRITE_GRAPHIC_0408:
-	incbin "data/objects/graphics/sprite_graphic_0408.bin"
+dixie_jump_frame5:
+	incbin "data/objects/graphics/dixie_jump_frame5.bin"
 
 ;$C1794E (sprite graphic)
-SPRITE_GRAPHIC_040C:
-	incbin "data/objects/graphics/sprite_graphic_040C.bin"
+dixie_jump_frame6:
+	incbin "data/objects/graphics/dixie_jump_frame6.bin"
 
 ;$C17B42 (sprite graphic)
-SPRITE_GRAPHIC_0410:
-	incbin "data/objects/graphics/sprite_graphic_0410.bin"
+dixie_jump_frame7:
+	incbin "data/objects/graphics/dixie_jump_frame7.bin"
 
 ;$C17D7A (sprite graphic)
-SPRITE_GRAPHIC_0414:
-	incbin "data/objects/graphics/sprite_graphic_0414.bin"
+dixie_jump_frame8:
+	incbin "data/objects/graphics/dixie_jump_frame8.bin"
 
 ;$C17F90 (sprite graphic)
-SPRITE_GRAPHIC_0418:
-	incbin "data/objects/graphics/sprite_graphic_0418.bin"
+dixie_jump_frame9:
+	incbin "data/objects/graphics/dixie_jump_frame9.bin"
 
 ;$C181A6 (sprite graphic)
-SPRITE_GRAPHIC_041C:
-	incbin "data/objects/graphics/sprite_graphic_041C.bin"
+dixie_jump_frame10:
+	incbin "data/objects/graphics/dixie_jump_frame10.bin"
 
 ;$C183BC (sprite graphic)
-SPRITE_GRAPHIC_0420:
-	incbin "data/objects/graphics/sprite_graphic_0420.bin"
+dixie_jump_frame11:
+	incbin "data/objects/graphics/dixie_jump_frame11.bin"
 
 ;$C185B0 (sprite graphic)
-SPRITE_GRAPHIC_0424:
-	incbin "data/objects/graphics/sprite_graphic_0424.bin"
+dixie_jump_frame12:
+	incbin "data/objects/graphics/dixie_jump_frame12.bin"
 
 ;$C18782 (sprite graphic)
-SPRITE_GRAPHIC_0428:
-	incbin "data/objects/graphics/sprite_graphic_0428.bin"
+dixie_jump_frame13:
+	incbin "data/objects/graphics/dixie_jump_frame13.bin"
 
 ;$C18954 (sprite graphic)
-SPRITE_GRAPHIC_042C:
-	incbin "data/objects/graphics/sprite_graphic_042C.bin"
+dixie_jump_frame14:
+	incbin "data/objects/graphics/dixie_jump_frame14.bin"
 
 ;$C18B8C (sprite graphic)
-SPRITE_GRAPHIC_0430:
-	incbin "data/objects/graphics/sprite_graphic_0430.bin"
+dixie_jump_frame15:
+	incbin "data/objects/graphics/dixie_jump_frame15.bin"
 
 ;$C18DE6 (sprite graphic)
-SPRITE_GRAPHIC_0434:
-	incbin "data/objects/graphics/sprite_graphic_0434.bin"
+dixie_jump_frame16:
+	incbin "data/objects/graphics/dixie_jump_frame16.bin"
 
 ;$C19040 (sprite graphic)
-SPRITE_GRAPHIC_0438:
-	incbin "data/objects/graphics/sprite_graphic_0438.bin"
+dixie_jump_frame17:
+	incbin "data/objects/graphics/dixie_jump_frame17.bin"
 
 ;$C19256 (sprite graphic)
-SPRITE_GRAPHIC_043C:
-	incbin "data/objects/graphics/sprite_graphic_043C.bin"
+dixie_jump_frame18:
+	incbin "data/objects/graphics/dixie_jump_frame18.bin"
 
 ;$C1946C (sprite graphic)
-SPRITE_GRAPHIC_0440:
-	incbin "data/objects/graphics/sprite_graphic_0440.bin"
+dixie_jump_frame19:
+	incbin "data/objects/graphics/dixie_jump_frame19.bin"
 
 ;$C196C6 (sprite graphic)
-SPRITE_GRAPHIC_0444:
-	incbin "data/objects/graphics/sprite_graphic_0444.bin"
+dixie_jump_frame20:
+	incbin "data/objects/graphics/dixie_jump_frame20.bin"
 
 ;$C19942 (sprite graphic)
-SPRITE_GRAPHIC_0448:
-	incbin "data/objects/graphics/sprite_graphic_0448.bin"
+dixie_jump_frame21:
+	incbin "data/objects/graphics/dixie_jump_frame21.bin"
 
 ;$C19BA2 (sprite graphic)
-SPRITE_GRAPHIC_044C:
-	incbin "data/objects/graphics/sprite_graphic_044C.bin"
+dixie_jump_frame22:
+	incbin "data/objects/graphics/dixie_jump_frame22.bin"
 
 ;$C19E1E (sprite graphic)
-SPRITE_GRAPHIC_0450:
-	incbin "data/objects/graphics/sprite_graphic_0450.bin"
+dixie_jump_frame23:
+	incbin "data/objects/graphics/dixie_jump_frame23.bin"
 
 ;$C1A078 (sprite graphic)
-SPRITE_GRAPHIC_0454:
-	incbin "data/objects/graphics/sprite_graphic_0454.bin"
+dixie_jump_frame24:
+	incbin "data/objects/graphics/dixie_jump_frame24.bin"
 
 ;$C1A2D2 (sprite graphic)
-SPRITE_GRAPHIC_0458:
-	incbin "data/objects/graphics/sprite_graphic_0458.bin"
+dixie_jump_frame25:
+	incbin "data/objects/graphics/dixie_jump_frame25.bin"
 
 ;$C1A4E8 (sprite graphic)
-SPRITE_GRAPHIC_045C:
-	incbin "data/objects/graphics/sprite_graphic_045C.bin"
+dixie_jump_frame26:
+	incbin "data/objects/graphics/dixie_jump_frame26.bin"
 
 ;$C1A720 (sprite graphic)
-SPRITE_GRAPHIC_0460:
-	incbin "data/objects/graphics/sprite_graphic_0460.bin"
+dixie_jump_frame27:
+	incbin "data/objects/graphics/dixie_jump_frame27.bin"
 
 ;$C1A936 (sprite graphic)
-SPRITE_GRAPHIC_0464:
-	incbin "data/objects/graphics/sprite_graphic_0464.bin"
+dixie_jump_frame28:
+	incbin "data/objects/graphics/dixie_jump_frame28.bin"
 
 ;$C1AB46 (sprite graphic)
-SPRITE_GRAPHIC_0468:
-	incbin "data/objects/graphics/sprite_graphic_0468.bin"
+dixie_drink_juice_frame1:
+	incbin "data/objects/graphics/dixie_drink_juice_frame1.bin"
 
 ;$C1AD5C (sprite graphic)
-SPRITE_GRAPHIC_046C:
-	incbin "data/objects/graphics/sprite_graphic_046C.bin"
+dixie_drink_juice_frame2:
+	incbin "data/objects/graphics/dixie_drink_juice_frame2.bin"
 
 ;$C1AF34 (sprite graphic)
-SPRITE_GRAPHIC_0470:
-	incbin "data/objects/graphics/sprite_graphic_0470.bin"
+dixie_drink_juice_frame3:
+	incbin "data/objects/graphics/dixie_drink_juice_frame3.bin"
 
 ;$C1B10C (sprite graphic)
-SPRITE_GRAPHIC_0474:
-	incbin "data/objects/graphics/sprite_graphic_0474.bin"
+dixie_drink_juice_frame4:
+	incbin "data/objects/graphics/dixie_drink_juice_frame4.bin"
 
 ;$C1B2E4 (sprite graphic)
-SPRITE_GRAPHIC_0478:
-	incbin "data/objects/graphics/sprite_graphic_0478.bin"
+dixie_drink_juice_frame5:
+	incbin "data/objects/graphics/dixie_drink_juice_frame5.bin"
 
 ;$C1B49A (sprite graphic)
-SPRITE_GRAPHIC_047C:
-	incbin "data/objects/graphics/sprite_graphic_047C.bin"
+dixie_drink_juice_frame6:
+	incbin "data/objects/graphics/dixie_drink_juice_frame6.bin"
 
 ;$C1B62E (sprite graphic)
-SPRITE_GRAPHIC_0480:
-	incbin "data/objects/graphics/sprite_graphic_0480.bin"
+dixie_drink_juice_frame7:
+	incbin "data/objects/graphics/dixie_drink_juice_frame7.bin"
 
 ;$C1B7C2 (sprite graphic)
-SPRITE_GRAPHIC_0484:
-	incbin "data/objects/graphics/sprite_graphic_0484.bin"
+dixie_drink_juice_frame8:
+	incbin "data/objects/graphics/dixie_drink_juice_frame8.bin"
 
 ;$C1B956 (sprite graphic)
-SPRITE_GRAPHIC_0488:
-	incbin "data/objects/graphics/sprite_graphic_0488.bin"
+dixie_drink_juice_frame9:
+	incbin "data/objects/graphics/dixie_drink_juice_frame9.bin"
 
 ;$C1BB0C (sprite graphic)
-SPRITE_GRAPHIC_048C:
-	incbin "data/objects/graphics/sprite_graphic_048C.bin"
+dixie_drink_juice_frame10:
+	incbin "data/objects/graphics/dixie_drink_juice_frame10.bin"
 
 ;$C1BCA0 (sprite graphic)
-SPRITE_GRAPHIC_0490:
-	incbin "data/objects/graphics/sprite_graphic_0490.bin"
+dixie_drink_juice_frame11:
+	incbin "data/objects/graphics/dixie_drink_juice_frame11.bin"
 
 ;$C1BE34 (sprite graphic)
-SPRITE_GRAPHIC_0494:
-	incbin "data/objects/graphics/sprite_graphic_0494.bin"
+dixie_drink_juice_frame12:
+	incbin "data/objects/graphics/dixie_drink_juice_frame12.bin"
 
 ;$C1BFEA (sprite graphic)
-SPRITE_GRAPHIC_0498:
-	incbin "data/objects/graphics/sprite_graphic_0498.bin"
+dixie_drink_juice_frame13:
+	incbin "data/objects/graphics/dixie_drink_juice_frame13.bin"
 
 ;$C1C1A0 (sprite graphic)
-SPRITE_GRAPHIC_049C:
-	incbin "data/objects/graphics/sprite_graphic_049C.bin"
+dixie_drink_juice_frame14:
+	incbin "data/objects/graphics/dixie_drink_juice_frame14.bin"
 
 ;$C1C356 (sprite graphic)
-SPRITE_GRAPHIC_04A0:
-	incbin "data/objects/graphics/sprite_graphic_04A0.bin"
+dixie_drink_juice_frame15:
+	incbin "data/objects/graphics/dixie_drink_juice_frame15.bin"
 
 ;$C1C50C (sprite graphic)
-SPRITE_GRAPHIC_04A4:
-	incbin "data/objects/graphics/sprite_graphic_04A4.bin"
+dixie_drink_juice_frame16:
+	incbin "data/objects/graphics/dixie_drink_juice_frame16.bin"
 
 ;$C1C6C2 (sprite graphic)
-SPRITE_GRAPHIC_04A8:
-	incbin "data/objects/graphics/sprite_graphic_04A8.bin"
+dixie_drink_juice_frame17:
+	incbin "data/objects/graphics/dixie_drink_juice_frame17.bin"
 
 ;$C1C856 (sprite graphic)
-SPRITE_GRAPHIC_04AC:
-	incbin "data/objects/graphics/sprite_graphic_04AC.bin"
+dixie_drink_juice_frame18:
+	incbin "data/objects/graphics/dixie_drink_juice_frame18.bin"
 
 ;$C1CA0C (sprite graphic)
-SPRITE_GRAPHIC_04B0:
-	incbin "data/objects/graphics/sprite_graphic_04B0.bin"
+dixie_drink_juice_frame19:
+	incbin "data/objects/graphics/dixie_drink_juice_frame19.bin"
 
 ;$C1CBC2 (sprite graphic)
-SPRITE_GRAPHIC_04B4:
-	incbin "data/objects/graphics/sprite_graphic_04B4.bin"
+dixie_drink_juice_frame20:
+	incbin "data/objects/graphics/dixie_drink_juice_frame20.bin"
 
 ;$C1CD78 (sprite graphic)
-SPRITE_GRAPHIC_04B8:
-	incbin "data/objects/graphics/sprite_graphic_04B8.bin"
+dixie_drink_juice_frame21:
+	incbin "data/objects/graphics/dixie_drink_juice_frame21.bin"
 
 ;$C1CF6C (sprite graphic)
-SPRITE_GRAPHIC_04BC:
-	incbin "data/objects/graphics/sprite_graphic_04BC.bin"
+dixie_drink_juice_frame22:
+	incbin "data/objects/graphics/dixie_drink_juice_frame22.bin"
 
 ;$C1D182 (sprite graphic)
-SPRITE_GRAPHIC_04C0:
-	incbin "data/objects/graphics/sprite_graphic_04C0.bin"
+dixie_drink_juice_frame23:
+	incbin "data/objects/graphics/dixie_drink_juice_frame23.bin"
 
 ;$C1D398 (sprite graphic)
-SPRITE_GRAPHIC_04C4:
-	incbin "data/objects/graphics/sprite_graphic_04C4.bin"
+dixie_drink_juice_frame24:
+	incbin "data/objects/graphics/dixie_drink_juice_frame24.bin"
 
 ;$C1D5EC (sprite graphic)
-SPRITE_GRAPHIC_04C8:
-	incbin "data/objects/graphics/sprite_graphic_04C8.bin"
+dixie_drink_juice_frame25:
+	incbin "data/objects/graphics/dixie_drink_juice_frame25.bin"
 
 ;$C1D862 (sprite graphic)
-SPRITE_GRAPHIC_04CC:
-	incbin "data/objects/graphics/sprite_graphic_04CC.bin"
+dixie_drink_juice_frame26:
+	incbin "data/objects/graphics/dixie_drink_juice_frame26.bin"
 
 ;$C1DAD8 (sprite graphic)
-SPRITE_GRAPHIC_04D0:
-	incbin "data/objects/graphics/sprite_graphic_04D0.bin"
+dixie_drink_juice_frame27:
+	incbin "data/objects/graphics/dixie_drink_juice_frame27.bin"
 
 ;$C1DD4E (sprite graphic)
-SPRITE_GRAPHIC_04D4:
-	incbin "data/objects/graphics/sprite_graphic_04D4.bin"
+dixie_drink_juice_frame28:
+	incbin "data/objects/graphics/dixie_drink_juice_frame28.bin"
 
 ;$C1DFC4 (sprite graphic)
-SPRITE_GRAPHIC_04D8:
-	incbin "data/objects/graphics/sprite_graphic_04D8.bin"
+dixie_drink_juice_frame29:
+	incbin "data/objects/graphics/dixie_drink_juice_frame29.bin"
 
 ;$C1E23A (sprite graphic)
-SPRITE_GRAPHIC_04DC:
-	incbin "data/objects/graphics/sprite_graphic_04DC.bin"
+dixie_drink_juice_frame30:
+	incbin "data/objects/graphics/dixie_drink_juice_frame30.bin"
 
 ;$C1E4B0 (sprite graphic)
-SPRITE_GRAPHIC_04E0:
-	incbin "data/objects/graphics/sprite_graphic_04E0.bin"
+dixie_roll_frame1:
+	incbin "data/objects/graphics/dixie_roll_frame1.bin"
 
 ;$C1E688 (sprite graphic)
-SPRITE_GRAPHIC_04E4:
-	incbin "data/objects/graphics/sprite_graphic_04E4.bin"
+dixie_roll_frame2:
+	incbin "data/objects/graphics/dixie_roll_frame2.bin"
 
 ;$C1E860 (sprite graphic)
-SPRITE_GRAPHIC_04E8:
-	incbin "data/objects/graphics/sprite_graphic_04E8.bin"
+dixie_roll_frame3:
+	incbin "data/objects/graphics/dixie_roll_frame3.bin"
 
 ;$C1EA38 (sprite graphic)
-SPRITE_GRAPHIC_04EC:
-	incbin "data/objects/graphics/sprite_graphic_04EC.bin"
+dixie_roll_frame4:
+	incbin "data/objects/graphics/dixie_roll_frame4.bin"
 
 ;$C1EC32 (sprite graphic)
-SPRITE_GRAPHIC_04F0:
-	incbin "data/objects/graphics/sprite_graphic_04F0.bin"
+dixie_roll_frame5:
+	incbin "data/objects/graphics/dixie_roll_frame5.bin"
 
 ;$C1EE6A (sprite graphic)
-SPRITE_GRAPHIC_04F4:
-	incbin "data/objects/graphics/sprite_graphic_04F4.bin"
+dixie_roll_frame6:
+	incbin "data/objects/graphics/dixie_roll_frame6.bin"
 
 ;$C1F080 (sprite graphic)
-SPRITE_GRAPHIC_04F8:
-	incbin "data/objects/graphics/sprite_graphic_04F8.bin"
+dixie_roll_frame7:
+	incbin "data/objects/graphics/dixie_roll_frame7.bin"
 
 ;$C1F2B8 (sprite graphic)
-SPRITE_GRAPHIC_04FC:
-	incbin "data/objects/graphics/sprite_graphic_04FC.bin"
+dixie_roll_frame8:
+	incbin "data/objects/graphics/dixie_roll_frame8.bin"
 
 ;$C1F4CE (sprite graphic)
-SPRITE_GRAPHIC_0500:
-	incbin "data/objects/graphics/sprite_graphic_0500.bin"
+dixie_roll_frame9:
+	incbin "data/objects/graphics/dixie_roll_frame9.bin"
 
 ;$C1F6C8 (sprite graphic)
-SPRITE_GRAPHIC_0504:
-	incbin "data/objects/graphics/sprite_graphic_0504.bin"
+dixie_roll_frame10:
+	incbin "data/objects/graphics/dixie_roll_frame10.bin"
 
 ;$C1F8DE (sprite graphic)
-SPRITE_GRAPHIC_0508:
-	incbin "data/objects/graphics/sprite_graphic_0508.bin"
+dixie_roll_frame11:
+	incbin "data/objects/graphics/dixie_roll_frame11.bin"
 
 ;$C1FB16 (sprite graphic)
-SPRITE_GRAPHIC_050C:
-	incbin "data/objects/graphics/sprite_graphic_050C.bin"
+dixie_roll_frame12:
+	incbin "data/objects/graphics/dixie_roll_frame12.bin"
 
 ;$C1FC88 (sprite graphic)
-SPRITE_GRAPHIC_0510:
-	incbin "data/objects/graphics/sprite_graphic_0510.bin"
+dixie_roll_frame13:
+	incbin "data/objects/graphics/dixie_roll_frame13.bin"
 
 check bankcross off
 ;$C1FEC0
@@ -481,476 +481,476 @@ water_layer_3_8x8_tilemap:
 check bankcross full
 
 ;$C200B7 (sprite graphic)
-SPRITE_GRAPHIC_0514:
-	incbin "data/objects/graphics/sprite_graphic_0514.bin"
+dixie_roll_frame14:
+	incbin "data/objects/graphics/dixie_roll_frame14.bin"
 
 ;$C20355 (sprite graphic)
-SPRITE_GRAPHIC_0518:
-	incbin "data/objects/graphics/sprite_graphic_0518.bin"
+dixie_roll_frame15:
+	incbin "data/objects/graphics/dixie_roll_frame15.bin"
 
 ;$C205A9 (sprite graphic)
-SPRITE_GRAPHIC_051C:
-	incbin "data/objects/graphics/sprite_graphic_051C.bin"
+dixie_roll_frame16:
+	incbin "data/objects/graphics/dixie_roll_frame16.bin"
 
 ;$C20781 (sprite graphic)
-SPRITE_GRAPHIC_0520:
-	incbin "data/objects/graphics/sprite_graphic_0520.bin"
+dixie_roll_frame17:
+	incbin "data/objects/graphics/dixie_roll_frame17.bin"
 
 ;$C20959 (sprite graphic)
-SPRITE_GRAPHIC_0524:
-	incbin "data/objects/graphics/sprite_graphic_0524.bin"
+dixie_roll_frame18:
+	incbin "data/objects/graphics/dixie_roll_frame18.bin"
 
 ;$C20B0F (sprite graphic)
-SPRITE_GRAPHIC_0528:
-	incbin "data/objects/graphics/sprite_graphic_0528.bin"
+dixie_roll_frame19:
+	incbin "data/objects/graphics/dixie_roll_frame19.bin"
 
 ;$C20D03 (sprite graphic)
-SPRITE_GRAPHIC_052C:
-	incbin "data/objects/graphics/sprite_graphic_052C.bin"
+dixie_roll_frame20:
+	incbin "data/objects/graphics/dixie_roll_frame20.bin"
 
 ;$C20EF7 (sprite graphic)
-SPRITE_GRAPHIC_0530:
-	incbin "data/objects/graphics/sprite_graphic_0530.bin"
+dixie_glide_frame1:
+	incbin "data/objects/graphics/dixie_glide_frame1.bin"
 
 ;$C2123F (sprite graphic)
-SPRITE_GRAPHIC_0534:
-	incbin "data/objects/graphics/sprite_graphic_0534.bin"
+dixie_glide_frame2:
+	incbin "data/objects/graphics/dixie_glide_frame2.bin"
 
 ;$C214DD (sprite graphic)
-SPRITE_GRAPHIC_0538:
-	incbin "data/objects/graphics/sprite_graphic_0538.bin"
+dixie_glide_frame3:
+	incbin "data/objects/graphics/dixie_glide_frame3.bin"
 
 ;$C21797 (sprite graphic)
-SPRITE_GRAPHIC_053C:
-	incbin "data/objects/graphics/sprite_graphic_053C.bin"
+dixie_glide_frame4:
+	incbin "data/objects/graphics/dixie_glide_frame4.bin"
 
 ;$C21A73 (sprite graphic)
-SPRITE_GRAPHIC_0540:
-	incbin "data/objects/graphics/sprite_graphic_0540.bin"
+dixie_glide_frame5:
+	incbin "data/objects/graphics/dixie_glide_frame5.bin"
 
 ;$C21D71 (sprite graphic)
-SPRITE_GRAPHIC_0544:
-	incbin "data/objects/graphics/sprite_graphic_0544.bin"
+dixie_glide_frame6:
+	incbin "data/objects/graphics/dixie_glide_frame6.bin"
 
 ;$C2204D (sprite graphic)
-SPRITE_GRAPHIC_0548:
-	incbin "data/objects/graphics/sprite_graphic_0548.bin"
+dixie_glide_frame7:
+	incbin "data/objects/graphics/dixie_glide_frame7.bin"
 
 ;$C2234B (sprite graphic)
-SPRITE_GRAPHIC_054C:
-	incbin "data/objects/graphics/sprite_graphic_054C.bin"
+dixie_glide_frame8:
+	incbin "data/objects/graphics/dixie_glide_frame8.bin"
 
 ;$C22649 (sprite graphic)
-SPRITE_GRAPHIC_0550:
-	incbin "data/objects/graphics/sprite_graphic_0550.bin"
+dixie_glide_frame9:
+	incbin "data/objects/graphics/dixie_glide_frame9.bin"
 
 ;$C22903 (sprite graphic)
-SPRITE_GRAPHIC_0554:
-	incbin "data/objects/graphics/sprite_graphic_0554.bin"
+dixie_glide_frame10:
+	incbin "data/objects/graphics/dixie_glide_frame10.bin"
 
 ;$C22B9B (sprite graphic)
-SPRITE_GRAPHIC_0558:
-	incbin "data/objects/graphics/sprite_graphic_0558.bin"
+dixie_glide_frame11:
+	incbin "data/objects/graphics/dixie_glide_frame11.bin"
 
 ;$C22E33 (sprite graphic)
-SPRITE_GRAPHIC_055C:
-	incbin "data/objects/graphics/sprite_graphic_055C.bin"
+dixie_glide_frame12:
+	incbin "data/objects/graphics/dixie_glide_frame12.bin"
 
 ;$C230AF (sprite graphic)
-SPRITE_GRAPHIC_0560:
-	incbin "data/objects/graphics/sprite_graphic_0560.bin"
+dixie_turn_frame1:
+	incbin "data/objects/graphics/dixie_turn_frame1.bin"
 
 ;$C23243 (sprite graphic)
-SPRITE_GRAPHIC_0564:
-	incbin "data/objects/graphics/sprite_graphic_0564.bin"
+dixie_turn_frame2:
+	incbin "data/objects/graphics/dixie_turn_frame2.bin"
 
 ;$C233B5 (sprite graphic)
-SPRITE_GRAPHIC_0568:
-	incbin "data/objects/graphics/sprite_graphic_0568.bin"
+dixie_hurt_frame1:
+	incbin "data/objects/graphics/dixie_hurt_frame1.bin"
 
 ;$C23653 (sprite graphic)
-SPRITE_GRAPHIC_056C:
-	incbin "data/objects/graphics/sprite_graphic_056C.bin"
+dixie_hurt_frame2:
+	incbin "data/objects/graphics/dixie_hurt_frame2.bin"
 
 ;$C238AD (sprite graphic)
-SPRITE_GRAPHIC_0570:
-	incbin "data/objects/graphics/sprite_graphic_0570.bin"
+dixie_hurt_frame3:
+	incbin "data/objects/graphics/dixie_hurt_frame3.bin"
 
 ;$C23AE5 (sprite graphic)
-SPRITE_GRAPHIC_0574:
-	incbin "data/objects/graphics/sprite_graphic_0574.bin"
+dixie_hurt_frame4:
+	incbin "data/objects/graphics/dixie_hurt_frame4.bin"
 
 ;$C23D61 (sprite graphic)
-SPRITE_GRAPHIC_0578:
-	incbin "data/objects/graphics/sprite_graphic_0578.bin"
+dixie_hurt_frame5:
+	incbin "data/objects/graphics/dixie_hurt_frame5.bin"
 
 ;$C23F7D (sprite graphic)
-SPRITE_GRAPHIC_057C:
-	incbin "data/objects/graphics/sprite_graphic_057C.bin"
+dixie_hurt_frame6:
+	incbin "data/objects/graphics/dixie_hurt_frame6.bin"
 
 ;$C24155 (sprite graphic)
-SPRITE_GRAPHIC_0580:
-	incbin "data/objects/graphics/sprite_graphic_0580.bin"
+dixie_hurt_frame7:
+	incbin "data/objects/graphics/dixie_hurt_frame7.bin"
 
 ;$C2432D (sprite graphic)
-SPRITE_GRAPHIC_0584:
-	incbin "data/objects/graphics/sprite_graphic_0584.bin"
+dixie_hurt_frame8:
+	incbin "data/objects/graphics/dixie_hurt_frame8.bin"
 
 ;$C24527 (sprite graphic)
-SPRITE_GRAPHIC_0588:
-	incbin "data/objects/graphics/sprite_graphic_0588.bin"
+dixie_hurt_frame9:
+	incbin "data/objects/graphics/dixie_hurt_frame9.bin"
 
 ;$C24721 (sprite graphic)
-SPRITE_GRAPHIC_058C:
-	incbin "data/objects/graphics/sprite_graphic_058C.bin"
+dixie_hurt_frame10:
+	incbin "data/objects/graphics/dixie_hurt_frame10.bin"
 
 ;$C2495F (sprite graphic)
-SPRITE_GRAPHIC_0590:
-	incbin "data/objects/graphics/sprite_graphic_0590.bin"
+dixie_hurt_frame11:
+	incbin "data/objects/graphics/dixie_hurt_frame11.bin"
 
 ;$C24BBF (sprite graphic)
-SPRITE_GRAPHIC_0594:
-	incbin "data/objects/graphics/sprite_graphic_0594.bin"
+dixie_hurt_frame12:
+	incbin "data/objects/graphics/dixie_hurt_frame12.bin"
 
 ;$C24DDB (sprite graphic)
-SPRITE_GRAPHIC_0598:
-	incbin "data/objects/graphics/sprite_graphic_0598.bin"
+dixie_hurt_frame13:
+	incbin "data/objects/graphics/dixie_hurt_frame13.bin"
 
 ;$C24FB3 (sprite graphic)
-SPRITE_GRAPHIC_059C:
-	incbin "data/objects/graphics/sprite_graphic_059C.bin"
+dixie_hurt_frame14:
+	incbin "data/objects/graphics/dixie_hurt_frame14.bin"
 
 ;$C2518B (sprite graphic)
-SPRITE_GRAPHIC_05A0:
-	incbin "data/objects/graphics/sprite_graphic_05A0.bin"
+dixie_hurt_frame15:
+	incbin "data/objects/graphics/dixie_hurt_frame15.bin"
 
 ;$C253EB (sprite graphic)
-SPRITE_GRAPHIC_05A4:
-	incbin "data/objects/graphics/sprite_graphic_05A4.bin"
+dixie_hurt_frame16:
+	incbin "data/objects/graphics/dixie_hurt_frame16.bin"
 
 ;$C25623 (sprite graphic)
-SPRITE_GRAPHIC_05A8:
-	incbin "data/objects/graphics/sprite_graphic_05A8.bin"
+dixie_hurt_frame17:
+	incbin "data/objects/graphics/dixie_hurt_frame17.bin"
 
 ;$C25817 (sprite graphic)
-SPRITE_GRAPHIC_05AC:
-	incbin "data/objects/graphics/sprite_graphic_05AC.bin"
+dixie_hurt_frame18:
+	incbin "data/objects/graphics/dixie_hurt_frame18.bin"
 
 ;$C259AB (sprite graphic)
-SPRITE_GRAPHIC_05B0:
-	incbin "data/objects/graphics/sprite_graphic_05B0.bin"
+dixie_hurt_frame19:
+	incbin "data/objects/graphics/dixie_hurt_frame19.bin"
 
 ;$C25B3F (sprite graphic)
-SPRITE_GRAPHIC_05B4:
-	incbin "data/objects/graphics/sprite_graphic_05B4.bin"
+dixie_hurt_frame20:
+	incbin "data/objects/graphics/dixie_hurt_frame20.bin"
 
 ;$C25CF5 (sprite graphic)
-SPRITE_GRAPHIC_05B8:
-	incbin "data/objects/graphics/sprite_graphic_05B8.bin"
+dixie_hurt_frame21:
+	incbin "data/objects/graphics/dixie_hurt_frame21.bin"
 
 ;$C25E89 (sprite graphic)
-SPRITE_GRAPHIC_05BC:
-	incbin "data/objects/graphics/sprite_graphic_05BC.bin"
+dixie_hurt_frame22:
+	incbin "data/objects/graphics/dixie_hurt_frame22.bin"
 
 ;$C2603F (sprite graphic)
-SPRITE_GRAPHIC_05C0:
-	incbin "data/objects/graphics/sprite_graphic_05C0.bin"
+dixie_hurt_frame23:
+	incbin "data/objects/graphics/dixie_hurt_frame23.bin"
 
 ;$C261F5 (sprite graphic)
-SPRITE_GRAPHIC_05C4:
-	incbin "data/objects/graphics/sprite_graphic_05C4.bin"
+dixie_hurt_tears_frame1:
+	incbin "data/objects/graphics/dixie_hurt_tears_frame1.bin"
 
 ;$C26241 (sprite graphic)
-SPRITE_GRAPHIC_05C8:
-	incbin "data/objects/graphics/sprite_graphic_05C8.bin"
+dixie_hurt_tears_frame2:
+	incbin "data/objects/graphics/dixie_hurt_tears_frame2.bin"
 
 ;$C262D1 (sprite graphic)
-SPRITE_GRAPHIC_05CC:
-	incbin "data/objects/graphics/sprite_graphic_05CC.bin"
+dixie_hurt_tears_frame3:
+	incbin "data/objects/graphics/dixie_hurt_tears_frame3.bin"
 
 ;$C2633F (sprite graphic)
-SPRITE_GRAPHIC_05D0:
-	incbin "data/objects/graphics/sprite_graphic_05D0.bin"
+dixie_hurt_tears_frame4:
+	incbin "data/objects/graphics/dixie_hurt_tears_frame4.bin"
 
 ;$C263AD (sprite graphic)
-SPRITE_GRAPHIC_05D4:
-	incbin "data/objects/graphics/sprite_graphic_05D4.bin"
+dixie_hurt_tears_frame5:
+	incbin "data/objects/graphics/dixie_hurt_tears_frame5.bin"
 
 ;$C2641B (sprite graphic)
-SPRITE_GRAPHIC_05D8:
-	incbin "data/objects/graphics/sprite_graphic_05D8.bin"
+dixie_hurt_tears_frame6:
+	incbin "data/objects/graphics/dixie_hurt_tears_frame6.bin"
 
 ;$C264AB (sprite graphic)
-SPRITE_GRAPHIC_05DC:
-	incbin "data/objects/graphics/sprite_graphic_05DC.bin"
+diddy_idle_frame1:
+	incbin "data/objects/graphics/diddy_idle_frame1.bin"
 
 ;$C266A5 (sprite graphic)
-SPRITE_GRAPHIC_05E0:
-	incbin "data/objects/graphics/sprite_graphic_05E0.bin"
+diddy_idle_frame2:
+	incbin "data/objects/graphics/diddy_idle_frame2.bin"
 
 ;$C2689F (sprite graphic)
-SPRITE_GRAPHIC_05E4:
-	incbin "data/objects/graphics/sprite_graphic_05E4.bin"
+diddy_idle_frame3:
+	incbin "data/objects/graphics/diddy_idle_frame3.bin"
 
 ;$C26A99 (sprite graphic)
-SPRITE_GRAPHIC_05E8:
-	incbin "data/objects/graphics/sprite_graphic_05E8.bin"
+diddy_idle_frame4:
+	incbin "data/objects/graphics/diddy_idle_frame4.bin"
 
 ;$C26C4F (sprite graphic)
-SPRITE_GRAPHIC_05EC:
-	incbin "data/objects/graphics/sprite_graphic_05EC.bin"
+diddy_idle_frame5:
+	incbin "data/objects/graphics/diddy_idle_frame5.bin"
 
 ;$C26E05 (sprite graphic)
-SPRITE_GRAPHIC_05F0:
-	incbin "data/objects/graphics/sprite_graphic_05F0.bin"
+diddy_idle_frame6:
+	incbin "data/objects/graphics/diddy_idle_frame6.bin"
 
 ;$C26FBB (sprite graphic)
-SPRITE_GRAPHIC_05F4:
-	incbin "data/objects/graphics/sprite_graphic_05F4.bin"
+diddy_idle_frame7:
+	incbin "data/objects/graphics/diddy_idle_frame7.bin"
 
 ;$C27193 (sprite graphic)
-SPRITE_GRAPHIC_05F8:
-	incbin "data/objects/graphics/sprite_graphic_05F8.bin"
+diddy_idle_frame8:
+	incbin "data/objects/graphics/diddy_idle_frame8.bin"
 
 ;$C2736B (sprite graphic)
-SPRITE_GRAPHIC_05FC:
-	incbin "data/objects/graphics/sprite_graphic_05FC.bin"
+diddy_idle_frame9:
+	incbin "data/objects/graphics/diddy_idle_frame9.bin"
 
 ;$C27565 (sprite graphic)
-SPRITE_GRAPHIC_0600:
-	incbin "data/objects/graphics/sprite_graphic_0600.bin"
+diddy_idle_frame10:
+	incbin "data/objects/graphics/diddy_idle_frame10.bin"
 
 ;$C27781 (sprite graphic)
-SPRITE_GRAPHIC_0604:
-	incbin "data/objects/graphics/sprite_graphic_0604.bin"
+diddy_idle_frame11:
+	incbin "data/objects/graphics/diddy_idle_frame11.bin"
 
 ;$C27997 (sprite graphic)
-SPRITE_GRAPHIC_0608:
-	incbin "data/objects/graphics/sprite_graphic_0608.bin"
+diddy_idle_frame12:
+	incbin "data/objects/graphics/diddy_idle_frame12.bin"
 
 ;$C27BB3 (sprite graphic)
-SPRITE_GRAPHIC_060C:
-	incbin "data/objects/graphics/sprite_graphic_060C.bin"
+diddy_idle_frame13:
+	incbin "data/objects/graphics/diddy_idle_frame13.bin"
 
 ;$C27DCF (sprite graphic)
-SPRITE_GRAPHIC_0610:
-	incbin "data/objects/graphics/sprite_graphic_0610.bin"
+diddy_idle_frame14:
+	incbin "data/objects/graphics/diddy_idle_frame14.bin"
 
 ;$C27FEB (sprite graphic)
-SPRITE_GRAPHIC_0614:
-	incbin "data/objects/graphics/sprite_graphic_0614.bin"
+diddy_idle_frame15:
+	incbin "data/objects/graphics/diddy_idle_frame15.bin"
 
 ;$C28207 (sprite graphic)
-SPRITE_GRAPHIC_0618:
-	incbin "data/objects/graphics/sprite_graphic_0618.bin"
+diddy_idle_frame16:
+	incbin "data/objects/graphics/diddy_idle_frame16.bin"
 
 ;$C28445 (sprite graphic)
-SPRITE_GRAPHIC_061C:
-	incbin "data/objects/graphics/sprite_graphic_061C.bin"
+diddy_idle_frame17:
+	incbin "data/objects/graphics/diddy_idle_frame17.bin"
 
 ;$C2865B (sprite graphic)
-SPRITE_GRAPHIC_0620:
-	incbin "data/objects/graphics/sprite_graphic_0620.bin"
+diddy_idle_frame18:
+	incbin "data/objects/graphics/diddy_idle_frame18.bin"
 
 ;$C28871 (sprite graphic)
-SPRITE_GRAPHIC_0624:
-	incbin "data/objects/graphics/sprite_graphic_0624.bin"
+diddy_idle_frame19:
+	incbin "data/objects/graphics/diddy_idle_frame19.bin"
 
 ;$C28A87 (sprite graphic)
-SPRITE_GRAPHIC_0628:
-	incbin "data/objects/graphics/sprite_graphic_0628.bin"
+diddy_idle_frame20:
+	incbin "data/objects/graphics/diddy_idle_frame20.bin"
 
 ;$C28CBF (sprite graphic)
-SPRITE_GRAPHIC_062C:
-	incbin "data/objects/graphics/sprite_graphic_062C.bin"
+diddy_idle_frame21:
+	incbin "data/objects/graphics/diddy_idle_frame21.bin"
 
 ;$C28EB9 (sprite graphic)
-SPRITE_GRAPHIC_0630:
-	incbin "data/objects/graphics/sprite_graphic_0630.bin"
+diddy_idle_frame22:
+	incbin "data/objects/graphics/diddy_idle_frame22.bin"
 
 ;$C290B3 (sprite graphic)
-SPRITE_GRAPHIC_0634:
-	incbin "data/objects/graphics/sprite_graphic_0634.bin"
+diddy_jump_frame1:
+	incbin "data/objects/graphics/diddy_jump_frame1.bin"
 
 ;$C292A7 (sprite graphic)
-SPRITE_GRAPHIC_0638:
-	incbin "data/objects/graphics/sprite_graphic_0638.bin"
+diddy_jump_frame2:
+	incbin "data/objects/graphics/diddy_jump_frame2.bin"
 
 ;$C294A1 (sprite graphic)
-SPRITE_GRAPHIC_063C:
-	incbin "data/objects/graphics/sprite_graphic_063C.bin"
+diddy_jump_frame3:
+	incbin "data/objects/graphics/diddy_jump_frame3.bin"
 
 ;$C29695 (sprite graphic)
-SPRITE_GRAPHIC_0640:
-	incbin "data/objects/graphics/sprite_graphic_0640.bin"
+diddy_jump_frame4:
+	incbin "data/objects/graphics/diddy_jump_frame4.bin"
 
 ;$C298D3 (sprite graphic)
-SPRITE_GRAPHIC_0644:
-	incbin "data/objects/graphics/sprite_graphic_0644.bin"
+diddy_jump_frame5:
+	incbin "data/objects/graphics/diddy_jump_frame5.bin"
 
 ;$C29B11 (sprite graphic)
-SPRITE_GRAPHIC_0648:
-	incbin "data/objects/graphics/sprite_graphic_0648.bin"
+diddy_jump_frame6:
+	incbin "data/objects/graphics/diddy_jump_frame6.bin"
 
 ;$C29D6B (sprite graphic)
-SPRITE_GRAPHIC_064C:
-	incbin "data/objects/graphics/sprite_graphic_064C.bin"
+diddy_jump_frame7:
+	incbin "data/objects/graphics/diddy_jump_frame7.bin"
 
 ;$C2A009 (sprite graphic)
-SPRITE_GRAPHIC_0650:
-	incbin "data/objects/graphics/sprite_graphic_0650.bin"
+diddy_jump_frame8:
+	incbin "data/objects/graphics/diddy_jump_frame8.bin"
 
 ;$C2A28B (sprite graphic)
-SPRITE_GRAPHIC_0654:
-	incbin "data/objects/graphics/sprite_graphic_0654.bin"
+diddy_jump_frame9:
+	incbin "data/objects/graphics/diddy_jump_frame9.bin"
 
 ;$C2A50D (sprite graphic)
-SPRITE_GRAPHIC_0658:
-	incbin "data/objects/graphics/sprite_graphic_0658.bin"
+diddy_jump_frame10:
+	incbin "data/objects/graphics/diddy_jump_frame10.bin"
 
 ;$C2A76D (sprite graphic)
-SPRITE_GRAPHIC_065C:
-	incbin "data/objects/graphics/sprite_graphic_065C.bin"
+diddy_jump_frame11:
+	incbin "data/objects/graphics/diddy_jump_frame11.bin"
 
 ;$C2A9C7 (sprite graphic)
-SPRITE_GRAPHIC_0660:
-	incbin "data/objects/graphics/sprite_graphic_0660.bin"
+diddy_jump_frame12:
+	incbin "data/objects/graphics/diddy_jump_frame12.bin"
 
 ;$C2AC43 (sprite graphic)
-SPRITE_GRAPHIC_0664:
-	incbin "data/objects/graphics/sprite_graphic_0664.bin"
+diddy_jump_frame13:
+	incbin "data/objects/graphics/diddy_jump_frame13.bin"
 
 ;$C2AEA3 (sprite graphic)
-SPRITE_GRAPHIC_0668:
-	incbin "data/objects/graphics/sprite_graphic_0668.bin"
+diddy_jump_frame14:
+	incbin "data/objects/graphics/diddy_jump_frame14.bin"
 
 ;$C2B125 (sprite graphic)
-SPRITE_GRAPHIC_066C:
-	incbin "data/objects/graphics/sprite_graphic_066C.bin"
+diddy_jump_frame15:
+	incbin "data/objects/graphics/diddy_jump_frame15.bin"
 
 ;$C2B385 (sprite graphic)
-SPRITE_GRAPHIC_0670:
-	incbin "data/objects/graphics/sprite_graphic_0670.bin"
+diddy_jump_frame16:
+	incbin "data/objects/graphics/diddy_jump_frame16.bin"
 
 ;$C2B5E5 (sprite graphic)
-SPRITE_GRAPHIC_0674:
-	incbin "data/objects/graphics/sprite_graphic_0674.bin"
+diddy_jump_frame17:
+	incbin "data/objects/graphics/diddy_jump_frame17.bin"
 
 ;$C2B845 (sprite graphic)
-SPRITE_GRAPHIC_0678:
-	incbin "data/objects/graphics/sprite_graphic_0678.bin"
+diddy_jump_frame18:
+	incbin "data/objects/graphics/diddy_jump_frame18.bin"
 
 ;$C2BAA5 (sprite graphic)
-SPRITE_GRAPHIC_067C:
-	incbin "data/objects/graphics/sprite_graphic_067C.bin"
+diddy_jump_frame19:
+	incbin "data/objects/graphics/diddy_jump_frame19.bin"
 
 ;$C2BC9F (sprite graphic)
-SPRITE_GRAPHIC_0680:
-	incbin "data/objects/graphics/sprite_graphic_0680.bin"
+diddy_jump_frame20:
+	incbin "data/objects/graphics/diddy_jump_frame20.bin"
 
 ;$C2BED7 (sprite graphic)
-SPRITE_GRAPHIC_0684:
-	incbin "data/objects/graphics/sprite_graphic_0684.bin"
+diddy_roll_frame1:
+	incbin "data/objects/graphics/diddy_roll_frame1.bin"
 
 ;$C2C0F3 (sprite graphic)
-SPRITE_GRAPHIC_0688:
-	incbin "data/objects/graphics/sprite_graphic_0688.bin"
+diddy_roll_frame2:
+	incbin "data/objects/graphics/diddy_roll_frame2.bin"
 
 ;$C2C36F (sprite graphic)
-SPRITE_GRAPHIC_068C:
-	incbin "data/objects/graphics/sprite_graphic_068C.bin"
+diddy_roll_frame3:
+	incbin "data/objects/graphics/diddy_roll_frame3.bin"
 
 ;$C2C5C9 (sprite graphic)
-SPRITE_GRAPHIC_0690:
-	incbin "data/objects/graphics/sprite_graphic_0690.bin"
+diddy_roll_frame4:
+	incbin "data/objects/graphics/diddy_roll_frame4.bin"
 
 ;$C2C807 (sprite graphic)
-SPRITE_GRAPHIC_0694:
-	incbin "data/objects/graphics/sprite_graphic_0694.bin"
+diddy_roll_frame5:
+	incbin "data/objects/graphics/diddy_roll_frame5.bin"
 
 ;$C2CA45 (sprite graphic)
-SPRITE_GRAPHIC_0698:
-	incbin "data/objects/graphics/sprite_graphic_0698.bin"
+diddy_roll_frame6:
+	incbin "data/objects/graphics/diddy_roll_frame6.bin"
 
 ;$C2CC61 (sprite graphic)
-SPRITE_GRAPHIC_069C:
-	incbin "data/objects/graphics/sprite_graphic_069C.bin"
+diddy_roll_frame7:
+	incbin "data/objects/graphics/diddy_roll_frame7.bin"
 
 ;$C2CE83 (sprite graphic)
-SPRITE_GRAPHIC_06A0:
-	incbin "data/objects/graphics/sprite_graphic_06A0.bin"
+diddy_roll_frame8:
+	incbin "data/objects/graphics/diddy_roll_frame8.bin"
 
 ;$C2D0FF (sprite graphic)
-SPRITE_GRAPHIC_06A4:
-	incbin "data/objects/graphics/sprite_graphic_06A4.bin"
+diddy_roll_frame9:
+	incbin "data/objects/graphics/diddy_roll_frame9.bin"
 
 ;$C2D381 (sprite graphic)
-SPRITE_GRAPHIC_06A8:
-	incbin "data/objects/graphics/sprite_graphic_06A8.bin"
+diddy_roll_frame10:
+	incbin "data/objects/graphics/diddy_roll_frame10.bin"
 
 ;$C2D603 (sprite graphic)
-SPRITE_GRAPHIC_06AC:
-	incbin "data/objects/graphics/sprite_graphic_06AC.bin"
+diddy_roll_frame11:
+	incbin "data/objects/graphics/diddy_roll_frame11.bin"
 
 ;$C2D81F (sprite graphic)
-SPRITE_GRAPHIC_06B0:
-	incbin "data/objects/graphics/sprite_graphic_06B0.bin"
+diddy_roll_frame12:
+	incbin "data/objects/graphics/diddy_roll_frame12.bin"
 
 ;$C2DA7F (sprite graphic)
-SPRITE_GRAPHIC_06B4:
-	incbin "data/objects/graphics/sprite_graphic_06B4.bin"
+diddy_roll_frame13:
+	incbin "data/objects/graphics/diddy_roll_frame13.bin"
 
 ;$C2DCBD (sprite graphic)
-SPRITE_GRAPHIC_06B8:
-	incbin "data/objects/graphics/sprite_graphic_06B8.bin"
+diddy_roll_frame14:
+	incbin "data/objects/graphics/diddy_roll_frame14.bin"
 
 ;$C2DF1D (sprite graphic)
-SPRITE_GRAPHIC_06BC:
-	incbin "data/objects/graphics/sprite_graphic_06BC.bin"
+diddy_roll_frame15:
+	incbin "data/objects/graphics/diddy_roll_frame15.bin"
 
 ;$C2E1BB (sprite graphic)
-SPRITE_GRAPHIC_06C0:
-	incbin "data/objects/graphics/sprite_graphic_06C0.bin"
+diddy_roll_frame16:
+	incbin "data/objects/graphics/diddy_roll_frame16.bin"
 
 ;$C2E45F (sprite graphic)
-SPRITE_GRAPHIC_06C4:
-	incbin "data/objects/graphics/sprite_graphic_06C4.bin"
+diddy_roll_frame17:
+	incbin "data/objects/graphics/diddy_roll_frame17.bin"
 
 ;$C2E6BF (sprite graphic)
-SPRITE_GRAPHIC_06C8:
-	incbin "data/objects/graphics/sprite_graphic_06C8.bin"
+diddy_roll_frame18:
+	incbin "data/objects/graphics/diddy_roll_frame18.bin"
 
 ;$C2E941 (sprite graphic)
-SPRITE_GRAPHIC_06CC:
-	incbin "data/objects/graphics/sprite_graphic_06CC.bin"
+diddy_roll_frame19:
+	incbin "data/objects/graphics/diddy_roll_frame19.bin"
 
 ;$C2EBC3 (sprite graphic)
-SPRITE_GRAPHIC_06D0:
-	incbin "data/objects/graphics/sprite_graphic_06D0.bin"
+diddy_roll_frame20:
+	incbin "data/objects/graphics/diddy_roll_frame20.bin"
 
 ;$C2EE01 (sprite graphic)
-SPRITE_GRAPHIC_06D4:
-	incbin "data/objects/graphics/sprite_graphic_06D4.bin"
+dixie_idle_blink_frame1:
+	incbin "data/objects/graphics/dixie_idle_blink_frame1.bin"
 
 ;$C2F017 (sprite graphic)
-SPRITE_GRAPHIC_06D8:
-	incbin "data/objects/graphics/sprite_graphic_06D8.bin"
+dixie_idle_blink_frame2:
+	incbin "data/objects/graphics/dixie_idle_blink_frame2.bin"
 
 ;$C2F22D (sprite graphic)
-SPRITE_GRAPHIC_06DC:
-	incbin "data/objects/graphics/sprite_graphic_06DC.bin"
+dixie_idle_blink_frame3:
+	incbin "data/objects/graphics/dixie_idle_blink_frame3.bin"
 
 ;$C2F443 (sprite graphic)
-SPRITE_GRAPHIC_06E0:
-	incbin "data/objects/graphics/sprite_graphic_06E0.bin"
+dixie_blow_bubble_frame1:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame1.bin"
 
 ;$C2F659 (sprite graphic)
-SPRITE_GRAPHIC_06E4:
-	incbin "data/objects/graphics/sprite_graphic_06E4.bin"
+dixie_blow_bubble_frame2:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame2.bin"
 
 ;$C2F891 (sprite graphic)
-SPRITE_GRAPHIC_06E8:
-	incbin "data/objects/graphics/sprite_graphic_06E8.bin"
+dixie_blow_bubble_frame3:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame3.bin"
 
 check bankcross off
 ;$C2FAC9
@@ -959,468 +959,468 @@ DATA_C2FAC9:
 check bankcross full
 
 ;$C300E3 (sprite graphic)
-SPRITE_GRAPHIC_06EC:
-	incbin "data/objects/graphics/sprite_graphic_06EC.bin"
+dixie_blow_bubble_frame4:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame4.bin"
 
 ;$C3031B (sprite graphic)
-SPRITE_GRAPHIC_06F0:
-	incbin "data/objects/graphics/sprite_graphic_06F0.bin"
+dixie_blow_bubble_frame5:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame5.bin"
 
 ;$C30553 (sprite graphic)
-SPRITE_GRAPHIC_06F4:
-	incbin "data/objects/graphics/sprite_graphic_06F4.bin"
+dixie_blow_bubble_frame6:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame6.bin"
 
 ;$C3078B (sprite graphic)
-SPRITE_GRAPHIC_06F8:
-	incbin "data/objects/graphics/sprite_graphic_06F8.bin"
+dixie_blow_bubble_frame7:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame7.bin"
 
 ;$C309C3 (sprite graphic)
-SPRITE_GRAPHIC_06FC:
-	incbin "data/objects/graphics/sprite_graphic_06FC.bin"
+dixie_blow_bubble_frame8:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame8.bin"
 
 ;$C30BFB (sprite graphic)
-SPRITE_GRAPHIC_0700:
-	incbin "data/objects/graphics/sprite_graphic_0700.bin"
+dixie_blow_bubble_frame9:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame9.bin"
 
 ;$C30E55 (sprite graphic)
-SPRITE_GRAPHIC_0704:
-	incbin "data/objects/graphics/sprite_graphic_0704.bin"
+dixie_blow_bubble_frame10:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame10.bin"
 
 ;$C310AF (sprite graphic)
-SPRITE_GRAPHIC_0708:
-	incbin "data/objects/graphics/sprite_graphic_0708.bin"
+dixie_blow_bubble_frame11:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame11.bin"
 
 ;$C31309 (sprite graphic)
-SPRITE_GRAPHIC_070C:
-	incbin "data/objects/graphics/sprite_graphic_070C.bin"
+dixie_blow_bubble_frame12:
+	incbin "data/objects/graphics/dixie_blow_bubble_frame12.bin"
 
 ;$C315A7 (sprite graphic)
-SPRITE_GRAPHIC_0710:
-	incbin "data/objects/graphics/sprite_graphic_0710.bin"
+dixie_duck_frame1:
+	incbin "data/objects/graphics/dixie_duck_frame1.bin"
 
 ;$C317BD (sprite graphic)
-SPRITE_GRAPHIC_0714:
-	incbin "data/objects/graphics/sprite_graphic_0714.bin"
+dixie_duck_frame2:
+	incbin "data/objects/graphics/dixie_duck_frame2.bin"
 
 ;$C31A11 (sprite graphic)
-SPRITE_GRAPHIC_0718:
-	incbin "data/objects/graphics/sprite_graphic_0718.bin"
+dixie_duck_frame3:
+	incbin "data/objects/graphics/dixie_duck_frame3.bin"
 
 ;$C31C05 (sprite graphic)
-SPRITE_GRAPHIC_071C:
-	incbin "data/objects/graphics/sprite_graphic_071C.bin"
+dixie_duck_frame4:
+	incbin "data/objects/graphics/dixie_duck_frame4.bin"
 
 ;$C31DF9 (sprite graphic)
-SPRITE_GRAPHIC_0720:
-	incbin "data/objects/graphics/sprite_graphic_0720.bin"
+dixie_duck_frame5:
+	incbin "data/objects/graphics/dixie_duck_frame5.bin"
 
 ;$C31FAF (sprite graphic)
-SPRITE_GRAPHIC_0724:
-	incbin "data/objects/graphics/sprite_graphic_0724.bin"
+dixie_duck_frame6:
+	incbin "data/objects/graphics/dixie_duck_frame6.bin"
 
 ;$C3215F (sprite graphic)
-SPRITE_GRAPHIC_0728:
-	incbin "data/objects/graphics/sprite_graphic_0728.bin"
+dixie_duck_frame7:
+	incbin "data/objects/graphics/dixie_duck_frame7.bin"
 
 ;$C32331 (sprite graphic)
-SPRITE_GRAPHIC_072C:
-	incbin "data/objects/graphics/sprite_graphic_072C.bin"
+dixie_duck_frame8:
+	incbin "data/objects/graphics/dixie_duck_frame8.bin"
 
 ;$C32503 (sprite graphic)
-SPRITE_GRAPHIC_0730:
-	incbin "data/objects/graphics/sprite_graphic_0730.bin"
+diddy_duck_frame1:
+	incbin "data/objects/graphics/diddy_duck_frame1.bin"
 
 ;$C326FD (sprite graphic)
-SPRITE_GRAPHIC_0734:
-	incbin "data/objects/graphics/sprite_graphic_0734.bin"
+diddy_duck_frame2:
+	incbin "data/objects/graphics/diddy_duck_frame2.bin"
 
 ;$C32935 (sprite graphic)
-SPRITE_GRAPHIC_0738:
-	incbin "data/objects/graphics/sprite_graphic_0738.bin"
+diddy_duck_frame3:
+	incbin "data/objects/graphics/diddy_duck_frame3.bin"
 
 ;$C32B73 (sprite graphic)
-SPRITE_GRAPHIC_073C:
-	incbin "data/objects/graphics/sprite_graphic_073C.bin"
+diddy_duck_frame4:
+	incbin "data/objects/graphics/diddy_duck_frame4.bin"
 
 ;$C32DB1 (sprite graphic)
-SPRITE_GRAPHIC_0740:
-	incbin "data/objects/graphics/sprite_graphic_0740.bin"
+diddy_duck_frame5:
+	incbin "data/objects/graphics/diddy_duck_frame5.bin"
 
 ;$C32F89 (sprite graphic)
-SPRITE_GRAPHIC_0744:
-	incbin "data/objects/graphics/sprite_graphic_0744.bin"
+diddy_duck_frame6:
+	incbin "data/objects/graphics/diddy_duck_frame6.bin"
 
 ;$C33161 (sprite graphic)
-SPRITE_GRAPHIC_0748:
-	incbin "data/objects/graphics/sprite_graphic_0748.bin"
+diddy_duck_frame7:
+	incbin "data/objects/graphics/diddy_duck_frame7.bin"
 
 ;$C33339 (sprite graphic)
-SPRITE_GRAPHIC_074C:
-	incbin "data/objects/graphics/sprite_graphic_074C.bin"
+diddy_duck_frame8:
+	incbin "data/objects/graphics/diddy_duck_frame8.bin"
 
 ;$C3352D (sprite graphic)
-SPRITE_GRAPHIC_0750:
-	incbin "data/objects/graphics/sprite_graphic_0750.bin"
+diddy_duck_frame9:
+	incbin "data/objects/graphics/diddy_duck_frame9.bin"
 
 ;$C336FF (sprite graphic)
-SPRITE_GRAPHIC_0754:
-	incbin "data/objects/graphics/sprite_graphic_0754.bin"
+diddy_duck_frame10:
+	incbin "data/objects/graphics/diddy_duck_frame10.bin"
 
 ;$C338F3 (sprite graphic)
-SPRITE_GRAPHIC_0758:
-	incbin "data/objects/graphics/sprite_graphic_0758.bin"
+diddy_duck_frame11:
+	incbin "data/objects/graphics/diddy_duck_frame11.bin"
 
 ;$C33B09 (sprite graphic)
-SPRITE_GRAPHIC_075C:
-	incbin "data/objects/graphics/sprite_graphic_075C.bin"
+diddy_duck_frame12:
+	incbin "data/objects/graphics/diddy_duck_frame12.bin"
 
 ;$C33CFD (sprite graphic)
-SPRITE_GRAPHIC_0760:
-	incbin "data/objects/graphics/sprite_graphic_0760.bin"
+diddy_duck_frame13:
+	incbin "data/objects/graphics/diddy_duck_frame13.bin"
 
 ;$C33F13 (sprite graphic)
-SPRITE_GRAPHIC_0764:
-	incbin "data/objects/graphics/sprite_graphic_0764.bin"
+diddy_hurt_frame1:
+	incbin "data/objects/graphics/diddy_hurt_frame1.bin"
 
 ;$C340EB (sprite graphic)
-SPRITE_GRAPHIC_0768:
-	incbin "data/objects/graphics/sprite_graphic_0768.bin"
+diddy_hurt_frame2:
+	incbin "data/objects/graphics/diddy_hurt_frame2.bin"
 
 ;$C342A1 (sprite graphic)
-SPRITE_GRAPHIC_076C:
-	incbin "data/objects/graphics/sprite_graphic_076C.bin"
+diddy_hurt_frame3:
+	incbin "data/objects/graphics/diddy_hurt_frame3.bin"
 
 ;$C34457 (sprite graphic)
-SPRITE_GRAPHIC_0770:
-	incbin "data/objects/graphics/sprite_graphic_0770.bin"
+diddy_hurt_frame4:
+	incbin "data/objects/graphics/diddy_hurt_frame4.bin"
 
 ;$C34657 (sprite graphic)
-SPRITE_GRAPHIC_0774:
-	incbin "data/objects/graphics/sprite_graphic_0774.bin"
+diddy_hurt_frame5:
+	incbin "data/objects/graphics/diddy_hurt_frame5.bin"
 
 ;$C348D9 (sprite graphic)
-SPRITE_GRAPHIC_0778:
-	incbin "data/objects/graphics/sprite_graphic_0778.bin"
+diddy_hurt_frame6:
+	incbin "data/objects/graphics/diddy_hurt_frame6.bin"
 
 ;$C34B5B (sprite graphic)
-SPRITE_GRAPHIC_077C:
-	incbin "data/objects/graphics/sprite_graphic_077C.bin"
+diddy_hurt_frame7:
+	incbin "data/objects/graphics/diddy_hurt_frame7.bin"
 
 ;$C34DDD (sprite graphic)
-SPRITE_GRAPHIC_0780:
-	incbin "data/objects/graphics/sprite_graphic_0780.bin"
+diddy_hurt_frame8:
+	incbin "data/objects/graphics/diddy_hurt_frame8.bin"
 
 ;$C34FF3 (sprite graphic)
-SPRITE_GRAPHIC_0784:
-	incbin "data/objects/graphics/sprite_graphic_0784.bin"
+diddy_hurt_frame9:
+	incbin "data/objects/graphics/diddy_hurt_frame9.bin"
 
 ;$C351E7 (sprite graphic)
-SPRITE_GRAPHIC_0788:
-	incbin "data/objects/graphics/sprite_graphic_0788.bin"
+diddy_hurt_frame10:
+	incbin "data/objects/graphics/diddy_hurt_frame10.bin"
 
 ;$C3539D (sprite graphic)
-SPRITE_GRAPHIC_078C:
-	incbin "data/objects/graphics/sprite_graphic_078C.bin"
+diddy_hurt_frame11:
+	incbin "data/objects/graphics/diddy_hurt_frame11.bin"
 
 ;$C35553 (sprite graphic)
-SPRITE_GRAPHIC_0790:
-	incbin "data/objects/graphics/sprite_graphic_0790.bin"
+diddy_hurt_frame12:
+	incbin "data/objects/graphics/diddy_hurt_frame12.bin"
 
 ;$C356ED (sprite graphic)
-SPRITE_GRAPHIC_0794:
-	incbin "data/objects/graphics/sprite_graphic_0794.bin"
+diddy_hurt_frame13:
+	incbin "data/objects/graphics/diddy_hurt_frame13.bin"
 
 ;$C35887 (sprite graphic)
-SPRITE_GRAPHIC_0798:
-	incbin "data/objects/graphics/sprite_graphic_0798.bin"
+diddy_hurt_frame14:
+	incbin "data/objects/graphics/diddy_hurt_frame14.bin"
 
 ;$C35A5F (sprite graphic)
-SPRITE_GRAPHIC_079C:
-	incbin "data/objects/graphics/sprite_graphic_079C.bin"
+diddy_hurt_frame15:
+	incbin "data/objects/graphics/diddy_hurt_frame15.bin"
 
 ;$C35C37 (sprite graphic)
-SPRITE_GRAPHIC_07A0:
-	incbin "data/objects/graphics/sprite_graphic_07A0.bin"
+diddy_hurt_frame16:
+	incbin "data/objects/graphics/diddy_hurt_frame16.bin"
 
 ;$C35E0F (sprite graphic)
-SPRITE_GRAPHIC_07A4:
-	incbin "data/objects/graphics/sprite_graphic_07A4.bin"
+diddy_hurt_frame17:
+	incbin "data/objects/graphics/diddy_hurt_frame17.bin"
 
 ;$C3606F (sprite graphic)
-SPRITE_GRAPHIC_07A8:
-	incbin "data/objects/graphics/sprite_graphic_07A8.bin"
+diddy_hurt_stars_frame1:
+	incbin "data/objects/graphics/diddy_hurt_stars_frame1.bin"
 
 ;$C360DD (sprite graphic)
-SPRITE_GRAPHIC_07AC:
-	incbin "data/objects/graphics/sprite_graphic_07AC.bin"
+diddy_hurt_stars_frame2:
+	incbin "data/objects/graphics/diddy_hurt_stars_frame2.bin"
 
 ;$C3614B (sprite graphic)
-SPRITE_GRAPHIC_07B0:
-	incbin "data/objects/graphics/sprite_graphic_07B0.bin"
+diddy_hurt_stars_frame3:
+	incbin "data/objects/graphics/diddy_hurt_stars_frame3.bin"
 
 ;$C361B9 (sprite graphic)
-SPRITE_GRAPHIC_07B4:
-	incbin "data/objects/graphics/sprite_graphic_07B4.bin"
+squitter_walk_frame1:
+	incbin "data/objects/graphics/squitter_walk_frame1.bin"
 
 ;$C3647F (sprite graphic)
-SPRITE_GRAPHIC_07B8:
-	incbin "data/objects/graphics/sprite_graphic_07B8.bin"
+squitter_walk_frame2:
+	incbin "data/objects/graphics/squitter_walk_frame2.bin"
 
 ;$C36745 (sprite graphic)
-SPRITE_GRAPHIC_07BC:
-	incbin "data/objects/graphics/sprite_graphic_07BC.bin"
+squitter_walk_frame3:
+	incbin "data/objects/graphics/squitter_walk_frame3.bin"
 
 ;$C369E3 (sprite graphic)
-SPRITE_GRAPHIC_07C0:
-	incbin "data/objects/graphics/sprite_graphic_07C0.bin"
+squitter_walk_frame4:
+	incbin "data/objects/graphics/squitter_walk_frame4.bin"
 
 ;$C36C81 (sprite graphic)
-SPRITE_GRAPHIC_07C4:
-	incbin "data/objects/graphics/sprite_graphic_07C4.bin"
+squitter_walk_frame5:
+	incbin "data/objects/graphics/squitter_walk_frame5.bin"
 
 ;$C36F41 (sprite graphic)
-SPRITE_GRAPHIC_07C8:
-	incbin "data/objects/graphics/sprite_graphic_07C8.bin"
+squitter_walk_frame6:
+	incbin "data/objects/graphics/squitter_walk_frame6.bin"
 
 ;$C37201 (sprite graphic)
-SPRITE_GRAPHIC_07CC:
-	incbin "data/objects/graphics/sprite_graphic_07CC.bin"
+squitter_walk_frame7:
+	incbin "data/objects/graphics/squitter_walk_frame7.bin"
 
 ;$C3745B (sprite graphic)
-SPRITE_GRAPHIC_07D0:
-	incbin "data/objects/graphics/sprite_graphic_07D0.bin"
+squitter_walk_frame8:
+	incbin "data/objects/graphics/squitter_walk_frame8.bin"
 
 ;$C376D7 (sprite graphic)
-SPRITE_GRAPHIC_07D4:
-	incbin "data/objects/graphics/sprite_graphic_07D4.bin"
+squitter_walk_frame9:
+	incbin "data/objects/graphics/squitter_walk_frame9.bin"
 
 ;$C37953 (sprite graphic)
-SPRITE_GRAPHIC_07D8:
-	incbin "data/objects/graphics/sprite_graphic_07D8.bin"
+squitter_walk_frame10:
+	incbin "data/objects/graphics/squitter_walk_frame10.bin"
 
 ;$C37BCF (sprite graphic)
-SPRITE_GRAPHIC_07DC:
-	incbin "data/objects/graphics/sprite_graphic_07DC.bin"
+squitter_walk_frame11:
+	incbin "data/objects/graphics/squitter_walk_frame11.bin"
 
 ;$C37E6D (sprite graphic)
-SPRITE_GRAPHIC_07E0:
-	incbin "data/objects/graphics/sprite_graphic_07E0.bin"
+squitter_walk_frame12:
+	incbin "data/objects/graphics/squitter_walk_frame12.bin"
 
 ;$C3810B (sprite graphic)
-SPRITE_GRAPHIC_07E4:
-	incbin "data/objects/graphics/sprite_graphic_07E4.bin"
+squitter_walk_frame13:
+	incbin "data/objects/graphics/squitter_walk_frame13.bin"
 
 ;$C383A9 (sprite graphic)
-SPRITE_GRAPHIC_07E8:
-	incbin "data/objects/graphics/sprite_graphic_07E8.bin"
+squitter_walk_frame14:
+	incbin "data/objects/graphics/squitter_walk_frame14.bin"
 
 ;$C38669 (sprite graphic)
-SPRITE_GRAPHIC_07EC:
-	incbin "data/objects/graphics/sprite_graphic_07EC.bin"
+squitter_walk_frame15:
+	incbin "data/objects/graphics/squitter_walk_frame15.bin"
 
 ;$C38929 (sprite graphic)
-SPRITE_GRAPHIC_07F0:
-	incbin "data/objects/graphics/sprite_graphic_07F0.bin"
+squitter_walk_frame16:
+	incbin "data/objects/graphics/squitter_walk_frame16.bin"
 
 ;$C38C0B (sprite graphic)
-SPRITE_GRAPHIC_07F4:
-	incbin "data/objects/graphics/sprite_graphic_07F4.bin"
+squitter_idle_frame1:
+	incbin "data/objects/graphics/squitter_idle_frame1.bin"
 
 ;$C38EA9 (sprite graphic)
-SPRITE_GRAPHIC_07F8:
-	incbin "data/objects/graphics/sprite_graphic_07F8.bin"
+squitter_idle_frame2:
+	incbin "data/objects/graphics/squitter_idle_frame2.bin"
 
 ;$C39147 (sprite graphic)
-SPRITE_GRAPHIC_07FC:
-	incbin "data/objects/graphics/sprite_graphic_07FC.bin"
+squitter_idle_frame3:
+	incbin "data/objects/graphics/squitter_idle_frame3.bin"
 
 ;$C393E5 (sprite graphic)
-SPRITE_GRAPHIC_0800:
-	incbin "data/objects/graphics/sprite_graphic_0800.bin"
+squitter_jump_frame1:
+	incbin "data/objects/graphics/squitter_jump_frame1.bin"
 
 ;$C39683 (sprite graphic)
-SPRITE_GRAPHIC_0804:
-	incbin "data/objects/graphics/sprite_graphic_0804.bin"
+squitter_jump_frame2:
+	incbin "data/objects/graphics/squitter_jump_frame2.bin"
 
 ;$C39981 (sprite graphic)
-SPRITE_GRAPHIC_0808:
-	incbin "data/objects/graphics/sprite_graphic_0808.bin"
+squitter_jump_frame3:
+	incbin "data/objects/graphics/squitter_jump_frame3.bin"
 
 ;$C39CA7 (sprite graphic)
-SPRITE_GRAPHIC_080C:
-	incbin "data/objects/graphics/sprite_graphic_080C.bin"
+squitter_jump_frame4:
+	incbin "data/objects/graphics/squitter_jump_frame4.bin"
 
 ;$C3A027 (sprite graphic)
-SPRITE_GRAPHIC_0810:
-	incbin "data/objects/graphics/sprite_graphic_0810.bin"
+squitter_jump_frame5:
+	incbin "data/objects/graphics/squitter_jump_frame5.bin"
 
 ;$C3A385 (sprite graphic)
-SPRITE_GRAPHIC_0814:
-	incbin "data/objects/graphics/sprite_graphic_0814.bin"
+crate_frame1:
+	incbin "data/objects/graphics/crate_frame1.bin"
 
 ;$C3A57F (sprite graphic)
-SPRITE_GRAPHIC_0818:
-	incbin "data/objects/graphics/sprite_graphic_0818.bin"
+crate_frame2:
+	incbin "data/objects/graphics/crate_frame2.bin"
 
 ;$C3A713 (sprite graphic)
-SPRITE_GRAPHIC_081C:
-	incbin "data/objects/graphics/sprite_graphic_081C.bin"
+crate_frame3:
+	incbin "data/objects/graphics/crate_frame3.bin"
 
 ;$C3A869 (sprite graphic)
-SPRITE_GRAPHIC_0820:
-	incbin "data/objects/graphics/sprite_graphic_0820.bin"
+crate_frame4:
+	incbin "data/objects/graphics/crate_frame4.bin"
 
 ;$C3A9FD (sprite graphic)
-SPRITE_GRAPHIC_0824:
-	incbin "data/objects/graphics/sprite_graphic_0824.bin"
+dixie_ride_animal_frame1:
+	incbin "data/objects/graphics/dixie_ride_animal_frame1.bin"
 
 ;$C3ABF1 (sprite graphic)
-SPRITE_GRAPHIC_0828:
-	incbin "data/objects/graphics/sprite_graphic_0828.bin"
+dixie_ride_animal_frame2:
+	incbin "data/objects/graphics/dixie_ride_animal_frame2.bin"
 
 ;$C3AE4B (sprite graphic)
-SPRITE_GRAPHIC_082C:
-	incbin "data/objects/graphics/sprite_graphic_082C.bin"
+dixie_ride_animal_frame3:
+	incbin "data/objects/graphics/dixie_ride_animal_frame3.bin"
 
 ;$C3B061 (sprite graphic)
-SPRITE_GRAPHIC_0830:
-	incbin "data/objects/graphics/sprite_graphic_0830.bin"
+dixie_ride_animal_frame4:
+	incbin "data/objects/graphics/dixie_ride_animal_frame4.bin"
 
 ;$C3B299 (sprite graphic)
-SPRITE_GRAPHIC_0834:
-	incbin "data/objects/graphics/sprite_graphic_0834.bin"
+dixie_ride_animal_frame5:
+	incbin "data/objects/graphics/dixie_ride_animal_frame5.bin"
 
 ;$C3B4AF (sprite graphic)
-SPRITE_GRAPHIC_0838:
-	incbin "data/objects/graphics/sprite_graphic_0838.bin"
+dixie_ride_animal_frame6:
+	incbin "data/objects/graphics/dixie_ride_animal_frame6.bin"
 
 ;$C3B6C5 (sprite graphic)
-SPRITE_GRAPHIC_083C:
-	incbin "data/objects/graphics/sprite_graphic_083C.bin"
+dixie_ride_animal_frame7:
+	incbin "data/objects/graphics/dixie_ride_animal_frame7.bin"
 
 ;$C3B8DB (sprite graphic)
-SPRITE_GRAPHIC_0840:
-	incbin "data/objects/graphics/sprite_graphic_0840.bin"
+dixie_ride_animal_frame8:
+	incbin "data/objects/graphics/dixie_ride_animal_frame8.bin"
 
 ;$C3BAF1 (sprite graphic)
-SPRITE_GRAPHIC_0844:
-	incbin "data/objects/graphics/sprite_graphic_0844.bin"
+dixie_ride_animal_frame9:
+	incbin "data/objects/graphics/dixie_ride_animal_frame9.bin"
 
 ;$C3BD07 (sprite graphic)
-SPRITE_GRAPHIC_0848:
-	incbin "data/objects/graphics/sprite_graphic_0848.bin"
+dixie_ride_animal_frame10:
+	incbin "data/objects/graphics/dixie_ride_animal_frame10.bin"
 
 ;$C3BF3F (sprite graphic)
-SPRITE_GRAPHIC_084C:
-	incbin "data/objects/graphics/sprite_graphic_084C.bin"
+dixie_ride_animal_frame11:
+	incbin "data/objects/graphics/dixie_ride_animal_frame11.bin"
 
 ;$C3C177 (sprite graphic)
-SPRITE_GRAPHIC_0850:
-	incbin "data/objects/graphics/sprite_graphic_0850.bin"
+dixie_ride_animal_frame12:
+	incbin "data/objects/graphics/dixie_ride_animal_frame12.bin"
 
 ;$C3C3AF (sprite graphic)
-SPRITE_GRAPHIC_0854:
-	incbin "data/objects/graphics/sprite_graphic_0854.bin"
+barrel_frame1:
+	incbin "data/objects/graphics/barrel_frame1.bin"
 
 ;$C3C625 (sprite graphic)
-SPRITE_GRAPHIC_0858:
-	incbin "data/objects/graphics/sprite_graphic_0858.bin"
+barrel_frame2:
+	incbin "data/objects/graphics/barrel_frame2.bin"
 
 ;$C3C89B (sprite graphic)
-SPRITE_GRAPHIC_085C:
-	incbin "data/objects/graphics/sprite_graphic_085C.bin"
+barrel_frame3:
+	incbin "data/objects/graphics/barrel_frame3.bin"
 
 ;$C3CAAB (sprite graphic)
-SPRITE_GRAPHIC_0860:
-	incbin "data/objects/graphics/sprite_graphic_0860.bin"
+barrel_frame4:
+	incbin "data/objects/graphics/barrel_frame4.bin"
 
 ;$C3CCBB (sprite graphic)
-SPRITE_GRAPHIC_0864:
-	incbin "data/objects/graphics/sprite_graphic_0864.bin"
+barrel_frame5:
+	incbin "data/objects/graphics/barrel_frame5.bin"
 
 ;$C3CF0F (sprite graphic)
-SPRITE_GRAPHIC_0868:
-	incbin "data/objects/graphics/sprite_graphic_0868.bin"
+tnt_barrel_graphic:
+	incbin "data/objects/graphics/tnt_barrel_graphic.bin"
 
 ;$C3D1A7 (sprite graphic)
-SPRITE_GRAPHIC_086C:
-	incbin "data/objects/graphics/sprite_graphic_086C.bin"
+dk_barrel_letters_frame1:
+	incbin "data/objects/graphics/dk_barrel_letters_frame1.bin"
 
 ;$C3D2FD (sprite graphic)
-SPRITE_GRAPHIC_0870:
-	incbin "data/objects/graphics/sprite_graphic_0870.bin"
+dk_barrel_letters_frame2:
+	incbin "data/objects/graphics/dk_barrel_letters_frame2.bin"
 
 ;$C3D453 (sprite graphic)
-SPRITE_GRAPHIC_0874:
-	incbin "data/objects/graphics/sprite_graphic_0874.bin"
+dk_barrel_letters_frame3:
+	incbin "data/objects/graphics/dk_barrel_letters_frame3.bin"
 
 ;$C3D5A9 (sprite graphic)
-SPRITE_GRAPHIC_0878:
-	incbin "data/objects/graphics/sprite_graphic_0878.bin"
+dk_barrel_letters_frame4:
+	incbin "data/objects/graphics/dk_barrel_letters_frame4.bin"
 
 ;$C3D6FF (sprite graphic)
-SPRITE_GRAPHIC_087C:
-	incbin "data/objects/graphics/sprite_graphic_087C.bin"
+dk_barrel_letters_frame5:
+	incbin "data/objects/graphics/dk_barrel_letters_frame5.bin"
 
 ;$C3D833 (sprite graphic)
-SPRITE_GRAPHIC_0880:
-	incbin "data/objects/graphics/sprite_graphic_0880.bin"
+dk_barrel_letters_frame6:
+	incbin "data/objects/graphics/dk_barrel_letters_frame6.bin"
 
 ;$C3D967 (sprite graphic)
-SPRITE_GRAPHIC_0884:
-	incbin "data/objects/graphics/sprite_graphic_0884.bin"
+dk_barrel_letters_frame7:
+	incbin "data/objects/graphics/dk_barrel_letters_frame7.bin"
 
 ;$C3DA9B (sprite graphic)
-SPRITE_GRAPHIC_0888:
-	incbin "data/objects/graphics/sprite_graphic_0888.bin"
+dk_barrel_letters_frame8:
+	incbin "data/objects/graphics/dk_barrel_letters_frame8.bin"
 
 ;$C3DBF1 (sprite graphic)
-SPRITE_GRAPHIC_088C:
-	incbin "data/objects/graphics/sprite_graphic_088C.bin"
+dk_barrel_frame1:
+	incbin "data/objects/graphics/dk_barrel_frame1.bin"
 
 ;$C3DE67 (sprite graphic)
-SPRITE_GRAPHIC_0890:
-	incbin "data/objects/graphics/sprite_graphic_0890.bin"
+dk_barrel_frame2:
+	incbin "data/objects/graphics/dk_barrel_frame2.bin"
 
 ;$C3E0DD (sprite graphic)
-SPRITE_GRAPHIC_0894:
-	incbin "data/objects/graphics/sprite_graphic_0894.bin"
+dk_barrel_frame3:
+	incbin "data/objects/graphics/dk_barrel_frame3.bin"
 
 ;$C3E353 (sprite graphic)
-SPRITE_GRAPHIC_0898:
-	incbin "data/objects/graphics/sprite_graphic_0898.bin"
+dk_barrel_frame4:
+	incbin "data/objects/graphics/dk_barrel_frame4.bin"
 
 ;$C3E5C9 (sprite graphic)
-SPRITE_GRAPHIC_089C:
-	incbin "data/objects/graphics/sprite_graphic_089C.bin"
+dk_barrel_frame5:
+	incbin "data/objects/graphics/dk_barrel_frame5.bin"
 
 ;$C3E83F (sprite graphic)
-SPRITE_GRAPHIC_08A0:
-	incbin "data/objects/graphics/sprite_graphic_08A0.bin"
+dk_barrel_frame6:
+	incbin "data/objects/graphics/dk_barrel_frame6.bin"
 
 ;$C3EAB5 (sprite graphic)
-SPRITE_GRAPHIC_08A4:
-	incbin "data/objects/graphics/sprite_graphic_08A4.bin"
+dk_barrel_frame7:
+	incbin "data/objects/graphics/dk_barrel_frame7.bin"
 
 ;$C3ED2B (sprite graphic)
-SPRITE_GRAPHIC_08A8:
-	incbin "data/objects/graphics/sprite_graphic_08A8.bin"
+dk_barrel_frame8:
+	incbin "data/objects/graphics/dk_barrel_frame8.bin"
 
 ;$C3EFA1 (sprite graphic)
-SPRITE_GRAPHIC_08AC:
-	incbin "data/objects/graphics/sprite_graphic_08AC.bin"
+barrel_cannon_frame1:
+	incbin "data/objects/graphics/barrel_cannon_frame1.bin"
 
 ;$C3F2B5 (sprite graphic)
-SPRITE_GRAPHIC_08B0:
-	incbin "data/objects/graphics/sprite_graphic_08B0.bin"
+barrel_cannon_frame2:
+	incbin "data/objects/graphics/barrel_cannon_frame2.bin"
 
 ;$C3F651 (sprite graphic)
-SPRITE_GRAPHIC_08B4:
-	incbin "data/objects/graphics/sprite_graphic_08B4.bin"
+barrel_cannon_frame3:
+	incbin "data/objects/graphics/barrel_cannon_frame3.bin"
 
 ;$C3F9D7 (sprite graphic)
-SPRITE_GRAPHIC_08B8:
-	incbin "data/objects/graphics/sprite_graphic_08B8.bin"
+barrel_cannon_frame4:
+	incbin "data/objects/graphics/barrel_cannon_frame4.bin"
 
 check bankcross off
 ;$C3FD35
@@ -1429,384 +1429,384 @@ funkys_flights_8x8_tilemap:
 check bankcross full
 
 ;$C40298 (sprite graphic)
-SPRITE_GRAPHIC_08BC:
-	incbin "data/objects/graphics/sprite_graphic_08BC.bin"
+barrel_cannon_frame5:
+	incbin "data/objects/graphics/barrel_cannon_frame5.bin"
 
 ;$C405AC (sprite graphic)
-SPRITE_GRAPHIC_08C0:
-	incbin "data/objects/graphics/sprite_graphic_08C0.bin"
+barrel_cannon_frame6:
+	incbin "data/objects/graphics/barrel_cannon_frame6.bin"
 
 ;$C4092C (sprite graphic)
-SPRITE_GRAPHIC_08C4:
-	incbin "data/objects/graphics/sprite_graphic_08C4.bin"
+barrel_cannon_frame7:
+	incbin "data/objects/graphics/barrel_cannon_frame7.bin"
 
 ;$C40CC8 (sprite graphic)
-SPRITE_GRAPHIC_08C8:
-	incbin "data/objects/graphics/sprite_graphic_08C8.bin"
+barrel_cannon_frame8:
+	incbin "data/objects/graphics/barrel_cannon_frame8.bin"
 
 ;$C41048 (sprite graphic)
-SPRITE_GRAPHIC_08CC:
-	incbin "data/objects/graphics/sprite_graphic_08CC.bin"
+barrel_cannon_frame9:
+	incbin "data/objects/graphics/barrel_cannon_frame9.bin"
 
 ;$C4135C (sprite graphic)
-SPRITE_GRAPHIC_08D0:
-	incbin "data/objects/graphics/sprite_graphic_08D0.bin"
+barrel_cannon_frame10:
+	incbin "data/objects/graphics/barrel_cannon_frame10.bin"
 
 ;$C416F8 (sprite graphic)
-SPRITE_GRAPHIC_08D4:
-	incbin "data/objects/graphics/sprite_graphic_08D4.bin"
+barrel_cannon_frame11:
+	incbin "data/objects/graphics/barrel_cannon_frame11.bin"
 
 ;$C41A7E (sprite graphic)
-SPRITE_GRAPHIC_08D8:
-	incbin "data/objects/graphics/sprite_graphic_08D8.bin"
+barrel_cannon_frame12:
+	incbin "data/objects/graphics/barrel_cannon_frame12.bin"
 
 ;$C41DDC (sprite graphic)
-SPRITE_GRAPHIC_08DC:
-	incbin "data/objects/graphics/sprite_graphic_08DC.bin"
+barrel_cannon_frame13:
+	incbin "data/objects/graphics/barrel_cannon_frame13.bin"
 
 ;$C420F0 (sprite graphic)
-SPRITE_GRAPHIC_08E0:
-	incbin "data/objects/graphics/sprite_graphic_08E0.bin"
+barrel_cannon_frame14:
+	incbin "data/objects/graphics/barrel_cannon_frame14.bin"
 
 ;$C42470 (sprite graphic)
-SPRITE_GRAPHIC_08E4:
-	incbin "data/objects/graphics/sprite_graphic_08E4.bin"
+barrel_cannon_frame15:
+	incbin "data/objects/graphics/barrel_cannon_frame15.bin"
 
 ;$C4280C (sprite graphic)
-SPRITE_GRAPHIC_08E8:
-	incbin "data/objects/graphics/sprite_graphic_08E8.bin"
+barrel_cannon_frame16:
+	incbin "data/objects/graphics/barrel_cannon_frame16.bin"
 
 ;$C42B8C (sprite graphic)
-SPRITE_GRAPHIC_08EC:
-	incbin "data/objects/graphics/sprite_graphic_08EC.bin"
+barrel_roll_frame1:
+	incbin "data/objects/graphics/barrel_roll_frame1.bin"
 
 ;$C42E02 (sprite graphic)
-SPRITE_GRAPHIC_08F0:
-	incbin "data/objects/graphics/sprite_graphic_08F0.bin"
+barrel_roll_frame2:
+	incbin "data/objects/graphics/barrel_roll_frame2.bin"
 
 ;$C43078 (sprite graphic)
-SPRITE_GRAPHIC_08F4:
-	incbin "data/objects/graphics/sprite_graphic_08F4.bin"
+barrel_roll_frame3:
+	incbin "data/objects/graphics/barrel_roll_frame3.bin"
 
 ;$C432EE (sprite graphic)
-SPRITE_GRAPHIC_08F8:
-	incbin "data/objects/graphics/sprite_graphic_08F8.bin"
+barrel_roll_frame4:
+	incbin "data/objects/graphics/barrel_roll_frame4.bin"
 
 ;$C43542 (sprite graphic)
-SPRITE_GRAPHIC_08FC:
-	incbin "data/objects/graphics/sprite_graphic_08FC.bin"
+barrel_roll_frame5:
+	incbin "data/objects/graphics/barrel_roll_frame5.bin"
 
 ;$C43796 (sprite graphic)
-SPRITE_GRAPHIC_0900:
-	incbin "data/objects/graphics/sprite_graphic_0900.bin"
+barrel_roll_frame6:
+	incbin "data/objects/graphics/barrel_roll_frame6.bin"
 
 ;$C439EA (sprite graphic)
-SPRITE_GRAPHIC_0904:
-	incbin "data/objects/graphics/sprite_graphic_0904.bin"
+barrel_roll_frame7:
+	incbin "data/objects/graphics/barrel_roll_frame7.bin"
 
 ;$C43C60 (sprite graphic)
-SPRITE_GRAPHIC_0908:
-	incbin "data/objects/graphics/sprite_graphic_0908.bin"
+barrel_roll_frame8:
+	incbin "data/objects/graphics/barrel_roll_frame8.bin"
 
 ;$C43ED6 (sprite graphic)
-SPRITE_GRAPHIC_090C:
-	incbin "data/objects/graphics/sprite_graphic_090C.bin"
+klomp_walk_frame1:
+	incbin "data/objects/graphics/klomp_walk_frame1.bin"
 
 ;$C441D4 (sprite graphic)
-SPRITE_GRAPHIC_0910:
-	incbin "data/objects/graphics/sprite_graphic_0910.bin"
+klomp_walk_frame2:
+	incbin "data/objects/graphics/klomp_walk_frame2.bin"
 
 ;$C44516 (sprite graphic)
-SPRITE_GRAPHIC_0914:
-	incbin "data/objects/graphics/sprite_graphic_0914.bin"
+klomp_walk_frame3:
+	incbin "data/objects/graphics/klomp_walk_frame3.bin"
 
 ;$C44858 (sprite graphic)
-SPRITE_GRAPHIC_0918:
-	incbin "data/objects/graphics/sprite_graphic_0918.bin"
+klomp_walk_frame4:
+	incbin "data/objects/graphics/klomp_walk_frame4.bin"
 
 ;$C44B3A (sprite graphic)
-SPRITE_GRAPHIC_091C:
-	incbin "data/objects/graphics/sprite_graphic_091C.bin"
+klomp_walk_frame5:
+	incbin "data/objects/graphics/klomp_walk_frame5.bin"
 
 ;$C44E1C (sprite graphic)
-SPRITE_GRAPHIC_0920:
-	incbin "data/objects/graphics/sprite_graphic_0920.bin"
+klomp_walk_frame6:
+	incbin "data/objects/graphics/klomp_walk_frame6.bin"
 
 ;$C450FE (sprite graphic)
-SPRITE_GRAPHIC_0924:
-	incbin "data/objects/graphics/sprite_graphic_0924.bin"
+klomp_walk_frame7:
+	incbin "data/objects/graphics/klomp_walk_frame7.bin"
 
 ;$C4541E (sprite graphic)
-SPRITE_GRAPHIC_0928:
-	incbin "data/objects/graphics/sprite_graphic_0928.bin"
+klomp_walk_frame8:
+	incbin "data/objects/graphics/klomp_walk_frame8.bin"
 
 ;$C456DE (sprite graphic)
-SPRITE_GRAPHIC_092C:
-	incbin "data/objects/graphics/sprite_graphic_092C.bin"
+klomp_walk_frame9:
+	incbin "data/objects/graphics/klomp_walk_frame9.bin"
 
 ;$C459C0 (sprite graphic)
-SPRITE_GRAPHIC_0930:
-	incbin "data/objects/graphics/sprite_graphic_0930.bin"
+kannon_walk_frame1:
+	incbin "data/objects/graphics/kannon_walk_frame1.bin"
 
 ;$C45F32 (sprite graphic)
-SPRITE_GRAPHIC_0934:
-	incbin "data/objects/graphics/sprite_graphic_0934.bin"
+kannon_walk_frame2:
+	incbin "data/objects/graphics/kannon_walk_frame2.bin"
 
 ;$C463FA (sprite graphic)
-SPRITE_GRAPHIC_0938:
-	incbin "data/objects/graphics/sprite_graphic_0938.bin"
+kannon_walk_frame3:
+	incbin "data/objects/graphics/kannon_walk_frame3.bin"
 
 ;$C468C2 (sprite graphic)
-SPRITE_GRAPHIC_093C:
-	incbin "data/objects/graphics/sprite_graphic_093C.bin"
+checkpoint_barrel_frame1:
+	incbin "data/objects/graphics/checkpoint_barrel_frame1.bin"
 
 ;$C46B38 (sprite graphic)
-SPRITE_GRAPHIC_0940:
-	incbin "data/objects/graphics/sprite_graphic_0940.bin"
+checkpoint_barrel_frame2:
+	incbin "data/objects/graphics/checkpoint_barrel_frame2.bin"
 
 ;$C46DAE (sprite graphic)
-SPRITE_GRAPHIC_0944:
-	incbin "data/objects/graphics/sprite_graphic_0944.bin"
+checkpoint_barrel_frame3:
+	incbin "data/objects/graphics/checkpoint_barrel_frame3.bin"
 
 ;$C47024 (sprite graphic)
-SPRITE_GRAPHIC_0948:
-	incbin "data/objects/graphics/sprite_graphic_0948.bin"
+checkpoint_barrel_frame4:
+	incbin "data/objects/graphics/checkpoint_barrel_frame4.bin"
 
 ;$C4729A (sprite graphic)
-SPRITE_GRAPHIC_094C:
-	incbin "data/objects/graphics/sprite_graphic_094C.bin"
+checkpoint_barrel_frame5:
+	incbin "data/objects/graphics/checkpoint_barrel_frame5.bin"
 
 ;$C47510 (sprite graphic)
-SPRITE_GRAPHIC_0950:
-	incbin "data/objects/graphics/sprite_graphic_0950.bin"
+checkpoint_barrel_frame6:
+	incbin "data/objects/graphics/checkpoint_barrel_frame6.bin"
 
 ;$C47786 (sprite graphic)
-SPRITE_GRAPHIC_0954:
-	incbin "data/objects/graphics/sprite_graphic_0954.bin"
+checkpoint_barrel_frame7:
+	incbin "data/objects/graphics/checkpoint_barrel_frame7.bin"
 
 ;$C479FC (sprite graphic)
-SPRITE_GRAPHIC_0958:
-	incbin "data/objects/graphics/sprite_graphic_0958.bin"
+checkpoint_barrel_frame8:
+	incbin "data/objects/graphics/checkpoint_barrel_frame8.bin"
 
 ;$C47C72 (sprite graphic)
-SPRITE_GRAPHIC_095C:
-	incbin "data/objects/graphics/sprite_graphic_095C.bin"
+chest_graphic:
+	incbin "data/objects/graphics/chest_graphic.bin"
 
 ;$C47EB0 (sprite graphic)
-SPRITE_GRAPHIC_0960:
-	incbin "data/objects/graphics/sprite_graphic_0960.bin"
+invincibilty_barrel_graphic:
+	incbin "data/objects/graphics/invincibilty_barrel_graphic.bin"
 
 ;$C48126 (sprite graphic)
-SPRITE_GRAPHIC_0964:
-	incbin "data/objects/graphics/sprite_graphic_0964.bin"
+hook_graphic:
+	incbin "data/objects/graphics/hook_graphic.bin"
 
 ;$C48216 (sprite graphic)
-SPRITE_GRAPHIC_0968:
-	incbin "data/objects/graphics/sprite_graphic_0968.bin"
+rambi_crate_graphic:
+	incbin "data/objects/graphics/rambi_crate_graphic.bin"
 
 ;$C485D4 (sprite graphic)
-SPRITE_GRAPHIC_096C:
-	incbin "data/objects/graphics/sprite_graphic_096C.bin"
+squawks_crate_graphic:
+	incbin "data/objects/graphics/squawks_crate_graphic.bin"
 
 ;$C48992 (sprite graphic)
-SPRITE_GRAPHIC_0970:
-	incbin "data/objects/graphics/sprite_graphic_0970.bin"
+enguarde_crate_graphic:
+	incbin "data/objects/graphics/enguarde_crate_graphic.bin"
 
 ;$C48D50 (sprite graphic)
-SPRITE_GRAPHIC_0974:
-	incbin "data/objects/graphics/sprite_graphic_0974.bin"
+rattly_crate_graphic:
+	incbin "data/objects/graphics/rattly_crate_graphic.bin"
 
 ;$C4910E (sprite graphic)
-SPRITE_GRAPHIC_0978:
-	incbin "data/objects/graphics/sprite_graphic_0978.bin"
+squitter_crate_graphic:
+	incbin "data/objects/graphics/squitter_crate_graphic.bin"
 
 ;$C494CC (sprite graphic)
-SPRITE_GRAPHIC_097C:
-	incbin "data/objects/graphics/sprite_graphic_097C.bin"
+broken_animal_crate_graphic:
+	incbin "data/objects/graphics/broken_animal_crate_graphic.bin"
 
 ;$C498EA (sprite graphic)
-SPRITE_GRAPHIC_0980:
-	incbin "data/objects/graphics/sprite_graphic_0980.bin"
+cannon_graphic:
+	incbin "data/objects/graphics/cannon_graphic.bin"
 
 ;$C49C42 (sprite graphic)
-SPRITE_GRAPHIC_0984:
-	incbin "data/objects/graphics/sprite_graphic_0984.bin"
+cannonball_frame1:
+	incbin "data/objects/graphics/cannonball_frame1.bin"
 
 ;$C49D76 (sprite graphic)
-SPRITE_GRAPHIC_0988:
-	incbin "data/objects/graphics/sprite_graphic_0988.bin"
+cannonball_frame2:
+	incbin "data/objects/graphics/cannonball_frame2.bin"
 
 ;$C49EAA (sprite graphic)
-SPRITE_GRAPHIC_098C:
-	incbin "data/objects/graphics/sprite_graphic_098C.bin"
+cannonball_frame3:
+	incbin "data/objects/graphics/cannonball_frame3.bin"
 
 ;$C49FDE (sprite graphic)
-SPRITE_GRAPHIC_0990:
-	incbin "data/objects/graphics/sprite_graphic_0990.bin"
+cannonball_frame4:
+	incbin "data/objects/graphics/cannonball_frame4.bin"
 
 ;$C4A112 (sprite graphic)
-SPRITE_GRAPHIC_0994:
-	incbin "data/objects/graphics/sprite_graphic_0994.bin"
+dixie_grab_object_frame1:
+	incbin "data/objects/graphics/dixie_grab_object_frame1.bin"
 
 ;$C4A306 (sprite graphic)
-SPRITE_GRAPHIC_0998:
-	incbin "data/objects/graphics/sprite_graphic_0998.bin"
+dixie_grab_object_frame2:
+	incbin "data/objects/graphics/dixie_grab_object_frame2.bin"
 
 ;$C4A4DE (sprite graphic)
-SPRITE_GRAPHIC_099C:
-	incbin "data/objects/graphics/sprite_graphic_099C.bin"
+dixie_grab_object_frame3:
+	incbin "data/objects/graphics/dixie_grab_object_frame3.bin"
 
 ;$C4A694 (sprite graphic)
-SPRITE_GRAPHIC_09A0:
-	incbin "data/objects/graphics/sprite_graphic_09A0.bin"
+dixie_grab_object_frame4:
+	incbin "data/objects/graphics/dixie_grab_object_frame4.bin"
 
 ;$C4A828 (sprite graphic)
-SPRITE_GRAPHIC_09A4:
-	incbin "data/objects/graphics/sprite_graphic_09A4.bin"
+dixie_grab_object_frame5:
+	incbin "data/objects/graphics/dixie_grab_object_frame5.bin"
 
 ;$C4A9BC (sprite graphic)
-SPRITE_GRAPHIC_09A8:
-	incbin "data/objects/graphics/sprite_graphic_09A8.bin"
+dixie_grab_object_frame6:
+	incbin "data/objects/graphics/dixie_grab_object_frame6.bin"
 
 ;$C4ABB0 (sprite graphic)
-SPRITE_GRAPHIC_09AC:
-	incbin "data/objects/graphics/sprite_graphic_09AC.bin"
+dixie_grab_object_frame7:
+	incbin "data/objects/graphics/dixie_grab_object_frame7.bin"
 
 ;$C4AD88 (sprite graphic)
-SPRITE_GRAPHIC_09B0:
-	incbin "data/objects/graphics/sprite_graphic_09B0.bin"
+dixie_grab_object_frame8:
+	incbin "data/objects/graphics/dixie_grab_object_frame8.bin"
 
 ;$C4AF7C (sprite graphic)
-SPRITE_GRAPHIC_09B4:
-	incbin "data/objects/graphics/sprite_graphic_09B4.bin"
+dixie_grab_object_frame9:
+	incbin "data/objects/graphics/dixie_grab_object_frame9.bin"
 
 ;$C4B1B4 (sprite graphic)
-SPRITE_GRAPHIC_09B8:
-	incbin "data/objects/graphics/sprite_graphic_09B8.bin"
+dixie_grab_object_frame10:
+	incbin "data/objects/graphics/dixie_grab_object_frame10.bin"
 
 ;$C4B452 (sprite graphic)
-SPRITE_GRAPHIC_09BC:
-	incbin "data/objects/graphics/sprite_graphic_09BC.bin"
+dixie_grab_object_frame11:
+	incbin "data/objects/graphics/dixie_grab_object_frame11.bin"
 
 ;$C4B6F0 (sprite graphic)
-SPRITE_GRAPHIC_09C0:
-	incbin "data/objects/graphics/sprite_graphic_09C0.bin"
+dixie_grab_object_frame12:
+	incbin "data/objects/graphics/dixie_grab_object_frame12.bin"
 
 ;$C4B9AA (sprite graphic)
-SPRITE_GRAPHIC_09C4:
-	incbin "data/objects/graphics/sprite_graphic_09C4.bin"
+dixie_grab_object_frame13:
+	incbin "data/objects/graphics/dixie_grab_object_frame13.bin"
 
 ;$C4BC5E (sprite graphic)
-SPRITE_GRAPHIC_09C8:
-	incbin "data/objects/graphics/sprite_graphic_09C8.bin"
+dixie_throw_object_frame1:
+	incbin "data/objects/graphics/dixie_throw_object_frame1.bin"
 
 ;$C4BF1E (sprite graphic)
-SPRITE_GRAPHIC_09CC:
-	incbin "data/objects/graphics/sprite_graphic_09CC.bin"
+dixie_throw_object_frame2:
+	incbin "data/objects/graphics/dixie_throw_object_frame2.bin"
 
 ;$C4C1DE (sprite graphic)
-SPRITE_GRAPHIC_09D0:
-	incbin "data/objects/graphics/sprite_graphic_09D0.bin"
+dixie_throw_object_frame3:
+	incbin "data/objects/graphics/dixie_throw_object_frame3.bin"
 
 ;$C4C47C (sprite graphic)
-SPRITE_GRAPHIC_09D4:
-	incbin "data/objects/graphics/sprite_graphic_09D4.bin"
+dixie_throw_object_frame4:
+	incbin "data/objects/graphics/dixie_throw_object_frame4.bin"
 
 ;$C4C71A (sprite graphic)
-SPRITE_GRAPHIC_09D8:
-	incbin "data/objects/graphics/sprite_graphic_09D8.bin"
+dixie_throw_object_frame5:
+	incbin "data/objects/graphics/dixie_throw_object_frame5.bin"
 
 ;$C4C996 (sprite graphic)
-SPRITE_GRAPHIC_09DC:
-	incbin "data/objects/graphics/sprite_graphic_09DC.bin"
+dixie_throw_object_frame6:
+	incbin "data/objects/graphics/dixie_throw_object_frame6.bin"
 
 ;$C4CBEA (sprite graphic)
-SPRITE_GRAPHIC_09E0:
-	incbin "data/objects/graphics/sprite_graphic_09E0.bin"
+dixie_throw_object_frame7:
+	incbin "data/objects/graphics/dixie_throw_object_frame7.bin"
 
 ;$C4CE3E (sprite graphic)
-SPRITE_GRAPHIC_09E4:
-	incbin "data/objects/graphics/sprite_graphic_09E4.bin"
+dixie_throw_object_frame8:
+	incbin "data/objects/graphics/dixie_throw_object_frame8.bin"
 
 ;$C4D0B4 (sprite graphic)
-SPRITE_GRAPHIC_09E8:
-	incbin "data/objects/graphics/sprite_graphic_09E8.bin"
+dixie_throw_object_frame9:
+	incbin "data/objects/graphics/dixie_throw_object_frame9.bin"
 
 ;$C4D330 (sprite graphic)
-SPRITE_GRAPHIC_09EC:
-	incbin "data/objects/graphics/sprite_graphic_09EC.bin"
+dixie_throw_object_frame10:
+	incbin "data/objects/graphics/dixie_throw_object_frame10.bin"
 
 ;$C4D58A (sprite graphic)
-SPRITE_GRAPHIC_09F0:
-	incbin "data/objects/graphics/sprite_graphic_09F0.bin"
+dixie_throw_object_frame11:
+	incbin "data/objects/graphics/dixie_throw_object_frame11.bin"
 
 ;$C4D822 (sprite graphic)
-SPRITE_GRAPHIC_09F4:
-	incbin "data/objects/graphics/sprite_graphic_09F4.bin"
+dixie_throw_object_frame12:
+	incbin "data/objects/graphics/dixie_throw_object_frame12.bin"
 
 ;$C4DADC (sprite graphic)
-SPRITE_GRAPHIC_09F8:
-	incbin "data/objects/graphics/sprite_graphic_09F8.bin"
+dixie_throw_object_frame13:
+	incbin "data/objects/graphics/dixie_throw_object_frame13.bin"
 
 ;$C4DD58 (sprite graphic)
-SPRITE_GRAPHIC_09FC:
-	incbin "data/objects/graphics/sprite_graphic_09FC.bin"
+dixie_throw_object_frame14:
+	incbin "data/objects/graphics/dixie_throw_object_frame14.bin"
 
 ;$C4DFD4 (sprite graphic)
-SPRITE_GRAPHIC_0A00:
-	incbin "data/objects/graphics/sprite_graphic_0A00.bin"
+dixie_throw_object_frame15:
+	incbin "data/objects/graphics/dixie_throw_object_frame15.bin"
 
 ;$C4E272 (sprite graphic)
-SPRITE_GRAPHIC_0A04:
-	incbin "data/objects/graphics/sprite_graphic_0A04.bin"
+dixie_throw_object_frame16:
+	incbin "data/objects/graphics/dixie_throw_object_frame16.bin"
 
 ;$C4E4EE (sprite graphic)
-SPRITE_GRAPHIC_0A08:
-	incbin "data/objects/graphics/sprite_graphic_0A08.bin"
+dixie_throw_object_frame17:
+	incbin "data/objects/graphics/dixie_throw_object_frame17.bin"
 
 ;$C4E76A (sprite graphic)
-SPRITE_GRAPHIC_0A0C:
-	incbin "data/objects/graphics/sprite_graphic_0A0C.bin"
+dixie_throw_object_frame18:
+	incbin "data/objects/graphics/dixie_throw_object_frame18.bin"
 
 ;$C4E9E6 (sprite graphic)
-SPRITE_GRAPHIC_0A10:
-	incbin "data/objects/graphics/sprite_graphic_0A10.bin"
+dixie_throw_object_frame19:
+	incbin "data/objects/graphics/dixie_throw_object_frame19.bin"
 
 ;$C4EC02 (sprite graphic)
-SPRITE_GRAPHIC_0A14:
-	incbin "data/objects/graphics/sprite_graphic_0A14.bin"
+dixie_throw_object_frame20:
+	incbin "data/objects/graphics/dixie_throw_object_frame20.bin"
 
 ;$C4EDB8 (sprite graphic)
-SPRITE_GRAPHIC_0A18:
-	incbin "data/objects/graphics/sprite_graphic_0A18.bin"
+dixie_throw_object_frame21:
+	incbin "data/objects/graphics/dixie_throw_object_frame21.bin"
 
 ;$C4EF8A (sprite graphic)
-SPRITE_GRAPHIC_0A1C:
-	incbin "data/objects/graphics/sprite_graphic_0A1C.bin"
+shuri_idle_frame1:
+	incbin "data/objects/graphics/shuri_idle_frame1.bin"
 
 ;$C4F11E (sprite graphic)
-SPRITE_GRAPHIC_0A20:
-	incbin "data/objects/graphics/sprite_graphic_0A20.bin"
+shuri_idle_frame2:
+	incbin "data/objects/graphics/shuri_idle_frame2.bin"
 
 ;$C4F296 (sprite graphic)
-SPRITE_GRAPHIC_0A24:
-	incbin "data/objects/graphics/sprite_graphic_0A24.bin"
+shuri_idle_frame3:
+	incbin "data/objects/graphics/shuri_idle_frame3.bin"
 
 ;$C4F408 (sprite graphic)
-SPRITE_GRAPHIC_0A28:
-	incbin "data/objects/graphics/sprite_graphic_0A28.bin"
+shuri_idle_frame4:
+	incbin "data/objects/graphics/shuri_idle_frame4.bin"
 
 ;$C4F57A (sprite graphic)
-SPRITE_GRAPHIC_0A2C:
-	incbin "data/objects/graphics/sprite_graphic_0A2C.bin"
+shuri_idle_frame5:
+	incbin "data/objects/graphics/shuri_idle_frame5.bin"
 
 ;$C4F6D0 (sprite graphic)
-SPRITE_GRAPHIC_0A30:
-	incbin "data/objects/graphics/sprite_graphic_0A30.bin"
+shuri_idle_frame6:
+	incbin "data/objects/graphics/shuri_idle_frame6.bin"
 
 ;$C4F848 (sprite graphic)
-SPRITE_GRAPHIC_0A34:
-	incbin "data/objects/graphics/sprite_graphic_0A34.bin"
+shuri_idle_frame7:
+	incbin "data/objects/graphics/shuri_idle_frame7.bin"
 
 check bankcross off
 ;$C4F9C0
@@ -1815,728 +1815,728 @@ krem_quay_right_8x8_tilemap:
 check bankcross full
 
 ;$C5009A (sprite graphic)
-SPRITE_GRAPHIC_0A38:
-	incbin "data/objects/graphics/sprite_graphic_0A38.bin"
+shuri_idle_frame8:
+	incbin "data/objects/graphics/shuri_idle_frame8.bin"
 
 ;$C5022E (sprite graphic)
-SPRITE_GRAPHIC_0A3C:
-	incbin "data/objects/graphics/sprite_graphic_0A3C.bin"
+diddy_grab_object_frame1:
+	incbin "data/objects/graphics/diddy_grab_object_frame1.bin"
 
 ;$C50406 (sprite graphic)
-SPRITE_GRAPHIC_0A40:
-	incbin "data/objects/graphics/sprite_graphic_0A40.bin"
+diddy_grab_object_frame2:
+	incbin "data/objects/graphics/diddy_grab_object_frame2.bin"
 
 ;$C50622 (sprite graphic)
-SPRITE_GRAPHIC_0A44:
-	incbin "data/objects/graphics/sprite_graphic_0A44.bin"
+diddy_grab_object_frame3:
+	incbin "data/objects/graphics/diddy_grab_object_frame3.bin"
 
 ;$C50860 (sprite graphic)
-SPRITE_GRAPHIC_0A48:
-	incbin "data/objects/graphics/sprite_graphic_0A48.bin"
+diddy_grab_object_frame4:
+	incbin "data/objects/graphics/diddy_grab_object_frame4.bin"
 
 ;$C50A9E (sprite graphic)
-SPRITE_GRAPHIC_0A4C:
-	incbin "data/objects/graphics/sprite_graphic_0A4C.bin"
+diddy_grab_object_frame5:
+	incbin "data/objects/graphics/diddy_grab_object_frame5.bin"
 
 ;$C50CDC (sprite graphic)
-SPRITE_GRAPHIC_0A50:
-	incbin "data/objects/graphics/sprite_graphic_0A50.bin"
+diddy_carry_object_frame1:
+	incbin "data/objects/graphics/diddy_carry_object_frame1.bin"
 
 ;$C50EF8 (sprite graphic)
-SPRITE_GRAPHIC_0A54:
-	incbin "data/objects/graphics/sprite_graphic_0A54.bin"
+diddy_carry_object_frame2:
+	incbin "data/objects/graphics/diddy_carry_object_frame2.bin"
 
 ;$C51158 (sprite graphic)
-SPRITE_GRAPHIC_0A58:
-	incbin "data/objects/graphics/sprite_graphic_0A58.bin"
+diddy_carry_object_frame3:
+	incbin "data/objects/graphics/diddy_carry_object_frame3.bin"
 
 ;$C51374 (sprite graphic)
-SPRITE_GRAPHIC_0A5C:
-	incbin "data/objects/graphics/sprite_graphic_0A5C.bin"
+diddy_carry_object_frame4:
+	incbin "data/objects/graphics/diddy_carry_object_frame4.bin"
 
 ;$C515B2 (sprite graphic)
-SPRITE_GRAPHIC_0A60:
-	incbin "data/objects/graphics/sprite_graphic_0A60.bin"
+diddy_carry_object_frame5:
+	incbin "data/objects/graphics/diddy_carry_object_frame5.bin"
 
 ;$C517F0 (sprite graphic)
-SPRITE_GRAPHIC_0A64:
-	incbin "data/objects/graphics/sprite_graphic_0A64.bin"
+diddy_carry_object_frame6:
+	incbin "data/objects/graphics/diddy_carry_object_frame6.bin"
 
 ;$C51A2E (sprite graphic)
-SPRITE_GRAPHIC_0A68:
-	incbin "data/objects/graphics/sprite_graphic_0A68.bin"
+diddy_carry_object_frame7:
+	incbin "data/objects/graphics/diddy_carry_object_frame7.bin"
 
 ;$C51C8E (sprite graphic)
-SPRITE_GRAPHIC_0A6C:
-	incbin "data/objects/graphics/sprite_graphic_0A6C.bin"
+diddy_carry_object_frame8:
+	incbin "data/objects/graphics/diddy_carry_object_frame8.bin"
 
 ;$C51EAA (sprite graphic)
-SPRITE_GRAPHIC_0A70:
-	incbin "data/objects/graphics/sprite_graphic_0A70.bin"
+diddy_carry_object_frame9:
+	incbin "data/objects/graphics/diddy_carry_object_frame9.bin"
 
 ;$C520C6 (sprite graphic)
-SPRITE_GRAPHIC_0A74:
-	incbin "data/objects/graphics/sprite_graphic_0A74.bin"
+diddy_throw_object_frame1:
+	incbin "data/objects/graphics/diddy_throw_object_frame1.bin"
 
 ;$C52304 (sprite graphic)
-SPRITE_GRAPHIC_0A78:
-	incbin "data/objects/graphics/sprite_graphic_0A78.bin"
+diddy_throw_object_frame2:
+	incbin "data/objects/graphics/diddy_throw_object_frame2.bin"
 
 ;$C52520 (sprite graphic)
-SPRITE_GRAPHIC_0A7C:
-	incbin "data/objects/graphics/sprite_graphic_0A7C.bin"
+diddy_throw_object_frame3:
+	incbin "data/objects/graphics/diddy_throw_object_frame3.bin"
 
 ;$C5271A (sprite graphic)
-SPRITE_GRAPHIC_0A80:
-	incbin "data/objects/graphics/sprite_graphic_0A80.bin"
+diddy_throw_object_frame4:
+	incbin "data/objects/graphics/diddy_throw_object_frame4.bin"
 
 ;$C52930 (sprite graphic)
-SPRITE_GRAPHIC_0A84:
-	incbin "data/objects/graphics/sprite_graphic_0A84.bin"
+diddy_throw_object_frame5:
+	incbin "data/objects/graphics/diddy_throw_object_frame5.bin"
 
 ;$C52B68 (sprite graphic)
-SPRITE_GRAPHIC_0A88:
-	incbin "data/objects/graphics/sprite_graphic_0A88.bin"
+diddy_throw_object_frame6:
+	incbin "data/objects/graphics/diddy_throw_object_frame6.bin"
 
 ;$C52D7E (sprite graphic)
-SPRITE_GRAPHIC_0A8C:
-	incbin "data/objects/graphics/sprite_graphic_0A8C.bin"
+diddy_throw_object_frame7:
+	incbin "data/objects/graphics/diddy_throw_object_frame7.bin"
 
 ;$C52F18 (sprite graphic)
-SPRITE_GRAPHIC_0A90:
-	incbin "data/objects/graphics/sprite_graphic_0A90.bin"
+diddy_throw_object_frame8:
+	incbin "data/objects/graphics/diddy_throw_object_frame8.bin"
 
 ;$C53112 (sprite graphic)
-SPRITE_GRAPHIC_0A94:
-	incbin "data/objects/graphics/sprite_graphic_0A94.bin"
+diddy_throw_object_frame9:
+	incbin "data/objects/graphics/diddy_throw_object_frame9.bin"
 
 ;$C5334A (sprite graphic)
-SPRITE_GRAPHIC_0A98:
-	incbin "data/objects/graphics/sprite_graphic_0A98.bin"
+diddy_throw_object_frame10:
+	incbin "data/objects/graphics/diddy_throw_object_frame10.bin"
 
 ;$C535C6 (sprite graphic)
-SPRITE_GRAPHIC_0A9C:
-	incbin "data/objects/graphics/sprite_graphic_0A9C.bin"
+diddy_throw_object_frame11:
+	incbin "data/objects/graphics/diddy_throw_object_frame11.bin"
 
 ;$C53864 (sprite graphic)
-SPRITE_GRAPHIC_0AA0:
-	incbin "data/objects/graphics/sprite_graphic_0AA0.bin"
+diddy_throw_object_frame12:
+	incbin "data/objects/graphics/diddy_throw_object_frame12.bin"
 
 ;$C53AE0 (sprite graphic)
-SPRITE_GRAPHIC_0AA4:
-	incbin "data/objects/graphics/sprite_graphic_0AA4.bin"
+diddy_throw_object_frame13:
+	incbin "data/objects/graphics/diddy_throw_object_frame13.bin"
 
 ;$C53D40 (sprite graphic)
-SPRITE_GRAPHIC_0AA8:
-	incbin "data/objects/graphics/sprite_graphic_0AA8.bin"
+diddy_throw_object_frame14:
+	incbin "data/objects/graphics/diddy_throw_object_frame14.bin"
 
 ;$C53F3A (sprite graphic)
-SPRITE_GRAPHIC_0AAC:
-	incbin "data/objects/graphics/sprite_graphic_0AAC.bin"
+shuri_spin_frame1:
+	incbin "data/objects/graphics/shuri_spin_frame1.bin"
 
 ;$C54112 (sprite graphic)
-SPRITE_GRAPHIC_0AB0:
-	incbin "data/objects/graphics/sprite_graphic_0AB0.bin"
+shuri_spin_frame2:
+	incbin "data/objects/graphics/shuri_spin_frame2.bin"
 
 ;$C542A6 (sprite graphic)
-SPRITE_GRAPHIC_0AB4:
-	incbin "data/objects/graphics/sprite_graphic_0AB4.bin"
+shuri_spin_frame3:
+	incbin "data/objects/graphics/shuri_spin_frame3.bin"
 
 ;$C5445C (sprite graphic)
-SPRITE_GRAPHIC_0AB8:
-	incbin "data/objects/graphics/sprite_graphic_0AB8.bin"
+shuri_spin_frame4:
+	incbin "data/objects/graphics/shuri_spin_frame4.bin"
 
 ;$C54612 (sprite graphic)
-SPRITE_GRAPHIC_0ABC:
-	incbin "data/objects/graphics/sprite_graphic_0ABC.bin"
+shuri_spin_frame5:
+	incbin "data/objects/graphics/shuri_spin_frame5.bin"
 
 ;$C547C8 (sprite graphic)
-SPRITE_GRAPHIC_0AC0:
-	incbin "data/objects/graphics/sprite_graphic_0AC0.bin"
+shuri_spin_frame6:
+	incbin "data/objects/graphics/shuri_spin_frame6.bin"
 
 ;$C549A0 (sprite graphic)
-SPRITE_GRAPHIC_0AC4:
-	incbin "data/objects/graphics/sprite_graphic_0AC4.bin"
+shuri_spin_frame7:
+	incbin "data/objects/graphics/shuri_spin_frame7.bin"
 
 ;$C54B78 (sprite graphic)
-SPRITE_GRAPHIC_0AC8:
-	incbin "data/objects/graphics/sprite_graphic_0AC8.bin"
+shuri_spin_frame8:
+	incbin "data/objects/graphics/shuri_spin_frame8.bin"
 
 ;$C54D0C (sprite graphic)
-SPRITE_GRAPHIC_0ACC:
-	incbin "data/objects/graphics/sprite_graphic_0ACC.bin"
+shuri_spin_frame9:
+	incbin "data/objects/graphics/shuri_spin_frame9.bin"
 
 ;$C54EA0 (sprite graphic)
-SPRITE_GRAPHIC_0AD0:
-	incbin "data/objects/graphics/sprite_graphic_0AD0.bin"
+shuri_spin_frame10:
+	incbin "data/objects/graphics/shuri_spin_frame10.bin"
 
 ;$C55078 (sprite graphic)
-SPRITE_GRAPHIC_0AD4:
-	incbin "data/objects/graphics/sprite_graphic_0AD4.bin"
+shuri_spin_frame11:
+	incbin "data/objects/graphics/shuri_spin_frame11.bin"
 
 ;$C55250 (sprite graphic)
-SPRITE_GRAPHIC_0AD8:
-	incbin "data/objects/graphics/sprite_graphic_0AD8.bin"
+shuri_spin_frame12:
+	incbin "data/objects/graphics/shuri_spin_frame12.bin"
 
 ;$C55406 (sprite graphic)
-SPRITE_GRAPHIC_0ADC:
-	incbin "data/objects/graphics/sprite_graphic_0ADC.bin"
+shuri_spin_frame13:
+	incbin "data/objects/graphics/shuri_spin_frame13.bin"
 
 ;$C5559A (sprite graphic)
-SPRITE_GRAPHIC_0AE0:
-	incbin "data/objects/graphics/sprite_graphic_0AE0.bin"
+shuri_spin_frame14:
+	incbin "data/objects/graphics/shuri_spin_frame14.bin"
 
 ;$C55750 (sprite graphic)
-SPRITE_GRAPHIC_0AE4:
-	incbin "data/objects/graphics/sprite_graphic_0AE4.bin"
+kruncha_walk_frame1:
+	incbin "data/objects/graphics/kruncha_walk_frame1.bin"
 
 ;$C559E8 (sprite graphic)
-SPRITE_GRAPHIC_0AE8:
-	incbin "data/objects/graphics/sprite_graphic_0AE8.bin"
+kruncha_walk_frame2:
+	incbin "data/objects/graphics/kruncha_walk_frame2.bin"
 
 ;$C55D4C (sprite graphic)
-SPRITE_GRAPHIC_0AEC:
-	incbin "data/objects/graphics/sprite_graphic_0AEC.bin"
+kruncha_walk_frame3:
+	incbin "data/objects/graphics/kruncha_walk_frame3.bin"
 
 ;$C56132 (sprite graphic)
-SPRITE_GRAPHIC_0AF0:
-	incbin "data/objects/graphics/sprite_graphic_0AF0.bin"
+kruncha_walk_frame4:
+	incbin "data/objects/graphics/kruncha_walk_frame4.bin"
 
 ;$C564F6 (sprite graphic)
-SPRITE_GRAPHIC_0AF4:
-	incbin "data/objects/graphics/sprite_graphic_0AF4.bin"
+kruncha_walk_frame5:
+	incbin "data/objects/graphics/kruncha_walk_frame5.bin"
 
 ;$C568FE (sprite graphic)
-SPRITE_GRAPHIC_0AF8:
-	incbin "data/objects/graphics/sprite_graphic_0AF8.bin"
+kruncha_walk_frame6:
+	incbin "data/objects/graphics/kruncha_walk_frame6.bin"
 
 ;$C56C84 (sprite graphic)
-SPRITE_GRAPHIC_0AFC:
-	incbin "data/objects/graphics/sprite_graphic_0AFC.bin"
+kruncha_walk_frame7:
+	incbin "data/objects/graphics/kruncha_walk_frame7.bin"
 
 ;$C56F60 (sprite graphic)
-SPRITE_GRAPHIC_0B00:
-	incbin "data/objects/graphics/sprite_graphic_0B00.bin"
+kruncha_walk_frame8:
+	incbin "data/objects/graphics/kruncha_walk_frame8.bin"
 
 ;$C5719E (sprite graphic)
-SPRITE_GRAPHIC_0B04:
-	incbin "data/objects/graphics/sprite_graphic_0B04.bin"
+kruncha_walk_frame9:
+	incbin "data/objects/graphics/kruncha_walk_frame9.bin"
 
 ;$C573D0 (sprite graphic)
-SPRITE_GRAPHIC_0B08:
-	incbin "data/objects/graphics/sprite_graphic_0B08.bin"
+kruncha_walk_frame10:
+	incbin "data/objects/graphics/kruncha_walk_frame10.bin"
 
 ;$C57624 (sprite graphic)
-SPRITE_GRAPHIC_0B0C:
-	incbin "data/objects/graphics/sprite_graphic_0B0C.bin"
+kruncha_walk_frame11:
+	incbin "data/objects/graphics/kruncha_walk_frame11.bin"
 
 ;$C578A0 (sprite graphic)
-SPRITE_GRAPHIC_0B10:
-	incbin "data/objects/graphics/sprite_graphic_0B10.bin"
+dixie_carry_object_frame1:
+	incbin "data/objects/graphics/dixie_carry_object_frame1.bin"
 
 ;$C57B5A (sprite graphic)
-SPRITE_GRAPHIC_0B14:
-	incbin "data/objects/graphics/sprite_graphic_0B14.bin"
+dixie_carry_object_frame2:
+	incbin "data/objects/graphics/dixie_carry_object_frame2.bin"
 
 ;$C57E36 (sprite graphic)
-SPRITE_GRAPHIC_0B18:
-	incbin "data/objects/graphics/sprite_graphic_0B18.bin"
+dixie_carry_object_frame3:
+	incbin "data/objects/graphics/dixie_carry_object_frame3.bin"
 
 ;$C58112 (sprite graphic)
-SPRITE_GRAPHIC_0B1C:
-	incbin "data/objects/graphics/sprite_graphic_0B1C.bin"
+dixie_carry_object_frame4:
+	incbin "data/objects/graphics/dixie_carry_object_frame4.bin"
 
 ;$C583CC (sprite graphic)
-SPRITE_GRAPHIC_0B20:
-	incbin "data/objects/graphics/sprite_graphic_0B20.bin"
+dixie_carry_object_frame5:
+	incbin "data/objects/graphics/dixie_carry_object_frame5.bin"
 
 ;$C58686 (sprite graphic)
-SPRITE_GRAPHIC_0B24:
-	incbin "data/objects/graphics/sprite_graphic_0B24.bin"
+dixie_carry_object_frame6:
+	incbin "data/objects/graphics/dixie_carry_object_frame6.bin"
 
 ;$C58940 (sprite graphic)
-SPRITE_GRAPHIC_0B28:
-	incbin "data/objects/graphics/sprite_graphic_0B28.bin"
+dixie_carry_object_frame7:
+	incbin "data/objects/graphics/dixie_carry_object_frame7.bin"
 
 ;$C58BFA (sprite graphic)
-SPRITE_GRAPHIC_0B2C:
-	incbin "data/objects/graphics/sprite_graphic_0B2C.bin"
+dixie_carry_object_frame8:
+	incbin "data/objects/graphics/dixie_carry_object_frame8.bin"
 
 ;$C58EB4 (sprite graphic)
-SPRITE_GRAPHIC_0B30:
-	incbin "data/objects/graphics/sprite_graphic_0B30.bin"
+dixie_carry_object_frame9:
+	incbin "data/objects/graphics/dixie_carry_object_frame9.bin"
 
 ;$C5916E (sprite graphic)
-SPRITE_GRAPHIC_0B34:
-	incbin "data/objects/graphics/sprite_graphic_0B34.bin"
+dixie_carry_object_frame10:
+	incbin "data/objects/graphics/dixie_carry_object_frame10.bin"
 
 ;$C59428 (sprite graphic)
-SPRITE_GRAPHIC_0B38:
-	incbin "data/objects/graphics/sprite_graphic_0B38.bin"
+dixie_carry_object_frame11:
+	incbin "data/objects/graphics/dixie_carry_object_frame11.bin"
 
 ;$C59704 (sprite graphic)
-SPRITE_GRAPHIC_0B3C:
-	incbin "data/objects/graphics/sprite_graphic_0B3C.bin"
+dixie_carry_object_frame12:
+	incbin "data/objects/graphics/dixie_carry_object_frame12.bin"
 
 ;$C599BE (sprite graphic)
-SPRITE_GRAPHIC_0B40:
-	incbin "data/objects/graphics/sprite_graphic_0B40.bin"
+dixie_carry_object_frame13:
+	incbin "data/objects/graphics/dixie_carry_object_frame13.bin"
 
 ;$C59C78 (sprite graphic)
-SPRITE_GRAPHIC_0B44:
-	incbin "data/objects/graphics/sprite_graphic_0B44.bin"
+dixie_carry_object_frame14:
+	incbin "data/objects/graphics/dixie_carry_object_frame14.bin"
 
 ;$C59F32 (sprite graphic)
-SPRITE_GRAPHIC_0B48:
-	incbin "data/objects/graphics/sprite_graphic_0B48.bin"
+dixie_carry_object_frame15:
+	incbin "data/objects/graphics/dixie_carry_object_frame15.bin"
 
 ;$C5A20E (sprite graphic)
-SPRITE_GRAPHIC_0B4C:
-	incbin "data/objects/graphics/sprite_graphic_0B4C.bin"
+dixie_carry_object_frame16:
+	incbin "data/objects/graphics/dixie_carry_object_frame16.bin"
 
 ;$C5A4C8 (sprite graphic)
-SPRITE_GRAPHIC_0B50:
-	incbin "data/objects/graphics/sprite_graphic_0B50.bin"
+dixie_tumble_frame1:
+	incbin "data/objects/graphics/dixie_tumble_frame1.bin"
 
 ;$C5A69A (sprite graphic)
-SPRITE_GRAPHIC_0B54:
-	incbin "data/objects/graphics/sprite_graphic_0B54.bin"
+dixie_tumble_frame2:
+	incbin "data/objects/graphics/dixie_tumble_frame2.bin"
 
 ;$C5A86C (sprite graphic)
-SPRITE_GRAPHIC_0B58:
-	incbin "data/objects/graphics/sprite_graphic_0B58.bin"
+dixie_tumble_frame3:
+	incbin "data/objects/graphics/dixie_tumble_frame3.bin"
 
 ;$C5A9DE (sprite graphic)
-SPRITE_GRAPHIC_0B5C:
-	incbin "data/objects/graphics/sprite_graphic_0B5C.bin"
+dixie_tumble_frame4:
+	incbin "data/objects/graphics/dixie_tumble_frame4.bin"
 
 ;$C5AB72 (sprite graphic)
-SPRITE_GRAPHIC_0B60:
-	incbin "data/objects/graphics/sprite_graphic_0B60.bin"
+dixie_tumble_frame5:
+	incbin "data/objects/graphics/dixie_tumble_frame5.bin"
 
 ;$C5AD06 (sprite graphic)
-SPRITE_GRAPHIC_0B64:
-	incbin "data/objects/graphics/sprite_graphic_0B64.bin"
+dixie_tumble_frame6:
+	incbin "data/objects/graphics/dixie_tumble_frame6.bin"
 
 ;$C5AEBC (sprite graphic)
-SPRITE_GRAPHIC_0B68:
-	incbin "data/objects/graphics/sprite_graphic_0B68.bin"
+dixie_tumble_frame7:
+	incbin "data/objects/graphics/dixie_tumble_frame7.bin"
 
 ;$C5B072 (sprite graphic)
-SPRITE_GRAPHIC_0B6C:
-	incbin "data/objects/graphics/sprite_graphic_0B6C.bin"
+dixie_tumble_frame8:
+	incbin "data/objects/graphics/dixie_tumble_frame8.bin"
 
 ;$C5B228 (sprite graphic)
-SPRITE_GRAPHIC_0B70:
-	incbin "data/objects/graphics/sprite_graphic_0B70.bin"
+dixie_tumble_frame9:
+	incbin "data/objects/graphics/dixie_tumble_frame9.bin"
 
 ;$C5B3FA (sprite graphic)
-SPRITE_GRAPHIC_0B74:
-	incbin "data/objects/graphics/sprite_graphic_0B74.bin"
+dixie_tumble_frame10:
+	incbin "data/objects/graphics/dixie_tumble_frame10.bin"
 
 ;$C5B5CC (sprite graphic)
-SPRITE_GRAPHIC_0B78:
-	incbin "data/objects/graphics/sprite_graphic_0B78.bin"
+dixie_tumble_frame11:
+	incbin "data/objects/graphics/dixie_tumble_frame11.bin"
 
 ;$C5B760 (sprite graphic)
-SPRITE_GRAPHIC_0B7C:
-	incbin "data/objects/graphics/sprite_graphic_0B7C.bin"
+dixie_tumble_frame12:
+	incbin "data/objects/graphics/dixie_tumble_frame12.bin"
 
 ;$C5B916 (sprite graphic)
-SPRITE_GRAPHIC_0B80:
-	incbin "data/objects/graphics/sprite_graphic_0B80.bin"
+dixie_tumble_frame13:
+	incbin "data/objects/graphics/dixie_tumble_frame13.bin"
 
 ;$C5BACC (sprite graphic)
-SPRITE_GRAPHIC_0B84:
-	incbin "data/objects/graphics/sprite_graphic_0B84.bin"
+dixie_tumble_frame14:
+	incbin "data/objects/graphics/dixie_tumble_frame14.bin"
 
 ;$C5BC82 (sprite graphic)
-SPRITE_GRAPHIC_0B88:
-	incbin "data/objects/graphics/sprite_graphic_0B88.bin"
+dixie_tumble_frame15:
+	incbin "data/objects/graphics/dixie_tumble_frame15.bin"
 
 ;$C5BDF4 (sprite graphic)
-SPRITE_GRAPHIC_0B8C:
-	incbin "data/objects/graphics/sprite_graphic_0B8C.bin"
+dixie_tumble_frame16:
+	incbin "data/objects/graphics/dixie_tumble_frame16.bin"
 
 ;$C5BFAA (sprite graphic)
-SPRITE_GRAPHIC_0B90:
-	incbin "data/objects/graphics/sprite_graphic_0B90.bin"
+dixie_carry_object_idle_frame1:
+	incbin "data/objects/graphics/dixie_carry_object_idle_frame1.bin"
 
 ;$C5C25E (sprite graphic)
-SPRITE_GRAPHIC_0B94:
-	incbin "data/objects/graphics/sprite_graphic_0B94.bin"
+dixie_carry_object_idle_frame2:
+	incbin "data/objects/graphics/dixie_carry_object_idle_frame2.bin"
 
 ;$C5C512 (sprite graphic)
-SPRITE_GRAPHIC_0B98:
-	incbin "data/objects/graphics/sprite_graphic_0B98.bin"
+isle_torch_frame1:
+	incbin "data/objects/graphics/isle_torch_frame1.bin"
 
 ;$C5C55E (sprite graphic)
-SPRITE_GRAPHIC_0B9C:
-	incbin "data/objects/graphics/sprite_graphic_0B9C.bin"
+isle_torch_frame2:
+	incbin "data/objects/graphics/isle_torch_frame2.bin"
 
 ;$C5C5AA (sprite graphic)
-SPRITE_GRAPHIC_0BA0:
-	incbin "data/objects/graphics/sprite_graphic_0BA0.bin"
+isle_torch_frame3:
+	incbin "data/objects/graphics/isle_torch_frame3.bin"
 
 ;$C5C5F6 (sprite graphic)
-SPRITE_GRAPHIC_0BA4:
-	incbin "data/objects/graphics/sprite_graphic_0BA4.bin"
+isle_torch_frame4:
+	incbin "data/objects/graphics/isle_torch_frame4.bin"
 
 ;$C5C642 (sprite graphic)
-SPRITE_GRAPHIC_0BA8:
-	incbin "data/objects/graphics/sprite_graphic_0BA8.bin"
+isle_torch_frame5:
+	incbin "data/objects/graphics/isle_torch_frame5.bin"
 
 ;$C5C68E (sprite graphic)
-SPRITE_GRAPHIC_0BAC:
-	incbin "data/objects/graphics/sprite_graphic_0BAC.bin"
+isle_torch_frame6:
+	incbin "data/objects/graphics/isle_torch_frame6.bin"
 
 ;$C5C6DA (sprite graphic)
-SPRITE_GRAPHIC_0BB0:
-	incbin "data/objects/graphics/sprite_graphic_0BB0.bin"
+isle_torch_frame7:
+	incbin "data/objects/graphics/isle_torch_frame7.bin"
 
 ;$C5C726 (sprite graphic)
-SPRITE_GRAPHIC_0BB4:
-	incbin "data/objects/graphics/sprite_graphic_0BB4.bin"
+isle_torch_frame8:
+	incbin "data/objects/graphics/isle_torch_frame8.bin"
 
 ;$C5C772 (sprite graphic)
-SPRITE_GRAPHIC_0BB8:
-	incbin "data/objects/graphics/sprite_graphic_0BB8.bin"
+isle_bat_frame1:
+	incbin "data/objects/graphics/isle_bat_frame1.bin"
 
 ;$C5C79C (sprite graphic)
-SPRITE_GRAPHIC_0BBC:
-	incbin "data/objects/graphics/sprite_graphic_0BBC.bin"
+isle_bat_frame2:
+	incbin "data/objects/graphics/isle_bat_frame2.bin"
 
 ;$C5C7C6 (sprite graphic)
-SPRITE_GRAPHIC_0BC0:
-	incbin "data/objects/graphics/sprite_graphic_0BC0.bin"
+isle_bat_frame3:
+	incbin "data/objects/graphics/isle_bat_frame3.bin"
 
 ;$C5C812 (sprite graphic)
-SPRITE_GRAPHIC_0BC4:
-	incbin "data/objects/graphics/sprite_graphic_0BC4.bin"
+isle_bat_frame4:
+	incbin "data/objects/graphics/isle_bat_frame4.bin"
 
 ;$C5C83C (sprite graphic)
-SPRITE_GRAPHIC_0BC8:
-	incbin "data/objects/graphics/sprite_graphic_0BC8.bin"
+isle_bat_frame5:
+	incbin "data/objects/graphics/isle_bat_frame5.bin"
 
 ;$C5C866 (sprite graphic)
-SPRITE_GRAPHIC_0BCC:
-	incbin "data/objects/graphics/sprite_graphic_0BCC.bin"
+isle_bat_frame6:
+	incbin "data/objects/graphics/isle_bat_frame6.bin"
 
 ;$C5C8B2 (sprite graphic)
-SPRITE_GRAPHIC_0BD0:
-	incbin "data/objects/graphics/sprite_graphic_0BD0.bin"
+isle_bat_frame7:
+	incbin "data/objects/graphics/isle_bat_frame7.bin"
 
 ;$C5C8FE (sprite graphic)
-SPRITE_GRAPHIC_0BD4:
-	incbin "data/objects/graphics/sprite_graphic_0BD4.bin"
+isle_bat_frame8:
+	incbin "data/objects/graphics/isle_bat_frame8.bin"
 
 ;$C5C94A (sprite graphic)
-SPRITE_GRAPHIC_0BD8:
-	incbin "data/objects/graphics/sprite_graphic_0BD8.bin"
+isle_bat_frame9:
+	incbin "data/objects/graphics/isle_bat_frame9.bin"
 
 ;$C5C974 (sprite graphic)
-SPRITE_GRAPHIC_0BDC:
-	incbin "data/objects/graphics/sprite_graphic_0BDC.bin"
+isle_bat_frame10:
+	incbin "data/objects/graphics/isle_bat_frame10.bin"
 
 ;$C5C9C0 (sprite graphic)
-SPRITE_GRAPHIC_0BE0:
-	incbin "data/objects/graphics/sprite_graphic_0BE0.bin"
+isle_bat_frame11:
+	incbin "data/objects/graphics/isle_bat_frame11.bin"
 
 ;$C5C9EA (sprite graphic)
-SPRITE_GRAPHIC_0BE4:
-	incbin "data/objects/graphics/sprite_graphic_0BE4.bin"
+isle_bat_frame12:
+	incbin "data/objects/graphics/isle_bat_frame12.bin"
 
 ;$C5CA36 (sprite graphic)
-SPRITE_GRAPHIC_0BE8:
-	incbin "data/objects/graphics/sprite_graphic_0BE8.bin"
+isle_bat_frame13:
+	incbin "data/objects/graphics/isle_bat_frame13.bin"
 
 ;$C5CA60 (sprite graphic)
-SPRITE_GRAPHIC_0BEC:
-	incbin "data/objects/graphics/sprite_graphic_0BEC.bin"
+isle_bat_frame14:
+	incbin "data/objects/graphics/isle_bat_frame14.bin"
 
 ;$C5CA8A (sprite graphic)
-SPRITE_GRAPHIC_0BF0:
-	incbin "data/objects/graphics/sprite_graphic_0BF0.bin"
+isle_bat_frame15:
+	incbin "data/objects/graphics/isle_bat_frame15.bin"
 
 ;$C5CAD6 (sprite graphic)
-SPRITE_GRAPHIC_0BF4:
-	incbin "data/objects/graphics/sprite_graphic_0BF4.bin"
+isle_bat_frame16:
+	incbin "data/objects/graphics/isle_bat_frame16.bin"
 
 ;$C5CB22 (sprite graphic)
-SPRITE_GRAPHIC_0BF8:
-	incbin "data/objects/graphics/sprite_graphic_0BF8.bin"
+isle_bat_frame17:
+	incbin "data/objects/graphics/isle_bat_frame17.bin"
 
 ;$C5CB4C (sprite graphic)
-SPRITE_GRAPHIC_0BFC:
-	incbin "data/objects/graphics/sprite_graphic_0BFC.bin"
+isle_bat_frame18:
+	incbin "data/objects/graphics/isle_bat_frame18.bin"
 
 ;$C5CB76 (sprite graphic)
-SPRITE_GRAPHIC_0C00:
-	incbin "data/objects/graphics/sprite_graphic_0C00.bin"
+isle_bat_frame19:
+	incbin "data/objects/graphics/isle_bat_frame19.bin"
 
 ;$C5CBC2 (sprite graphic)
-SPRITE_GRAPHIC_0C04:
-	incbin "data/objects/graphics/sprite_graphic_0C04.bin"
+isle_bat_frame20:
+	incbin "data/objects/graphics/isle_bat_frame20.bin"
 
 ;$C5CBEC (sprite graphic)
-SPRITE_GRAPHIC_0C08:
-	incbin "data/objects/graphics/sprite_graphic_0C08.bin"
+isle_bat_frame21:
+	incbin "data/objects/graphics/isle_bat_frame21.bin"
 
 ;$C5CC16 (sprite graphic)
-SPRITE_GRAPHIC_0C0C:
-	incbin "data/objects/graphics/sprite_graphic_0C0C.bin"
+isle_bat_frame22:
+	incbin "data/objects/graphics/isle_bat_frame22.bin"
 
 ;$C5CC62 (sprite graphic)
-SPRITE_GRAPHIC_0C10:
-	incbin "data/objects/graphics/sprite_graphic_0C10.bin"
+isle_bat_frame23:
+	incbin "data/objects/graphics/isle_bat_frame23.bin"
 
 ;$C5CCAE (sprite graphic)
-SPRITE_GRAPHIC_0C14:
-	incbin "data/objects/graphics/sprite_graphic_0C14.bin"
+isle_bat_frame24:
+	incbin "data/objects/graphics/isle_bat_frame24.bin"
 
 ;$C5CCFA (sprite graphic)
-SPRITE_GRAPHIC_0C18:
-	incbin "data/objects/graphics/sprite_graphic_0C18.bin"
+isle_bat_frame25:
+	incbin "data/objects/graphics/isle_bat_frame25.bin"
 
 ;$C5CD24 (sprite graphic)
-SPRITE_GRAPHIC_0C1C:
-	incbin "data/objects/graphics/sprite_graphic_0C1C.bin"
+isle_bat_frame26:
+	incbin "data/objects/graphics/isle_bat_frame26.bin"
 
 ;$C5CD70 (sprite graphic)
-SPRITE_GRAPHIC_0C20:
-	incbin "data/objects/graphics/sprite_graphic_0C20.bin"
+isle_bat_frame27:
+	incbin "data/objects/graphics/isle_bat_frame27.bin"
 
 ;$C5CD9A (sprite graphic)
-SPRITE_GRAPHIC_0C24:
-	incbin "data/objects/graphics/sprite_graphic_0C24.bin"
+isle_bat_frame28:
+	incbin "data/objects/graphics/isle_bat_frame28.bin"
 
 ;$C5CDE6 (sprite graphic)
-SPRITE_GRAPHIC_0C28:
-	incbin "data/objects/graphics/sprite_graphic_0C28.bin"
+isle_bat_frame29:
+	incbin "data/objects/graphics/isle_bat_frame29.bin"
 
 ;$C5CE10 (sprite graphic)
-SPRITE_GRAPHIC_0C2C:
-	incbin "data/objects/graphics/sprite_graphic_0C2C.bin"
+isle_bat_frame30:
+	incbin "data/objects/graphics/isle_bat_frame30.bin"
 
 ;$C5CE5C (sprite graphic)
-SPRITE_GRAPHIC_0C30:
-	incbin "data/objects/graphics/sprite_graphic_0C30.bin"
+isle_bat_frame31:
+	incbin "data/objects/graphics/isle_bat_frame31.bin"
 
 ;$C5CEA8 (sprite graphic)
-SPRITE_GRAPHIC_0C34:
-	incbin "data/objects/graphics/sprite_graphic_0C34.bin"
+isle_bat_frame32:
+	incbin "data/objects/graphics/isle_bat_frame32.bin"
 
 ;$C5CEF4 (sprite graphic)
-SPRITE_GRAPHIC_0C38:
-	incbin "data/objects/graphics/sprite_graphic_0C38.bin"
+isle_flag_frame1:
+	incbin "data/objects/graphics/isle_flag_frame1.bin"
 
 ;$C5D006 (sprite graphic)
-SPRITE_GRAPHIC_0C3C:
-	incbin "data/objects/graphics/sprite_graphic_0C3C.bin"
+isle_flag_frame2:
+	incbin "data/objects/graphics/isle_flag_frame2.bin"
 
 ;$C5D118 (sprite graphic)
-SPRITE_GRAPHIC_0C40:
-	incbin "data/objects/graphics/sprite_graphic_0C40.bin"
+isle_flag_frame3:
+	incbin "data/objects/graphics/isle_flag_frame3.bin"
 
 ;$C5D22A (sprite graphic)
-SPRITE_GRAPHIC_0C44:
-	incbin "data/objects/graphics/sprite_graphic_0C44.bin"
+isle_flag_frame4:
+	incbin "data/objects/graphics/isle_flag_frame4.bin"
 
 ;$C5D33C (sprite graphic)
-SPRITE_GRAPHIC_0C48:
-	incbin "data/objects/graphics/sprite_graphic_0C48.bin"
+isle_flag_frame5:
+	incbin "data/objects/graphics/isle_flag_frame5.bin"
 
 ;$C5D44E (sprite graphic)
-SPRITE_GRAPHIC_0C4C:
-	incbin "data/objects/graphics/sprite_graphic_0C4C.bin"
+isle_flag_frame6:
+	incbin "data/objects/graphics/isle_flag_frame6.bin"
 
 ;$C5D560 (sprite graphic)
-SPRITE_GRAPHIC_0C50:
-	incbin "data/objects/graphics/sprite_graphic_0C50.bin"
+isle_flag_frame7:
+	incbin "data/objects/graphics/isle_flag_frame7.bin"
 
 ;$C5D672 (sprite graphic)
-SPRITE_GRAPHIC_0C54:
-	incbin "data/objects/graphics/sprite_graphic_0C54.bin"
+isle_flag_frame8:
+	incbin "data/objects/graphics/isle_flag_frame8.bin"
 
 ;$C5D784 (sprite graphic)
-SPRITE_GRAPHIC_0C58:
-	incbin "data/objects/graphics/sprite_graphic_0C58.bin"
+isle_flag_frame9:
+	incbin "data/objects/graphics/isle_flag_frame9.bin"
 
 ;$C5D896 (sprite graphic)
-SPRITE_GRAPHIC_0C5C:
-	incbin "data/objects/graphics/sprite_graphic_0C5C.bin"
+isle_flag_frame10:
+	incbin "data/objects/graphics/isle_flag_frame10.bin"
 
 ;$C5D9A8 (sprite graphic)
-SPRITE_GRAPHIC_0C60:
-	incbin "data/objects/graphics/sprite_graphic_0C60.bin"
+isle_flag_frame11:
+	incbin "data/objects/graphics/isle_flag_frame11.bin"
 
 ;$C5DABA (sprite graphic)
-SPRITE_GRAPHIC_0C64:
-	incbin "data/objects/graphics/sprite_graphic_0C64.bin"
+isle_flag_frame12:
+	incbin "data/objects/graphics/isle_flag_frame12.bin"
 
 ;$C5DBCC (sprite graphic)
-SPRITE_GRAPHIC_0C68:
-	incbin "data/objects/graphics/sprite_graphic_0C68.bin"
+smoke_puff_frame1:
+	incbin "data/objects/graphics/smoke_puff_frame1.bin"
 
 ;$C5DC18 (sprite graphic)
-SPRITE_GRAPHIC_0C6C:
-	incbin "data/objects/graphics/sprite_graphic_0C6C.bin"
+smoke_puff_frame2:
+	incbin "data/objects/graphics/smoke_puff_frame2.bin"
 
 ;$C5DC86 (sprite graphic)
-SPRITE_GRAPHIC_0C70:
-	incbin "data/objects/graphics/sprite_graphic_0C70.bin"
+smoke_puff_frame3:
+	incbin "data/objects/graphics/smoke_puff_frame3.bin"
 
 ;$C5DCF4 (sprite graphic)
-SPRITE_GRAPHIC_0C74:
-	incbin "data/objects/graphics/sprite_graphic_0C74.bin"
+smoke_puff_frame4:
+	incbin "data/objects/graphics/smoke_puff_frame4.bin"
 
 ;$C5DDA0 (sprite graphic)
-SPRITE_GRAPHIC_0C78:
-	incbin "data/objects/graphics/sprite_graphic_0C78.bin"
+smoke_puff_frame5:
+	incbin "data/objects/graphics/smoke_puff_frame5.bin"
 
 ;$C5DEB2 (sprite graphic)
-SPRITE_GRAPHIC_0C7C:
-	incbin "data/objects/graphics/sprite_graphic_0C7C.bin"
+smoke_puff_frame6:
+	incbin "data/objects/graphics/smoke_puff_frame6.bin"
 
 ;$C5DFE6 (sprite graphic)
-SPRITE_GRAPHIC_0C80:
-	incbin "data/objects/graphics/sprite_graphic_0C80.bin"
+smoke_puff_frame7:
+	incbin "data/objects/graphics/smoke_puff_frame7.bin"
 
 ;$C5E17A (sprite graphic)
-SPRITE_GRAPHIC_0C84:
-	incbin "data/objects/graphics/sprite_graphic_0C84.bin"
+smoke_puff_frame8:
+	incbin "data/objects/graphics/smoke_puff_frame8.bin"
 
 ;$C5E36E (sprite graphic)
-SPRITE_GRAPHIC_0C88:
-	incbin "data/objects/graphics/sprite_graphic_0C88.bin"
+smoke_puff_frame9:
+	incbin "data/objects/graphics/smoke_puff_frame9.bin"
 
 ;$C5E57E (sprite graphic)
-SPRITE_GRAPHIC_0C8C:
-	incbin "data/objects/graphics/sprite_graphic_0C8C.bin"
+smoke_puff_frame10:
+	incbin "data/objects/graphics/smoke_puff_frame10.bin"
 
 ;$C5E750 (sprite graphic)
-SPRITE_GRAPHIC_0C90:
-	incbin "data/objects/graphics/sprite_graphic_0C90.bin"
+smoke_puff_frame11:
+	incbin "data/objects/graphics/smoke_puff_frame11.bin"
 
 ;$C5E8A0 (sprite graphic)
-SPRITE_GRAPHIC_0C94:
-	incbin "data/objects/graphics/sprite_graphic_0C94.bin"
+smoke_puff_frame12:
+	incbin "data/objects/graphics/smoke_puff_frame12.bin"
 
 ;$C5E9D4 (sprite graphic)
-SPRITE_GRAPHIC_0C98:
-	incbin "data/objects/graphics/sprite_graphic_0C98.bin"
+smoke_puff_frame13:
+	incbin "data/objects/graphics/smoke_puff_frame13.bin"
 
 ;$C5EAC4 (sprite graphic)
-SPRITE_GRAPHIC_0C9C:
-	incbin "data/objects/graphics/sprite_graphic_0C9C.bin"
+smoke_puff_frame14:
+	incbin "data/objects/graphics/smoke_puff_frame14.bin"
 
 ;$C5EBB4 (sprite graphic)
-SPRITE_GRAPHIC_0CA0:
-	incbin "data/objects/graphics/sprite_graphic_0CA0.bin"
+smoke_puff_frame15:
+	incbin "data/objects/graphics/smoke_puff_frame15.bin"
 
 ;$C5EC82 (sprite graphic)
-SPRITE_GRAPHIC_0CA4:
-	incbin "data/objects/graphics/sprite_graphic_0CA4.bin"
+smoke_puff_frame16:
+	incbin "data/objects/graphics/smoke_puff_frame16.bin"
 
 ;$C5ED50 (sprite graphic)
-SPRITE_GRAPHIC_0CA8:
-	incbin "data/objects/graphics/sprite_graphic_0CA8.bin"
+isle_shark_frame1:
+	incbin "data/objects/graphics/isle_shark_frame1.bin"
 
 ;$C5EDE0 (sprite graphic)
-SPRITE_GRAPHIC_0CAC:
-	incbin "data/objects/graphics/sprite_graphic_0CAC.bin"
+isle_shark_frame2:
+	incbin "data/objects/graphics/isle_shark_frame2.bin"
 
 ;$C5EE70 (sprite graphic)
-SPRITE_GRAPHIC_0CB0:
-	incbin "data/objects/graphics/sprite_graphic_0CB0.bin"
+isle_shark_frame3:
+	incbin "data/objects/graphics/isle_shark_frame3.bin"
 
 ;$C5EEDE (sprite graphic)
-SPRITE_GRAPHIC_0CB4:
-	incbin "data/objects/graphics/sprite_graphic_0CB4.bin"
+isle_shark_frame4:
+	incbin "data/objects/graphics/isle_shark_frame4.bin"
 
 ;$C5EF4C (sprite graphic)
-SPRITE_GRAPHIC_0CB8:
-	incbin "data/objects/graphics/sprite_graphic_0CB8.bin"
+isle_shark_frame5:
+	incbin "data/objects/graphics/isle_shark_frame5.bin"
 
 ;$C5EF98 (sprite graphic)
-SPRITE_GRAPHIC_0CBC:
-	incbin "data/objects/graphics/sprite_graphic_0CBC.bin"
+isle_shark_frame6:
+	incbin "data/objects/graphics/isle_shark_frame6.bin"
 
 ;$C5EFE4 (sprite graphic)
-SPRITE_GRAPHIC_0CC0:
-	incbin "data/objects/graphics/sprite_graphic_0CC0.bin"
+isle_shark_frame7:
+	incbin "data/objects/graphics/isle_shark_frame7.bin"
 
 ;$C5F052 (sprite graphic)
-SPRITE_GRAPHIC_0CC4:
-	incbin "data/objects/graphics/sprite_graphic_0CC4.bin"
+isle_shark_frame8:
+	incbin "data/objects/graphics/isle_shark_frame8.bin"
 
 ;$C5F0C0 (sprite graphic)
-SPRITE_GRAPHIC_0CC8:
-	incbin "data/objects/graphics/sprite_graphic_0CC8.bin"
+isle_shark_frame9:
+	incbin "data/objects/graphics/isle_shark_frame9.bin"
 
 ;$C5F150 (sprite graphic)
-SPRITE_GRAPHIC_0CCC:
-	incbin "data/objects/graphics/sprite_graphic_0CCC.bin"
+isle_shark_frame10:
+	incbin "data/objects/graphics/isle_shark_frame10.bin"
 
 ;$C5F1BE (sprite graphic)
-SPRITE_GRAPHIC_0CD0:
-	incbin "data/objects/graphics/sprite_graphic_0CD0.bin"
+isle_shark_frame11:
+	incbin "data/objects/graphics/isle_shark_frame11.bin"
 
 ;$C5F22C (sprite graphic)
-SPRITE_GRAPHIC_0CD4:
-	incbin "data/objects/graphics/sprite_graphic_0CD4.bin"
+isle_shark_frame12:
+	incbin "data/objects/graphics/isle_shark_frame12.bin"
 
 ;$C5F29A (sprite graphic)
-SPRITE_GRAPHIC_0CD8:
-	incbin "data/objects/graphics/sprite_graphic_0CD8.bin"
+isle_shark_frame13:
+	incbin "data/objects/graphics/isle_shark_frame13.bin"
 
 ;$C5F2E6 (sprite graphic)
-SPRITE_GRAPHIC_0CDC:
-	incbin "data/objects/graphics/sprite_graphic_0CDC.bin"
+isle_shark_frame14:
+	incbin "data/objects/graphics/isle_shark_frame14.bin"
 
 ;$C5F332 (sprite graphic)
-SPRITE_GRAPHIC_0CE0:
-	incbin "data/objects/graphics/sprite_graphic_0CE0.bin"
+isle_shark_frame15:
+	incbin "data/objects/graphics/isle_shark_frame15.bin"
 
 ;$C5F3A0 (sprite graphic)
-SPRITE_GRAPHIC_0CE4:
-	incbin "data/objects/graphics/sprite_graphic_0CE4.bin"
+isle_shark_frame16:
+	incbin "data/objects/graphics/isle_shark_frame16.bin"
 
 ;$C5F40E (sprite graphic)
-SPRITE_GRAPHIC_0CE8:
-	incbin "data/objects/graphics/sprite_graphic_0CE8.bin"
+isle_zinger_frame1:
+	incbin "data/objects/graphics/isle_zinger_frame1.bin"
 
 ;$C5F47C (sprite graphic)
-SPRITE_GRAPHIC_0CEC:
-	incbin "data/objects/graphics/sprite_graphic_0CEC.bin"
+isle_zinger_frame2:
+	incbin "data/objects/graphics/isle_zinger_frame2.bin"
 
 ;$C5F506 (sprite graphic)
-SPRITE_GRAPHIC_0CF0:
-	incbin "data/objects/graphics/sprite_graphic_0CF0.bin"
+isle_zinger_frame3:
+	incbin "data/objects/graphics/isle_zinger_frame3.bin"
 
 ;$C5F5B2 (sprite graphic)
-SPRITE_GRAPHIC_0CF4:
-	incbin "data/objects/graphics/sprite_graphic_0CF4.bin"
+isle_zinger_frame4:
+	incbin "data/objects/graphics/isle_zinger_frame4.bin"
 
 ;$C5F63C (sprite graphic)
-SPRITE_GRAPHIC_0CF8:
-	incbin "data/objects/graphics/sprite_graphic_0CF8.bin"
+isle_zinger_frame5:
+	incbin "data/objects/graphics/isle_zinger_frame5.bin"
 
 ;$C5F6AA (sprite graphic)
-SPRITE_GRAPHIC_0CFC:
-	incbin "data/objects/graphics/sprite_graphic_0CFC.bin"
+isle_zinger_frame6:
+	incbin "data/objects/graphics/isle_zinger_frame6.bin"
 
 ;$C5F734 (sprite graphic)
-SPRITE_GRAPHIC_0D00:
-	incbin "data/objects/graphics/sprite_graphic_0D00.bin"
+isle_zinger_frame7:
+	incbin "data/objects/graphics/isle_zinger_frame7.bin"
 
 ;$C5F7C4 (sprite graphic)
-SPRITE_GRAPHIC_0D04:
-	incbin "data/objects/graphics/sprite_graphic_0D04.bin"
+isle_zinger_frame8:
+	incbin "data/objects/graphics/isle_zinger_frame8.bin"
 
 ;$C5F84E (sprite graphic)
-SPRITE_GRAPHIC_0D08:
-	incbin "data/objects/graphics/sprite_graphic_0D08.bin"
+dixie_swim_frame1:
+	incbin "data/objects/graphics/dixie_swim_frame1.bin"
 
 check bankcross off
 ;$C5FAA8
@@ -2545,480 +2545,480 @@ swankys_bonus_bonanza_8x8_tilemap:
 check bankcross full
 
 ;$C60169 (sprite graphic)
-SPRITE_GRAPHIC_0D0C:
-	incbin "data/objects/graphics/sprite_graphic_0D0C.bin"
+dixie_swim_frame2:
+	incbin "data/objects/graphics/dixie_swim_frame2.bin"
 
 ;$C603C3 (sprite graphic)
-SPRITE_GRAPHIC_0D10:
-	incbin "data/objects/graphics/sprite_graphic_0D10.bin"
+dixie_swim_frame3:
+	incbin "data/objects/graphics/dixie_swim_frame3.bin"
 
 ;$C6061D (sprite graphic)
-SPRITE_GRAPHIC_0D14:
-	incbin "data/objects/graphics/sprite_graphic_0D14.bin"
+dixie_swim_frame4:
+	incbin "data/objects/graphics/dixie_swim_frame4.bin"
 
 ;$C6087D (sprite graphic)
-SPRITE_GRAPHIC_0D18:
-	incbin "data/objects/graphics/sprite_graphic_0D18.bin"
+dixie_swim_frame5:
+	incbin "data/objects/graphics/dixie_swim_frame5.bin"
 
 ;$C60AFF (sprite graphic)
-SPRITE_GRAPHIC_0D1C:
-	incbin "data/objects/graphics/sprite_graphic_0D1C.bin"
+dixie_swim_frame6:
+	incbin "data/objects/graphics/dixie_swim_frame6.bin"
 
 ;$C60D5F (sprite graphic)
-SPRITE_GRAPHIC_0D20:
-	incbin "data/objects/graphics/sprite_graphic_0D20.bin"
+dixie_swim_frame7:
+	incbin "data/objects/graphics/dixie_swim_frame7.bin"
 
 ;$C60F9D (sprite graphic)
-SPRITE_GRAPHIC_0D24:
-	incbin "data/objects/graphics/sprite_graphic_0D24.bin"
+dixie_swim_frame8:
+	incbin "data/objects/graphics/dixie_swim_frame8.bin"
 
 ;$C611FD (sprite graphic)
-SPRITE_GRAPHIC_0D28:
-	incbin "data/objects/graphics/sprite_graphic_0D28.bin"
+dixie_swim_frame9:
+	incbin "data/objects/graphics/dixie_swim_frame9.bin"
 
 ;$C6143B (sprite graphic)
-SPRITE_GRAPHIC_0D2C:
-	incbin "data/objects/graphics/sprite_graphic_0D2C.bin"
+dixie_swim_frame10:
+	incbin "data/objects/graphics/dixie_swim_frame10.bin"
 
 ;$C61679 (sprite graphic)
-SPRITE_GRAPHIC_0D30:
-	incbin "data/objects/graphics/sprite_graphic_0D30.bin"
+dixie_swim_frame11:
+	incbin "data/objects/graphics/dixie_swim_frame11.bin"
 
 ;$C618B7 (sprite graphic)
-SPRITE_GRAPHIC_0D34:
-	incbin "data/objects/graphics/sprite_graphic_0D34.bin"
+dixie_swim_frame12:
+	incbin "data/objects/graphics/dixie_swim_frame12.bin"
 
 ;$C61AF5 (sprite graphic)
-SPRITE_GRAPHIC_0D38:
-	incbin "data/objects/graphics/sprite_graphic_0D38.bin"
+dixie_swim_frame13:
+	incbin "data/objects/graphics/dixie_swim_frame13.bin"
 
 ;$C61D11 (sprite graphic)
-SPRITE_GRAPHIC_0D3C:
-	incbin "data/objects/graphics/sprite_graphic_0D3C.bin"
+dixie_swim_frame14:
+	incbin "data/objects/graphics/dixie_swim_frame14.bin"
 
 ;$C61F2D (sprite graphic)
-SPRITE_GRAPHIC_0D40:
-	incbin "data/objects/graphics/sprite_graphic_0D40.bin"
+dixie_swim_frame15:
+	incbin "data/objects/graphics/dixie_swim_frame15.bin"
 
 ;$C6218D (sprite graphic)
-SPRITE_GRAPHIC_0D44:
-	incbin "data/objects/graphics/sprite_graphic_0D44.bin"
+dixie_swim_frame16:
+	incbin "data/objects/graphics/dixie_swim_frame16.bin"
 
 ;$C623ED (sprite graphic)
-SPRITE_GRAPHIC_0D48:
-	incbin "data/objects/graphics/sprite_graphic_0D48.bin"
+sun_graphic:
+	incbin "data/objects/graphics/sun_graphic.bin"
 
 ;$C625FD (sprite graphic)
-SPRITE_GRAPHIC_0D4C:
-	incbin "data/objects/graphics/sprite_graphic_0D4C.bin"
+rattly_jump_frame1:
+	incbin "data/objects/graphics/rattly_jump_frame1.bin"
 
 ;$C6289B (sprite graphic)
-SPRITE_GRAPHIC_0D50:
-	incbin "data/objects/graphics/sprite_graphic_0D50.bin"
+rattly_jump_frame2:
+	incbin "data/objects/graphics/rattly_jump_frame2.bin"
 
 ;$C62B39 (sprite graphic)
-SPRITE_GRAPHIC_0D54:
-	incbin "data/objects/graphics/sprite_graphic_0D54.bin"
+rattly_jump_frame3:
+	incbin "data/objects/graphics/rattly_jump_frame3.bin"
 
 ;$C62DD7 (sprite graphic)
-SPRITE_GRAPHIC_0D58:
-	incbin "data/objects/graphics/sprite_graphic_0D58.bin"
+rattly_jump_frame4:
+	incbin "data/objects/graphics/rattly_jump_frame4.bin"
 
 ;$C63091 (sprite graphic)
-SPRITE_GRAPHIC_0D5C:
-	incbin "data/objects/graphics/sprite_graphic_0D5C.bin"
+rattly_jump_frame5:
+	incbin "data/objects/graphics/rattly_jump_frame5.bin"
 
 ;$C63351 (sprite graphic)
-SPRITE_GRAPHIC_0D60:
-	incbin "data/objects/graphics/sprite_graphic_0D60.bin"
+rattly_jump_frame6:
+	incbin "data/objects/graphics/rattly_jump_frame6.bin"
 
 ;$C6362D (sprite graphic)
-SPRITE_GRAPHIC_0D64:
-	incbin "data/objects/graphics/sprite_graphic_0D64.bin"
+rattly_jump_frame7:
+	incbin "data/objects/graphics/rattly_jump_frame7.bin"
 
 ;$C63909 (sprite graphic)
-SPRITE_GRAPHIC_0D68:
-	incbin "data/objects/graphics/sprite_graphic_0D68.bin"
+rattly_jump_frame8:
+	incbin "data/objects/graphics/rattly_jump_frame8.bin"
 
 ;$C63C07 (sprite graphic)
-SPRITE_GRAPHIC_0D6C:
-	incbin "data/objects/graphics/sprite_graphic_0D6C.bin"
+rattly_jump_frame9:
+	incbin "data/objects/graphics/rattly_jump_frame9.bin"
 
 ;$C63F49 (sprite graphic)
-SPRITE_GRAPHIC_0D70:
-	incbin "data/objects/graphics/sprite_graphic_0D70.bin"
+rattly_jump_frame10:
+	incbin "data/objects/graphics/rattly_jump_frame10.bin"
 
 ;$C642A7 (sprite graphic)
-SPRITE_GRAPHIC_0D74:
-	incbin "data/objects/graphics/sprite_graphic_0D74.bin"
+rattly_jump_frame11:
+	incbin "data/objects/graphics/rattly_jump_frame11.bin"
 
 ;$C64611 (sprite graphic)
-SPRITE_GRAPHIC_0D78:
-	incbin "data/objects/graphics/sprite_graphic_0D78.bin"
+rattly_jump_frame12:
+	incbin "data/objects/graphics/rattly_jump_frame12.bin"
 
 ;$C64959 (sprite graphic)
-SPRITE_GRAPHIC_0D7C:
-	incbin "data/objects/graphics/sprite_graphic_0D7C.bin"
+rattly_jump_frame13:
+	incbin "data/objects/graphics/rattly_jump_frame13.bin"
 
 ;$C64CA1 (sprite graphic)
-SPRITE_GRAPHIC_0D80:
-	incbin "data/objects/graphics/sprite_graphic_0D80.bin"
+rattly_jump_frame14:
+	incbin "data/objects/graphics/rattly_jump_frame14.bin"
 
 ;$C64FE9 (sprite graphic)
-SPRITE_GRAPHIC_0D84:
-	incbin "data/objects/graphics/sprite_graphic_0D84.bin"
+rattly_jump_frame15:
+	incbin "data/objects/graphics/rattly_jump_frame15.bin"
 
 ;$C65331 (sprite graphic)
-SPRITE_GRAPHIC_0D88:
-	incbin "data/objects/graphics/sprite_graphic_0D88.bin"
+flash_frame1:
+	incbin "data/objects/graphics/flash_frame1.bin"
 
 ;$C653BB (sprite graphic)
-SPRITE_GRAPHIC_0D8C:
-	incbin "data/objects/graphics/sprite_graphic_0D8C.bin"
+flash_frame2:
+	incbin "data/objects/graphics/flash_frame2.bin"
 
 ;$C654CD (sprite graphic)
-SPRITE_GRAPHIC_0D90:
-	incbin "data/objects/graphics/sprite_graphic_0D90.bin"
+flash_frame3:
+	incbin "data/objects/graphics/flash_frame3.bin"
 
 ;$C656E3 (sprite graphic)
-SPRITE_GRAPHIC_0D94:
-	incbin "data/objects/graphics/sprite_graphic_0D94.bin"
+flash_frame4:
+	incbin "data/objects/graphics/flash_frame4.bin"
 
 ;$C65959 (sprite graphic)
-SPRITE_GRAPHIC_0D98:
-	incbin "data/objects/graphics/sprite_graphic_0D98.bin"
+flash_frame5:
+	incbin "data/objects/graphics/flash_frame5.bin"
 
 ;$C65BA3 (sprite graphic)
-SPRITE_GRAPHIC_0D9C:
-	incbin "data/objects/graphics/sprite_graphic_0D9C.bin"
+flash_frame6:
+	incbin "data/objects/graphics/flash_frame6.bin"
 
 ;$C65D65 (sprite graphic)
-SPRITE_GRAPHIC_0DA0:
-	incbin "data/objects/graphics/sprite_graphic_0DA0.bin"
+dixie_ride_rattly_frame1:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame1.bin"
 
 ;$C65F9D (sprite graphic)
-SPRITE_GRAPHIC_0DA4:
-	incbin "data/objects/graphics/sprite_graphic_0DA4.bin"
+dixie_ride_rattly_frame2:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame2.bin"
 
 ;$C661F1 (sprite graphic)
-SPRITE_GRAPHIC_0DA8:
-	incbin "data/objects/graphics/sprite_graphic_0DA8.bin"
+dixie_ride_rattly_frame3:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame3.bin"
 
 ;$C6644B (sprite graphic)
-SPRITE_GRAPHIC_0DAC:
-	incbin "data/objects/graphics/sprite_graphic_0DAC.bin"
+dixie_ride_rattly_frame4:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame4.bin"
 
 ;$C66683 (sprite graphic)
-SPRITE_GRAPHIC_0DB0:
-	incbin "data/objects/graphics/sprite_graphic_0DB0.bin"
+dixie_ride_rattly_frame5:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame5.bin"
 
 ;$C668DD (sprite graphic)
-SPRITE_GRAPHIC_0DB4:
-	incbin "data/objects/graphics/sprite_graphic_0DB4.bin"
+dixie_ride_rattly_frame6:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame6.bin"
 
 ;$C66B37 (sprite graphic)
-SPRITE_GRAPHIC_0DB8:
-	incbin "data/objects/graphics/sprite_graphic_0DB8.bin"
+dixie_ride_rattly_frame7:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame7.bin"
 
 ;$C66D91 (sprite graphic)
-SPRITE_GRAPHIC_0DBC:
-	incbin "data/objects/graphics/sprite_graphic_0DBC.bin"
+dixie_ride_rattly_frame8:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame8.bin"
 
 ;$C66FC9 (sprite graphic)
-SPRITE_GRAPHIC_0DC0:
-	incbin "data/objects/graphics/sprite_graphic_0DC0.bin"
+dixie_ride_rattly_frame9:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame9.bin"
 
 ;$C67223 (sprite graphic)
-SPRITE_GRAPHIC_0DC4:
-	incbin "data/objects/graphics/sprite_graphic_0DC4.bin"
+dixie_ride_rattly_frame10:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame10.bin"
 
 ;$C6745B (sprite graphic)
-SPRITE_GRAPHIC_0DC8:
-	incbin "data/objects/graphics/sprite_graphic_0DC8.bin"
+dixie_ride_rattly_frame11:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame11.bin"
 
 ;$C67693 (sprite graphic)
-SPRITE_GRAPHIC_0DCC:
-	incbin "data/objects/graphics/sprite_graphic_0DCC.bin"
+dixie_ride_rattly_frame12:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame12.bin"
 
 ;$C678CB (sprite graphic)
-SPRITE_GRAPHIC_0DD0:
-	incbin "data/objects/graphics/sprite_graphic_0DD0.bin"
+dixie_ride_rattly_frame13:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame13.bin"
 
 ;$C67B03 (sprite graphic)
-SPRITE_GRAPHIC_0DD4:
-	incbin "data/objects/graphics/sprite_graphic_0DD4.bin"
+dixie_ride_rattly_frame14:
+	incbin "data/objects/graphics/dixie_ride_rattly_frame14.bin"
 
 ;$C67D3B (sprite graphic)
-SPRITE_GRAPHIC_0DD8:
-	incbin "data/objects/graphics/sprite_graphic_0DD8.bin"
+lockjaw_idle_frame1:
+	incbin "data/objects/graphics/lockjaw_idle_frame1.bin"
 
 ;$C67EF1 (sprite graphic)
-SPRITE_GRAPHIC_0DDC:
-	incbin "data/objects/graphics/sprite_graphic_0DDC.bin"
+lockjaw_idle_frame2:
+	incbin "data/objects/graphics/lockjaw_idle_frame2.bin"
 
 ;$C68085 (sprite graphic)
-SPRITE_GRAPHIC_0DE0:
-	incbin "data/objects/graphics/sprite_graphic_0DE0.bin"
+lockjaw_idle_frame3:
+	incbin "data/objects/graphics/lockjaw_idle_frame3.bin"
 
 ;$C68219 (sprite graphic)
-SPRITE_GRAPHIC_0DE4:
-	incbin "data/objects/graphics/sprite_graphic_0DE4.bin"
+lockjaw_idle_frame4:
+	incbin "data/objects/graphics/lockjaw_idle_frame4.bin"
 
 ;$C683CF (sprite graphic)
-SPRITE_GRAPHIC_0DE8:
-	incbin "data/objects/graphics/sprite_graphic_0DE8.bin"
+lockjaw_idle_frame5:
+	incbin "data/objects/graphics/lockjaw_idle_frame5.bin"
 
 ;$C68585 (sprite graphic)
-SPRITE_GRAPHIC_0DEC:
-	incbin "data/objects/graphics/sprite_graphic_0DEC.bin"
+lockjaw_idle_frame6:
+	incbin "data/objects/graphics/lockjaw_idle_frame6.bin"
 
 ;$C6873B (sprite graphic)
-SPRITE_GRAPHIC_0DF0:
-	incbin "data/objects/graphics/sprite_graphic_0DF0.bin"
+lockjaw_idle_frame7:
+	incbin "data/objects/graphics/lockjaw_idle_frame7.bin"
 
 ;$C688B3 (sprite graphic)
-SPRITE_GRAPHIC_0DF4:
-	incbin "data/objects/graphics/sprite_graphic_0DF4.bin"
+lockjaw_idle_frame8:
+	incbin "data/objects/graphics/lockjaw_idle_frame8.bin"
 
 ;$C68A47 (sprite graphic)
-SPRITE_GRAPHIC_0DF8:
-	incbin "data/objects/graphics/sprite_graphic_0DF8.bin"
+lockjaw_idle_frame9:
+	incbin "data/objects/graphics/lockjaw_idle_frame9.bin"
 
 ;$C68B9D (sprite graphic)
-SPRITE_GRAPHIC_0DFC:
-	incbin "data/objects/graphics/sprite_graphic_0DFC.bin"
+lockjaw_idle_frame10:
+	incbin "data/objects/graphics/lockjaw_idle_frame10.bin"
 
 ;$C68D31 (sprite graphic)
-SPRITE_GRAPHIC_0E00:
-	incbin "data/objects/graphics/sprite_graphic_0E00.bin"
+lockjaw_idle_frame11:
+	incbin "data/objects/graphics/lockjaw_idle_frame11.bin"
 
 ;$C68EE7 (sprite graphic)
-SPRITE_GRAPHIC_0E04:
-	incbin "data/objects/graphics/sprite_graphic_0E04.bin"
+lockjaw_idle_frame12:
+	incbin "data/objects/graphics/lockjaw_idle_frame12.bin"
 
 ;$C6909D (sprite graphic)
-SPRITE_GRAPHIC_0E08:
-	incbin "data/objects/graphics/sprite_graphic_0E08.bin"
+lockjaw_bite_frame1:
+	incbin "data/objects/graphics/lockjaw_bite_frame1.bin"
 
 ;$C69231 (sprite graphic)
-SPRITE_GRAPHIC_0E0C:
-	incbin "data/objects/graphics/sprite_graphic_0E0C.bin"
+lockjaw_bite_frame2:
+	incbin "data/objects/graphics/lockjaw_bite_frame2.bin"
 
 ;$C693C5 (sprite graphic)
-SPRITE_GRAPHIC_0E10:
-	incbin "data/objects/graphics/sprite_graphic_0E10.bin"
+lockjaw_bite_frame3:
+	incbin "data/objects/graphics/lockjaw_bite_frame3.bin"
 
 ;$C6955F (sprite graphic)
-SPRITE_GRAPHIC_0E14:
-	incbin "data/objects/graphics/sprite_graphic_0E14.bin"
+lockjaw_bite_frame4:
+	incbin "data/objects/graphics/lockjaw_bite_frame4.bin"
 
 ;$C696F9 (sprite graphic)
-SPRITE_GRAPHIC_0E18:
-	incbin "data/objects/graphics/sprite_graphic_0E18.bin"
+lockjaw_bite_frame5:
+	incbin "data/objects/graphics/lockjaw_bite_frame5.bin"
 
 ;$C6988D (sprite graphic)
-SPRITE_GRAPHIC_0E1C:
-	incbin "data/objects/graphics/sprite_graphic_0E1C.bin"
+lockjaw_bite_frame6:
+	incbin "data/objects/graphics/lockjaw_bite_frame6.bin"
 
 ;$C69A65 (sprite graphic)
-SPRITE_GRAPHIC_0E20:
-	incbin "data/objects/graphics/sprite_graphic_0E20.bin"
+lockjaw_bite_frame7:
+	incbin "data/objects/graphics/lockjaw_bite_frame7.bin"
 
 ;$C69C3D (sprite graphic)
-SPRITE_GRAPHIC_0E24:
-	incbin "data/objects/graphics/sprite_graphic_0E24.bin"
+lockjaw_bite_frame8:
+	incbin "data/objects/graphics/lockjaw_bite_frame8.bin"
 
 ;$C69E15 (sprite graphic)
-SPRITE_GRAPHIC_0E28:
-	incbin "data/objects/graphics/sprite_graphic_0E28.bin"
+dixie_rope_turn_frame1:
+	incbin "data/objects/graphics/dixie_rope_turn_frame1.bin"
 
 ;$C6A00F (sprite graphic)
-SPRITE_GRAPHIC_0E2C:
-	incbin "data/objects/graphics/sprite_graphic_0E2C.bin"
+dixie_rope_turn_frame2:
+	incbin "data/objects/graphics/dixie_rope_turn_frame2.bin"
 
 ;$C6A1E7 (sprite graphic)
-SPRITE_GRAPHIC_0E30:
-	incbin "data/objects/graphics/sprite_graphic_0E30.bin"
+dixie_rope_turn_frame3:
+	incbin "data/objects/graphics/dixie_rope_turn_frame3.bin"
 
 ;$C6A3BF (sprite graphic)
-SPRITE_GRAPHIC_0E34:
-	incbin "data/objects/graphics/sprite_graphic_0E34.bin"
+dixie_rope_turn_frame4:
+	incbin "data/objects/graphics/dixie_rope_turn_frame4.bin"
 
 ;$C6A50F (sprite graphic)
-SPRITE_GRAPHIC_0E38:
-	incbin "data/objects/graphics/sprite_graphic_0E38.bin"
+dixie_grab_double_rope_frame1:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame1.bin"
 
 ;$C6A6A3 (sprite graphic)
-SPRITE_GRAPHIC_0E3C:
-	incbin "data/objects/graphics/sprite_graphic_0E3C.bin"
+dixie_grab_double_rope_frame2:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame2.bin"
 
 ;$C6A87B (sprite graphic)
-SPRITE_GRAPHIC_0E40:
-	incbin "data/objects/graphics/sprite_graphic_0E40.bin"
+dixie_grab_double_rope_frame3:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame3.bin"
 
 ;$C6AA97 (sprite graphic)
-SPRITE_GRAPHIC_0E44:
-	incbin "data/objects/graphics/sprite_graphic_0E44.bin"
+dixie_grab_double_rope_frame4:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame4.bin"
 
 ;$C6AC91 (sprite graphic)
-SPRITE_GRAPHIC_0E48:
-	incbin "data/objects/graphics/sprite_graphic_0E48.bin"
+dixie_grab_double_rope_frame5:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame5.bin"
 
 ;$C6AECF (sprite graphic)
-SPRITE_GRAPHIC_0E4C:
-	incbin "data/objects/graphics/sprite_graphic_0E4C.bin"
+dixie_grab_double_rope_frame6:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame6.bin"
 
 ;$C6B10D (sprite graphic)
-SPRITE_GRAPHIC_0E50:
-	incbin "data/objects/graphics/sprite_graphic_0E50.bin"
+dixie_grab_double_rope_frame7:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame7.bin"
 
 ;$C6B36D (sprite graphic)
-SPRITE_GRAPHIC_0E54:
-	incbin "data/objects/graphics/sprite_graphic_0E54.bin"
+dixie_grab_double_rope_frame8:
+	incbin "data/objects/graphics/dixie_grab_double_rope_frame8.bin"
 
 ;$C6B589 (sprite graphic)
-SPRITE_GRAPHIC_0E58:
-	incbin "data/objects/graphics/sprite_graphic_0E58.bin"
+squawks_idle_frame1:
+	incbin "data/objects/graphics/squawks_idle_frame1.bin"
 
 ;$C6B7E3 (sprite graphic)
-SPRITE_GRAPHIC_0E5C:
-	incbin "data/objects/graphics/sprite_graphic_0E5C.bin"
+squawks_idle_frame2:
+	incbin "data/objects/graphics/squawks_idle_frame2.bin"
 
 ;$C6B9FF (sprite graphic)
-SPRITE_GRAPHIC_0E60:
-	incbin "data/objects/graphics/sprite_graphic_0E60.bin"
+squawks_idle_frame3:
+	incbin "data/objects/graphics/squawks_idle_frame3.bin"
 
 ;$C6BBF9 (sprite graphic)
-SPRITE_GRAPHIC_0E64:
-	incbin "data/objects/graphics/sprite_graphic_0E64.bin"
+squawks_idle_frame4:
+	incbin "data/objects/graphics/squawks_idle_frame4.bin"
 
 ;$C6BE15 (sprite graphic)
-SPRITE_GRAPHIC_0E68:
-	incbin "data/objects/graphics/sprite_graphic_0E68.bin"
+squawks_idle_frame5:
+	incbin "data/objects/graphics/squawks_idle_frame5.bin"
 
 ;$C6C053 (sprite graphic)
-SPRITE_GRAPHIC_0E6C:
-	incbin "data/objects/graphics/sprite_graphic_0E6C.bin"
+squawks_idle_frame6:
+	incbin "data/objects/graphics/squawks_idle_frame6.bin"
 
 ;$C6C291 (sprite graphic)
-SPRITE_GRAPHIC_0E70:
-	incbin "data/objects/graphics/sprite_graphic_0E70.bin"
+squawks_idle_frame7:
+	incbin "data/objects/graphics/squawks_idle_frame7.bin"
 
 ;$C6C4AD (sprite graphic)
-SPRITE_GRAPHIC_0E74:
-	incbin "data/objects/graphics/sprite_graphic_0E74.bin"
+squawks_idle_frame8:
+	incbin "data/objects/graphics/squawks_idle_frame8.bin"
 
 ;$C6C6C9 (sprite graphic)
-SPRITE_GRAPHIC_0E78:
-	incbin "data/objects/graphics/sprite_graphic_0E78.bin"
+squawks_idle_frame9:
+	incbin "data/objects/graphics/squawks_idle_frame9.bin"
 
 ;$C6C8E5 (sprite graphic)
-SPRITE_GRAPHIC_0E7C:
-	incbin "data/objects/graphics/sprite_graphic_0E7C.bin"
+squawks_idle_frame10:
+	incbin "data/objects/graphics/squawks_idle_frame10.bin"
 
 ;$C6CB01 (sprite graphic)
-SPRITE_GRAPHIC_0E80:
-	incbin "data/objects/graphics/sprite_graphic_0E80.bin"
+squawks_idle_frame11:
+	incbin "data/objects/graphics/squawks_idle_frame11.bin"
 
 ;$C6CD7D (sprite graphic)
-SPRITE_GRAPHIC_0E84:
-	incbin "data/objects/graphics/sprite_graphic_0E84.bin"
+squawks_idle_frame12:
+	incbin "data/objects/graphics/squawks_idle_frame12.bin"
 
 ;$C6CFF9 (sprite graphic)
-SPRITE_GRAPHIC_0E88:
-	incbin "data/objects/graphics/sprite_graphic_0E88.bin"
+squawks_idle_frame13:
+	incbin "data/objects/graphics/squawks_idle_frame13.bin"
 
 ;$C6D275 (sprite graphic)
-SPRITE_GRAPHIC_0E8C:
-	incbin "data/objects/graphics/sprite_graphic_0E8C.bin"
+squawks_idle_frame14:
+	incbin "data/objects/graphics/squawks_idle_frame14.bin"
 
 ;$C6D519 (sprite graphic)
-SPRITE_GRAPHIC_0E90:
-	incbin "data/objects/graphics/sprite_graphic_0E90.bin"
+click_clack_walk_frame1:
+	incbin "data/objects/graphics/click_clack_walk_frame1.bin"
 
 ;$C6D6CF (sprite graphic)
-SPRITE_GRAPHIC_0E94:
-	incbin "data/objects/graphics/sprite_graphic_0E94.bin"
+click_clack_walk_frame2:
+	incbin "data/objects/graphics/click_clack_walk_frame2.bin"
 
 ;$C6D885 (sprite graphic)
-SPRITE_GRAPHIC_0E98:
-	incbin "data/objects/graphics/sprite_graphic_0E98.bin"
+click_clack_walk_frame3:
+	incbin "data/objects/graphics/click_clack_walk_frame3.bin"
 
 ;$C6DA5D (sprite graphic)
-SPRITE_GRAPHIC_0E9C:
-	incbin "data/objects/graphics/sprite_graphic_0E9C.bin"
+click_clack_walk_frame4:
+	incbin "data/objects/graphics/click_clack_walk_frame4.bin"
 
 ;$C6DC35 (sprite graphic)
-SPRITE_GRAPHIC_0EA0:
-	incbin "data/objects/graphics/sprite_graphic_0EA0.bin"
+click_clack_walk_frame5:
+	incbin "data/objects/graphics/click_clack_walk_frame5.bin"
 
 ;$C6DE0D (sprite graphic)
-SPRITE_GRAPHIC_0EA4:
-	incbin "data/objects/graphics/sprite_graphic_0EA4.bin"
+click_clack_walk_frame6:
+	incbin "data/objects/graphics/click_clack_walk_frame6.bin"
 
 ;$C6DFE5 (sprite graphic)
-SPRITE_GRAPHIC_0EA8:
-	incbin "data/objects/graphics/sprite_graphic_0EA8.bin"
+click_clack_walk_frame7:
+	incbin "data/objects/graphics/click_clack_walk_frame7.bin"
 
 ;$C6E1BD (sprite graphic)
-SPRITE_GRAPHIC_0EAC:
-	incbin "data/objects/graphics/sprite_graphic_0EAC.bin"
+click_clack_walk_frame8:
+	incbin "data/objects/graphics/click_clack_walk_frame8.bin"
 
 ;$C6E395 (sprite graphic)
-SPRITE_GRAPHIC_0EB0:
-	incbin "data/objects/graphics/sprite_graphic_0EB0.bin"
+click_clack_flip_over_frame1:
+	incbin "data/objects/graphics/click_clack_flip_over_frame1.bin"
 
 ;$C6E58F (sprite graphic)
-SPRITE_GRAPHIC_0EB4:
-	incbin "data/objects/graphics/sprite_graphic_0EB4.bin"
+click_clack_flip_over_frame2:
+	incbin "data/objects/graphics/click_clack_flip_over_frame2.bin"
 
 ;$C6E767 (sprite graphic)
-SPRITE_GRAPHIC_0EB8:
-	incbin "data/objects/graphics/sprite_graphic_0EB8.bin"
+click_clack_flip_over_frame3:
+	incbin "data/objects/graphics/click_clack_flip_over_frame3.bin"
 
 ;$C6E91D (sprite graphic)
-SPRITE_GRAPHIC_0EBC:
-	incbin "data/objects/graphics/sprite_graphic_0EBC.bin"
+click_clack_flip_over_frame4:
+	incbin "data/objects/graphics/click_clack_flip_over_frame4.bin"
 
 ;$C6EAD3 (sprite graphic)
-SPRITE_GRAPHIC_0EC0:
-	incbin "data/objects/graphics/sprite_graphic_0EC0.bin"
+click_clack_flip_over_frame5:
+	incbin "data/objects/graphics/click_clack_flip_over_frame5.bin"
 
 ;$C6EC67 (sprite graphic)
-SPRITE_GRAPHIC_0EC4:
-	incbin "data/objects/graphics/sprite_graphic_0EC4.bin"
+click_clack_flip_over_frame6:
+	incbin "data/objects/graphics/click_clack_flip_over_frame6.bin"
 
 ;$C6EE1D (sprite graphic)
-SPRITE_GRAPHIC_0EC8:
-	incbin "data/objects/graphics/sprite_graphic_0EC8.bin"
+click_clack_flip_over_frame7:
+	incbin "data/objects/graphics/click_clack_flip_over_frame7.bin"
 
 ;$C6EFD3 (sprite graphic)
-SPRITE_GRAPHIC_0ECC:
-	incbin "data/objects/graphics/sprite_graphic_0ECC.bin"
+click_clack_flip_over_frame8:
+	incbin "data/objects/graphics/click_clack_flip_over_frame8.bin"
 
 ;$C6F189 (sprite graphic)
-SPRITE_GRAPHIC_0ED0:
-	incbin "data/objects/graphics/sprite_graphic_0ED0.bin"
+click_clack_stunned_frame1:
+	incbin "data/objects/graphics/click_clack_stunned_frame1.bin"
 
 ;$C6F31D (sprite graphic)
-SPRITE_GRAPHIC_0ED4:
-	incbin "data/objects/graphics/sprite_graphic_0ED4.bin"
+click_clack_stunned_frame2:
+	incbin "data/objects/graphics/click_clack_stunned_frame2.bin"
 
 ;$C6F4D3 (sprite graphic)
-SPRITE_GRAPHIC_0ED8:
-	incbin "data/objects/graphics/sprite_graphic_0ED8.bin"
+click_clack_stunned_frame3:
+	incbin "data/objects/graphics/click_clack_stunned_frame3.bin"
 
 ;$C6F689 (sprite graphic)
-SPRITE_GRAPHIC_0EDC:
-	incbin "data/objects/graphics/sprite_graphic_0EDC.bin"
+click_clack_stunned_frame4:
+	incbin "data/objects/graphics/click_clack_stunned_frame4.bin"
 
 ;$C6F861 (sprite graphic)
-SPRITE_GRAPHIC_0EE0:
-	incbin "data/objects/graphics/sprite_graphic_0EE0.bin"
+click_clack_stunned_frame5:
+	incbin "data/objects/graphics/click_clack_stunned_frame5.bin"
 
 ;$C6FA39 (sprite graphic)
-SPRITE_GRAPHIC_0EE4:
-	incbin "data/objects/graphics/sprite_graphic_0EE4.bin"
+click_clack_stunned_frame6:
+	incbin "data/objects/graphics/click_clack_stunned_frame6.bin"
 
 check bankcross off
 ;$C6FC11
@@ -3027,492 +3027,492 @@ DATA_C6FC11:
 check bankcross full
 
 ;$C70088 (sprite graphic)
-SPRITE_GRAPHIC_0EE8:
-	incbin "data/objects/graphics/sprite_graphic_0EE8.bin"
+click_clack_stunned_frame7:
+	incbin "data/objects/graphics/click_clack_stunned_frame7.bin"
 
 ;$C7023E (sprite graphic)
-SPRITE_GRAPHIC_0EEC:
-	incbin "data/objects/graphics/sprite_graphic_0EEC.bin"
+click_clack_stunned_frame8:
+	incbin "data/objects/graphics/click_clack_stunned_frame8.bin"
 
 ;$C703F4 (sprite graphic)
-SPRITE_GRAPHIC_0EF0:
-	incbin "data/objects/graphics/sprite_graphic_0EF0.bin"
+dixie_ride_squawks_frame1:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame1.bin"
 
 ;$C7064E (sprite graphic)
-SPRITE_GRAPHIC_0EF4:
-	incbin "data/objects/graphics/sprite_graphic_0EF4.bin"
+dixie_ride_squawks_frame2:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame2.bin"
 
 ;$C708A8 (sprite graphic)
-SPRITE_GRAPHIC_0EF8:
-	incbin "data/objects/graphics/sprite_graphic_0EF8.bin"
+dixie_ride_squawks_frame3:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame3.bin"
 
 ;$C70AE0 (sprite graphic)
-SPRITE_GRAPHIC_0EFC:
-	incbin "data/objects/graphics/sprite_graphic_0EFC.bin"
+dixie_ride_squawks_frame4:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame4.bin"
 
 ;$C70CF6 (sprite graphic)
-SPRITE_GRAPHIC_0F00:
-	incbin "data/objects/graphics/sprite_graphic_0F00.bin"
+dixie_ride_squawks_frame5:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame5.bin"
 
 ;$C70F2E (sprite graphic)
-SPRITE_GRAPHIC_0F04:
-	incbin "data/objects/graphics/sprite_graphic_0F04.bin"
+dixie_ride_squawks_frame6:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame6.bin"
 
 ;$C71166 (sprite graphic)
-SPRITE_GRAPHIC_0F08:
-	incbin "data/objects/graphics/sprite_graphic_0F08.bin"
+dixie_ride_squawks_frame7:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame7.bin"
 
 ;$C7139E (sprite graphic)
-SPRITE_GRAPHIC_0F0C:
-	incbin "data/objects/graphics/sprite_graphic_0F0C.bin"
+dixie_ride_squawks_frame8:
+	incbin "data/objects/graphics/dixie_ride_squawks_frame8.bin"
 
 ;$C715D6 (sprite graphic)
-SPRITE_GRAPHIC_0F10:
-	incbin "data/objects/graphics/sprite_graphic_0F10.bin"
+big_splash_frame1:
+	incbin "data/objects/graphics/big_splash_frame1.bin"
 
 ;$C716E2 (sprite graphic)
-SPRITE_GRAPHIC_0F14:
-	incbin "data/objects/graphics/sprite_graphic_0F14.bin"
+big_splash_frame2:
+	incbin "data/objects/graphics/big_splash_frame2.bin"
 
 ;$C71832 (sprite graphic)
-SPRITE_GRAPHIC_0F18:
-	incbin "data/objects/graphics/sprite_graphic_0F18.bin"
+big_splash_frame3:
+	incbin "data/objects/graphics/big_splash_frame3.bin"
 
 ;$C719C6 (sprite graphic)
-SPRITE_GRAPHIC_0F1C:
-	incbin "data/objects/graphics/sprite_graphic_0F1C.bin"
+big_splash_frame4:
+	incbin "data/objects/graphics/big_splash_frame4.bin"
 
 ;$C71C1A (sprite graphic)
-SPRITE_GRAPHIC_0F20:
-	incbin "data/objects/graphics/sprite_graphic_0F20.bin"
+big_splash_frame5:
+	incbin "data/objects/graphics/big_splash_frame5.bin"
 
 ;$C71F18 (sprite graphic)
-SPRITE_GRAPHIC_0F24:
-	incbin "data/objects/graphics/sprite_graphic_0F24.bin"
+big_splash_frame6:
+	incbin "data/objects/graphics/big_splash_frame6.bin"
 
 ;$C721FA (sprite graphic)
-SPRITE_GRAPHIC_0F28:
-	incbin "data/objects/graphics/sprite_graphic_0F28.bin"
+big_splash_frame7:
+	incbin "data/objects/graphics/big_splash_frame7.bin"
 
 ;$C7255E (sprite graphic)
-SPRITE_GRAPHIC_0F2C:
-	incbin "data/objects/graphics/sprite_graphic_0F2C.bin"
+big_splash_frame8:
+	incbin "data/objects/graphics/big_splash_frame8.bin"
 
 ;$C728C8 (sprite graphic)
-SPRITE_GRAPHIC_0F30:
-	incbin "data/objects/graphics/sprite_graphic_0F30.bin"
+big_splash_frame9:
+	incbin "data/objects/graphics/big_splash_frame9.bin"
 
 ;$C72C10 (sprite graphic)
-SPRITE_GRAPHIC_0F34:
-	incbin "data/objects/graphics/sprite_graphic_0F34.bin"
+big_splash_frame10:
+	incbin "data/objects/graphics/big_splash_frame10.bin"
 
 ;$C72EEC (sprite graphic)
-SPRITE_GRAPHIC_0F38:
-	incbin "data/objects/graphics/sprite_graphic_0F38.bin"
+big_splash_frame11:
+	incbin "data/objects/graphics/big_splash_frame11.bin"
 
 ;$C731AC (sprite graphic)
-SPRITE_GRAPHIC_0F3C:
-	incbin "data/objects/graphics/sprite_graphic_0F3C.bin"
+big_splash_frame12:
+	incbin "data/objects/graphics/big_splash_frame12.bin"
 
 ;$C733A0 (sprite graphic)
-SPRITE_GRAPHIC_0F40:
-	incbin "data/objects/graphics/sprite_graphic_0F40.bin"
+big_splash_frame13:
+	incbin "data/objects/graphics/big_splash_frame13.bin"
 
 ;$C735D2 (sprite graphic)
-SPRITE_GRAPHIC_0F44:
-	incbin "data/objects/graphics/sprite_graphic_0F44.bin"
+big_splash_frame14:
+	incbin "data/objects/graphics/big_splash_frame14.bin"
 
 ;$C73804 (sprite graphic)
-SPRITE_GRAPHIC_0F48:
-	incbin "data/objects/graphics/sprite_graphic_0F48.bin"
+big_splash_frame15:
+	incbin "data/objects/graphics/big_splash_frame15.bin"
 
 ;$C73960 (sprite graphic)
-SPRITE_GRAPHIC_0F4C:
-	incbin "data/objects/graphics/sprite_graphic_0F4C.bin"
+big_splash_frame16:
+	incbin "data/objects/graphics/big_splash_frame16.bin"
 
 ;$C73A9A (sprite graphic)
-SPRITE_GRAPHIC_0F50:
-	incbin "data/objects/graphics/sprite_graphic_0F50.bin"
+isle_rock_mask_graphic:
+	incbin "data/objects/graphics/isle_rock_mask_graphic.bin"
 
 ;$C73B90 (sprite graphic)
-SPRITE_GRAPHIC_0F54:
-	incbin "data/objects/graphics/sprite_graphic_0F54.bin"
+kutlass_walk_frame1:
+	incbin "data/objects/graphics/kutlass_walk_frame1.bin"
 
 ;$C73ECC (sprite graphic)
-SPRITE_GRAPHIC_0F58:
-	incbin "data/objects/graphics/sprite_graphic_0F58.bin"
+kutlass_walk_frame2:
+	incbin "data/objects/graphics/kutlass_walk_frame2.bin"
 
 ;$C74208 (sprite graphic)
-SPRITE_GRAPHIC_0F5C:
-	incbin "data/objects/graphics/sprite_graphic_0F5C.bin"
+kutlass_walk_frame3:
+	incbin "data/objects/graphics/kutlass_walk_frame3.bin"
 
 ;$C74588 (sprite graphic)
-SPRITE_GRAPHIC_0F60:
-	incbin "data/objects/graphics/sprite_graphic_0F60.bin"
+kutlass_walk_frame4:
+	incbin "data/objects/graphics/kutlass_walk_frame4.bin"
 
 ;$C748A8 (sprite graphic)
-SPRITE_GRAPHIC_0F64:
-	incbin "data/objects/graphics/sprite_graphic_0F64.bin"
+kutlass_walk_frame5:
+	incbin "data/objects/graphics/kutlass_walk_frame5.bin"
 
 ;$C74BC8 (sprite graphic)
-SPRITE_GRAPHIC_0F68:
-	incbin "data/objects/graphics/sprite_graphic_0F68.bin"
+kutlass_walk_frame6:
+	incbin "data/objects/graphics/kutlass_walk_frame6.bin"
 
 ;$C74EEE (sprite graphic)
-SPRITE_GRAPHIC_0F6C:
-	incbin "data/objects/graphics/sprite_graphic_0F6C.bin"
+kutlass_walk_frame7:
+	incbin "data/objects/graphics/kutlass_walk_frame7.bin"
 
 ;$C7520E (sprite graphic)
-SPRITE_GRAPHIC_0F70:
-	incbin "data/objects/graphics/sprite_graphic_0F70.bin"
+kutlass_walk_frame8:
+	incbin "data/objects/graphics/kutlass_walk_frame8.bin"
 
 ;$C75550 (sprite graphic)
-SPRITE_GRAPHIC_0F74:
-	incbin "data/objects/graphics/sprite_graphic_0F74.bin"
+isle_dixie_frame1:
+	incbin "data/objects/graphics/isle_dixie_frame1.bin"
 
 ;$C755E0 (sprite graphic)
-SPRITE_GRAPHIC_0F78:
-	incbin "data/objects/graphics/sprite_graphic_0F78.bin"
+isle_dixie_frame2:
+	incbin "data/objects/graphics/isle_dixie_frame2.bin"
 
 ;$C75670 (sprite graphic)
-SPRITE_GRAPHIC_0F7C:
-	incbin "data/objects/graphics/sprite_graphic_0F7C.bin"
+isle_dixie_frame3:
+	incbin "data/objects/graphics/isle_dixie_frame3.bin"
 
 ;$C75700 (sprite graphic)
-SPRITE_GRAPHIC_0F80:
-	incbin "data/objects/graphics/sprite_graphic_0F80.bin"
+isle_dixie_frame4:
+	incbin "data/objects/graphics/isle_dixie_frame4.bin"
 
 ;$C75790 (sprite graphic)
-SPRITE_GRAPHIC_0F84:
-	incbin "data/objects/graphics/sprite_graphic_0F84.bin"
+isle_dixie_frame5:
+	incbin "data/objects/graphics/isle_dixie_frame5.bin"
 
 ;$C75820 (sprite graphic)
-SPRITE_GRAPHIC_0F88:
-	incbin "data/objects/graphics/sprite_graphic_0F88.bin"
+isle_dixie_frame6:
+	incbin "data/objects/graphics/isle_dixie_frame6.bin"
 
 ;$C758B0 (sprite graphic)
-SPRITE_GRAPHIC_0F8C:
-	incbin "data/objects/graphics/sprite_graphic_0F8C.bin"
+isle_dixie_frame7:
+	incbin "data/objects/graphics/isle_dixie_frame7.bin"
 
 ;$C75940 (sprite graphic)
-SPRITE_GRAPHIC_0F90:
-	incbin "data/objects/graphics/sprite_graphic_0F90.bin"
+isle_dixie_frame8:
+	incbin "data/objects/graphics/isle_dixie_frame8.bin"
 
 ;$C759D0 (sprite graphic)
-SPRITE_GRAPHIC_0F94:
-	incbin "data/objects/graphics/sprite_graphic_0F94.bin"
+isle_diddy_frame1:
+	incbin "data/objects/graphics/isle_diddy_frame1.bin"
 
 ;$C75A60 (sprite graphic)
-SPRITE_GRAPHIC_0F98:
-	incbin "data/objects/graphics/sprite_graphic_0F98.bin"
+isle_diddy_frame2:
+	incbin "data/objects/graphics/isle_diddy_frame2.bin"
 
 ;$C75AF0 (sprite graphic)
-SPRITE_GRAPHIC_0F9C:
-	incbin "data/objects/graphics/sprite_graphic_0F9C.bin"
+isle_diddy_frame3:
+	incbin "data/objects/graphics/isle_diddy_frame3.bin"
 
 ;$C75B80 (sprite graphic)
-SPRITE_GRAPHIC_0FA0:
-	incbin "data/objects/graphics/sprite_graphic_0FA0.bin"
+isle_diddy_frame4:
+	incbin "data/objects/graphics/isle_diddy_frame4.bin"
 
 ;$C75C10 (sprite graphic)
-SPRITE_GRAPHIC_0FA4:
-	incbin "data/objects/graphics/sprite_graphic_0FA4.bin"
+isle_diddy_frame5:
+	incbin "data/objects/graphics/isle_diddy_frame5.bin"
 
 ;$C75CA0 (sprite graphic)
-SPRITE_GRAPHIC_0FA8:
-	incbin "data/objects/graphics/sprite_graphic_0FA8.bin"
+isle_diddy_frame6:
+	incbin "data/objects/graphics/isle_diddy_frame6.bin"
 
 ;$C75D30 (sprite graphic)
-SPRITE_GRAPHIC_0FAC:
-	incbin "data/objects/graphics/sprite_graphic_0FAC.bin"
+isle_diddy_frame7:
+	incbin "data/objects/graphics/isle_diddy_frame7.bin"
 
 ;$C75DC0 (sprite graphic)
-SPRITE_GRAPHIC_0FB0:
-	incbin "data/objects/graphics/sprite_graphic_0FB0.bin"
+isle_diddy_frame8:
+	incbin "data/objects/graphics/isle_diddy_frame8.bin"
 
 ;$C75E50 (sprite graphic)
-SPRITE_GRAPHIC_0FB4:
-	incbin "data/objects/graphics/sprite_graphic_0FB4.bin"
+squawks_shoot_frame1:
+	incbin "data/objects/graphics/squawks_shoot_frame1.bin"
 
 ;$C76132 (sprite graphic)
-SPRITE_GRAPHIC_0FB8:
-	incbin "data/objects/graphics/sprite_graphic_0FB8.bin"
+squawks_shoot_frame2:
+	incbin "data/objects/graphics/squawks_shoot_frame2.bin"
 
 ;$C763CA (sprite graphic)
-SPRITE_GRAPHIC_0FBC:
-	incbin "data/objects/graphics/sprite_graphic_0FBC.bin"
+squawks_shoot_frame3:
+	incbin "data/objects/graphics/squawks_shoot_frame3.bin"
 
 ;$C76646 (sprite graphic)
-SPRITE_GRAPHIC_0FC0:
-	incbin "data/objects/graphics/sprite_graphic_0FC0.bin"
+squawks_shoot_frame4:
+	incbin "data/objects/graphics/squawks_shoot_frame4.bin"
 
 ;$C76900 (sprite graphic)
-SPRITE_GRAPHIC_0FC4:
-	incbin "data/objects/graphics/sprite_graphic_0FC4.bin"
+squawks_shoot_frame5:
+	incbin "data/objects/graphics/squawks_shoot_frame5.bin"
 
 ;$C76BC0 (sprite graphic)
-SPRITE_GRAPHIC_0FC8:
-	incbin "data/objects/graphics/sprite_graphic_0FC8.bin"
+token_frame1:
+	incbin "data/objects/graphics/token_frame1.bin"
 
 ;$C76E36 (sprite graphic)
-SPRITE_GRAPHIC_0FCC:
-	incbin "data/objects/graphics/sprite_graphic_0FCC.bin"
+token_frame2:
+	incbin "data/objects/graphics/token_frame2.bin"
 
 ;$C770F0 (sprite graphic)
-SPRITE_GRAPHIC_0FD0:
-	incbin "data/objects/graphics/sprite_graphic_0FD0.bin"
+token_frame3:
+	incbin "data/objects/graphics/token_frame3.bin"
 
 ;$C773AA (sprite graphic)
-SPRITE_GRAPHIC_0FD4:
-	incbin "data/objects/graphics/sprite_graphic_0FD4.bin"
+token_frame4:
+	incbin "data/objects/graphics/token_frame4.bin"
 
 ;$C77620 (sprite graphic)
-SPRITE_GRAPHIC_0FD8:
-	incbin "data/objects/graphics/sprite_graphic_0FD8.bin"
+token_frame5:
+	incbin "data/objects/graphics/token_frame5.bin"
 
 ;$C777F8 (sprite graphic)
-SPRITE_GRAPHIC_0FDC:
-	incbin "data/objects/graphics/sprite_graphic_0FDC.bin"
+token_frame6:
+	incbin "data/objects/graphics/token_frame6.bin"
 
 ;$C778AA (sprite graphic)
-SPRITE_GRAPHIC_0FE0:
-	incbin "data/objects/graphics/sprite_graphic_0FE0.bin"
+token_frame7:
+	incbin "data/objects/graphics/token_frame7.bin"
 
 ;$C779FA (sprite graphic)
-SPRITE_GRAPHIC_0FE4:
-	incbin "data/objects/graphics/sprite_graphic_0FE4.bin"
+token_frame8:
+	incbin "data/objects/graphics/token_frame8.bin"
 
 ;$C77C32 (sprite graphic)
-SPRITE_GRAPHIC_0FE8:
-	incbin "data/objects/graphics/sprite_graphic_0FE8.bin"
+diddy_tumble_frame1:
+	incbin "data/objects/graphics/diddy_tumble_frame1.bin"
 
 ;$C77E6A (sprite graphic)
-SPRITE_GRAPHIC_0FEC:
-	incbin "data/objects/graphics/sprite_graphic_0FEC.bin"
+diddy_tumble_frame2:
+	incbin "data/objects/graphics/diddy_tumble_frame2.bin"
 
 ;$C78020 (sprite graphic)
-SPRITE_GRAPHIC_0FF0:
-	incbin "data/objects/graphics/sprite_graphic_0FF0.bin"
+diddy_tumble_frame3:
+	incbin "data/objects/graphics/diddy_tumble_frame3.bin"
 
 ;$C781B4 (sprite graphic)
-SPRITE_GRAPHIC_0FF4:
-	incbin "data/objects/graphics/sprite_graphic_0FF4.bin"
+diddy_tumble_frame4:
+	incbin "data/objects/graphics/diddy_tumble_frame4.bin"
 
 ;$C7836A (sprite graphic)
-SPRITE_GRAPHIC_0FF8:
-	incbin "data/objects/graphics/sprite_graphic_0FF8.bin"
+diddy_tumble_frame5:
+	incbin "data/objects/graphics/diddy_tumble_frame5.bin"
 
 ;$C784FE (sprite graphic)
-SPRITE_GRAPHIC_0FFC:
-	incbin "data/objects/graphics/sprite_graphic_0FFC.bin"
+diddy_tumble_frame6:
+	incbin "data/objects/graphics/diddy_tumble_frame6.bin"
 
 ;$C78692 (sprite graphic)
-SPRITE_GRAPHIC_1000:
-	incbin "data/objects/graphics/sprite_graphic_1000.bin"
+diddy_tumble_frame7:
+	incbin "data/objects/graphics/diddy_tumble_frame7.bin"
 
 ;$C78848 (sprite graphic)
-SPRITE_GRAPHIC_1004:
-	incbin "data/objects/graphics/sprite_graphic_1004.bin"
+diddy_tumble_frame8:
+	incbin "data/objects/graphics/diddy_tumble_frame8.bin"
 
 ;$C789DC (sprite graphic)
-SPRITE_GRAPHIC_1008:
-	incbin "data/objects/graphics/sprite_graphic_1008.bin"
+diddy_tumble_frame9:
+	incbin "data/objects/graphics/diddy_tumble_frame9.bin"
 
 ;$C78B70 (sprite graphic)
-SPRITE_GRAPHIC_100C:
-	incbin "data/objects/graphics/sprite_graphic_100C.bin"
+diddy_tumble_frame10:
+	incbin "data/objects/graphics/diddy_tumble_frame10.bin"
 
 ;$C78D04 (sprite graphic)
-SPRITE_GRAPHIC_1010:
-	incbin "data/objects/graphics/sprite_graphic_1010.bin"
+diddy_tumble_frame11:
+	incbin "data/objects/graphics/diddy_tumble_frame11.bin"
 
 ;$C78E98 (sprite graphic)
-SPRITE_GRAPHIC_1014:
-	incbin "data/objects/graphics/sprite_graphic_1014.bin"
+diddy_tumble_frame12:
+	incbin "data/objects/graphics/diddy_tumble_frame12.bin"
 
 ;$C7902C (sprite graphic)
-SPRITE_GRAPHIC_1018:
-	incbin "data/objects/graphics/sprite_graphic_1018.bin"
+diddy_tumble_frame13:
+	incbin "data/objects/graphics/diddy_tumble_frame13.bin"
 
 ;$C791C0 (sprite graphic)
-SPRITE_GRAPHIC_101C:
-	incbin "data/objects/graphics/sprite_graphic_101C.bin"
+diddy_tumble_frame14:
+	incbin "data/objects/graphics/diddy_tumble_frame14.bin"
 
 ;$C79392 (sprite graphic)
-SPRITE_GRAPHIC_1020:
-	incbin "data/objects/graphics/sprite_graphic_1020.bin"
+diddy_tumble_frame15:
+	incbin "data/objects/graphics/diddy_tumble_frame15.bin"
 
 ;$C79548 (sprite graphic)
-SPRITE_GRAPHIC_1024:
-	incbin "data/objects/graphics/sprite_graphic_1024.bin"
+diddy_tumble_frame16:
+	incbin "data/objects/graphics/diddy_tumble_frame16.bin"
 
 ;$C796DC (sprite graphic)
-SPRITE_GRAPHIC_1028:
-	incbin "data/objects/graphics/sprite_graphic_1028.bin"
+diddy_tumble_frame17:
+	incbin "data/objects/graphics/diddy_tumble_frame17.bin"
 
 ;$C79892 (sprite graphic)
-SPRITE_GRAPHIC_102C:
-	incbin "data/objects/graphics/sprite_graphic_102C.bin"
+diddy_tumble_frame18:
+	incbin "data/objects/graphics/diddy_tumble_frame18.bin"
 
 ;$C79A48 (sprite graphic)
-SPRITE_GRAPHIC_1030:
-	incbin "data/objects/graphics/sprite_graphic_1030.bin"
+firework_launch_frame1:
+	incbin "data/objects/graphics/firework_launch_frame1.bin"
 
 ;$C79C86 (sprite graphic)
-SPRITE_GRAPHIC_1034:
-	incbin "data/objects/graphics/sprite_graphic_1034.bin"
+firework_launch_frame2:
+	incbin "data/objects/graphics/firework_launch_frame2.bin"
 
 ;$C79EC4 (sprite graphic)
-SPRITE_GRAPHIC_1038:
-	incbin "data/objects/graphics/sprite_graphic_1038.bin"
+firework_launch_frame3:
+	incbin "data/objects/graphics/firework_launch_frame3.bin"
 
 ;$C7A102 (sprite graphic)
-SPRITE_GRAPHIC_103C:
-	incbin "data/objects/graphics/sprite_graphic_103C.bin"
+firework_launch_frame4:
+	incbin "data/objects/graphics/firework_launch_frame4.bin"
 
 ;$C7A340 (sprite graphic)
-SPRITE_GRAPHIC_1040:
-	incbin "data/objects/graphics/sprite_graphic_1040.bin"
+firework_launch_frame5:
+	incbin "data/objects/graphics/firework_launch_frame5.bin"
 
 ;$C7A55C (sprite graphic)
-SPRITE_GRAPHIC_1044:
-	incbin "data/objects/graphics/sprite_graphic_1044.bin"
+firework_launch_frame6:
+	incbin "data/objects/graphics/firework_launch_frame6.bin"
 
 ;$C7A778 (sprite graphic)
-SPRITE_GRAPHIC_1048:
-	incbin "data/objects/graphics/sprite_graphic_1048.bin"
+firework_launch_frame7:
+	incbin "data/objects/graphics/firework_launch_frame7.bin"
 
 ;$C7A9B6 (sprite graphic)
-SPRITE_GRAPHIC_104C:
-	incbin "data/objects/graphics/sprite_graphic_104C.bin"
+firework_launch_frame8:
+	incbin "data/objects/graphics/firework_launch_frame8.bin"
 
 ;$C7ABD2 (sprite graphic)
-SPRITE_GRAPHIC_1050:
-	incbin "data/objects/graphics/sprite_graphic_1050.bin"
+firework_launch_frame9:
+	incbin "data/objects/graphics/firework_launch_frame9.bin"
 
 ;$C7AE10 (sprite graphic)
-SPRITE_GRAPHIC_1054:
-	incbin "data/objects/graphics/sprite_graphic_1054.bin"
+kutlass_attack_frame1:
+	incbin "data/objects/graphics/kutlass_attack_frame1.bin"
 
 ;$C7B114 (sprite graphic)
-SPRITE_GRAPHIC_1058:
-	incbin "data/objects/graphics/sprite_graphic_1058.bin"
+kutlass_attack_frame2:
+	incbin "data/objects/graphics/kutlass_attack_frame2.bin"
 
 ;$C7B472 (sprite graphic)
-SPRITE_GRAPHIC_105C:
-	incbin "data/objects/graphics/sprite_graphic_105C.bin"
+kutlass_attack_frame3:
+	incbin "data/objects/graphics/kutlass_attack_frame3.bin"
 
 ;$C7B77C (sprite graphic)
-SPRITE_GRAPHIC_1060:
-	incbin "data/objects/graphics/sprite_graphic_1060.bin"
+kutlass_attack_frame4:
+	incbin "data/objects/graphics/kutlass_attack_frame4.bin"
 
 ;$C7BA42 (sprite graphic)
-SPRITE_GRAPHIC_1064:
-	incbin "data/objects/graphics/sprite_graphic_1064.bin"
+kutlass_attack_frame5:
+	incbin "data/objects/graphics/kutlass_attack_frame5.bin"
 
 ;$C7BD02 (sprite graphic)
-SPRITE_GRAPHIC_1068:
-	incbin "data/objects/graphics/sprite_graphic_1068.bin"
+kutlass_attack_frame6:
+	incbin "data/objects/graphics/kutlass_attack_frame6.bin"
 
 ;$C7BFC2 (sprite graphic)
-SPRITE_GRAPHIC_106C:
-	incbin "data/objects/graphics/sprite_graphic_106C.bin"
+kutlass_attack_frame7:
+	incbin "data/objects/graphics/kutlass_attack_frame7.bin"
 
 ;$C7C282 (sprite graphic)
-SPRITE_GRAPHIC_1070:
-	incbin "data/objects/graphics/sprite_graphic_1070.bin"
+kutlass_attack_frame8:
+	incbin "data/objects/graphics/kutlass_attack_frame8.bin"
 
 ;$C7C59C (sprite graphic)
-SPRITE_GRAPHIC_1074:
-	incbin "data/objects/graphics/sprite_graphic_1074.bin"
+kutlass_attack_frame9:
+	incbin "data/objects/graphics/kutlass_attack_frame9.bin"
 
 ;$C7C89A (sprite graphic)
-SPRITE_GRAPHIC_1078:
-	incbin "data/objects/graphics/sprite_graphic_1078.bin"
+kutlass_attack_frame10:
+	incbin "data/objects/graphics/kutlass_attack_frame10.bin"
 
 ;$C7CB32 (sprite graphic)
-SPRITE_GRAPHIC_107C:
-	incbin "data/objects/graphics/sprite_graphic_107C.bin"
+kutlass_attack_frame11:
+	incbin "data/objects/graphics/kutlass_attack_frame11.bin"
 
 ;$C7CDA8 (sprite graphic)
-SPRITE_GRAPHIC_1080:
-	incbin "data/objects/graphics/sprite_graphic_1080.bin"
+kutlass_attack_frame12:
+	incbin "data/objects/graphics/kutlass_attack_frame12.bin"
 
 ;$C7D0EA (sprite graphic)
-SPRITE_GRAPHIC_1084:
-	incbin "data/objects/graphics/sprite_graphic_1084.bin"
+kutlass_attack_frame13:
+	incbin "data/objects/graphics/kutlass_attack_frame13.bin"
 
 ;$C7D3CC (sprite graphic)
-SPRITE_GRAPHIC_1088:
-	incbin "data/objects/graphics/sprite_graphic_1088.bin"
+kutlass_attack_frame14:
+	incbin "data/objects/graphics/kutlass_attack_frame14.bin"
 
 ;$C7D70E (sprite graphic)
-SPRITE_GRAPHIC_108C:
-	incbin "data/objects/graphics/sprite_graphic_108C.bin"
+kutlass_attack_frame15:
+	incbin "data/objects/graphics/kutlass_attack_frame15.bin"
 
 ;$C7DA28 (sprite graphic)
-SPRITE_GRAPHIC_1090:
-	incbin "data/objects/graphics/sprite_graphic_1090.bin"
+kutlass_attack_frame16:
+	incbin "data/objects/graphics/kutlass_attack_frame16.bin"
 
 ;$C7DD64 (sprite graphic)
-SPRITE_GRAPHIC_1094:
-	incbin "data/objects/graphics/sprite_graphic_1094.bin"
+kutlass_attack_frame17:
+	incbin "data/objects/graphics/kutlass_attack_frame17.bin"
 
 ;$C7E062 (sprite graphic)
-SPRITE_GRAPHIC_1098:
-	incbin "data/objects/graphics/sprite_graphic_1098.bin"
+kutlass_attack_frame18:
+	incbin "data/objects/graphics/kutlass_attack_frame18.bin"
 
 ;$C7E3A4 (sprite graphic)
-SPRITE_GRAPHIC_109C:
-	incbin "data/objects/graphics/sprite_graphic_109C.bin"
+kutlass_attack_frame19:
+	incbin "data/objects/graphics/kutlass_attack_frame19.bin"
 
 ;$C7E730 (sprite graphic)
-SPRITE_GRAPHIC_10A0:
-	incbin "data/objects/graphics/sprite_graphic_10A0.bin"
+kutlass_attack_frame20:
+	incbin "data/objects/graphics/kutlass_attack_frame20.bin"
 
 ;$C7EABC (sprite graphic)
-SPRITE_GRAPHIC_10A4:
-	incbin "data/objects/graphics/sprite_graphic_10A4.bin"
+kutlass_attack_frame21:
+	incbin "data/objects/graphics/kutlass_attack_frame21.bin"
 
 ;$C7EDFE (sprite graphic)
-SPRITE_GRAPHIC_10A8:
-	incbin "data/objects/graphics/sprite_graphic_10A8.bin"
+unknown_10A8_frame1:
+	incbin "data/objects/graphics/unknown_10A8_frame1.bin"
 
 ;$C7EE4A (sprite graphic)
-SPRITE_GRAPHIC_10AC:
-	incbin "data/objects/graphics/sprite_graphic_10AC.bin"
+unknown_10A8_frame2:
+	incbin "data/objects/graphics/unknown_10A8_frame2.bin"
 
 ;$C7EF3A (sprite graphic)
-SPRITE_GRAPHIC_10B0:
-	incbin "data/objects/graphics/sprite_graphic_10B0.bin"
+unknown_10A8_frame3:
+	incbin "data/objects/graphics/unknown_10A8_frame3.bin"
 
 ;$C7F046 (sprite graphic)
-SPRITE_GRAPHIC_10B4:
-	incbin "data/objects/graphics/sprite_graphic_10B4.bin"
+unknown_10A8_frame4:
+	incbin "data/objects/graphics/unknown_10A8_frame4.bin"
 
 ;$C7F240 (sprite graphic)
-SPRITE_GRAPHIC_10B8:
-	incbin "data/objects/graphics/sprite_graphic_10B8.bin"
+unknown_10A8_frame5:
+	incbin "data/objects/graphics/unknown_10A8_frame5.bin"
 
 ;$C7F43A (sprite graphic)
-SPRITE_GRAPHIC_10BC:
-	incbin "data/objects/graphics/sprite_graphic_10BC.bin"
+unknown_10A8_frame6:
+	incbin "data/objects/graphics/unknown_10A8_frame6.bin"
 
 ;$C7F5F0 (sprite graphic)
-SPRITE_GRAPHIC_10C0:
-	incbin "data/objects/graphics/sprite_graphic_10C0.bin"
+unknown_10A8_frame7:
+	incbin "data/objects/graphics/unknown_10A8_frame7.bin"
 
 ;$C7F768 (sprite graphic)
-SPRITE_GRAPHIC_10C4:
-	incbin "data/objects/graphics/sprite_graphic_10C4.bin"
+unknown_10A8_frame8:
+	incbin "data/objects/graphics/unknown_10A8_frame8.bin"
 
 ;$C7F7F8 (sprite graphic)
-SPRITE_GRAPHIC_10C8:
-	incbin "data/objects/graphics/sprite_graphic_10C8.bin"
+goal_barrel_graphic:
+	incbin "data/objects/graphics/goal_barrel_graphic.bin"
 
 ;$C7FA6E (sprite graphic)
-SPRITE_GRAPHIC_10CC:
-	incbin "data/objects/graphics/sprite_graphic_10CC.bin"
+goal_pole_graphic:
+	incbin "data/objects/graphics/goal_pole_graphic.bin"
 
 check bankcross off
 ;$C7FCB8	compressed
@@ -3521,496 +3521,496 @@ ship_deck_ocean_layer_2_8x8_tilemap:
 check bankcross full
 
 ;$C80114 (sprite graphic)
-SPRITE_GRAPHIC_10D0:
-	incbin "data/objects/graphics/sprite_graphic_10D0.bin"
+barrel_timer_1_graphic:
+	incbin "data/objects/graphics/barrel_timer_1_graphic.bin"
 
 ;$C8019E (sprite graphic)
-SPRITE_GRAPHIC_10D4:
-	incbin "data/objects/graphics/sprite_graphic_10D4.bin"
+barrel_timer_2_graphic:
+	incbin "data/objects/graphics/barrel_timer_2_graphic.bin"
 
 ;$C80228 (sprite graphic)
-SPRITE_GRAPHIC_10D8:
-	incbin "data/objects/graphics/sprite_graphic_10D8.bin"
+barrel_timer_3_graphic:
+	incbin "data/objects/graphics/barrel_timer_3_graphic.bin"
 
 ;$C802B2 (sprite graphic)
-SPRITE_GRAPHIC_10DC:
-	incbin "data/objects/graphics/sprite_graphic_10DC.bin"
+barrel_timer_4_graphic:
+	incbin "data/objects/graphics/barrel_timer_4_graphic.bin"
 
 ;$C8033C (sprite graphic)
-SPRITE_GRAPHIC_10E0:
-	incbin "data/objects/graphics/sprite_graphic_10E0.bin"
+barrel_timer_5_graphic:
+	incbin "data/objects/graphics/barrel_timer_5_graphic.bin"
 
 ;$C803C6 (sprite graphic)
-SPRITE_GRAPHIC_10E4:
-	incbin "data/objects/graphics/sprite_graphic_10E4.bin"
+life_balloon_frame1:
+	incbin "data/objects/graphics/life_balloon_frame1.bin"
 
 ;$C805C0 (sprite graphic)
-SPRITE_GRAPHIC_10E8:
-	incbin "data/objects/graphics/sprite_graphic_10E8.bin"
+life_balloon_frame2:
+	incbin "data/objects/graphics/life_balloon_frame2.bin"
 
 ;$C807BA (sprite graphic)
-SPRITE_GRAPHIC_10EC:
-	incbin "data/objects/graphics/sprite_graphic_10EC.bin"
+life_balloon_frame3:
+	incbin "data/objects/graphics/life_balloon_frame3.bin"
 
 ;$C809B4 (sprite graphic)
-SPRITE_GRAPHIC_10F0:
-	incbin "data/objects/graphics/sprite_graphic_10F0.bin"
+life_balloon_frame4:
+	incbin "data/objects/graphics/life_balloon_frame4.bin"
 
 ;$C80BAE (sprite graphic)
-SPRITE_GRAPHIC_10F4:
-	incbin "data/objects/graphics/sprite_graphic_10F4.bin"
+life_balloon_frame5:
+	incbin "data/objects/graphics/life_balloon_frame5.bin"
 
 ;$C80DA8 (sprite graphic)
-SPRITE_GRAPHIC_10F8:
-	incbin "data/objects/graphics/sprite_graphic_10F8.bin"
+life_balloon_frame6:
+	incbin "data/objects/graphics/life_balloon_frame6.bin"
 
 ;$C80FA2 (sprite graphic)
-SPRITE_GRAPHIC_10FC:
-	incbin "data/objects/graphics/sprite_graphic_10FC.bin"
+life_balloon_frame7:
+	incbin "data/objects/graphics/life_balloon_frame7.bin"
 
 ;$C8119C (sprite graphic)
-SPRITE_GRAPHIC_1100:
-	incbin "data/objects/graphics/sprite_graphic_1100.bin"
+life_balloon_frame8:
+	incbin "data/objects/graphics/life_balloon_frame8.bin"
 
 ;$C81396 (sprite graphic)
-SPRITE_GRAPHIC_1104:
-	incbin "data/objects/graphics/sprite_graphic_1104.bin"
+no_rattly_sign_graphic:
+	incbin "data/objects/graphics/no_rattly_sign_graphic.bin"
 
 ;$C816B6 (sprite graphic)
-SPRITE_GRAPHIC_1108:
-	incbin "data/objects/graphics/sprite_graphic_1108.bin"
+no_enguarde_sign_graphic:
+	incbin "data/objects/graphics/no_enguarde_sign_graphic.bin"
 
 ;$C819D6 (sprite graphic)
-SPRITE_GRAPHIC_110C:
-	incbin "data/objects/graphics/sprite_graphic_110C.bin"
+no_squawks_sign_graphic:
+	incbin "data/objects/graphics/no_squawks_sign_graphic.bin"
 
 ;$C81CF6 (sprite graphic)
-SPRITE_GRAPHIC_1110:
-	incbin "data/objects/graphics/sprite_graphic_1110.bin"
+no_rambi_sign_graphic:
+	incbin "data/objects/graphics/no_rambi_sign_graphic.bin"
 
 ;$C82016 (sprite graphic)
-SPRITE_GRAPHIC_1114:
-	incbin "data/objects/graphics/sprite_graphic_1114.bin"
+no_squitter_sign_graphic:
+	incbin "data/objects/graphics/no_squitter_sign_graphic.bin"
 
 ;$C82336 (sprite graphic)
-SPRITE_GRAPHIC_1118:
-	incbin "data/objects/graphics/sprite_graphic_1118.bin"
+hero_coin_frame1:
+	incbin "data/objects/graphics/hero_coin_frame1.bin"
 
 ;$C8240A (sprite graphic)
-SPRITE_GRAPHIC_111C:
-	incbin "data/objects/graphics/sprite_graphic_111C.bin"
+hero_coin_frame2:
+	incbin "data/objects/graphics/hero_coin_frame2.bin"
 
 ;$C82642 (sprite graphic)
-SPRITE_GRAPHIC_1120:
-	incbin "data/objects/graphics/sprite_graphic_1120.bin"
+hero_coin_frame3:
+	incbin "data/objects/graphics/hero_coin_frame3.bin"
 
 ;$C8299A (sprite graphic)
-SPRITE_GRAPHIC_1124:
-	incbin "data/objects/graphics/sprite_graphic_1124.bin"
+hero_coin_frame4:
+	incbin "data/objects/graphics/hero_coin_frame4.bin"
 
 ;$C82D36 (sprite graphic)
-SPRITE_GRAPHIC_1128:
-	incbin "data/objects/graphics/sprite_graphic_1128.bin"
+hero_coin_frame5:
+	incbin "data/objects/graphics/hero_coin_frame5.bin"
 
 ;$C830D2 (sprite graphic)
-SPRITE_GRAPHIC_112C:
-	incbin "data/objects/graphics/sprite_graphic_112C.bin"
+hero_coin_frame6:
+	incbin "data/objects/graphics/hero_coin_frame6.bin"
 
 ;$C8346E (sprite graphic)
-SPRITE_GRAPHIC_1130:
-	incbin "data/objects/graphics/sprite_graphic_1130.bin"
+hero_coin_frame7:
+	incbin "data/objects/graphics/hero_coin_frame7.bin"
 
 ;$C83744 (sprite graphic)
-SPRITE_GRAPHIC_1134:
-	incbin "data/objects/graphics/sprite_graphic_1134.bin"
+hero_coin_frame8:
+	incbin "data/objects/graphics/hero_coin_frame8.bin"
 
 ;$C8397C (sprite graphic)
-SPRITE_GRAPHIC_1138:
-	incbin "data/objects/graphics/sprite_graphic_1138.bin"
+lockjaw_turn_frame1:
+	incbin "data/objects/graphics/lockjaw_turn_frame1.bin"
 
 ;$C83B32 (sprite graphic)
-SPRITE_GRAPHIC_113C:
-	incbin "data/objects/graphics/sprite_graphic_113C.bin"
+lockjaw_turn_frame2:
+	incbin "data/objects/graphics/lockjaw_turn_frame2.bin"
 
 ;$C83D04 (sprite graphic)
-SPRITE_GRAPHIC_1140:
-	incbin "data/objects/graphics/sprite_graphic_1140.bin"
+lockjaw_turn_frame3:
+	incbin "data/objects/graphics/lockjaw_turn_frame3.bin"
 
 ;$C83E5A (sprite graphic)
-SPRITE_GRAPHIC_1144:
-	incbin "data/objects/graphics/sprite_graphic_1144.bin"
+lockjaw_turn_frame4:
+	incbin "data/objects/graphics/lockjaw_turn_frame4.bin"
 
 ;$C83FAA (sprite graphic)
-SPRITE_GRAPHIC_1148:
-	incbin "data/objects/graphics/sprite_graphic_1148.bin"
+lockjaw_turn_frame5:
+	incbin "data/objects/graphics/lockjaw_turn_frame5.bin"
 
 ;$C840BC (sprite graphic)
-SPRITE_GRAPHIC_114C:
-	incbin "data/objects/graphics/sprite_graphic_114C.bin"
+lockjaw_turn_frame6:
+	incbin "data/objects/graphics/lockjaw_turn_frame6.bin"
 
 ;$C84212 (sprite graphic)
-SPRITE_GRAPHIC_1150:
-	incbin "data/objects/graphics/sprite_graphic_1150.bin"
+lockjaw_turn_frame7:
+	incbin "data/objects/graphics/lockjaw_turn_frame7.bin"
 
 ;$C843AC (sprite graphic)
-SPRITE_GRAPHIC_1154:
-	incbin "data/objects/graphics/sprite_graphic_1154.bin"
+lockjaw_hurt_graphic:
+	incbin "data/objects/graphics/lockjaw_hurt_graphic.bin"
 
 ;$C84584 (sprite graphic)
-SPRITE_GRAPHIC_1158:
-	incbin "data/objects/graphics/sprite_graphic_1158.bin"
+shuri_hurt_graphic:
+	incbin "data/objects/graphics/shuri_hurt_graphic.bin"
 
 ;$C846DA (sprite graphic)
-SPRITE_GRAPHIC_115C:
-	incbin "data/objects/graphics/sprite_graphic_115C.bin"
+neek_walk_frame1:
+	incbin "data/objects/graphics/neek_walk_frame1.bin"
 
 ;$C848B2 (sprite graphic)
-SPRITE_GRAPHIC_1160:
-	incbin "data/objects/graphics/sprite_graphic_1160.bin"
+neek_walk_frame2:
+	incbin "data/objects/graphics/neek_walk_frame2.bin"
 
 ;$C84A8A (sprite graphic)
-SPRITE_GRAPHIC_1164:
-	incbin "data/objects/graphics/sprite_graphic_1164.bin"
+neek_walk_frame3:
+	incbin "data/objects/graphics/neek_walk_frame3.bin"
 
 ;$C84C84 (sprite graphic)
-SPRITE_GRAPHIC_1168:
-	incbin "data/objects/graphics/sprite_graphic_1168.bin"
+neek_walk_frame4:
+	incbin "data/objects/graphics/neek_walk_frame4.bin"
 
 ;$C84E5C (sprite graphic)
-SPRITE_GRAPHIC_116C:
-	incbin "data/objects/graphics/sprite_graphic_116C.bin"
+neek_walk_frame5:
+	incbin "data/objects/graphics/neek_walk_frame5.bin"
 
 ;$C85056 (sprite graphic)
-SPRITE_GRAPHIC_1170:
-	incbin "data/objects/graphics/sprite_graphic_1170.bin"
+neek_walk_frame6:
+	incbin "data/objects/graphics/neek_walk_frame6.bin"
 
 ;$C8522E (sprite graphic)
-SPRITE_GRAPHIC_1174:
-	incbin "data/objects/graphics/sprite_graphic_1174.bin"
+neek_walk_frame7:
+	incbin "data/objects/graphics/neek_walk_frame7.bin"
 
 ;$C85406 (sprite graphic)
-SPRITE_GRAPHIC_1178:
-	incbin "data/objects/graphics/sprite_graphic_1178.bin"
+neek_walk_frame8:
+	incbin "data/objects/graphics/neek_walk_frame8.bin"
 
 ;$C855DE (sprite graphic)
-SPRITE_GRAPHIC_117C:
-	incbin "data/objects/graphics/sprite_graphic_117C.bin"
+neek_hurt_frame1:
+	incbin "data/objects/graphics/neek_hurt_frame1.bin"
 
 ;$C8585A (sprite graphic)
-SPRITE_GRAPHIC_1180:
-	incbin "data/objects/graphics/sprite_graphic_1180.bin"
+neek_hurt_frame2:
+	incbin "data/objects/graphics/neek_hurt_frame2.bin"
 
 ;$C85ABA (sprite graphic)
-SPRITE_GRAPHIC_1184:
-	incbin "data/objects/graphics/sprite_graphic_1184.bin"
+neek_hurt_frame3:
+	incbin "data/objects/graphics/neek_hurt_frame3.bin"
 
 ;$C85D1A (sprite graphic)
-SPRITE_GRAPHIC_1188:
-	incbin "data/objects/graphics/sprite_graphic_1188.bin"
+neek_hurt_frame4:
+	incbin "data/objects/graphics/neek_hurt_frame4.bin"
 
 ;$C85F96 (sprite graphic)
-SPRITE_GRAPHIC_118C:
-	incbin "data/objects/graphics/sprite_graphic_118C.bin"
+neek_turn_frame1:
+	incbin "data/objects/graphics/neek_turn_frame1.bin"
 
 ;$C8616E (sprite graphic)
-SPRITE_GRAPHIC_1190:
-	incbin "data/objects/graphics/sprite_graphic_1190.bin"
+neek_turn_frame2:
+	incbin "data/objects/graphics/neek_turn_frame2.bin"
 
 ;$C86302 (sprite graphic)
-SPRITE_GRAPHIC_1194:
-	incbin "data/objects/graphics/sprite_graphic_1194.bin"
+neek_turn_frame3:
+	incbin "data/objects/graphics/neek_turn_frame3.bin"
 
 ;$C86436 (sprite graphic)
-SPRITE_GRAPHIC_1198:
-	incbin "data/objects/graphics/sprite_graphic_1198.bin"
+klomp_hurt_frame1:
+	incbin "data/objects/graphics/klomp_hurt_frame1.bin"
 
 ;$C867BC (sprite graphic)
-SPRITE_GRAPHIC_119C:
-	incbin "data/objects/graphics/sprite_graphic_119C.bin"
+klomp_hurt_frame2:
+	incbin "data/objects/graphics/klomp_hurt_frame2.bin"
 
 ;$C86B26 (sprite graphic)
-SPRITE_GRAPHIC_11A0:
-	incbin "data/objects/graphics/sprite_graphic_11A0.bin"
+klomp_hurt_frame3:
+	incbin "data/objects/graphics/klomp_hurt_frame3.bin"
 
 ;$C86E96 (sprite graphic)
-SPRITE_GRAPHIC_11A4:
-	incbin "data/objects/graphics/sprite_graphic_11A4.bin"
+klomp_hurt_frame4:
+	incbin "data/objects/graphics/klomp_hurt_frame4.bin"
 
 ;$C871DE (sprite graphic)
-SPRITE_GRAPHIC_11A8:
-	incbin "data/objects/graphics/sprite_graphic_11A8.bin"
+klomp_turn_frame1:
+	incbin "data/objects/graphics/klomp_turn_frame1.bin"
 
 ;$C87542 (sprite graphic)
-SPRITE_GRAPHIC_11AC:
-	incbin "data/objects/graphics/sprite_graphic_11AC.bin"
+klomp_turn_frame2:
+	incbin "data/objects/graphics/klomp_turn_frame2.bin"
 
 ;$C878C2 (sprite graphic)
-SPRITE_GRAPHIC_11B0:
-	incbin "data/objects/graphics/sprite_graphic_11B0.bin"
+klomp_turn_frame3:
+	incbin "data/objects/graphics/klomp_turn_frame3.bin"
 
 ;$C87C04 (sprite graphic)
-SPRITE_GRAPHIC_11B4:
-	incbin "data/objects/graphics/sprite_graphic_11B4.bin"
+smoke_puff_2_frame1:
+	incbin "data/objects/graphics/smoke_puff_2_frame1.bin"
 
 ;$C87CB0 (sprite graphic)
-SPRITE_GRAPHIC_11B8:
-	incbin "data/objects/graphics/sprite_graphic_11B8.bin"
+smoke_puff_2_frame2:
+	incbin "data/objects/graphics/smoke_puff_2_frame2.bin"
 
 ;$C87DE4 (sprite graphic)
-SPRITE_GRAPHIC_11BC:
-	incbin "data/objects/graphics/sprite_graphic_11BC.bin"
+smoke_puff_2_frame3:
+	incbin "data/objects/graphics/smoke_puff_2_frame3.bin"
 
 ;$C87F78 (sprite graphic)
-SPRITE_GRAPHIC_11C0:
-	incbin "data/objects/graphics/sprite_graphic_11C0.bin"
+smoke_puff_2_frame4:
+	incbin "data/objects/graphics/smoke_puff_2_frame4.bin"
 
 ;$C881CC (sprite graphic)
-SPRITE_GRAPHIC_11C4:
-	incbin "data/objects/graphics/sprite_graphic_11C4.bin"
+smoke_puff_2_frame5:
+	incbin "data/objects/graphics/smoke_puff_2_frame5.bin"
 
 ;$C884A2 (sprite graphic)
-SPRITE_GRAPHIC_11C8:
-	incbin "data/objects/graphics/sprite_graphic_11C8.bin"
+smoke_puff_2_frame6:
+	incbin "data/objects/graphics/smoke_puff_2_frame6.bin"
 
 ;$C8879A (sprite graphic)
-SPRITE_GRAPHIC_11CC:
-	incbin "data/objects/graphics/sprite_graphic_11CC.bin"
+smoke_puff_2_frame7:
+	incbin "data/objects/graphics/smoke_puff_2_frame7.bin"
 
 ;$C889D8 (sprite graphic)
-SPRITE_GRAPHIC_11D0:
-	incbin "data/objects/graphics/sprite_graphic_11D0.bin"
+smoke_puff_2_frame8:
+	incbin "data/objects/graphics/smoke_puff_2_frame8.bin"
 
 ;$C88AEA (sprite graphic)
-SPRITE_GRAPHIC_11D4:
-	incbin "data/objects/graphics/sprite_graphic_11D4.bin"
+mini_necky_idle_frame1:
+	incbin "data/objects/graphics/mini_necky_idle_frame1.bin"
 
 ;$C88D60 (sprite graphic)
-SPRITE_GRAPHIC_11D8:
-	incbin "data/objects/graphics/sprite_graphic_11D8.bin"
+mini_necky_idle_frame2:
+	incbin "data/objects/graphics/mini_necky_idle_frame2.bin"
 
 ;$C88FBA (sprite graphic)
-SPRITE_GRAPHIC_11DC:
-	incbin "data/objects/graphics/sprite_graphic_11DC.bin"
+mini_necky_idle_frame3:
+	incbin "data/objects/graphics/mini_necky_idle_frame3.bin"
 
 ;$C891D0 (sprite graphic)
-SPRITE_GRAPHIC_11E0:
-	incbin "data/objects/graphics/sprite_graphic_11E0.bin"
+mini_necky_idle_frame4:
+	incbin "data/objects/graphics/mini_necky_idle_frame4.bin"
 
 ;$C89364 (sprite graphic)
-SPRITE_GRAPHIC_11E4:
-	incbin "data/objects/graphics/sprite_graphic_11E4.bin"
+mini_necky_idle_frame5:
+	incbin "data/objects/graphics/mini_necky_idle_frame5.bin"
 
 ;$C8951A (sprite graphic)
-SPRITE_GRAPHIC_11E8:
-	incbin "data/objects/graphics/sprite_graphic_11E8.bin"
+mini_necky_idle_frame6:
+	incbin "data/objects/graphics/mini_necky_idle_frame6.bin"
 
 ;$C8970E (sprite graphic)
-SPRITE_GRAPHIC_11EC:
-	incbin "data/objects/graphics/sprite_graphic_11EC.bin"
+mini_necky_idle_frame7:
+	incbin "data/objects/graphics/mini_necky_idle_frame7.bin"
 
 ;$C89902 (sprite graphic)
-SPRITE_GRAPHIC_11F0:
-	incbin "data/objects/graphics/sprite_graphic_11F0.bin"
+mini_necky_idle_frame8:
+	incbin "data/objects/graphics/mini_necky_idle_frame8.bin"
 
 ;$C89AB8 (sprite graphic)
-SPRITE_GRAPHIC_11F4:
-	incbin "data/objects/graphics/sprite_graphic_11F4.bin"
+mini_necky_idle_frame9:
+	incbin "data/objects/graphics/mini_necky_idle_frame9.bin"
 
 ;$C89CAC (sprite graphic)
-SPRITE_GRAPHIC_11F8:
-	incbin "data/objects/graphics/sprite_graphic_11F8.bin"
+mini_necky_idle_frame10:
+	incbin "data/objects/graphics/mini_necky_idle_frame10.bin"
 
 ;$C89EA0 (sprite graphic)
-SPRITE_GRAPHIC_11FC:
-	incbin "data/objects/graphics/sprite_graphic_11FC.bin"
+mini_necky_idle_frame11:
+	incbin "data/objects/graphics/mini_necky_idle_frame11.bin"
 
 ;$C8A0B6 (sprite graphic)
-SPRITE_GRAPHIC_1200:
-	incbin "data/objects/graphics/sprite_graphic_1200.bin"
+mini_necky_idle_frame12:
+	incbin "data/objects/graphics/mini_necky_idle_frame12.bin"
 
 ;$C8A310 (sprite graphic)
-SPRITE_GRAPHIC_1204:
-	incbin "data/objects/graphics/sprite_graphic_1204.bin"
+klobber_wake_frame1:
+	incbin "data/objects/graphics/klobber_wake_frame1.bin"
 
 ;$C8A3A0 (sprite graphic)
-SPRITE_GRAPHIC_1208:
-	incbin "data/objects/graphics/sprite_graphic_1208.bin"
+klobber_wake_frame2:
+	incbin "data/objects/graphics/klobber_wake_frame2.bin"
 
 ;$C8A46E (sprite graphic)
-SPRITE_GRAPHIC_120C:
-	incbin "data/objects/graphics/sprite_graphic_120C.bin"
+klobber_wake_frame3:
+	incbin "data/objects/graphics/klobber_wake_frame3.bin"
 
 ;$C8A55E (sprite graphic)
-SPRITE_GRAPHIC_1210:
-	incbin "data/objects/graphics/sprite_graphic_1210.bin"
+klobber_wake_frame4:
+	incbin "data/objects/graphics/klobber_wake_frame4.bin"
 
 ;$C8A6B4 (sprite graphic)
-SPRITE_GRAPHIC_1214:
-	incbin "data/objects/graphics/sprite_graphic_1214.bin"
+klobber_wake_frame5:
+	incbin "data/objects/graphics/klobber_wake_frame5.bin"
 
 ;$C8A886 (sprite graphic)
-SPRITE_GRAPHIC_1218:
-	incbin "data/objects/graphics/sprite_graphic_1218.bin"
+klobber_wake_frame6:
+	incbin "data/objects/graphics/klobber_wake_frame6.bin"
 
 ;$C8AA1A (sprite graphic)
-SPRITE_GRAPHIC_121C:
-	incbin "data/objects/graphics/sprite_graphic_121C.bin"
+klobber_wake_frame7:
+	incbin "data/objects/graphics/klobber_wake_frame7.bin"
 
 ;$C8AB8C (sprite graphic)
-SPRITE_GRAPHIC_1220:
-	incbin "data/objects/graphics/sprite_graphic_1220.bin"
+klobber_wake_frame8:
+	incbin "data/objects/graphics/klobber_wake_frame8.bin"
 
 ;$C8ACDC (sprite graphic)
-SPRITE_GRAPHIC_1224:
-	incbin "data/objects/graphics/sprite_graphic_1224.bin"
+klobber_wake_frame9:
+	incbin "data/objects/graphics/klobber_wake_frame9.bin"
 
 ;$C8AE54 (sprite graphic)
-SPRITE_GRAPHIC_1228:
-	incbin "data/objects/graphics/sprite_graphic_1228.bin"
+klobber_wake_frame10:
+	incbin "data/objects/graphics/klobber_wake_frame10.bin"
 
 ;$C8B010 (sprite graphic)
-SPRITE_GRAPHIC_122C:
-	incbin "data/objects/graphics/sprite_graphic_122C.bin"
+klobber_wake_frame11:
+	incbin "data/objects/graphics/klobber_wake_frame11.bin"
 
 ;$C8B20A (sprite graphic)
-SPRITE_GRAPHIC_1230:
-	incbin "data/objects/graphics/sprite_graphic_1230.bin"
+klobber_wake_frame12:
+	incbin "data/objects/graphics/klobber_wake_frame12.bin"
 
 ;$C8B464 (sprite graphic)
-SPRITE_GRAPHIC_1234:
-	incbin "data/objects/graphics/sprite_graphic_1234.bin"
+klobber_barrel_wake_graphic:
+	incbin "data/objects/graphics/klobber_barrel_wake_graphic.bin"
 
 ;$C8B6DA (sprite graphic)
-SPRITE_GRAPHIC_1238:
-	incbin "data/objects/graphics/sprite_graphic_1238.bin"
+mini_necky_swoop_frame1:
+	incbin "data/objects/graphics/mini_necky_swoop_frame1.bin"
 
 ;$C8B8CE (sprite graphic)
-SPRITE_GRAPHIC_123C:
-	incbin "data/objects/graphics/sprite_graphic_123C.bin"
+mini_necky_swoop_frame2:
+	incbin "data/objects/graphics/mini_necky_swoop_frame2.bin"
 
 ;$C8BAE4 (sprite graphic)
-SPRITE_GRAPHIC_1240:
-	incbin "data/objects/graphics/sprite_graphic_1240.bin"
+mini_necky_swoop_frame3:
+	incbin "data/objects/graphics/mini_necky_swoop_frame3.bin"
 
 ;$C8BCFA (sprite graphic)
-SPRITE_GRAPHIC_1244:
-	incbin "data/objects/graphics/sprite_graphic_1244.bin"
+mini_necky_swoop_frame4:
+	incbin "data/objects/graphics/mini_necky_swoop_frame4.bin"
 
 ;$C8BEEE (sprite graphic)
-SPRITE_GRAPHIC_1248:
-	incbin "data/objects/graphics/sprite_graphic_1248.bin"
+mini_necky_swoop_frame5:
+	incbin "data/objects/graphics/mini_necky_swoop_frame5.bin"
 
 ;$C8C0E8 (sprite graphic)
-SPRITE_GRAPHIC_124C:
-	incbin "data/objects/graphics/sprite_graphic_124C.bin"
+mini_necky_swoop_frame6:
+	incbin "data/objects/graphics/mini_necky_swoop_frame6.bin"
 
 ;$C8C2E2 (sprite graphic)
-SPRITE_GRAPHIC_1250:
-	incbin "data/objects/graphics/sprite_graphic_1250.bin"
+mini_necky_swoop_frame7:
+	incbin "data/objects/graphics/mini_necky_swoop_frame7.bin"
 
 ;$C8C438 (sprite graphic)
-SPRITE_GRAPHIC_1254:
-	incbin "data/objects/graphics/sprite_graphic_1254.bin"
+mini_necky_swoop_frame8:
+	incbin "data/objects/graphics/mini_necky_swoop_frame8.bin"
 
 ;$C8C5AA (sprite graphic)
-SPRITE_GRAPHIC_1258:
-	incbin "data/objects/graphics/sprite_graphic_1258.bin"
+mini_necky_swoop_frame9:
+	incbin "data/objects/graphics/mini_necky_swoop_frame9.bin"
 
 ;$C8C760 (sprite graphic)
-SPRITE_GRAPHIC_125C:
-	incbin "data/objects/graphics/sprite_graphic_125C.bin"
+mini_necky_swoop_frame10:
+	incbin "data/objects/graphics/mini_necky_swoop_frame10.bin"
 
 ;$C8C8F4 (sprite graphic)
-SPRITE_GRAPHIC_1260:
-	incbin "data/objects/graphics/sprite_graphic_1260.bin"
+mini_necky_swoop_frame11:
+	incbin "data/objects/graphics/mini_necky_swoop_frame11.bin"
 
 ;$C8CA66 (sprite graphic)
-SPRITE_GRAPHIC_1264:
-	incbin "data/objects/graphics/sprite_graphic_1264.bin"
+mini_necky_swoop_frame12:
+	incbin "data/objects/graphics/mini_necky_swoop_frame12.bin"
 
 ;$C8CBFA (sprite graphic)
-SPRITE_GRAPHIC_1268:
-	incbin "data/objects/graphics/sprite_graphic_1268.bin"
+krow_egg_frame1:
+	incbin "data/objects/graphics/krow_egg_frame1.bin"
 
 ;$C8CE70 (sprite graphic)
-SPRITE_GRAPHIC_126C:
-	incbin "data/objects/graphics/sprite_graphic_126C.bin"
+krow_egg_frame2:
+	incbin "data/objects/graphics/krow_egg_frame2.bin"
 
 ;$C8D0E6 (sprite graphic)
-SPRITE_GRAPHIC_1270:
-	incbin "data/objects/graphics/sprite_graphic_1270.bin"
+krow_egg_frame3:
+	incbin "data/objects/graphics/krow_egg_frame3.bin"
 
 ;$C8D35C (sprite graphic)
-SPRITE_GRAPHIC_1274:
-	incbin "data/objects/graphics/sprite_graphic_1274.bin"
+krow_egg_frame4:
+	incbin "data/objects/graphics/krow_egg_frame4.bin"
 
 ;$C8D58E (sprite graphic)
-SPRITE_GRAPHIC_1278:
-	incbin "data/objects/graphics/sprite_graphic_1278.bin"
+krow_egg_frame5:
+	incbin "data/objects/graphics/krow_egg_frame5.bin"
 
 ;$C8D7E2 (sprite graphic)
-SPRITE_GRAPHIC_127C:
-	incbin "data/objects/graphics/sprite_graphic_127C.bin"
+krow_egg_frame6:
+	incbin "data/objects/graphics/krow_egg_frame6.bin"
 
 ;$C8DA14 (sprite graphic)
-SPRITE_GRAPHIC_1280:
-	incbin "data/objects/graphics/sprite_graphic_1280.bin"
+krow_egg_frame7:
+	incbin "data/objects/graphics/krow_egg_frame7.bin"
 
 ;$C8DC68 (sprite graphic)
-SPRITE_GRAPHIC_1284:
-	incbin "data/objects/graphics/sprite_graphic_1284.bin"
+krow_egg_frame8:
+	incbin "data/objects/graphics/krow_egg_frame8.bin"
 
 ;$C8DEDE (sprite graphic)
-SPRITE_GRAPHIC_1288:
-	incbin "data/objects/graphics/sprite_graphic_1288.bin"
+krow_egg_frame9:
+	incbin "data/objects/graphics/krow_egg_frame9.bin"
 
 ;$C8E154 (sprite graphic)
-SPRITE_GRAPHIC_128C:
-	incbin "data/objects/graphics/sprite_graphic_128C.bin"
+krow_egg_frame10:
+	incbin "data/objects/graphics/krow_egg_frame10.bin"
 
 ;$C8E3A8 (sprite graphic)
-SPRITE_GRAPHIC_1290:
-	incbin "data/objects/graphics/sprite_graphic_1290.bin"
+krow_egg_frame11:
+	incbin "data/objects/graphics/krow_egg_frame11.bin"
 
 ;$C8E5FC (sprite graphic)
-SPRITE_GRAPHIC_1294:
-	incbin "data/objects/graphics/sprite_graphic_1294.bin"
+krow_egg_frame12:
+	incbin "data/objects/graphics/krow_egg_frame12.bin"
 
 ;$C8E82E (sprite graphic)
-SPRITE_GRAPHIC_1298:
-	incbin "data/objects/graphics/sprite_graphic_1298.bin"
+krow_egg_frame13:
+	incbin "data/objects/graphics/krow_egg_frame13.bin"
 
 ;$C8EA82 (sprite graphic)
-SPRITE_GRAPHIC_129C:
-	incbin "data/objects/graphics/sprite_graphic_129C.bin"
+krow_egg_frame14:
+	incbin "data/objects/graphics/krow_egg_frame14.bin"
 
 ;$C8ECB4 (sprite graphic)
-SPRITE_GRAPHIC_12A0:
-	incbin "data/objects/graphics/sprite_graphic_12A0.bin"
+krow_egg_frame15:
+	incbin "data/objects/graphics/krow_egg_frame15.bin"
 
 ;$C8EF08 (sprite graphic)
-SPRITE_GRAPHIC_12A4:
-	incbin "data/objects/graphics/sprite_graphic_12A4.bin"
+krow_egg_frame16:
+	incbin "data/objects/graphics/krow_egg_frame16.bin"
 
 ;$C8F17E (sprite graphic)
-SPRITE_GRAPHIC_12A8:
-	incbin "data/objects/graphics/sprite_graphic_12A8.bin"
+klobber_run_frame1:
+	incbin "data/objects/graphics/klobber_run_frame1.bin"
 
 ;$C8F2F6 (sprite graphic)
-SPRITE_GRAPHIC_12AC:
-	incbin "data/objects/graphics/sprite_graphic_12AC.bin"
+klobber_run_frame2:
+	incbin "data/objects/graphics/klobber_run_frame2.bin"
 
 ;$C8F490 (sprite graphic)
-SPRITE_GRAPHIC_12B0:
-	incbin "data/objects/graphics/sprite_graphic_12B0.bin"
+klobber_run_frame3:
+	incbin "data/objects/graphics/klobber_run_frame3.bin"
 
 ;$C8F64C (sprite graphic)
-SPRITE_GRAPHIC_12B4:
-	incbin "data/objects/graphics/sprite_graphic_12B4.bin"
+klobber_run_frame4:
+	incbin "data/objects/graphics/klobber_run_frame4.bin"
 
 ;$C8F824 (sprite graphic)
-SPRITE_GRAPHIC_12B8:
-	incbin "data/objects/graphics/sprite_graphic_12B8.bin"
+klobber_run_frame5:
+	incbin "data/objects/graphics/klobber_run_frame5.bin"
 
 check bankcross off
 ;$C8F99C	compressed
@@ -4019,396 +4019,396 @@ ship_deck_cabin_8x8_tilemap:
 check bankcross full
 
 ;$C90020 (sprite graphic)
-SPRITE_GRAPHIC_12BC:
-	incbin "data/objects/graphics/sprite_graphic_12BC.bin"
+klobber_run_frame6:
+	incbin "data/objects/graphics/klobber_run_frame6.bin"
 
 ;$C901BA (sprite graphic)
-SPRITE_GRAPHIC_12C0:
-	incbin "data/objects/graphics/sprite_graphic_12C0.bin"
+klobber_run_frame7:
+	incbin "data/objects/graphics/klobber_run_frame7.bin"
 
 ;$C903D0 (sprite graphic)
-SPRITE_GRAPHIC_12C4:
-	incbin "data/objects/graphics/sprite_graphic_12C4.bin"
+klobber_run_frame8:
+	incbin "data/objects/graphics/klobber_run_frame8.bin"
 
 ;$C9062A (sprite graphic)
-SPRITE_GRAPHIC_12C8:
-	incbin "data/objects/graphics/sprite_graphic_12C8.bin"
+klobber_run_frame9:
+	incbin "data/objects/graphics/klobber_run_frame9.bin"
 
 ;$C90868 (sprite graphic)
-SPRITE_GRAPHIC_12CC:
-	incbin "data/objects/graphics/sprite_graphic_12CC.bin"
+klobber_run_frame10:
+	incbin "data/objects/graphics/klobber_run_frame10.bin"
 
 ;$C90A84 (sprite graphic)
-SPRITE_GRAPHIC_12D0:
-	incbin "data/objects/graphics/sprite_graphic_12D0.bin"
+klobber_run_frame11:
+	incbin "data/objects/graphics/klobber_run_frame11.bin"
 
 ;$C90C3A (sprite graphic)
-SPRITE_GRAPHIC_12D4:
-	incbin "data/objects/graphics/sprite_graphic_12D4.bin"
+klobber_barrel_run_frame1:
+	incbin "data/objects/graphics/klobber_barrel_run_frame1.bin"
 
 ;$C90EB0 (sprite graphic)
-SPRITE_GRAPHIC_12D8:
-	incbin "data/objects/graphics/sprite_graphic_12D8.bin"
+klobber_barrel_run_frame2:
+	incbin "data/objects/graphics/klobber_barrel_run_frame2.bin"
 
 ;$C91126 (sprite graphic)
-SPRITE_GRAPHIC_12DC:
-	incbin "data/objects/graphics/sprite_graphic_12DC.bin"
+klobber_barrel_run_frame3:
+	incbin "data/objects/graphics/klobber_barrel_run_frame3.bin"
 
 ;$C913BE (sprite graphic)
-SPRITE_GRAPHIC_12E0:
-	incbin "data/objects/graphics/sprite_graphic_12E0.bin"
+klobber_barrel_run_frame4:
+	incbin "data/objects/graphics/klobber_barrel_run_frame4.bin"
 
 ;$C91634 (sprite graphic)
-SPRITE_GRAPHIC_12E4:
-	incbin "data/objects/graphics/sprite_graphic_12E4.bin"
+klobber_barrel_run_frame5:
+	incbin "data/objects/graphics/klobber_barrel_run_frame5.bin"
 
 ;$C918AA (sprite graphic)
-SPRITE_GRAPHIC_12E8:
-	incbin "data/objects/graphics/sprite_graphic_12E8.bin"
+klobber_barrel_run_frame6:
+	incbin "data/objects/graphics/klobber_barrel_run_frame6.bin"
 
 ;$C91B20 (sprite graphic)
-SPRITE_GRAPHIC_12EC:
-	incbin "data/objects/graphics/sprite_graphic_12EC.bin"
+klobber_barrel_run_frame7:
+	incbin "data/objects/graphics/klobber_barrel_run_frame7.bin"
 
 ;$C91D96 (sprite graphic)
-SPRITE_GRAPHIC_12F0:
-	incbin "data/objects/graphics/sprite_graphic_12F0.bin"
+klobber_barrel_run_frame8:
+	incbin "data/objects/graphics/klobber_barrel_run_frame8.bin"
 
 ;$C9200C (sprite graphic)
-SPRITE_GRAPHIC_12F4:
-	incbin "data/objects/graphics/sprite_graphic_12F4.bin"
+klobber_barrel_run_frame9:
+	incbin "data/objects/graphics/klobber_barrel_run_frame9.bin"
 
 ;$C92282 (sprite graphic)
-SPRITE_GRAPHIC_12F8:
-	incbin "data/objects/graphics/sprite_graphic_12F8.bin"
+klobber_barrel_run_frame10:
+	incbin "data/objects/graphics/klobber_barrel_run_frame10.bin"
 
 ;$C924F8 (sprite graphic)
-SPRITE_GRAPHIC_12FC:
-	incbin "data/objects/graphics/sprite_graphic_12FC.bin"
+klobber_barrel_run_frame11:
+	incbin "data/objects/graphics/klobber_barrel_run_frame11.bin"
 
 ;$C9276E (sprite graphic)
-SPRITE_GRAPHIC_1300:
-	incbin "data/objects/graphics/sprite_graphic_1300.bin"
+krow_egg_crack_frame1:
+	incbin "data/objects/graphics/krow_egg_crack_frame1.bin"
 
 ;$C929E4 (sprite graphic)
-SPRITE_GRAPHIC_1304:
-	incbin "data/objects/graphics/sprite_graphic_1304.bin"
+krow_egg_crack_frame2:
+	incbin "data/objects/graphics/krow_egg_crack_frame2.bin"
 
 ;$C92C5A (sprite graphic)
-SPRITE_GRAPHIC_1308:
-	incbin "data/objects/graphics/sprite_graphic_1308.bin"
+krow_egg_crack_frame3:
+	incbin "data/objects/graphics/krow_egg_crack_frame3.bin"
 
 ;$C92ED0 (sprite graphic)
-SPRITE_GRAPHIC_130C:
-	incbin "data/objects/graphics/sprite_graphic_130C.bin"
+krow_egg_crack_frame4:
+	incbin "data/objects/graphics/krow_egg_crack_frame4.bin"
 
 ;$C93146 (sprite graphic)
-SPRITE_GRAPHIC_1310:
-	incbin "data/objects/graphics/sprite_graphic_1310.bin"
+krow_egg_crack_frame5:
+	incbin "data/objects/graphics/krow_egg_crack_frame5.bin"
 
 ;$C933BC (sprite graphic)
-SPRITE_GRAPHIC_1314:
-	incbin "data/objects/graphics/sprite_graphic_1314.bin"
+dixie_carry_kong_frame1:
+	incbin "data/objects/graphics/dixie_carry_kong_frame1.bin"
 
 ;$C935D8 (sprite graphic)
-SPRITE_GRAPHIC_1318:
-	incbin "data/objects/graphics/sprite_graphic_1318.bin"
+dixie_carry_kong_frame2:
+	incbin "data/objects/graphics/dixie_carry_kong_frame2.bin"
 
 ;$C93816 (sprite graphic)
-SPRITE_GRAPHIC_131C:
-	incbin "data/objects/graphics/sprite_graphic_131C.bin"
+dixie_carry_kong_frame3:
+	incbin "data/objects/graphics/dixie_carry_kong_frame3.bin"
 
 ;$C93A32 (sprite graphic)
-SPRITE_GRAPHIC_1320:
-	incbin "data/objects/graphics/sprite_graphic_1320.bin"
+dixie_carry_kong_frame4:
+	incbin "data/objects/graphics/dixie_carry_kong_frame4.bin"
 
 ;$C93C4E (sprite graphic)
-SPRITE_GRAPHIC_1324:
-	incbin "data/objects/graphics/sprite_graphic_1324.bin"
+dixie_carry_kong_frame5:
+	incbin "data/objects/graphics/dixie_carry_kong_frame5.bin"
 
 ;$C93E86 (sprite graphic)
-SPRITE_GRAPHIC_1328:
-	incbin "data/objects/graphics/sprite_graphic_1328.bin"
+dixie_carry_kong_frame6:
+	incbin "data/objects/graphics/dixie_carry_kong_frame6.bin"
 
 ;$C940BE (sprite graphic)
-SPRITE_GRAPHIC_132C:
-	incbin "data/objects/graphics/sprite_graphic_132C.bin"
+dixie_carry_kong_frame7:
+	incbin "data/objects/graphics/dixie_carry_kong_frame7.bin"
 
 ;$C94318 (sprite graphic)
-SPRITE_GRAPHIC_1330:
-	incbin "data/objects/graphics/sprite_graphic_1330.bin"
+dixie_carry_kong_frame8:
+	incbin "data/objects/graphics/dixie_carry_kong_frame8.bin"
 
 ;$C94572 (sprite graphic)
-SPRITE_GRAPHIC_1334:
-	incbin "data/objects/graphics/sprite_graphic_1334.bin"
+dixie_carry_kong_frame9:
+	incbin "data/objects/graphics/dixie_carry_kong_frame9.bin"
 
 ;$C947B0 (sprite graphic)
-SPRITE_GRAPHIC_1338:
-	incbin "data/objects/graphics/sprite_graphic_1338.bin"
+dixie_carry_kong_frame10:
+	incbin "data/objects/graphics/dixie_carry_kong_frame10.bin"
 
 ;$C949EE (sprite graphic)
-SPRITE_GRAPHIC_133C:
-	incbin "data/objects/graphics/sprite_graphic_133C.bin"
+dixie_carry_kong_frame11:
+	incbin "data/objects/graphics/dixie_carry_kong_frame11.bin"
 
 ;$C94BE8 (sprite graphic)
-SPRITE_GRAPHIC_1340:
-	incbin "data/objects/graphics/sprite_graphic_1340.bin"
+diddy_carried_frame1:
+	incbin "data/objects/graphics/diddy_carried_frame1.bin"
 
 ;$C94DE2 (sprite graphic)
-SPRITE_GRAPHIC_1344:
-	incbin "data/objects/graphics/sprite_graphic_1344.bin"
+diddy_carried_frame2:
+	incbin "data/objects/graphics/diddy_carried_frame2.bin"
 
 ;$C94FF8 (sprite graphic)
-SPRITE_GRAPHIC_1348:
-	incbin "data/objects/graphics/sprite_graphic_1348.bin"
+diddy_carried_frame3:
+	incbin "data/objects/graphics/diddy_carried_frame3.bin"
 
 ;$C95230 (sprite graphic)
-SPRITE_GRAPHIC_134C:
-	incbin "data/objects/graphics/sprite_graphic_134C.bin"
+diddy_carried_frame4:
+	incbin "data/objects/graphics/diddy_carried_frame4.bin"
 
 ;$C95468 (sprite graphic)
-SPRITE_GRAPHIC_1350:
-	incbin "data/objects/graphics/sprite_graphic_1350.bin"
+diddy_carried_frame5:
+	incbin "data/objects/graphics/diddy_carried_frame5.bin"
 
 ;$C95662 (sprite graphic)
-SPRITE_GRAPHIC_1354:
-	incbin "data/objects/graphics/sprite_graphic_1354.bin"
+diddy_carried_frame6:
+	incbin "data/objects/graphics/diddy_carried_frame6.bin"
 
 ;$C9587E (sprite graphic)
-SPRITE_GRAPHIC_1358:
-	incbin "data/objects/graphics/sprite_graphic_1358.bin"
+diddy_carried_frame7:
+	incbin "data/objects/graphics/diddy_carried_frame7.bin"
 
 ;$C95A9A (sprite graphic)
-SPRITE_GRAPHIC_135C:
-	incbin "data/objects/graphics/sprite_graphic_135C.bin"
+diddy_carried_frame8:
+	incbin "data/objects/graphics/diddy_carried_frame8.bin"
 
 ;$C95C8E (sprite graphic)
-SPRITE_GRAPHIC_1360:
-	incbin "data/objects/graphics/sprite_graphic_1360.bin"
+diddy_carried_frame9:
+	incbin "data/objects/graphics/diddy_carried_frame9.bin"
 
 ;$C95E44 (sprite graphic)
-SPRITE_GRAPHIC_1364:
-	incbin "data/objects/graphics/sprite_graphic_1364.bin"
+diddy_carried_frame10:
+	incbin "data/objects/graphics/diddy_carried_frame10.bin"
 
 ;$C95FD8 (sprite graphic)
-SPRITE_GRAPHIC_1368:
-	incbin "data/objects/graphics/sprite_graphic_1368.bin"
+diddy_carried_frame11:
+	incbin "data/objects/graphics/diddy_carried_frame11.bin"
 
 ;$C9616C (sprite graphic)
-SPRITE_GRAPHIC_136C:
-	incbin "data/objects/graphics/sprite_graphic_136C.bin"
+diddy_carried_frame12:
+	incbin "data/objects/graphics/diddy_carried_frame12.bin"
 
 ;$C96300 (sprite graphic)
-SPRITE_GRAPHIC_1370:
-	incbin "data/objects/graphics/sprite_graphic_1370.bin"
+krow_body_frame1:
+	incbin "data/objects/graphics/krow_body_frame1.bin"
 
 ;$C967F0 (sprite graphic)
-SPRITE_GRAPHIC_1374:
-	incbin "data/objects/graphics/sprite_graphic_1374.bin"
+krow_body_frame2:
+	incbin "data/objects/graphics/krow_body_frame2.bin"
 
 ;$C96C86 (sprite graphic)
-SPRITE_GRAPHIC_1378:
-	incbin "data/objects/graphics/sprite_graphic_1378.bin"
+krow_body_frame3:
+	incbin "data/objects/graphics/krow_body_frame3.bin"
 
 ;$C97154 (sprite graphic)
-SPRITE_GRAPHIC_137C:
-	incbin "data/objects/graphics/sprite_graphic_137C.bin"
+krow_body_frame4:
+	incbin "data/objects/graphics/krow_body_frame4.bin"
 
 ;$C9759A (sprite graphic)
-SPRITE_GRAPHIC_1380:
-	incbin "data/objects/graphics/sprite_graphic_1380.bin"
+krow_body_frame5:
+	incbin "data/objects/graphics/krow_body_frame5.bin"
 
 ;$C97958 (sprite graphic)
-SPRITE_GRAPHIC_1384:
-	incbin "data/objects/graphics/sprite_graphic_1384.bin"
+krow_body_frame6:
+	incbin "data/objects/graphics/krow_body_frame6.bin"
 
 ;$C97DC0 (sprite graphic)
-SPRITE_GRAPHIC_1388:
-	incbin "data/objects/graphics/sprite_graphic_1388.bin"
+krow_body_frame7:
+	incbin "data/objects/graphics/krow_body_frame7.bin"
 
 ;$C982AA (sprite graphic)
-SPRITE_GRAPHIC_138C:
-	incbin "data/objects/graphics/sprite_graphic_138C.bin"
+krow_body_frame8:
+	incbin "data/objects/graphics/krow_body_frame8.bin"
 
 ;$C98734 (sprite graphic)
-SPRITE_GRAPHIC_1390:
-	incbin "data/objects/graphics/sprite_graphic_1390.bin"
+krow_body_turn_frame1:
+	incbin "data/objects/graphics/krow_body_turn_frame1.bin"
 
 ;$C98C40 (sprite graphic)
-SPRITE_GRAPHIC_1394:
-	incbin "data/objects/graphics/sprite_graphic_1394.bin"
+krow_body_turn_frame2:
+	incbin "data/objects/graphics/krow_body_turn_frame2.bin"
 
 ;$C990E0 (sprite graphic)
-SPRITE_GRAPHIC_1398:
-	incbin "data/objects/graphics/sprite_graphic_1398.bin"
+krow_body_turn_frame3:
+	incbin "data/objects/graphics/krow_body_turn_frame3.bin"
 
 ;$C995D0 (sprite graphic)
-SPRITE_GRAPHIC_139C:
-	incbin "data/objects/graphics/sprite_graphic_139C.bin"
+krow_head_frame1:
+	incbin "data/objects/graphics/krow_head_frame1.bin"
 
 ;$C99912 (sprite graphic)
-SPRITE_GRAPHIC_13A0:
-	incbin "data/objects/graphics/sprite_graphic_13A0.bin"
+krow_head_frame2:
+	incbin "data/objects/graphics/krow_head_frame2.bin"
 
 ;$C99C54 (sprite graphic)
-SPRITE_GRAPHIC_13A4:
-	incbin "data/objects/graphics/sprite_graphic_13A4.bin"
+krow_head_frame3:
+	incbin "data/objects/graphics/krow_head_frame3.bin"
 
 ;$C99F96 (sprite graphic)
-SPRITE_GRAPHIC_13A8:
-	incbin "data/objects/graphics/sprite_graphic_13A8.bin"
+krow_head_turn_frame1:
+	incbin "data/objects/graphics/krow_head_turn_frame1.bin"
 
 ;$C9A2B0 (sprite graphic)
-SPRITE_GRAPHIC_13AC:
-	incbin "data/objects/graphics/sprite_graphic_13AC.bin"
+krow_head_turn_frame2:
+	incbin "data/objects/graphics/krow_head_turn_frame2.bin"
 
 ;$C9A5A8 (sprite graphic)
-SPRITE_GRAPHIC_13B0:
-	incbin "data/objects/graphics/sprite_graphic_13B0.bin"
+krow_head_turn_frame3:
+	incbin "data/objects/graphics/krow_head_turn_frame3.bin"
 
 ;$C9A8E4 (sprite graphic)
-SPRITE_GRAPHIC_13B4:
-	incbin "data/objects/graphics/sprite_graphic_13B4.bin"
+krow_head_caw_frame1:
+	incbin "data/objects/graphics/krow_head_caw_frame1.bin"
 
 ;$C9AC64 (sprite graphic)
-SPRITE_GRAPHIC_13B8:
-	incbin "data/objects/graphics/sprite_graphic_13B8.bin"
+krow_head_caw_frame2:
+	incbin "data/objects/graphics/krow_head_caw_frame2.bin"
 
 ;$C9B044 (sprite graphic)
-SPRITE_GRAPHIC_13BC:
-	incbin "data/objects/graphics/sprite_graphic_13BC.bin"
+krow_head_caw_frame3:
+	incbin "data/objects/graphics/krow_head_caw_frame3.bin"
 
 ;$C9B474 (sprite graphic)
-SPRITE_GRAPHIC_13C0:
-	incbin "data/objects/graphics/sprite_graphic_13C0.bin"
+dixie_throw_kong_frame1:
+	incbin "data/objects/graphics/dixie_throw_kong_frame1.bin"
 
 ;$C9B6AC (sprite graphic)
-SPRITE_GRAPHIC_13C4:
-	incbin "data/objects/graphics/sprite_graphic_13C4.bin"
+dixie_throw_kong_frame2:
+	incbin "data/objects/graphics/dixie_throw_kong_frame2.bin"
 
 ;$C9B8C2 (sprite graphic)
-SPRITE_GRAPHIC_13C8:
-	incbin "data/objects/graphics/sprite_graphic_13C8.bin"
+dixie_throw_kong_frame3:
+	incbin "data/objects/graphics/dixie_throw_kong_frame3.bin"
 
 ;$C9BAFA (sprite graphic)
-SPRITE_GRAPHIC_13CC:
-	incbin "data/objects/graphics/sprite_graphic_13CC.bin"
+dixie_throw_kong_frame4:
+	incbin "data/objects/graphics/dixie_throw_kong_frame4.bin"
 
 ;$C9BD76 (sprite graphic)
-SPRITE_GRAPHIC_13D0:
-	incbin "data/objects/graphics/sprite_graphic_13D0.bin"
+dixie_throw_kong_frame5:
+	incbin "data/objects/graphics/dixie_throw_kong_frame5.bin"
 
 ;$C9BFD6 (sprite graphic)
-SPRITE_GRAPHIC_13D4:
-	incbin "data/objects/graphics/sprite_graphic_13D4.bin"
+dixie_throw_kong_frame6:
+	incbin "data/objects/graphics/dixie_throw_kong_frame6.bin"
 
 ;$C9C252 (sprite graphic)
-SPRITE_GRAPHIC_13D8:
-	incbin "data/objects/graphics/sprite_graphic_13D8.bin"
+diddy_thrown_frame1:
+	incbin "data/objects/graphics/diddy_thrown_frame1.bin"
 
 ;$C9C44C (sprite graphic)
-SPRITE_GRAPHIC_13DC:
-	incbin "data/objects/graphics/sprite_graphic_13DC.bin"
+diddy_thrown_frame2:
+	incbin "data/objects/graphics/diddy_thrown_frame2.bin"
 
 ;$C9C624 (sprite graphic)
-SPRITE_GRAPHIC_13E0:
-	incbin "data/objects/graphics/sprite_graphic_13E0.bin"
+diddy_thrown_frame3:
+	incbin "data/objects/graphics/diddy_thrown_frame3.bin"
 
 ;$C9C7B8 (sprite graphic)
-SPRITE_GRAPHIC_13E4:
-	incbin "data/objects/graphics/sprite_graphic_13E4.bin"
+diddy_thrown_frame4:
+	incbin "data/objects/graphics/diddy_thrown_frame4.bin"
 
 ;$C9C96E (sprite graphic)
-SPRITE_GRAPHIC_13E8:
-	incbin "data/objects/graphics/sprite_graphic_13E8.bin"
+diddy_thrown_frame5:
+	incbin "data/objects/graphics/diddy_thrown_frame5.bin"
 
 ;$C9CAE0 (sprite graphic)
-SPRITE_GRAPHIC_13EC:
-	incbin "data/objects/graphics/sprite_graphic_13EC.bin"
+diddy_thrown_frame6:
+	incbin "data/objects/graphics/diddy_thrown_frame6.bin"
 
 ;$C9CC36 (sprite graphic)
-SPRITE_GRAPHIC_13F0:
-	incbin "data/objects/graphics/sprite_graphic_13F0.bin"
+dixie_carry_kong_idle_frame1:
+	incbin "data/objects/graphics/dixie_carry_kong_idle_frame1.bin"
 
 ;$C9CE30 (sprite graphic)
-SPRITE_GRAPHIC_13F4:
-	incbin "data/objects/graphics/sprite_graphic_13F4.bin"
+dixie_carry_kong_idle_frame2:
+	incbin "data/objects/graphics/dixie_carry_kong_idle_frame2.bin"
 
 ;$C9D02A (sprite graphic)
-SPRITE_GRAPHIC_13F8:
-	incbin "data/objects/graphics/sprite_graphic_13F8.bin"
+dixie_carry_kong_idle_frame3:
+	incbin "data/objects/graphics/dixie_carry_kong_idle_frame3.bin"
 
 ;$C9D224 (sprite graphic)
-SPRITE_GRAPHIC_13FC:
-	incbin "data/objects/graphics/sprite_graphic_13FC.bin"
+diddy_carry_kong_frame1:
+	incbin "data/objects/graphics/diddy_carry_kong_frame1.bin"
 
 ;$C9D45C (sprite graphic)
-SPRITE_GRAPHIC_1400:
-	incbin "data/objects/graphics/sprite_graphic_1400.bin"
+diddy_carry_kong_frame2:
+	incbin "data/objects/graphics/diddy_carry_kong_frame2.bin"
 
 ;$C9D694 (sprite graphic)
-SPRITE_GRAPHIC_1404:
-	incbin "data/objects/graphics/sprite_graphic_1404.bin"
+diddy_carry_kong_frame3:
+	incbin "data/objects/graphics/diddy_carry_kong_frame3.bin"
 
 ;$C9D8CC (sprite graphic)
-SPRITE_GRAPHIC_1408:
-	incbin "data/objects/graphics/sprite_graphic_1408.bin"
+diddy_carry_kong_frame4:
+	incbin "data/objects/graphics/diddy_carry_kong_frame4.bin"
 
 ;$C9DAE8 (sprite graphic)
-SPRITE_GRAPHIC_140C:
-	incbin "data/objects/graphics/sprite_graphic_140C.bin"
+diddy_carry_kong_frame5:
+	incbin "data/objects/graphics/diddy_carry_kong_frame5.bin"
 
 ;$C9DD26 (sprite graphic)
-SPRITE_GRAPHIC_1410:
-	incbin "data/objects/graphics/sprite_graphic_1410.bin"
+diddy_carry_kong_frame6:
+	incbin "data/objects/graphics/diddy_carry_kong_frame6.bin"
 
 ;$C9DF86 (sprite graphic)
-SPRITE_GRAPHIC_1414:
-	incbin "data/objects/graphics/sprite_graphic_1414.bin"
+diddy_carry_kong_frame7:
+	incbin "data/objects/graphics/diddy_carry_kong_frame7.bin"
 
 ;$C9E1E6 (sprite graphic)
-SPRITE_GRAPHIC_1418:
-	incbin "data/objects/graphics/sprite_graphic_1418.bin"
+diddy_carry_kong_frame8:
+	incbin "data/objects/graphics/diddy_carry_kong_frame8.bin"
 
 ;$C9E446 (sprite graphic)
-SPRITE_GRAPHIC_141C:
-	incbin "data/objects/graphics/sprite_graphic_141C.bin"
+diddy_carry_kong_frame9:
+	incbin "data/objects/graphics/diddy_carry_kong_frame9.bin"
 
 ;$C9E684 (sprite graphic)
-SPRITE_GRAPHIC_1420:
-	incbin "data/objects/graphics/sprite_graphic_1420.bin"
+diddy_carry_kong_frame10:
+	incbin "data/objects/graphics/diddy_carry_kong_frame10.bin"
 
 ;$C9E8C2 (sprite graphic)
-SPRITE_GRAPHIC_1424:
-	incbin "data/objects/graphics/sprite_graphic_1424.bin"
+diddy_carry_kong_frame11:
+	incbin "data/objects/graphics/diddy_carry_kong_frame11.bin"
 
 ;$C9EADE (sprite graphic)
-SPRITE_GRAPHIC_1428:
-	incbin "data/objects/graphics/sprite_graphic_1428.bin"
+dixie_carried_frame1:
+	incbin "data/objects/graphics/dixie_carried_frame1.bin"
 
 ;$C9ECF4 (sprite graphic)
-SPRITE_GRAPHIC_142C:
-	incbin "data/objects/graphics/sprite_graphic_142C.bin"
+dixie_carried_frame2:
+	incbin "data/objects/graphics/dixie_carried_frame2.bin"
 
 ;$C9EF0A (sprite graphic)
-SPRITE_GRAPHIC_1430:
-	incbin "data/objects/graphics/sprite_graphic_1430.bin"
+dixie_carried_frame3:
+	incbin "data/objects/graphics/dixie_carried_frame3.bin"
 
 ;$C9F120 (sprite graphic)
-SPRITE_GRAPHIC_1434:
-	incbin "data/objects/graphics/sprite_graphic_1434.bin"
+dixie_carried_frame4:
+	incbin "data/objects/graphics/dixie_carried_frame4.bin"
 
 ;$C9F314 (sprite graphic)
-SPRITE_GRAPHIC_1438:
-	incbin "data/objects/graphics/sprite_graphic_1438.bin"
+dixie_carried_frame5:
+	incbin "data/objects/graphics/dixie_carried_frame5.bin"
 
 ;$C9F52A (sprite graphic)
-SPRITE_GRAPHIC_143C:
-	incbin "data/objects/graphics/sprite_graphic_143C.bin"
+dixie_carried_frame6:
+	incbin "data/objects/graphics/dixie_carried_frame6.bin"
 
 ;$C9F762 (sprite graphic)
-SPRITE_GRAPHIC_1440:
-	incbin "data/objects/graphics/sprite_graphic_1440.bin"
+dixie_carried_frame7:
+	incbin "data/objects/graphics/dixie_carried_frame7.bin"
 
 ;$C9F99A
 swamp_bg_layer_3_8x8_tilemap:
@@ -4421,408 +4421,408 @@ DATA_C9FF37:
 check bankcross full
 
 ;$CA0084 (sprite graphic)
-SPRITE_GRAPHIC_1444:
-	incbin "data/objects/graphics/sprite_graphic_1444.bin"
+dixie_carried_frame8:
+	incbin "data/objects/graphics/dixie_carried_frame8.bin"
 
 ;$CA02BC (sprite graphic)
-SPRITE_GRAPHIC_1448:
-	incbin "data/objects/graphics/sprite_graphic_1448.bin"
+dixie_carried_frame9:
+	incbin "data/objects/graphics/dixie_carried_frame9.bin"
 
 ;$CA04F4 (sprite graphic)
-SPRITE_GRAPHIC_144C:
-	incbin "data/objects/graphics/sprite_graphic_144C.bin"
+dixie_carried_frame10:
+	incbin "data/objects/graphics/dixie_carried_frame10.bin"
 
 ;$CA072C (sprite graphic)
-SPRITE_GRAPHIC_1450:
-	incbin "data/objects/graphics/sprite_graphic_1450.bin"
+dixie_carried_frame11:
+	incbin "data/objects/graphics/dixie_carried_frame11.bin"
 
 ;$CA0942 (sprite graphic)
-SPRITE_GRAPHIC_1454:
-	incbin "data/objects/graphics/sprite_graphic_1454.bin"
+diddy_ride_cart_slope_frame1:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame1.bin"
 
 ;$CA0B7A (sprite graphic)
-SPRITE_GRAPHIC_1458:
-	incbin "data/objects/graphics/sprite_graphic_1458.bin"
+diddy_ride_cart_slope_frame2:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame2.bin"
 
 ;$CA0D96 (sprite graphic)
-SPRITE_GRAPHIC_145C:
-	incbin "data/objects/graphics/sprite_graphic_145C.bin"
+diddy_ride_cart_slope_frame3:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame3.bin"
 
 ;$CA0FB2 (sprite graphic)
-SPRITE_GRAPHIC_1460:
-	incbin "data/objects/graphics/sprite_graphic_1460.bin"
+diddy_ride_cart_slope_frame4:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame4.bin"
 
 ;$CA1212 (sprite graphic)
-SPRITE_GRAPHIC_1464:
-	incbin "data/objects/graphics/sprite_graphic_1464.bin"
+diddy_ride_cart_slope_frame5:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame5.bin"
 
 ;$CA1472 (sprite graphic)
-SPRITE_GRAPHIC_1468:
-	incbin "data/objects/graphics/sprite_graphic_1468.bin"
+diddy_ride_cart_slope_frame6:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame6.bin"
 
 ;$CA16B0 (sprite graphic)
-SPRITE_GRAPHIC_146C:
-	incbin "data/objects/graphics/sprite_graphic_146C.bin"
+diddy_ride_cart_slope_frame7:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame7.bin"
 
 ;$CA18EE (sprite graphic)
-SPRITE_GRAPHIC_1470:
-	incbin "data/objects/graphics/sprite_graphic_1470.bin"
+diddy_ride_cart_slope_frame8:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame8.bin"
 
 ;$CA1B2C (sprite graphic)
-SPRITE_GRAPHIC_1474:
-	incbin "data/objects/graphics/sprite_graphic_1474.bin"
+diddy_ride_cart_slope_frame9:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame9.bin"
 
 ;$CA1D64 (sprite graphic)
-SPRITE_GRAPHIC_1478:
-	incbin "data/objects/graphics/sprite_graphic_1478.bin"
+diddy_ride_cart_slope_frame10:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame10.bin"
 
 ;$CA1F80 (sprite graphic)
-SPRITE_GRAPHIC_147C:
-	incbin "data/objects/graphics/sprite_graphic_147C.bin"
+diddy_ride_cart_slope_frame11:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame11.bin"
 
 ;$CA21BE (sprite graphic)
-SPRITE_GRAPHIC_1480:
-	incbin "data/objects/graphics/sprite_graphic_1480.bin"
+diddy_ride_cart_slope_frame12:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame12.bin"
 
 ;$CA23B2 (sprite graphic)
-SPRITE_GRAPHIC_1484:
-	incbin "data/objects/graphics/sprite_graphic_1484.bin"
+diddy_ride_cart_slope_frame13:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame13.bin"
 
 ;$CA25AC (sprite graphic)
-SPRITE_GRAPHIC_1488:
-	incbin "data/objects/graphics/sprite_graphic_1488.bin"
+diddy_ride_cart_slope_frame14:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame14.bin"
 
 ;$CA27C8 (sprite graphic)
-SPRITE_GRAPHIC_148C:
-	incbin "data/objects/graphics/sprite_graphic_148C.bin"
+diddy_ride_cart_slope_frame15:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame15.bin"
 
 ;$CA29DE (sprite graphic)
-SPRITE_GRAPHIC_1490:
-	incbin "data/objects/graphics/sprite_graphic_1490.bin"
+diddy_ride_cart_slope_frame16:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame16.bin"
 
 ;$CA2BB0 (sprite graphic)
-SPRITE_GRAPHIC_1494:
-	incbin "data/objects/graphics/sprite_graphic_1494.bin"
+diddy_ride_cart_slope_frame17:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame17.bin"
 
 ;$CA2D60 (sprite graphic)
-SPRITE_GRAPHIC_1498:
-	incbin "data/objects/graphics/sprite_graphic_1498.bin"
+diddy_ride_cart_slope_frame18:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame18.bin"
 
 ;$CA2F54 (sprite graphic)
-SPRITE_GRAPHIC_149C:
-	incbin "data/objects/graphics/sprite_graphic_149C.bin"
+diddy_ride_cart_slope_frame19:
+	incbin "data/objects/graphics/diddy_ride_cart_slope_frame19.bin"
 
 ;$CA312C (sprite graphic)
-SPRITE_GRAPHIC_14A0:
-	incbin "data/objects/graphics/sprite_graphic_14A0.bin"
+cart_slope_frame1:
+	incbin "data/objects/graphics/cart_slope_frame1.bin"
 
 ;$CA34CE (sprite graphic)
-SPRITE_GRAPHIC_14A4:
-	incbin "data/objects/graphics/sprite_graphic_14A4.bin"
+cart_slope_frame2:
+	incbin "data/objects/graphics/cart_slope_frame2.bin"
 
 ;$CA3870 (sprite graphic)
-SPRITE_GRAPHIC_14A8:
-	incbin "data/objects/graphics/sprite_graphic_14A8.bin"
+cart_slope_frame3:
+	incbin "data/objects/graphics/cart_slope_frame3.bin"
 
 ;$CA3C34 (sprite graphic)
-SPRITE_GRAPHIC_14AC:
-	incbin "data/objects/graphics/sprite_graphic_14AC.bin"
+cart_slope_frame4:
+	incbin "data/objects/graphics/cart_slope_frame4.bin"
 
 ;$CA3FF8 (sprite graphic)
-SPRITE_GRAPHIC_14B0:
-	incbin "data/objects/graphics/sprite_graphic_14B0.bin"
+cart_slope_frame5:
+	incbin "data/objects/graphics/cart_slope_frame5.bin"
 
 ;$CA43BC (sprite graphic)
-SPRITE_GRAPHIC_14B4:
-	incbin "data/objects/graphics/sprite_graphic_14B4.bin"
+cart_slope_frame6:
+	incbin "data/objects/graphics/cart_slope_frame6.bin"
 
 ;$CA475E (sprite graphic)
-SPRITE_GRAPHIC_14B8:
-	incbin "data/objects/graphics/sprite_graphic_14B8.bin"
+cart_slope_frame7:
+	incbin "data/objects/graphics/cart_slope_frame7.bin"
 
 ;$CA4B22 (sprite graphic)
-SPRITE_GRAPHIC_14BC:
-	incbin "data/objects/graphics/sprite_graphic_14BC.bin"
+cart_slope_frame8:
+	incbin "data/objects/graphics/cart_slope_frame8.bin"
 
 ;$CA4EE6 (sprite graphic)
-SPRITE_GRAPHIC_14C0:
-	incbin "data/objects/graphics/sprite_graphic_14C0.bin"
+cart_slope_frame9:
+	incbin "data/objects/graphics/cart_slope_frame9.bin"
 
 ;$CA528E (sprite graphic)
-SPRITE_GRAPHIC_14C4:
-	incbin "data/objects/graphics/sprite_graphic_14C4.bin"
+cart_slope_frame10:
+	incbin "data/objects/graphics/cart_slope_frame10.bin"
 
 ;$CA5652 (sprite graphic)
-SPRITE_GRAPHIC_14C8:
-	incbin "data/objects/graphics/sprite_graphic_14C8.bin"
+cart_slope_frame11:
+	incbin "data/objects/graphics/cart_slope_frame11.bin"
 
 ;$CA59D2 (sprite graphic)
-SPRITE_GRAPHIC_14CC:
-	incbin "data/objects/graphics/sprite_graphic_14CC.bin"
+cart_slope_frame12:
+	incbin "data/objects/graphics/cart_slope_frame12.bin"
 
 ;$CA5D74 (sprite graphic)
-SPRITE_GRAPHIC_14D0:
-	incbin "data/objects/graphics/sprite_graphic_14D0.bin"
+cart_slope_frame13:
+	incbin "data/objects/graphics/cart_slope_frame13.bin"
 
 ;$CA6138 (sprite graphic)
-SPRITE_GRAPHIC_14D4:
-	incbin "data/objects/graphics/sprite_graphic_14D4.bin"
+cart_slope_frame14:
+	incbin "data/objects/graphics/cart_slope_frame14.bin"
 
 ;$CA651E (sprite graphic)
-SPRITE_GRAPHIC_14D8:
-	incbin "data/objects/graphics/sprite_graphic_14D8.bin"
+cart_slope_frame15:
+	incbin "data/objects/graphics/cart_slope_frame15.bin"
 
 ;$CA6948 (sprite graphic)
-SPRITE_GRAPHIC_14DC:
-	incbin "data/objects/graphics/sprite_graphic_14DC.bin"
+cart_slope_frame16:
+	incbin "data/objects/graphics/cart_slope_frame16.bin"
 
 ;$CA6D28 (sprite graphic)
-SPRITE_GRAPHIC_14E0:
-	incbin "data/objects/graphics/sprite_graphic_14E0.bin"
+cart_slope_frame17:
+	incbin "data/objects/graphics/cart_slope_frame17.bin"
 
 ;$CA712A (sprite graphic)
-SPRITE_GRAPHIC_14E4:
-	incbin "data/objects/graphics/sprite_graphic_14E4.bin"
+cart_slope_frame18:
+	incbin "data/objects/graphics/cart_slope_frame18.bin"
 
 ;$CA750A (sprite graphic)
-SPRITE_GRAPHIC_14E8:
-	incbin "data/objects/graphics/sprite_graphic_14E8.bin"
+cart_slope_frame19:
+	incbin "data/objects/graphics/cart_slope_frame19.bin"
 
 ;$CA788A (sprite graphic)
-SPRITE_GRAPHIC_14EC:
-	incbin "data/objects/graphics/sprite_graphic_14EC.bin"
+dixie_ride_cart_slope_frame1:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame1.bin"
 
 ;$CA7B06 (sprite graphic)
-SPRITE_GRAPHIC_14F0:
-	incbin "data/objects/graphics/sprite_graphic_14F0.bin"
+dixie_ride_cart_slope_frame2:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame2.bin"
 
 ;$CA7D60 (sprite graphic)
-SPRITE_GRAPHIC_14F4:
-	incbin "data/objects/graphics/sprite_graphic_14F4.bin"
+dixie_ride_cart_slope_frame3:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame3.bin"
 
 ;$CA7FF8 (sprite graphic)
-SPRITE_GRAPHIC_14F8:
-	incbin "data/objects/graphics/sprite_graphic_14F8.bin"
+dixie_ride_cart_slope_frame4:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame4.bin"
 
 ;$CA8274 (sprite graphic)
-SPRITE_GRAPHIC_14FC:
-	incbin "data/objects/graphics/sprite_graphic_14FC.bin"
+dixie_ride_cart_slope_frame5:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame5.bin"
 
 ;$CA84F0 (sprite graphic)
-SPRITE_GRAPHIC_1500:
-	incbin "data/objects/graphics/sprite_graphic_1500.bin"
+dixie_ride_cart_slope_frame6:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame6.bin"
 
 ;$CA876C (sprite graphic)
-SPRITE_GRAPHIC_1504:
-	incbin "data/objects/graphics/sprite_graphic_1504.bin"
+dixie_ride_cart_slope_frame7:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame7.bin"
 
 ;$CA89C6 (sprite graphic)
-SPRITE_GRAPHIC_1508:
-	incbin "data/objects/graphics/sprite_graphic_1508.bin"
+dixie_ride_cart_slope_frame8:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame8.bin"
 
 ;$CA8C42 (sprite graphic)
-SPRITE_GRAPHIC_150C:
-	incbin "data/objects/graphics/sprite_graphic_150C.bin"
+dixie_ride_cart_slope_frame9:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame9.bin"
 
 ;$CA8E9C (sprite graphic)
-SPRITE_GRAPHIC_1510:
-	incbin "data/objects/graphics/sprite_graphic_1510.bin"
+dixie_ride_cart_slope_frame10:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame10.bin"
 
 ;$CA90CE (sprite graphic)
-SPRITE_GRAPHIC_1514:
-	incbin "data/objects/graphics/sprite_graphic_1514.bin"
+dixie_ride_cart_slope_frame11:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame11.bin"
 
 ;$CA9300 (sprite graphic)
-SPRITE_GRAPHIC_1518:
-	incbin "data/objects/graphics/sprite_graphic_1518.bin"
+dixie_ride_cart_slope_frame12:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame12.bin"
 
 ;$CA9532 (sprite graphic)
-SPRITE_GRAPHIC_151C:
-	incbin "data/objects/graphics/sprite_graphic_151C.bin"
+dixie_ride_cart_slope_frame13:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame13.bin"
 
 ;$CA9748 (sprite graphic)
-SPRITE_GRAPHIC_1520:
-	incbin "data/objects/graphics/sprite_graphic_1520.bin"
+dixie_ride_cart_slope_frame14:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame14.bin"
 
 ;$CA995E (sprite graphic)
-SPRITE_GRAPHIC_1524:
-	incbin "data/objects/graphics/sprite_graphic_1524.bin"
+dixie_ride_cart_slope_frame15:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame15.bin"
 
 ;$CA9BB8 (sprite graphic)
-SPRITE_GRAPHIC_1528:
-	incbin "data/objects/graphics/sprite_graphic_1528.bin"
+dixie_ride_cart_slope_frame16:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame16.bin"
 
 ;$CA9DF0 (sprite graphic)
-SPRITE_GRAPHIC_152C:
-	incbin "data/objects/graphics/sprite_graphic_152C.bin"
+dixie_ride_cart_slope_frame17:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame17.bin"
 
 ;$CAA006 (sprite graphic)
-SPRITE_GRAPHIC_1530:
-	incbin "data/objects/graphics/sprite_graphic_1530.bin"
+dixie_ride_cart_slope_frame18:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame18.bin"
 
 ;$CAA21C (sprite graphic)
-SPRITE_GRAPHIC_1534:
-	incbin "data/objects/graphics/sprite_graphic_1534.bin"
+dixie_ride_cart_slope_frame19:
+	incbin "data/objects/graphics/dixie_ride_cart_slope_frame19.bin"
 
 ;$CAA432 (sprite graphic)
-SPRITE_GRAPHIC_1538:
-	incbin "data/objects/graphics/sprite_graphic_1538.bin"
+klobber_turn_frame1:
+	incbin "data/objects/graphics/klobber_turn_frame1.bin"
 
 ;$CAA66A (sprite graphic)
-SPRITE_GRAPHIC_153C:
-	incbin "data/objects/graphics/sprite_graphic_153C.bin"
+klobber_turn_frame2:
+	incbin "data/objects/graphics/klobber_turn_frame2.bin"
 
 ;$CAA8A8 (sprite graphic)
-SPRITE_GRAPHIC_1540:
-	incbin "data/objects/graphics/sprite_graphic_1540.bin"
+klobber_barrel_turn_frame1:
+	incbin "data/objects/graphics/klobber_barrel_turn_frame1.bin"
 
 ;$CAAB40 (sprite graphic)
-SPRITE_GRAPHIC_1544:
-	incbin "data/objects/graphics/sprite_graphic_1544.bin"
+klobber_barrel_turn_frame2:
+	incbin "data/objects/graphics/klobber_barrel_turn_frame2.bin"
 
 ;$CAADD8 (sprite graphic)
-SPRITE_GRAPHIC_1548:
-	incbin "data/objects/graphics/sprite_graphic_1548.bin"
+klobber_hurt_graphic:
+	incbin "data/objects/graphics/klobber_hurt_graphic.bin"
 
 ;$CAB054 (sprite graphic)
-SPRITE_GRAPHIC_154C:
-	incbin "data/objects/graphics/sprite_graphic_154C.bin"
+diddy_carry_kong_idle_frame1:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame1.bin"
 
 ;$CAB270 (sprite graphic)
-SPRITE_GRAPHIC_1550:
-	incbin "data/objects/graphics/sprite_graphic_1550.bin"
+diddy_carry_kong_idle_frame2:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame2.bin"
 
 ;$CAB46A (sprite graphic)
-SPRITE_GRAPHIC_1554:
-	incbin "data/objects/graphics/sprite_graphic_1554.bin"
+diddy_carry_kong_idle_frame3:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame3.bin"
 
 ;$CAB664 (sprite graphic)
-SPRITE_GRAPHIC_1558:
-	incbin "data/objects/graphics/sprite_graphic_1558.bin"
+diddy_carry_kong_idle_frame4:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame4.bin"
 
 ;$CAB880 (sprite graphic)
-SPRITE_GRAPHIC_155C:
-	incbin "data/objects/graphics/sprite_graphic_155C.bin"
+diddy_carry_kong_idle_frame5:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame5.bin"
 
 ;$CABA9C (sprite graphic)
-SPRITE_GRAPHIC_1560:
-	incbin "data/objects/graphics/sprite_graphic_1560.bin"
+diddy_carry_kong_idle_frame6:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame6.bin"
 
 ;$CABCB8 (sprite graphic)
-SPRITE_GRAPHIC_1564:
-	incbin "data/objects/graphics/sprite_graphic_1564.bin"
+diddy_carry_kong_idle_frame7:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame7.bin"
 
 ;$CABEB2 (sprite graphic)
-SPRITE_GRAPHIC_1568:
-	incbin "data/objects/graphics/sprite_graphic_1568.bin"
+diddy_carry_kong_idle_frame8:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame8.bin"
 
 ;$CAC0A6 (sprite graphic)
-SPRITE_GRAPHIC_156C:
-	incbin "data/objects/graphics/sprite_graphic_156C.bin"
+diddy_carry_kong_idle_frame9:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame9.bin"
 
 ;$CAC2E4 (sprite graphic)
-SPRITE_GRAPHIC_1570:
-	incbin "data/objects/graphics/sprite_graphic_1570.bin"
+diddy_carry_kong_idle_frame10:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame10.bin"
 
 ;$CAC500 (sprite graphic)
-SPRITE_GRAPHIC_1574:
-	incbin "data/objects/graphics/sprite_graphic_1574.bin"
+diddy_carry_kong_idle_frame11:
+	incbin "data/objects/graphics/diddy_carry_kong_idle_frame11.bin"
 
 ;$CAC71C (sprite graphic)
-SPRITE_GRAPHIC_1578:
-	incbin "data/objects/graphics/sprite_graphic_1578.bin"
+dixie_carried_idle_frame1:
+	incbin "data/objects/graphics/dixie_carried_idle_frame1.bin"
 
 ;$CAC954 (sprite graphic)
-SPRITE_GRAPHIC_157C:
-	incbin "data/objects/graphics/sprite_graphic_157C.bin"
+dixie_carried_idle_frame2:
+	incbin "data/objects/graphics/dixie_carried_idle_frame2.bin"
 
 ;$CACB8C (sprite graphic)
-SPRITE_GRAPHIC_1580:
-	incbin "data/objects/graphics/sprite_graphic_1580.bin"
+dixie_carried_idle_frame3:
+	incbin "data/objects/graphics/dixie_carried_idle_frame3.bin"
 
 ;$CACDC4 (sprite graphic)
-SPRITE_GRAPHIC_1584:
-	incbin "data/objects/graphics/sprite_graphic_1584.bin"
+dixie_carried_idle_frame4:
+	incbin "data/objects/graphics/dixie_carried_idle_frame4.bin"
 
 ;$CACFFC (sprite graphic)
-SPRITE_GRAPHIC_1588:
-	incbin "data/objects/graphics/sprite_graphic_1588.bin"
+dixie_carried_idle_frame5:
+	incbin "data/objects/graphics/dixie_carried_idle_frame5.bin"
 
 ;$CAD234 (sprite graphic)
-SPRITE_GRAPHIC_158C:
-	incbin "data/objects/graphics/sprite_graphic_158C.bin"
+dixie_carried_idle_frame6:
+	incbin "data/objects/graphics/dixie_carried_idle_frame6.bin"
 
 ;$CAD46C (sprite graphic)
-SPRITE_GRAPHIC_1590:
-	incbin "data/objects/graphics/sprite_graphic_1590.bin"
+dixie_carried_idle_frame7:
+	incbin "data/objects/graphics/dixie_carried_idle_frame7.bin"
 
 ;$CAD6A4 (sprite graphic)
-SPRITE_GRAPHIC_1594:
-	incbin "data/objects/graphics/sprite_graphic_1594.bin"
+dixie_carried_idle_frame8:
+	incbin "data/objects/graphics/dixie_carried_idle_frame8.bin"
 
 ;$CAD8DC (sprite graphic)
-SPRITE_GRAPHIC_1598:
-	incbin "data/objects/graphics/sprite_graphic_1598.bin"
+dixie_carried_idle_frame9:
+	incbin "data/objects/graphics/dixie_carried_idle_frame9.bin"
 
 ;$CADAF2 (sprite graphic)
-SPRITE_GRAPHIC_159C:
-	incbin "data/objects/graphics/sprite_graphic_159C.bin"
+dixie_carried_idle_frame10:
+	incbin "data/objects/graphics/dixie_carried_idle_frame10.bin"
 
 ;$CADD08 (sprite graphic)
-SPRITE_GRAPHIC_15A0:
-	incbin "data/objects/graphics/sprite_graphic_15A0.bin"
+dixie_carried_idle_frame11:
+	incbin "data/objects/graphics/dixie_carried_idle_frame11.bin"
 
 ;$CADEE0 (sprite graphic)
-SPRITE_GRAPHIC_15A4:
-	incbin "data/objects/graphics/sprite_graphic_15A4.bin"
+dixie_carried_idle_frame12:
+	incbin "data/objects/graphics/dixie_carried_idle_frame12.bin"
 
 ;$CAE074 (sprite graphic)
-SPRITE_GRAPHIC_15A8:
-	incbin "data/objects/graphics/sprite_graphic_15A8.bin"
+dixie_carried_idle_frame13:
+	incbin "data/objects/graphics/dixie_carried_idle_frame13.bin"
 
 ;$CAE1CA (sprite graphic)
-SPRITE_GRAPHIC_15AC:
-	incbin "data/objects/graphics/sprite_graphic_15AC.bin"
+dixie_carried_idle_frame14:
+	incbin "data/objects/graphics/dixie_carried_idle_frame14.bin"
 
 ;$CAE342 (sprite graphic)
-SPRITE_GRAPHIC_15B0:
-	incbin "data/objects/graphics/sprite_graphic_15B0.bin"
+dixie_carried_idle_frame15:
+	incbin "data/objects/graphics/dixie_carried_idle_frame15.bin"
 
 ;$CAE4BA (sprite graphic)
-SPRITE_GRAPHIC_15B4:
-	incbin "data/objects/graphics/sprite_graphic_15B4.bin"
+dixie_carried_idle_frame16:
+	incbin "data/objects/graphics/dixie_carried_idle_frame16.bin"
 
 ;$CAE632 (sprite graphic)
-SPRITE_GRAPHIC_15B8:
-	incbin "data/objects/graphics/sprite_graphic_15B8.bin"
+diddy_rope_walk_frame1:
+	incbin "data/objects/graphics/diddy_rope_walk_frame1.bin"
 
 ;$CAE8F8 (sprite graphic)
-SPRITE_GRAPHIC_15BC:
-	incbin "data/objects/graphics/sprite_graphic_15BC.bin"
+diddy_rope_walk_frame2:
+	incbin "data/objects/graphics/diddy_rope_walk_frame2.bin"
 
 ;$CAEBE0 (sprite graphic)
-SPRITE_GRAPHIC_15C0:
-	incbin "data/objects/graphics/sprite_graphic_15C0.bin"
+diddy_rope_walk_frame3:
+	incbin "data/objects/graphics/diddy_rope_walk_frame3.bin"
 
 ;$CAEE62 (sprite graphic)
-SPRITE_GRAPHIC_15C4:
-	incbin "data/objects/graphics/sprite_graphic_15C4.bin"
+diddy_rope_walk_frame4:
+	incbin "data/objects/graphics/diddy_rope_walk_frame4.bin"
 
 ;$CAF0C2 (sprite graphic)
-SPRITE_GRAPHIC_15C8:
-	incbin "data/objects/graphics/sprite_graphic_15C8.bin"
+diddy_rope_walk_frame5:
+	incbin "data/objects/graphics/diddy_rope_walk_frame5.bin"
 
 ;$CAF322 (sprite graphic)
-SPRITE_GRAPHIC_15CC:
-	incbin "data/objects/graphics/sprite_graphic_15CC.bin"
+diddy_rope_walk_frame6:
+	incbin "data/objects/graphics/diddy_rope_walk_frame6.bin"
 
 ;$CAF5C6 (sprite graphic)
-SPRITE_GRAPHIC_15D0:
-	incbin "data/objects/graphics/sprite_graphic_15D0.bin"
+diddy_rope_walk_frame7:
+	incbin "data/objects/graphics/diddy_rope_walk_frame7.bin"
 
 ;$CAF842 (sprite graphic)
-SPRITE_GRAPHIC_15D4:
-	incbin "data/objects/graphics/sprite_graphic_15D4.bin"
+diddy_rope_walk_frame8:
+	incbin "data/objects/graphics/diddy_rope_walk_frame8.bin"
 
 check bankcross off
 ;$CAFABE	compressed
@@ -4831,180 +4831,180 @@ ship_mast_sky_bg_layer_2_8x8_tilemap:
 check bankcross full
 
 ;$CB022B (sprite graphic)
-SPRITE_GRAPHIC_15D8:
-	incbin "data/objects/graphics/sprite_graphic_15D8.bin"
+diddy_rope_walk_frame9:
+	incbin "data/objects/graphics/diddy_rope_walk_frame9.bin"
 
 ;$CB0447 (sprite graphic)
-SPRITE_GRAPHIC_15DC:
-	incbin "data/objects/graphics/sprite_graphic_15DC.bin"
+diddy_rope_walk_frame10:
+	incbin "data/objects/graphics/diddy_rope_walk_frame10.bin"
 
 ;$CB06A1 (sprite graphic)
-SPRITE_GRAPHIC_15E0:
-	incbin "data/objects/graphics/sprite_graphic_15E0.bin"
+diddy_rope_walk_frame11:
+	incbin "data/objects/graphics/diddy_rope_walk_frame11.bin"
 
 ;$CB087F (sprite graphic)
-SPRITE_GRAPHIC_15E4:
-	incbin "data/objects/graphics/sprite_graphic_15E4.bin"
+diddy_rope_walk_frame12:
+	incbin "data/objects/graphics/diddy_rope_walk_frame12.bin"
 
 ;$CB0A5D (sprite graphic)
-SPRITE_GRAPHIC_15E8:
-	incbin "data/objects/graphics/sprite_graphic_15E8.bin"
+diddy_rope_walk_frame13:
+	incbin "data/objects/graphics/diddy_rope_walk_frame13.bin"
 
 ;$CB0C5D (sprite graphic)
-SPRITE_GRAPHIC_15EC:
-	incbin "data/objects/graphics/sprite_graphic_15EC.bin"
+diddy_rope_walk_frame14:
+	incbin "data/objects/graphics/diddy_rope_walk_frame14.bin"
 
 ;$CB0E79 (sprite graphic)
-SPRITE_GRAPHIC_15F0:
-	incbin "data/objects/graphics/sprite_graphic_15F0.bin"
+diddy_rope_walk_frame15:
+	incbin "data/objects/graphics/diddy_rope_walk_frame15.bin"
 
 ;$CB1095 (sprite graphic)
-SPRITE_GRAPHIC_15F4:
-	incbin "data/objects/graphics/sprite_graphic_15F4.bin"
+diddy_rope_walk_frame16:
+	incbin "data/objects/graphics/diddy_rope_walk_frame16.bin"
 
 ;$CB12EF (sprite graphic)
-SPRITE_GRAPHIC_15F8:
-	incbin "data/objects/graphics/sprite_graphic_15F8.bin"
+diddy_rope_walk_frame17:
+	incbin "data/objects/graphics/diddy_rope_walk_frame17.bin"
 
 ;$CB15D1 (sprite graphic)
-SPRITE_GRAPHIC_15FC:
-	incbin "data/objects/graphics/sprite_graphic_15FC.bin"
+diddy_rope_walk_frame18:
+	incbin "data/objects/graphics/diddy_rope_walk_frame18.bin"
 
 ;$CB18D5 (sprite graphic)
-SPRITE_GRAPHIC_1600:
-	incbin "data/objects/graphics/sprite_graphic_1600.bin"
+click_clack_turn_frame1:
+	incbin "data/objects/graphics/click_clack_turn_frame1.bin"
 
 ;$CB1AAD (sprite graphic)
-SPRITE_GRAPHIC_1604:
-	incbin "data/objects/graphics/sprite_graphic_1604.bin"
+click_clack_turn_frame2:
+	incbin "data/objects/graphics/click_clack_turn_frame2.bin"
 
 ;$CB1C03 (sprite graphic)
-SPRITE_GRAPHIC_1608:
-	incbin "data/objects/graphics/sprite_graphic_1608.bin"
+kannon_hurt_frame1:
+	incbin "data/objects/graphics/kannon_hurt_frame1.bin"
 
 ;$CB21B9 (sprite graphic)
-SPRITE_GRAPHIC_160C:
-	incbin "data/objects/graphics/sprite_graphic_160C.bin"
+kannon_hurt_frame2:
+	incbin "data/objects/graphics/kannon_hurt_frame2.bin"
 
 ;$CB2775 (sprite graphic)
-SPRITE_GRAPHIC_1610:
-	incbin "data/objects/graphics/sprite_graphic_1610.bin"
+kannon_hurt_frame3:
+	incbin "data/objects/graphics/kannon_hurt_frame3.bin"
 
 ;$CB2CED (sprite graphic)
-SPRITE_GRAPHIC_1614:
-	incbin "data/objects/graphics/sprite_graphic_1614.bin"
+kannon_hurt_frame4:
+	incbin "data/objects/graphics/kannon_hurt_frame4.bin"
 
 ;$CB31E3 (sprite graphic)
-SPRITE_GRAPHIC_1618:
-	incbin "data/objects/graphics/sprite_graphic_1618.bin"
+kannon_hurt_frame5:
+	incbin "data/objects/graphics/kannon_hurt_frame5.bin"
 
 ;$CB36D3 (sprite graphic)
-SPRITE_GRAPHIC_161C:
-	incbin "data/objects/graphics/sprite_graphic_161C.bin"
+kannon_shoot_frame1:
+	incbin "data/objects/graphics/kannon_shoot_frame1.bin"
 
 ;$CB3C23 (sprite graphic)
-SPRITE_GRAPHIC_1620:
-	incbin "data/objects/graphics/sprite_graphic_1620.bin"
+kannon_shoot_frame2:
+	incbin "data/objects/graphics/kannon_shoot_frame2.bin"
 
 ;$CB4173 (sprite graphic)
-SPRITE_GRAPHIC_1624:
-	incbin "data/objects/graphics/sprite_graphic_1624.bin"
+kannon_shoot_frame3:
+	incbin "data/objects/graphics/kannon_shoot_frame3.bin"
 
 ;$CB46C3 (sprite graphic)
-SPRITE_GRAPHIC_1628:
-	incbin "data/objects/graphics/sprite_graphic_1628.bin"
+kannon_shoot_frame4:
+	incbin "data/objects/graphics/kannon_shoot_frame4.bin"
 
 ;$CB4C2F (sprite graphic)
-SPRITE_GRAPHIC_162C:
-	incbin "data/objects/graphics/sprite_graphic_162C.bin"
+kannon_shoot_frame5:
+	incbin "data/objects/graphics/kannon_shoot_frame5.bin"
 
 ;$CB517F (sprite graphic)
-SPRITE_GRAPHIC_1630:
-	incbin "data/objects/graphics/sprite_graphic_1630.bin"
+kannon_shoot_frame6:
+	incbin "data/objects/graphics/kannon_shoot_frame6.bin"
 
 ;$CB570D (sprite graphic)
-SPRITE_GRAPHIC_1634:
-	incbin "data/objects/graphics/sprite_graphic_1634.bin"
+kruncha_turn_frame1:
+	incbin "data/objects/graphics/kruncha_turn_frame1.bin"
 
 ;$CB5AF9 (sprite graphic)
-SPRITE_GRAPHIC_1638:
-	incbin "data/objects/graphics/sprite_graphic_1638.bin"
+kruncha_turn_frame2:
+	incbin "data/objects/graphics/kruncha_turn_frame2.bin"
 
 ;$CB5EFB (sprite graphic)
-SPRITE_GRAPHIC_163C:
-	incbin "data/objects/graphics/sprite_graphic_163C.bin"
+kruncha_hurt_frame1:
+	incbin "data/objects/graphics/kruncha_hurt_frame1.bin"
 
 ;$CB631F (sprite graphic)
-SPRITE_GRAPHIC_1640:
-	incbin "data/objects/graphics/sprite_graphic_1640.bin"
+kruncha_hurt_frame2:
+	incbin "data/objects/graphics/kruncha_hurt_frame2.bin"
 
 ;$CB66A5 (sprite graphic)
-SPRITE_GRAPHIC_1644:
-	incbin "data/objects/graphics/sprite_graphic_1644.bin"
+kruncha_hurt_frame3:
+	incbin "data/objects/graphics/kruncha_hurt_frame3.bin"
 
 ;$CB6A2B (sprite graphic)
-SPRITE_GRAPHIC_1648:
-	incbin "data/objects/graphics/sprite_graphic_1648.bin"
+kruncha_hurt_frame4:
+	incbin "data/objects/graphics/kruncha_hurt_frame4.bin"
 
 ;$CB6E0B (sprite graphic)
-SPRITE_GRAPHIC_164C:
-	incbin "data/objects/graphics/sprite_graphic_164C.bin"
+kruncha_hurt_frame5:
+	incbin "data/objects/graphics/kruncha_hurt_frame5.bin"
 
 ;$CB71F1 (sprite graphic)
-SPRITE_GRAPHIC_1650:
-	incbin "data/objects/graphics/sprite_graphic_1650.bin"
+kruncha_hurt_frame6:
+	incbin "data/objects/graphics/kruncha_hurt_frame6.bin"
 
 ;$CB75B5 (sprite graphic)
-SPRITE_GRAPHIC_1654:
-	incbin "data/objects/graphics/sprite_graphic_1654.bin"
+kruncha_rage_frame1:
+	incbin "data/objects/graphics/kruncha_rage_frame1.bin"
 
 ;$CB797F (sprite graphic)
-SPRITE_GRAPHIC_1658:
-	incbin "data/objects/graphics/sprite_graphic_1658.bin"
+kruncha_rage_frame2:
+	incbin "data/objects/graphics/kruncha_rage_frame2.bin"
 
 ;$CB7D27 (sprite graphic)
-SPRITE_GRAPHIC_165C:
-	incbin "data/objects/graphics/sprite_graphic_165C.bin"
+kruncha_rage_frame3:
+	incbin "data/objects/graphics/kruncha_rage_frame3.bin"
 
 ;$CB80F1 (sprite graphic)
-SPRITE_GRAPHIC_1660:
-	incbin "data/objects/graphics/sprite_graphic_1660.bin"
+kruncha_rage_frame4:
+	incbin "data/objects/graphics/kruncha_rage_frame4.bin"
 
 ;$CB8455 (sprite graphic)
-SPRITE_GRAPHIC_1664:
-	incbin "data/objects/graphics/sprite_graphic_1664.bin"
+kruncha_rage_frame5:
+	incbin "data/objects/graphics/kruncha_rage_frame5.bin"
 
 ;$CB87FD (sprite graphic)
-SPRITE_GRAPHIC_1668:
-	incbin "data/objects/graphics/sprite_graphic_1668.bin"
+kruncha_rage_frame6:
+	incbin "data/objects/graphics/kruncha_rage_frame6.bin"
 
 ;$CB8BA5 (sprite graphic)
-SPRITE_GRAPHIC_166C:
-	incbin "data/objects/graphics/sprite_graphic_166C.bin"
+kruncha_rage_frame7:
+	incbin "data/objects/graphics/kruncha_rage_frame7.bin"
 
 ;$CB8F91 (sprite graphic)
-SPRITE_GRAPHIC_1670:
-	incbin "data/objects/graphics/sprite_graphic_1670.bin"
+kruncha_rage_frame8:
+	incbin "data/objects/graphics/kruncha_rage_frame8.bin"
 
 ;$CB93C1 (sprite graphic)
-SPRITE_GRAPHIC_1674:
-	incbin "data/objects/graphics/sprite_graphic_1674.bin"
+kruncha_rage_frame9:
+	incbin "data/objects/graphics/kruncha_rage_frame9.bin"
 
 ;$CB97EB (sprite graphic)
-SPRITE_GRAPHIC_1678:
-	incbin "data/objects/graphics/sprite_graphic_1678.bin"
+kruncha_rage_frame10:
+	incbin "data/objects/graphics/kruncha_rage_frame10.bin"
 
 ;$CB9C15 (sprite graphic)
-SPRITE_GRAPHIC_167C:
-	incbin "data/objects/graphics/sprite_graphic_167C.bin"
+kannon_shoot_down_frame1:
+	incbin "data/objects/graphics/kannon_shoot_down_frame1.bin"
 
 ;$CBA187 (sprite graphic)
-SPRITE_GRAPHIC_1680:
-	incbin "data/objects/graphics/sprite_graphic_1680.bin"
+kannon_shoot_down_frame2:
+	incbin "data/objects/graphics/kannon_shoot_down_frame2.bin"
 
 ;$CBA6D7 (sprite graphic)
-SPRITE_GRAPHIC_1684:
-	incbin "data/objects/graphics/sprite_graphic_1684.bin"
+kannon_shoot_down_frame3:
+	incbin "data/objects/graphics/kannon_shoot_down_frame3.bin"
 
 check bankcross off
 ;$CBAC49
@@ -5013,496 +5013,496 @@ lost_world_tiledata:
 check bankcross full
 
 ;$CC04E9 (sprite graphic)
-SPRITE_GRAPHIC_1688:
-	incbin "data/objects/graphics/sprite_graphic_1688.bin"
+kannon_shoot_down_frame4:
+	incbin "data/objects/graphics/kannon_shoot_down_frame4.bin"
 
 ;$CC0A9F (sprite graphic)
-SPRITE_GRAPHIC_168C:
-	incbin "data/objects/graphics/sprite_graphic_168C.bin"
+kannon_shoot_down_frame5:
+	incbin "data/objects/graphics/kannon_shoot_down_frame5.bin"
 
 ;$CC1099 (sprite graphic)
-SPRITE_GRAPHIC_1690:
-	incbin "data/objects/graphics/sprite_graphic_1690.bin"
+kannon_shoot_down_frame6:
+	incbin "data/objects/graphics/kannon_shoot_down_frame6.bin"
 
 ;$CC1671 (sprite graphic)
-SPRITE_GRAPHIC_1694:
-	incbin "data/objects/graphics/sprite_graphic_1694.bin"
+klobber_tnt_wake_graphic:
+	incbin "data/objects/graphics/klobber_tnt_wake_graphic.bin"
 
 ;$CC18E7 (sprite graphic)
-SPRITE_GRAPHIC_1698:
-	incbin "data/objects/graphics/sprite_graphic_1698.bin"
+klobber_tnt_run_frame1:
+	incbin "data/objects/graphics/klobber_tnt_run_frame1.bin"
 
 ;$CC1B5D (sprite graphic)
-SPRITE_GRAPHIC_169C:
-	incbin "data/objects/graphics/sprite_graphic_169C.bin"
+klobber_tnt_run_frame2:
+	incbin "data/objects/graphics/klobber_tnt_run_frame2.bin"
 
 ;$CC1DD3 (sprite graphic)
-SPRITE_GRAPHIC_16A0:
-	incbin "data/objects/graphics/sprite_graphic_16A0.bin"
+klobber_tnt_run_frame3:
+	incbin "data/objects/graphics/klobber_tnt_run_frame3.bin"
 
 ;$CC2049 (sprite graphic)
-SPRITE_GRAPHIC_16A4:
-	incbin "data/objects/graphics/sprite_graphic_16A4.bin"
+klobber_tnt_run_frame4:
+	incbin "data/objects/graphics/klobber_tnt_run_frame4.bin"
 
 ;$CC22BF (sprite graphic)
-SPRITE_GRAPHIC_16A8:
-	incbin "data/objects/graphics/sprite_graphic_16A8.bin"
+klobber_tnt_run_frame5:
+	incbin "data/objects/graphics/klobber_tnt_run_frame5.bin"
 
 ;$CC2535 (sprite graphic)
-SPRITE_GRAPHIC_16AC:
-	incbin "data/objects/graphics/sprite_graphic_16AC.bin"
+klobber_tnt_run_frame6:
+	incbin "data/objects/graphics/klobber_tnt_run_frame6.bin"
 
 ;$CC27AB (sprite graphic)
-SPRITE_GRAPHIC_16B0:
-	incbin "data/objects/graphics/sprite_graphic_16B0.bin"
+klobber_tnt_run_frame7:
+	incbin "data/objects/graphics/klobber_tnt_run_frame7.bin"
 
 ;$CC2A21 (sprite graphic)
-SPRITE_GRAPHIC_16B4:
-	incbin "data/objects/graphics/sprite_graphic_16B4.bin"
+klobber_tnt_run_frame8:
+	incbin "data/objects/graphics/klobber_tnt_run_frame8.bin"
 
 ;$CC2C97 (sprite graphic)
-SPRITE_GRAPHIC_16B8:
-	incbin "data/objects/graphics/sprite_graphic_16B8.bin"
+klobber_tnt_run_frame9:
+	incbin "data/objects/graphics/klobber_tnt_run_frame9.bin"
 
 ;$CC2F0D (sprite graphic)
-SPRITE_GRAPHIC_16BC:
-	incbin "data/objects/graphics/sprite_graphic_16BC.bin"
+klobber_tnt_run_frame10:
+	incbin "data/objects/graphics/klobber_tnt_run_frame10.bin"
 
 ;$CC3183 (sprite graphic)
-SPRITE_GRAPHIC_16C0:
-	incbin "data/objects/graphics/sprite_graphic_16C0.bin"
+klobber_tnt_run_frame11:
+	incbin "data/objects/graphics/klobber_tnt_run_frame11.bin"
 
 ;$CC33F9 (sprite graphic)
-SPRITE_GRAPHIC_16C4:
-	incbin "data/objects/graphics/sprite_graphic_16C4.bin"
+kutlass_turn_frame1:
+	incbin "data/objects/graphics/kutlass_turn_frame1.bin"
 
 ;$CC36B9 (sprite graphic)
-SPRITE_GRAPHIC_16C8:
-	incbin "data/objects/graphics/sprite_graphic_16C8.bin"
+kutlass_turn_frame2:
+	incbin "data/objects/graphics/kutlass_turn_frame2.bin"
 
 ;$CC3995 (sprite graphic)
-SPRITE_GRAPHIC_16CC:
-	incbin "data/objects/graphics/sprite_graphic_16CC.bin"
+kutlass_hurt_frame1:
+	incbin "data/objects/graphics/kutlass_hurt_frame1.bin"
 
 ;$CC3C99 (sprite graphic)
-SPRITE_GRAPHIC_16D0:
-	incbin "data/objects/graphics/sprite_graphic_16D0.bin"
+kutlass_hurt_frame2:
+	incbin "data/objects/graphics/kutlass_hurt_frame2.bin"
 
 ;$CC405D (sprite graphic)
-SPRITE_GRAPHIC_16D4:
-	incbin "data/objects/graphics/sprite_graphic_16D4.bin"
+kutlass_hurt_frame3:
+	incbin "data/objects/graphics/kutlass_hurt_frame3.bin"
 
 ;$CC43FF (sprite graphic)
-SPRITE_GRAPHIC_16D8:
-	incbin "data/objects/graphics/sprite_graphic_16D8.bin"
+kutlass_hurt_frame4:
+	incbin "data/objects/graphics/kutlass_hurt_frame4.bin"
 
 ;$CC47C3 (sprite graphic)
-SPRITE_GRAPHIC_16DC:
-	incbin "data/objects/graphics/sprite_graphic_16DC.bin"
+tnt_explosion_frame1:
+	incbin "data/objects/graphics/tnt_explosion_frame1.bin"
 
 ;$CC484D (sprite graphic)
-SPRITE_GRAPHIC_16E0:
-	incbin "data/objects/graphics/sprite_graphic_16E0.bin"
+tnt_explosion_frame2:
+	incbin "data/objects/graphics/tnt_explosion_frame2.bin"
 
 ;$CC495F (sprite graphic)
-SPRITE_GRAPHIC_16E4:
-	incbin "data/objects/graphics/sprite_graphic_16E4.bin"
+tnt_explosion_frame3:
+	incbin "data/objects/graphics/tnt_explosion_frame3.bin"
 
 ;$CC4AD1 (sprite graphic)
-SPRITE_GRAPHIC_16E8:
-	incbin "data/objects/graphics/sprite_graphic_16E8.bin"
+tnt_explosion_frame4:
+	incbin "data/objects/graphics/tnt_explosion_frame4.bin"
 
 ;$CC4C87 (sprite graphic)
-SPRITE_GRAPHIC_16EC:
-	incbin "data/objects/graphics/sprite_graphic_16EC.bin"
+tnt_explosion_frame5:
+	incbin "data/objects/graphics/tnt_explosion_frame5.bin"
 
 ;$CC4E5F (sprite graphic)
-SPRITE_GRAPHIC_16F0:
-	incbin "data/objects/graphics/sprite_graphic_16F0.bin"
+tnt_explosion_frame6:
+	incbin "data/objects/graphics/tnt_explosion_frame6.bin"
 
 ;$CC5075 (sprite graphic)
-SPRITE_GRAPHIC_16F4:
-	incbin "data/objects/graphics/sprite_graphic_16F4.bin"
+tnt_explosion_frame7:
+	incbin "data/objects/graphics/tnt_explosion_frame7.bin"
 
 ;$CC52EB (sprite graphic)
-SPRITE_GRAPHIC_16F8:
-	incbin "data/objects/graphics/sprite_graphic_16F8.bin"
+tnt_explosion_frame8:
+	incbin "data/objects/graphics/tnt_explosion_frame8.bin"
 
 ;$CC5545 (sprite graphic)
-SPRITE_GRAPHIC_16FC:
-	incbin "data/objects/graphics/sprite_graphic_16FC.bin"
+tnt_explosion_frame9:
+	incbin "data/objects/graphics/tnt_explosion_frame9.bin"
 
 ;$CC5827 (sprite graphic)
-SPRITE_GRAPHIC_1700:
-	incbin "data/objects/graphics/sprite_graphic_1700.bin"
+tnt_explosion_frame10:
+	incbin "data/objects/graphics/tnt_explosion_frame10.bin"
 
 ;$CC5B41 (sprite graphic)
-SPRITE_GRAPHIC_1704:
-	incbin "data/objects/graphics/sprite_graphic_1704.bin"
+tnt_explosion_frame11:
+	incbin "data/objects/graphics/tnt_explosion_frame11.bin"
 
 ;$CC5E39 (sprite graphic)
-SPRITE_GRAPHIC_1708:
-	incbin "data/objects/graphics/sprite_graphic_1708.bin"
+tnt_explosion_frame12:
+	incbin "data/objects/graphics/tnt_explosion_frame12.bin"
 
 ;$CC60F3 (sprite graphic)
-SPRITE_GRAPHIC_170C:
-	incbin "data/objects/graphics/sprite_graphic_170C.bin"
+tnt_explosion_frame13:
+	incbin "data/objects/graphics/tnt_explosion_frame13.bin"
 
 ;$CC6331 (sprite graphic)
-SPRITE_GRAPHIC_1710:
-	incbin "data/objects/graphics/sprite_graphic_1710.bin"
+tnt_explosion_frame14:
+	incbin "data/objects/graphics/tnt_explosion_frame14.bin"
 
 ;$CC6503 (sprite graphic)
-SPRITE_GRAPHIC_1714:
-	incbin "data/objects/graphics/sprite_graphic_1714.bin"
+tnt_explosion_frame15:
+	incbin "data/objects/graphics/tnt_explosion_frame15.bin"
 
 ;$CC6675 (sprite graphic)
-SPRITE_GRAPHIC_1718:
-	incbin "data/objects/graphics/sprite_graphic_1718.bin"
+tnt_grab_frame1:
+	incbin "data/objects/graphics/tnt_grab_frame1.bin"
 
 ;$CC68EB (sprite graphic)
-SPRITE_GRAPHIC_171C:
-	incbin "data/objects/graphics/sprite_graphic_171C.bin"
+tnt_grab_frame2:
+	incbin "data/objects/graphics/tnt_grab_frame2.bin"
 
 ;$CC6AFB (sprite graphic)
-SPRITE_GRAPHIC_1720:
-	incbin "data/objects/graphics/sprite_graphic_1720.bin"
+tnt_grab_frame3:
+	incbin "data/objects/graphics/tnt_grab_frame3.bin"
 
 ;$CC6D0B (sprite graphic)
-SPRITE_GRAPHIC_1724:
-	incbin "data/objects/graphics/sprite_graphic_1724.bin"
+tnt_grab_frame4:
+	incbin "data/objects/graphics/tnt_grab_frame4.bin"
 
 ;$CC6F5F (sprite graphic)
-SPRITE_GRAPHIC_1728:
-	incbin "data/objects/graphics/sprite_graphic_1728.bin"
+firework_explode_1_frame1:
+	incbin "data/objects/graphics/firework_explode_1_frame1.bin"
 
 ;$CC6FE9 (sprite graphic)
-SPRITE_GRAPHIC_172C:
-	incbin "data/objects/graphics/sprite_graphic_172C.bin"
+firework_explode_1_frame2:
+	incbin "data/objects/graphics/firework_explode_1_frame2.bin"
 
 ;$CC70FB (sprite graphic)
-SPRITE_GRAPHIC_1730:
-	incbin "data/objects/graphics/sprite_graphic_1730.bin"
+firework_explode_1_frame3:
+	incbin "data/objects/graphics/firework_explode_1_frame3.bin"
 
 ;$CC72CD (sprite graphic)
-SPRITE_GRAPHIC_1734:
-	incbin "data/objects/graphics/sprite_graphic_1734.bin"
+firework_explode_1_frame4:
+	incbin "data/objects/graphics/firework_explode_1_frame4.bin"
 
 ;$CC74DD (sprite graphic)
-SPRITE_GRAPHIC_1738:
-	incbin "data/objects/graphics/sprite_graphic_1738.bin"
+firework_explode_1_frame5:
+	incbin "data/objects/graphics/firework_explode_1_frame5.bin"
 
 ;$CC76ED (sprite graphic)
-SPRITE_GRAPHIC_173C:
-	incbin "data/objects/graphics/sprite_graphic_173C.bin"
+firework_explode_1_frame6:
+	incbin "data/objects/graphics/firework_explode_1_frame6.bin"
 
 ;$CC78FD (sprite graphic)
-SPRITE_GRAPHIC_1740:
-	incbin "data/objects/graphics/sprite_graphic_1740.bin"
+firework_explode_1_frame7:
+	incbin "data/objects/graphics/firework_explode_1_frame7.bin"
 
 ;$CC7B73 (sprite graphic)
-SPRITE_GRAPHIC_1744:
-	incbin "data/objects/graphics/sprite_graphic_1744.bin"
+firework_explode_1_frame8:
+	incbin "data/objects/graphics/firework_explode_1_frame8.bin"
 
 ;$CC7DE9 (sprite graphic)
-SPRITE_GRAPHIC_1748:
-	incbin "data/objects/graphics/sprite_graphic_1748.bin"
+firework_explode_1_frame9:
+	incbin "data/objects/graphics/firework_explode_1_frame9.bin"
 
 ;$CC803D (sprite graphic)
-SPRITE_GRAPHIC_174C:
-	incbin "data/objects/graphics/sprite_graphic_174C.bin"
+firework_explode_1_frame10:
+	incbin "data/objects/graphics/firework_explode_1_frame10.bin"
 
 ;$CC81F3 (sprite graphic)
-SPRITE_GRAPHIC_1750:
-	incbin "data/objects/graphics/sprite_graphic_1750.bin"
+firework_explode_2_frame1:
+	incbin "data/objects/graphics/firework_explode_2_frame1.bin"
 
 ;$CC821D (sprite graphic)
-SPRITE_GRAPHIC_1754:
-	incbin "data/objects/graphics/sprite_graphic_1754.bin"
+firework_explode_2_frame2:
+	incbin "data/objects/graphics/firework_explode_2_frame2.bin"
 
 ;$CC8269 (sprite graphic)
-SPRITE_GRAPHIC_1758:
-	incbin "data/objects/graphics/sprite_graphic_1758.bin"
+firework_explode_2_frame3:
+	incbin "data/objects/graphics/firework_explode_2_frame3.bin"
 
 ;$CC82D7 (sprite graphic)
-SPRITE_GRAPHIC_175C:
-	incbin "data/objects/graphics/sprite_graphic_175C.bin"
+firework_explode_2_frame4:
+	incbin "data/objects/graphics/firework_explode_2_frame4.bin"
 
 ;$CC83A5 (sprite graphic)
-SPRITE_GRAPHIC_1760:
-	incbin "data/objects/graphics/sprite_graphic_1760.bin"
+firework_explode_2_frame5:
+	incbin "data/objects/graphics/firework_explode_2_frame5.bin"
 
 ;$CC8495 (sprite graphic)
-SPRITE_GRAPHIC_1764:
-	incbin "data/objects/graphics/sprite_graphic_1764.bin"
+firework_explode_2_frame6:
+	incbin "data/objects/graphics/firework_explode_2_frame6.bin"
 
 ;$CC85A1 (sprite graphic)
-SPRITE_GRAPHIC_1768:
-	incbin "data/objects/graphics/sprite_graphic_1768.bin"
+firework_explode_2_frame7:
+	incbin "data/objects/graphics/firework_explode_2_frame7.bin"
 
 ;$CC86F1 (sprite graphic)
-SPRITE_GRAPHIC_176C:
-	incbin "data/objects/graphics/sprite_graphic_176C.bin"
+cabin_letter_graphic:
+	incbin "data/objects/graphics/cabin_letter_graphic.bin"
 
 ;$CC88EB (sprite graphic)
-SPRITE_GRAPHIC_1770:
-	incbin "data/objects/graphics/sprite_graphic_1770.bin"
+diddy_throw_kong_frame1:
+	incbin "data/objects/graphics/diddy_throw_kong_frame1.bin"
 
 ;$CC8B07 (sprite graphic)
-SPRITE_GRAPHIC_1774:
-	incbin "data/objects/graphics/sprite_graphic_1774.bin"
+diddy_throw_kong_frame2:
+	incbin "data/objects/graphics/diddy_throw_kong_frame2.bin"
 
 ;$CC8D23 (sprite graphic)
-SPRITE_GRAPHIC_1778:
-	incbin "data/objects/graphics/sprite_graphic_1778.bin"
+diddy_throw_kong_frame3:
+	incbin "data/objects/graphics/diddy_throw_kong_frame3.bin"
 
 ;$CC8F3F (sprite graphic)
-SPRITE_GRAPHIC_177C:
-	incbin "data/objects/graphics/sprite_graphic_177C.bin"
+diddy_throw_kong_frame4:
+	incbin "data/objects/graphics/diddy_throw_kong_frame4.bin"
 
 ;$CC917D (sprite graphic)
-SPRITE_GRAPHIC_1780:
-	incbin "data/objects/graphics/sprite_graphic_1780.bin"
+diddy_throw_kong_frame5:
+	incbin "data/objects/graphics/diddy_throw_kong_frame5.bin"
 
 ;$CC9399 (sprite graphic)
-SPRITE_GRAPHIC_1784:
-	incbin "data/objects/graphics/sprite_graphic_1784.bin"
+diddy_throw_kong_frame6:
+	incbin "data/objects/graphics/diddy_throw_kong_frame6.bin"
 
 ;$CC95AF (sprite graphic)
-SPRITE_GRAPHIC_1788:
-	incbin "data/objects/graphics/sprite_graphic_1788.bin"
+diddy_throw_kong_frame7:
+	incbin "data/objects/graphics/diddy_throw_kong_frame7.bin"
 
 ;$CC97C5 (sprite graphic)
-SPRITE_GRAPHIC_178C:
-	incbin "data/objects/graphics/sprite_graphic_178C.bin"
+dixie_thrown_frame1:
+	incbin "data/objects/graphics/dixie_thrown_frame1.bin"
 
 ;$CC99DB (sprite graphic)
-SPRITE_GRAPHIC_1790:
-	incbin "data/objects/graphics/sprite_graphic_1790.bin"
+dixie_thrown_frame2:
+	incbin "data/objects/graphics/dixie_thrown_frame2.bin"
 
 ;$CC9BD5 (sprite graphic)
-SPRITE_GRAPHIC_1794:
-	incbin "data/objects/graphics/sprite_graphic_1794.bin"
+dixie_thrown_frame3:
+	incbin "data/objects/graphics/dixie_thrown_frame3.bin"
 
 ;$CC9D8B (sprite graphic)
-SPRITE_GRAPHIC_1798:
-	incbin "data/objects/graphics/sprite_graphic_1798.bin"
+dixie_thrown_frame4:
+	incbin "data/objects/graphics/dixie_thrown_frame4.bin"
 
 ;$CC9F19 (sprite graphic)
-SPRITE_GRAPHIC_179C:
-	incbin "data/objects/graphics/sprite_graphic_179C.bin"
+dixie_thrown_frame5:
+	incbin "data/objects/graphics/dixie_thrown_frame5.bin"
 
 ;$CCA04D (sprite graphic)
-SPRITE_GRAPHIC_17A0:
-	incbin "data/objects/graphics/sprite_graphic_17A0.bin"
+dixie_thrown_frame6:
+	incbin "data/objects/graphics/dixie_thrown_frame6.bin"
 
 ;$CCA13D (sprite graphic)
-SPRITE_GRAPHIC_17A4:
-	incbin "data/objects/graphics/sprite_graphic_17A4.bin"
+dixie_thrown_frame7:
+	incbin "data/objects/graphics/dixie_thrown_frame7.bin"
 
 ;$CCA211 (sprite graphic)
-SPRITE_GRAPHIC_17A8:
-	incbin "data/objects/graphics/sprite_graphic_17A8.bin"
+dixie_carried_walk_start_frame1:
+	incbin "data/objects/graphics/dixie_carried_walk_start_frame1.bin"
 
 ;$CCA405 (sprite graphic)
-SPRITE_GRAPHIC_17AC:
-	incbin "data/objects/graphics/sprite_graphic_17AC.bin"
+dixie_carried_walk_start_frame2:
+	incbin "data/objects/graphics/dixie_carried_walk_start_frame2.bin"
 
 ;$CCA61B (sprite graphic)
-SPRITE_GRAPHIC_17B0:
-	incbin "data/objects/graphics/sprite_graphic_17B0.bin"
+dixie_carried_walk_start_frame3:
+	incbin "data/objects/graphics/dixie_carried_walk_start_frame3.bin"
 
 ;$CCA831 (sprite graphic)
-SPRITE_GRAPHIC_17B4:
-	incbin "data/objects/graphics/sprite_graphic_17B4.bin"
+dixie_rope_walk_frame1:
+	incbin "data/objects/graphics/dixie_rope_walk_frame1.bin"
 
 ;$CCAA2B (sprite graphic)
-SPRITE_GRAPHIC_17B8:
-	incbin "data/objects/graphics/sprite_graphic_17B8.bin"
+dixie_rope_walk_frame2:
+	incbin "data/objects/graphics/dixie_rope_walk_frame2.bin"
 
 ;$CCAC25 (sprite graphic)
-SPRITE_GRAPHIC_17BC:
-	incbin "data/objects/graphics/sprite_graphic_17BC.bin"
+dixie_rope_walk_frame3:
+	incbin "data/objects/graphics/dixie_rope_walk_frame3.bin"
 
 ;$CCAE1F (sprite graphic)
-SPRITE_GRAPHIC_17C0:
-	incbin "data/objects/graphics/sprite_graphic_17C0.bin"
+dixie_rope_walk_frame4:
+	incbin "data/objects/graphics/dixie_rope_walk_frame4.bin"
 
 ;$CCB019 (sprite graphic)
-SPRITE_GRAPHIC_17C4:
-	incbin "data/objects/graphics/sprite_graphic_17C4.bin"
+dixie_rope_walk_frame5:
+	incbin "data/objects/graphics/dixie_rope_walk_frame5.bin"
 
 ;$CCB235 (sprite graphic)
-SPRITE_GRAPHIC_17C8:
-	incbin "data/objects/graphics/sprite_graphic_17C8.bin"
+dixie_rope_walk_frame6:
+	incbin "data/objects/graphics/dixie_rope_walk_frame6.bin"
 
 ;$CCB42F (sprite graphic)
-SPRITE_GRAPHIC_17CC:
-	incbin "data/objects/graphics/sprite_graphic_17CC.bin"
+dixie_rope_walk_frame7:
+	incbin "data/objects/graphics/dixie_rope_walk_frame7.bin"
 
 ;$CCB629 (sprite graphic)
-SPRITE_GRAPHIC_17D0:
-	incbin "data/objects/graphics/sprite_graphic_17D0.bin"
+dixie_rope_walk_frame8:
+	incbin "data/objects/graphics/dixie_rope_walk_frame8.bin"
 
 ;$CCB823 (sprite graphic)
-SPRITE_GRAPHIC_17D4:
-	incbin "data/objects/graphics/sprite_graphic_17D4.bin"
+dixie_rope_walk_frame9:
+	incbin "data/objects/graphics/dixie_rope_walk_frame9.bin"
 
 ;$CCB9FB (sprite graphic)
-SPRITE_GRAPHIC_17D8:
-	incbin "data/objects/graphics/sprite_graphic_17D8.bin"
+dixie_rope_walk_frame10:
+	incbin "data/objects/graphics/dixie_rope_walk_frame10.bin"
 
 ;$CCBBB1 (sprite graphic)
-SPRITE_GRAPHIC_17DC:
-	incbin "data/objects/graphics/sprite_graphic_17DC.bin"
+dixie_rope_walk_frame11:
+	incbin "data/objects/graphics/dixie_rope_walk_frame11.bin"
 
 ;$CCBD89 (sprite graphic)
-SPRITE_GRAPHIC_17E0:
-	incbin "data/objects/graphics/sprite_graphic_17E0.bin"
+dixie_rope_walk_frame12:
+	incbin "data/objects/graphics/dixie_rope_walk_frame12.bin"
 
 ;$CCBF83 (sprite graphic)
-SPRITE_GRAPHIC_17E4:
-	incbin "data/objects/graphics/sprite_graphic_17E4.bin"
+dixie_rope_walk_frame13:
+	incbin "data/objects/graphics/dixie_rope_walk_frame13.bin"
 
 ;$CCC17D (sprite graphic)
-SPRITE_GRAPHIC_17E8:
-	incbin "data/objects/graphics/sprite_graphic_17E8.bin"
+dixie_rope_walk_frame14:
+	incbin "data/objects/graphics/dixie_rope_walk_frame14.bin"
 
 ;$CCC377 (sprite graphic)
-SPRITE_GRAPHIC_17EC:
-	incbin "data/objects/graphics/sprite_graphic_17EC.bin"
+dixie_rope_walk_frame15:
+	incbin "data/objects/graphics/dixie_rope_walk_frame15.bin"
 
 ;$CCC54F (sprite graphic)
-SPRITE_GRAPHIC_17F0:
-	incbin "data/objects/graphics/sprite_graphic_17F0.bin"
+dixie_rope_walk_frame16:
+	incbin "data/objects/graphics/dixie_rope_walk_frame16.bin"
 
 ;$CCC727 (sprite graphic)
-SPRITE_GRAPHIC_17F4:
-	incbin "data/objects/graphics/sprite_graphic_17F4.bin"
+dixie_rope_climb_frame1:
+	incbin "data/objects/graphics/dixie_rope_climb_frame1.bin"
 
 ;$CCC8FF (sprite graphic)
-SPRITE_GRAPHIC_17F8:
-	incbin "data/objects/graphics/sprite_graphic_17F8.bin"
+dixie_rope_climb_frame2:
+	incbin "data/objects/graphics/dixie_rope_climb_frame2.bin"
 
 ;$CCCB15 (sprite graphic)
-SPRITE_GRAPHIC_17FC:
-	incbin "data/objects/graphics/sprite_graphic_17FC.bin"
+dixie_rope_climb_frame3:
+	incbin "data/objects/graphics/dixie_rope_climb_frame3.bin"
 
 ;$CCCD2B (sprite graphic)
-SPRITE_GRAPHIC_1800:
-	incbin "data/objects/graphics/sprite_graphic_1800.bin"
+dixie_rope_climb_frame4:
+	incbin "data/objects/graphics/dixie_rope_climb_frame4.bin"
 
 ;$CCCF03 (sprite graphic)
-SPRITE_GRAPHIC_1804:
-	incbin "data/objects/graphics/sprite_graphic_1804.bin"
+dixie_rope_climb_frame5:
+	incbin "data/objects/graphics/dixie_rope_climb_frame5.bin"
 
 ;$CCD0DB (sprite graphic)
-SPRITE_GRAPHIC_1808:
-	incbin "data/objects/graphics/sprite_graphic_1808.bin"
+dixie_rope_climb_frame6:
+	incbin "data/objects/graphics/dixie_rope_climb_frame6.bin"
 
 ;$CCD2B3 (sprite graphic)
-SPRITE_GRAPHIC_180C:
-	incbin "data/objects/graphics/sprite_graphic_180C.bin"
+dixie_rope_climb_frame7:
+	incbin "data/objects/graphics/dixie_rope_climb_frame7.bin"
 
 ;$CCD447 (sprite graphic)
-SPRITE_GRAPHIC_1810:
-	incbin "data/objects/graphics/sprite_graphic_1810.bin"
+dixie_rope_climb_frame8:
+	incbin "data/objects/graphics/dixie_rope_climb_frame8.bin"
 
 ;$CCD5DB (sprite graphic)
-SPRITE_GRAPHIC_1814:
-	incbin "data/objects/graphics/sprite_graphic_1814.bin"
+dixie_rope_climb_frame9:
+	incbin "data/objects/graphics/dixie_rope_climb_frame9.bin"
 
 ;$CCD76F (sprite graphic)
-SPRITE_GRAPHIC_1818:
-	incbin "data/objects/graphics/sprite_graphic_1818.bin"
+dixie_rope_climb_frame10:
+	incbin "data/objects/graphics/dixie_rope_climb_frame10.bin"
 
 ;$CCD947 (sprite graphic)
-SPRITE_GRAPHIC_181C:
-	incbin "data/objects/graphics/sprite_graphic_181C.bin"
+dixie_rope_climb_frame11:
+	incbin "data/objects/graphics/dixie_rope_climb_frame11.bin"
 
 ;$CCDB41 (sprite graphic)
-SPRITE_GRAPHIC_1820:
-	incbin "data/objects/graphics/sprite_graphic_1820.bin"
+dixie_rope_climb_frame12:
+	incbin "data/objects/graphics/dixie_rope_climb_frame12.bin"
 
 ;$CCDD7F (sprite graphic)
-SPRITE_GRAPHIC_1824:
-	incbin "data/objects/graphics/sprite_graphic_1824.bin"
+target_terror_door_graphic:
+	incbin "data/objects/graphics/target_terror_door_graphic.bin"
 
 ;$CCE0FF (sprite graphic)
-SPRITE_GRAPHIC_1828:
-	incbin "data/objects/graphics/sprite_graphic_1828.bin"
+ghost_rope_frame1:
+	incbin "data/objects/graphics/ghost_rope_frame1.bin"
 
 ;$CCE129 (sprite graphic)
-SPRITE_GRAPHIC_182C:
-	incbin "data/objects/graphics/sprite_graphic_182C.bin"
+ghost_rope_frame2:
+	incbin "data/objects/graphics/ghost_rope_frame2.bin"
 
 ;$CCE1B9 (sprite graphic)
-SPRITE_GRAPHIC_1830:
-	incbin "data/objects/graphics/sprite_graphic_1830.bin"
+ghost_rope_frame3:
+	incbin "data/objects/graphics/ghost_rope_frame3.bin"
 
 ;$CCE28D (sprite graphic)
-SPRITE_GRAPHIC_1834:
-	incbin "data/objects/graphics/sprite_graphic_1834.bin"
+ghost_rope_frame4:
+	incbin "data/objects/graphics/ghost_rope_frame4.bin"
 
 ;$CCE3A5 (sprite graphic)
-SPRITE_GRAPHIC_1838:
-	incbin "data/objects/graphics/sprite_graphic_1838.bin"
+ghost_rope_frame5:
+	incbin "data/objects/graphics/ghost_rope_frame5.bin"
 
 ;$CCE51D (sprite graphic)
-SPRITE_GRAPHIC_183C:
-	incbin "data/objects/graphics/sprite_graphic_183C.bin"
+ghost_rope_frame6:
+	incbin "data/objects/graphics/ghost_rope_frame6.bin"
 
 ;$CCE6D9 (sprite graphic)
-SPRITE_GRAPHIC_1840:
-	incbin "data/objects/graphics/sprite_graphic_1840.bin"
+ghost_rope_frame7:
+	incbin "data/objects/graphics/ghost_rope_frame7.bin"
 
 ;$CCE8D9 (sprite graphic)
-SPRITE_GRAPHIC_1844:
-	incbin "data/objects/graphics/sprite_graphic_1844.bin"
+ghost_rope_frame8:
+	incbin "data/objects/graphics/ghost_rope_frame8.bin"
 
 ;$CCE925 (sprite graphic)
-SPRITE_GRAPHIC_1848:
-	incbin "data/objects/graphics/sprite_graphic_1848.bin"
+ghost_rope_frame9:
+	incbin "data/objects/graphics/ghost_rope_frame9.bin"
 
 ;$CCE9D7 (sprite graphic)
-SPRITE_GRAPHIC_184C:
-	incbin "data/objects/graphics/sprite_graphic_184C.bin"
+ghost_rope_frame10:
+	incbin "data/objects/graphics/ghost_rope_frame10.bin"
 
 ;$CCEB11 (sprite graphic)
-SPRITE_GRAPHIC_1850:
-	incbin "data/objects/graphics/sprite_graphic_1850.bin"
+ghost_rope_frame11:
+	incbin "data/objects/graphics/ghost_rope_frame11.bin"
 
 ;$CCEC8F (sprite graphic)
-SPRITE_GRAPHIC_1854:
-	incbin "data/objects/graphics/sprite_graphic_1854.bin"
+ghost_rope_frame12:
+	incbin "data/objects/graphics/ghost_rope_frame12.bin"
 
 ;$CCEE51 (sprite graphic)
-SPRITE_GRAPHIC_1858:
-	incbin "data/objects/graphics/sprite_graphic_1858.bin"
+ghost_rope_frame13:
+	incbin "data/objects/graphics/ghost_rope_frame13.bin"
 
 ;$CCF013 (sprite graphic)
-SPRITE_GRAPHIC_185C:
-	incbin "data/objects/graphics/sprite_graphic_185C.bin"
+ghost_rope_frame14:
+	incbin "data/objects/graphics/ghost_rope_frame14.bin"
 
 ;$CCF1D5 (sprite graphic)
-SPRITE_GRAPHIC_1860:
-	incbin "data/objects/graphics/sprite_graphic_1860.bin"
+ghost_rope_frame15:
+	incbin "data/objects/graphics/ghost_rope_frame15.bin"
 
 ;$CCF3DB (sprite graphic)
-SPRITE_GRAPHIC_1864:
-	incbin "data/objects/graphics/sprite_graphic_1864.bin"
+ghost_rope_frame16:
+	incbin "data/objects/graphics/ghost_rope_frame16.bin"
 
 ;$CCF61F (sprite graphic)
-SPRITE_GRAPHIC_1868:
-	incbin "data/objects/graphics/sprite_graphic_1868.bin"
+ghost_rope_frame17:
+	incbin "data/objects/graphics/ghost_rope_frame17.bin"
 
 ;$CCF863 (sprite graphic)
-SPRITE_GRAPHIC_186C:
-	incbin "data/objects/graphics/sprite_graphic_186C.bin"
+ghost_rope_frame18:
+	incbin "data/objects/graphics/ghost_rope_frame18.bin"
 
 ;$CCFAEB (sprite graphic)
-SPRITE_GRAPHIC_1870:
-	incbin "data/objects/graphics/sprite_graphic_1870.bin"
+ghost_rope_frame19:
+	incbin "data/objects/graphics/ghost_rope_frame19.bin"
 
 ;$CCFD95
 DATA_CCFD95:
@@ -5515,412 +5515,412 @@ haunted_hall_kackle_layer_2_8x8_tilemap:
 check bankcross full
 
 ;$CD000D (sprite graphic)
-SPRITE_GRAPHIC_1874:
-	incbin "data/objects/graphics/sprite_graphic_1874.bin"
+kaboing_jump_frame1:
+	incbin "data/objects/graphics/kaboing_jump_frame1.bin"
 
 ;$CD02E9 (sprite graphic)
-SPRITE_GRAPHIC_1878:
-	incbin "data/objects/graphics/sprite_graphic_1878.bin"
+kaboing_jump_frame2:
+	incbin "data/objects/graphics/kaboing_jump_frame2.bin"
 
 ;$CD05A3 (sprite graphic)
-SPRITE_GRAPHIC_187C:
-	incbin "data/objects/graphics/sprite_graphic_187C.bin"
+kaboing_jump_frame3:
+	incbin "data/objects/graphics/kaboing_jump_frame3.bin"
 
 ;$CD087F (sprite graphic)
-SPRITE_GRAPHIC_1880:
-	incbin "data/objects/graphics/sprite_graphic_1880.bin"
+kaboing_jump_frame4:
+	incbin "data/objects/graphics/kaboing_jump_frame4.bin"
 
 ;$CD0B7D (sprite graphic)
-SPRITE_GRAPHIC_1884:
-	incbin "data/objects/graphics/sprite_graphic_1884.bin"
+kaboing_jump_frame5:
+	incbin "data/objects/graphics/kaboing_jump_frame5.bin"
 
 ;$CD0E7B (sprite graphic)
-SPRITE_GRAPHIC_1888:
-	incbin "data/objects/graphics/sprite_graphic_1888.bin"
+kaboing_jump_frame6:
+	incbin "data/objects/graphics/kaboing_jump_frame6.bin"
 
 ;$CD119B (sprite graphic)
-SPRITE_GRAPHIC_188C:
-	incbin "data/objects/graphics/sprite_graphic_188C.bin"
+kaboing_jump_frame7:
+	incbin "data/objects/graphics/kaboing_jump_frame7.bin"
 
 ;$CD1439 (sprite graphic)
-SPRITE_GRAPHIC_1890:
-	incbin "data/objects/graphics/sprite_graphic_1890.bin"
+kaboing_jump_frame8:
+	incbin "data/objects/graphics/kaboing_jump_frame8.bin"
 
 ;$CD16D7 (sprite graphic)
-SPRITE_GRAPHIC_1894:
-	incbin "data/objects/graphics/sprite_graphic_1894.bin"
+kaboing_jump_frame9:
+	incbin "data/objects/graphics/kaboing_jump_frame9.bin"
 
 ;$CD19B3 (sprite graphic)
-SPRITE_GRAPHIC_1898:
-	incbin "data/objects/graphics/sprite_graphic_1898.bin"
+kaboing_jump_frame10:
+	incbin "data/objects/graphics/kaboing_jump_frame10.bin"
 
 ;$CD1CB1 (sprite graphic)
-SPRITE_GRAPHIC_189C:
-	incbin "data/objects/graphics/sprite_graphic_189C.bin"
+kaboing_jump_frame11:
+	incbin "data/objects/graphics/kaboing_jump_frame11.bin"
 
 ;$CD1FAF (sprite graphic)
-SPRITE_GRAPHIC_18A0:
-	incbin "data/objects/graphics/sprite_graphic_18A0.bin"
+kaboing_jump_frame12:
+	incbin "data/objects/graphics/kaboing_jump_frame12.bin"
 
 ;$CD22AD (sprite graphic)
-SPRITE_GRAPHIC_18A4:
-	incbin "data/objects/graphics/sprite_graphic_18A4.bin"
+kaboing_jump_frame13:
+	incbin "data/objects/graphics/kaboing_jump_frame13.bin"
 
 ;$CD2595 (sprite graphic)
-SPRITE_GRAPHIC_18A8:
-	incbin "data/objects/graphics/sprite_graphic_18A8.bin"
+zinger_idle_frame1:
+	incbin "data/objects/graphics/zinger_idle_frame1.bin"
 
 ;$CD284F (sprite graphic)
-SPRITE_GRAPHIC_18AC:
-	incbin "data/objects/graphics/sprite_graphic_18AC.bin"
+zinger_idle_frame2:
+	incbin "data/objects/graphics/zinger_idle_frame2.bin"
 
 ;$CD2B09 (sprite graphic)
-SPRITE_GRAPHIC_18B0:
-	incbin "data/objects/graphics/sprite_graphic_18B0.bin"
+zinger_idle_frame3:
+	incbin "data/objects/graphics/zinger_idle_frame3.bin"
 
 ;$CD2E23 (sprite graphic)
-SPRITE_GRAPHIC_18B4:
-	incbin "data/objects/graphics/sprite_graphic_18B4.bin"
+zinger_idle_frame4:
+	incbin "data/objects/graphics/zinger_idle_frame4.bin"
 
 ;$CD3121 (sprite graphic)
-SPRITE_GRAPHIC_18B8:
-	incbin "data/objects/graphics/sprite_graphic_18B8.bin"
+zinger_idle_frame5:
+	incbin "data/objects/graphics/zinger_idle_frame5.bin"
 
 ;$CD33FD (sprite graphic)
-SPRITE_GRAPHIC_18BC:
-	incbin "data/objects/graphics/sprite_graphic_18BC.bin"
+zinger_idle_frame6:
+	incbin "data/objects/graphics/zinger_idle_frame6.bin"
 
 ;$CD36FB (sprite graphic)
-SPRITE_GRAPHIC_18C0:
-	incbin "data/objects/graphics/sprite_graphic_18C0.bin"
+zinger_idle_frame7:
+	incbin "data/objects/graphics/zinger_idle_frame7.bin"
 
 ;$CD3A15 (sprite graphic)
-SPRITE_GRAPHIC_18C4:
-	incbin "data/objects/graphics/sprite_graphic_18C4.bin"
+zinger_idle_frame8:
+	incbin "data/objects/graphics/zinger_idle_frame8.bin"
 
 ;$CD3D13 (sprite graphic)
-SPRITE_GRAPHIC_18C8:
-	incbin "data/objects/graphics/sprite_graphic_18C8.bin"
+zinger_turn_frame1:
+	incbin "data/objects/graphics/zinger_turn_frame1.bin"
 
 ;$CD3F8F (sprite graphic)
-SPRITE_GRAPHIC_18CC:
-	incbin "data/objects/graphics/sprite_graphic_18CC.bin"
+zinger_turn_frame2:
+	incbin "data/objects/graphics/zinger_turn_frame2.bin"
 
 ;$CD41A5 (sprite graphic)
-SPRITE_GRAPHIC_18D0:
-	incbin "data/objects/graphics/sprite_graphic_18D0.bin"
+puftup_hurt_frame1:
+	incbin "data/objects/graphics/puftup_hurt_frame1.bin"
 
 ;$CD43DD (sprite graphic)
-SPRITE_GRAPHIC_18D4:
-	incbin "data/objects/graphics/sprite_graphic_18D4.bin"
+puftup_hurt_frame2:
+	incbin "data/objects/graphics/puftup_hurt_frame2.bin"
 
 ;$CD4615 (sprite graphic)
-SPRITE_GRAPHIC_18D8:
-	incbin "data/objects/graphics/sprite_graphic_18D8.bin"
+puftup_hurt_frame3:
+	incbin "data/objects/graphics/puftup_hurt_frame3.bin"
 
 ;$CD480F (sprite graphic)
-SPRITE_GRAPHIC_18DC:
-	incbin "data/objects/graphics/sprite_graphic_18DC.bin"
+puftup_hurt_frame4:
+	incbin "data/objects/graphics/puftup_hurt_frame4.bin"
 
 ;$CD4A09 (sprite graphic)
-SPRITE_GRAPHIC_18E0:
-	incbin "data/objects/graphics/sprite_graphic_18E0.bin"
+puftup_idle_frame1:
+	incbin "data/objects/graphics/puftup_idle_frame1.bin"
 
 ;$CD4C63 (sprite graphic)
-SPRITE_GRAPHIC_18E4:
-	incbin "data/objects/graphics/sprite_graphic_18E4.bin"
+puftup_idle_frame2:
+	incbin "data/objects/graphics/puftup_idle_frame2.bin"
 
 ;$CD4E79 (sprite graphic)
-SPRITE_GRAPHIC_18E8:
-	incbin "data/objects/graphics/sprite_graphic_18E8.bin"
+puftup_idle_frame3:
+	incbin "data/objects/graphics/puftup_idle_frame3.bin"
 
 ;$CD5095 (sprite graphic)
-SPRITE_GRAPHIC_18EC:
-	incbin "data/objects/graphics/sprite_graphic_18EC.bin"
+puftup_idle_frame4:
+	incbin "data/objects/graphics/puftup_idle_frame4.bin"
 
 ;$CD528F (sprite graphic)
-SPRITE_GRAPHIC_18F0:
-	incbin "data/objects/graphics/sprite_graphic_18F0.bin"
+puftup_idle_frame5:
+	incbin "data/objects/graphics/puftup_idle_frame5.bin"
 
 ;$CD5489 (sprite graphic)
-SPRITE_GRAPHIC_18F4:
-	incbin "data/objects/graphics/sprite_graphic_18F4.bin"
+puftup_idle_frame6:
+	incbin "data/objects/graphics/puftup_idle_frame6.bin"
 
 ;$CD5683 (sprite graphic)
-SPRITE_GRAPHIC_18F8:
-	incbin "data/objects/graphics/sprite_graphic_18F8.bin"
+puftup_idle_frame7:
+	incbin "data/objects/graphics/puftup_idle_frame7.bin"
 
 ;$CD587D (sprite graphic)
-SPRITE_GRAPHIC_18FC:
-	incbin "data/objects/graphics/sprite_graphic_18FC.bin"
+puftup_idle_frame8:
+	incbin "data/objects/graphics/puftup_idle_frame8.bin"
 
 ;$CD5A77 (sprite graphic)
-SPRITE_GRAPHIC_1900:
-	incbin "data/objects/graphics/sprite_graphic_1900.bin"
+puftup_idle_frame9:
+	incbin "data/objects/graphics/puftup_idle_frame9.bin"
 
 ;$CD5CB5 (sprite graphic)
-SPRITE_GRAPHIC_1904:
-	incbin "data/objects/graphics/sprite_graphic_1904.bin"
+puftup_idle_frame10:
+	incbin "data/objects/graphics/puftup_idle_frame10.bin"
 
 ;$CD5F0F (sprite graphic)
-SPRITE_GRAPHIC_1908:
-	incbin "data/objects/graphics/sprite_graphic_1908.bin"
+puftup_idle_frame11:
+	incbin "data/objects/graphics/puftup_idle_frame11.bin"
 
 ;$CD6169 (sprite graphic)
-SPRITE_GRAPHIC_190C:
-	incbin "data/objects/graphics/sprite_graphic_190C.bin"
+puftup_idle_frame12:
+	incbin "data/objects/graphics/puftup_idle_frame12.bin"
 
 ;$CD63C3 (sprite graphic)
-SPRITE_GRAPHIC_1910:
-	incbin "data/objects/graphics/sprite_graphic_1910.bin"
+puftup_idle_frame13:
+	incbin "data/objects/graphics/puftup_idle_frame13.bin"
 
 ;$CD661D (sprite graphic)
-SPRITE_GRAPHIC_1914:
-	incbin "data/objects/graphics/sprite_graphic_1914.bin"
+puftup_inflate_frame1:
+	incbin "data/objects/graphics/puftup_inflate_frame1.bin"
 
 ;$CD6839 (sprite graphic)
-SPRITE_GRAPHIC_1918:
-	incbin "data/objects/graphics/sprite_graphic_1918.bin"
+puftup_inflate_frame2:
+	incbin "data/objects/graphics/puftup_inflate_frame2.bin"
 
 ;$CD6A77 (sprite graphic)
-SPRITE_GRAPHIC_191C:
-	incbin "data/objects/graphics/sprite_graphic_191C.bin"
+puftup_inflate_frame3:
+	incbin "data/objects/graphics/puftup_inflate_frame3.bin"
 
 ;$CD6D0F (sprite graphic)
-SPRITE_GRAPHIC_1920:
-	incbin "data/objects/graphics/sprite_graphic_1920.bin"
+puftup_inflate_frame4:
+	incbin "data/objects/graphics/puftup_inflate_frame4.bin"
 
 ;$CD6FC3 (sprite graphic)
-SPRITE_GRAPHIC_1924:
-	incbin "data/objects/graphics/sprite_graphic_1924.bin"
+puftup_inflate_frame5:
+	incbin "data/objects/graphics/puftup_inflate_frame5.bin"
 
 ;$CD7299 (sprite graphic)
-SPRITE_GRAPHIC_1928:
-	incbin "data/objects/graphics/sprite_graphic_1928.bin"
+puftup_inflate_frame6:
+	incbin "data/objects/graphics/puftup_inflate_frame6.bin"
 
 ;$CD75B3 (sprite graphic)
-SPRITE_GRAPHIC_192C:
-	incbin "data/objects/graphics/sprite_graphic_192C.bin"
+puftup_inflate_frame7:
+	incbin "data/objects/graphics/puftup_inflate_frame7.bin"
 
 ;$CD7911 (sprite graphic)
-SPRITE_GRAPHIC_1930:
-	incbin "data/objects/graphics/sprite_graphic_1930.bin"
+puftup_inflate_frame8:
+	incbin "data/objects/graphics/puftup_inflate_frame8.bin"
 
 ;$CD7CB3 (sprite graphic)
-SPRITE_GRAPHIC_1934:
-	incbin "data/objects/graphics/sprite_graphic_1934.bin"
+puftup_inflate_frame9:
+	incbin "data/objects/graphics/puftup_inflate_frame9.bin"
 
 ;$CD8077 (sprite graphic)
-SPRITE_GRAPHIC_1938:
-	incbin "data/objects/graphics/sprite_graphic_1938.bin"
+puftup_inflate_frame10:
+	incbin "data/objects/graphics/puftup_inflate_frame10.bin"
 
 ;$CD84A1 (sprite graphic)
-SPRITE_GRAPHIC_193C:
-	incbin "data/objects/graphics/sprite_graphic_193C.bin"
+puftup_inflate_frame11:
+	incbin "data/objects/graphics/puftup_inflate_frame11.bin"
 
 ;$CD88A3 (sprite graphic)
-SPRITE_GRAPHIC_1940:
-	incbin "data/objects/graphics/sprite_graphic_1940.bin"
+puftup_inflate_frame12:
+	incbin "data/objects/graphics/puftup_inflate_frame12.bin"
 
 ;$CD8CC7 (sprite graphic)
-SPRITE_GRAPHIC_1944:
-	incbin "data/objects/graphics/sprite_graphic_1944.bin"
+banana_bunch_frame1:
+	incbin "data/objects/graphics/banana_bunch_frame1.bin"
 
 ;$CD8DB7 (sprite graphic)
-SPRITE_GRAPHIC_1948:
-	incbin "data/objects/graphics/sprite_graphic_1948.bin"
+banana_bunch_frame2:
+	incbin "data/objects/graphics/banana_bunch_frame2.bin"
 
 ;$CD8EA7 (sprite graphic)
-SPRITE_GRAPHIC_194C:
-	incbin "data/objects/graphics/sprite_graphic_194C.bin"
+banana_bunch_frame3:
+	incbin "data/objects/graphics/banana_bunch_frame3.bin"
 
 ;$CD8F97 (sprite graphic)
-SPRITE_GRAPHIC_1950:
-	incbin "data/objects/graphics/sprite_graphic_1950.bin"
+banana_bunch_frame4:
+	incbin "data/objects/graphics/banana_bunch_frame4.bin"
 
 ;$CD90A9 (sprite graphic)
-SPRITE_GRAPHIC_1954:
-	incbin "data/objects/graphics/sprite_graphic_1954.bin"
+banana_bunch_frame5:
+	incbin "data/objects/graphics/banana_bunch_frame5.bin"
 
 ;$CD91BB (sprite graphic)
-SPRITE_GRAPHIC_1958:
-	incbin "data/objects/graphics/sprite_graphic_1958.bin"
+banana_bunch_frame6:
+	incbin "data/objects/graphics/banana_bunch_frame6.bin"
 
 ;$CD92CD (sprite graphic)
-SPRITE_GRAPHIC_195C:
-	incbin "data/objects/graphics/sprite_graphic_195C.bin"
+goal_target_frame1:
+	incbin "data/objects/graphics/goal_target_frame1.bin"
 
 ;$CD9669 (sprite graphic)
-SPRITE_GRAPHIC_1960:
-	incbin "data/objects/graphics/sprite_graphic_1960.bin"
+goal_target_frame2:
+	incbin "data/objects/graphics/goal_target_frame2.bin"
 
 ;$CD9A27 (sprite graphic)
-SPRITE_GRAPHIC_1964:
-	incbin "data/objects/graphics/sprite_graphic_1964.bin"
+goal_target_frame3:
+	incbin "data/objects/graphics/goal_target_frame3.bin"
 
 ;$CD9DE5 (sprite graphic)
-SPRITE_GRAPHIC_1968:
-	incbin "data/objects/graphics/sprite_graphic_1968.bin"
+klinger_climb_frame1:
+	incbin "data/objects/graphics/klinger_climb_frame1.bin"
 
 ;$CDA045 (sprite graphic)
-SPRITE_GRAPHIC_196C:
-	incbin "data/objects/graphics/sprite_graphic_196C.bin"
+klinger_climb_frame2:
+	incbin "data/objects/graphics/klinger_climb_frame2.bin"
 
 ;$CDA2A5 (sprite graphic)
-SPRITE_GRAPHIC_1970:
-	incbin "data/objects/graphics/sprite_graphic_1970.bin"
+klinger_climb_frame3:
+	incbin "data/objects/graphics/klinger_climb_frame3.bin"
 
 ;$CDA505 (sprite graphic)
-SPRITE_GRAPHIC_1974:
-	incbin "data/objects/graphics/sprite_graphic_1974.bin"
+klinger_climb_frame4:
+	incbin "data/objects/graphics/klinger_climb_frame4.bin"
 
 ;$CDA743 (sprite graphic)
-SPRITE_GRAPHIC_1978:
-	incbin "data/objects/graphics/sprite_graphic_1978.bin"
+klinger_climb_frame5:
+	incbin "data/objects/graphics/klinger_climb_frame5.bin"
 
 ;$CDA9E7 (sprite graphic)
-SPRITE_GRAPHIC_197C:
-	incbin "data/objects/graphics/sprite_graphic_197C.bin"
+klinger_climb_frame6:
+	incbin "data/objects/graphics/klinger_climb_frame6.bin"
 
 ;$CDAC25 (sprite graphic)
-SPRITE_GRAPHIC_1980:
-	incbin "data/objects/graphics/sprite_graphic_1980.bin"
+klinger_climb_frame7:
+	incbin "data/objects/graphics/klinger_climb_frame7.bin"
 
 ;$CDAE41 (sprite graphic)
-SPRITE_GRAPHIC_1984:
-	incbin "data/objects/graphics/sprite_graphic_1984.bin"
+klinger_climb_frame8:
+	incbin "data/objects/graphics/klinger_climb_frame8.bin"
 
 ;$CDB07F (sprite graphic)
-SPRITE_GRAPHIC_1988:
-	incbin "data/objects/graphics/sprite_graphic_1988.bin"
+klinger_climb_frame9:
+	incbin "data/objects/graphics/klinger_climb_frame9.bin"
 
 ;$CDB29B (sprite graphic)
-SPRITE_GRAPHIC_198C:
-	incbin "data/objects/graphics/sprite_graphic_198C.bin"
+klinger_climb_frame10:
+	incbin "data/objects/graphics/klinger_climb_frame10.bin"
 
 ;$CDB51D (sprite graphic)
-SPRITE_GRAPHIC_1990:
-	incbin "data/objects/graphics/sprite_graphic_1990.bin"
+klinger_climb_frame11:
+	incbin "data/objects/graphics/klinger_climb_frame11.bin"
 
 ;$CDB77D (sprite graphic)
-SPRITE_GRAPHIC_1994:
-	incbin "data/objects/graphics/sprite_graphic_1994.bin"
+klinger_climb_frame12:
+	incbin "data/objects/graphics/klinger_climb_frame12.bin"
 
 ;$CDB9DD (sprite graphic)
-SPRITE_GRAPHIC_1998:
-	incbin "data/objects/graphics/sprite_graphic_1998.bin"
+klinger_climb_frame13:
+	incbin "data/objects/graphics/klinger_climb_frame13.bin"
 
 ;$CDBC81 (sprite graphic)
-SPRITE_GRAPHIC_199C:
-	incbin "data/objects/graphics/sprite_graphic_199C.bin"
+klinger_climb_frame14:
+	incbin "data/objects/graphics/klinger_climb_frame14.bin"
 
 ;$CDBF47 (sprite graphic)
-SPRITE_GRAPHIC_19A0:
-	incbin "data/objects/graphics/sprite_graphic_19A0.bin"
+klinger_climb_frame15:
+	incbin "data/objects/graphics/klinger_climb_frame15.bin"
 
 ;$CDC1EB (sprite graphic)
-SPRITE_GRAPHIC_19A4:
-	incbin "data/objects/graphics/sprite_graphic_19A4.bin"
+klinger_climb_frame16:
+	incbin "data/objects/graphics/klinger_climb_frame16.bin"
 
 ;$CDC4AB (sprite graphic)
-SPRITE_GRAPHIC_19A8:
-	incbin "data/objects/graphics/sprite_graphic_19A8.bin"
+flitter_idle_frame1:
+	incbin "data/objects/graphics/flitter_idle_frame1.bin"
 
 ;$CDC6A5 (sprite graphic)
-SPRITE_GRAPHIC_19AC:
-	incbin "data/objects/graphics/sprite_graphic_19AC.bin"
+flitter_idle_frame2:
+	incbin "data/objects/graphics/flitter_idle_frame2.bin"
 
 ;$CDC8A5 (sprite graphic)
-SPRITE_GRAPHIC_19B0:
-	incbin "data/objects/graphics/sprite_graphic_19B0.bin"
+flitter_idle_frame3:
+	incbin "data/objects/graphics/flitter_idle_frame3.bin"
 
 ;$CDCB21 (sprite graphic)
-SPRITE_GRAPHIC_19B4:
-	incbin "data/objects/graphics/sprite_graphic_19B4.bin"
+flitter_idle_frame4:
+	incbin "data/objects/graphics/flitter_idle_frame4.bin"
 
 ;$CDCD37 (sprite graphic)
-SPRITE_GRAPHIC_19B8:
-	incbin "data/objects/graphics/sprite_graphic_19B8.bin"
+flitter_idle_frame5:
+	incbin "data/objects/graphics/flitter_idle_frame5.bin"
 
 ;$CDCF31 (sprite graphic)
-SPRITE_GRAPHIC_19BC:
-	incbin "data/objects/graphics/sprite_graphic_19BC.bin"
+flitter_idle_frame6:
+	incbin "data/objects/graphics/flitter_idle_frame6.bin"
 
 ;$CDD169 (sprite graphic)
-SPRITE_GRAPHIC_19C0:
-	incbin "data/objects/graphics/sprite_graphic_19C0.bin"
+flitter_idle_frame7:
+	incbin "data/objects/graphics/flitter_idle_frame7.bin"
 
 ;$CDD3E5 (sprite graphic)
-SPRITE_GRAPHIC_19C4:
-	incbin "data/objects/graphics/sprite_graphic_19C4.bin"
+flitter_idle_frame8:
+	incbin "data/objects/graphics/flitter_idle_frame8.bin"
 
 ;$CDD623 (sprite graphic)
-SPRITE_GRAPHIC_19C8:
-	incbin "data/objects/graphics/sprite_graphic_19C8.bin"
+flitter_turn_frame1:
+	incbin "data/objects/graphics/flitter_turn_frame1.bin"
 
 ;$CDD81D (sprite graphic)
-SPRITE_GRAPHIC_19CC:
-	incbin "data/objects/graphics/sprite_graphic_19CC.bin"
+flitter_turn_frame2:
+	incbin "data/objects/graphics/flitter_turn_frame2.bin"
 
 ;$CDDA77 (sprite graphic)
-SPRITE_GRAPHIC_19D0:
-	incbin "data/objects/graphics/sprite_graphic_19D0.bin"
+flitter_turn_frame3:
+	incbin "data/objects/graphics/flitter_turn_frame3.bin"
 
 ;$CDDCB5 (sprite graphic)
-SPRITE_GRAPHIC_19D4:
-	incbin "data/objects/graphics/sprite_graphic_19D4.bin"
+flitter_turn_frame4:
+	incbin "data/objects/graphics/flitter_turn_frame4.bin"
 
 ;$CDDEED (sprite graphic)
-SPRITE_GRAPHIC_19D8:
-	incbin "data/objects/graphics/sprite_graphic_19D8.bin"
+flitter_turn_frame5:
+	incbin "data/objects/graphics/flitter_turn_frame5.bin"
 
 ;$CDE0C5 (sprite graphic)
-SPRITE_GRAPHIC_19DC:
-	incbin "data/objects/graphics/sprite_graphic_19DC.bin"
+flitter_turn_frame6:
+	incbin "data/objects/graphics/flitter_turn_frame6.bin"
 
 ;$CDE23D (sprite graphic)
-SPRITE_GRAPHIC_19E0:
-	incbin "data/objects/graphics/sprite_graphic_19E0.bin"
+flitter_turn_frame7:
+	incbin "data/objects/graphics/flitter_turn_frame7.bin"
 
 ;$CDE437 (sprite graphic)
-SPRITE_GRAPHIC_19E4:
-	incbin "data/objects/graphics/sprite_graphic_19E4.bin"
+flitter_turn_frame8:
+	incbin "data/objects/graphics/flitter_turn_frame8.bin"
 
 ;$CDE5ED (sprite graphic)
-SPRITE_GRAPHIC_19E8:
-	incbin "data/objects/graphics/sprite_graphic_19E8.bin"
+klinger_slide_frame1:
+	incbin "data/objects/graphics/klinger_slide_frame1.bin"
 
 ;$CDE891 (sprite graphic)
-SPRITE_GRAPHIC_19EC:
-	incbin "data/objects/graphics/sprite_graphic_19EC.bin"
+klinger_slide_frame2:
+	incbin "data/objects/graphics/klinger_slide_frame2.bin"
 
 ;$CDEB13 (sprite graphic)
-SPRITE_GRAPHIC_19F0:
-	incbin "data/objects/graphics/sprite_graphic_19F0.bin"
+klinger_slide_frame3:
+	incbin "data/objects/graphics/klinger_slide_frame3.bin"
 
 ;$CDEDD9 (sprite graphic)
-SPRITE_GRAPHIC_19F4:
-	incbin "data/objects/graphics/sprite_graphic_19F4.bin"
+klinger_slide_frame4:
+	incbin "data/objects/graphics/klinger_slide_frame4.bin"
 
 ;$CDF0DD (sprite graphic)
-SPRITE_GRAPHIC_19F8:
-	incbin "data/objects/graphics/sprite_graphic_19F8.bin"
+klinger_slide_frame5:
+	incbin "data/objects/graphics/klinger_slide_frame5.bin"
 
 ;$CDF3E1 (sprite graphic)
-SPRITE_GRAPHIC_19FC:
-	incbin "data/objects/graphics/sprite_graphic_19FC.bin"
+klinger_slide_frame6:
+	incbin "data/objects/graphics/klinger_slide_frame6.bin"
 
 ;$CDF6E5 (sprite graphic)
-SPRITE_GRAPHIC_1A00:
-	incbin "data/objects/graphics/sprite_graphic_1A00.bin"
+klinger_slide_frame7:
+	incbin "data/objects/graphics/klinger_slide_frame7.bin"
 
 ;$CDF9C7 (sprite graphic)
-SPRITE_GRAPHIC_1A04:
-	incbin "data/objects/graphics/sprite_graphic_1A04.bin"
+klinger_slide_frame8:
+	incbin "data/objects/graphics/klinger_slide_frame8.bin"
 
 ;$CDFCCB (sprite graphic)
-SPRITE_GRAPHIC_1A08:
-	incbin "data/objects/graphics/sprite_graphic_1A08.bin"
+flitter_hurt_frame1:
+	incbin "data/objects/graphics/flitter_hurt_frame1.bin"
 
 check bankcross off
 ;$CDFEE1
@@ -5929,464 +5929,464 @@ swamp_fg_1_layer_1_8x8_tilemap:
 check bankcross full
 
 ;$CE00E1 (sprite graphic)
-SPRITE_GRAPHIC_1A0C:
-	incbin "data/objects/graphics/sprite_graphic_1A0C.bin"
+flitter_hurt_frame2:
+	incbin "data/objects/graphics/flitter_hurt_frame2.bin"
 
 ;$CE0335 (sprite graphic)
-SPRITE_GRAPHIC_1A10:
-	incbin "data/objects/graphics/sprite_graphic_1A10.bin"
+flitter_hurt_frame3:
+	incbin "data/objects/graphics/flitter_hurt_frame3.bin"
 
 ;$CE04C9 (sprite graphic)
-SPRITE_GRAPHIC_1A14:
-	incbin "data/objects/graphics/sprite_graphic_1A14.bin"
+flitter_hurt_frame4:
+	incbin "data/objects/graphics/flitter_hurt_frame4.bin"
 
 ;$CE073F (sprite graphic)
-SPRITE_GRAPHIC_1A18:
-	incbin "data/objects/graphics/sprite_graphic_1A18.bin"
+flitter_hurt_frame5:
+	incbin "data/objects/graphics/flitter_hurt_frame5.bin"
 
 ;$CE08CD (sprite graphic)
-SPRITE_GRAPHIC_1A1C:
-	incbin "data/objects/graphics/sprite_graphic_1A1C.bin"
+flitter_hurt_frame6:
+	incbin "data/objects/graphics/flitter_hurt_frame6.bin"
 
 ;$CE0B05 (sprite graphic)
-SPRITE_GRAPHIC_1A20:
-	incbin "data/objects/graphics/sprite_graphic_1A20.bin"
+flitter_hurt_frame7:
+	incbin "data/objects/graphics/flitter_hurt_frame7.bin"
 
 ;$CE0C77 (sprite graphic)
-SPRITE_GRAPHIC_1A24:
-	incbin "data/objects/graphics/sprite_graphic_1A24.bin"
+klinger_hurt_frame1:
+	incbin "data/objects/graphics/klinger_hurt_frame1.bin"
 
 ;$CE0FB3 (sprite graphic)
-SPRITE_GRAPHIC_1A28:
-	incbin "data/objects/graphics/sprite_graphic_1A28.bin"
+klinger_hurt_frame2:
+	incbin "data/objects/graphics/klinger_hurt_frame2.bin"
 
 ;$CE1235 (sprite graphic)
-SPRITE_GRAPHIC_1A2C:
-	incbin "data/objects/graphics/sprite_graphic_1A2C.bin"
+klinger_hurt_frame3:
+	incbin "data/objects/graphics/klinger_hurt_frame3.bin"
 
 ;$CE14FB (sprite graphic)
-SPRITE_GRAPHIC_1A30:
-	incbin "data/objects/graphics/sprite_graphic_1A30.bin"
+klinger_hurt_frame4:
+	incbin "data/objects/graphics/klinger_hurt_frame4.bin"
 
 ;$CE17C1 (sprite graphic)
-SPRITE_GRAPHIC_1A34:
-	incbin "data/objects/graphics/sprite_graphic_1A34.bin"
+unknown_1A34_graphic:
+	incbin "data/objects/graphics/unknown_1A34_graphic.bin"
 
 ;$CE180D (sprite graphic)
-SPRITE_GRAPHIC_1A38:
-	incbin "data/objects/graphics/sprite_graphic_1A38.bin"
+flotsam_idle_frame1:
+	incbin "data/objects/graphics/flotsam_idle_frame1.bin"
 
 ;$CE19A1 (sprite graphic)
-SPRITE_GRAPHIC_1A3C:
-	incbin "data/objects/graphics/sprite_graphic_1A3C.bin"
+flotsam_idle_frame2:
+	incbin "data/objects/graphics/flotsam_idle_frame2.bin"
 
 ;$CE1B35 (sprite graphic)
-SPRITE_GRAPHIC_1A40:
-	incbin "data/objects/graphics/sprite_graphic_1A40.bin"
+flotsam_idle_frame3:
+	incbin "data/objects/graphics/flotsam_idle_frame3.bin"
 
 ;$CE1CC9 (sprite graphic)
-SPRITE_GRAPHIC_1A44:
-	incbin "data/objects/graphics/sprite_graphic_1A44.bin"
+flotsam_idle_frame4:
+	incbin "data/objects/graphics/flotsam_idle_frame4.bin"
 
 ;$CE1E3B (sprite graphic)
-SPRITE_GRAPHIC_1A48:
-	incbin "data/objects/graphics/sprite_graphic_1A48.bin"
+flotsam_idle_frame5:
+	incbin "data/objects/graphics/flotsam_idle_frame5.bin"
 
 ;$CE1FCF (sprite graphic)
-SPRITE_GRAPHIC_1A4C:
-	incbin "data/objects/graphics/sprite_graphic_1A4C.bin"
+flotsam_idle_frame6:
+	incbin "data/objects/graphics/flotsam_idle_frame6.bin"
 
 ;$CE2141 (sprite graphic)
-SPRITE_GRAPHIC_1A50:
-	incbin "data/objects/graphics/sprite_graphic_1A50.bin"
+flotsam_idle_frame7:
+	incbin "data/objects/graphics/flotsam_idle_frame7.bin"
 
 ;$CE22D5 (sprite graphic)
-SPRITE_GRAPHIC_1A54:
-	incbin "data/objects/graphics/sprite_graphic_1A54.bin"
+flotsam_idle_frame8:
+	incbin "data/objects/graphics/flotsam_idle_frame8.bin"
 
 ;$CE2469 (sprite graphic)
-SPRITE_GRAPHIC_1A58:
-	incbin "data/objects/graphics/sprite_graphic_1A58.bin"
+flotsam_idle_frame9:
+	incbin "data/objects/graphics/flotsam_idle_frame9.bin"
 
 ;$CE25FD (sprite graphic)
-SPRITE_GRAPHIC_1A5C:
-	incbin "data/objects/graphics/sprite_graphic_1A5C.bin"
+flotsam_idle_frame10:
+	incbin "data/objects/graphics/flotsam_idle_frame10.bin"
 
 ;$CE276F (sprite graphic)
-SPRITE_GRAPHIC_1A60:
-	incbin "data/objects/graphics/sprite_graphic_1A60.bin"
+flotsam_idle_frame11:
+	incbin "data/objects/graphics/flotsam_idle_frame11.bin"
 
 ;$CE2903 (sprite graphic)
-SPRITE_GRAPHIC_1A64:
-	incbin "data/objects/graphics/sprite_graphic_1A64.bin"
+flotsam_idle_frame12:
+	incbin "data/objects/graphics/flotsam_idle_frame12.bin"
 
 ;$CE2A75 (sprite graphic)
-SPRITE_GRAPHIC_1A68:
-	incbin "data/objects/graphics/sprite_graphic_1A68.bin"
+krow_body_hurt_frame1:
+	incbin "data/objects/graphics/krow_body_hurt_frame1.bin"
 
 ;$CE2F43 (sprite graphic)
-SPRITE_GRAPHIC_1A6C:
-	incbin "data/objects/graphics/sprite_graphic_1A6C.bin"
+krow_body_hurt_frame2:
+	incbin "data/objects/graphics/krow_body_hurt_frame2.bin"
 
 ;$CE33EF (sprite graphic)
-SPRITE_GRAPHIC_1A70:
-	incbin "data/objects/graphics/sprite_graphic_1A70.bin"
+krow_body_hurt_frame3:
+	incbin "data/objects/graphics/krow_body_hurt_frame3.bin"
 
 ;$CE389B (sprite graphic)
-SPRITE_GRAPHIC_1A74:
-	incbin "data/objects/graphics/sprite_graphic_1A74.bin"
+krow_body_hurt_frame4:
+	incbin "data/objects/graphics/krow_body_hurt_frame4.bin"
 
 ;$CE3D03 (sprite graphic)
-SPRITE_GRAPHIC_1A78:
-	incbin "data/objects/graphics/sprite_graphic_1A78.bin"
+krow_body_hurt_frame5:
+	incbin "data/objects/graphics/krow_body_hurt_frame5.bin"
 
 ;$CE40C1 (sprite graphic)
-SPRITE_GRAPHIC_1A7C:
-	incbin "data/objects/graphics/sprite_graphic_1A7C.bin"
+krow_body_hurt_frame6:
+	incbin "data/objects/graphics/krow_body_hurt_frame6.bin"
 
 ;$CE43FD (sprite graphic)
-SPRITE_GRAPHIC_1A80:
-	incbin "data/objects/graphics/sprite_graphic_1A80.bin"
+krow_head_hurt_frame1:
+	incbin "data/objects/graphics/krow_head_hurt_frame1.bin"
 
 ;$CE46F5 (sprite graphic)
-SPRITE_GRAPHIC_1A84:
-	incbin "data/objects/graphics/sprite_graphic_1A84.bin"
+krow_head_hurt_frame2:
+	incbin "data/objects/graphics/krow_head_hurt_frame2.bin"
 
 ;$CE49ED (sprite graphic)
-SPRITE_GRAPHIC_1A88:
-	incbin "data/objects/graphics/sprite_graphic_1A88.bin"
+krow_head_hurt_frame3:
+	incbin "data/objects/graphics/krow_head_hurt_frame3.bin"
 
 ;$CE4CA1 (sprite graphic)
-SPRITE_GRAPHIC_1A8C:
-	incbin "data/objects/graphics/sprite_graphic_1A8C.bin"
+krow_head_hurt_frame4:
+	incbin "data/objects/graphics/krow_head_hurt_frame4.bin"
 
 ;$CE4F1D (sprite graphic)
-SPRITE_GRAPHIC_1A90:
-	incbin "data/objects/graphics/sprite_graphic_1A90.bin"
+krow_head_hurt_frame5:
+	incbin "data/objects/graphics/krow_head_hurt_frame5.bin"
 
 ;$CE5199 (sprite graphic)
-SPRITE_GRAPHIC_1A94:
-	incbin "data/objects/graphics/sprite_graphic_1A94.bin"
+krow_head_hurt_frame6:
+	incbin "data/objects/graphics/krow_head_hurt_frame6.bin"
 
 ;$CE5453 (sprite graphic)
-SPRITE_GRAPHIC_1A98:
-	incbin "data/objects/graphics/sprite_graphic_1A98.bin"
+squitter_icon_graphic:
+	incbin "data/objects/graphics/squitter_icon_graphic.bin"
 
 ;$CE55A9 (sprite graphic)
-SPRITE_GRAPHIC_1A9C:
-	incbin "data/objects/graphics/sprite_graphic_1A9C.bin"
+rattly_icon_graphic:
+	incbin "data/objects/graphics/rattly_icon_graphic.bin"
 
 ;$CE5699 (sprite graphic)
-SPRITE_GRAPHIC_1AA0:
-	incbin "data/objects/graphics/sprite_graphic_1AA0.bin"
+squawks_icon_graphic:
+	incbin "data/objects/graphics/squawks_icon_graphic.bin"
 
 ;$CE57AB (sprite graphic)
-SPRITE_GRAPHIC_1AA4:
-	incbin "data/objects/graphics/sprite_graphic_1AA4.bin"
+rambi_icon_graphic:
+	incbin "data/objects/graphics/rambi_icon_graphic.bin"
 
 ;$CE5923 (sprite graphic)
-SPRITE_GRAPHIC_1AA8:
-	incbin "data/objects/graphics/sprite_graphic_1AA8.bin"
+enguarde_icon_graphic:
+	incbin "data/objects/graphics/enguarde_icon_graphic.bin"
 
 ;$CE5A57 (sprite graphic)
-SPRITE_GRAPHIC_1AAC:
-	incbin "data/objects/graphics/sprite_graphic_1AAC.bin"
+zinger_hurt_frame1:
+	incbin "data/objects/graphics/zinger_hurt_frame1.bin"
 
 ;$CE5CD9 (sprite graphic)
-SPRITE_GRAPHIC_1AB0:
-	incbin "data/objects/graphics/sprite_graphic_1AB0.bin"
+zinger_hurt_frame2:
+	incbin "data/objects/graphics/zinger_hurt_frame2.bin"
 
 ;$CE5F77 (sprite graphic)
-SPRITE_GRAPHIC_1AB4:
-	incbin "data/objects/graphics/sprite_graphic_1AB4.bin"
+zinger_hurt_frame3:
+	incbin "data/objects/graphics/zinger_hurt_frame3.bin"
 
 ;$CE6259 (sprite graphic)
-SPRITE_GRAPHIC_1AB8:
-	incbin "data/objects/graphics/sprite_graphic_1AB8.bin"
+zinger_hurt_frame4:
+	incbin "data/objects/graphics/zinger_hurt_frame4.bin"
 
 ;$CE653B (sprite graphic)
-SPRITE_GRAPHIC_1ABC:
-	incbin "data/objects/graphics/sprite_graphic_1ABC.bin"
+zinger_hurt_frame5:
+	incbin "data/objects/graphics/zinger_hurt_frame5.bin"
 
 ;$CE6795 (sprite graphic)
-SPRITE_GRAPHIC_1AC0:
-	incbin "data/objects/graphics/sprite_graphic_1AC0.bin"
+dixie_climb_up_double_rope_frame1:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame1.bin"
 
 ;$CE698F (sprite graphic)
-SPRITE_GRAPHIC_1AC4:
-	incbin "data/objects/graphics/sprite_graphic_1AC4.bin"
+dixie_climb_up_double_rope_frame2:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame2.bin"
 
 ;$CE6BAB (sprite graphic)
-SPRITE_GRAPHIC_1AC8:
-	incbin "data/objects/graphics/sprite_graphic_1AC8.bin"
+dixie_climb_up_double_rope_frame3:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame3.bin"
 
 ;$CE6DC7 (sprite graphic)
-SPRITE_GRAPHIC_1ACC:
-	incbin "data/objects/graphics/sprite_graphic_1ACC.bin"
+dixie_climb_up_double_rope_frame4:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame4.bin"
 
 ;$CE6F99 (sprite graphic)
-SPRITE_GRAPHIC_1AD0:
-	incbin "data/objects/graphics/sprite_graphic_1AD0.bin"
+dixie_climb_up_double_rope_frame5:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame5.bin"
 
 ;$CE716B (sprite graphic)
-SPRITE_GRAPHIC_1AD4:
-	incbin "data/objects/graphics/sprite_graphic_1AD4.bin"
+dixie_climb_up_double_rope_frame6:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame6.bin"
 
 ;$CE735F (sprite graphic)
-SPRITE_GRAPHIC_1AD8:
-	incbin "data/objects/graphics/sprite_graphic_1AD8.bin"
+dixie_climb_up_double_rope_frame7:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame7.bin"
 
 ;$CE7537 (sprite graphic)
-SPRITE_GRAPHIC_1ADC:
-	incbin "data/objects/graphics/sprite_graphic_1ADC.bin"
+dixie_climb_up_double_rope_frame8:
+	incbin "data/objects/graphics/dixie_climb_up_double_rope_frame8.bin"
 
 ;$CE76ED (sprite graphic)
-SPRITE_GRAPHIC_1AE0:
-	incbin "data/objects/graphics/sprite_graphic_1AE0.bin"
+dixie_climb_down_double_rope_frame1:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame1.bin"
 
 ;$CE78E7 (sprite graphic)
-SPRITE_GRAPHIC_1AE4:
-	incbin "data/objects/graphics/sprite_graphic_1AE4.bin"
+dixie_climb_down_double_rope_frame2:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame2.bin"
 
 ;$CE7AE1 (sprite graphic)
-SPRITE_GRAPHIC_1AE8:
-	incbin "data/objects/graphics/sprite_graphic_1AE8.bin"
+dixie_climb_down_double_rope_frame3:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame3.bin"
 
 ;$CE7CD5 (sprite graphic)
-SPRITE_GRAPHIC_1AEC:
-	incbin "data/objects/graphics/sprite_graphic_1AEC.bin"
+dixie_climb_down_double_rope_frame4:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame4.bin"
 
 ;$CE7EC9 (sprite graphic)
-SPRITE_GRAPHIC_1AF0:
-	incbin "data/objects/graphics/sprite_graphic_1AF0.bin"
+dixie_climb_down_double_rope_frame5:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame5.bin"
 
 ;$CE80BD (sprite graphic)
-SPRITE_GRAPHIC_1AF4:
-	incbin "data/objects/graphics/sprite_graphic_1AF4.bin"
+dixie_climb_down_double_rope_frame6:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame6.bin"
 
 ;$CE8295 (sprite graphic)
-SPRITE_GRAPHIC_1AF8:
-	incbin "data/objects/graphics/sprite_graphic_1AF8.bin"
+dixie_climb_down_double_rope_frame7:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame7.bin"
 
 ;$CE846D (sprite graphic)
-SPRITE_GRAPHIC_1AFC:
-	incbin "data/objects/graphics/sprite_graphic_1AFC.bin"
+dixie_climb_down_double_rope_frame8:
+	incbin "data/objects/graphics/dixie_climb_down_double_rope_frame8.bin"
 
 ;$CE8661 (sprite graphic)
-SPRITE_GRAPHIC_1B00:
-	incbin "data/objects/graphics/sprite_graphic_1B00.bin"
+diddy_climb_rope_frame1:
+	incbin "data/objects/graphics/diddy_climb_rope_frame1.bin"
 
 ;$CE8877 (sprite graphic)
-SPRITE_GRAPHIC_1B04:
-	incbin "data/objects/graphics/sprite_graphic_1B04.bin"
+diddy_climb_rope_frame2:
+	incbin "data/objects/graphics/diddy_climb_rope_frame2.bin"
 
 ;$CE8A6B (sprite graphic)
-SPRITE_GRAPHIC_1B08:
-	incbin "data/objects/graphics/sprite_graphic_1B08.bin"
+diddy_climb_rope_frame3:
+	incbin "data/objects/graphics/diddy_climb_rope_frame3.bin"
 
 ;$CE8C5F (sprite graphic)
-SPRITE_GRAPHIC_1B0C:
-	incbin "data/objects/graphics/sprite_graphic_1B0C.bin"
+diddy_climb_rope_frame4:
+	incbin "data/objects/graphics/diddy_climb_rope_frame4.bin"
 
 ;$CE8E75 (sprite graphic)
-SPRITE_GRAPHIC_1B10:
-	incbin "data/objects/graphics/sprite_graphic_1B10.bin"
+diddy_climb_rope_frame5:
+	incbin "data/objects/graphics/diddy_climb_rope_frame5.bin"
 
 ;$CE90AD (sprite graphic)
-SPRITE_GRAPHIC_1B14:
-	incbin "data/objects/graphics/sprite_graphic_1B14.bin"
+diddy_climb_rope_frame6:
+	incbin "data/objects/graphics/diddy_climb_rope_frame6.bin"
 
 ;$CE92C3 (sprite graphic)
-SPRITE_GRAPHIC_1B18:
-	incbin "data/objects/graphics/sprite_graphic_1B18.bin"
+diddy_climb_rope_frame7:
+	incbin "data/objects/graphics/diddy_climb_rope_frame7.bin"
 
 ;$CE94D9 (sprite graphic)
-SPRITE_GRAPHIC_1B1C:
-	incbin "data/objects/graphics/sprite_graphic_1B1C.bin"
+diddy_climb_rope_frame8:
+	incbin "data/objects/graphics/diddy_climb_rope_frame8.bin"
 
 ;$CE96EF (sprite graphic)
-SPRITE_GRAPHIC_1B20:
-	incbin "data/objects/graphics/sprite_graphic_1B20.bin"
+diddy_climb_rope_frame9:
+	incbin "data/objects/graphics/diddy_climb_rope_frame9.bin"
 
 ;$CE9905 (sprite graphic)
-SPRITE_GRAPHIC_1B24:
-	incbin "data/objects/graphics/sprite_graphic_1B24.bin"
+diddy_climb_rope_frame10:
+	incbin "data/objects/graphics/diddy_climb_rope_frame10.bin"
 
 ;$CE9B1B (sprite graphic)
-SPRITE_GRAPHIC_1B28:
-	incbin "data/objects/graphics/sprite_graphic_1B28.bin"
+diddy_climb_rope_frame11:
+	incbin "data/objects/graphics/diddy_climb_rope_frame11.bin"
 
 ;$CE9D0F (sprite graphic)
-SPRITE_GRAPHIC_1B2C:
-	incbin "data/objects/graphics/sprite_graphic_1B2C.bin"
+diddy_climb_rope_frame12:
+	incbin "data/objects/graphics/diddy_climb_rope_frame12.bin"
 
 ;$CE9F03 (sprite graphic)
-SPRITE_GRAPHIC_1B30:
-	incbin "data/objects/graphics/sprite_graphic_1B30.bin"
+diddy_rope_turn_frame1:
+	incbin "data/objects/graphics/diddy_rope_turn_frame1.bin"
 
 ;$CEA0FD (sprite graphic)
-SPRITE_GRAPHIC_1B34:
-	incbin "data/objects/graphics/sprite_graphic_1B34.bin"
+diddy_rope_turn_frame2:
+	incbin "data/objects/graphics/diddy_rope_turn_frame2.bin"
 
 ;$CEA2CF (sprite graphic)
-SPRITE_GRAPHIC_1B38:
-	incbin "data/objects/graphics/sprite_graphic_1B38.bin"
+diddy_rope_turn_frame3:
+	incbin "data/objects/graphics/diddy_rope_turn_frame3.bin"
 
 ;$CEA47F (sprite graphic)
-SPRITE_GRAPHIC_1B3C:
-	incbin "data/objects/graphics/sprite_graphic_1B3C.bin"
+diddy_grab_double_rope_frame1:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame1.bin"
 
 ;$CEA673 (sprite graphic)
-SPRITE_GRAPHIC_1B40:
-	incbin "data/objects/graphics/sprite_graphic_1B40.bin"
+diddy_grab_double_rope_frame2:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame2.bin"
 
 ;$CEA823 (sprite graphic)
-SPRITE_GRAPHIC_1B44:
-	incbin "data/objects/graphics/sprite_graphic_1B44.bin"
+diddy_grab_double_rope_frame3:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame3.bin"
 
 ;$CEAA39 (sprite graphic)
-SPRITE_GRAPHIC_1B48:
-	incbin "data/objects/graphics/sprite_graphic_1B48.bin"
+diddy_grab_double_rope_frame4:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame4.bin"
 
 ;$CEAC71 (sprite graphic)
-SPRITE_GRAPHIC_1B4C:
-	incbin "data/objects/graphics/sprite_graphic_1B4C.bin"
+diddy_grab_double_rope_frame5:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame5.bin"
 
 ;$CEAEAF (sprite graphic)
-SPRITE_GRAPHIC_1B50:
-	incbin "data/objects/graphics/sprite_graphic_1B50.bin"
+diddy_grab_double_rope_frame6:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame6.bin"
 
 ;$CEB0ED (sprite graphic)
-SPRITE_GRAPHIC_1B54:
-	incbin "data/objects/graphics/sprite_graphic_1B54.bin"
+diddy_grab_double_rope_frame7:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame7.bin"
 
 ;$CEB3B3 (sprite graphic)
-SPRITE_GRAPHIC_1B58:
-	incbin "data/objects/graphics/sprite_graphic_1B58.bin"
+diddy_grab_double_rope_frame8:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame8.bin"
 
 ;$CEB635 (sprite graphic)
-SPRITE_GRAPHIC_1B5C:
-	incbin "data/objects/graphics/sprite_graphic_1B5C.bin"
+diddy_grab_double_rope_frame9:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame9.bin"
 
 ;$CEB873 (sprite graphic)
-SPRITE_GRAPHIC_1B60:
-	incbin "data/objects/graphics/sprite_graphic_1B60.bin"
+diddy_grab_double_rope_frame10:
+	incbin "data/objects/graphics/diddy_grab_double_rope_frame10.bin"
 
 ;$CEBAD3 (sprite graphic)
-SPRITE_GRAPHIC_1B64:
-	incbin "data/objects/graphics/sprite_graphic_1B64.bin"
+kaboing_turn_frame1:
+	incbin "data/objects/graphics/kaboing_turn_frame1.bin"
 
 ;$CEBDAF (sprite graphic)
-SPRITE_GRAPHIC_1B68:
-	incbin "data/objects/graphics/sprite_graphic_1B68.bin"
+kaboing_turn_frame2:
+	incbin "data/objects/graphics/kaboing_turn_frame2.bin"
 
 ;$CEC0AD (sprite graphic)
-SPRITE_GRAPHIC_1B6C:
-	incbin "data/objects/graphics/sprite_graphic_1B6C.bin"
+kaboing_hurt_frame1:
+	incbin "data/objects/graphics/kaboing_hurt_frame1.bin"
 
 ;$CEC38F (sprite graphic)
-SPRITE_GRAPHIC_1B70:
-	incbin "data/objects/graphics/sprite_graphic_1B70.bin"
+kaboing_hurt_frame2:
+	incbin "data/objects/graphics/kaboing_hurt_frame2.bin"
 
 ;$CEC6D7 (sprite graphic)
-SPRITE_GRAPHIC_1B74:
-	incbin "data/objects/graphics/sprite_graphic_1B74.bin"
+kaboing_hurt_frame3:
+	incbin "data/objects/graphics/kaboing_hurt_frame3.bin"
 
 ;$CECA1F (sprite graphic)
-SPRITE_GRAPHIC_1B78:
-	incbin "data/objects/graphics/sprite_graphic_1B78.bin"
+kaboing_hurt_frame4:
+	incbin "data/objects/graphics/kaboing_hurt_frame4.bin"
 
 ;$CECD89 (sprite graphic)
-SPRITE_GRAPHIC_1B7C:
-	incbin "data/objects/graphics/sprite_graphic_1B7C.bin"
+kaboing_hurt_frame5:
+	incbin "data/objects/graphics/kaboing_hurt_frame5.bin"
 
 ;$CED06B (sprite graphic)
-SPRITE_GRAPHIC_1B80:
-	incbin "data/objects/graphics/sprite_graphic_1B80.bin"
+flotsam_hurt_frame1:
+	incbin "data/objects/graphics/flotsam_hurt_frame1.bin"
 
 ;$CED309 (sprite graphic)
-SPRITE_GRAPHIC_1B84:
-	incbin "data/objects/graphics/sprite_graphic_1B84.bin"
+flotsam_hurt_frame2:
+	incbin "data/objects/graphics/flotsam_hurt_frame2.bin"
 
 ;$CED585 (sprite graphic)
-SPRITE_GRAPHIC_1B88:
-	incbin "data/objects/graphics/sprite_graphic_1B88.bin"
+flotsam_hurt_frame3:
+	incbin "data/objects/graphics/flotsam_hurt_frame3.bin"
 
 ;$CED7BD (sprite graphic)
-SPRITE_GRAPHIC_1B8C:
-	incbin "data/objects/graphics/sprite_graphic_1B8C.bin"
+flotsam_hurt_frame4:
+	incbin "data/objects/graphics/flotsam_hurt_frame4.bin"
 
 ;$CED9D3 (sprite graphic)
-SPRITE_GRAPHIC_1B90:
-	incbin "data/objects/graphics/sprite_graphic_1B90.bin"
+flotsam_turn_frame1:
+	incbin "data/objects/graphics/flotsam_turn_frame1.bin"
 
 ;$CEDBCD (sprite graphic)
-SPRITE_GRAPHIC_1B94:
-	incbin "data/objects/graphics/sprite_graphic_1B94.bin"
+flotsam_turn_frame2:
+	incbin "data/objects/graphics/flotsam_turn_frame2.bin"
 
 ;$CEDDA5 (sprite graphic)
-SPRITE_GRAPHIC_1B98:
-	incbin "data/objects/graphics/sprite_graphic_1B98.bin"
+flotsam_turn_frame3:
+	incbin "data/objects/graphics/flotsam_turn_frame3.bin"
 
 ;$CEDF5B (sprite graphic)
-SPRITE_GRAPHIC_1B9C:
-	incbin "data/objects/graphics/sprite_graphic_1B9C.bin"
+flotsam_turn_frame4:
+	incbin "data/objects/graphics/flotsam_turn_frame4.bin"
 
 ;$CEE06D (sprite graphic)
-SPRITE_GRAPHIC_1BA0:
-	incbin "data/objects/graphics/sprite_graphic_1BA0.bin"
+flotsam_turn_frame5:
+	incbin "data/objects/graphics/flotsam_turn_frame5.bin"
 
 ;$CEE141 (sprite graphic)
-SPRITE_GRAPHIC_1BA4:
-	incbin "data/objects/graphics/sprite_graphic_1BA4.bin"
+flotsam_turn_frame6:
+	incbin "data/objects/graphics/flotsam_turn_frame6.bin"
 
 ;$CEE1F3 (sprite graphic)
-SPRITE_GRAPHIC_1BA8:
-	incbin "data/objects/graphics/sprite_graphic_1BA8.bin"
+flotsam_turn_frame7:
+	incbin "data/objects/graphics/flotsam_turn_frame7.bin"
 
 ;$CEE327 (sprite graphic)
-SPRITE_GRAPHIC_1BAC:
-	incbin "data/objects/graphics/sprite_graphic_1BAC.bin"
+diddy_climb_up_double_rope_frame1:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame1.bin"
 
 ;$CEE565 (sprite graphic)
-SPRITE_GRAPHIC_1BB0:
-	incbin "data/objects/graphics/sprite_graphic_1BB0.bin"
+diddy_climb_up_double_rope_frame2:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame2.bin"
 
 ;$CEE7A3 (sprite graphic)
-SPRITE_GRAPHIC_1BB4:
-	incbin "data/objects/graphics/sprite_graphic_1BB4.bin"
+diddy_climb_up_double_rope_frame3:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame3.bin"
 
 ;$CEE9E1 (sprite graphic)
-SPRITE_GRAPHIC_1BB8:
-	incbin "data/objects/graphics/sprite_graphic_1BB8.bin"
+diddy_climb_up_double_rope_frame4:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame4.bin"
 
 ;$CEEC1F (sprite graphic)
-SPRITE_GRAPHIC_1BBC:
-	incbin "data/objects/graphics/sprite_graphic_1BBC.bin"
+diddy_climb_up_double_rope_frame5:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame5.bin"
 
 ;$CEEE3B (sprite graphic)
-SPRITE_GRAPHIC_1BC0:
-	incbin "data/objects/graphics/sprite_graphic_1BC0.bin"
+diddy_climb_up_double_rope_frame6:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame6.bin"
 
 ;$CEF079 (sprite graphic)
-SPRITE_GRAPHIC_1BC4:
-	incbin "data/objects/graphics/sprite_graphic_1BC4.bin"
+diddy_climb_up_double_rope_frame7:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame7.bin"
 
 ;$CEF2D9 (sprite graphic)
-SPRITE_GRAPHIC_1BC8:
-	incbin "data/objects/graphics/sprite_graphic_1BC8.bin"
+diddy_climb_up_double_rope_frame8:
+	incbin "data/objects/graphics/diddy_climb_up_double_rope_frame8.bin"
 
 ;$CEF517 (sprite graphic)
-SPRITE_GRAPHIC_1BCC:
-	incbin "data/objects/graphics/sprite_graphic_1BCC.bin"
+glimmer_idle_frame1:
+	incbin "data/objects/graphics/glimmer_idle_frame1.bin"
 
 ;$CEF6EF (sprite graphic)
-SPRITE_GRAPHIC_1BD0:
-	incbin "data/objects/graphics/sprite_graphic_1BD0.bin"
+glimmer_idle_frame2:
+	incbin "data/objects/graphics/glimmer_idle_frame2.bin"
 
 ;$CEF8C7 (sprite graphic)
-SPRITE_GRAPHIC_1BD4:
-	incbin "data/objects/graphics/sprite_graphic_1BD4.bin"
+glimmer_idle_frame3:
+	incbin "data/objects/graphics/glimmer_idle_frame3.bin"
 
 check bankcross off
 ;$CEFA9F
@@ -6395,408 +6395,408 @@ kong_kollege_8x8_tilemap:
 check bankcross full
 
 ;$CF019F (sprite graphic)
-SPRITE_GRAPHIC_1BD8:
-	incbin "data/objects/graphics/sprite_graphic_1BD8.bin"
+glimmer_idle_frame4:
+	incbin "data/objects/graphics/glimmer_idle_frame4.bin"
 
 ;$CF0377 (sprite graphic)
-SPRITE_GRAPHIC_1BDC:
-	incbin "data/objects/graphics/sprite_graphic_1BDC.bin"
+glimmer_idle_frame5:
+	incbin "data/objects/graphics/glimmer_idle_frame5.bin"
 
 ;$CF054F (sprite graphic)
-SPRITE_GRAPHIC_1BE0:
-	incbin "data/objects/graphics/sprite_graphic_1BE0.bin"
+glimmer_idle_frame6:
+	incbin "data/objects/graphics/glimmer_idle_frame6.bin"
 
 ;$CF0749 (sprite graphic)
-SPRITE_GRAPHIC_1BE4:
-	incbin "data/objects/graphics/sprite_graphic_1BE4.bin"
+glimmer_idle_frame7:
+	incbin "data/objects/graphics/glimmer_idle_frame7.bin"
 
 ;$CF0965 (sprite graphic)
-SPRITE_GRAPHIC_1BE8:
-	incbin "data/objects/graphics/sprite_graphic_1BE8.bin"
+glimmer_idle_frame8:
+	incbin "data/objects/graphics/glimmer_idle_frame8.bin"
 
 ;$CF0B1B (sprite graphic)
-SPRITE_GRAPHIC_1BEC:
-	incbin "data/objects/graphics/sprite_graphic_1BEC.bin"
+glimmer_idle_frame9:
+	incbin "data/objects/graphics/glimmer_idle_frame9.bin"
 
 ;$CF0CD1 (sprite graphic)
-SPRITE_GRAPHIC_1BF0:
-	incbin "data/objects/graphics/sprite_graphic_1BF0.bin"
+glimmer_idle_frame10:
+	incbin "data/objects/graphics/glimmer_idle_frame10.bin"
 
 ;$CF0E87 (sprite graphic)
-SPRITE_GRAPHIC_1BF4:
-	incbin "data/objects/graphics/sprite_graphic_1BF4.bin"
+glimmer_idle_frame11:
+	incbin "data/objects/graphics/glimmer_idle_frame11.bin"
 
 ;$CF103D (sprite graphic)
-SPRITE_GRAPHIC_1BF8:
-	incbin "data/objects/graphics/sprite_graphic_1BF8.bin"
+glimmer_idle_frame12:
+	incbin "data/objects/graphics/glimmer_idle_frame12.bin"
 
 ;$CF1215 (sprite graphic)
-SPRITE_GRAPHIC_1BFC:
-	incbin "data/objects/graphics/sprite_graphic_1BFC.bin"
+glimmer_idle_frame13:
+	incbin "data/objects/graphics/glimmer_idle_frame13.bin"
 
 ;$CF13ED (sprite graphic)
-SPRITE_GRAPHIC_1C00:
-	incbin "data/objects/graphics/sprite_graphic_1C00.bin"
+glimmer_idle_frame14:
+	incbin "data/objects/graphics/glimmer_idle_frame14.bin"
 
 ;$CF1587 (sprite graphic)
-SPRITE_GRAPHIC_1C04:
-	incbin "data/objects/graphics/sprite_graphic_1C04.bin"
+glimmer_idle_frame15:
+	incbin "data/objects/graphics/glimmer_idle_frame15.bin"
 
 ;$CF1743 (sprite graphic)
-SPRITE_GRAPHIC_1C08:
-	incbin "data/objects/graphics/sprite_graphic_1C08.bin"
+glimmer_idle_frame16:
+	incbin "data/objects/graphics/glimmer_idle_frame16.bin"
 
 ;$CF18DD (sprite graphic)
-SPRITE_GRAPHIC_1C0C:
-	incbin "data/objects/graphics/sprite_graphic_1C0C.bin"
+glimmer_turn_frame1:
+	incbin "data/objects/graphics/glimmer_turn_frame1.bin"
 
 ;$CF1A93 (sprite graphic)
-SPRITE_GRAPHIC_1C10:
-	incbin "data/objects/graphics/sprite_graphic_1C10.bin"
+glimmer_turn_frame2:
+	incbin "data/objects/graphics/glimmer_turn_frame2.bin"
 
 ;$CF1C0B (sprite graphic)
-SPRITE_GRAPHIC_1C14:
-	incbin "data/objects/graphics/sprite_graphic_1C14.bin"
+glimmer_turn_frame3:
+	incbin "data/objects/graphics/glimmer_turn_frame3.bin"
 
 ;$CF1D61 (sprite graphic)
-SPRITE_GRAPHIC_1C18:
-	incbin "data/objects/graphics/sprite_graphic_1C18.bin"
+glimmer_turn_frame4:
+	incbin "data/objects/graphics/glimmer_turn_frame4.bin"
 
 ;$CF1E73 (sprite graphic)
-SPRITE_GRAPHIC_1C1C:
-	incbin "data/objects/graphics/sprite_graphic_1C1C.bin"
+glimmer_turn_frame5:
+	incbin "data/objects/graphics/glimmer_turn_frame5.bin"
 
 ;$CF1F85 (sprite graphic)
-SPRITE_GRAPHIC_1C20:
-	incbin "data/objects/graphics/sprite_graphic_1C20.bin"
+glimmer_turn_frame6:
+	incbin "data/objects/graphics/glimmer_turn_frame6.bin"
 
 ;$CF20B9 (sprite graphic)
-SPRITE_GRAPHIC_1C24:
-	incbin "data/objects/graphics/sprite_graphic_1C24.bin"
+glimmer_turn_frame7:
+	incbin "data/objects/graphics/glimmer_turn_frame7.bin"
 
 ;$CF2253 (sprite graphic)
-SPRITE_GRAPHIC_1C28:
-	incbin "data/objects/graphics/sprite_graphic_1C28.bin"
+glimmer_turn_frame8:
+	incbin "data/objects/graphics/glimmer_turn_frame8.bin"
 
 ;$CF2409 (sprite graphic)
-SPRITE_GRAPHIC_1C2C:
-	incbin "data/objects/graphics/sprite_graphic_1C2C.bin"
+diddy_climb_down_double_rope_frame1:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame1.bin"
 
 ;$CF25E7 (sprite graphic)
-SPRITE_GRAPHIC_1C30:
-	incbin "data/objects/graphics/sprite_graphic_1C30.bin"
+diddy_climb_down_double_rope_frame2:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame2.bin"
 
 ;$CF27E1 (sprite graphic)
-SPRITE_GRAPHIC_1C34:
-	incbin "data/objects/graphics/sprite_graphic_1C34.bin"
+diddy_climb_down_double_rope_frame3:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame3.bin"
 
 ;$CF29DB (sprite graphic)
-SPRITE_GRAPHIC_1C38:
-	incbin "data/objects/graphics/sprite_graphic_1C38.bin"
+diddy_climb_down_double_rope_frame4:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame4.bin"
 
 ;$CF2BD5 (sprite graphic)
-SPRITE_GRAPHIC_1C3C:
-	incbin "data/objects/graphics/sprite_graphic_1C3C.bin"
+diddy_climb_down_double_rope_frame5:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame5.bin"
 
 ;$CF2DB3 (sprite graphic)
-SPRITE_GRAPHIC_1C40:
-	incbin "data/objects/graphics/sprite_graphic_1C40.bin"
+diddy_climb_down_double_rope_frame6:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame6.bin"
 
 ;$CF2F91 (sprite graphic)
-SPRITE_GRAPHIC_1C44:
-	incbin "data/objects/graphics/sprite_graphic_1C44.bin"
+diddy_climb_down_double_rope_frame7:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame7.bin"
 
 ;$CF314D (sprite graphic)
-SPRITE_GRAPHIC_1C48:
-	incbin "data/objects/graphics/sprite_graphic_1C48.bin"
+diddy_climb_down_double_rope_frame8:
+	incbin "data/objects/graphics/diddy_climb_down_double_rope_frame8.bin"
 
 ;$CF332B (sprite graphic)
-SPRITE_GRAPHIC_1C4C:
-	incbin "data/objects/graphics/sprite_graphic_1C4C.bin"
+diddy_juggle_frame1:
+	incbin "data/objects/graphics/diddy_juggle_frame1.bin"
 
 ;$CF3569 (sprite graphic)
-SPRITE_GRAPHIC_1C50:
-	incbin "data/objects/graphics/sprite_graphic_1C50.bin"
+diddy_juggle_frame2:
+	incbin "data/objects/graphics/diddy_juggle_frame2.bin"
 
 ;$CF37A1 (sprite graphic)
-SPRITE_GRAPHIC_1C54:
-	incbin "data/objects/graphics/sprite_graphic_1C54.bin"
+diddy_juggle_frame3:
+	incbin "data/objects/graphics/diddy_juggle_frame3.bin"
 
 ;$CF39DF (sprite graphic)
-SPRITE_GRAPHIC_1C58:
-	incbin "data/objects/graphics/sprite_graphic_1C58.bin"
+diddy_juggle_frame4:
+	incbin "data/objects/graphics/diddy_juggle_frame4.bin"
 
 ;$CF3C1D (sprite graphic)
-SPRITE_GRAPHIC_1C5C:
-	incbin "data/objects/graphics/sprite_graphic_1C5C.bin"
+diddy_juggle_frame5:
+	incbin "data/objects/graphics/diddy_juggle_frame5.bin"
 
 ;$CF3E55 (sprite graphic)
-SPRITE_GRAPHIC_1C60:
-	incbin "data/objects/graphics/sprite_graphic_1C60.bin"
+diddy_juggle_frame6:
+	incbin "data/objects/graphics/diddy_juggle_frame6.bin"
 
 ;$CF4071 (sprite graphic)
-SPRITE_GRAPHIC_1C64:
-	incbin "data/objects/graphics/sprite_graphic_1C64.bin"
+diddy_juggle_frame7:
+	incbin "data/objects/graphics/diddy_juggle_frame7.bin"
 
 ;$CF428D (sprite graphic)
-SPRITE_GRAPHIC_1C68:
-	incbin "data/objects/graphics/sprite_graphic_1C68.bin"
+diddy_juggle_frame8:
+	incbin "data/objects/graphics/diddy_juggle_frame8.bin"
 
 ;$CF44A9 (sprite graphic)
-SPRITE_GRAPHIC_1C6C:
-	incbin "data/objects/graphics/sprite_graphic_1C6C.bin"
+diddy_juggle_frame9:
+	incbin "data/objects/graphics/diddy_juggle_frame9.bin"
 
 ;$CF4703 (sprite graphic)
-SPRITE_GRAPHIC_1C70:
-	incbin "data/objects/graphics/sprite_graphic_1C70.bin"
+diddy_juggle_frame10:
+	incbin "data/objects/graphics/diddy_juggle_frame10.bin"
 
 ;$CF491F (sprite graphic)
-SPRITE_GRAPHIC_1C74:
-	incbin "data/objects/graphics/sprite_graphic_1C74.bin"
+diddy_juggle_frame11:
+	incbin "data/objects/graphics/diddy_juggle_frame11.bin"
 
 ;$CF4B5D (sprite graphic)
-SPRITE_GRAPHIC_1C78:
-	incbin "data/objects/graphics/sprite_graphic_1C78.bin"
+diddy_juggle_frame12:
+	incbin "data/objects/graphics/diddy_juggle_frame12.bin"
 
 ;$CF4D9B (sprite graphic)
-SPRITE_GRAPHIC_1C7C:
-	incbin "data/objects/graphics/sprite_graphic_1C7C.bin"
+diddy_juggle_frame13:
+	incbin "data/objects/graphics/diddy_juggle_frame13.bin"
 
 ;$CF4FB1 (sprite graphic)
-SPRITE_GRAPHIC_1C80:
-	incbin "data/objects/graphics/sprite_graphic_1C80.bin"
+diddy_juggle_frame14:
+	incbin "data/objects/graphics/diddy_juggle_frame14.bin"
 
 ;$CF51CD (sprite graphic)
-SPRITE_GRAPHIC_1C84:
-	incbin "data/objects/graphics/sprite_graphic_1C84.bin"
+diddy_juggle_frame15:
+	incbin "data/objects/graphics/diddy_juggle_frame15.bin"
 
 ;$CF53C7 (sprite graphic)
-SPRITE_GRAPHIC_1C88:
-	incbin "data/objects/graphics/sprite_graphic_1C88.bin"
+diddy_juggle_frame16:
+	incbin "data/objects/graphics/diddy_juggle_frame16.bin"
 
 ;$CF5605 (sprite graphic)
-SPRITE_GRAPHIC_1C8C:
-	incbin "data/objects/graphics/sprite_graphic_1C8C.bin"
+diddy_juggle_frame17:
+	incbin "data/objects/graphics/diddy_juggle_frame17.bin"
 
 ;$CF5821 (sprite graphic)
-SPRITE_GRAPHIC_1C90:
-	incbin "data/objects/graphics/sprite_graphic_1C90.bin"
+diddy_juggle_frame18:
+	incbin "data/objects/graphics/diddy_juggle_frame18.bin"
 
 ;$CF5A3D (sprite graphic)
-SPRITE_GRAPHIC_1C94:
-	incbin "data/objects/graphics/sprite_graphic_1C94.bin"
+diddy_juggle_frame19:
+	incbin "data/objects/graphics/diddy_juggle_frame19.bin"
 
 ;$CF5C59 (sprite graphic)
-SPRITE_GRAPHIC_1C98:
-	incbin "data/objects/graphics/sprite_graphic_1C98.bin"
+diddy_juggle_frame20:
+	incbin "data/objects/graphics/diddy_juggle_frame20.bin"
 
 ;$CF5E75 (sprite graphic)
-SPRITE_GRAPHIC_1C9C:
-	incbin "data/objects/graphics/sprite_graphic_1C9C.bin"
+diddy_juggle_frame21:
+	incbin "data/objects/graphics/diddy_juggle_frame21.bin"
 
 ;$CF608B (sprite graphic)
-SPRITE_GRAPHIC_1CA0:
-	incbin "data/objects/graphics/sprite_graphic_1CA0.bin"
+diddy_juggle_frame22:
+	incbin "data/objects/graphics/diddy_juggle_frame22.bin"
 
 ;$CF62A7 (sprite graphic)
-SPRITE_GRAPHIC_1CA4:
-	incbin "data/objects/graphics/sprite_graphic_1CA4.bin"
+diddy_juggle_frame23:
+	incbin "data/objects/graphics/diddy_juggle_frame23.bin"
 
 ;$CF64C3 (sprite graphic)
-SPRITE_GRAPHIC_1CA8:
-	incbin "data/objects/graphics/sprite_graphic_1CA8.bin"
+diddy_start_juggle_frame1:
+	incbin "data/objects/graphics/diddy_start_juggle_frame1.bin"
 
 ;$CF66BD (sprite graphic)
-SPRITE_GRAPHIC_1CAC:
-	incbin "data/objects/graphics/sprite_graphic_1CAC.bin"
+diddy_start_juggle_frame2:
+	incbin "data/objects/graphics/diddy_start_juggle_frame2.bin"
 
 ;$CF68B7 (sprite graphic)
-SPRITE_GRAPHIC_1CB0:
-	incbin "data/objects/graphics/sprite_graphic_1CB0.bin"
+diddy_start_juggle_frame3:
+	incbin "data/objects/graphics/diddy_start_juggle_frame3.bin"
 
 ;$CF6A8F (sprite graphic)
-SPRITE_GRAPHIC_1CB4:
-	incbin "data/objects/graphics/sprite_graphic_1CB4.bin"
+diddy_start_juggle_frame4:
+	incbin "data/objects/graphics/diddy_start_juggle_frame4.bin"
 
 ;$CF6C67 (sprite graphic)
-SPRITE_GRAPHIC_1CB8:
-	incbin "data/objects/graphics/sprite_graphic_1CB8.bin"
+diddy_start_juggle_frame5:
+	incbin "data/objects/graphics/diddy_start_juggle_frame5.bin"
 
 ;$CF6E3F (sprite graphic)
-SPRITE_GRAPHIC_1CBC:
-	incbin "data/objects/graphics/sprite_graphic_1CBC.bin"
+diddy_start_juggle_frame6:
+	incbin "data/objects/graphics/diddy_start_juggle_frame6.bin"
 
 ;$CF7017 (sprite graphic)
-SPRITE_GRAPHIC_1CC0:
-	incbin "data/objects/graphics/sprite_graphic_1CC0.bin"
+diddy_start_juggle_frame7:
+	incbin "data/objects/graphics/diddy_start_juggle_frame7.bin"
 
 ;$CF7211 (sprite graphic)
-SPRITE_GRAPHIC_1CC4:
-	incbin "data/objects/graphics/sprite_graphic_1CC4.bin"
+diddy_start_juggle_frame8:
+	incbin "data/objects/graphics/diddy_start_juggle_frame8.bin"
 
 ;$CF73E3 (sprite graphic)
-SPRITE_GRAPHIC_1CC8:
-	incbin "data/objects/graphics/sprite_graphic_1CC8.bin"
+krow_body_defeated_frame1:
+	incbin "data/objects/graphics/krow_body_defeated_frame1.bin"
 
 ;$CF7763 (sprite graphic)
-SPRITE_GRAPHIC_1CCC:
-	incbin "data/objects/graphics/sprite_graphic_1CCC.bin"
+krow_body_defeated_frame2:
+	incbin "data/objects/graphics/krow_body_defeated_frame2.bin"
 
 ;$CF7AC7 (sprite graphic)
-SPRITE_GRAPHIC_1CD0:
-	incbin "data/objects/graphics/sprite_graphic_1CD0.bin"
+dixie_honey_wall_frame1:
+	incbin "data/objects/graphics/dixie_honey_wall_frame1.bin"
 
 ;$CF7CE3 (sprite graphic)
-SPRITE_GRAPHIC_1CD4:
-	incbin "data/objects/graphics/sprite_graphic_1CD4.bin"
+dixie_honey_wall_frame2:
+	incbin "data/objects/graphics/dixie_honey_wall_frame2.bin"
 
 ;$CF7EFF (sprite graphic)
-SPRITE_GRAPHIC_1CD8:
-	incbin "data/objects/graphics/sprite_graphic_1CD8.bin"
+dixie_honey_wall_frame3:
+	incbin "data/objects/graphics/dixie_honey_wall_frame3.bin"
 
 ;$CF8137 (sprite graphic)
-SPRITE_GRAPHIC_1CDC:
-	incbin "data/objects/graphics/sprite_graphic_1CDC.bin"
+dixie_honey_wall_frame4:
+	incbin "data/objects/graphics/dixie_honey_wall_frame4.bin"
 
 ;$CF836F (sprite graphic)
-SPRITE_GRAPHIC_1CE0:
-	incbin "data/objects/graphics/sprite_graphic_1CE0.bin"
+dixie_honey_wall_frame5:
+	incbin "data/objects/graphics/dixie_honey_wall_frame5.bin"
 
 ;$CF85A7 (sprite graphic)
-SPRITE_GRAPHIC_1CE4:
-	incbin "data/objects/graphics/sprite_graphic_1CE4.bin"
+dixie_honey_wall_frame6:
+	incbin "data/objects/graphics/dixie_honey_wall_frame6.bin"
 
 ;$CF8801 (sprite graphic)
-SPRITE_GRAPHIC_1CE8:
-	incbin "data/objects/graphics/sprite_graphic_1CE8.bin"
+dixie_honey_wall_frame7:
+	incbin "data/objects/graphics/dixie_honey_wall_frame7.bin"
 
 ;$CF8A5B (sprite graphic)
-SPRITE_GRAPHIC_1CEC:
-	incbin "data/objects/graphics/sprite_graphic_1CEC.bin"
+dixie_honey_wall_frame8:
+	incbin "data/objects/graphics/dixie_honey_wall_frame8.bin"
 
 ;$CF8C93 (sprite graphic)
-SPRITE_GRAPHIC_1CF0:
-	incbin "data/objects/graphics/sprite_graphic_1CF0.bin"
+dixie_honey_wall_frame9:
+	incbin "data/objects/graphics/dixie_honey_wall_frame9.bin"
 
 ;$CF8EAF (sprite graphic)
-SPRITE_GRAPHIC_1CF4:
-	incbin "data/objects/graphics/sprite_graphic_1CF4.bin"
+dixie_honey_wall_frame10:
+	incbin "data/objects/graphics/dixie_honey_wall_frame10.bin"
 
 ;$CF90CB (sprite graphic)
-SPRITE_GRAPHIC_1CF8:
-	incbin "data/objects/graphics/sprite_graphic_1CF8.bin"
+dixie_honey_wall_frame11:
+	incbin "data/objects/graphics/dixie_honey_wall_frame11.bin"
 
 ;$CF92E7 (sprite graphic)
-SPRITE_GRAPHIC_1CFC:
-	incbin "data/objects/graphics/sprite_graphic_1CFC.bin"
+dixie_honey_wall_frame12:
+	incbin "data/objects/graphics/dixie_honey_wall_frame12.bin"
 
 ;$CF9503 (sprite graphic)
-SPRITE_GRAPHIC_1D00:
-	incbin "data/objects/graphics/sprite_graphic_1D00.bin"
+rambi_charge_frame1:
+	incbin "data/objects/graphics/rambi_charge_frame1.bin"
 
 ;$CF98E9 (sprite graphic)
-SPRITE_GRAPHIC_1D04:
-	incbin "data/objects/graphics/sprite_graphic_1D04.bin"
+rambi_charge_frame2:
+	incbin "data/objects/graphics/rambi_charge_frame2.bin"
 
 ;$CF9CF1 (sprite graphic)
-SPRITE_GRAPHIC_1D08:
-	incbin "data/objects/graphics/sprite_graphic_1D08.bin"
+rambi_charge_frame3:
+	incbin "data/objects/graphics/rambi_charge_frame3.bin"
 
 ;$CFA0F9 (sprite graphic)
-SPRITE_GRAPHIC_1D0C:
-	incbin "data/objects/graphics/sprite_graphic_1D0C.bin"
+rambi_charge_frame4:
+	incbin "data/objects/graphics/rambi_charge_frame4.bin"
 
 ;$CFA4BD (sprite graphic)
-SPRITE_GRAPHIC_1D10:
-	incbin "data/objects/graphics/sprite_graphic_1D10.bin"
+rambi_charge_frame5:
+	incbin "data/objects/graphics/rambi_charge_frame5.bin"
 
 ;$CFA85F (sprite graphic)
-SPRITE_GRAPHIC_1D14:
-	incbin "data/objects/graphics/sprite_graphic_1D14.bin"
+rambi_charge_frame6:
+	incbin "data/objects/graphics/rambi_charge_frame6.bin"
 
 ;$CFAC45 (sprite graphic)
-SPRITE_GRAPHIC_1D18:
-	incbin "data/objects/graphics/sprite_graphic_1D18.bin"
+rambi_attack_frame1:
+	incbin "data/objects/graphics/rambi_attack_frame1.bin"
 
 ;$CFAFE7 (sprite graphic)
-SPRITE_GRAPHIC_1D1C:
-	incbin "data/objects/graphics/sprite_graphic_1D1C.bin"
+rambi_attack_frame2:
+	incbin "data/objects/graphics/rambi_attack_frame2.bin"
 
 ;$CFB3A5 (sprite graphic)
-SPRITE_GRAPHIC_1D20:
-	incbin "data/objects/graphics/sprite_graphic_1D20.bin"
+rambi_attack_frame3:
+	incbin "data/objects/graphics/rambi_attack_frame3.bin"
 
 ;$CFB763 (sprite graphic)
-SPRITE_GRAPHIC_1D24:
-	incbin "data/objects/graphics/sprite_graphic_1D24.bin"
+rambi_attack_frame4:
+	incbin "data/objects/graphics/rambi_attack_frame4.bin"
 
 ;$CFBB43 (sprite graphic)
-SPRITE_GRAPHIC_1D28:
-	incbin "data/objects/graphics/sprite_graphic_1D28.bin"
+rambi_attack_frame5:
+	incbin "data/objects/graphics/rambi_attack_frame5.bin"
 
 ;$CFBF01 (sprite graphic)
-SPRITE_GRAPHIC_1D2C:
-	incbin "data/objects/graphics/sprite_graphic_1D2C.bin"
+rambi_attack_frame6:
+	incbin "data/objects/graphics/rambi_attack_frame6.bin"
 
 ;$CFC325 (sprite graphic)
-SPRITE_GRAPHIC_1D30:
-	incbin "data/objects/graphics/sprite_graphic_1D30.bin"
+rambi_attack_frame7:
+	incbin "data/objects/graphics/rambi_attack_frame7.bin"
 
 ;$CFC72D (sprite graphic)
-SPRITE_GRAPHIC_1D34:
-	incbin "data/objects/graphics/sprite_graphic_1D34.bin"
+rambi_attack_frame8:
+	incbin "data/objects/graphics/rambi_attack_frame8.bin"
 
 ;$CFCB57 (sprite graphic)
-SPRITE_GRAPHIC_1D38:
-	incbin "data/objects/graphics/sprite_graphic_1D38.bin"
+rambi_run_frame1:
+	incbin "data/objects/graphics/rambi_run_frame1.bin"
 
 ;$CFCF5F (sprite graphic)
-SPRITE_GRAPHIC_1D3C:
-	incbin "data/objects/graphics/sprite_graphic_1D3C.bin"
+rambi_run_frame2:
+	incbin "data/objects/graphics/rambi_run_frame2.bin"
 
 ;$CFD367 (sprite graphic)
-SPRITE_GRAPHIC_1D40:
-	incbin "data/objects/graphics/sprite_graphic_1D40.bin"
+rambi_run_frame3:
+	incbin "data/objects/graphics/rambi_run_frame3.bin"
 
 ;$CFD797 (sprite graphic)
-SPRITE_GRAPHIC_1D44:
-	incbin "data/objects/graphics/sprite_graphic_1D44.bin"
+rambi_run_frame4:
+	incbin "data/objects/graphics/rambi_run_frame4.bin"
 
 ;$CFDBA5 (sprite graphic)
-SPRITE_GRAPHIC_1D48:
-	incbin "data/objects/graphics/sprite_graphic_1D48.bin"
+rambi_run_frame5:
+	incbin "data/objects/graphics/rambi_run_frame5.bin"
 
 ;$CFDFB3 (sprite graphic)
-SPRITE_GRAPHIC_1D4C:
-	incbin "data/objects/graphics/sprite_graphic_1D4C.bin"
+rambi_run_frame6:
+	incbin "data/objects/graphics/rambi_run_frame6.bin"
 
 ;$CFE37D (sprite graphic)
-SPRITE_GRAPHIC_1D50:
-	incbin "data/objects/graphics/sprite_graphic_1D50.bin"
+rambi_run_frame7:
+	incbin "data/objects/graphics/rambi_run_frame7.bin"
 
 ;$CFE78B (sprite graphic)
-SPRITE_GRAPHIC_1D54:
-	incbin "data/objects/graphics/sprite_graphic_1D54.bin"
+rambi_run_frame8:
+	incbin "data/objects/graphics/rambi_run_frame8.bin"
 
 ;$CFEB99 (sprite graphic)
-SPRITE_GRAPHIC_1D58:
-	incbin "data/objects/graphics/sprite_graphic_1D58.bin"
+rambi_run_frame9:
+	incbin "data/objects/graphics/rambi_run_frame9.bin"
 
 ;$CFEFA7 (sprite graphic)
-SPRITE_GRAPHIC_1D5C:
-	incbin "data/objects/graphics/sprite_graphic_1D5C.bin"
+rambi_run_frame10:
+	incbin "data/objects/graphics/rambi_run_frame10.bin"
 
 ;$CFF3D7 (sprite graphic)
-SPRITE_GRAPHIC_1D60:
-	incbin "data/objects/graphics/sprite_graphic_1D60.bin"
+rambi_run_frame11:
+	incbin "data/objects/graphics/rambi_run_frame11.bin"
 
 ;$CFF7C3 (sprite graphic)
-SPRITE_GRAPHIC_1D64:
-	incbin "data/objects/graphics/sprite_graphic_1D64.bin"
+rambi_run_frame12:
+	incbin "data/objects/graphics/rambi_run_frame12.bin"
 
 ;$CFFBAF (sprite graphic)
-SPRITE_GRAPHIC_1D68:
-	incbin "data/objects/graphics/sprite_graphic_1D68.bin"
+rambi_run_frame13:
+	incbin "data/objects/graphics/rambi_run_frame13.bin"
 
 check bankcross off
 ;$CFFFD9
@@ -6805,360 +6805,360 @@ carnival_bg_layer_2_8x8_tilemap:
 check bankcross full
 
 ;$D00345 (sprite graphic)
-SPRITE_GRAPHIC_1D6C:
-	incbin "data/objects/graphics/sprite_graphic_1D6C.bin"
+rambi_run_frame14:
+	incbin "data/objects/graphics/rambi_run_frame14.bin"
 
 ;$D00769 (sprite graphic)
-SPRITE_GRAPHIC_1D70:
-	incbin "data/objects/graphics/sprite_graphic_1D70.bin"
+rambi_run_frame15:
+	incbin "data/objects/graphics/rambi_run_frame15.bin"
 
 ;$D00B6B (sprite graphic)
-SPRITE_GRAPHIC_1D74:
-	incbin "data/objects/graphics/sprite_graphic_1D74.bin"
+rambi_idle_frame1:
+	incbin "data/objects/graphics/rambi_idle_frame1.bin"
 
 ;$D00F51 (sprite graphic)
-SPRITE_GRAPHIC_1D78:
-	incbin "data/objects/graphics/sprite_graphic_1D78.bin"
+rambi_idle_frame2:
+	incbin "data/objects/graphics/rambi_idle_frame2.bin"
 
 ;$D01337 (sprite graphic)
-SPRITE_GRAPHIC_1D7C:
-	incbin "data/objects/graphics/sprite_graphic_1D7C.bin"
+rambi_idle_frame3:
+	incbin "data/objects/graphics/rambi_idle_frame3.bin"
 
 ;$D0171D (sprite graphic)
-SPRITE_GRAPHIC_1D80:
-	incbin "data/objects/graphics/sprite_graphic_1D80.bin"
+rambi_idle_frame4:
+	incbin "data/objects/graphics/rambi_idle_frame4.bin"
 
 ;$D01AE1 (sprite graphic)
-SPRITE_GRAPHIC_1D84:
-	incbin "data/objects/graphics/sprite_graphic_1D84.bin"
+rambi_idle_frame5:
+	incbin "data/objects/graphics/rambi_idle_frame5.bin"
 
 ;$D01EA5 (sprite graphic)
-SPRITE_GRAPHIC_1D88:
-	incbin "data/objects/graphics/sprite_graphic_1D88.bin"
+rambi_idle_frame6:
+	incbin "data/objects/graphics/rambi_idle_frame6.bin"
 
 ;$D02269 (sprite graphic)
-SPRITE_GRAPHIC_1D8C:
-	incbin "data/objects/graphics/sprite_graphic_1D8C.bin"
+rambi_idle_frame7:
+	incbin "data/objects/graphics/rambi_idle_frame7.bin"
 
 ;$D0262D (sprite graphic)
-SPRITE_GRAPHIC_1D90:
-	incbin "data/objects/graphics/sprite_graphic_1D90.bin"
+rambi_idle_frame8:
+	incbin "data/objects/graphics/rambi_idle_frame8.bin"
 
 ;$D029F1 (sprite graphic)
-SPRITE_GRAPHIC_1D94:
-	incbin "data/objects/graphics/sprite_graphic_1D94.bin"
+rambi_idle_frame9:
+	incbin "data/objects/graphics/rambi_idle_frame9.bin"
 
 ;$D02D8D (sprite graphic)
-SPRITE_GRAPHIC_1D98:
-	incbin "data/objects/graphics/sprite_graphic_1D98.bin"
+rambi_idle_frame10:
+	incbin "data/objects/graphics/rambi_idle_frame10.bin"
 
 ;$D030F1 (sprite graphic)
-SPRITE_GRAPHIC_1D9C:
-	incbin "data/objects/graphics/sprite_graphic_1D9C.bin"
+rambi_idle_frame11:
+	incbin "data/objects/graphics/rambi_idle_frame11.bin"
 
 ;$D03471 (sprite graphic)
-SPRITE_GRAPHIC_1DA0:
-	incbin "data/objects/graphics/sprite_graphic_1DA0.bin"
+rambi_idle_frame12:
+	incbin "data/objects/graphics/rambi_idle_frame12.bin"
 
 ;$D037B3 (sprite graphic)
-SPRITE_GRAPHIC_1DA4:
-	incbin "data/objects/graphics/sprite_graphic_1DA4.bin"
+rambi_idle_frame13:
+	incbin "data/objects/graphics/rambi_idle_frame13.bin"
 
 ;$D03AF5 (sprite graphic)
-SPRITE_GRAPHIC_1DA8:
-	incbin "data/objects/graphics/sprite_graphic_1DA8.bin"
+rambi_idle_frame14:
+	incbin "data/objects/graphics/rambi_idle_frame14.bin"
 
 ;$D03E37 (sprite graphic)
-SPRITE_GRAPHIC_1DAC:
-	incbin "data/objects/graphics/sprite_graphic_1DAC.bin"
+rambi_idle_frame15:
+	incbin "data/objects/graphics/rambi_idle_frame15.bin"
 
 ;$D041B7 (sprite graphic)
-SPRITE_GRAPHIC_1DB0:
-	incbin "data/objects/graphics/sprite_graphic_1DB0.bin"
+rambi_idle_frame16:
+	incbin "data/objects/graphics/rambi_idle_frame16.bin"
 
 ;$D04537 (sprite graphic)
-SPRITE_GRAPHIC_1DB4:
-	incbin "data/objects/graphics/sprite_graphic_1DB4.bin"
+rambi_idle_frame17:
+	incbin "data/objects/graphics/rambi_idle_frame17.bin"
 
 ;$D04895 (sprite graphic)
-SPRITE_GRAPHIC_1DB8:
-	incbin "data/objects/graphics/sprite_graphic_1DB8.bin"
+rambi_idle_frame18:
+	incbin "data/objects/graphics/rambi_idle_frame18.bin"
 
 ;$D04BF3 (sprite graphic)
-SPRITE_GRAPHIC_1DBC:
-	incbin "data/objects/graphics/sprite_graphic_1DBC.bin"
+rambi_idle_frame19:
+	incbin "data/objects/graphics/rambi_idle_frame19.bin"
 
 ;$D04F57 (sprite graphic)
-SPRITE_GRAPHIC_1DC0:
-	incbin "data/objects/graphics/sprite_graphic_1DC0.bin"
+rambi_idle_frame20:
+	incbin "data/objects/graphics/rambi_idle_frame20.bin"
 
 ;$D052D7 (sprite graphic)
-SPRITE_GRAPHIC_1DC4:
-	incbin "data/objects/graphics/sprite_graphic_1DC4.bin"
+rambi_idle_frame21:
+	incbin "data/objects/graphics/rambi_idle_frame21.bin"
 
 ;$D056B7 (sprite graphic)
-SPRITE_GRAPHIC_1DC8:
-	incbin "data/objects/graphics/sprite_graphic_1DC8.bin"
+rambi_idle_frame22:
+	incbin "data/objects/graphics/rambi_idle_frame22.bin"
 
 ;$D05A9D (sprite graphic)
-SPRITE_GRAPHIC_1DCC:
-	incbin "data/objects/graphics/sprite_graphic_1DCC.bin"
+rambi_turn_frame1:
+	incbin "data/objects/graphics/rambi_turn_frame1.bin"
 
 ;$D05E39 (sprite graphic)
-SPRITE_GRAPHIC_1DD0:
-	incbin "data/objects/graphics/sprite_graphic_1DD0.bin"
+rambi_turn_frame2:
+	incbin "data/objects/graphics/rambi_turn_frame2.bin"
 
 ;$D060F3 (sprite graphic)
-SPRITE_GRAPHIC_1DD4:
-	incbin "data/objects/graphics/sprite_graphic_1DD4.bin"
+rambi_jump_frame1:
+	incbin "data/objects/graphics/rambi_jump_frame1.bin"
 
 ;$D064B7 (sprite graphic)
-SPRITE_GRAPHIC_1DD8:
-	incbin "data/objects/graphics/sprite_graphic_1DD8.bin"
+rambi_jump_frame2:
+	incbin "data/objects/graphics/rambi_jump_frame2.bin"
 
 ;$D0689D (sprite graphic)
-SPRITE_GRAPHIC_1DDC:
-	incbin "data/objects/graphics/sprite_graphic_1DDC.bin"
+rambi_jump_frame3:
+	incbin "data/objects/graphics/rambi_jump_frame3.bin"
 
 ;$D06CA5 (sprite graphic)
-SPRITE_GRAPHIC_1DE0:
-	incbin "data/objects/graphics/sprite_graphic_1DE0.bin"
+rambi_jump_frame4:
+	incbin "data/objects/graphics/rambi_jump_frame4.bin"
 
 ;$D070AD (sprite graphic)
-SPRITE_GRAPHIC_1DE4:
-	incbin "data/objects/graphics/sprite_graphic_1DE4.bin"
+rambi_jump_frame5:
+	incbin "data/objects/graphics/rambi_jump_frame5.bin"
 
 ;$D074B5 (sprite graphic)
-SPRITE_GRAPHIC_1DE8:
-	incbin "data/objects/graphics/sprite_graphic_1DE8.bin"
+rambi_jump_frame6:
+	incbin "data/objects/graphics/rambi_jump_frame6.bin"
 
 ;$D0789B (sprite graphic)
-SPRITE_GRAPHIC_1DEC:
-	incbin "data/objects/graphics/sprite_graphic_1DEC.bin"
+rambi_jump_frame7:
+	incbin "data/objects/graphics/rambi_jump_frame7.bin"
 
 ;$D07C5F (sprite graphic)
-SPRITE_GRAPHIC_1DF0:
-	incbin "data/objects/graphics/sprite_graphic_1DF0.bin"
+diddy_honey_wall_frame1:
+	incbin "data/objects/graphics/diddy_honey_wall_frame1.bin"
 
 ;$D07E53 (sprite graphic)
-SPRITE_GRAPHIC_1DF4:
-	incbin "data/objects/graphics/sprite_graphic_1DF4.bin"
+diddy_honey_wall_frame2:
+	incbin "data/objects/graphics/diddy_honey_wall_frame2.bin"
 
 ;$D08047 (sprite graphic)
-SPRITE_GRAPHIC_1DF8:
-	incbin "data/objects/graphics/sprite_graphic_1DF8.bin"
+diddy_honey_wall_frame3:
+	incbin "data/objects/graphics/diddy_honey_wall_frame3.bin"
 
 ;$D0825D (sprite graphic)
-SPRITE_GRAPHIC_1DFC:
-	incbin "data/objects/graphics/sprite_graphic_1DFC.bin"
+diddy_honey_wall_frame4:
+	incbin "data/objects/graphics/diddy_honey_wall_frame4.bin"
 
 ;$D08451 (sprite graphic)
-SPRITE_GRAPHIC_1E00:
-	incbin "data/objects/graphics/sprite_graphic_1E00.bin"
+diddy_honey_wall_frame5:
+	incbin "data/objects/graphics/diddy_honey_wall_frame5.bin"
 
 ;$D08645 (sprite graphic)
-SPRITE_GRAPHIC_1E04:
-	incbin "data/objects/graphics/sprite_graphic_1E04.bin"
+diddy_honey_wall_frame6:
+	incbin "data/objects/graphics/diddy_honey_wall_frame6.bin"
 
 ;$D0885B (sprite graphic)
-SPRITE_GRAPHIC_1E08:
-	incbin "data/objects/graphics/sprite_graphic_1E08.bin"
+diddy_ride_squawks_frame1:
+	incbin "data/objects/graphics/diddy_ride_squawks_frame1.bin"
 
 ;$D08AB5 (sprite graphic)
-SPRITE_GRAPHIC_1E0C:
-	incbin "data/objects/graphics/sprite_graphic_1E0C.bin"
+diddy_ride_squawks_frame2:
+	incbin "data/objects/graphics/diddy_ride_squawks_frame2.bin"
 
 ;$D08D0F (sprite graphic)
-SPRITE_GRAPHIC_1E10:
-	incbin "data/objects/graphics/sprite_graphic_1E10.bin"
+diddy_ride_squawks_frame3:
+	incbin "data/objects/graphics/diddy_ride_squawks_frame3.bin"
 
 ;$D08F69 (sprite graphic)
-SPRITE_GRAPHIC_1E14:
-	incbin "data/objects/graphics/sprite_graphic_1E14.bin"
+diddy_ride_squawks_frame4:
+	incbin "data/objects/graphics/diddy_ride_squawks_frame4.bin"
 
 ;$D091A1 (sprite graphic)
-SPRITE_GRAPHIC_1E18:
-	incbin "data/objects/graphics/sprite_graphic_1E18.bin"
+diddy_ride_squawks_frame5:
+	incbin "data/objects/graphics/diddy_ride_squawks_frame5.bin"
 
 ;$D093D9 (sprite graphic)
-SPRITE_GRAPHIC_1E1C:
-	incbin "data/objects/graphics/sprite_graphic_1E1C.bin"
+diddy_ride_squawks_frame6:
+	incbin "data/objects/graphics/diddy_ride_squawks_frame6.bin"
 
 ;$D09611 (sprite graphic)
-SPRITE_GRAPHIC_1E20:
-	incbin "data/objects/graphics/sprite_graphic_1E20.bin"
+krow_head_defeated_frame1:
+	incbin "data/objects/graphics/krow_head_defeated_frame1.bin"
 
 ;$D0988D (sprite graphic)
-SPRITE_GRAPHIC_1E24:
-	incbin "data/objects/graphics/sprite_graphic_1E24.bin"
+krow_head_defeated_frame2:
+	incbin "data/objects/graphics/krow_head_defeated_frame2.bin"
 
 ;$D09AE7 (sprite graphic)
-SPRITE_GRAPHIC_1E28:
-	incbin "data/objects/graphics/sprite_graphic_1E28.bin"
+dixie_hook_idle_frame1:
+	incbin "data/objects/graphics/dixie_hook_idle_frame1.bin"
 
 ;$D09D1F (sprite graphic)
-SPRITE_GRAPHIC_1E2C:
-	incbin "data/objects/graphics/sprite_graphic_1E2C.bin"
+dixie_hook_idle_frame2:
+	incbin "data/objects/graphics/dixie_hook_idle_frame2.bin"
 
 ;$D09F79 (sprite graphic)
-SPRITE_GRAPHIC_1E30:
-	incbin "data/objects/graphics/sprite_graphic_1E30.bin"
+dixie_hook_idle_frame3:
+	incbin "data/objects/graphics/dixie_hook_idle_frame3.bin"
 
 ;$D0A1EF (sprite graphic)
-SPRITE_GRAPHIC_1E34:
-	incbin "data/objects/graphics/sprite_graphic_1E34.bin"
+dixie_hook_idle_frame4:
+	incbin "data/objects/graphics/dixie_hook_idle_frame4.bin"
 
 ;$D0A465 (sprite graphic)
-SPRITE_GRAPHIC_1E38:
-	incbin "data/objects/graphics/sprite_graphic_1E38.bin"
+dixie_hook_idle_frame5:
+	incbin "data/objects/graphics/dixie_hook_idle_frame5.bin"
 
 ;$D0A6DB (sprite graphic)
-SPRITE_GRAPHIC_1E3C:
-	incbin "data/objects/graphics/sprite_graphic_1E3C.bin"
+dixie_hook_idle_frame6:
+	incbin "data/objects/graphics/dixie_hook_idle_frame6.bin"
 
 ;$D0A951 (sprite graphic)
-SPRITE_GRAPHIC_1E40:
-	incbin "data/objects/graphics/sprite_graphic_1E40.bin"
+rattly_hurt_graphic:
+	incbin "data/objects/graphics/rattly_hurt_graphic.bin"
 
 ;$D0AC2D (sprite graphic)
-SPRITE_GRAPHIC_1E44:
-	incbin "data/objects/graphics/sprite_graphic_1E44.bin"
+squitter_hurt_graphic:
+	incbin "data/objects/graphics/squitter_hurt_graphic.bin"
 
 ;$D0B057 (sprite graphic)
-SPRITE_GRAPHIC_1E48:
-	incbin "data/objects/graphics/sprite_graphic_1E48.bin"
+squawks_hurt_graphic:
+	incbin "data/objects/graphics/squawks_hurt_graphic.bin"
 
 ;$D0B28F (sprite graphic)
-SPRITE_GRAPHIC_1E4C:
-	incbin "data/objects/graphics/sprite_graphic_1E4C.bin"
+diddy_hook_idle_frame1:
+	incbin "data/objects/graphics/diddy_hook_idle_frame1.bin"
 
 ;$D0B511 (sprite graphic)
-SPRITE_GRAPHIC_1E50:
-	incbin "data/objects/graphics/sprite_graphic_1E50.bin"
+diddy_hook_idle_frame2:
+	incbin "data/objects/graphics/diddy_hook_idle_frame2.bin"
 
 ;$D0B793 (sprite graphic)
-SPRITE_GRAPHIC_1E54:
-	incbin "data/objects/graphics/sprite_graphic_1E54.bin"
+diddy_hook_idle_frame3:
+	incbin "data/objects/graphics/diddy_hook_idle_frame3.bin"
 
 ;$D0BA15 (sprite graphic)
-SPRITE_GRAPHIC_1E58:
-	incbin "data/objects/graphics/sprite_graphic_1E58.bin"
+diddy_hook_idle_frame4:
+	incbin "data/objects/graphics/diddy_hook_idle_frame4.bin"
 
 ;$D0BCB9 (sprite graphic)
-SPRITE_GRAPHIC_1E5C:
-	incbin "data/objects/graphics/sprite_graphic_1E5C.bin"
+diddy_hook_idle_frame5:
+	incbin "data/objects/graphics/diddy_hook_idle_frame5.bin"
 
 ;$D0BFDF (sprite graphic)
-SPRITE_GRAPHIC_1E60:
-	incbin "data/objects/graphics/sprite_graphic_1E60.bin"
+diddy_hook_idle_frame6:
+	incbin "data/objects/graphics/diddy_hook_idle_frame6.bin"
 
 ;$D0C2E3 (sprite graphic)
-SPRITE_GRAPHIC_1E64:
-	incbin "data/objects/graphics/sprite_graphic_1E64.bin"
+diddy_hang_unused_graphic:
+	incbin "data/objects/graphics/diddy_hang_unused_graphic.bin"
 
 ;$D0C57B (sprite graphic)
-SPRITE_GRAPHIC_1E68:
-	incbin "data/objects/graphics/sprite_graphic_1E68.bin"
+kaboing_idle_frame1:
+	incbin "data/objects/graphics/kaboing_idle_frame1.bin"
 
 ;$D0C879 (sprite graphic)
-SPRITE_GRAPHIC_1E6C:
-	incbin "data/objects/graphics/sprite_graphic_1E6C.bin"
+kaboing_idle_frame2:
+	incbin "data/objects/graphics/kaboing_idle_frame2.bin"
 
 ;$D0CB99 (sprite graphic)
-SPRITE_GRAPHIC_1E70:
-	incbin "data/objects/graphics/sprite_graphic_1E70.bin"
+kaboing_idle_frame3:
+	incbin "data/objects/graphics/kaboing_idle_frame3.bin"
 
 ;$D0CEB9 (sprite graphic)
-SPRITE_GRAPHIC_1E74:
-	incbin "data/objects/graphics/sprite_graphic_1E74.bin"
+dixie_rope_hang_frame1:
+	incbin "data/objects/graphics/dixie_rope_hang_frame1.bin"
 
 ;$D0D0B3 (sprite graphic)
-SPRITE_GRAPHIC_1E78:
-	incbin "data/objects/graphics/sprite_graphic_1E78.bin"
+dixie_rope_hang_frame2:
+	incbin "data/objects/graphics/dixie_rope_hang_frame2.bin"
 
 ;$D0D2AD (sprite graphic)
-SPRITE_GRAPHIC_1E7C:
-	incbin "data/objects/graphics/sprite_graphic_1E7C.bin"
+dixie_rope_hang_frame3:
+	incbin "data/objects/graphics/dixie_rope_hang_frame3.bin"
 
 ;$D0D4A7 (sprite graphic)
-SPRITE_GRAPHIC_1E80:
-	incbin "data/objects/graphics/sprite_graphic_1E80.bin"
+dixie_rope_hang_frame4:
+	incbin "data/objects/graphics/dixie_rope_hang_frame4.bin"
 
 ;$D0D6A1 (sprite graphic)
-SPRITE_GRAPHIC_1E84:
-	incbin "data/objects/graphics/sprite_graphic_1E84.bin"
+dixie_rope_hang_frame5:
+	incbin "data/objects/graphics/dixie_rope_hang_frame5.bin"
 
 ;$D0D89B (sprite graphic)
-SPRITE_GRAPHIC_1E88:
-	incbin "data/objects/graphics/sprite_graphic_1E88.bin"
+smoke_puff_3_frame1:
+	incbin "data/objects/graphics/smoke_puff_3_frame1.bin"
 
 ;$D0D9AD (sprite graphic)
-SPRITE_GRAPHIC_1E8C:
-	incbin "data/objects/graphics/sprite_graphic_1E8C.bin"
+smoke_puff_3_frame2:
+	incbin "data/objects/graphics/smoke_puff_3_frame2.bin"
 
 ;$D0DB1F (sprite graphic)
-SPRITE_GRAPHIC_1E90:
-	incbin "data/objects/graphics/sprite_graphic_1E90.bin"
+smoke_puff_3_frame3:
+	incbin "data/objects/graphics/smoke_puff_3_frame3.bin"
 
 ;$D0DD13 (sprite graphic)
-SPRITE_GRAPHIC_1E94:
-	incbin "data/objects/graphics/sprite_graphic_1E94.bin"
+smoke_puff_3_frame4:
+	incbin "data/objects/graphics/smoke_puff_3_frame4.bin"
 
 ;$D0DF23 (sprite graphic)
-SPRITE_GRAPHIC_1E98:
-	incbin "data/objects/graphics/sprite_graphic_1E98.bin"
+smoke_puff_3_frame5:
+	incbin "data/objects/graphics/smoke_puff_3_frame5.bin"
 
 ;$D0E177 (sprite graphic)
-SPRITE_GRAPHIC_1E9C:
-	incbin "data/objects/graphics/sprite_graphic_1E9C.bin"
+smoke_puff_3_frame6:
+	incbin "data/objects/graphics/smoke_puff_3_frame6.bin"
 
 ;$D0E3ED (sprite graphic)
-SPRITE_GRAPHIC_1EA0:
-	incbin "data/objects/graphics/sprite_graphic_1EA0.bin"
+smoke_puff_3_frame7:
+	incbin "data/objects/graphics/smoke_puff_3_frame7.bin"
 
 ;$D0E6A7 (sprite graphic)
-SPRITE_GRAPHIC_1EA4:
-	incbin "data/objects/graphics/sprite_graphic_1EA4.bin"
+smoke_puff_3_frame8:
+	incbin "data/objects/graphics/smoke_puff_3_frame8.bin"
 
 ;$D0E961 (sprite graphic)
-SPRITE_GRAPHIC_1EA8:
-	incbin "data/objects/graphics/sprite_graphic_1EA8.bin"
+smoke_puff_3_frame9:
+	incbin "data/objects/graphics/smoke_puff_3_frame9.bin"
 
 ;$D0EC3D (sprite graphic)
-SPRITE_GRAPHIC_1EAC:
-	incbin "data/objects/graphics/sprite_graphic_1EAC.bin"
+smoke_puff_3_frame10:
+	incbin "data/objects/graphics/smoke_puff_3_frame10.bin"
 
 ;$D0EE7B (sprite graphic)
-SPRITE_GRAPHIC_1EB0:
-	incbin "data/objects/graphics/sprite_graphic_1EB0.bin"
+smoke_puff_3_frame11:
+	incbin "data/objects/graphics/smoke_puff_3_frame11.bin"
 
 ;$D0F097 (sprite graphic)
-SPRITE_GRAPHIC_1EB4:
-	incbin "data/objects/graphics/sprite_graphic_1EB4.bin"
+smoke_puff_3_frame12:
+	incbin "data/objects/graphics/smoke_puff_3_frame12.bin"
 
 ;$D0F22B (sprite graphic)
-SPRITE_GRAPHIC_1EB8:
-	incbin "data/objects/graphics/sprite_graphic_1EB8.bin"
+smoke_puff_3_frame13:
+	incbin "data/objects/graphics/smoke_puff_3_frame13.bin"
 
 ;$D0F321 (sprite graphic)
-SPRITE_GRAPHIC_1EBC:
-	incbin "data/objects/graphics/sprite_graphic_1EBC.bin"
+diddy_swim_frame1:
+	incbin "data/objects/graphics/diddy_swim_frame1.bin"
 
 ;$D0F53D (sprite graphic)
-SPRITE_GRAPHIC_1EC0:
-	incbin "data/objects/graphics/sprite_graphic_1EC0.bin"
+diddy_swim_frame2:
+	incbin "data/objects/graphics/diddy_swim_frame2.bin"
 
 ;$D0F759 (sprite graphic)
-SPRITE_GRAPHIC_1EC4:
-	incbin "data/objects/graphics/sprite_graphic_1EC4.bin"
+diddy_swim_frame3:
+	incbin "data/objects/graphics/diddy_swim_frame3.bin"
 
 ;$D0F9B3 (sprite graphic)
-SPRITE_GRAPHIC_1EC8:
-	incbin "data/objects/graphics/sprite_graphic_1EC8.bin"
+diddy_swim_frame4:
+	incbin "data/objects/graphics/diddy_swim_frame4.bin"
 
 ;$D0FBCF (sprite graphic)
-SPRITE_GRAPHIC_1ECC:
-	incbin "data/objects/graphics/sprite_graphic_1ECC.bin"
+diddy_swim_frame5:
+	incbin "data/objects/graphics/diddy_swim_frame5.bin"
 
 check bankcross off
 ;$D0FE0D
@@ -7167,428 +7167,428 @@ forest_light_shafts_layer_1_8x8_tilemap:
 check bankcross full
 
 ;$D1016B (sprite graphic)
-SPRITE_GRAPHIC_1ED0:
-	incbin "data/objects/graphics/sprite_graphic_1ED0.bin"
+diddy_swim_frame6:
+	incbin "data/objects/graphics/diddy_swim_frame6.bin"
 
 ;$D103A9 (sprite graphic)
-SPRITE_GRAPHIC_1ED4:
-	incbin "data/objects/graphics/sprite_graphic_1ED4.bin"
+diddy_swim_frame7:
+	incbin "data/objects/graphics/diddy_swim_frame7.bin"
 
 ;$D105E7 (sprite graphic)
-SPRITE_GRAPHIC_1ED8:
-	incbin "data/objects/graphics/sprite_graphic_1ED8.bin"
+diddy_swim_frame8:
+	incbin "data/objects/graphics/diddy_swim_frame8.bin"
 
 ;$D10825 (sprite graphic)
-SPRITE_GRAPHIC_1EDC:
-	incbin "data/objects/graphics/sprite_graphic_1EDC.bin"
+diddy_swim_frame9:
+	incbin "data/objects/graphics/diddy_swim_frame9.bin"
 
 ;$D10A85 (sprite graphic)
-SPRITE_GRAPHIC_1EE0:
-	incbin "data/objects/graphics/sprite_graphic_1EE0.bin"
+diddy_swim_frame10:
+	incbin "data/objects/graphics/diddy_swim_frame10.bin"
 
 ;$D10CC3 (sprite graphic)
-SPRITE_GRAPHIC_1EE4:
-	incbin "data/objects/graphics/sprite_graphic_1EE4.bin"
+diddy_swim_frame11:
+	incbin "data/objects/graphics/diddy_swim_frame11.bin"
 
 ;$D10F01 (sprite graphic)
-SPRITE_GRAPHIC_1EE8:
-	incbin "data/objects/graphics/sprite_graphic_1EE8.bin"
+diddy_swim_frame12:
+	incbin "data/objects/graphics/diddy_swim_frame12.bin"
 
 ;$D1113F (sprite graphic)
-SPRITE_GRAPHIC_1EEC:
-	incbin "data/objects/graphics/sprite_graphic_1EEC.bin"
+diddy_swim_frame13:
+	incbin "data/objects/graphics/diddy_swim_frame13.bin"
 
 ;$D1137D (sprite graphic)
-SPRITE_GRAPHIC_1EF0:
-	incbin "data/objects/graphics/sprite_graphic_1EF0.bin"
+diddy_swim_frame14:
+	incbin "data/objects/graphics/diddy_swim_frame14.bin"
 
 ;$D115BB (sprite graphic)
-SPRITE_GRAPHIC_1EF4:
-	incbin "data/objects/graphics/sprite_graphic_1EF4.bin"
+diddy_swim_frame15:
+	incbin "data/objects/graphics/diddy_swim_frame15.bin"
 
 ;$D117F3 (sprite graphic)
-SPRITE_GRAPHIC_1EF8:
-	incbin "data/objects/graphics/sprite_graphic_1EF8.bin"
+diddy_swim_turn_frame1:
+	incbin "data/objects/graphics/diddy_swim_turn_frame1.bin"
 
 ;$D11A09 (sprite graphic)
-SPRITE_GRAPHIC_1EFC:
-	incbin "data/objects/graphics/sprite_graphic_1EFC.bin"
+diddy_swim_turn_frame2:
+	incbin "data/objects/graphics/diddy_swim_turn_frame2.bin"
 
 ;$D11B81 (sprite graphic)
-SPRITE_GRAPHIC_1F00:
-	incbin "data/objects/graphics/sprite_graphic_1F00.bin"
+dixie_swim_turn_frame1:
+	incbin "data/objects/graphics/dixie_swim_turn_frame1.bin"
 
 ;$D11D59 (sprite graphic)
-SPRITE_GRAPHIC_1F04:
-	incbin "data/objects/graphics/sprite_graphic_1F04.bin"
+dixie_swim_turn_frame2:
+	incbin "data/objects/graphics/dixie_swim_turn_frame2.bin"
 
 ;$D11EAF (sprite graphic)
-SPRITE_GRAPHIC_1F08:
-	incbin "data/objects/graphics/sprite_graphic_1F08.bin"
+diddy_ride_rattly_frame1:
+	incbin "data/objects/graphics/diddy_ride_rattly_frame1.bin"
 
 ;$D120CB (sprite graphic)
-SPRITE_GRAPHIC_1F0C:
-	incbin "data/objects/graphics/sprite_graphic_1F0C.bin"
+diddy_ride_rattly_frame2:
+	incbin "data/objects/graphics/diddy_ride_rattly_frame2.bin"
 
 ;$D122A3 (sprite graphic)
-SPRITE_GRAPHIC_1F10:
-	incbin "data/objects/graphics/sprite_graphic_1F10.bin"
+diddy_ride_rattly_frame3:
+	incbin "data/objects/graphics/diddy_ride_rattly_frame3.bin"
 
 ;$D1247B (sprite graphic)
-SPRITE_GRAPHIC_1F14:
-	incbin "data/objects/graphics/sprite_graphic_1F14.bin"
+diddy_ride_rattly_frame4:
+	incbin "data/objects/graphics/diddy_ride_rattly_frame4.bin"
 
 ;$D1266F (sprite graphic)
-SPRITE_GRAPHIC_1F18:
-	incbin "data/objects/graphics/sprite_graphic_1F18.bin"
+diddy_ride_rattly_frame5:
+	incbin "data/objects/graphics/diddy_ride_rattly_frame5.bin"
 
 ;$D12869 (sprite graphic)
-SPRITE_GRAPHIC_1F1C:
-	incbin "data/objects/graphics/sprite_graphic_1F1C.bin"
+spiny_walk_frame1:
+	incbin "data/objects/graphics/spiny_walk_frame1.bin"
 
 ;$D12BAB (sprite graphic)
-SPRITE_GRAPHIC_1F20:
-	incbin "data/objects/graphics/sprite_graphic_1F20.bin"
+spiny_walk_frame2:
+	incbin "data/objects/graphics/spiny_walk_frame2.bin"
 
 ;$D12F09 (sprite graphic)
-SPRITE_GRAPHIC_1F24:
-	incbin "data/objects/graphics/sprite_graphic_1F24.bin"
+spiny_walk_frame3:
+	incbin "data/objects/graphics/spiny_walk_frame3.bin"
 
 ;$D13245 (sprite graphic)
-SPRITE_GRAPHIC_1F28:
-	incbin "data/objects/graphics/sprite_graphic_1F28.bin"
+spiny_walk_frame4:
+	incbin "data/objects/graphics/spiny_walk_frame4.bin"
 
 ;$D135A3 (sprite graphic)
-SPRITE_GRAPHIC_1F2C:
-	incbin "data/objects/graphics/sprite_graphic_1F2C.bin"
+spiny_walk_frame5:
+	incbin "data/objects/graphics/spiny_walk_frame5.bin"
 
 ;$D138DF (sprite graphic)
-SPRITE_GRAPHIC_1F30:
-	incbin "data/objects/graphics/sprite_graphic_1F30.bin"
+spiny_walk_frame6:
+	incbin "data/objects/graphics/spiny_walk_frame6.bin"
 
 ;$D13C3D (sprite graphic)
-SPRITE_GRAPHIC_1F34:
-	incbin "data/objects/graphics/sprite_graphic_1F34.bin"
+spiny_walk_frame7:
+	incbin "data/objects/graphics/spiny_walk_frame7.bin"
 
 ;$D13F9B (sprite graphic)
-SPRITE_GRAPHIC_1F38:
-	incbin "data/objects/graphics/sprite_graphic_1F38.bin"
+spiny_walk_frame8:
+	incbin "data/objects/graphics/spiny_walk_frame8.bin"
 
 ;$D142D7 (sprite graphic)
-SPRITE_GRAPHIC_1F3C:
-	incbin "data/objects/graphics/sprite_graphic_1F3C.bin"
+kleever_attack_frame1:
+	incbin "data/objects/graphics/kleever_attack_frame1.bin"
 
 ;$D14695 (sprite graphic)
-SPRITE_GRAPHIC_1F40:
-	incbin "data/objects/graphics/sprite_graphic_1F40.bin"
+kleever_attack_frame2:
+	incbin "data/objects/graphics/kleever_attack_frame2.bin"
 
 ;$D14A97 (sprite graphic)
-SPRITE_GRAPHIC_1F44:
-	incbin "data/objects/graphics/sprite_graphic_1F44.bin"
+kleever_attack_frame3:
+	incbin "data/objects/graphics/kleever_attack_frame3.bin"
 
 ;$D14E1D (sprite graphic)
-SPRITE_GRAPHIC_1F48:
-	incbin "data/objects/graphics/sprite_graphic_1F48.bin"
+kleever_attack_frame4:
+	incbin "data/objects/graphics/kleever_attack_frame4.bin"
 
 ;$D15203 (sprite graphic)
-SPRITE_GRAPHIC_1F4C:
-	incbin "data/objects/graphics/sprite_graphic_1F4C.bin"
+kleever_attack_frame5:
+	incbin "data/objects/graphics/kleever_attack_frame5.bin"
 
 ;$D155E9 (sprite graphic)
-SPRITE_GRAPHIC_1F50:
-	incbin "data/objects/graphics/sprite_graphic_1F50.bin"
+kleever_attack_frame6:
+	incbin "data/objects/graphics/kleever_attack_frame6.bin"
 
 ;$D159CF (sprite graphic)
-SPRITE_GRAPHIC_1F54:
-	incbin "data/objects/graphics/sprite_graphic_1F54.bin"
+kleever_attack_frame7:
+	incbin "data/objects/graphics/kleever_attack_frame7.bin"
 
 ;$D15DAF (sprite graphic)
-SPRITE_GRAPHIC_1F58:
-	incbin "data/objects/graphics/sprite_graphic_1F58.bin"
+kleever_attack_frame8:
+	incbin "data/objects/graphics/kleever_attack_frame8.bin"
 
 ;$D1618F (sprite graphic)
-SPRITE_GRAPHIC_1F5C:
-	incbin "data/objects/graphics/sprite_graphic_1F5C.bin"
+kleever_attack_frame9:
+	incbin "data/objects/graphics/kleever_attack_frame9.bin"
 
 ;$D16553 (sprite graphic)
-SPRITE_GRAPHIC_1F60:
-	incbin "data/objects/graphics/sprite_graphic_1F60.bin"
+kleever_attack_frame10:
+	incbin "data/objects/graphics/kleever_attack_frame10.bin"
 
 ;$D1691D (sprite graphic)
-SPRITE_GRAPHIC_1F64:
-	incbin "data/objects/graphics/sprite_graphic_1F64.bin"
+kleever_attack_frame11:
+	incbin "data/objects/graphics/kleever_attack_frame11.bin"
 
 ;$D16CE1 (sprite graphic)
-SPRITE_GRAPHIC_1F68:
-	incbin "data/objects/graphics/sprite_graphic_1F68.bin"
+kleever_attack_frame12:
+	incbin "data/objects/graphics/kleever_attack_frame12.bin"
 
 ;$D17083 (sprite graphic)
-SPRITE_GRAPHIC_1F6C:
-	incbin "data/objects/graphics/sprite_graphic_1F6C.bin"
+kleever_attack_frame13:
+	incbin "data/objects/graphics/kleever_attack_frame13.bin"
 
 ;$D17425 (sprite graphic)
-SPRITE_GRAPHIC_1F70:
-	incbin "data/objects/graphics/sprite_graphic_1F70.bin"
+kleever_attack_frame14:
+	incbin "data/objects/graphics/kleever_attack_frame14.bin"
 
 ;$D17789 (sprite graphic)
-SPRITE_GRAPHIC_1F74:
-	incbin "data/objects/graphics/sprite_graphic_1F74.bin"
+kleever_attack_frame15:
+	incbin "data/objects/graphics/kleever_attack_frame15.bin"
 
 ;$D17AED (sprite graphic)
-SPRITE_GRAPHIC_1F78:
-	incbin "data/objects/graphics/sprite_graphic_1F78.bin"
+kleever_attack_frame16:
+	incbin "data/objects/graphics/kleever_attack_frame16.bin"
 
 ;$D17E29 (sprite graphic)
-SPRITE_GRAPHIC_1F7C:
-	incbin "data/objects/graphics/sprite_graphic_1F7C.bin"
+kleever_arm_idle_frame1:
+	incbin "data/objects/graphics/kleever_arm_idle_frame1.bin"
 
 ;$D18083 (sprite graphic)
-SPRITE_GRAPHIC_1F80:
-	incbin "data/objects/graphics/sprite_graphic_1F80.bin"
+kleever_arm_idle_frame2:
+	incbin "data/objects/graphics/kleever_arm_idle_frame2.bin"
 
 ;$D182DD (sprite graphic)
-SPRITE_GRAPHIC_1F84:
-	incbin "data/objects/graphics/sprite_graphic_1F84.bin"
+kleever_arm_idle_frame3:
+	incbin "data/objects/graphics/kleever_arm_idle_frame3.bin"
 
 ;$D18515 (sprite graphic)
-SPRITE_GRAPHIC_1F88:
-	incbin "data/objects/graphics/sprite_graphic_1F88.bin"
+kleever_arm_idle_frame4:
+	incbin "data/objects/graphics/kleever_arm_idle_frame4.bin"
 
 ;$D1874D (sprite graphic)
-SPRITE_GRAPHIC_1F8C:
-	incbin "data/objects/graphics/sprite_graphic_1F8C.bin"
+kleever_arm_idle_frame5:
+	incbin "data/objects/graphics/kleever_arm_idle_frame5.bin"
 
 ;$D18985 (sprite graphic)
-SPRITE_GRAPHIC_1F90:
-	incbin "data/objects/graphics/sprite_graphic_1F90.bin"
+kleever_arm_idle_frame6:
+	incbin "data/objects/graphics/kleever_arm_idle_frame6.bin"
 
 ;$D18BDF (sprite graphic)
-SPRITE_GRAPHIC_1F94:
-	incbin "data/objects/graphics/sprite_graphic_1F94.bin"
+kleever_arm_idle_frame7:
+	incbin "data/objects/graphics/kleever_arm_idle_frame7.bin"
 
 ;$D18E39 (sprite graphic)
-SPRITE_GRAPHIC_1F98:
-	incbin "data/objects/graphics/sprite_graphic_1F98.bin"
+kleever_arm_idle_frame8:
+	incbin "data/objects/graphics/kleever_arm_idle_frame8.bin"
 
 ;$D19093 (sprite graphic)
-SPRITE_GRAPHIC_1F9C:
-	incbin "data/objects/graphics/sprite_graphic_1F9C.bin"
+kleever_turn_frame1:
+	incbin "data/objects/graphics/kleever_turn_frame1.bin"
 
 ;$D19435 (sprite graphic)
-SPRITE_GRAPHIC_1FA0:
-	incbin "data/objects/graphics/sprite_graphic_1FA0.bin"
+kleever_turn_frame2:
+	incbin "data/objects/graphics/kleever_turn_frame2.bin"
 
 ;$D196D9 (sprite graphic)
-SPRITE_GRAPHIC_1FA4:
-	incbin "data/objects/graphics/sprite_graphic_1FA4.bin"
+kleever_turn_frame3:
+	incbin "data/objects/graphics/kleever_turn_frame3.bin"
 
 ;$D1991D (sprite graphic)
-SPRITE_GRAPHIC_1FA8:
-	incbin "data/objects/graphics/sprite_graphic_1FA8.bin"
+kleever_arm_turn1:
+	incbin "data/objects/graphics/kleever_arm_turn1.bin"
 
 ;$D19B99 (sprite graphic)
-SPRITE_GRAPHIC_1FAC:
-	incbin "data/objects/graphics/sprite_graphic_1FAC.bin"
+kleever_arm_turn2:
+	incbin "data/objects/graphics/kleever_arm_turn2.bin"
 
 ;$D19DD1 (sprite graphic)
-SPRITE_GRAPHIC_1FB0:
-	incbin "data/objects/graphics/sprite_graphic_1FB0.bin"
+kleever_arm_turn3:
+	incbin "data/objects/graphics/kleever_arm_turn3.bin"
 
 ;$D19FCB (sprite graphic)
-SPRITE_GRAPHIC_1FB4:
-	incbin "data/objects/graphics/sprite_graphic_1FB4.bin"
+kleever_fire_frame1:
+	incbin "data/objects/graphics/kleever_fire_frame1.bin"
 
 ;$D1A0BB (sprite graphic)
-SPRITE_GRAPHIC_1FB8:
-	incbin "data/objects/graphics/sprite_graphic_1FB8.bin"
+kleever_fire_frame2:
+	incbin "data/objects/graphics/kleever_fire_frame2.bin"
 
 ;$D1A1EF (sprite graphic)
-SPRITE_GRAPHIC_1FBC:
-	incbin "data/objects/graphics/sprite_graphic_1FBC.bin"
+kleever_fire_frame3:
+	incbin "data/objects/graphics/kleever_fire_frame3.bin"
 
 ;$D1A361 (sprite graphic)
-SPRITE_GRAPHIC_1FC0:
-	incbin "data/objects/graphics/sprite_graphic_1FC0.bin"
+kleever_fire_frame4:
+	incbin "data/objects/graphics/kleever_fire_frame4.bin"
 
 ;$D1A4D3 (sprite graphic)
-SPRITE_GRAPHIC_1FC4:
-	incbin "data/objects/graphics/sprite_graphic_1FC4.bin"
+kleever_fire_frame5:
+	incbin "data/objects/graphics/kleever_fire_frame5.bin"
 
 ;$D1A689 (sprite graphic)
-SPRITE_GRAPHIC_1FC8:
-	incbin "data/objects/graphics/sprite_graphic_1FC8.bin"
+kleever_fire_frame6:
+	incbin "data/objects/graphics/kleever_fire_frame6.bin"
 
 ;$D1A839 (sprite graphic)
-SPRITE_GRAPHIC_1FCC:
-	incbin "data/objects/graphics/sprite_graphic_1FCC.bin"
+kleever_fire_frame7:
+	incbin "data/objects/graphics/kleever_fire_frame7.bin"
 
 ;$D1A9EF (sprite graphic)
-SPRITE_GRAPHIC_1FD0:
-	incbin "data/objects/graphics/sprite_graphic_1FD0.bin"
+kleever_fire_frame8:
+	incbin "data/objects/graphics/kleever_fire_frame8.bin"
 
 ;$D1ABE9 (sprite graphic)
-SPRITE_GRAPHIC_1FD4:
-	incbin "data/objects/graphics/sprite_graphic_1FD4.bin"
+kleever_fire_frame9:
+	incbin "data/objects/graphics/kleever_fire_frame9.bin"
 
 ;$D1ADFF (sprite graphic)
-SPRITE_GRAPHIC_1FD8:
-	incbin "data/objects/graphics/sprite_graphic_1FD8.bin"
+kleever_fire_frame10:
+	incbin "data/objects/graphics/kleever_fire_frame10.bin"
 
 ;$D1B037 (sprite graphic)
-SPRITE_GRAPHIC_1FDC:
-	incbin "data/objects/graphics/sprite_graphic_1FDC.bin"
+kleever_fire_frame11:
+	incbin "data/objects/graphics/kleever_fire_frame11.bin"
 
 ;$D1B269 (sprite graphic)
-SPRITE_GRAPHIC_1FE0:
-	incbin "data/objects/graphics/sprite_graphic_1FE0.bin"
+kleever_fire_frame12:
+	incbin "data/objects/graphics/kleever_fire_frame12.bin"
 
 ;$D1B47F (sprite graphic)
-SPRITE_GRAPHIC_1FE4:
-	incbin "data/objects/graphics/sprite_graphic_1FE4.bin"
+kleever_fire_frame13:
+	incbin "data/objects/graphics/kleever_fire_frame13.bin"
 
 ;$D1B651 (sprite graphic)
-SPRITE_GRAPHIC_1FE8:
-	incbin "data/objects/graphics/sprite_graphic_1FE8.bin"
+kleever_fire_frame14:
+	incbin "data/objects/graphics/kleever_fire_frame14.bin"
 
 ;$D1B801 (sprite graphic)
-SPRITE_GRAPHIC_1FEC:
-	incbin "data/objects/graphics/sprite_graphic_1FEC.bin"
+kleever_fire_frame15:
+	incbin "data/objects/graphics/kleever_fire_frame15.bin"
 
 ;$D1B92F (sprite graphic)
-SPRITE_GRAPHIC_1FF0:
-	incbin "data/objects/graphics/sprite_graphic_1FF0.bin"
+kleever_fire_frame16:
+	incbin "data/objects/graphics/kleever_fire_frame16.bin"
 
 ;$D1BA1F (sprite graphic)
-SPRITE_GRAPHIC_1FF4:
-	incbin "data/objects/graphics/sprite_graphic_1FF4.bin"
+kleever_fire_ball_frame1:
+	incbin "data/objects/graphics/kleever_fire_ball_frame1.bin"
 
 ;$D1BC2F (sprite graphic)
-SPRITE_GRAPHIC_1FF8:
-	incbin "data/objects/graphics/sprite_graphic_1FF8.bin"
+kleever_fire_ball_frame2:
+	incbin "data/objects/graphics/kleever_fire_ball_frame2.bin"
 
 ;$D1BE3F (sprite graphic)
-SPRITE_GRAPHIC_1FFC:
-	incbin "data/objects/graphics/sprite_graphic_1FFC.bin"
+kleever_fire_ball_frame3:
+	incbin "data/objects/graphics/kleever_fire_ball_frame3.bin"
 
 ;$D1C04F (sprite graphic)
-SPRITE_GRAPHIC_2000:
-	incbin "data/objects/graphics/sprite_graphic_2000.bin"
+kleever_fire_ball_frame4:
+	incbin "data/objects/graphics/kleever_fire_ball_frame4.bin"
 
 ;$D1C25F (sprite graphic)
-SPRITE_GRAPHIC_2004:
-	incbin "data/objects/graphics/sprite_graphic_2004.bin"
+kleever_fire_ball_frame5:
+	incbin "data/objects/graphics/kleever_fire_ball_frame5.bin"
 
 ;$D1C46F (sprite graphic)
-SPRITE_GRAPHIC_2008:
-	incbin "data/objects/graphics/sprite_graphic_2008.bin"
+kleever_fire_ball_frame6:
+	incbin "data/objects/graphics/kleever_fire_ball_frame6.bin"
 
 ;$D1C67F (sprite graphic)
-SPRITE_GRAPHIC_200C:
-	incbin "data/objects/graphics/sprite_graphic_200C.bin"
+kleever_fire_ball_frame7:
+	incbin "data/objects/graphics/kleever_fire_ball_frame7.bin"
 
 ;$D1C88F (sprite graphic)
-SPRITE_GRAPHIC_2010:
-	incbin "data/objects/graphics/sprite_graphic_2010.bin"
+kleever_fire_ball_frame8:
+	incbin "data/objects/graphics/kleever_fire_ball_frame8.bin"
 
 ;$D1CA9F (sprite graphic)
-SPRITE_GRAPHIC_2014:
-	incbin "data/objects/graphics/sprite_graphic_2014.bin"
+spiny_turn_frame1:
+	incbin "data/objects/graphics/spiny_turn_frame1.bin"
 
 ;$D1CD37 (sprite graphic)
-SPRITE_GRAPHIC_2018:
-	incbin "data/objects/graphics/sprite_graphic_2018.bin"
+spiny_turn_frame2:
+	incbin "data/objects/graphics/spiny_turn_frame2.bin"
 
 ;$D1CFAD (sprite graphic)
-SPRITE_GRAPHIC_201C:
-	incbin "data/objects/graphics/sprite_graphic_201C.bin"
+spiny_hurt_frame1:
+	incbin "data/objects/graphics/spiny_hurt_frame1.bin"
 
 ;$D1D2EF (sprite graphic)
-SPRITE_GRAPHIC_2020:
-	incbin "data/objects/graphics/sprite_graphic_2020.bin"
+spiny_hurt_frame2:
+	incbin "data/objects/graphics/spiny_hurt_frame2.bin"
 
 ;$D1D5ED (sprite graphic)
-SPRITE_GRAPHIC_2024:
-	incbin "data/objects/graphics/sprite_graphic_2024.bin"
+spiny_hurt_frame3:
+	incbin "data/objects/graphics/spiny_hurt_frame3.bin"
 
 ;$D1D8C9 (sprite graphic)
-SPRITE_GRAPHIC_2028:
-	incbin "data/objects/graphics/sprite_graphic_2028.bin"
+spiny_hurt_frame4:
+	incbin "data/objects/graphics/spiny_hurt_frame4.bin"
 
 ;$D1DBC7 (sprite graphic)
-SPRITE_GRAPHIC_202C:
-	incbin "data/objects/graphics/sprite_graphic_202C.bin"
+spiny_hurt_frame5:
+	incbin "data/objects/graphics/spiny_hurt_frame5.bin"
 
 ;$D1DEA3 (sprite graphic)
-SPRITE_GRAPHIC_2030:
-	incbin "data/objects/graphics/sprite_graphic_2030.bin"
+unknown_2030_frame1:
+	incbin "data/objects/graphics/unknown_2030_frame1.bin"
 
 ;$D1DECD (sprite graphic)
-SPRITE_GRAPHIC_2034:
-	incbin "data/objects/graphics/sprite_graphic_2034.bin"
+unknown_2030_frame2:
+	incbin "data/objects/graphics/unknown_2030_frame2.bin"
 
 ;$D1DF19 (sprite graphic)
-SPRITE_GRAPHIC_2038:
-	incbin "data/objects/graphics/sprite_graphic_2038.bin"
+unknown_2030_frame3:
+	incbin "data/objects/graphics/unknown_2030_frame3.bin"
 
 ;$D1DFA3 (sprite graphic)
-SPRITE_GRAPHIC_203C:
-	incbin "data/objects/graphics/sprite_graphic_203C.bin"
+unknown_2030_frame4:
+	incbin "data/objects/graphics/unknown_2030_frame4.bin"
 
 ;$D1E033 (sprite graphic)
-SPRITE_GRAPHIC_2040:
-	incbin "data/objects/graphics/sprite_graphic_2040.bin"
+dixie_honey_wall_blink_frame1:
+	incbin "data/objects/graphics/dixie_honey_wall_blink_frame1.bin"
 
 ;$D1E24F (sprite graphic)
-SPRITE_GRAPHIC_2044:
-	incbin "data/objects/graphics/sprite_graphic_2044.bin"
+dixie_honey_wall_blink_frame2:
+	incbin "data/objects/graphics/dixie_honey_wall_blink_frame2.bin"
 
 ;$D1E46B (sprite graphic)
-SPRITE_GRAPHIC_2048:
-	incbin "data/objects/graphics/sprite_graphic_2048.bin"
+dixie_honey_wall_blink_frame3:
+	incbin "data/objects/graphics/dixie_honey_wall_blink_frame3.bin"
 
 ;$D1E687 (sprite graphic)
-SPRITE_GRAPHIC_204C:
-	incbin "data/objects/graphics/sprite_graphic_204C.bin"
+diddy_grab_hook_frame1:
+	incbin "data/objects/graphics/diddy_grab_hook_frame1.bin"
 
 ;$D1E8A3 (sprite graphic)
-SPRITE_GRAPHIC_2050:
-	incbin "data/objects/graphics/sprite_graphic_2050.bin"
+diddy_grab_hook_frame2:
+	incbin "data/objects/graphics/diddy_grab_hook_frame2.bin"
 
 ;$D1EB03 (sprite graphic)
-SPRITE_GRAPHIC_2054:
-	incbin "data/objects/graphics/sprite_graphic_2054.bin"
+diddy_grab_hook_frame3:
+	incbin "data/objects/graphics/diddy_grab_hook_frame3.bin"
 
 ;$D1EDC9 (sprite graphic)
-SPRITE_GRAPHIC_2058:
-	incbin "data/objects/graphics/sprite_graphic_2058.bin"
+diddy_grab_hook_frame4:
+	incbin "data/objects/graphics/diddy_grab_hook_frame4.bin"
 
 ;$D1F0AB (sprite graphic)
-SPRITE_GRAPHIC_205C:
-	incbin "data/objects/graphics/sprite_graphic_205C.bin"
+diddy_grab_hook_frame5:
+	incbin "data/objects/graphics/diddy_grab_hook_frame5.bin"
 
 ;$D1F371 (sprite graphic)
-SPRITE_GRAPHIC_2060:
-	incbin "data/objects/graphics/sprite_graphic_2060.bin"
+lava_smoke_puff_frame1:
+	incbin "data/objects/graphics/lava_smoke_puff_frame1.bin"
 
 ;$D1F3BD (sprite graphic)
-SPRITE_GRAPHIC_2064:
-	incbin "data/objects/graphics/sprite_graphic_2064.bin"
+lava_smoke_puff_frame2:
+	incbin "data/objects/graphics/lava_smoke_puff_frame2.bin"
 
 ;$D1F42B (sprite graphic)
-SPRITE_GRAPHIC_2068:
-	incbin "data/objects/graphics/sprite_graphic_2068.bin"
+lava_smoke_puff_frame3:
+	incbin "data/objects/graphics/lava_smoke_puff_frame3.bin"
 
 ;$D1F4F9 (sprite graphic)
-SPRITE_GRAPHIC_206C:
-	incbin "data/objects/graphics/sprite_graphic_206C.bin"
+lava_smoke_puff_frame4:
+	incbin "data/objects/graphics/lava_smoke_puff_frame4.bin"
 
 ;$D1F66B (sprite graphic)
-SPRITE_GRAPHIC_2070:
-	incbin "data/objects/graphics/sprite_graphic_2070.bin"
+lava_smoke_puff_frame5:
+	incbin "data/objects/graphics/lava_smoke_puff_frame5.bin"
 
 ;$D1F7DD (sprite graphic)
-SPRITE_GRAPHIC_2074:
-	incbin "data/objects/graphics/sprite_graphic_2074.bin"
+lava_smoke_puff_frame6:
+	incbin "data/objects/graphics/lava_smoke_puff_frame6.bin"
 
 check bankcross off
 ;$D1F971	compressed
@@ -7597,332 +7597,332 @@ ship_mast_clouds_fg_layer_3_8x8_tilemap:
 check bankcross full
 
 ;$D200BF (sprite graphic)
-SPRITE_GRAPHIC_2078:
-	incbin "data/objects/graphics/sprite_graphic_2078.bin"
+lava_smoke_puff_frame7:
+	incbin "data/objects/graphics/lava_smoke_puff_frame7.bin"
 
 ;$D20231 (sprite graphic)
-SPRITE_GRAPHIC_207C:
-	incbin "data/objects/graphics/sprite_graphic_207C.bin"
+lava_smoke_puff_frame8:
+	incbin "data/objects/graphics/lava_smoke_puff_frame8.bin"
 
 ;$D20381 (sprite graphic)
-SPRITE_GRAPHIC_2080:
-	incbin "data/objects/graphics/sprite_graphic_2080.bin"
+lava_smoke_puff_frame9:
+	incbin "data/objects/graphics/lava_smoke_puff_frame9.bin"
 
 ;$D20493 (sprite graphic)
-SPRITE_GRAPHIC_2084:
-	incbin "data/objects/graphics/sprite_graphic_2084.bin"
+lava_smoke_puff_frame10:
+	incbin "data/objects/graphics/lava_smoke_puff_frame10.bin"
 
 ;$D20583 (sprite graphic)
-SPRITE_GRAPHIC_2088:
-	incbin "data/objects/graphics/sprite_graphic_2088.bin"
+lava_smoke_puff_frame11:
+	incbin "data/objects/graphics/lava_smoke_puff_frame11.bin"
 
 ;$D20673 (sprite graphic)
-SPRITE_GRAPHIC_208C:
-	incbin "data/objects/graphics/sprite_graphic_208C.bin"
+lava_smoke_puff_frame12:
+	incbin "data/objects/graphics/lava_smoke_puff_frame12.bin"
 
 ;$D2071F (sprite graphic)
-SPRITE_GRAPHIC_2090:
-	incbin "data/objects/graphics/sprite_graphic_2090.bin"
+diddy_turn_frame1:
+	incbin "data/objects/graphics/diddy_turn_frame1.bin"
 
 ;$D20919 (sprite graphic)
-SPRITE_GRAPHIC_2094:
-	incbin "data/objects/graphics/sprite_graphic_2094.bin"
+diddy_turn_frame2:
+	incbin "data/objects/graphics/diddy_turn_frame2.bin"
 
 ;$D20AAD (sprite graphic)
-SPRITE_GRAPHIC_2098:
-	incbin "data/objects/graphics/sprite_graphic_2098.bin"
+dixie_grab_hook_frame1:
+	incbin "data/objects/graphics/dixie_grab_hook_frame1.bin"
 
 ;$D20C41 (sprite graphic)
-SPRITE_GRAPHIC_209C:
-	incbin "data/objects/graphics/sprite_graphic_209C.bin"
+dixie_grab_hook_frame2:
+	incbin "data/objects/graphics/dixie_grab_hook_frame2.bin"
 
 ;$D20E19 (sprite graphic)
-SPRITE_GRAPHIC_20A0:
-	incbin "data/objects/graphics/sprite_graphic_20A0.bin"
+dixie_grab_hook_frame3:
+	incbin "data/objects/graphics/dixie_grab_hook_frame3.bin"
 
 ;$D21051 (sprite graphic)
-SPRITE_GRAPHIC_20A4:
-	incbin "data/objects/graphics/sprite_graphic_20A4.bin"
+dixie_grab_hook_frame4:
+	incbin "data/objects/graphics/dixie_grab_hook_frame4.bin"
 
 ;$D212CD (sprite graphic)
-SPRITE_GRAPHIC_20A8:
-	incbin "data/objects/graphics/sprite_graphic_20A8.bin"
+diddy_icon_graphic:
+	incbin "data/objects/graphics/diddy_icon_graphic.bin"
 
 ;$D2135D (sprite graphic)
-SPRITE_GRAPHIC_20AC:
-	incbin "data/objects/graphics/sprite_graphic_20AC.bin"
+honey_splash_frame1:
+	incbin "data/objects/graphics/honey_splash_frame1.bin"
 
 ;$D213A9 (sprite graphic)
-SPRITE_GRAPHIC_20B0:
-	incbin "data/objects/graphics/sprite_graphic_20B0.bin"
+honey_splash_frame2:
+	incbin "data/objects/graphics/honey_splash_frame2.bin"
 
 ;$D21417 (sprite graphic)
-SPRITE_GRAPHIC_20B4:
-	incbin "data/objects/graphics/sprite_graphic_20B4.bin"
+honey_splash_frame3:
+	incbin "data/objects/graphics/honey_splash_frame3.bin"
 
 ;$D214A7 (sprite graphic)
-SPRITE_GRAPHIC_20B8:
-	incbin "data/objects/graphics/sprite_graphic_20B8.bin"
+honey_splash_frame4:
+	incbin "data/objects/graphics/honey_splash_frame4.bin"
 
 ;$D21559 (sprite graphic)
-SPRITE_GRAPHIC_20BC:
-	incbin "data/objects/graphics/sprite_graphic_20BC.bin"
+honey_splash_frame5:
+	incbin "data/objects/graphics/honey_splash_frame5.bin"
 
 ;$D215C7 (sprite graphic)
-SPRITE_GRAPHIC_20C0:
-	incbin "data/objects/graphics/sprite_graphic_20C0.bin"
+klampon_walk_frame1:
+	incbin "data/objects/graphics/klampon_walk_frame1.bin"
 
 ;$D217FF (sprite graphic)
-SPRITE_GRAPHIC_20C4:
-	incbin "data/objects/graphics/sprite_graphic_20C4.bin"
+klampon_walk_frame2:
+	incbin "data/objects/graphics/klampon_walk_frame2.bin"
 
 ;$D21A37 (sprite graphic)
-SPRITE_GRAPHIC_20C8:
-	incbin "data/objects/graphics/sprite_graphic_20C8.bin"
+klampon_walk_frame3:
+	incbin "data/objects/graphics/klampon_walk_frame3.bin"
 
 ;$D21C6F (sprite graphic)
-SPRITE_GRAPHIC_20CC:
-	incbin "data/objects/graphics/sprite_graphic_20CC.bin"
+klampon_walk_frame4:
+	incbin "data/objects/graphics/klampon_walk_frame4.bin"
 
 ;$D21E85 (sprite graphic)
-SPRITE_GRAPHIC_20D0:
-	incbin "data/objects/graphics/sprite_graphic_20D0.bin"
+klampon_walk_frame5:
+	incbin "data/objects/graphics/klampon_walk_frame5.bin"
 
 ;$D2209B (sprite graphic)
-SPRITE_GRAPHIC_20D4:
-	incbin "data/objects/graphics/sprite_graphic_20D4.bin"
+klampon_walk_frame6:
+	incbin "data/objects/graphics/klampon_walk_frame6.bin"
 
 ;$D2228F (sprite graphic)
-SPRITE_GRAPHIC_20D8:
-	incbin "data/objects/graphics/sprite_graphic_20D8.bin"
+klampon_walk_frame7:
+	incbin "data/objects/graphics/klampon_walk_frame7.bin"
 
 ;$D224E9 (sprite graphic)
-SPRITE_GRAPHIC_20DC:
-	incbin "data/objects/graphics/sprite_graphic_20DC.bin"
+klampon_walk_frame8:
+	incbin "data/objects/graphics/klampon_walk_frame8.bin"
 
 ;$D22765 (sprite graphic)
-SPRITE_GRAPHIC_20E0:
-	incbin "data/objects/graphics/sprite_graphic_20E0.bin"
+klampon_walk_frame9:
+	incbin "data/objects/graphics/klampon_walk_frame9.bin"
 
 ;$D229E1 (sprite graphic)
-SPRITE_GRAPHIC_20E4:
-	incbin "data/objects/graphics/sprite_graphic_20E4.bin"
+klampon_walk_frame10:
+	incbin "data/objects/graphics/klampon_walk_frame10.bin"
 
 ;$D22CA1 (sprite graphic)
-SPRITE_GRAPHIC_20E8:
-	incbin "data/objects/graphics/sprite_graphic_20E8.bin"
+klampon_walk_frame11:
+	incbin "data/objects/graphics/klampon_walk_frame11.bin"
 
 ;$D22F1D (sprite graphic)
-SPRITE_GRAPHIC_20EC:
-	incbin "data/objects/graphics/sprite_graphic_20EC.bin"
+klampon_turn_frame1:
+	incbin "data/objects/graphics/klampon_turn_frame1.bin"
 
 ;$D23155 (sprite graphic)
-SPRITE_GRAPHIC_20F0:
-	incbin "data/objects/graphics/sprite_graphic_20F0.bin"
+klampon_turn_frame2:
+	incbin "data/objects/graphics/klampon_turn_frame2.bin"
 
 ;$D2330B (sprite graphic)
-SPRITE_GRAPHIC_20F4:
-	incbin "data/objects/graphics/sprite_graphic_20F4.bin"
+klampon_hurt_frame1:
+	incbin "data/objects/graphics/klampon_hurt_frame1.bin"
 
 ;$D234DD (sprite graphic)
-SPRITE_GRAPHIC_20F8:
-	incbin "data/objects/graphics/sprite_graphic_20F8.bin"
+klampon_hurt_frame2:
+	incbin "data/objects/graphics/klampon_hurt_frame2.bin"
 
 ;$D23671 (sprite graphic)
-SPRITE_GRAPHIC_20FC:
-	incbin "data/objects/graphics/sprite_graphic_20FC.bin"
+klampon_hurt_frame3:
+	incbin "data/objects/graphics/klampon_hurt_frame3.bin"
 
 ;$D237E3 (sprite graphic)
-SPRITE_GRAPHIC_2100:
-	incbin "data/objects/graphics/sprite_graphic_2100.bin"
+klampon_hurt_frame4:
+	incbin "data/objects/graphics/klampon_hurt_frame4.bin"
 
 ;$D239F9 (sprite graphic)
-SPRITE_GRAPHIC_2104:
-	incbin "data/objects/graphics/sprite_graphic_2104.bin"
+klampon_hurt_frame5:
+	incbin "data/objects/graphics/klampon_hurt_frame5.bin"
 
 ;$D23C97 (sprite graphic)
-SPRITE_GRAPHIC_2108:
-	incbin "data/objects/graphics/sprite_graphic_2108.bin"
+diddy_ride_animal_attack_frame1:
+	incbin "data/objects/graphics/diddy_ride_animal_attack_frame1.bin"
 
 ;$D23ED5 (sprite graphic)
-SPRITE_GRAPHIC_210C:
-	incbin "data/objects/graphics/sprite_graphic_210C.bin"
+diddy_ride_animal_attack_frame2:
+	incbin "data/objects/graphics/diddy_ride_animal_attack_frame2.bin"
 
 ;$D24135 (sprite graphic)
-SPRITE_GRAPHIC_2110:
-	incbin "data/objects/graphics/sprite_graphic_2110.bin"
+diddy_ride_animal_attack_frame3:
+	incbin "data/objects/graphics/diddy_ride_animal_attack_frame3.bin"
 
 ;$D2438F (sprite graphic)
-SPRITE_GRAPHIC_2114:
-	incbin "data/objects/graphics/sprite_graphic_2114.bin"
+diddy_ride_animal_attack_frame4:
+	incbin "data/objects/graphics/diddy_ride_animal_attack_frame4.bin"
 
 ;$D245AB (sprite graphic)
-SPRITE_GRAPHIC_2118:
-	incbin "data/objects/graphics/sprite_graphic_2118.bin"
+diddy_ride_animal_attack_frame5:
+	incbin "data/objects/graphics/diddy_ride_animal_attack_frame5.bin"
 
 ;$D247E9 (sprite graphic)
-SPRITE_GRAPHIC_211C:
-	incbin "data/objects/graphics/sprite_graphic_211C.bin"
+diddy_ride_animal_idle_frame1:
+	incbin "data/objects/graphics/diddy_ride_animal_idle_frame1.bin"
 
 ;$D249E3 (sprite graphic)
-SPRITE_GRAPHIC_2120:
-	incbin "data/objects/graphics/sprite_graphic_2120.bin"
+diddy_ride_animal_idle_frame2:
+	incbin "data/objects/graphics/diddy_ride_animal_idle_frame2.bin"
 
 ;$D24C21 (sprite graphic)
-SPRITE_GRAPHIC_2124:
-	incbin "data/objects/graphics/sprite_graphic_2124.bin"
+diddy_ride_animal_idle_frame3:
+	incbin "data/objects/graphics/diddy_ride_animal_idle_frame3.bin"
 
 ;$D24E37 (sprite graphic)
-SPRITE_GRAPHIC_2128:
-	incbin "data/objects/graphics/sprite_graphic_2128.bin"
+diddy_ride_animal_idle_frame4:
+	incbin "data/objects/graphics/diddy_ride_animal_idle_frame4.bin"
 
 ;$D25031 (sprite graphic)
-SPRITE_GRAPHIC_212C:
-	incbin "data/objects/graphics/sprite_graphic_212C.bin"
+diddy_ride_animal_idle_frame5:
+	incbin "data/objects/graphics/diddy_ride_animal_idle_frame5.bin"
 
 ;$D25209 (sprite graphic)
-SPRITE_GRAPHIC_2130:
-	incbin "data/objects/graphics/sprite_graphic_2130.bin"
+kleever_arm_attack_frame1:
+	incbin "data/objects/graphics/kleever_arm_attack_frame1.bin"
 
 ;$D25463 (sprite graphic)
-SPRITE_GRAPHIC_2134:
-	incbin "data/objects/graphics/sprite_graphic_2134.bin"
+kleever_arm_attack_frame2:
+	incbin "data/objects/graphics/kleever_arm_attack_frame2.bin"
 
 ;$D2569B (sprite graphic)
-SPRITE_GRAPHIC_2138:
-	incbin "data/objects/graphics/sprite_graphic_2138.bin"
+kleever_arm_attack_frame3:
+	incbin "data/objects/graphics/kleever_arm_attack_frame3.bin"
 
 ;$D258F5 (sprite graphic)
-SPRITE_GRAPHIC_213C:
-	incbin "data/objects/graphics/sprite_graphic_213C.bin"
+kleever_arm_attack_frame4:
+	incbin "data/objects/graphics/kleever_arm_attack_frame4.bin"
 
 ;$D25B2D (sprite graphic)
-SPRITE_GRAPHIC_2140:
-	incbin "data/objects/graphics/sprite_graphic_2140.bin"
+kleever_arm_attack_frame5:
+	incbin "data/objects/graphics/kleever_arm_attack_frame5.bin"
 
 ;$D25D65 (sprite graphic)
-SPRITE_GRAPHIC_2144:
-	incbin "data/objects/graphics/sprite_graphic_2144.bin"
+kleever_arm_attack_frame6:
+	incbin "data/objects/graphics/kleever_arm_attack_frame6.bin"
 
 ;$D25F9D (sprite graphic)
-SPRITE_GRAPHIC_2148:
-	incbin "data/objects/graphics/sprite_graphic_2148.bin"
+kleever_arm_attack_frame7:
+	incbin "data/objects/graphics/kleever_arm_attack_frame7.bin"
 
 ;$D261D5 (sprite graphic)
-SPRITE_GRAPHIC_214C:
-	incbin "data/objects/graphics/sprite_graphic_214C.bin"
+kleever_arm_attack_frame8:
+	incbin "data/objects/graphics/kleever_arm_attack_frame8.bin"
 
 ;$D2644B (sprite graphic)
-SPRITE_GRAPHIC_2150:
-	incbin "data/objects/graphics/sprite_graphic_2150.bin"
+kleever_arm_attack_frame9:
+	incbin "data/objects/graphics/kleever_arm_attack_frame9.bin"
 
 ;$D26667 (sprite graphic)
-SPRITE_GRAPHIC_2154:
-	incbin "data/objects/graphics/sprite_graphic_2154.bin"
+kleever_arm_attack_frame10:
+	incbin "data/objects/graphics/kleever_arm_attack_frame10.bin"
 
 ;$D2687D (sprite graphic)
-SPRITE_GRAPHIC_2158:
-	incbin "data/objects/graphics/sprite_graphic_2158.bin"
+kleever_arm_attack_frame11:
+	incbin "data/objects/graphics/kleever_arm_attack_frame11.bin"
 
 ;$D26AB5 (sprite graphic)
-SPRITE_GRAPHIC_215C:
-	incbin "data/objects/graphics/sprite_graphic_215C.bin"
+kleever_arm_attack_frame12:
+	incbin "data/objects/graphics/kleever_arm_attack_frame12.bin"
 
 ;$D26D0F (sprite graphic)
-SPRITE_GRAPHIC_2160:
-	incbin "data/objects/graphics/sprite_graphic_2160.bin"
+kleever_arm_attack_frame13:
+	incbin "data/objects/graphics/kleever_arm_attack_frame13.bin"
 
 ;$D26F47 (sprite graphic)
-SPRITE_GRAPHIC_2164:
-	incbin "data/objects/graphics/sprite_graphic_2164.bin"
+kleever_arm_attack_frame14:
+	incbin "data/objects/graphics/kleever_arm_attack_frame14.bin"
 
 ;$D271C3 (sprite graphic)
-SPRITE_GRAPHIC_2168:
-	incbin "data/objects/graphics/sprite_graphic_2168.bin"
+kleever_arm_attack_frame15:
+	incbin "data/objects/graphics/kleever_arm_attack_frame15.bin"
 
 ;$D27461 (sprite graphic)
-SPRITE_GRAPHIC_216C:
-	incbin "data/objects/graphics/sprite_graphic_216C.bin"
+kleever_arm_attack_frame16:
+	incbin "data/objects/graphics/kleever_arm_attack_frame16.bin"
 
 ;$D276BB (sprite graphic)
-SPRITE_GRAPHIC_2170:
-	incbin "data/objects/graphics/sprite_graphic_2170.bin"
+kleever_arm_attack_frame17:
+	incbin "data/objects/graphics/kleever_arm_attack_frame17.bin"
 
 ;$D27975 (sprite graphic)
-SPRITE_GRAPHIC_2174:
-	incbin "data/objects/graphics/sprite_graphic_2174.bin"
+kleever_arm_attack_frame18:
+	incbin "data/objects/graphics/kleever_arm_attack_frame18.bin"
 
 ;$D27C2F (sprite graphic)
-SPRITE_GRAPHIC_2178:
-	incbin "data/objects/graphics/sprite_graphic_2178.bin"
+krook_walk_frame1:
+	incbin "data/objects/graphics/krook_walk_frame1.bin"
 
 ;$D27F49 (sprite graphic)
-SPRITE_GRAPHIC_217C:
-	incbin "data/objects/graphics/sprite_graphic_217C.bin"
+krook_walk_frame2:
+	incbin "data/objects/graphics/krook_walk_frame2.bin"
 
 ;$D28241 (sprite graphic)
-SPRITE_GRAPHIC_2180:
-	incbin "data/objects/graphics/sprite_graphic_2180.bin"
+krook_walk_frame3:
+	incbin "data/objects/graphics/krook_walk_frame3.bin"
 
 ;$D2851D (sprite graphic)
-SPRITE_GRAPHIC_2184:
-	incbin "data/objects/graphics/sprite_graphic_2184.bin"
+krook_walk_frame4:
+	incbin "data/objects/graphics/krook_walk_frame4.bin"
 
 ;$D2885F (sprite graphic)
-SPRITE_GRAPHIC_2188:
-	incbin "data/objects/graphics/sprite_graphic_2188.bin"
+krook_walk_frame5:
+	incbin "data/objects/graphics/krook_walk_frame5.bin"
 
 ;$D28BDF (sprite graphic)
-SPRITE_GRAPHIC_218C:
-	incbin "data/objects/graphics/sprite_graphic_218C.bin"
+krook_walk_frame6:
+	incbin "data/objects/graphics/krook_walk_frame6.bin"
 
 ;$D28F7B (sprite graphic)
-SPRITE_GRAPHIC_2190:
-	incbin "data/objects/graphics/sprite_graphic_2190.bin"
+krook_walk_frame7:
+	incbin "data/objects/graphics/krook_walk_frame7.bin"
 
 ;$D2931D (sprite graphic)
-SPRITE_GRAPHIC_2194:
-	incbin "data/objects/graphics/sprite_graphic_2194.bin"
+krook_walk_frame8:
+	incbin "data/objects/graphics/krook_walk_frame8.bin"
 
 ;$D29703 (sprite graphic)
-SPRITE_GRAPHIC_2198:
-	incbin "data/objects/graphics/sprite_graphic_2198.bin"
+krook_walk_frame9:
+	incbin "data/objects/graphics/krook_walk_frame9.bin"
 
 ;$D29AA5 (sprite graphic)
-SPRITE_GRAPHIC_219C:
-	incbin "data/objects/graphics/sprite_graphic_219C.bin"
+krook_walk_frame10:
+	incbin "data/objects/graphics/krook_walk_frame10.bin"
 
 ;$D29E47 (sprite graphic)
-SPRITE_GRAPHIC_21A0:
-	incbin "data/objects/graphics/sprite_graphic_21A0.bin"
+krook_walk_frame11:
+	incbin "data/objects/graphics/krook_walk_frame11.bin"
 
 ;$D2A1A5 (sprite graphic)
-SPRITE_GRAPHIC_21A4:
-	incbin "data/objects/graphics/sprite_graphic_21A4.bin"
+krook_attack_frame1:
+	incbin "data/objects/graphics/krook_attack_frame1.bin"
 
 ;$D2A541 (sprite graphic)
-SPRITE_GRAPHIC_21A8:
-	incbin "data/objects/graphics/sprite_graphic_21A8.bin"
+krook_attack_frame2:
+	incbin "data/objects/graphics/krook_attack_frame2.bin"
 
 ;$D2A8FF (sprite graphic)
-SPRITE_GRAPHIC_21AC:
-	incbin "data/objects/graphics/sprite_graphic_21AC.bin"
+krook_attack_frame3:
+	incbin "data/objects/graphics/krook_attack_frame3.bin"
 
 ;$D2AC85 (sprite graphic)
-SPRITE_GRAPHIC_21B0:
-	incbin "data/objects/graphics/sprite_graphic_21B0.bin"
+krook_attack_frame4:
+	incbin "data/objects/graphics/krook_attack_frame4.bin"
 
 ;$D2B005 (sprite graphic)
-SPRITE_GRAPHIC_21B4:
-	incbin "data/objects/graphics/sprite_graphic_21B4.bin"
+krook_attack_frame5:
+	incbin "data/objects/graphics/krook_attack_frame5.bin"
 
 ;$D2B3EB (sprite graphic)
-SPRITE_GRAPHIC_21B8:
-	incbin "data/objects/graphics/sprite_graphic_21B8.bin"
+krook_attack_frame6:
+	incbin "data/objects/graphics/krook_attack_frame6.bin"
 
 ;$D2B705 (sprite graphic)
-SPRITE_GRAPHIC_21BC:
-	incbin "data/objects/graphics/sprite_graphic_21BC.bin"
+krook_attack_frame7:
+	incbin "data/objects/graphics/krook_attack_frame7.bin"
 
 check bankcross off
 ;$D2B9FD
@@ -7931,496 +7931,496 @@ kong_kollege_tiledata:
 check bankcross full
 
 ;$D3017C (sprite graphic)
-SPRITE_GRAPHIC_21C0:
-	incbin "data/objects/graphics/sprite_graphic_21C0.bin"
+krook_attack_frame8:
+	incbin "data/objects/graphics/krook_attack_frame8.bin"
 
 ;$D3055C (sprite graphic)
-SPRITE_GRAPHIC_21C4:
-	incbin "data/objects/graphics/sprite_graphic_21C4.bin"
+krook_attack_frame9:
+	incbin "data/objects/graphics/krook_attack_frame9.bin"
 
 ;$D30986 (sprite graphic)
-SPRITE_GRAPHIC_21C8:
-	incbin "data/objects/graphics/sprite_graphic_21C8.bin"
+krook_attack_frame10:
+	incbin "data/objects/graphics/krook_attack_frame10.bin"
 
 ;$D30DB0 (sprite graphic)
-SPRITE_GRAPHIC_21CC:
-	incbin "data/objects/graphics/sprite_graphic_21CC.bin"
+krook_attack_frame11:
+	incbin "data/objects/graphics/krook_attack_frame11.bin"
 
 ;$D31136 (sprite graphic)
-SPRITE_GRAPHIC_21D0:
-	incbin "data/objects/graphics/sprite_graphic_21D0.bin"
+krook_attack_frame12:
+	incbin "data/objects/graphics/krook_attack_frame12.bin"
 
 ;$D314BC (sprite graphic)
-SPRITE_GRAPHIC_21D4:
-	incbin "data/objects/graphics/sprite_graphic_21D4.bin"
+krook_attack_frame13:
+	incbin "data/objects/graphics/krook_attack_frame13.bin"
 
 ;$D318C4 (sprite graphic)
-SPRITE_GRAPHIC_21D8:
-	incbin "data/objects/graphics/sprite_graphic_21D8.bin"
+krook_attack_frame14:
+	incbin "data/objects/graphics/krook_attack_frame14.bin"
 
 ;$D31C06 (sprite graphic)
-SPRITE_GRAPHIC_21DC:
-	incbin "data/objects/graphics/sprite_graphic_21DC.bin"
+krook_attack_frame15:
+	incbin "data/objects/graphics/krook_attack_frame15.bin"
 
 ;$D31F48 (sprite graphic)
-SPRITE_GRAPHIC_21E0:
-	incbin "data/objects/graphics/sprite_graphic_21E0.bin"
+krook_attack_frame16:
+	incbin "data/objects/graphics/krook_attack_frame16.bin"
 
 ;$D3228A (sprite graphic)
-SPRITE_GRAPHIC_21E4:
-	incbin "data/objects/graphics/sprite_graphic_21E4.bin"
+krook_attack_frame17:
+	incbin "data/objects/graphics/krook_attack_frame17.bin"
 
 ;$D325CC (sprite graphic)
-SPRITE_GRAPHIC_21E8:
-	incbin "data/objects/graphics/sprite_graphic_21E8.bin"
+krook_attack_frame18:
+	incbin "data/objects/graphics/krook_attack_frame18.bin"
 
 ;$D3290E (sprite graphic)
-SPRITE_GRAPHIC_21EC:
-	incbin "data/objects/graphics/sprite_graphic_21EC.bin"
+krook_attack_frame19:
+	incbin "data/objects/graphics/krook_attack_frame19.bin"
 
 ;$D32CCC (sprite graphic)
-SPRITE_GRAPHIC_21F0:
-	incbin "data/objects/graphics/sprite_graphic_21F0.bin"
+krook_hurt_frame1:
+	incbin "data/objects/graphics/krook_hurt_frame1.bin"
 
 ;$D330F0 (sprite graphic)
-SPRITE_GRAPHIC_21F4:
-	incbin "data/objects/graphics/sprite_graphic_21F4.bin"
+krook_hurt_frame2:
+	incbin "data/objects/graphics/krook_hurt_frame2.bin"
 
 ;$D33520 (sprite graphic)
-SPRITE_GRAPHIC_21F8:
-	incbin "data/objects/graphics/sprite_graphic_21F8.bin"
+krook_hurt_frame3:
+	incbin "data/objects/graphics/krook_hurt_frame3.bin"
 
 ;$D33906 (sprite graphic)
-SPRITE_GRAPHIC_21FC:
-	incbin "data/objects/graphics/sprite_graphic_21FC.bin"
+krook_hurt_frame4:
+	incbin "data/objects/graphics/krook_hurt_frame4.bin"
 
 ;$D33C8C (sprite graphic)
-SPRITE_GRAPHIC_2200:
-	incbin "data/objects/graphics/sprite_graphic_2200.bin"
+krook_hurt_frame5:
+	incbin "data/objects/graphics/krook_hurt_frame5.bin"
 
 ;$D33FF0 (sprite graphic)
-SPRITE_GRAPHIC_2204:
-	incbin "data/objects/graphics/sprite_graphic_2204.bin"
+krook_turn_frame1:
+	incbin "data/objects/graphics/krook_turn_frame1.bin"
 
 ;$D34370 (sprite graphic)
-SPRITE_GRAPHIC_2208:
-	incbin "data/objects/graphics/sprite_graphic_2208.bin"
+krook_turn_frame2:
+	incbin "data/objects/graphics/krook_turn_frame2.bin"
 
 ;$D346AC (sprite graphic)
-SPRITE_GRAPHIC_220C:
-	incbin "data/objects/graphics/sprite_graphic_220C.bin"
+dixie_scared_frame1:
+	incbin "data/objects/graphics/dixie_scared_frame1.bin"
 
 ;$D348A0 (sprite graphic)
-SPRITE_GRAPHIC_2210:
-	incbin "data/objects/graphics/sprite_graphic_2210.bin"
+dixie_scared_frame2:
+	incbin "data/objects/graphics/dixie_scared_frame2.bin"
 
 ;$D34A94 (sprite graphic)
-SPRITE_GRAPHIC_2214:
-	incbin "data/objects/graphics/sprite_graphic_2214.bin"
+dixie_scared_frame3:
+	incbin "data/objects/graphics/dixie_scared_frame3.bin"
 
 ;$D34C88 (sprite graphic)
-SPRITE_GRAPHIC_2218:
-	incbin "data/objects/graphics/sprite_graphic_2218.bin"
+dixie_scared_frame4:
+	incbin "data/objects/graphics/dixie_scared_frame4.bin"
 
 ;$D34E98 (sprite graphic)
-SPRITE_GRAPHIC_221C:
-	incbin "data/objects/graphics/sprite_graphic_221C.bin"
+dixie_scared_frame5:
+	incbin "data/objects/graphics/dixie_scared_frame5.bin"
 
 ;$D350D0 (sprite graphic)
-SPRITE_GRAPHIC_2220:
-	incbin "data/objects/graphics/sprite_graphic_2220.bin"
+dixie_scared_frame6:
+	incbin "data/objects/graphics/dixie_scared_frame6.bin"
 
 ;$D35346 (sprite graphic)
-SPRITE_GRAPHIC_2224:
-	incbin "data/objects/graphics/sprite_graphic_2224.bin"
+dixie_scared_frame7:
+	incbin "data/objects/graphics/dixie_scared_frame7.bin"
 
 ;$D355BC (sprite graphic)
-SPRITE_GRAPHIC_2228:
-	incbin "data/objects/graphics/sprite_graphic_2228.bin"
+dixie_scared_frame8:
+	incbin "data/objects/graphics/dixie_scared_frame8.bin"
 
 ;$D3587C (sprite graphic)
-SPRITE_GRAPHIC_222C:
-	incbin "data/objects/graphics/sprite_graphic_222C.bin"
+dixie_scared_frame9:
+	incbin "data/objects/graphics/dixie_scared_frame9.bin"
 
 ;$D35B3C (sprite graphic)
-SPRITE_GRAPHIC_2230:
-	incbin "data/objects/graphics/sprite_graphic_2230.bin"
+dixie_scared_frame10:
+	incbin "data/objects/graphics/dixie_scared_frame10.bin"
 
 ;$D35DDA (sprite graphic)
-SPRITE_GRAPHIC_2234:
-	incbin "data/objects/graphics/sprite_graphic_2234.bin"
+diddy_scared_frame1:
+	incbin "data/objects/graphics/diddy_scared_frame1.bin"
 
 ;$D35FB2 (sprite graphic)
-SPRITE_GRAPHIC_2238:
-	incbin "data/objects/graphics/sprite_graphic_2238.bin"
+diddy_scared_frame2:
+	incbin "data/objects/graphics/diddy_scared_frame2.bin"
 
 ;$D3618A (sprite graphic)
-SPRITE_GRAPHIC_223C:
-	incbin "data/objects/graphics/sprite_graphic_223C.bin"
+diddy_scared_frame3:
+	incbin "data/objects/graphics/diddy_scared_frame3.bin"
 
 ;$D36362 (sprite graphic)
-SPRITE_GRAPHIC_2240:
-	incbin "data/objects/graphics/sprite_graphic_2240.bin"
+diddy_scared_frame4:
+	incbin "data/objects/graphics/diddy_scared_frame4.bin"
 
 ;$D3653A (sprite graphic)
-SPRITE_GRAPHIC_2244:
-	incbin "data/objects/graphics/sprite_graphic_2244.bin"
+diddy_scared_frame5:
+	incbin "data/objects/graphics/diddy_scared_frame5.bin"
 
 ;$D36772 (sprite graphic)
-SPRITE_GRAPHIC_2248:
-	incbin "data/objects/graphics/sprite_graphic_2248.bin"
+diddy_scared_frame6:
+	incbin "data/objects/graphics/diddy_scared_frame6.bin"
 
 ;$D369D2 (sprite graphic)
-SPRITE_GRAPHIC_224C:
-	incbin "data/objects/graphics/sprite_graphic_224C.bin"
+diddy_scared_frame7:
+	incbin "data/objects/graphics/diddy_scared_frame7.bin"
 
 ;$D36C76 (sprite graphic)
-SPRITE_GRAPHIC_2250:
-	incbin "data/objects/graphics/sprite_graphic_2250.bin"
+diddy_scared_frame8:
+	incbin "data/objects/graphics/diddy_scared_frame8.bin"
 
 ;$D36F36 (sprite graphic)
-SPRITE_GRAPHIC_2254:
-	incbin "data/objects/graphics/sprite_graphic_2254.bin"
+diddy_scared_frame9:
+	incbin "data/objects/graphics/diddy_scared_frame9.bin"
 
 ;$D371FC (sprite graphic)
-SPRITE_GRAPHIC_2258:
-	incbin "data/objects/graphics/sprite_graphic_2258.bin"
+diddy_scared_frame10:
+	incbin "data/objects/graphics/diddy_scared_frame10.bin"
 
 ;$D3751C (sprite graphic)
-SPRITE_GRAPHIC_225C:
-	incbin "data/objects/graphics/sprite_graphic_225C.bin"
+diddy_scared_frame11:
+	incbin "data/objects/graphics/diddy_scared_frame11.bin"
 
 ;$D37842 (sprite graphic)
-SPRITE_GRAPHIC_2260:
-	incbin "data/objects/graphics/sprite_graphic_2260.bin"
+squitter_web_shot_frame1:
+	incbin "data/objects/graphics/squitter_web_shot_frame1.bin"
 
 ;$D3786C (sprite graphic)
-SPRITE_GRAPHIC_2264:
-	incbin "data/objects/graphics/sprite_graphic_2264.bin"
+squitter_web_shot_frame2:
+	incbin "data/objects/graphics/squitter_web_shot_frame2.bin"
 
 ;$D378B8 (sprite graphic)
-SPRITE_GRAPHIC_2268:
-	incbin "data/objects/graphics/sprite_graphic_2268.bin"
+squitter_web_shot_frame3:
+	incbin "data/objects/graphics/squitter_web_shot_frame3.bin"
 
 ;$D37926 (sprite graphic)
-SPRITE_GRAPHIC_226C:
-	incbin "data/objects/graphics/sprite_graphic_226C.bin"
+squitter_web_shot_frame4:
+	incbin "data/objects/graphics/squitter_web_shot_frame4.bin"
 
 ;$D379D2 (sprite graphic)
-SPRITE_GRAPHIC_2270:
-	incbin "data/objects/graphics/sprite_graphic_2270.bin"
+squitter_web_shot_frame5:
+	incbin "data/objects/graphics/squitter_web_shot_frame5.bin"
 
 ;$D37AA0 (sprite graphic)
-SPRITE_GRAPHIC_2274:
-	incbin "data/objects/graphics/sprite_graphic_2274.bin"
+squitter_web_shot_frame6:
+	incbin "data/objects/graphics/squitter_web_shot_frame6.bin"
 
 ;$D37B6E (sprite graphic)
-SPRITE_GRAPHIC_2278:
-	incbin "data/objects/graphics/sprite_graphic_2278.bin"
+squitter_web_shot_frame7:
+	incbin "data/objects/graphics/squitter_web_shot_frame7.bin"
 
 ;$D37C3C (sprite graphic)
-SPRITE_GRAPHIC_227C:
-	incbin "data/objects/graphics/sprite_graphic_227C.bin"
+squitter_web_shot_frame8:
+	incbin "data/objects/graphics/squitter_web_shot_frame8.bin"
 
 ;$D37CE8 (sprite graphic)
-SPRITE_GRAPHIC_2280:
-	incbin "data/objects/graphics/sprite_graphic_2280.bin"
+squitter_web_shot_frame9:
+	incbin "data/objects/graphics/squitter_web_shot_frame9.bin"
 
 ;$D37D78 (sprite graphic)
-SPRITE_GRAPHIC_2284:
-	incbin "data/objects/graphics/sprite_graphic_2284.bin"
+squitter_web_shot_frame10:
+	incbin "data/objects/graphics/squitter_web_shot_frame10.bin"
 
 ;$D37E24 (sprite graphic)
-SPRITE_GRAPHIC_2288:
-	incbin "data/objects/graphics/sprite_graphic_2288.bin"
+squitter_web_shot_frame11:
+	incbin "data/objects/graphics/squitter_web_shot_frame11.bin"
 
 ;$D37ED0 (sprite graphic)
-SPRITE_GRAPHIC_228C:
-	incbin "data/objects/graphics/sprite_graphic_228C.bin"
+squitter_web_shot_frame12:
+	incbin "data/objects/graphics/squitter_web_shot_frame12.bin"
 
 ;$D37F7C (sprite graphic)
-SPRITE_GRAPHIC_2290:
-	incbin "data/objects/graphics/sprite_graphic_2290.bin"
+squitter_web_platform_frame1:
+	incbin "data/objects/graphics/squitter_web_platform_frame1.bin"
 
 ;$D37FEA (sprite graphic)
-SPRITE_GRAPHIC_2294:
-	incbin "data/objects/graphics/sprite_graphic_2294.bin"
+squitter_web_platform_frame2:
+	incbin "data/objects/graphics/squitter_web_platform_frame2.bin"
 
 ;$D38058 (sprite graphic)
-SPRITE_GRAPHIC_2298:
-	incbin "data/objects/graphics/sprite_graphic_2298.bin"
+squitter_web_platform_frame3:
+	incbin "data/objects/graphics/squitter_web_platform_frame3.bin"
 
 ;$D380E2 (sprite graphic)
-SPRITE_GRAPHIC_229C:
-	incbin "data/objects/graphics/sprite_graphic_229C.bin"
+squitter_web_platform_frame4:
+	incbin "data/objects/graphics/squitter_web_platform_frame4.bin"
 
 ;$D3818E (sprite graphic)
-SPRITE_GRAPHIC_22A0:
-	incbin "data/objects/graphics/sprite_graphic_22A0.bin"
+squitter_web_platform_frame5:
+	incbin "data/objects/graphics/squitter_web_platform_frame5.bin"
 
 ;$D3825C (sprite graphic)
-SPRITE_GRAPHIC_22A4:
-	incbin "data/objects/graphics/sprite_graphic_22A4.bin"
+squitter_web_platform_frame6:
+	incbin "data/objects/graphics/squitter_web_platform_frame6.bin"
 
 ;$D3836E (sprite graphic)
-SPRITE_GRAPHIC_22A8:
-	incbin "data/objects/graphics/sprite_graphic_22A8.bin"
+squitter_web_platform_frame7:
+	incbin "data/objects/graphics/squitter_web_platform_frame7.bin"
 
 ;$D384BE (sprite graphic)
-SPRITE_GRAPHIC_22AC:
-	incbin "data/objects/graphics/sprite_graphic_22AC.bin"
+squitter_web_platform_frame8:
+	incbin "data/objects/graphics/squitter_web_platform_frame8.bin"
 
 ;$D38696 (sprite graphic)
-SPRITE_GRAPHIC_22B0:
-	incbin "data/objects/graphics/sprite_graphic_22B0.bin"
+squitter_web_platform_frame9:
+	incbin "data/objects/graphics/squitter_web_platform_frame9.bin"
 
 ;$D3888A (sprite graphic)
-SPRITE_GRAPHIC_22B4:
-	incbin "data/objects/graphics/sprite_graphic_22B4.bin"
+squitter_web_platform_frame10:
+	incbin "data/objects/graphics/squitter_web_platform_frame10.bin"
 
 ;$D38AA0 (sprite graphic)
-SPRITE_GRAPHIC_22B8:
-	incbin "data/objects/graphics/sprite_graphic_22B8.bin"
+squitter_web_platform_frame11:
+	incbin "data/objects/graphics/squitter_web_platform_frame11.bin"
 
 ;$D38CB6 (sprite graphic)
-SPRITE_GRAPHIC_22BC:
-	incbin "data/objects/graphics/sprite_graphic_22BC.bin"
+squitter_web_platform_frame12:
+	incbin "data/objects/graphics/squitter_web_platform_frame12.bin"
 
 ;$D38ECC (sprite graphic)
-SPRITE_GRAPHIC_22C0:
-	incbin "data/objects/graphics/sprite_graphic_22C0.bin"
+krockhead_frame1:
+	incbin "data/objects/graphics/krockhead_frame1.bin"
 
 ;$D38F18 (sprite graphic)
-SPRITE_GRAPHIC_22C4:
-	incbin "data/objects/graphics/sprite_graphic_22C4.bin"
+krockhead_frame2:
+	incbin "data/objects/graphics/krockhead_frame2.bin"
 
 ;$D38FA8 (sprite graphic)
-SPRITE_GRAPHIC_22C8:
-	incbin "data/objects/graphics/sprite_graphic_22C8.bin"
+krockhead_frame3:
+	incbin "data/objects/graphics/krockhead_frame3.bin"
 
 ;$D3905A (sprite graphic)
-SPRITE_GRAPHIC_22CC:
-	incbin "data/objects/graphics/sprite_graphic_22CC.bin"
+krockhead_frame4:
+	incbin "data/objects/graphics/krockhead_frame4.bin"
 
 ;$D39150 (sprite graphic)
-SPRITE_GRAPHIC_22D0:
-	incbin "data/objects/graphics/sprite_graphic_22D0.bin"
+krockhead_frame5:
+	incbin "data/objects/graphics/krockhead_frame5.bin"
 
 ;$D392A6 (sprite graphic)
-SPRITE_GRAPHIC_22D4:
-	incbin "data/objects/graphics/sprite_graphic_22D4.bin"
+krockhead_frame6:
+	incbin "data/objects/graphics/krockhead_frame6.bin"
 
 ;$D3941E (sprite graphic)
-SPRITE_GRAPHIC_22D8:
-	incbin "data/objects/graphics/sprite_graphic_22D8.bin"
+krockhead_frame7:
+	incbin "data/objects/graphics/krockhead_frame7.bin"
 
 ;$D39596 (sprite graphic)
-SPRITE_GRAPHIC_22DC:
-	incbin "data/objects/graphics/sprite_graphic_22DC.bin"
+krockhead_frame8:
+	incbin "data/objects/graphics/krockhead_frame8.bin"
 
 ;$D3970E (sprite graphic)
-SPRITE_GRAPHIC_22E0:
-	incbin "data/objects/graphics/sprite_graphic_22E0.bin"
+krockhead_frame9:
+	incbin "data/objects/graphics/krockhead_frame9.bin"
 
 ;$D39902 (sprite graphic)
-SPRITE_GRAPHIC_22E4:
-	incbin "data/objects/graphics/sprite_graphic_22E4.bin"
+krockhead_frame10:
+	incbin "data/objects/graphics/krockhead_frame10.bin"
 
 ;$D39B18 (sprite graphic)
-SPRITE_GRAPHIC_22E8:
-	incbin "data/objects/graphics/sprite_graphic_22E8.bin"
+krockhead_frame11:
+	incbin "data/objects/graphics/krockhead_frame11.bin"
 
 ;$D39D50 (sprite graphic)
-SPRITE_GRAPHIC_22EC:
-	incbin "data/objects/graphics/sprite_graphic_22EC.bin"
+krockhead_frame12:
+	incbin "data/objects/graphics/krockhead_frame12.bin"
 
 ;$D39F88 (sprite graphic)
-SPRITE_GRAPHIC_22F0:
-	incbin "data/objects/graphics/sprite_graphic_22F0.bin"
+krockhead_frame13:
+	incbin "data/objects/graphics/krockhead_frame13.bin"
 
 ;$D3A1C0 (sprite graphic)
-SPRITE_GRAPHIC_22F4:
-	incbin "data/objects/graphics/sprite_graphic_22F4.bin"
+krockhead_frame14:
+	incbin "data/objects/graphics/krockhead_frame14.bin"
 
 ;$D3A420 (sprite graphic)
-SPRITE_GRAPHIC_22F8:
-	incbin "data/objects/graphics/sprite_graphic_22F8.bin"
+krockhead_frame15:
+	incbin "data/objects/graphics/krockhead_frame15.bin"
 
 ;$D3A67A (sprite graphic)
-SPRITE_GRAPHIC_22FC:
-	incbin "data/objects/graphics/sprite_graphic_22FC.bin"
+krockhead_frame16:
+	incbin "data/objects/graphics/krockhead_frame16.bin"
 
 ;$D3A8DA (sprite graphic)
-SPRITE_GRAPHIC_2300:
-	incbin "data/objects/graphics/sprite_graphic_2300.bin"
+krockhead_frame17:
+	incbin "data/objects/graphics/krockhead_frame17.bin"
 
 ;$D3AA52 (sprite graphic)
-SPRITE_GRAPHIC_2304:
-	incbin "data/objects/graphics/sprite_graphic_2304.bin"
+krockhead_frame18:
+	incbin "data/objects/graphics/krockhead_frame18.bin"
 
 ;$D3ABCA (sprite graphic)
-SPRITE_GRAPHIC_2308:
-	incbin "data/objects/graphics/sprite_graphic_2308.bin"
+unknown_2308_frame1:
+	incbin "data/objects/graphics/unknown_2308_frame1.bin"
 
 ;$D3ABF4 (sprite graphic)
-SPRITE_GRAPHIC_230C:
-	incbin "data/objects/graphics/sprite_graphic_230C.bin"
+unknown_2308_frame2:
+	incbin "data/objects/graphics/unknown_2308_frame2.bin"
 
 ;$D3AC40 (sprite graphic)
-SPRITE_GRAPHIC_2310:
-	incbin "data/objects/graphics/sprite_graphic_2310.bin"
+unknown_2308_frame3:
+	incbin "data/objects/graphics/unknown_2308_frame3.bin"
 
 ;$D3ACEC (sprite graphic)
-SPRITE_GRAPHIC_2314:
-	incbin "data/objects/graphics/sprite_graphic_2314.bin"
+unknown_2308_frame4:
+	incbin "data/objects/graphics/unknown_2308_frame4.bin"
 
 ;$D3AD9E (sprite graphic)
-SPRITE_GRAPHIC_2318:
-	incbin "data/objects/graphics/sprite_graphic_2318.bin"
+unknown_2308_frame5:
+	incbin "data/objects/graphics/unknown_2308_frame5.bin"
 
 ;$D3AE0C (sprite graphic)
-SPRITE_GRAPHIC_231C:
-	incbin "data/objects/graphics/sprite_graphic_231C.bin"
+unknown_2308_frame6:
+	incbin "data/objects/graphics/unknown_2308_frame6.bin"
 
 ;$D3AE58 (sprite graphic)
-SPRITE_GRAPHIC_2320:
-	incbin "data/objects/graphics/sprite_graphic_2320.bin"
+kleever_broken_hilt_frame1:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame1.bin"
 
 ;$D3AF6A (sprite graphic)
-SPRITE_GRAPHIC_2324:
-	incbin "data/objects/graphics/sprite_graphic_2324.bin"
+kleever_broken_hilt_frame2:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame2.bin"
 
 ;$D3B0DC (sprite graphic)
-SPRITE_GRAPHIC_2328:
-	incbin "data/objects/graphics/sprite_graphic_2328.bin"
+kleever_broken_hilt_frame3:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame3.bin"
 
 ;$D3B1EE (sprite graphic)
-SPRITE_GRAPHIC_232C:
-	incbin "data/objects/graphics/sprite_graphic_232C.bin"
+kleever_broken_hilt_frame4:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame4.bin"
 
 ;$D3B3A4 (sprite graphic)
-SPRITE_GRAPHIC_2330:
-	incbin "data/objects/graphics/sprite_graphic_2330.bin"
+kleever_broken_hilt_frame5:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame5.bin"
 
 ;$D3B53E (sprite graphic)
-SPRITE_GRAPHIC_2334:
-	incbin "data/objects/graphics/sprite_graphic_2334.bin"
+kleever_broken_hilt_frame6:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame6.bin"
 
 ;$D3B710 (sprite graphic)
-SPRITE_GRAPHIC_2338:
-	incbin "data/objects/graphics/sprite_graphic_2338.bin"
+kleever_broken_hilt_frame7:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame7.bin"
 
 ;$D3B888 (sprite graphic)
-SPRITE_GRAPHIC_233C:
-	incbin "data/objects/graphics/sprite_graphic_233C.bin"
+kleever_broken_hilt_frame8:
+	incbin "data/objects/graphics/kleever_broken_hilt_frame8.bin"
 
 ;$D3BA1C (sprite graphic)
-SPRITE_GRAPHIC_2340:
-	incbin "data/objects/graphics/sprite_graphic_2340.bin"
+kleever_fire_swirl_frame1:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame1.bin"
 
 ;$D3BD36 (sprite graphic)
-SPRITE_GRAPHIC_2344:
-	incbin "data/objects/graphics/sprite_graphic_2344.bin"
+kleever_fire_swirl_frame2:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame2.bin"
 
 ;$D3C094 (sprite graphic)
-SPRITE_GRAPHIC_2348:
-	incbin "data/objects/graphics/sprite_graphic_2348.bin"
+kleever_fire_swirl_frame3:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame3.bin"
 
 ;$D3C3D0 (sprite graphic)
-SPRITE_GRAPHIC_234C:
-	incbin "data/objects/graphics/sprite_graphic_234C.bin"
+kleever_fire_swirl_frame4:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame4.bin"
 
 ;$D3C706 (sprite graphic)
-SPRITE_GRAPHIC_2350:
-	incbin "data/objects/graphics/sprite_graphic_2350.bin"
+kleever_fire_swirl_frame5:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame5.bin"
 
 ;$D3C9FE (sprite graphic)
-SPRITE_GRAPHIC_2354:
-	incbin "data/objects/graphics/sprite_graphic_2354.bin"
+kleever_fire_swirl_frame6:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame6.bin"
 
 ;$D3CD3A (sprite graphic)
-SPRITE_GRAPHIC_2358:
-	incbin "data/objects/graphics/sprite_graphic_2358.bin"
+kleever_fire_swirl_frame7:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame7.bin"
 
 ;$D3D054 (sprite graphic)
-SPRITE_GRAPHIC_235C:
-	incbin "data/objects/graphics/sprite_graphic_235C.bin"
+kleever_fire_swirl_frame8:
+	incbin "data/objects/graphics/kleever_fire_swirl_frame8.bin"
 
 ;$D3D34C (sprite graphic)
-SPRITE_GRAPHIC_2360:
-	incbin "data/objects/graphics/sprite_graphic_2360.bin"
+krook_hook_frame1:
+	incbin "data/objects/graphics/krook_hook_frame1.bin"
 
 ;$D3D41A (sprite graphic)
-SPRITE_GRAPHIC_2364:
-	incbin "data/objects/graphics/sprite_graphic_2364.bin"
+krook_hook_frame2:
+	incbin "data/objects/graphics/krook_hook_frame2.bin"
 
 ;$D3D4C6 (sprite graphic)
-SPRITE_GRAPHIC_2368:
-	incbin "data/objects/graphics/sprite_graphic_2368.bin"
+krook_hook_frame3:
+	incbin "data/objects/graphics/krook_hook_frame3.bin"
 
 ;$D3D572 (sprite graphic)
-SPRITE_GRAPHIC_236C:
-	incbin "data/objects/graphics/sprite_graphic_236C.bin"
+krook_hook_frame4:
+	incbin "data/objects/graphics/krook_hook_frame4.bin"
 
 ;$D3D61E (sprite graphic)
-SPRITE_GRAPHIC_2370:
-	incbin "data/objects/graphics/sprite_graphic_2370.bin"
+krook_hook_frame5:
+	incbin "data/objects/graphics/krook_hook_frame5.bin"
 
 ;$D3D6CA (sprite graphic)
-SPRITE_GRAPHIC_2374:
-	incbin "data/objects/graphics/sprite_graphic_2374.bin"
+krook_hook_frame6:
+	incbin "data/objects/graphics/krook_hook_frame6.bin"
 
 ;$D3D798 (sprite graphic)
-SPRITE_GRAPHIC_2378:
-	incbin "data/objects/graphics/sprite_graphic_2378.bin"
+krook_hook_frame7:
+	incbin "data/objects/graphics/krook_hook_frame7.bin"
 
 ;$D3D844 (sprite graphic)
-SPRITE_GRAPHIC_237C:
-	incbin "data/objects/graphics/sprite_graphic_237C.bin"
+krook_hook_frame8:
+	incbin "data/objects/graphics/krook_hook_frame8.bin"
 
 ;$D3D8F0 (sprite graphic)
-SPRITE_GRAPHIC_2380:
-	incbin "data/objects/graphics/sprite_graphic_2380.bin"
+krook_hook_frame9:
+	incbin "data/objects/graphics/krook_hook_frame9.bin"
 
 ;$D3D99C (sprite graphic)
-SPRITE_GRAPHIC_2384:
-	incbin "data/objects/graphics/sprite_graphic_2384.bin"
+krook_hook_frame10:
+	incbin "data/objects/graphics/krook_hook_frame10.bin"
 
 ;$D3DA6A (sprite graphic)
-SPRITE_GRAPHIC_2388:
-	incbin "data/objects/graphics/sprite_graphic_2388.bin"
+krook_idle_frame1:
+	incbin "data/objects/graphics/krook_idle_frame1.bin"
 
 ;$D3DE28 (sprite graphic)
-SPRITE_GRAPHIC_238C:
-	incbin "data/objects/graphics/sprite_graphic_238C.bin"
+krook_idle_frame2:
+	incbin "data/objects/graphics/krook_idle_frame2.bin"
 
 ;$D3E1E6 (sprite graphic)
-SPRITE_GRAPHIC_2390:
-	incbin "data/objects/graphics/sprite_graphic_2390.bin"
+cattail_frame1:
+	incbin "data/objects/graphics/cattail_frame1.bin"
 
 ;$D3E578 (sprite graphic)
-SPRITE_GRAPHIC_2394:
-	incbin "data/objects/graphics/sprite_graphic_2394.bin"
+cattail_frame2:
+	incbin "data/objects/graphics/cattail_frame2.bin"
 
 ;$D3E92C (sprite graphic)
-SPRITE_GRAPHIC_2398:
-	incbin "data/objects/graphics/sprite_graphic_2398.bin"
+cattail_frame3:
+	incbin "data/objects/graphics/cattail_frame3.bin"
 
 ;$D3ECE0 (sprite graphic)
-SPRITE_GRAPHIC_239C:
-	incbin "data/objects/graphics/sprite_graphic_239C.bin"
+cattail_frame4:
+	incbin "data/objects/graphics/cattail_frame4.bin"
 
 ;$D3F094 (sprite graphic)
-SPRITE_GRAPHIC_23A0:
-	incbin "data/objects/graphics/sprite_graphic_23A0.bin"
+cattail_frame5:
+	incbin "data/objects/graphics/cattail_frame5.bin"
 
 ;$D3F448 (sprite graphic)
-SPRITE_GRAPHIC_23A4:
-	incbin "data/objects/graphics/sprite_graphic_23A4.bin"
+cattail_frame6:
+	incbin "data/objects/graphics/cattail_frame6.bin"
 
 ;$D3F79C (sprite graphic)
-SPRITE_GRAPHIC_23A8:
-	incbin "data/objects/graphics/sprite_graphic_23A8.bin"
+cattail_frame7:
+	incbin "data/objects/graphics/cattail_frame7.bin"
 
 check bankcross off
 ;$D3FAF0
@@ -8429,516 +8429,516 @@ mine_bg_layer_2_8x8_tilemap:
 check bankcross full
 
 ;$D401ED (sprite graphic)
-SPRITE_GRAPHIC_23AC:
-	incbin "data/objects/graphics/sprite_graphic_23AC.bin"
+cattail_frame8:
+	incbin "data/objects/graphics/cattail_frame8.bin"
 
 ;$D40525 (sprite graphic)
-SPRITE_GRAPHIC_23B0:
-	incbin "data/objects/graphics/sprite_graphic_23B0.bin"
+kong_letter_k_frame1:
+	incbin "data/objects/graphics/kong_letter_k_frame1.bin"
 
 ;$D40659 (sprite graphic)
-SPRITE_GRAPHIC_23B4:
-	incbin "data/objects/graphics/sprite_graphic_23B4.bin"
+kong_letter_k_frame2:
+	incbin "data/objects/graphics/kong_letter_k_frame2.bin"
 
 ;$D4078D (sprite graphic)
-SPRITE_GRAPHIC_23B8:
-	incbin "data/objects/graphics/sprite_graphic_23B8.bin"
+kong_letter_k_frame3:
+	incbin "data/objects/graphics/kong_letter_k_frame3.bin"
 
 ;$D408C1 (sprite graphic)
-SPRITE_GRAPHIC_23BC:
-	incbin "data/objects/graphics/sprite_graphic_23BC.bin"
+kong_letter_k_frame4:
+	incbin "data/objects/graphics/kong_letter_k_frame4.bin"
 
 ;$D409D3 (sprite graphic)
-SPRITE_GRAPHIC_23C0:
-	incbin "data/objects/graphics/sprite_graphic_23C0.bin"
+kong_letter_k_frame5:
+	incbin "data/objects/graphics/kong_letter_k_frame5.bin"
 
 ;$D40A63 (sprite graphic)
-SPRITE_GRAPHIC_23C4:
-	incbin "data/objects/graphics/sprite_graphic_23C4.bin"
+kong_letter_k_frame6:
+	incbin "data/objects/graphics/kong_letter_k_frame6.bin"
 
 ;$D40B75 (sprite graphic)
-SPRITE_GRAPHIC_23C8:
-	incbin "data/objects/graphics/sprite_graphic_23C8.bin"
+kong_letter_k_frame7:
+	incbin "data/objects/graphics/kong_letter_k_frame7.bin"
 
 ;$D40CA9 (sprite graphic)
-SPRITE_GRAPHIC_23CC:
-	incbin "data/objects/graphics/sprite_graphic_23CC.bin"
+kong_letter_k_frame8:
+	incbin "data/objects/graphics/kong_letter_k_frame8.bin"
 
 ;$D40DDD (sprite graphic)
-SPRITE_GRAPHIC_23D0:
-	incbin "data/objects/graphics/sprite_graphic_23D0.bin"
+kong_letter_o_frame1:
+	incbin "data/objects/graphics/kong_letter_o_frame1.bin"
 
 ;$D40F11 (sprite graphic)
-SPRITE_GRAPHIC_23D4:
-	incbin "data/objects/graphics/sprite_graphic_23D4.bin"
+kong_letter_o_frame2:
+	incbin "data/objects/graphics/kong_letter_o_frame2.bin"
 
 ;$D41045 (sprite graphic)
-SPRITE_GRAPHIC_23D8:
-	incbin "data/objects/graphics/sprite_graphic_23D8.bin"
+kong_letter_o_frame3:
+	incbin "data/objects/graphics/kong_letter_o_frame3.bin"
 
 ;$D41179 (sprite graphic)
-SPRITE_GRAPHIC_23DC:
-	incbin "data/objects/graphics/sprite_graphic_23DC.bin"
+kong_letter_o_frame4:
+	incbin "data/objects/graphics/kong_letter_o_frame4.bin"
 
 ;$D4128B (sprite graphic)
-SPRITE_GRAPHIC_23E0:
-	incbin "data/objects/graphics/sprite_graphic_23E0.bin"
+kong_letter_o_frame5:
+	incbin "data/objects/graphics/kong_letter_o_frame5.bin"
 
 ;$D4131B (sprite graphic)
-SPRITE_GRAPHIC_23E4:
-	incbin "data/objects/graphics/sprite_graphic_23E4.bin"
+kong_letter_o_frame6:
+	incbin "data/objects/graphics/kong_letter_o_frame6.bin"
 
 ;$D4142D (sprite graphic)
-SPRITE_GRAPHIC_23E8:
-	incbin "data/objects/graphics/sprite_graphic_23E8.bin"
+kong_letter_o_frame7:
+	incbin "data/objects/graphics/kong_letter_o_frame7.bin"
 
 ;$D41561 (sprite graphic)
-SPRITE_GRAPHIC_23EC:
-	incbin "data/objects/graphics/sprite_graphic_23EC.bin"
+kong_letter_o_frame8:
+	incbin "data/objects/graphics/kong_letter_o_frame8.bin"
 
 ;$D41695 (sprite graphic)
-SPRITE_GRAPHIC_23F0:
-	incbin "data/objects/graphics/sprite_graphic_23F0.bin"
+kong_letter_n_frame1:
+	incbin "data/objects/graphics/kong_letter_n_frame1.bin"
 
 ;$D417C9 (sprite graphic)
-SPRITE_GRAPHIC_23F4:
-	incbin "data/objects/graphics/sprite_graphic_23F4.bin"
+kong_letter_n_frame2:
+	incbin "data/objects/graphics/kong_letter_n_frame2.bin"
 
 ;$D418FD (sprite graphic)
-SPRITE_GRAPHIC_23F8:
-	incbin "data/objects/graphics/sprite_graphic_23F8.bin"
+kong_letter_n_frame3:
+	incbin "data/objects/graphics/kong_letter_n_frame3.bin"
 
 ;$D41A31 (sprite graphic)
-SPRITE_GRAPHIC_23FC:
-	incbin "data/objects/graphics/sprite_graphic_23FC.bin"
+kong_letter_n_frame4:
+	incbin "data/objects/graphics/kong_letter_n_frame4.bin"
 
 ;$D41B43 (sprite graphic)
-SPRITE_GRAPHIC_2400:
-	incbin "data/objects/graphics/sprite_graphic_2400.bin"
+kong_letter_n_frame5:
+	incbin "data/objects/graphics/kong_letter_n_frame5.bin"
 
 ;$D41BD3 (sprite graphic)
-SPRITE_GRAPHIC_2404:
-	incbin "data/objects/graphics/sprite_graphic_2404.bin"
+kong_letter_n_frame6:
+	incbin "data/objects/graphics/kong_letter_n_frame6.bin"
 
 ;$D41CE5 (sprite graphic)
-SPRITE_GRAPHIC_2408:
-	incbin "data/objects/graphics/sprite_graphic_2408.bin"
+kong_letter_n_frame7:
+	incbin "data/objects/graphics/kong_letter_n_frame7.bin"
 
 ;$D41E19 (sprite graphic)
-SPRITE_GRAPHIC_240C:
-	incbin "data/objects/graphics/sprite_graphic_240C.bin"
+kong_letter_n_frame8:
+	incbin "data/objects/graphics/kong_letter_n_frame8.bin"
 
 ;$D41F4D (sprite graphic)
-SPRITE_GRAPHIC_2410:
-	incbin "data/objects/graphics/sprite_graphic_2410.bin"
+kong_letter_g_frame1:
+	incbin "data/objects/graphics/kong_letter_g_frame1.bin"
 
 ;$D42081 (sprite graphic)
-SPRITE_GRAPHIC_2414:
-	incbin "data/objects/graphics/sprite_graphic_2414.bin"
+kong_letter_g_frame2:
+	incbin "data/objects/graphics/kong_letter_g_frame2.bin"
 
 ;$D421B5 (sprite graphic)
-SPRITE_GRAPHIC_2418:
-	incbin "data/objects/graphics/sprite_graphic_2418.bin"
+kong_letter_g_frame3:
+	incbin "data/objects/graphics/kong_letter_g_frame3.bin"
 
 ;$D422E9 (sprite graphic)
-SPRITE_GRAPHIC_241C:
-	incbin "data/objects/graphics/sprite_graphic_241C.bin"
+kong_letter_g_frame4:
+	incbin "data/objects/graphics/kong_letter_g_frame4.bin"
 
 ;$D423FB (sprite graphic)
-SPRITE_GRAPHIC_2420:
-	incbin "data/objects/graphics/sprite_graphic_2420.bin"
+kong_letter_g_frame5:
+	incbin "data/objects/graphics/kong_letter_g_frame5.bin"
 
 ;$D4248B (sprite graphic)
-SPRITE_GRAPHIC_2424:
-	incbin "data/objects/graphics/sprite_graphic_2424.bin"
+kong_letter_g_frame6:
+	incbin "data/objects/graphics/kong_letter_g_frame6.bin"
 
 ;$D4259D (sprite graphic)
-SPRITE_GRAPHIC_2428:
-	incbin "data/objects/graphics/sprite_graphic_2428.bin"
+kong_letter_g_frame7:
+	incbin "data/objects/graphics/kong_letter_g_frame7.bin"
 
 ;$D426D1 (sprite graphic)
-SPRITE_GRAPHIC_242C:
-	incbin "data/objects/graphics/sprite_graphic_242C.bin"
+kong_letter_g_frame8:
+	incbin "data/objects/graphics/kong_letter_g_frame8.bin"
 
 ;$D42805 (sprite graphic)
-SPRITE_GRAPHIC_2430:
-	incbin "data/objects/graphics/sprite_graphic_2430.bin"
+mini_necky_hurt_frame1:
+	incbin "data/objects/graphics/mini_necky_hurt_frame1.bin"
 
 ;$D429DD (sprite graphic)
-SPRITE_GRAPHIC_2434:
-	incbin "data/objects/graphics/sprite_graphic_2434.bin"
+mini_necky_hurt_frame2:
+	incbin "data/objects/graphics/mini_necky_hurt_frame2.bin"
 
 ;$D42C1B (sprite graphic)
-SPRITE_GRAPHIC_2438:
-	incbin "data/objects/graphics/sprite_graphic_2438.bin"
+mini_necky_hurt_frame3:
+	incbin "data/objects/graphics/mini_necky_hurt_frame3.bin"
 
 ;$D42EB3 (sprite graphic)
-SPRITE_GRAPHIC_243C:
-	incbin "data/objects/graphics/sprite_graphic_243C.bin"
+mini_necky_hurt_frame4:
+	incbin "data/objects/graphics/mini_necky_hurt_frame4.bin"
 
 ;$D43129 (sprite graphic)
-SPRITE_GRAPHIC_2440:
-	incbin "data/objects/graphics/sprite_graphic_2440.bin"
+mini_necky_hurt_frame5:
+	incbin "data/objects/graphics/mini_necky_hurt_frame5.bin"
 
 ;$D433C1 (sprite graphic)
-SPRITE_GRAPHIC_2444:
-	incbin "data/objects/graphics/sprite_graphic_2444.bin"
+falling_leaf_frame1:
+	incbin "data/objects/graphics/falling_leaf_frame1.bin"
 
 ;$D433EB (sprite graphic)
-SPRITE_GRAPHIC_2448:
-	incbin "data/objects/graphics/sprite_graphic_2448.bin"
+falling_leaf_frame2:
+	incbin "data/objects/graphics/falling_leaf_frame2.bin"
 
 ;$D43415 (sprite graphic)
-SPRITE_GRAPHIC_244C:
-	incbin "data/objects/graphics/sprite_graphic_244C.bin"
+falling_leaf_frame3:
+	incbin "data/objects/graphics/falling_leaf_frame3.bin"
 
 ;$D4343F (sprite graphic)
-SPRITE_GRAPHIC_2450:
-	incbin "data/objects/graphics/sprite_graphic_2450.bin"
+falling_leaf_frame4:
+	incbin "data/objects/graphics/falling_leaf_frame4.bin"
 
 ;$D43469 (sprite graphic)
-SPRITE_GRAPHIC_2454:
-	incbin "data/objects/graphics/sprite_graphic_2454.bin"
+falling_leaf_frame5:
+	incbin "data/objects/graphics/falling_leaf_frame5.bin"
 
 ;$D43493 (sprite graphic)
-SPRITE_GRAPHIC_2458:
-	incbin "data/objects/graphics/sprite_graphic_2458.bin"
+falling_leaf_frame6:
+	incbin "data/objects/graphics/falling_leaf_frame6.bin"
 
 ;$D434BD (sprite graphic)
-SPRITE_GRAPHIC_245C:
-	incbin "data/objects/graphics/sprite_graphic_245C.bin"
+falling_leaf_frame7:
+	incbin "data/objects/graphics/falling_leaf_frame7.bin"
 
 ;$D434E7 (sprite graphic)
-SPRITE_GRAPHIC_2460:
-	incbin "data/objects/graphics/sprite_graphic_2460.bin"
+falling_leaf_frame8:
+	incbin "data/objects/graphics/falling_leaf_frame8.bin"
 
 ;$D43511 (sprite graphic)
-SPRITE_GRAPHIC_2464:
-	incbin "data/objects/graphics/sprite_graphic_2464.bin"
+falling_leaf_frame9:
+	incbin "data/objects/graphics/falling_leaf_frame9.bin"
 
 ;$D435A1 (sprite graphic)
-SPRITE_GRAPHIC_2468:
-	incbin "data/objects/graphics/sprite_graphic_2468.bin"
+falling_leaf_frame10:
+	incbin "data/objects/graphics/falling_leaf_frame10.bin"
 
 ;$D4362B (sprite graphic)
-SPRITE_GRAPHIC_246C:
-	incbin "data/objects/graphics/sprite_graphic_246C.bin"
+falling_leaf_frame11:
+	incbin "data/objects/graphics/falling_leaf_frame11.bin"
 
 ;$D436B5 (sprite graphic)
-SPRITE_GRAPHIC_2470:
-	incbin "data/objects/graphics/sprite_graphic_2470.bin"
+falling_leaf_frame12:
+	incbin "data/objects/graphics/falling_leaf_frame12.bin"
 
 ;$D4373F (sprite graphic)
-SPRITE_GRAPHIC_2474:
-	incbin "data/objects/graphics/sprite_graphic_2474.bin"
+falling_leaf_frame13:
+	incbin "data/objects/graphics/falling_leaf_frame13.bin"
 
 ;$D437AD (sprite graphic)
-SPRITE_GRAPHIC_2478:
-	incbin "data/objects/graphics/sprite_graphic_2478.bin"
+falling_leaf_frame14:
+	incbin "data/objects/graphics/falling_leaf_frame14.bin"
 
 ;$D4381B (sprite graphic)
-SPRITE_GRAPHIC_247C:
-	incbin "data/objects/graphics/sprite_graphic_247C.bin"
+falling_leaf_frame15:
+	incbin "data/objects/graphics/falling_leaf_frame15.bin"
 
 ;$D438A5 (sprite graphic)
-SPRITE_GRAPHIC_2480:
-	incbin "data/objects/graphics/sprite_graphic_2480.bin"
+falling_leaf_frame16:
+	incbin "data/objects/graphics/falling_leaf_frame16.bin"
 
 ;$D4392F (sprite graphic)
-SPRITE_GRAPHIC_2484:
-	incbin "data/objects/graphics/sprite_graphic_2484.bin"
+falling_leaf_frame17:
+	incbin "data/objects/graphics/falling_leaf_frame17.bin"
 
 ;$D439B9 (sprite graphic)
-SPRITE_GRAPHIC_2488:
-	incbin "data/objects/graphics/sprite_graphic_2488.bin"
+falling_leaf_frame18:
+	incbin "data/objects/graphics/falling_leaf_frame18.bin"
 
 ;$D43A43 (sprite graphic)
-SPRITE_GRAPHIC_248C:
-	incbin "data/objects/graphics/sprite_graphic_248C.bin"
+falling_leaf_frame19:
+	incbin "data/objects/graphics/falling_leaf_frame19.bin"
 
 ;$D43ACD (sprite graphic)
-SPRITE_GRAPHIC_2490:
-	incbin "data/objects/graphics/sprite_graphic_2490.bin"
+falling_leaf_frame20:
+	incbin "data/objects/graphics/falling_leaf_frame20.bin"
 
 ;$D43B57 (sprite graphic)
-SPRITE_GRAPHIC_2494:
-	incbin "data/objects/graphics/sprite_graphic_2494.bin"
+falling_leaf_frame21:
+	incbin "data/objects/graphics/falling_leaf_frame21.bin"
 
 ;$D43BE1 (sprite graphic)
-SPRITE_GRAPHIC_2498:
-	incbin "data/objects/graphics/sprite_graphic_2498.bin"
+falling_leaf_frame22:
+	incbin "data/objects/graphics/falling_leaf_frame22.bin"
 
 ;$D43C6B (sprite graphic)
-SPRITE_GRAPHIC_249C:
-	incbin "data/objects/graphics/sprite_graphic_249C.bin"
+falling_leaf_frame23:
+	incbin "data/objects/graphics/falling_leaf_frame23.bin"
 
 ;$D43CF5 (sprite graphic)
-SPRITE_GRAPHIC_24A0:
-	incbin "data/objects/graphics/sprite_graphic_24A0.bin"
+falling_leaf_frame24:
+	incbin "data/objects/graphics/falling_leaf_frame24.bin"
 
 ;$D43D7F (sprite graphic)
-SPRITE_GRAPHIC_24A4:
-	incbin "data/objects/graphics/sprite_graphic_24A4.bin"
+hot_air_balloon_frame1:
+	incbin "data/objects/graphics/hot_air_balloon_frame1.bin"
 
 ;$D44055 (sprite graphic)
-SPRITE_GRAPHIC_24A8:
-	incbin "data/objects/graphics/sprite_graphic_24A8.bin"
+hot_air_balloon_frame2:
+	incbin "data/objects/graphics/hot_air_balloon_frame2.bin"
 
 ;$D4434D (sprite graphic)
-SPRITE_GRAPHIC_24AC:
-	incbin "data/objects/graphics/sprite_graphic_24AC.bin"
+hot_air_balloon_frame3:
+	incbin "data/objects/graphics/hot_air_balloon_frame3.bin"
 
 ;$D44623 (sprite graphic)
-SPRITE_GRAPHIC_24B0:
-	incbin "data/objects/graphics/sprite_graphic_24B0.bin"
+hot_air_balloon_frame4:
+	incbin "data/objects/graphics/hot_air_balloon_frame4.bin"
 
 ;$D448F9 (sprite graphic)
-SPRITE_GRAPHIC_24B4:
-	incbin "data/objects/graphics/sprite_graphic_24B4.bin"
+hot_air_balloon_frame5:
+	incbin "data/objects/graphics/hot_air_balloon_frame5.bin"
 
 ;$D44BB3 (sprite graphic)
-SPRITE_GRAPHIC_24B8:
-	incbin "data/objects/graphics/sprite_graphic_24B8.bin"
+hot_air_balloon_frame6:
+	incbin "data/objects/graphics/hot_air_balloon_frame6.bin"
 
 ;$D44E6D (sprite graphic)
-SPRITE_GRAPHIC_24BC:
-	incbin "data/objects/graphics/sprite_graphic_24BC.bin"
+hot_air_balloon_frame7:
+	incbin "data/objects/graphics/hot_air_balloon_frame7.bin"
 
 ;$D45127 (sprite graphic)
-SPRITE_GRAPHIC_24C0:
-	incbin "data/objects/graphics/sprite_graphic_24C0.bin"
+hot_air_balloon_frame8:
+	incbin "data/objects/graphics/hot_air_balloon_frame8.bin"
 
 ;$D453E1 (sprite graphic)
-SPRITE_GRAPHIC_24C4:
-	incbin "data/objects/graphics/sprite_graphic_24C4.bin"
+cat_o_9_tails_spin_frame1:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame1.bin"
 
 ;$D45805 (sprite graphic)
-SPRITE_GRAPHIC_24C8:
-	incbin "data/objects/graphics/sprite_graphic_24C8.bin"
+cat_o_9_tails_spin_frame2:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame2.bin"
 
 ;$D45B47 (sprite graphic)
-SPRITE_GRAPHIC_24CC:
-	incbin "data/objects/graphics/sprite_graphic_24CC.bin"
+cat_o_9_tails_spin_frame3:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame3.bin"
 
 ;$D45E23 (sprite graphic)
-SPRITE_GRAPHIC_24D0:
-	incbin "data/objects/graphics/sprite_graphic_24D0.bin"
+cat_o_9_tails_spin_frame4:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame4.bin"
 
 ;$D461E7 (sprite graphic)
-SPRITE_GRAPHIC_24D4:
-	incbin "data/objects/graphics/sprite_graphic_24D4.bin"
+cat_o_9_tails_spin_frame5:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame5.bin"
 
 ;$D4660B (sprite graphic)
-SPRITE_GRAPHIC_24D8:
-	incbin "data/objects/graphics/sprite_graphic_24D8.bin"
+cat_o_9_tails_spin_frame6:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame6.bin"
 
 ;$D4696F (sprite graphic)
-SPRITE_GRAPHIC_24DC:
-	incbin "data/objects/graphics/sprite_graphic_24DC.bin"
+cat_o_9_tails_spin_frame7:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame7.bin"
 
 ;$D46CB1 (sprite graphic)
-SPRITE_GRAPHIC_24E0:
-	incbin "data/objects/graphics/sprite_graphic_24E0.bin"
+cat_o_9_tails_spin_frame8:
+	incbin "data/objects/graphics/cat_o_9_tails_spin_frame8.bin"
 
 ;$D47097 (sprite graphic)
-SPRITE_GRAPHIC_24E4:
-	incbin "data/objects/graphics/sprite_graphic_24E4.bin"
+cat_o_9_tails_idle_frame1:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame1.bin"
 
 ;$D47373 (sprite graphic)
-SPRITE_GRAPHIC_24E8:
-	incbin "data/objects/graphics/sprite_graphic_24E8.bin"
+cat_o_9_tails_idle_frame2:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame2.bin"
 
 ;$D476B5 (sprite graphic)
-SPRITE_GRAPHIC_24EC:
-	incbin "data/objects/graphics/sprite_graphic_24EC.bin"
+cat_o_9_tails_idle_frame3:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame3.bin"
 
 ;$D479B3 (sprite graphic)
-SPRITE_GRAPHIC_24F0:
-	incbin "data/objects/graphics/sprite_graphic_24F0.bin"
+cat_o_9_tails_idle_frame4:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame4.bin"
 
 ;$D47C8F (sprite graphic)
-SPRITE_GRAPHIC_24F4:
-	incbin "data/objects/graphics/sprite_graphic_24F4.bin"
+cat_o_9_tails_idle_frame5:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame5.bin"
 
 ;$D47F4F (sprite graphic)
-SPRITE_GRAPHIC_24F8:
-	incbin "data/objects/graphics/sprite_graphic_24F8.bin"
+cat_o_9_tails_idle_frame6:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame6.bin"
 
 ;$D481ED (sprite graphic)
-SPRITE_GRAPHIC_24FC:
-	incbin "data/objects/graphics/sprite_graphic_24FC.bin"
+cat_o_9_tails_idle_frame7:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame7.bin"
 
 ;$D484C9 (sprite graphic)
-SPRITE_GRAPHIC_2500:
-	incbin "data/objects/graphics/sprite_graphic_2500.bin"
+cat_o_9_tails_idle_frame8:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame8.bin"
 
 ;$D48767 (sprite graphic)
-SPRITE_GRAPHIC_2504:
-	incbin "data/objects/graphics/sprite_graphic_2504.bin"
+cat_o_9_tails_idle_frame9:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame9.bin"
 
 ;$D489E3 (sprite graphic)
-SPRITE_GRAPHIC_2508:
-	incbin "data/objects/graphics/sprite_graphic_2508.bin"
+cat_o_9_tails_idle_frame10:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame10.bin"
 
 ;$D48C65 (sprite graphic)
-SPRITE_GRAPHIC_250C:
-	incbin "data/objects/graphics/sprite_graphic_250C.bin"
+cat_o_9_tails_idle_frame11:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame11.bin"
 
 ;$D48F09 (sprite graphic)
-SPRITE_GRAPHIC_2510:
-	incbin "data/objects/graphics/sprite_graphic_2510.bin"
+cat_o_9_tails_idle_frame12:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame12.bin"
 
 ;$D491AD (sprite graphic)
-SPRITE_GRAPHIC_2514:
-	incbin "data/objects/graphics/sprite_graphic_2514.bin"
+cat_o_9_tails_idle_frame13:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame13.bin"
 
 ;$D49451 (sprite graphic)
-SPRITE_GRAPHIC_2518:
-	incbin "data/objects/graphics/sprite_graphic_2518.bin"
+cat_o_9_tails_idle_frame14:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame14.bin"
 
 ;$D496F5 (sprite graphic)
-SPRITE_GRAPHIC_251C:
-	incbin "data/objects/graphics/sprite_graphic_251C.bin"
+cat_o_9_tails_idle_frame15:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame15.bin"
 
 ;$D49999 (sprite graphic)
-SPRITE_GRAPHIC_2520:
-	incbin "data/objects/graphics/sprite_graphic_2520.bin"
+cat_o_9_tails_idle_frame16:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame16.bin"
 
 ;$D49C3D (sprite graphic)
-SPRITE_GRAPHIC_2524:
-	incbin "data/objects/graphics/sprite_graphic_2524.bin"
+cat_o_9_tails_idle_frame17:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame17.bin"
 
 ;$D49EE1 (sprite graphic)
-SPRITE_GRAPHIC_2528:
-	incbin "data/objects/graphics/sprite_graphic_2528.bin"
+cat_o_9_tails_idle_frame18:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame18.bin"
 
 ;$D4A185 (sprite graphic)
-SPRITE_GRAPHIC_252C:
-	incbin "data/objects/graphics/sprite_graphic_252C.bin"
+cat_o_9_tails_idle_frame19:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame19.bin"
 
 ;$D4A429 (sprite graphic)
-SPRITE_GRAPHIC_2530:
-	incbin "data/objects/graphics/sprite_graphic_2530.bin"
+cat_o_9_tails_idle_frame20:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame20.bin"
 
 ;$D4A6CD (sprite graphic)
-SPRITE_GRAPHIC_2534:
-	incbin "data/objects/graphics/sprite_graphic_2534.bin"
+cat_o_9_tails_idle_frame21:
+	incbin "data/objects/graphics/cat_o_9_tails_idle_frame21.bin"
 
 ;$D4A971 (sprite graphic)
-SPRITE_GRAPHIC_2538:
-	incbin "data/objects/graphics/sprite_graphic_2538.bin"
+cat_o_9_tails_hurt_frame1:
+	incbin "data/objects/graphics/cat_o_9_tails_hurt_frame1.bin"
 
 ;$D4AC6F (sprite graphic)
-SPRITE_GRAPHIC_253C:
-	incbin "data/objects/graphics/sprite_graphic_253C.bin"
+cat_o_9_tails_hurt_frame2:
+	incbin "data/objects/graphics/cat_o_9_tails_hurt_frame2.bin"
 
 ;$D4AF89 (sprite graphic)
-SPRITE_GRAPHIC_2540:
-	incbin "data/objects/graphics/sprite_graphic_2540.bin"
+cat_o_9_tails_hurt_frame3:
+	incbin "data/objects/graphics/cat_o_9_tails_hurt_frame3.bin"
 
 ;$D4B2CB (sprite graphic)
-SPRITE_GRAPHIC_2544:
-	incbin "data/objects/graphics/sprite_graphic_2544.bin"
+cat_o_9_tails_hurt_frame4:
+	incbin "data/objects/graphics/cat_o_9_tails_hurt_frame4.bin"
 
 ;$D4B5EB (sprite graphic)
-SPRITE_GRAPHIC_2548:
-	incbin "data/objects/graphics/sprite_graphic_2548.bin"
+kloak_idle_frame1:
+	incbin "data/objects/graphics/kloak_idle_frame1.bin"
 
 ;$D4B949 (sprite graphic)
-SPRITE_GRAPHIC_254C:
-	incbin "data/objects/graphics/sprite_graphic_254C.bin"
+kloak_idle_frame2:
+	incbin "data/objects/graphics/kloak_idle_frame2.bin"
 
 ;$D4BC85 (sprite graphic)
-SPRITE_GRAPHIC_2550:
-	incbin "data/objects/graphics/sprite_graphic_2550.bin"
+kloak_idle_frame3:
+	incbin "data/objects/graphics/kloak_idle_frame3.bin"
 
 ;$D4BFA5 (sprite graphic)
-SPRITE_GRAPHIC_2554:
-	incbin "data/objects/graphics/sprite_graphic_2554.bin"
+kloak_idle_frame4:
+	incbin "data/objects/graphics/kloak_idle_frame4.bin"
 
 ;$D4C2BF (sprite graphic)
-SPRITE_GRAPHIC_2558:
-	incbin "data/objects/graphics/sprite_graphic_2558.bin"
+kloak_idle_frame5:
+	incbin "data/objects/graphics/kloak_idle_frame5.bin"
 
 ;$D4C57F (sprite graphic)
-SPRITE_GRAPHIC_255C:
-	incbin "data/objects/graphics/sprite_graphic_255C.bin"
+kloak_idle_frame6:
+	incbin "data/objects/graphics/kloak_idle_frame6.bin"
 
 ;$D4C81D (sprite graphic)
-SPRITE_GRAPHIC_2560:
-	incbin "data/objects/graphics/sprite_graphic_2560.bin"
+kloak_idle_frame7:
+	incbin "data/objects/graphics/kloak_idle_frame7.bin"
 
 ;$D4CA77 (sprite graphic)
-SPRITE_GRAPHIC_2564:
-	incbin "data/objects/graphics/sprite_graphic_2564.bin"
+kloak_idle_frame8:
+	incbin "data/objects/graphics/kloak_idle_frame8.bin"
 
 ;$D4CCF3 (sprite graphic)
-SPRITE_GRAPHIC_2568:
-	incbin "data/objects/graphics/sprite_graphic_2568.bin"
+kloak_idle_frame9:
+	incbin "data/objects/graphics/kloak_idle_frame9.bin"
 
 ;$D4CF91 (sprite graphic)
-SPRITE_GRAPHIC_256C:
-	incbin "data/objects/graphics/sprite_graphic_256C.bin"
+kloak_idle_frame10:
+	incbin "data/objects/graphics/kloak_idle_frame10.bin"
 
 ;$D4D273 (sprite graphic)
-SPRITE_GRAPHIC_2570:
-	incbin "data/objects/graphics/sprite_graphic_2570.bin"
+kloak_idle_frame11:
+	incbin "data/objects/graphics/kloak_idle_frame11.bin"
 
 ;$D4D533 (sprite graphic)
-SPRITE_GRAPHIC_2574:
-	incbin "data/objects/graphics/sprite_graphic_2574.bin"
+kloak_idle_frame12:
+	incbin "data/objects/graphics/kloak_idle_frame12.bin"
 
 ;$D4D84D (sprite graphic)
-SPRITE_GRAPHIC_2578:
-	incbin "data/objects/graphics/sprite_graphic_2578.bin"
+kloak_throw_frame1:
+	incbin "data/objects/graphics/kloak_throw_frame1.bin"
 
 ;$D4DB29 (sprite graphic)
-SPRITE_GRAPHIC_257C:
-	incbin "data/objects/graphics/sprite_graphic_257C.bin"
+kloak_throw_frame2:
+	incbin "data/objects/graphics/kloak_throw_frame2.bin"
 
 ;$D4DDA5 (sprite graphic)
-SPRITE_GRAPHIC_2580:
-	incbin "data/objects/graphics/sprite_graphic_2580.bin"
+kloak_throw_frame3:
+	incbin "data/objects/graphics/kloak_throw_frame3.bin"
 
 ;$D4E021 (sprite graphic)
-SPRITE_GRAPHIC_2584:
-	incbin "data/objects/graphics/sprite_graphic_2584.bin"
+kloak_throw_frame4:
+	incbin "data/objects/graphics/kloak_throw_frame4.bin"
 
 ;$D4E2E1 (sprite graphic)
-SPRITE_GRAPHIC_2588:
-	incbin "data/objects/graphics/sprite_graphic_2588.bin"
+kloak_throw_frame5:
+	incbin "data/objects/graphics/kloak_throw_frame5.bin"
 
 ;$D4E55D (sprite graphic)
-SPRITE_GRAPHIC_258C:
-	incbin "data/objects/graphics/sprite_graphic_258C.bin"
+kloak_throw_frame6:
+	incbin "data/objects/graphics/kloak_throw_frame6.bin"
 
 ;$D4E7D9 (sprite graphic)
-SPRITE_GRAPHIC_2590:
-	incbin "data/objects/graphics/sprite_graphic_2590.bin"
+kloak_throw_frame7:
+	incbin "data/objects/graphics/kloak_throw_frame7.bin"
 
 ;$D4EA55 (sprite graphic)
-SPRITE_GRAPHIC_2594:
-	incbin "data/objects/graphics/sprite_graphic_2594.bin"
+kloak_throw_frame8:
+	incbin "data/objects/graphics/kloak_throw_frame8.bin"
 
 ;$D4ECF3 (sprite graphic)
-SPRITE_GRAPHIC_2598:
-	incbin "data/objects/graphics/sprite_graphic_2598.bin"
+kloak_throw_frame9:
+	incbin "data/objects/graphics/kloak_throw_frame9.bin"
 
 ;$D4EFD5 (sprite graphic)
-SPRITE_GRAPHIC_259C:
-	incbin "data/objects/graphics/sprite_graphic_259C.bin"
+kloak_throw_frame10:
+	incbin "data/objects/graphics/kloak_throw_frame10.bin"
 
 ;$D4F333 (sprite graphic)
-SPRITE_GRAPHIC_25A0:
-	incbin "data/objects/graphics/sprite_graphic_25A0.bin"
+kloak_throw_frame11:
+	incbin "data/objects/graphics/kloak_throw_frame11.bin"
 
 ;$D4F68B (sprite graphic)
-SPRITE_GRAPHIC_25A4:
-	incbin "data/objects/graphics/sprite_graphic_25A4.bin"
+kloak_throw_frame12:
+	incbin "data/objects/graphics/kloak_throw_frame12.bin"
 
 ;$D4F94B (sprite graphic)
-SPRITE_GRAPHIC_25A8:
-	incbin "data/objects/graphics/sprite_graphic_25A8.bin"
+kloak_throw_frame13:
+	incbin "data/objects/graphics/kloak_throw_frame13.bin"
 
 check bankcross off
 ;$D4FC2D
@@ -8947,352 +8947,352 @@ wasp_hive_bg_layer_3_8x8_tilemap:
 check bankcross full
 
 ;$D5026B (sprite graphic)
-SPRITE_GRAPHIC_25AC:
-	incbin "data/objects/graphics/sprite_graphic_25AC.bin"
+kloak_throw_frame14:
+	incbin "data/objects/graphics/kloak_throw_frame14.bin"
 
 ;$D5054D (sprite graphic)
-SPRITE_GRAPHIC_25B0:
-	incbin "data/objects/graphics/sprite_graphic_25B0.bin"
+kloak_throw_frame15:
+	incbin "data/objects/graphics/kloak_throw_frame15.bin"
 
 ;$D5080D (sprite graphic)
-SPRITE_GRAPHIC_25B4:
-	incbin "data/objects/graphics/sprite_graphic_25B4.bin"
+kloak_throw_frame16:
+	incbin "data/objects/graphics/kloak_throw_frame16.bin"
 
 ;$D50AA5 (sprite graphic)
-SPRITE_GRAPHIC_25B8:
-	incbin "data/objects/graphics/sprite_graphic_25B8.bin"
+kloak_throw_frame17:
+	incbin "data/objects/graphics/kloak_throw_frame17.bin"
 
 ;$D50D1B (sprite graphic)
-SPRITE_GRAPHIC_25BC:
-	incbin "data/objects/graphics/sprite_graphic_25BC.bin"
+kloak_turn_frame1:
+	incbin "data/objects/graphics/kloak_turn_frame1.bin"
 
 ;$D51019 (sprite graphic)
-SPRITE_GRAPHIC_25C0:
-	incbin "data/objects/graphics/sprite_graphic_25C0.bin"
+kloak_turn_frame2:
+	incbin "data/objects/graphics/kloak_turn_frame2.bin"
 
 ;$D5139F (sprite graphic)
-SPRITE_GRAPHIC_25C4:
-	incbin "data/objects/graphics/sprite_graphic_25C4.bin"
+kloak_hurt_frame1:
+	incbin "data/objects/graphics/kloak_hurt_frame1.bin"
 
 ;$D51703 (sprite graphic)
-SPRITE_GRAPHIC_25C8:
-	incbin "data/objects/graphics/sprite_graphic_25C8.bin"
+kloak_hurt_frame2:
+	incbin "data/objects/graphics/kloak_hurt_frame2.bin"
 
 ;$D51A07 (sprite graphic)
-SPRITE_GRAPHIC_25CC:
-	incbin "data/objects/graphics/sprite_graphic_25CC.bin"
+kloak_hurt_frame3:
+	incbin "data/objects/graphics/kloak_hurt_frame3.bin"
 
 ;$D51C9F (sprite graphic)
-SPRITE_GRAPHIC_25D0:
-	incbin "data/objects/graphics/sprite_graphic_25D0.bin"
+kloak_hurt_frame4:
+	incbin "data/objects/graphics/kloak_hurt_frame4.bin"
 
 ;$D51F7B (sprite graphic)
-SPRITE_GRAPHIC_25D4:
-	incbin "data/objects/graphics/sprite_graphic_25D4.bin"
+kloak_hurt_frame5:
+	incbin "data/objects/graphics/kloak_hurt_frame5.bin"
 
 ;$D52273 (sprite graphic)
-SPRITE_GRAPHIC_25D8:
-	incbin "data/objects/graphics/sprite_graphic_25D8.bin"
+funky_plane_wings_graphic:
+	incbin "data/objects/graphics/funky_plane_wings_graphic.bin"
 
 ;$D525B5 (sprite graphic)
-SPRITE_GRAPHIC_25DC:
-	incbin "data/objects/graphics/sprite_graphic_25DC.bin"
+funky_plane_propeller_frame1:
+	incbin "data/objects/graphics/funky_plane_propeller_frame1.bin"
 
 ;$D526A5 (sprite graphic)
-SPRITE_GRAPHIC_25E0:
-	incbin "data/objects/graphics/sprite_graphic_25E0.bin"
+funky_plane_propeller_frame2:
+	incbin "data/objects/graphics/funky_plane_propeller_frame2.bin"
 
 ;$D52795 (sprite graphic)
-SPRITE_GRAPHIC_25E4:
-	incbin "data/objects/graphics/sprite_graphic_25E4.bin"
+funky_plane_propeller_frame3:
+	incbin "data/objects/graphics/funky_plane_propeller_frame3.bin"
 
 ;$D52863 (sprite graphic)
-SPRITE_GRAPHIC_25E8:
-	incbin "data/objects/graphics/sprite_graphic_25E8.bin"
+funky_plane_propeller_frame4:
+	incbin "data/objects/graphics/funky_plane_propeller_frame4.bin"
 
 ;$D52953 (sprite graphic)
-SPRITE_GRAPHIC_25EC:
-	incbin "data/objects/graphics/sprite_graphic_25EC.bin"
+funky_plane_barrel_graphic:
+	incbin "data/objects/graphics/funky_plane_barrel_graphic.bin"
 
 ;$D52CCD (sprite graphic)
-SPRITE_GRAPHIC_25F0:
-	incbin "data/objects/graphics/sprite_graphic_25F0.bin"
+diddy_swap_to_front_frame1:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame1.bin"
 
 ;$D52EC7 (sprite graphic)
-SPRITE_GRAPHIC_25F4:
-	incbin "data/objects/graphics/sprite_graphic_25F4.bin"
+diddy_swap_to_front_frame2:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame2.bin"
 
 ;$D530E3 (sprite graphic)
-SPRITE_GRAPHIC_25F8:
-	incbin "data/objects/graphics/sprite_graphic_25F8.bin"
+diddy_swap_to_front_frame3:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame3.bin"
 
 ;$D53321 (sprite graphic)
-SPRITE_GRAPHIC_25FC:
-	incbin "data/objects/graphics/sprite_graphic_25FC.bin"
+diddy_swap_to_front_frame4:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame4.bin"
 
 ;$D53537 (sprite graphic)
-SPRITE_GRAPHIC_2600:
-	incbin "data/objects/graphics/sprite_graphic_2600.bin"
+diddy_swap_to_front_frame5:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame5.bin"
 
 ;$D53753 (sprite graphic)
-SPRITE_GRAPHIC_2604:
-	incbin "data/objects/graphics/sprite_graphic_2604.bin"
+diddy_swap_to_front_frame6:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame6.bin"
 
 ;$D539AD (sprite graphic)
-SPRITE_GRAPHIC_2608:
-	incbin "data/objects/graphics/sprite_graphic_2608.bin"
+diddy_swap_to_front_frame7:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame7.bin"
 
 ;$D53C07 (sprite graphic)
-SPRITE_GRAPHIC_260C:
-	incbin "data/objects/graphics/sprite_graphic_260C.bin"
+diddy_swap_to_front_frame8:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame8.bin"
 
 ;$D53E89 (sprite graphic)
-SPRITE_GRAPHIC_2610:
-	incbin "data/objects/graphics/sprite_graphic_2610.bin"
+diddy_swap_to_front_frame9:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame9.bin"
 
 ;$D540E3 (sprite graphic)
-SPRITE_GRAPHIC_2614:
-	incbin "data/objects/graphics/sprite_graphic_2614.bin"
+diddy_swap_to_front_frame10:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame10.bin"
 
 ;$D5433D (sprite graphic)
-SPRITE_GRAPHIC_2618:
-	incbin "data/objects/graphics/sprite_graphic_2618.bin"
+diddy_swap_to_front_frame11:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame11.bin"
 
 ;$D54575 (sprite graphic)
-SPRITE_GRAPHIC_261C:
-	incbin "data/objects/graphics/sprite_graphic_261C.bin"
+diddy_swap_to_front_frame12:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame12.bin"
 
 ;$D547CF (sprite graphic)
-SPRITE_GRAPHIC_2620:
-	incbin "data/objects/graphics/sprite_graphic_2620.bin"
+diddy_swap_to_front_frame13:
+	incbin "data/objects/graphics/diddy_swap_to_front_frame13.bin"
 
 ;$D549EB (sprite graphic)
-SPRITE_GRAPHIC_2624:
-	incbin "data/objects/graphics/sprite_graphic_2624.bin"
+dixie_swap_to_front_frame1:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame1.bin"
 
 ;$D54C45 (sprite graphic)
-SPRITE_GRAPHIC_2628:
-	incbin "data/objects/graphics/sprite_graphic_2628.bin"
+dixie_swap_to_front_frame2:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame2.bin"
 
 ;$D54E9F (sprite graphic)
-SPRITE_GRAPHIC_262C:
-	incbin "data/objects/graphics/sprite_graphic_262C.bin"
+dixie_swap_to_front_frame3:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame3.bin"
 
 ;$D5515F (sprite graphic)
-SPRITE_GRAPHIC_2630:
-	incbin "data/objects/graphics/sprite_graphic_2630.bin"
+dixie_swap_to_front_frame4:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame4.bin"
 
 ;$D5541F (sprite graphic)
-SPRITE_GRAPHIC_2634:
-	incbin "data/objects/graphics/sprite_graphic_2634.bin"
+dixie_swap_to_front_frame5:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame5.bin"
 
 ;$D556BD (sprite graphic)
-SPRITE_GRAPHIC_2638:
-	incbin "data/objects/graphics/sprite_graphic_2638.bin"
+dixie_swap_to_front_frame6:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame6.bin"
 
 ;$D5597D (sprite graphic)
-SPRITE_GRAPHIC_263C:
-	incbin "data/objects/graphics/sprite_graphic_263C.bin"
+dixie_swap_to_front_frame7:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame7.bin"
 
 ;$D55BF9 (sprite graphic)
-SPRITE_GRAPHIC_2640:
-	incbin "data/objects/graphics/sprite_graphic_2640.bin"
+dixie_swap_to_front_frame8:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame8.bin"
 
 ;$D55E31 (sprite graphic)
-SPRITE_GRAPHIC_2644:
-	incbin "data/objects/graphics/sprite_graphic_2644.bin"
+dixie_swap_to_front_frame9:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame9.bin"
 
 ;$D56069 (sprite graphic)
-SPRITE_GRAPHIC_2648:
-	incbin "data/objects/graphics/sprite_graphic_2648.bin"
+dixie_swap_to_front_frame10:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame10.bin"
 
 ;$D562C3 (sprite graphic)
-SPRITE_GRAPHIC_264C:
-	incbin "data/objects/graphics/sprite_graphic_264C.bin"
+dixie_swap_to_front_frame11:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame11.bin"
 
 ;$D5653F (sprite graphic)
-SPRITE_GRAPHIC_2650:
-	incbin "data/objects/graphics/sprite_graphic_2650.bin"
+dixie_swap_to_front_frame12:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame12.bin"
 
 ;$D56799 (sprite graphic)
-SPRITE_GRAPHIC_2654:
-	incbin "data/objects/graphics/sprite_graphic_2654.bin"
+dixie_swap_to_front_frame13:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame13.bin"
 
 ;$D569D1 (sprite graphic)
-SPRITE_GRAPHIC_2658:
-	incbin "data/objects/graphics/sprite_graphic_2658.bin"
+dixie_swap_to_front_frame14:
+	incbin "data/objects/graphics/dixie_swap_to_front_frame14.bin"
 
 ;$D56C03 (sprite graphic)
-SPRITE_GRAPHIC_265C:
-	incbin "data/objects/graphics/sprite_graphic_265C.bin"
+dixie_swap_to_back_frame1:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame1.bin"
 
 ;$D56E3B (sprite graphic)
-SPRITE_GRAPHIC_2660:
-	incbin "data/objects/graphics/sprite_graphic_2660.bin"
+dixie_swap_to_back_frame2:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame2.bin"
 
 ;$D570D9 (sprite graphic)
-SPRITE_GRAPHIC_2664:
-	incbin "data/objects/graphics/sprite_graphic_2664.bin"
+dixie_swap_to_back_frame3:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame3.bin"
 
 ;$D5735B (sprite graphic)
-SPRITE_GRAPHIC_2668:
-	incbin "data/objects/graphics/sprite_graphic_2668.bin"
+dixie_swap_to_back_frame4:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame4.bin"
 
 ;$D575B5 (sprite graphic)
-SPRITE_GRAPHIC_266C:
-	incbin "data/objects/graphics/sprite_graphic_266C.bin"
+dixie_swap_to_back_frame5:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame5.bin"
 
 ;$D57831 (sprite graphic)
-SPRITE_GRAPHIC_2670:
-	incbin "data/objects/graphics/sprite_graphic_2670.bin"
+dixie_swap_to_back_frame6:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame6.bin"
 
 ;$D57AAD (sprite graphic)
-SPRITE_GRAPHIC_2674:
-	incbin "data/objects/graphics/sprite_graphic_2674.bin"
+dixie_swap_to_back_frame7:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame7.bin"
 
 ;$D57D29 (sprite graphic)
-SPRITE_GRAPHIC_2678:
-	incbin "data/objects/graphics/sprite_graphic_2678.bin"
+dixie_swap_to_back_frame8:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame8.bin"
 
 ;$D57FAB (sprite graphic)
-SPRITE_GRAPHIC_267C:
-	incbin "data/objects/graphics/sprite_graphic_267C.bin"
+dixie_swap_to_back_frame9:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame9.bin"
 
 ;$D58227 (sprite graphic)
-SPRITE_GRAPHIC_2680:
-	incbin "data/objects/graphics/sprite_graphic_2680.bin"
+dixie_swap_to_back_frame10:
+	incbin "data/objects/graphics/dixie_swap_to_back_frame10.bin"
 
 ;$D583BB (sprite graphic)
-SPRITE_GRAPHIC_2684:
-	incbin "data/objects/graphics/sprite_graphic_2684.bin"
+klubba_idle_frame1:
+	incbin "data/objects/graphics/klubba_idle_frame1.bin"
 
 ;$D589D1 (sprite graphic)
-SPRITE_GRAPHIC_2688:
-	incbin "data/objects/graphics/sprite_graphic_2688.bin"
+klubba_idle_frame2:
+	incbin "data/objects/graphics/klubba_idle_frame2.bin"
 
 ;$D59031 (sprite graphic)
-SPRITE_GRAPHIC_268C:
-	incbin "data/objects/graphics/sprite_graphic_268C.bin"
+klubba_idle_frame3:
+	incbin "data/objects/graphics/klubba_idle_frame3.bin"
 
 ;$D5968B (sprite graphic)
-SPRITE_GRAPHIC_2690:
-	incbin "data/objects/graphics/sprite_graphic_2690.bin"
+klubba_club_idle_frame1:
+	incbin "data/objects/graphics/klubba_club_idle_frame1.bin"
 
 ;$D5994B (sprite graphic)
-SPRITE_GRAPHIC_2694:
-	incbin "data/objects/graphics/sprite_graphic_2694.bin"
+klubba_club_idle_frame2:
+	incbin "data/objects/graphics/klubba_club_idle_frame2.bin"
 
 ;$D59C2D (sprite graphic)
-SPRITE_GRAPHIC_2698:
-	incbin "data/objects/graphics/sprite_graphic_2698.bin"
+klubba_club_idle_frame3:
+	incbin "data/objects/graphics/klubba_club_idle_frame3.bin"
 
 ;$D59F2B (sprite graphic)
-SPRITE_GRAPHIC_269C:
-	incbin "data/objects/graphics/sprite_graphic_269C.bin"
+enguarde_idle_frame1:
+	incbin "data/objects/graphics/enguarde_idle_frame1.bin"
 
 ;$D5A257 (sprite graphic)
-SPRITE_GRAPHIC_26A0:
-	incbin "data/objects/graphics/sprite_graphic_26A0.bin"
+enguarde_idle_frame2:
+	incbin "data/objects/graphics/enguarde_idle_frame2.bin"
 
 ;$D5A561 (sprite graphic)
-SPRITE_GRAPHIC_26A4:
-	incbin "data/objects/graphics/sprite_graphic_26A4.bin"
+enguarde_idle_frame3:
+	incbin "data/objects/graphics/enguarde_idle_frame3.bin"
 
 ;$D5A86B (sprite graphic)
-SPRITE_GRAPHIC_26A8:
-	incbin "data/objects/graphics/sprite_graphic_26A8.bin"
+enguarde_idle_frame4:
+	incbin "data/objects/graphics/enguarde_idle_frame4.bin"
 
 ;$D5AB53 (sprite graphic)
-SPRITE_GRAPHIC_26AC:
-	incbin "data/objects/graphics/sprite_graphic_26AC.bin"
+enguarde_idle_frame5:
+	incbin "data/objects/graphics/enguarde_idle_frame5.bin"
 
 ;$D5AE5D (sprite graphic)
-SPRITE_GRAPHIC_26B0:
-	incbin "data/objects/graphics/sprite_graphic_26B0.bin"
+enguarde_idle_frame6:
+	incbin "data/objects/graphics/enguarde_idle_frame6.bin"
 
 ;$D5B189 (sprite graphic)
-SPRITE_GRAPHIC_26B4:
-	incbin "data/objects/graphics/sprite_graphic_26B4.bin"
+enguarde_idle_frame7:
+	incbin "data/objects/graphics/enguarde_idle_frame7.bin"
 
 ;$D5B4B5 (sprite graphic)
-SPRITE_GRAPHIC_26B8:
-	incbin "data/objects/graphics/sprite_graphic_26B8.bin"
+enguarde_idle_frame8:
+	incbin "data/objects/graphics/enguarde_idle_frame8.bin"
 
 ;$D5B7E1 (sprite graphic)
-SPRITE_GRAPHIC_26BC:
-	incbin "data/objects/graphics/sprite_graphic_26BC.bin"
+enguarde_attack_frame1:
+	incbin "data/objects/graphics/enguarde_attack_frame1.bin"
 
 ;$D5BAE5 (sprite graphic)
-SPRITE_GRAPHIC_26C0:
-	incbin "data/objects/graphics/sprite_graphic_26C0.bin"
+enguarde_attack_frame2:
+	incbin "data/objects/graphics/enguarde_attack_frame2.bin"
 
 ;$D5BDE9 (sprite graphic)
-SPRITE_GRAPHIC_26C4:
-	incbin "data/objects/graphics/sprite_graphic_26C4.bin"
+enguarde_attack_frame3:
+	incbin "data/objects/graphics/enguarde_attack_frame3.bin"
 
 ;$D5C08D (sprite graphic)
-SPRITE_GRAPHIC_26C8:
-	incbin "data/objects/graphics/sprite_graphic_26C8.bin"
+enguarde_attack_frame4:
+	incbin "data/objects/graphics/enguarde_attack_frame4.bin"
 
 ;$D5C28D (sprite graphic)
-SPRITE_GRAPHIC_26CC:
-	incbin "data/objects/graphics/sprite_graphic_26CC.bin"
+enguarde_attack_frame5:
+	incbin "data/objects/graphics/enguarde_attack_frame5.bin"
 
 ;$D5C5D5 (sprite graphic)
-SPRITE_GRAPHIC_26D0:
-	incbin "data/objects/graphics/sprite_graphic_26D0.bin"
+enguarde_attack_frame6:
+	incbin "data/objects/graphics/enguarde_attack_frame6.bin"
 
 ;$D5C8DF (sprite graphic)
-SPRITE_GRAPHIC_26D4:
-	incbin "data/objects/graphics/sprite_graphic_26D4.bin"
+enguarde_attack_frame7:
+	incbin "data/objects/graphics/enguarde_attack_frame7.bin"
 
 ;$D5CBE9 (sprite graphic)
-SPRITE_GRAPHIC_26D8:
-	incbin "data/objects/graphics/sprite_graphic_26D8.bin"
+enguarde_turn_frame1:
+	incbin "data/objects/graphics/enguarde_turn_frame1.bin"
 
 ;$D5CECB (sprite graphic)
-SPRITE_GRAPHIC_26DC:
-	incbin "data/objects/graphics/sprite_graphic_26DC.bin"
+enguarde_turn_frame2:
+	incbin "data/objects/graphics/enguarde_turn_frame2.bin"
 
 ;$D5D0C5 (sprite graphic)
-SPRITE_GRAPHIC_26E0:
-	incbin "data/objects/graphics/sprite_graphic_26E0.bin"
+enguarde_turn_frame3:
+	incbin "data/objects/graphics/enguarde_turn_frame3.bin"
 
 ;$D5D29D (sprite graphic)
-SPRITE_GRAPHIC_26E4:
-	incbin "data/objects/graphics/sprite_graphic_26E4.bin"
+enguarde_turn_frame4:
+	incbin "data/objects/graphics/enguarde_turn_frame4.bin"
 
 ;$D5D47B (sprite graphic)
-SPRITE_GRAPHIC_26E8:
-	incbin "data/objects/graphics/sprite_graphic_26E8.bin"
+enguarde_hurt_graphic:
+	incbin "data/objects/graphics/enguarde_hurt_graphic.bin"
 
 ;$D5D75D (sprite graphic)
-SPRITE_GRAPHIC_26EC:
-	incbin "data/objects/graphics/sprite_graphic_26EC.bin"
+rambi_hurt_graphic:
+	incbin "data/objects/graphics/rambi_hurt_graphic.bin"
 
 ;$D5DAFF (sprite graphic)
-SPRITE_GRAPHIC_26F0:
-	incbin "data/objects/graphics/sprite_graphic_26F0.bin"
+king_zing_idle_frame1:
+	incbin "data/objects/graphics/king_zing_idle_frame1.bin"
 
 ;$D5E011 (sprite graphic)
-SPRITE_GRAPHIC_26F4:
-	incbin "data/objects/graphics/sprite_graphic_26F4.bin"
+king_zing_idle_frame2:
+	incbin "data/objects/graphics/king_zing_idle_frame2.bin"
 
 ;$D5E627 (sprite graphic)
-SPRITE_GRAPHIC_26F8:
-	incbin "data/objects/graphics/sprite_graphic_26F8.bin"
+king_zing_idle_frame3:
+	incbin "data/objects/graphics/king_zing_idle_frame3.bin"
 
 ;$D5ECA9 (sprite graphic)
-SPRITE_GRAPHIC_26FC:
-	incbin "data/objects/graphics/sprite_graphic_26FC.bin"
+king_zing_idle_frame4:
+	incbin "data/objects/graphics/king_zing_idle_frame4.bin"
 
 ;$D5F303 (sprite graphic)
-SPRITE_GRAPHIC_2700:
-	incbin "data/objects/graphics/sprite_graphic_2700.bin"
+king_zing_idle_frame5:
+	incbin "data/objects/graphics/king_zing_idle_frame5.bin"
 
 ;$D5F859 (sprite graphic)
-SPRITE_GRAPHIC_2704:
-	incbin "data/objects/graphics/sprite_graphic_2704.bin"
+king_zing_idle_frame6:
+	incbin "data/objects/graphics/king_zing_idle_frame6.bin"
 
 check bankcross off
 ;$D5FEB3
@@ -9301,284 +9301,284 @@ forest_bg_layer_3_8x8_tilemap:
 check bankcross full
 
 ;$D603E9 (sprite graphic)
-SPRITE_GRAPHIC_2708:
-	incbin "data/objects/graphics/sprite_graphic_2708.bin"
+king_zing_idle_frame7:
+	incbin "data/objects/graphics/king_zing_idle_frame7.bin"
 
 ;$D60A6B (sprite graphic)
-SPRITE_GRAPHIC_270C:
-	incbin "data/objects/graphics/sprite_graphic_270C.bin"
+king_zing_idle_frame8:
+	incbin "data/objects/graphics/king_zing_idle_frame8.bin"
 
 ;$D610A3 (sprite graphic)
-SPRITE_GRAPHIC_2710:
-	incbin "data/objects/graphics/sprite_graphic_2710.bin"
+king_zing_stinger_idle_frame1:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame1.bin"
 
 ;$D610EF (sprite graphic)
-SPRITE_GRAPHIC_2714:
-	incbin "data/objects/graphics/sprite_graphic_2714.bin"
+king_zing_stinger_idle_frame2:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame2.bin"
 
 ;$D6113B (sprite graphic)
-SPRITE_GRAPHIC_2718:
-	incbin "data/objects/graphics/sprite_graphic_2718.bin"
+king_zing_stinger_idle_frame3:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame3.bin"
 
 ;$D61187 (sprite graphic)
-SPRITE_GRAPHIC_271C:
-	incbin "data/objects/graphics/sprite_graphic_271C.bin"
+king_zing_stinger_idle_frame4:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame4.bin"
 
 ;$D611D3 (sprite graphic)
-SPRITE_GRAPHIC_2720:
-	incbin "data/objects/graphics/sprite_graphic_2720.bin"
+king_zing_stinger_idle_frame5:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame5.bin"
 
 ;$D6121F (sprite graphic)
-SPRITE_GRAPHIC_2724:
-	incbin "data/objects/graphics/sprite_graphic_2724.bin"
+king_zing_stinger_idle_frame6:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame6.bin"
 
 ;$D6126B (sprite graphic)
-SPRITE_GRAPHIC_2728:
-	incbin "data/objects/graphics/sprite_graphic_2728.bin"
+king_zing_stinger_idle_frame7:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame7.bin"
 
 ;$D612B7 (sprite graphic)
-SPRITE_GRAPHIC_272C:
-	incbin "data/objects/graphics/sprite_graphic_272C.bin"
+king_zing_stinger_idle_frame8:
+	incbin "data/objects/graphics/king_zing_stinger_idle_frame8.bin"
 
 ;$D61303 (sprite graphic)
-SPRITE_GRAPHIC_2730:
-	incbin "data/objects/graphics/sprite_graphic_2730.bin"
+king_zing_turn_frame1:
+	incbin "data/objects/graphics/king_zing_turn_frame1.bin"
 
 ;$D617DD (sprite graphic)
-SPRITE_GRAPHIC_2734:
-	incbin "data/objects/graphics/sprite_graphic_2734.bin"
+king_zing_turn_frame2:
+	incbin "data/objects/graphics/king_zing_turn_frame2.bin"
 
 ;$D61C51 (sprite graphic)
-SPRITE_GRAPHIC_2738:
-	incbin "data/objects/graphics/sprite_graphic_2738.bin"
+king_zing_stinger_turn_frame1:
+	incbin "data/objects/graphics/king_zing_stinger_turn_frame1.bin"
 
 ;$D61C9D (sprite graphic)
-SPRITE_GRAPHIC_273C:
-	incbin "data/objects/graphics/sprite_graphic_273C.bin"
+king_zing_stinger_turn_frame2:
+	incbin "data/objects/graphics/king_zing_stinger_turn_frame2.bin"
 
 ;$D61CE9 (sprite graphic)
-SPRITE_GRAPHIC_2740:
-	incbin "data/objects/graphics/sprite_graphic_2740.bin"
+king_zing_hurt_frame1:
+	incbin "data/objects/graphics/king_zing_hurt_frame1.bin"
 
 ;$D6240F (sprite graphic)
-SPRITE_GRAPHIC_2744:
-	incbin "data/objects/graphics/sprite_graphic_2744.bin"
+king_zing_hurt_frame2:
+	incbin "data/objects/graphics/king_zing_hurt_frame2.bin"
 
 ;$D62B2F (sprite graphic)
-SPRITE_GRAPHIC_2748:
-	incbin "data/objects/graphics/sprite_graphic_2748.bin"
+king_zing_hurt_frame3:
+	incbin "data/objects/graphics/king_zing_hurt_frame3.bin"
 
 ;$D632BB (sprite graphic)
-SPRITE_GRAPHIC_274C:
-	incbin "data/objects/graphics/sprite_graphic_274C.bin"
+king_zing_hurt_frame4:
+	incbin "data/objects/graphics/king_zing_hurt_frame4.bin"
 
 ;$D63A69 (sprite graphic)
-SPRITE_GRAPHIC_2750:
-	incbin "data/objects/graphics/sprite_graphic_2750.bin"
+king_zing_stinger_hurt_frame1:
+	incbin "data/objects/graphics/king_zing_stinger_hurt_frame1.bin"
 
 ;$D63AB5 (sprite graphic)
-SPRITE_GRAPHIC_2754:
-	incbin "data/objects/graphics/sprite_graphic_2754.bin"
+king_zing_stinger_hurt_frame2:
+	incbin "data/objects/graphics/king_zing_stinger_hurt_frame2.bin"
 
 ;$D63B01 (sprite graphic)
-SPRITE_GRAPHIC_2758:
-	incbin "data/objects/graphics/sprite_graphic_2758.bin"
+king_zing_stinger_hurt_frame3:
+	incbin "data/objects/graphics/king_zing_stinger_hurt_frame3.bin"
 
 ;$D63B4D (sprite graphic)
-SPRITE_GRAPHIC_275C:
-	incbin "data/objects/graphics/sprite_graphic_275C.bin"
+king_zing_stinger_hurt_frame4:
+	incbin "data/objects/graphics/king_zing_stinger_hurt_frame4.bin"
 
 ;$D63B99 (sprite graphic)
-SPRITE_GRAPHIC_2760:
-	incbin "data/objects/graphics/sprite_graphic_2760.bin"
+k_rool_shoot_frame1:
+	incbin "data/objects/graphics/k_rool_shoot_frame1.bin"
 
 ;$D641ED (sprite graphic)
-SPRITE_GRAPHIC_2764:
-	incbin "data/objects/graphics/sprite_graphic_2764.bin"
+k_rool_shoot_frame2:
+	incbin "data/objects/graphics/k_rool_shoot_frame2.bin"
 
 ;$D647FD (sprite graphic)
-SPRITE_GRAPHIC_2768:
-	incbin "data/objects/graphics/sprite_graphic_2768.bin"
+k_rool_shoot_frame3:
+	incbin "data/objects/graphics/k_rool_shoot_frame3.bin"
 
 ;$D64D69 (sprite graphic)
-SPRITE_GRAPHIC_276C:
-	incbin "data/objects/graphics/sprite_graphic_276C.bin"
+k_rool_blunderbuss_shoot_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_shoot_frame1.bin"
 
 ;$D64FE5 (sprite graphic)
-SPRITE_GRAPHIC_2770:
-	incbin "data/objects/graphics/sprite_graphic_2770.bin"
+k_rool_blunderbuss_shoot_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_shoot_frame2.bin"
 
 ;$D65283 (sprite graphic)
-SPRITE_GRAPHIC_2774:
-	incbin "data/objects/graphics/sprite_graphic_2774.bin"
+k_rool_blunderbuss_shoot_frame3:
+	incbin "data/objects/graphics/k_rool_blunderbuss_shoot_frame3.bin"
 
 ;$D654F9 (sprite graphic)
-SPRITE_GRAPHIC_2778:
-	incbin "data/objects/graphics/sprite_graphic_2778.bin"
+k_rool_melee_frame1:
+	incbin "data/objects/graphics/k_rool_melee_frame1.bin"
 
 ;$D65B8B (sprite graphic)
-SPRITE_GRAPHIC_277C:
-	incbin "data/objects/graphics/sprite_graphic_277C.bin"
+k_rool_melee_frame2:
+	incbin "data/objects/graphics/k_rool_melee_frame2.bin"
 
 ;$D66207 (sprite graphic)
-SPRITE_GRAPHIC_2780:
-	incbin "data/objects/graphics/sprite_graphic_2780.bin"
+k_rool_melee_frame3:
+	incbin "data/objects/graphics/k_rool_melee_frame3.bin"
 
 ;$D668C1 (sprite graphic)
-SPRITE_GRAPHIC_2784:
-	incbin "data/objects/graphics/sprite_graphic_2784.bin"
+k_rool_melee_frame4:
+	incbin "data/objects/graphics/k_rool_melee_frame4.bin"
 
 ;$D66F53 (sprite graphic)
-SPRITE_GRAPHIC_2788:
-	incbin "data/objects/graphics/sprite_graphic_2788.bin"
+k_rool_melee_frame5:
+	incbin "data/objects/graphics/k_rool_melee_frame5.bin"
 
 ;$D67503 (sprite graphic)
-SPRITE_GRAPHIC_278C:
-	incbin "data/objects/graphics/sprite_graphic_278C.bin"
+k_rool_blunderbuss_melee_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_melee_frame1.bin"
 
 ;$D6773B (sprite graphic)
-SPRITE_GRAPHIC_2790:
-	incbin "data/objects/graphics/sprite_graphic_2790.bin"
+k_rool_blunderbuss_melee_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_melee_frame2.bin"
 
 ;$D67995 (sprite graphic)
-SPRITE_GRAPHIC_2794:
-	incbin "data/objects/graphics/sprite_graphic_2794.bin"
+k_rool_blunderbuss_melee_frame3:
+	incbin "data/objects/graphics/k_rool_blunderbuss_melee_frame3.bin"
 
 ;$D67C39 (sprite graphic)
-SPRITE_GRAPHIC_2798:
-	incbin "data/objects/graphics/sprite_graphic_2798.bin"
+k_rool_blunderbuss_melee_frame4:
+	incbin "data/objects/graphics/k_rool_blunderbuss_melee_frame4.bin"
 
 ;$D67F1B (sprite graphic)
-SPRITE_GRAPHIC_279C:
-	incbin "data/objects/graphics/sprite_graphic_279C.bin"
+k_rool_blunderbuss_melee_frame5:
+	incbin "data/objects/graphics/k_rool_blunderbuss_melee_frame5.bin"
 
 ;$D68131 (sprite graphic)
-SPRITE_GRAPHIC_27A0:
-	incbin "data/objects/graphics/sprite_graphic_27A0.bin"
+k_rool_soot_graphic:
+	incbin "data/objects/graphics/k_rool_soot_graphic.bin"
 
 ;$D688B1 (sprite graphic)
-SPRITE_GRAPHIC_27A4:
-	incbin "data/objects/graphics/sprite_graphic_27A4.bin"
+k_rool_soot_eyes_frame1:
+	incbin "data/objects/graphics/k_rool_soot_eyes_frame1.bin"
 
 ;$D688FD (sprite graphic)
-SPRITE_GRAPHIC_27A8:
-	incbin "data/objects/graphics/sprite_graphic_27A8.bin"
+k_rool_soot_eyes_frame2:
+	incbin "data/objects/graphics/k_rool_soot_eyes_frame2.bin"
 
 ;$D68949 (sprite graphic)
-SPRITE_GRAPHIC_27AC:
-	incbin "data/objects/graphics/sprite_graphic_27AC.bin"
+k_rool_move_frame1:
+	incbin "data/objects/graphics/k_rool_move_frame1.bin"
 
 ;$D68F43 (sprite graphic)
-SPRITE_GRAPHIC_27B0:
-	incbin "data/objects/graphics/sprite_graphic_27B0.bin"
+k_rool_move_frame2:
+	incbin "data/objects/graphics/k_rool_move_frame2.bin"
 
 ;$D69537 (sprite graphic)
-SPRITE_GRAPHIC_27B4:
-	incbin "data/objects/graphics/sprite_graphic_27B4.bin"
+k_rool_move_frame3:
+	incbin "data/objects/graphics/k_rool_move_frame3.bin"
 
 ;$D69C57 (sprite graphic)
-SPRITE_GRAPHIC_27B8:
-	incbin "data/objects/graphics/sprite_graphic_27B8.bin"
+k_rool_move_frame4:
+	incbin "data/objects/graphics/k_rool_move_frame4.bin"
 
 ;$D6A327 (sprite graphic)
-SPRITE_GRAPHIC_27BC:
-	incbin "data/objects/graphics/sprite_graphic_27BC.bin"
+k_rool_move_frame5:
+	incbin "data/objects/graphics/k_rool_move_frame5.bin"
 
 ;$D6A9FD (sprite graphic)
-SPRITE_GRAPHIC_27C0:
-	incbin "data/objects/graphics/sprite_graphic_27C0.bin"
+k_rool_blunderbuss_move_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_move_frame1.bin"
 
 ;$D6AC79 (sprite graphic)
-SPRITE_GRAPHIC_27C4:
-	incbin "data/objects/graphics/sprite_graphic_27C4.bin"
+k_rool_blunderbuss_move_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_move_frame2.bin"
 
 ;$D6AE89 (sprite graphic)
-SPRITE_GRAPHIC_27C8:
-	incbin "data/objects/graphics/sprite_graphic_27C8.bin"
+k_rool_blunderbuss_move_frame3:
+	incbin "data/objects/graphics/k_rool_blunderbuss_move_frame3.bin"
 
 ;$D6B05B (sprite graphic)
-SPRITE_GRAPHIC_27CC:
-	incbin "data/objects/graphics/sprite_graphic_27CC.bin"
+k_rool_blunderbuss_move_frame4:
+	incbin "data/objects/graphics/k_rool_blunderbuss_move_frame4.bin"
 
 ;$D6B1B1 (sprite graphic)
-SPRITE_GRAPHIC_27D0:
-	incbin "data/objects/graphics/sprite_graphic_27D0.bin"
+k_rool_blunderbuss_move_frame5:
+	incbin "data/objects/graphics/k_rool_blunderbuss_move_frame5.bin"
 
 ;$D6B329 (sprite graphic)
-SPRITE_GRAPHIC_27D4:
-	incbin "data/objects/graphics/sprite_graphic_27D4.bin"
+k_rool_blunderbuss_hurt_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame1.bin"
 
 ;$D6B5A5 (sprite graphic)
-SPRITE_GRAPHIC_27D8:
-	incbin "data/objects/graphics/sprite_graphic_27D8.bin"
+k_rool_blunderbuss_hurt_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame2.bin"
 
 ;$D6B881 (sprite graphic)
-SPRITE_GRAPHIC_27DC:
-	incbin "data/objects/graphics/sprite_graphic_27DC.bin"
+k_rool_blunderbuss_hurt_frame3:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame3.bin"
 
 ;$D6BB57 (sprite graphic)
-SPRITE_GRAPHIC_27E0:
-	incbin "data/objects/graphics/sprite_graphic_27E0.bin"
+k_rool_blunderbuss_hurt_frame4:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame4.bin"
 
 ;$D6BE71 (sprite graphic)
-SPRITE_GRAPHIC_27E4:
-	incbin "data/objects/graphics/sprite_graphic_27E4.bin"
+k_rool_blunderbuss_hurt_frame5:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame5.bin"
 
 ;$D6C0ED (sprite graphic)
-SPRITE_GRAPHIC_27E8:
-	incbin "data/objects/graphics/sprite_graphic_27E8.bin"
+k_rool_blunderbuss_hurt_frame6:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame6.bin"
 
 ;$D6C385 (sprite graphic)
-SPRITE_GRAPHIC_27EC:
-	incbin "data/objects/graphics/sprite_graphic_27EC.bin"
+k_rool_blunderbuss_hurt_frame7:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame7.bin"
 
 ;$D6C61D (sprite graphic)
-SPRITE_GRAPHIC_27F0:
-	incbin "data/objects/graphics/sprite_graphic_27F0.bin"
+k_rool_blunderbuss_hurt_frame8:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame8.bin"
 
 ;$D6C877 (sprite graphic)
-SPRITE_GRAPHIC_27F4:
-	incbin "data/objects/graphics/sprite_graphic_27F4.bin"
+k_rool_blunderbuss_hurt_frame9:
+	incbin "data/objects/graphics/k_rool_blunderbuss_hurt_frame9.bin"
 
 ;$D6CA71 (sprite graphic)
-SPRITE_GRAPHIC_27F8:
-	incbin "data/objects/graphics/sprite_graphic_27F8.bin"
+krockhead_barrel_icon_frame1:
+	incbin "data/objects/graphics/krockhead_barrel_icon_frame1.bin"
 
 ;$D6CB61 (sprite graphic)
-SPRITE_GRAPHIC_27FC:
-	incbin "data/objects/graphics/sprite_graphic_27FC.bin"
+krockhead_barrel_icon_frame2:
+	incbin "data/objects/graphics/krockhead_barrel_icon_frame2.bin"
 
 ;$D6CC51 (sprite graphic)
-SPRITE_GRAPHIC_2800:
-	incbin "data/objects/graphics/sprite_graphic_2800.bin"
+krockhead_barrel_icon_frame3:
+	incbin "data/objects/graphics/krockhead_barrel_icon_frame3.bin"
 
 ;$D6CD41 (sprite graphic)
-SPRITE_GRAPHIC_2804:
-	incbin "data/objects/graphics/sprite_graphic_2804.bin"
+krockhead_barrel_icon_frame4:
+	incbin "data/objects/graphics/krockhead_barrel_icon_frame4.bin"
 
 ;$D6CE31 (sprite graphic)
-SPRITE_GRAPHIC_2808:
-	incbin "data/objects/graphics/sprite_graphic_2808.bin"
+k_rool_hurt_frame1:
+	incbin "data/objects/graphics/k_rool_hurt_frame1.bin"
 
 ;$D6D3E1 (sprite graphic)
-SPRITE_GRAPHIC_280C:
-	incbin "data/objects/graphics/sprite_graphic_280C.bin"
+k_rool_hurt_frame2:
+	incbin "data/objects/graphics/k_rool_hurt_frame2.bin"
 
 ;$D6DA35 (sprite graphic)
-SPRITE_GRAPHIC_2810:
-	incbin "data/objects/graphics/sprite_graphic_2810.bin"
+k_rool_hurt_frame3:
+	incbin "data/objects/graphics/k_rool_hurt_frame3.bin"
 
 ;$D6E171 (sprite graphic)
-SPRITE_GRAPHIC_2814:
-	incbin "data/objects/graphics/sprite_graphic_2814.bin"
+k_rool_hurt_frame4:
+	incbin "data/objects/graphics/k_rool_hurt_frame4.bin"
 
 ;$D6E8A7 (sprite graphic)
-SPRITE_GRAPHIC_2818:
-	incbin "data/objects/graphics/sprite_graphic_2818.bin"
+k_rool_hurt_frame5:
+	incbin "data/objects/graphics/k_rool_hurt_frame5.bin"
 
 ;$D6F02D (sprite graphic)
-SPRITE_GRAPHIC_281C:
-	incbin "data/objects/graphics/sprite_graphic_281C.bin"
+k_rool_hurt_frame6:
+	incbin "data/objects/graphics/k_rool_hurt_frame6.bin"
 
 check bankcross off
 ;$D6F791
@@ -9587,540 +9587,540 @@ wasp_hive_bg_layer_3_tiledata:
 check bankcross full
 
 ;$D70633 (sprite graphic)
-SPRITE_GRAPHIC_2820:
-	incbin "data/objects/graphics/sprite_graphic_2820.bin"
+k_rool_hurt_frame7:
+	incbin "data/objects/graphics/k_rool_hurt_frame7.bin"
 
 ;$D70E3B (sprite graphic)
-SPRITE_GRAPHIC_2824:
-	incbin "data/objects/graphics/sprite_graphic_2824.bin"
+k_rool_hurt_frame8:
+	incbin "data/objects/graphics/k_rool_hurt_frame8.bin"
 
 ;$D715D7 (sprite graphic)
-SPRITE_GRAPHIC_2828:
-	incbin "data/objects/graphics/sprite_graphic_2828.bin"
+k_rool_hurt_frame9:
+	incbin "data/objects/graphics/k_rool_hurt_frame9.bin"
 
 ;$D71D95 (sprite graphic)
-SPRITE_GRAPHIC_282C:
-	incbin "data/objects/graphics/sprite_graphic_282C.bin"
+dixie_celebrate_frame1:
+	incbin "data/objects/graphics/dixie_celebrate_frame1.bin"
 
 ;$D71F29 (sprite graphic)
-SPRITE_GRAPHIC_2830:
-	incbin "data/objects/graphics/sprite_graphic_2830.bin"
+dixie_celebrate_frame2:
+	incbin "data/objects/graphics/dixie_celebrate_frame2.bin"
 
 ;$D72101 (sprite graphic)
-SPRITE_GRAPHIC_2834:
-	incbin "data/objects/graphics/sprite_graphic_2834.bin"
+dixie_celebrate_frame3:
+	incbin "data/objects/graphics/dixie_celebrate_frame3.bin"
 
 ;$D722FB (sprite graphic)
-SPRITE_GRAPHIC_2838:
-	incbin "data/objects/graphics/sprite_graphic_2838.bin"
+dixie_celebrate_frame4:
+	incbin "data/objects/graphics/dixie_celebrate_frame4.bin"
 
 ;$D72517 (sprite graphic)
-SPRITE_GRAPHIC_283C:
-	incbin "data/objects/graphics/sprite_graphic_283C.bin"
+dixie_celebrate_frame5:
+	incbin "data/objects/graphics/dixie_celebrate_frame5.bin"
 
 ;$D72711 (sprite graphic)
-SPRITE_GRAPHIC_2840:
-	incbin "data/objects/graphics/sprite_graphic_2840.bin"
+dixie_celebrate_frame6:
+	incbin "data/objects/graphics/dixie_celebrate_frame6.bin"
 
 ;$D7296B (sprite graphic)
-SPRITE_GRAPHIC_2844:
-	incbin "data/objects/graphics/sprite_graphic_2844.bin"
+dixie_celebrate_frame7:
+	incbin "data/objects/graphics/dixie_celebrate_frame7.bin"
 
 ;$D72B65 (sprite graphic)
-SPRITE_GRAPHIC_2848:
-	incbin "data/objects/graphics/sprite_graphic_2848.bin"
+dixie_celebrate_frame8:
+	incbin "data/objects/graphics/dixie_celebrate_frame8.bin"
 
 ;$D72D1B (sprite graphic)
-SPRITE_GRAPHIC_284C:
-	incbin "data/objects/graphics/sprite_graphic_284C.bin"
+dixie_celebrate_frame9:
+	incbin "data/objects/graphics/dixie_celebrate_frame9.bin"
 
 ;$D72EAF (sprite graphic)
-SPRITE_GRAPHIC_2850:
-	incbin "data/objects/graphics/sprite_graphic_2850.bin"
+dixie_celebrate_frame10:
+	incbin "data/objects/graphics/dixie_celebrate_frame10.bin"
 
 ;$D73065 (sprite graphic)
-SPRITE_GRAPHIC_2854:
-	incbin "data/objects/graphics/sprite_graphic_2854.bin"
+dixie_celebrate_frame11:
+	incbin "data/objects/graphics/dixie_celebrate_frame11.bin"
 
 ;$D7321B (sprite graphic)
-SPRITE_GRAPHIC_2858:
-	incbin "data/objects/graphics/sprite_graphic_2858.bin"
+dixie_celebrate_frame12:
+	incbin "data/objects/graphics/dixie_celebrate_frame12.bin"
 
 ;$D73415 (sprite graphic)
-SPRITE_GRAPHIC_285C:
-	incbin "data/objects/graphics/sprite_graphic_285C.bin"
+dixie_celebrate_frame13:
+	incbin "data/objects/graphics/dixie_celebrate_frame13.bin"
 
 ;$D73631 (sprite graphic)
-SPRITE_GRAPHIC_2860:
-	incbin "data/objects/graphics/sprite_graphic_2860.bin"
+dixie_celebrate_frame14:
+	incbin "data/objects/graphics/dixie_celebrate_frame14.bin"
 
 ;$D7382B (sprite graphic)
-SPRITE_GRAPHIC_2864:
-	incbin "data/objects/graphics/sprite_graphic_2864.bin"
+dixie_celebrate_frame15:
+	incbin "data/objects/graphics/dixie_celebrate_frame15.bin"
 
 ;$D739E1 (sprite graphic)
-SPRITE_GRAPHIC_2868:
-	incbin "data/objects/graphics/sprite_graphic_2868.bin"
+dixie_celebrate_frame16:
+	incbin "data/objects/graphics/dixie_celebrate_frame16.bin"
 
 ;$D73BB9 (sprite graphic)
-SPRITE_GRAPHIC_286C:
-	incbin "data/objects/graphics/sprite_graphic_286C.bin"
+dixie_celebrate_frame17:
+	incbin "data/objects/graphics/dixie_celebrate_frame17.bin"
 
 ;$D73DB3 (sprite graphic)
-SPRITE_GRAPHIC_2870:
-	incbin "data/objects/graphics/sprite_graphic_2870.bin"
+dixie_celebrate_frame18:
+	incbin "data/objects/graphics/dixie_celebrate_frame18.bin"
 
 ;$D73FAD (sprite graphic)
-SPRITE_GRAPHIC_2874:
-	incbin "data/objects/graphics/sprite_graphic_2874.bin"
+dixie_celebrate_frame19:
+	incbin "data/objects/graphics/dixie_celebrate_frame19.bin"
 
 ;$D74185 (sprite graphic)
-SPRITE_GRAPHIC_2878:
-	incbin "data/objects/graphics/sprite_graphic_2878.bin"
+dixie_celebrate_frame20:
+	incbin "data/objects/graphics/dixie_celebrate_frame20.bin"
 
 ;$D743C3 (sprite graphic)
-SPRITE_GRAPHIC_287C:
-	incbin "data/objects/graphics/sprite_graphic_287C.bin"
+dixie_celebrate_frame21:
+	incbin "data/objects/graphics/dixie_celebrate_frame21.bin"
 
 ;$D74601 (sprite graphic)
-SPRITE_GRAPHIC_2880:
-	incbin "data/objects/graphics/sprite_graphic_2880.bin"
+dixie_celebrate_frame22:
+	incbin "data/objects/graphics/dixie_celebrate_frame22.bin"
 
 ;$D7483F (sprite graphic)
-SPRITE_GRAPHIC_2884:
-	incbin "data/objects/graphics/sprite_graphic_2884.bin"
+dixie_celebrate_frame23:
+	incbin "data/objects/graphics/dixie_celebrate_frame23.bin"
 
 ;$D74A17 (sprite graphic)
-SPRITE_GRAPHIC_2888:
-	incbin "data/objects/graphics/sprite_graphic_2888.bin"
+dixie_celebrate_frame24:
+	incbin "data/objects/graphics/dixie_celebrate_frame24.bin"
 
 ;$D74BCD (sprite graphic)
-SPRITE_GRAPHIC_288C:
-	incbin "data/objects/graphics/sprite_graphic_288C.bin"
+dixie_celebrate_frame25:
+	incbin "data/objects/graphics/dixie_celebrate_frame25.bin"
 
 ;$D74D61 (sprite graphic)
-SPRITE_GRAPHIC_2890:
-	incbin "data/objects/graphics/sprite_graphic_2890.bin"
+dixie_celebrate_frame26:
+	incbin "data/objects/graphics/dixie_celebrate_frame26.bin"
 
 ;$D74F39 (sprite graphic)
-SPRITE_GRAPHIC_2894:
-	incbin "data/objects/graphics/sprite_graphic_2894.bin"
+dixie_celebrate_frame27:
+	incbin "data/objects/graphics/dixie_celebrate_frame27.bin"
 
 ;$D75111 (sprite graphic)
-SPRITE_GRAPHIC_2898:
-	incbin "data/objects/graphics/sprite_graphic_2898.bin"
+dixie_celebrate_frame28:
+	incbin "data/objects/graphics/dixie_celebrate_frame28.bin"
 
 ;$D7530B (sprite graphic)
-SPRITE_GRAPHIC_289C:
-	incbin "data/objects/graphics/sprite_graphic_289C.bin"
+dixie_celebrate_frame29:
+	incbin "data/objects/graphics/dixie_celebrate_frame29.bin"
 
 ;$D7556B (sprite graphic)
-SPRITE_GRAPHIC_28A0:
-	incbin "data/objects/graphics/sprite_graphic_28A0.bin"
+dixie_celebrate_frame30:
+	incbin "data/objects/graphics/dixie_celebrate_frame30.bin"
 
 ;$D757CB (sprite graphic)
-SPRITE_GRAPHIC_28A4:
-	incbin "data/objects/graphics/sprite_graphic_28A4.bin"
+dixie_celebrate_frame31:
+	incbin "data/objects/graphics/dixie_celebrate_frame31.bin"
 
 ;$D759E7 (sprite graphic)
-SPRITE_GRAPHIC_28A8:
-	incbin "data/objects/graphics/sprite_graphic_28A8.bin"
+dixie_celebrate_frame32:
+	incbin "data/objects/graphics/dixie_celebrate_frame32.bin"
 
 ;$D75C03 (sprite graphic)
-SPRITE_GRAPHIC_28AC:
-	incbin "data/objects/graphics/sprite_graphic_28AC.bin"
+dixie_celebrate_frame33:
+	incbin "data/objects/graphics/dixie_celebrate_frame33.bin"
 
 ;$D75E1F (sprite graphic)
-SPRITE_GRAPHIC_28B0:
-	incbin "data/objects/graphics/sprite_graphic_28B0.bin"
+dixie_celebrate_frame34:
+	incbin "data/objects/graphics/dixie_celebrate_frame34.bin"
 
 ;$D76035 (sprite graphic)
-SPRITE_GRAPHIC_28B4:
-	incbin "data/objects/graphics/sprite_graphic_28B4.bin"
+dixie_celebrate_frame35:
+	incbin "data/objects/graphics/dixie_celebrate_frame35.bin"
 
 ;$D7620D (sprite graphic)
-SPRITE_GRAPHIC_28B8:
-	incbin "data/objects/graphics/sprite_graphic_28B8.bin"
+dixie_celebrate_frame36:
+	incbin "data/objects/graphics/dixie_celebrate_frame36.bin"
 
 ;$D763C3 (sprite graphic)
-SPRITE_GRAPHIC_28BC:
-	incbin "data/objects/graphics/sprite_graphic_28BC.bin"
+dixie_guitar_celebrate_frame1:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame1.bin"
 
 ;$D764B3 (sprite graphic)
-SPRITE_GRAPHIC_28C0:
-	incbin "data/objects/graphics/sprite_graphic_28C0.bin"
+dixie_guitar_celebrate_frame2:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame2.bin"
 
 ;$D765C5 (sprite graphic)
-SPRITE_GRAPHIC_28C4:
-	incbin "data/objects/graphics/sprite_graphic_28C4.bin"
+dixie_guitar_celebrate_frame3:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame3.bin"
 
 ;$D766D7 (sprite graphic)
-SPRITE_GRAPHIC_28C8:
-	incbin "data/objects/graphics/sprite_graphic_28C8.bin"
+dixie_guitar_celebrate_frame4:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame4.bin"
 
 ;$D767C7 (sprite graphic)
-SPRITE_GRAPHIC_28CC:
-	incbin "data/objects/graphics/sprite_graphic_28CC.bin"
+dixie_guitar_celebrate_frame5:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame5.bin"
 
 ;$D768B7 (sprite graphic)
-SPRITE_GRAPHIC_28D0:
-	incbin "data/objects/graphics/sprite_graphic_28D0.bin"
+dixie_guitar_celebrate_frame6:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame6.bin"
 
 ;$D76985 (sprite graphic)
-SPRITE_GRAPHIC_28D4:
-	incbin "data/objects/graphics/sprite_graphic_28D4.bin"
+dixie_guitar_celebrate_frame7:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame7.bin"
 
 ;$D76A53 (sprite graphic)
-SPRITE_GRAPHIC_28D8:
-	incbin "data/objects/graphics/sprite_graphic_28D8.bin"
+dixie_guitar_celebrate_frame8:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame8.bin"
 
 ;$D76B21 (sprite graphic)
-SPRITE_GRAPHIC_28DC:
-	incbin "data/objects/graphics/sprite_graphic_28DC.bin"
+dixie_guitar_celebrate_frame9:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame9.bin"
 
 ;$D76BD3 (sprite graphic)
-SPRITE_GRAPHIC_28E0:
-	incbin "data/objects/graphics/sprite_graphic_28E0.bin"
+dixie_guitar_celebrate_frame10:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame10.bin"
 
 ;$D76C85 (sprite graphic)
-SPRITE_GRAPHIC_28E4:
-	incbin "data/objects/graphics/sprite_graphic_28E4.bin"
+dixie_guitar_celebrate_frame11:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame11.bin"
 
 ;$D76D37 (sprite graphic)
-SPRITE_GRAPHIC_28E8:
-	incbin "data/objects/graphics/sprite_graphic_28E8.bin"
+dixie_guitar_celebrate_frame12:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame12.bin"
 
 ;$D76DE9 (sprite graphic)
-SPRITE_GRAPHIC_28EC:
-	incbin "data/objects/graphics/sprite_graphic_28EC.bin"
+dixie_guitar_celebrate_frame13:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame13.bin"
 
 ;$D76EB7 (sprite graphic)
-SPRITE_GRAPHIC_28F0:
-	incbin "data/objects/graphics/sprite_graphic_28F0.bin"
+dixie_guitar_celebrate_frame14:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame14.bin"
 
 ;$D76F85 (sprite graphic)
-SPRITE_GRAPHIC_28F4:
-	incbin "data/objects/graphics/sprite_graphic_28F4.bin"
+dixie_guitar_celebrate_frame15:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame15.bin"
 
 ;$D77053 (sprite graphic)
-SPRITE_GRAPHIC_28F8:
-	incbin "data/objects/graphics/sprite_graphic_28F8.bin"
+dixie_guitar_celebrate_frame16:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame16.bin"
 
 ;$D77121 (sprite graphic)
-SPRITE_GRAPHIC_28FC:
-	incbin "data/objects/graphics/sprite_graphic_28FC.bin"
+dixie_guitar_celebrate_frame17:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame17.bin"
 
 ;$D771F5 (sprite graphic)
-SPRITE_GRAPHIC_2900:
-	incbin "data/objects/graphics/sprite_graphic_2900.bin"
+dixie_guitar_celebrate_frame18:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame18.bin"
 
 ;$D772C9 (sprite graphic)
-SPRITE_GRAPHIC_2904:
-	incbin "data/objects/graphics/sprite_graphic_2904.bin"
+dixie_guitar_celebrate_frame19:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame19.bin"
 
 ;$D7739D (sprite graphic)
-SPRITE_GRAPHIC_2908:
-	incbin "data/objects/graphics/sprite_graphic_2908.bin"
+dixie_guitar_celebrate_frame20:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame20.bin"
 
 ;$D7744F (sprite graphic)
-SPRITE_GRAPHIC_290C:
-	incbin "data/objects/graphics/sprite_graphic_290C.bin"
+dixie_guitar_celebrate_frame21:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame21.bin"
 
 ;$D77501 (sprite graphic)
-SPRITE_GRAPHIC_2910:
-	incbin "data/objects/graphics/sprite_graphic_2910.bin"
+dixie_guitar_celebrate_frame22:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame22.bin"
 
 ;$D775D5 (sprite graphic)
-SPRITE_GRAPHIC_2914:
-	incbin "data/objects/graphics/sprite_graphic_2914.bin"
+dixie_guitar_celebrate_frame23:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame23.bin"
 
 ;$D776A9 (sprite graphic)
-SPRITE_GRAPHIC_2918:
-	incbin "data/objects/graphics/sprite_graphic_2918.bin"
+dixie_guitar_celebrate_frame24:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame24.bin"
 
 ;$D7777D (sprite graphic)
-SPRITE_GRAPHIC_291C:
-	incbin "data/objects/graphics/sprite_graphic_291C.bin"
+dixie_guitar_celebrate_frame25:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame25.bin"
 
 ;$D77851 (sprite graphic)
-SPRITE_GRAPHIC_2920:
-	incbin "data/objects/graphics/sprite_graphic_2920.bin"
+dixie_guitar_celebrate_frame26:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame26.bin"
 
 ;$D77903 (sprite graphic)
-SPRITE_GRAPHIC_2924:
-	incbin "data/objects/graphics/sprite_graphic_2924.bin"
+dixie_guitar_celebrate_frame27:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame27.bin"
 
 ;$D779B5 (sprite graphic)
-SPRITE_GRAPHIC_2928:
-	incbin "data/objects/graphics/sprite_graphic_2928.bin"
+dixie_guitar_celebrate_frame28:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame28.bin"
 
 ;$D77A45 (sprite graphic)
-SPRITE_GRAPHIC_292C:
-	incbin "data/objects/graphics/sprite_graphic_292C.bin"
+dixie_guitar_celebrate_frame29:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame29.bin"
 
 ;$D77B35 (sprite graphic)
-SPRITE_GRAPHIC_2930:
-	incbin "data/objects/graphics/sprite_graphic_2930.bin"
+dixie_guitar_celebrate_frame30:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame30.bin"
 
 ;$D77C25 (sprite graphic)
-SPRITE_GRAPHIC_2934:
-	incbin "data/objects/graphics/sprite_graphic_2934.bin"
+dixie_guitar_celebrate_frame31:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame31.bin"
 
 ;$D77D15 (sprite graphic)
-SPRITE_GRAPHIC_2938:
-	incbin "data/objects/graphics/sprite_graphic_2938.bin"
+dixie_guitar_celebrate_frame32:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame32.bin"
 
 ;$D77DE3 (sprite graphic)
-SPRITE_GRAPHIC_293C:
-	incbin "data/objects/graphics/sprite_graphic_293C.bin"
+dixie_guitar_celebrate_frame33:
+	incbin "data/objects/graphics/dixie_guitar_celebrate_frame33.bin"
 
 ;$D77EB1 (sprite graphic)
-SPRITE_GRAPHIC_2940:
-	incbin "data/objects/graphics/sprite_graphic_2940.bin"
+dixie_mourn_frame1:
+	incbin "data/objects/graphics/dixie_mourn_frame1.bin"
 
 ;$D780E9 (sprite graphic)
-SPRITE_GRAPHIC_2944:
-	incbin "data/objects/graphics/sprite_graphic_2944.bin"
+dixie_mourn_frame2:
+	incbin "data/objects/graphics/dixie_mourn_frame2.bin"
 
 ;$D782DD (sprite graphic)
-SPRITE_GRAPHIC_2948:
-	incbin "data/objects/graphics/sprite_graphic_2948.bin"
+dixie_mourn_frame3:
+	incbin "data/objects/graphics/dixie_mourn_frame3.bin"
 
 ;$D78515 (sprite graphic)
-SPRITE_GRAPHIC_294C:
-	incbin "data/objects/graphics/sprite_graphic_294C.bin"
+dixie_mourn_frame4:
+	incbin "data/objects/graphics/dixie_mourn_frame4.bin"
 
 ;$D7870F (sprite graphic)
-SPRITE_GRAPHIC_2950:
-	incbin "data/objects/graphics/sprite_graphic_2950.bin"
+dixie_mourn_frame5:
+	incbin "data/objects/graphics/dixie_mourn_frame5.bin"
 
 ;$D78925 (sprite graphic)
-SPRITE_GRAPHIC_2954:
-	incbin "data/objects/graphics/sprite_graphic_2954.bin"
+dixie_mourn_frame6:
+	incbin "data/objects/graphics/dixie_mourn_frame6.bin"
 
 ;$D78B3B (sprite graphic)
-SPRITE_GRAPHIC_2958:
-	incbin "data/objects/graphics/sprite_graphic_2958.bin"
+dixie_mourn_frame7:
+	incbin "data/objects/graphics/dixie_mourn_frame7.bin"
 
 ;$D78D51 (sprite graphic)
-SPRITE_GRAPHIC_295C:
-	incbin "data/objects/graphics/sprite_graphic_295C.bin"
+dixie_mourn_frame8:
+	incbin "data/objects/graphics/dixie_mourn_frame8.bin"
 
 ;$D78F67 (sprite graphic)
-SPRITE_GRAPHIC_2960:
-	incbin "data/objects/graphics/sprite_graphic_2960.bin"
+dixie_mourn_frame9:
+	incbin "data/objects/graphics/dixie_mourn_frame9.bin"
 
 ;$D7917D (sprite graphic)
-SPRITE_GRAPHIC_2964:
-	incbin "data/objects/graphics/sprite_graphic_2964.bin"
+dixie_mourn_frame10:
+	incbin "data/objects/graphics/dixie_mourn_frame10.bin"
 
 ;$D79393 (sprite graphic)
-SPRITE_GRAPHIC_2968:
-	incbin "data/objects/graphics/sprite_graphic_2968.bin"
+dixie_mourn_frame11:
+	incbin "data/objects/graphics/dixie_mourn_frame11.bin"
 
 ;$D795CB (sprite graphic)
-SPRITE_GRAPHIC_296C:
-	incbin "data/objects/graphics/sprite_graphic_296C.bin"
+dixie_mourn_frame12:
+	incbin "data/objects/graphics/dixie_mourn_frame12.bin"
 
 ;$D79803 (sprite graphic)
-SPRITE_GRAPHIC_2970:
-	incbin "data/objects/graphics/sprite_graphic_2970.bin"
+dixie_mourn_frame13:
+	incbin "data/objects/graphics/dixie_mourn_frame13.bin"
 
 ;$D79A19 (sprite graphic)
-SPRITE_GRAPHIC_2974:
-	incbin "data/objects/graphics/sprite_graphic_2974.bin"
+dixie_mourn_frame14:
+	incbin "data/objects/graphics/dixie_mourn_frame14.bin"
 
 ;$D79C2F (sprite graphic)
-SPRITE_GRAPHIC_2978:
-	incbin "data/objects/graphics/sprite_graphic_2978.bin"
+dixie_mourn_frame15:
+	incbin "data/objects/graphics/dixie_mourn_frame15.bin"
 
 ;$D79E45 (sprite graphic)
-SPRITE_GRAPHIC_297C:
-	incbin "data/objects/graphics/sprite_graphic_297C.bin"
+spiked_cannonball_frame1:
+	incbin "data/objects/graphics/spiked_cannonball_frame1.bin"
 
 ;$D79FD9 (sprite graphic)
-SPRITE_GRAPHIC_2980:
-	incbin "data/objects/graphics/sprite_graphic_2980.bin"
+spiked_cannonball_frame2:
+	incbin "data/objects/graphics/spiked_cannonball_frame2.bin"
 
 ;$D7A18F (sprite graphic)
-SPRITE_GRAPHIC_2984:
-	incbin "data/objects/graphics/sprite_graphic_2984.bin"
+spiked_cannonball_frame3:
+	incbin "data/objects/graphics/spiked_cannonball_frame3.bin"
 
 ;$D7A39F (sprite graphic)
-SPRITE_GRAPHIC_2988:
-	incbin "data/objects/graphics/sprite_graphic_2988.bin"
+spiked_cannonball_frame4:
+	incbin "data/objects/graphics/spiked_cannonball_frame4.bin"
 
 ;$D7A637 (sprite graphic)
-SPRITE_GRAPHIC_298C:
-	incbin "data/objects/graphics/sprite_graphic_298C.bin"
+spiked_cannonball_frame5:
+	incbin "data/objects/graphics/spiked_cannonball_frame5.bin"
 
 ;$D7A935 (sprite graphic)
-SPRITE_GRAPHIC_2990:
-	incbin "data/objects/graphics/sprite_graphic_2990.bin"
+spiked_cannonball_frame6:
+	incbin "data/objects/graphics/spiked_cannonball_frame6.bin"
 
 ;$D7AC55 (sprite graphic)
-SPRITE_GRAPHIC_2994:
-	incbin "data/objects/graphics/sprite_graphic_2994.bin"
+diddy_celebrate_frame1:
+	incbin "data/objects/graphics/diddy_celebrate_frame1.bin"
 
 ;$D7AE49 (sprite graphic)
-SPRITE_GRAPHIC_2998:
-	incbin "data/objects/graphics/sprite_graphic_2998.bin"
+diddy_celebrate_frame2:
+	incbin "data/objects/graphics/diddy_celebrate_frame2.bin"
 
 ;$D7B01B (sprite graphic)
-SPRITE_GRAPHIC_299C:
-	incbin "data/objects/graphics/sprite_graphic_299C.bin"
+diddy_celebrate_frame3:
+	incbin "data/objects/graphics/diddy_celebrate_frame3.bin"
 
 ;$D7B1F3 (sprite graphic)
-SPRITE_GRAPHIC_29A0:
-	incbin "data/objects/graphics/sprite_graphic_29A0.bin"
+diddy_celebrate_frame4:
+	incbin "data/objects/graphics/diddy_celebrate_frame4.bin"
 
 ;$D7B387 (sprite graphic)
-SPRITE_GRAPHIC_29A4:
-	incbin "data/objects/graphics/sprite_graphic_29A4.bin"
+diddy_celebrate_frame5:
+	incbin "data/objects/graphics/diddy_celebrate_frame5.bin"
 
 ;$D7B55F (sprite graphic)
-SPRITE_GRAPHIC_29A8:
-	incbin "data/objects/graphics/sprite_graphic_29A8.bin"
+diddy_celebrate_frame6:
+	incbin "data/objects/graphics/diddy_celebrate_frame6.bin"
 
 ;$D7B77B (sprite graphic)
-SPRITE_GRAPHIC_29AC:
-	incbin "data/objects/graphics/sprite_graphic_29AC.bin"
+diddy_celebrate_frame7:
+	incbin "data/objects/graphics/diddy_celebrate_frame7.bin"
 
 ;$D7B9B9 (sprite graphic)
-SPRITE_GRAPHIC_29B0:
-	incbin "data/objects/graphics/sprite_graphic_29B0.bin"
+diddy_celebrate_frame8:
+	incbin "data/objects/graphics/diddy_celebrate_frame8.bin"
 
 ;$D7BBD5 (sprite graphic)
-SPRITE_GRAPHIC_29B4:
-	incbin "data/objects/graphics/sprite_graphic_29B4.bin"
+diddy_celebrate_frame9:
+	incbin "data/objects/graphics/diddy_celebrate_frame9.bin"
 
 ;$D7BDF1 (sprite graphic)
-SPRITE_GRAPHIC_29B8:
-	incbin "data/objects/graphics/sprite_graphic_29B8.bin"
+diddy_celebrate_frame10:
+	incbin "data/objects/graphics/diddy_celebrate_frame10.bin"
 
 ;$D7C00D (sprite graphic)
-SPRITE_GRAPHIC_29BC:
-	incbin "data/objects/graphics/sprite_graphic_29BC.bin"
+diddy_celebrate_frame11:
+	incbin "data/objects/graphics/diddy_celebrate_frame11.bin"
 
 ;$D7C229 (sprite graphic)
-SPRITE_GRAPHIC_29C0:
-	incbin "data/objects/graphics/sprite_graphic_29C0.bin"
+diddy_celebrate_frame12:
+	incbin "data/objects/graphics/diddy_celebrate_frame12.bin"
 
 ;$D7C423 (sprite graphic)
-SPRITE_GRAPHIC_29C4:
-	incbin "data/objects/graphics/sprite_graphic_29C4.bin"
+diddy_celebrate_frame13:
+	incbin "data/objects/graphics/diddy_celebrate_frame13.bin"
 
 ;$D7C61D (sprite graphic)
-SPRITE_GRAPHIC_29C8:
-	incbin "data/objects/graphics/sprite_graphic_29C8.bin"
+diddy_celebrate_frame14:
+	incbin "data/objects/graphics/diddy_celebrate_frame14.bin"
 
 ;$D7C817 (sprite graphic)
-SPRITE_GRAPHIC_29CC:
-	incbin "data/objects/graphics/sprite_graphic_29CC.bin"
+diddy_celebrate_frame15:
+	incbin "data/objects/graphics/diddy_celebrate_frame15.bin"
 
 ;$D7CA11 (sprite graphic)
-SPRITE_GRAPHIC_29D0:
-	incbin "data/objects/graphics/sprite_graphic_29D0.bin"
+diddy_celebrate_frame16:
+	incbin "data/objects/graphics/diddy_celebrate_frame16.bin"
 
 ;$D7CC0B (sprite graphic)
-SPRITE_GRAPHIC_29D4:
-	incbin "data/objects/graphics/sprite_graphic_29D4.bin"
+diddy_celebrate_frame17:
+	incbin "data/objects/graphics/diddy_celebrate_frame17.bin"
 
 ;$D7CE05 (sprite graphic)
-SPRITE_GRAPHIC_29D8:
-	incbin "data/objects/graphics/sprite_graphic_29D8.bin"
+diddy_celebrate_frame18:
+	incbin "data/objects/graphics/diddy_celebrate_frame18.bin"
 
 ;$D7D043 (sprite graphic)
-SPRITE_GRAPHIC_29DC:
-	incbin "data/objects/graphics/sprite_graphic_29DC.bin"
+diddy_celebrate_frame19:
+	incbin "data/objects/graphics/diddy_celebrate_frame19.bin"
 
 ;$D7D23D (sprite graphic)
-SPRITE_GRAPHIC_29E0:
-	incbin "data/objects/graphics/sprite_graphic_29E0.bin"
+diddy_celebrate_frame20:
+	incbin "data/objects/graphics/diddy_celebrate_frame20.bin"
 
 ;$D7D437 (sprite graphic)
-SPRITE_GRAPHIC_29E4:
-	incbin "data/objects/graphics/sprite_graphic_29E4.bin"
+diddy_celebrate_frame21:
+	incbin "data/objects/graphics/diddy_celebrate_frame21.bin"
 
 ;$D7D653 (sprite graphic)
-SPRITE_GRAPHIC_29E8:
-	incbin "data/objects/graphics/sprite_graphic_29E8.bin"
+diddy_boombox_celebrate_frame1:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame1.bin"
 
 ;$D7D787 (sprite graphic)
-SPRITE_GRAPHIC_29EC:
-	incbin "data/objects/graphics/sprite_graphic_29EC.bin"
+diddy_boombox_celebrate_frame2:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame2.bin"
 
 ;$D7D8BB (sprite graphic)
-SPRITE_GRAPHIC_29F0:
-	incbin "data/objects/graphics/sprite_graphic_29F0.bin"
+diddy_boombox_celebrate_frame3:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame3.bin"
 
 ;$D7D9EF (sprite graphic)
-SPRITE_GRAPHIC_29F4:
-	incbin "data/objects/graphics/sprite_graphic_29F4.bin"
+diddy_boombox_celebrate_frame4:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame4.bin"
 
 ;$D7DB23 (sprite graphic)
-SPRITE_GRAPHIC_29F8:
-	incbin "data/objects/graphics/sprite_graphic_29F8.bin"
+diddy_boombox_celebrate_frame5:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame5.bin"
 
 ;$D7DC57 (sprite graphic)
-SPRITE_GRAPHIC_29FC:
-	incbin "data/objects/graphics/sprite_graphic_29FC.bin"
+diddy_boombox_celebrate_frame6:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame6.bin"
 
 ;$D7DD8B (sprite graphic)
-SPRITE_GRAPHIC_2A00:
-	incbin "data/objects/graphics/sprite_graphic_2A00.bin"
+diddy_boombox_celebrate_frame7:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame7.bin"
 
 ;$D7DEBF (sprite graphic)
-SPRITE_GRAPHIC_2A04:
-	incbin "data/objects/graphics/sprite_graphic_2A04.bin"
+diddy_boombox_celebrate_frame8:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame8.bin"
 
 ;$D7DFF3 (sprite graphic)
-SPRITE_GRAPHIC_2A08:
-	incbin "data/objects/graphics/sprite_graphic_2A08.bin"
+diddy_boombox_celebrate_frame9:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame9.bin"
 
 ;$D7E127 (sprite graphic)
-SPRITE_GRAPHIC_2A0C:
-	incbin "data/objects/graphics/sprite_graphic_2A0C.bin"
+diddy_boombox_celebrate_frame10:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame10.bin"
 
 ;$D7E25B (sprite graphic)
-SPRITE_GRAPHIC_2A10:
-	incbin "data/objects/graphics/sprite_graphic_2A10.bin"
+diddy_boombox_celebrate_frame11:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame11.bin"
 
 ;$D7E36D (sprite graphic)
-SPRITE_GRAPHIC_2A14:
-	incbin "data/objects/graphics/sprite_graphic_2A14.bin"
+diddy_boombox_celebrate_frame12:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame12.bin"
 
 ;$D7E43B (sprite graphic)
-SPRITE_GRAPHIC_2A18:
-	incbin "data/objects/graphics/sprite_graphic_2A18.bin"
+diddy_boombox_celebrate_frame13:
+	incbin "data/objects/graphics/diddy_boombox_celebrate_frame13.bin"
 
 ;$D7E509 (sprite graphic)
-SPRITE_GRAPHIC_2A1C:
-	incbin "data/objects/graphics/sprite_graphic_2A1C.bin"
+k_rool_turn_frame1:
+	incbin "data/objects/graphics/k_rool_turn_frame1.bin"
 
 ;$D7EB1F (sprite graphic)
-SPRITE_GRAPHIC_2A20:
-	incbin "data/objects/graphics/sprite_graphic_2A20.bin"
+k_rool_turn_frame2:
+	incbin "data/objects/graphics/k_rool_turn_frame2.bin"
 
 ;$D7F0AD (sprite graphic)
-SPRITE_GRAPHIC_2A24:
-	incbin "data/objects/graphics/sprite_graphic_2A24.bin"
+k_rool_blunderbuss_turn_graphic:
+	incbin "data/objects/graphics/k_rool_blunderbuss_turn_graphic.bin"
 
 ;$D7F19D (sprite graphic)
-SPRITE_GRAPHIC_2A28:
-	incbin "data/objects/graphics/sprite_graphic_2A28.bin"
+diddy_mourn_frame1:
+	incbin "data/objects/graphics/diddy_mourn_frame1.bin"
 
 ;$D7F397 (sprite graphic)
-SPRITE_GRAPHIC_2A2C:
-	incbin "data/objects/graphics/sprite_graphic_2A2C.bin"
+diddy_mourn_frame2:
+	incbin "data/objects/graphics/diddy_mourn_frame2.bin"
 
 ;$D7F591 (sprite graphic)
-SPRITE_GRAPHIC_2A30:
-	incbin "data/objects/graphics/sprite_graphic_2A30.bin"
+diddy_mourn_frame3:
+	incbin "data/objects/graphics/diddy_mourn_frame3.bin"
 
 ;$D7F78B (sprite graphic)
-SPRITE_GRAPHIC_2A34:
-	incbin "data/objects/graphics/sprite_graphic_2A34.bin"
+diddy_mourn_frame4:
+	incbin "data/objects/graphics/diddy_mourn_frame4.bin"
 
 check bankcross off
 ;$D7F9A7
@@ -10129,524 +10129,524 @@ krem_quay_left_8x8_tilemap:
 check bankcross full
 
 ;$D80079 (sprite graphic)
-SPRITE_GRAPHIC_2A38:
-	incbin "data/objects/graphics/sprite_graphic_2A38.bin"
+diddy_mourn_frame5:
+	incbin "data/objects/graphics/diddy_mourn_frame5.bin"
 
 ;$D80295 (sprite graphic)
-SPRITE_GRAPHIC_2A3C:
-	incbin "data/objects/graphics/sprite_graphic_2A3C.bin"
+diddy_mourn_frame6:
+	incbin "data/objects/graphics/diddy_mourn_frame6.bin"
 
 ;$D804B1 (sprite graphic)
-SPRITE_GRAPHIC_2A40:
-	incbin "data/objects/graphics/sprite_graphic_2A40.bin"
+diddy_mourn_frame7:
+	incbin "data/objects/graphics/diddy_mourn_frame7.bin"
 
 ;$D80689 (sprite graphic)
-SPRITE_GRAPHIC_2A44:
-	incbin "data/objects/graphics/sprite_graphic_2A44.bin"
+diddy_mourn_frame8:
+	incbin "data/objects/graphics/diddy_mourn_frame8.bin"
 
 ;$D80861 (sprite graphic)
-SPRITE_GRAPHIC_2A48:
-	incbin "data/objects/graphics/sprite_graphic_2A48.bin"
+diddy_mourn_frame9:
+	incbin "data/objects/graphics/diddy_mourn_frame9.bin"
 
 ;$D80A39 (sprite graphic)
-SPRITE_GRAPHIC_2A4C:
-	incbin "data/objects/graphics/sprite_graphic_2A4C.bin"
+diddy_mourn_frame10:
+	incbin "data/objects/graphics/diddy_mourn_frame10.bin"
 
 ;$D80C33 (sprite graphic)
-SPRITE_GRAPHIC_2A50:
-	incbin "data/objects/graphics/sprite_graphic_2A50.bin"
+diddy_mourn_frame11:
+	incbin "data/objects/graphics/diddy_mourn_frame11.bin"
 
 ;$D80E0B (sprite graphic)
-SPRITE_GRAPHIC_2A54:
-	incbin "data/objects/graphics/sprite_graphic_2A54.bin"
+diddy_mourn_frame12:
+	incbin "data/objects/graphics/diddy_mourn_frame12.bin"
 
 ;$D80FE3 (sprite graphic)
-SPRITE_GRAPHIC_2A58:
-	incbin "data/objects/graphics/sprite_graphic_2A58.bin"
+diddy_mourn_frame13:
+	incbin "data/objects/graphics/diddy_mourn_frame13.bin"
 
 ;$D811BB (sprite graphic)
-SPRITE_GRAPHIC_2A5C:
-	incbin "data/objects/graphics/sprite_graphic_2A5C.bin"
+diddy_mourn_frame14:
+	incbin "data/objects/graphics/diddy_mourn_frame14.bin"
 
 ;$D813B5 (sprite graphic)
-SPRITE_GRAPHIC_2A60:
-	incbin "data/objects/graphics/sprite_graphic_2A60.bin"
+diddy_mourn_frame15:
+	incbin "data/objects/graphics/diddy_mourn_frame15.bin"
 
 ;$D8158D (sprite graphic)
-SPRITE_GRAPHIC_2A64:
-	incbin "data/objects/graphics/sprite_graphic_2A64.bin"
+diddy_mourn_frame16:
+	incbin "data/objects/graphics/diddy_mourn_frame16.bin"
 
 ;$D81765 (sprite graphic)
-SPRITE_GRAPHIC_2A68:
-	incbin "data/objects/graphics/sprite_graphic_2A68.bin"
+diddy_mourn_frame17:
+	incbin "data/objects/graphics/diddy_mourn_frame17.bin"
 
 ;$D8193D (sprite graphic)
-SPRITE_GRAPHIC_2A6C:
-	incbin "data/objects/graphics/sprite_graphic_2A6C.bin"
+diddy_mourn_frame18:
+	incbin "data/objects/graphics/diddy_mourn_frame18.bin"
 
 ;$D81AF3 (sprite graphic)
-SPRITE_GRAPHIC_2A70:
-	incbin "data/objects/graphics/sprite_graphic_2A70.bin"
+diddy_mourn_frame19:
+	incbin "data/objects/graphics/diddy_mourn_frame19.bin"
 
 ;$D81CCB (sprite graphic)
-SPRITE_GRAPHIC_2A74:
-	incbin "data/objects/graphics/sprite_graphic_2A74.bin"
+rain_cloud_appear_frame1:
+	incbin "data/objects/graphics/rain_cloud_appear_frame1.bin"
 
 ;$D81CF5 (sprite graphic)
-SPRITE_GRAPHIC_2A78:
-	incbin "data/objects/graphics/sprite_graphic_2A78.bin"
+rain_cloud_appear_frame2:
+	incbin "data/objects/graphics/rain_cloud_appear_frame2.bin"
 
 ;$D81D41 (sprite graphic)
-SPRITE_GRAPHIC_2A7C:
-	incbin "data/objects/graphics/sprite_graphic_2A7C.bin"
+rain_cloud_appear_frame3:
+	incbin "data/objects/graphics/rain_cloud_appear_frame3.bin"
 
 ;$D81DAF (sprite graphic)
-SPRITE_GRAPHIC_2A80:
-	incbin "data/objects/graphics/sprite_graphic_2A80.bin"
+rain_cloud_appear_frame4:
+	incbin "data/objects/graphics/rain_cloud_appear_frame4.bin"
 
 ;$D81E5B (sprite graphic)
-SPRITE_GRAPHIC_2A84:
-	incbin "data/objects/graphics/sprite_graphic_2A84.bin"
+rain_cloud_appear_frame5:
+	incbin "data/objects/graphics/rain_cloud_appear_frame5.bin"
 
 ;$D81F29 (sprite graphic)
-SPRITE_GRAPHIC_2A88:
-	incbin "data/objects/graphics/sprite_graphic_2A88.bin"
+rain_cloud_appear_frame6:
+	incbin "data/objects/graphics/rain_cloud_appear_frame6.bin"
 
 ;$D82035 (sprite graphic)
-SPRITE_GRAPHIC_2A8C:
-	incbin "data/objects/graphics/sprite_graphic_2A8C.bin"
+rain_cloud_rain_frame1:
+	incbin "data/objects/graphics/rain_cloud_rain_frame1.bin"
 
 ;$D82103 (sprite graphic)
-SPRITE_GRAPHIC_2A90:
-	incbin "data/objects/graphics/sprite_graphic_2A90.bin"
+rain_cloud_rain_frame2:
+	incbin "data/objects/graphics/rain_cloud_rain_frame2.bin"
 
 ;$D821D1 (sprite graphic)
-SPRITE_GRAPHIC_2A94:
-	incbin "data/objects/graphics/sprite_graphic_2A94.bin"
+rain_cloud_rain_frame3:
+	incbin "data/objects/graphics/rain_cloud_rain_frame3.bin"
 
 ;$D8227D (sprite graphic)
-SPRITE_GRAPHIC_2A98:
-	incbin "data/objects/graphics/sprite_graphic_2A98.bin"
+rain_cloud_rain_frame4:
+	incbin "data/objects/graphics/rain_cloud_rain_frame4.bin"
 
 ;$D82329 (sprite graphic)
-SPRITE_GRAPHIC_2A9C:
-	incbin "data/objects/graphics/sprite_graphic_2A9C.bin"
+rain_cloud_rain_frame5:
+	incbin "data/objects/graphics/rain_cloud_rain_frame5.bin"
 
 ;$D823B9 (sprite graphic)
-SPRITE_GRAPHIC_2AA0:
-	incbin "data/objects/graphics/sprite_graphic_2AA0.bin"
+diddy_ride_cart_frame1:
+	incbin "data/objects/graphics/diddy_ride_cart_frame1.bin"
 
 ;$D825D5 (sprite graphic)
-SPRITE_GRAPHIC_2AA4:
-	incbin "data/objects/graphics/sprite_graphic_2AA4.bin"
+diddy_ride_cart_frame2:
+	incbin "data/objects/graphics/diddy_ride_cart_frame2.bin"
 
 ;$D827CF (sprite graphic)
-SPRITE_GRAPHIC_2AA8:
-	incbin "data/objects/graphics/sprite_graphic_2AA8.bin"
+diddy_ride_cart_frame3:
+	incbin "data/objects/graphics/diddy_ride_cart_frame3.bin"
 
 ;$D829C9 (sprite graphic)
-SPRITE_GRAPHIC_2AAC:
-	incbin "data/objects/graphics/sprite_graphic_2AAC.bin"
+diddy_ride_cart_frame4:
+	incbin "data/objects/graphics/diddy_ride_cart_frame4.bin"
 
 ;$D82B7F (sprite graphic)
-SPRITE_GRAPHIC_2AB0:
-	incbin "data/objects/graphics/sprite_graphic_2AB0.bin"
+diddy_ride_cart_duck_frame1:
+	incbin "data/objects/graphics/diddy_ride_cart_duck_frame1.bin"
 
 ;$D82D9B (sprite graphic)
-SPRITE_GRAPHIC_2AB4:
-	incbin "data/objects/graphics/sprite_graphic_2AB4.bin"
+diddy_ride_cart_duck_frame2:
+	incbin "data/objects/graphics/diddy_ride_cart_duck_frame2.bin"
 
 ;$D82FB7 (sprite graphic)
-SPRITE_GRAPHIC_2AB8:
-	incbin "data/objects/graphics/sprite_graphic_2AB8.bin"
+diddy_ride_cart_duck_frame3:
+	incbin "data/objects/graphics/diddy_ride_cart_duck_frame3.bin"
 
 ;$D831CD (sprite graphic)
-SPRITE_GRAPHIC_2ABC:
-	incbin "data/objects/graphics/sprite_graphic_2ABC.bin"
+diddy_ride_cart_duck_frame4:
+	incbin "data/objects/graphics/diddy_ride_cart_duck_frame4.bin"
 
 ;$D8337D (sprite graphic)
-SPRITE_GRAPHIC_2AC0:
-	incbin "data/objects/graphics/sprite_graphic_2AC0.bin"
+diddy_ride_cart_hill_frame1:
+	incbin "data/objects/graphics/diddy_ride_cart_hill_frame1.bin"
 
 ;$D835F9 (sprite graphic)
-SPRITE_GRAPHIC_2AC4:
-	incbin "data/objects/graphics/sprite_graphic_2AC4.bin"
+diddy_ride_cart_hill_frame2:
+	incbin "data/objects/graphics/diddy_ride_cart_hill_frame2.bin"
 
 ;$D83831 (sprite graphic)
-SPRITE_GRAPHIC_2AC8:
-	incbin "data/objects/graphics/sprite_graphic_2AC8.bin"
+diddy_ride_cart_hill_frame3:
+	incbin "data/objects/graphics/diddy_ride_cart_hill_frame3.bin"
 
 ;$D83A69 (sprite graphic)
-SPRITE_GRAPHIC_2ACC:
-	incbin "data/objects/graphics/sprite_graphic_2ACC.bin"
+diddy_ride_cart_hill_frame4:
+	incbin "data/objects/graphics/diddy_ride_cart_hill_frame4.bin"
 
 ;$D83CC3 (sprite graphic)
-SPRITE_GRAPHIC_2AD0:
-	incbin "data/objects/graphics/sprite_graphic_2AD0.bin"
+dixie_ride_cart_frame1:
+	incbin "data/objects/graphics/dixie_ride_cart_frame1.bin"
 
 ;$D83EF5 (sprite graphic)
-SPRITE_GRAPHIC_2AD4:
-	incbin "data/objects/graphics/sprite_graphic_2AD4.bin"
+dixie_ride_cart_frame2:
+	incbin "data/objects/graphics/dixie_ride_cart_frame2.bin"
 
 ;$D840E9 (sprite graphic)
-SPRITE_GRAPHIC_2AD8:
-	incbin "data/objects/graphics/sprite_graphic_2AD8.bin"
+dixie_ride_cart_frame3:
+	incbin "data/objects/graphics/dixie_ride_cart_frame3.bin"
 
 ;$D8429F (sprite graphic)
-SPRITE_GRAPHIC_2ADC:
-	incbin "data/objects/graphics/sprite_graphic_2ADC.bin"
+dixie_ride_cart_frame4:
+	incbin "data/objects/graphics/dixie_ride_cart_frame4.bin"
 
 ;$D843EF (sprite graphic)
-SPRITE_GRAPHIC_2AE0:
-	incbin "data/objects/graphics/sprite_graphic_2AE0.bin"
+dixie_ride_cart_duct_frame1:
+	incbin "data/objects/graphics/dixie_ride_cart_duct_frame1.bin"
 
 ;$D84621 (sprite graphic)
-SPRITE_GRAPHIC_2AE4:
-	incbin "data/objects/graphics/sprite_graphic_2AE4.bin"
+dixie_ride_cart_duct_frame2:
+	incbin "data/objects/graphics/dixie_ride_cart_duct_frame2.bin"
 
 ;$D84837 (sprite graphic)
-SPRITE_GRAPHIC_2AE8:
-	incbin "data/objects/graphics/sprite_graphic_2AE8.bin"
+dixie_ride_cart_duct_frame3:
+	incbin "data/objects/graphics/dixie_ride_cart_duct_frame3.bin"
 
 ;$D84A4D (sprite graphic)
-SPRITE_GRAPHIC_2AEC:
-	incbin "data/objects/graphics/sprite_graphic_2AEC.bin"
+dixie_ride_cart_duct_frame4:
+	incbin "data/objects/graphics/dixie_ride_cart_duct_frame4.bin"
 
 ;$D84C47 (sprite graphic)
-SPRITE_GRAPHIC_2AF0:
-	incbin "data/objects/graphics/sprite_graphic_2AF0.bin"
+dixie_ride_cart_hill_frame1:
+	incbin "data/objects/graphics/dixie_ride_cart_hill_frame1.bin"
 
 ;$D84EC3 (sprite graphic)
-SPRITE_GRAPHIC_2AF4:
-	incbin "data/objects/graphics/sprite_graphic_2AF4.bin"
+dixie_ride_cart_hill_frame2:
+	incbin "data/objects/graphics/dixie_ride_cart_hill_frame2.bin"
 
 ;$D8511D (sprite graphic)
-SPRITE_GRAPHIC_2AF8:
-	incbin "data/objects/graphics/sprite_graphic_2AF8.bin"
+dixie_ride_cart_hill_frame3:
+	incbin "data/objects/graphics/dixie_ride_cart_hill_frame3.bin"
 
 ;$D85371 (sprite graphic)
-SPRITE_GRAPHIC_2AFC:
-	incbin "data/objects/graphics/sprite_graphic_2AFC.bin"
+dixie_ride_cart_hill_frame4:
+	incbin "data/objects/graphics/dixie_ride_cart_hill_frame4.bin"
 
 ;$D855CB (sprite graphic)
-SPRITE_GRAPHIC_2B00:
-	incbin "data/objects/graphics/sprite_graphic_2B00.bin"
+dixie_ride_cart_hill_frame5:
+	incbin "data/objects/graphics/dixie_ride_cart_hill_frame5.bin"
 
 ;$D85825 (sprite graphic)
-SPRITE_GRAPHIC_2B04:
-	incbin "data/objects/graphics/sprite_graphic_2B04.bin"
+dixie_ride_cart_hill_frame6:
+	incbin "data/objects/graphics/dixie_ride_cart_hill_frame6.bin"
 
 ;$D85A7F (sprite graphic)
-SPRITE_GRAPHIC_2B08:
-	incbin "data/objects/graphics/sprite_graphic_2B08.bin"
+klank_ride_cart_slope_frame1:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame1.bin"
 
 ;$D85C13 (sprite graphic)
-SPRITE_GRAPHIC_2B0C:
-	incbin "data/objects/graphics/sprite_graphic_2B0C.bin"
+klank_ride_cart_slope_frame2:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame2.bin"
 
 ;$D85DC9 (sprite graphic)
-SPRITE_GRAPHIC_2B10:
-	incbin "data/objects/graphics/sprite_graphic_2B10.bin"
+klank_ride_cart_slope_frame3:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame3.bin"
 
 ;$D85F7F (sprite graphic)
-SPRITE_GRAPHIC_2B14:
-	incbin "data/objects/graphics/sprite_graphic_2B14.bin"
+klank_ride_cart_slope_frame4:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame4.bin"
 
 ;$D86135 (sprite graphic)
-SPRITE_GRAPHIC_2B18:
-	incbin "data/objects/graphics/sprite_graphic_2B18.bin"
+klank_ride_cart_slope_frame5:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame5.bin"
 
 ;$D862EB (sprite graphic)
-SPRITE_GRAPHIC_2B1C:
-	incbin "data/objects/graphics/sprite_graphic_2B1C.bin"
+klank_ride_cart_slope_frame6:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame6.bin"
 
 ;$D864A1 (sprite graphic)
-SPRITE_GRAPHIC_2B20:
-	incbin "data/objects/graphics/sprite_graphic_2B20.bin"
+klank_ride_cart_slope_frame7:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame7.bin"
 
 ;$D86657 (sprite graphic)
-SPRITE_GRAPHIC_2B24:
-	incbin "data/objects/graphics/sprite_graphic_2B24.bin"
+klank_ride_cart_slope_frame8:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame8.bin"
 
 ;$D8680D (sprite graphic)
-SPRITE_GRAPHIC_2B28:
-	incbin "data/objects/graphics/sprite_graphic_2B28.bin"
+klank_ride_cart_slope_frame9:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame9.bin"
 
 ;$D869C3 (sprite graphic)
-SPRITE_GRAPHIC_2B2C:
-	incbin "data/objects/graphics/sprite_graphic_2B2C.bin"
+klank_ride_cart_slope_frame10:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame10.bin"
 
 ;$D86B79 (sprite graphic)
-SPRITE_GRAPHIC_2B30:
-	incbin "data/objects/graphics/sprite_graphic_2B30.bin"
+klank_ride_cart_slope_frame11:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame11.bin"
 
 ;$D86D2F (sprite graphic)
-SPRITE_GRAPHIC_2B34:
-	incbin "data/objects/graphics/sprite_graphic_2B34.bin"
+klank_ride_cart_slope_frame12:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame12.bin"
 
 ;$D86EE5 (sprite graphic)
-SPRITE_GRAPHIC_2B38:
-	incbin "data/objects/graphics/sprite_graphic_2B38.bin"
+klank_ride_cart_slope_frame13:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame13.bin"
 
 ;$D8709B (sprite graphic)
-SPRITE_GRAPHIC_2B3C:
-	incbin "data/objects/graphics/sprite_graphic_2B3C.bin"
+klank_ride_cart_slope_frame14:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame14.bin"
 
 ;$D87251 (sprite graphic)
-SPRITE_GRAPHIC_2B40:
-	incbin "data/objects/graphics/sprite_graphic_2B40.bin"
+klank_ride_cart_slope_frame15:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame15.bin"
 
 ;$D87407 (sprite graphic)
-SPRITE_GRAPHIC_2B44:
-	incbin "data/objects/graphics/sprite_graphic_2B44.bin"
+klank_ride_cart_slope_frame16:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame16.bin"
 
 ;$D8759B (sprite graphic)
-SPRITE_GRAPHIC_2B48:
-	incbin "data/objects/graphics/sprite_graphic_2B48.bin"
+klank_ride_cart_slope_frame17:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame17.bin"
 
 ;$D87773 (sprite graphic)
-SPRITE_GRAPHIC_2B4C:
-	incbin "data/objects/graphics/sprite_graphic_2B4C.bin"
+klank_ride_cart_slope_frame18:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame18.bin"
 
 ;$D87929 (sprite graphic)
-SPRITE_GRAPHIC_2B50:
-	incbin "data/objects/graphics/sprite_graphic_2B50.bin"
+klank_ride_cart_slope_frame19:
+	incbin "data/objects/graphics/klank_ride_cart_slope_frame19.bin"
 
 ;$D87B01 (sprite graphic)
-SPRITE_GRAPHIC_2B54:
-	incbin "data/objects/graphics/sprite_graphic_2B54.bin"
+klank_ride_cart_frame1:
+	incbin "data/objects/graphics/klank_ride_cart_frame1.bin"
 
 ;$D87CB7 (sprite graphic)
-SPRITE_GRAPHIC_2B58:
-	incbin "data/objects/graphics/sprite_graphic_2B58.bin"
+klank_ride_cart_frame2:
+	incbin "data/objects/graphics/klank_ride_cart_frame2.bin"
 
 ;$D87E6D (sprite graphic)
-SPRITE_GRAPHIC_2B5C:
-	incbin "data/objects/graphics/sprite_graphic_2B5C.bin"
+klank_ride_cart_frame3:
+	incbin "data/objects/graphics/klank_ride_cart_frame3.bin"
 
 ;$D88045 (sprite graphic)
-SPRITE_GRAPHIC_2B60:
-	incbin "data/objects/graphics/sprite_graphic_2B60.bin"
+klank_ride_cart_frame4:
+	incbin "data/objects/graphics/klank_ride_cart_frame4.bin"
 
 ;$D8821D (sprite graphic)
-SPRITE_GRAPHIC_2B64:
-	incbin "data/objects/graphics/sprite_graphic_2B64.bin"
+klank_ride_cart_frame5:
+	incbin "data/objects/graphics/klank_ride_cart_frame5.bin"
 
 ;$D883F5 (sprite graphic)
-SPRITE_GRAPHIC_2B68:
-	incbin "data/objects/graphics/sprite_graphic_2B68.bin"
+klank_ride_cart_attack_frame1:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame1.bin"
 
 ;$D885AB (sprite graphic)
-SPRITE_GRAPHIC_2B6C:
-	incbin "data/objects/graphics/sprite_graphic_2B6C.bin"
+klank_ride_cart_attack_frame2:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame2.bin"
 
 ;$D8873F (sprite graphic)
-SPRITE_GRAPHIC_2B70:
-	incbin "data/objects/graphics/sprite_graphic_2B70.bin"
+klank_ride_cart_attack_frame3:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame3.bin"
 
 ;$D888D3 (sprite graphic)
-SPRITE_GRAPHIC_2B74:
-	incbin "data/objects/graphics/sprite_graphic_2B74.bin"
+klank_ride_cart_attack_frame4:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame4.bin"
 
 ;$D88A89 (sprite graphic)
-SPRITE_GRAPHIC_2B78:
-	incbin "data/objects/graphics/sprite_graphic_2B78.bin"
+klank_ride_cart_attack_frame5:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame5.bin"
 
 ;$D88C3F (sprite graphic)
-SPRITE_GRAPHIC_2B7C:
-	incbin "data/objects/graphics/sprite_graphic_2B7C.bin"
+klank_ride_cart_attack_frame6:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame6.bin"
 
 ;$D88DD3 (sprite graphic)
-SPRITE_GRAPHIC_2B80:
-	incbin "data/objects/graphics/sprite_graphic_2B80.bin"
+klank_ride_cart_attack_frame7:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame7.bin"
 
 ;$D88FC7 (sprite graphic)
-SPRITE_GRAPHIC_2B84:
-	incbin "data/objects/graphics/sprite_graphic_2B84.bin"
+klank_ride_cart_attack_frame8:
+	incbin "data/objects/graphics/klank_ride_cart_attack_frame8.bin"
 
 ;$D8917D (sprite graphic)
-SPRITE_GRAPHIC_2B88:
-	incbin "data/objects/graphics/sprite_graphic_2B88.bin"
+klank_ride_cart_hurt_frame1:
+	incbin "data/objects/graphics/klank_ride_cart_hurt_frame1.bin"
 
 ;$D89399 (sprite graphic)
-SPRITE_GRAPHIC_2B8C:
-	incbin "data/objects/graphics/sprite_graphic_2B8C.bin"
+klank_ride_cart_hurt_frame2:
+	incbin "data/objects/graphics/klank_ride_cart_hurt_frame2.bin"
 
 ;$D89571 (sprite graphic)
-SPRITE_GRAPHIC_2B90:
-	incbin "data/objects/graphics/sprite_graphic_2B90.bin"
+klank_ride_cart_hurt_frame3:
+	incbin "data/objects/graphics/klank_ride_cart_hurt_frame3.bin"
 
 ;$D89749 (sprite graphic)
-SPRITE_GRAPHIC_2B94:
-	incbin "data/objects/graphics/sprite_graphic_2B94.bin"
+klank_ride_cart_hurt_frame4:
+	incbin "data/objects/graphics/klank_ride_cart_hurt_frame4.bin"
 
 ;$D898FF (sprite graphic)
-SPRITE_GRAPHIC_2B98:
-	incbin "data/objects/graphics/sprite_graphic_2B98.bin"
+water_splash_frame1:
+	incbin "data/objects/graphics/water_splash_frame1.bin"
 
 ;$D899CD (sprite graphic)
-SPRITE_GRAPHIC_2B9C:
-	incbin "data/objects/graphics/sprite_graphic_2B9C.bin"
+water_splash_frame2:
+	incbin "data/objects/graphics/water_splash_frame2.bin"
 
 ;$D89AD9 (sprite graphic)
-SPRITE_GRAPHIC_2BA0:
-	incbin "data/objects/graphics/sprite_graphic_2BA0.bin"
+water_splash_frame3:
+	incbin "data/objects/graphics/water_splash_frame3.bin"
 
 ;$D89C8F (sprite graphic)
-SPRITE_GRAPHIC_2BA4:
-	incbin "data/objects/graphics/sprite_graphic_2BA4.bin"
+water_splash_frame4:
+	incbin "data/objects/graphics/water_splash_frame4.bin"
 
 ;$D89E45 (sprite graphic)
-SPRITE_GRAPHIC_2BA8:
-	incbin "data/objects/graphics/sprite_graphic_2BA8.bin"
+water_splash_frame5:
+	incbin "data/objects/graphics/water_splash_frame5.bin"
 
 ;$D89FB7 (sprite graphic)
-SPRITE_GRAPHIC_2BAC:
-	incbin "data/objects/graphics/sprite_graphic_2BAC.bin"
+water_splash_frame6:
+	incbin "data/objects/graphics/water_splash_frame6.bin"
 
 ;$D8A0C9 (sprite graphic)
-SPRITE_GRAPHIC_2BB0:
-	incbin "data/objects/graphics/sprite_graphic_2BB0.bin"
+clapper_clap_frame1:
+	incbin "data/objects/graphics/clapper_clap_frame1.bin"
 
 ;$D8A2E5 (sprite graphic)
-SPRITE_GRAPHIC_2BB4:
-	incbin "data/objects/graphics/sprite_graphic_2BB4.bin"
+clapper_clap_frame2:
+	incbin "data/objects/graphics/clapper_clap_frame2.bin"
 
 ;$D8A523 (sprite graphic)
-SPRITE_GRAPHIC_2BB8:
-	incbin "data/objects/graphics/sprite_graphic_2BB8.bin"
+clapper_clap_frame3:
+	incbin "data/objects/graphics/clapper_clap_frame3.bin"
 
 ;$D8A761 (sprite graphic)
-SPRITE_GRAPHIC_2BBC:
-	incbin "data/objects/graphics/sprite_graphic_2BBC.bin"
+clapper_clap_frame4:
+	incbin "data/objects/graphics/clapper_clap_frame4.bin"
 
 ;$D8A99F (sprite graphic)
-SPRITE_GRAPHIC_2BC0:
-	incbin "data/objects/graphics/sprite_graphic_2BC0.bin"
+clapper_clap_frame5:
+	incbin "data/objects/graphics/clapper_clap_frame5.bin"
 
 ;$D8ABBB (sprite graphic)
-SPRITE_GRAPHIC_2BC4:
-	incbin "data/objects/graphics/sprite_graphic_2BC4.bin"
+clapper_clap_frame6:
+	incbin "data/objects/graphics/clapper_clap_frame6.bin"
 
 ;$D8ADF9 (sprite graphic)
-SPRITE_GRAPHIC_2BC8:
-	incbin "data/objects/graphics/sprite_graphic_2BC8.bin"
+clapper_clap_frame7:
+	incbin "data/objects/graphics/clapper_clap_frame7.bin"
 
 ;$D8B031 (sprite graphic)
-SPRITE_GRAPHIC_2BCC:
-	incbin "data/objects/graphics/sprite_graphic_2BCC.bin"
+clapper_clap_frame8:
+	incbin "data/objects/graphics/clapper_clap_frame8.bin"
 
 ;$D8B269 (sprite graphic)
-SPRITE_GRAPHIC_2BD0:
-	incbin "data/objects/graphics/sprite_graphic_2BD0.bin"
+clapper_idle_frame1:
+	incbin "data/objects/graphics/clapper_idle_frame1.bin"
 
 ;$D8B4A7 (sprite graphic)
-SPRITE_GRAPHIC_2BD4:
-	incbin "data/objects/graphics/sprite_graphic_2BD4.bin"
+clapper_idle_frame2:
+	incbin "data/objects/graphics/clapper_idle_frame2.bin"
 
 ;$D8B6E5 (sprite graphic)
-SPRITE_GRAPHIC_2BD8:
-	incbin "data/objects/graphics/sprite_graphic_2BD8.bin"
+clapper_idle_frame3:
+	incbin "data/objects/graphics/clapper_idle_frame3.bin"
 
 ;$D8B901 (sprite graphic)
-SPRITE_GRAPHIC_2BDC:
-	incbin "data/objects/graphics/sprite_graphic_2BDC.bin"
+clapper_idle_frame4:
+	incbin "data/objects/graphics/clapper_idle_frame4.bin"
 
 ;$D8BAFB (sprite graphic)
-SPRITE_GRAPHIC_2BE0:
-	incbin "data/objects/graphics/sprite_graphic_2BE0.bin"
+clapper_idle_frame5:
+	incbin "data/objects/graphics/clapper_idle_frame5.bin"
 
 ;$D8BCD3 (sprite graphic)
-SPRITE_GRAPHIC_2BE4:
-	incbin "data/objects/graphics/sprite_graphic_2BE4.bin"
+clapper_idle_frame6:
+	incbin "data/objects/graphics/clapper_idle_frame6.bin"
 
 ;$D8BEAB (sprite graphic)
-SPRITE_GRAPHIC_2BE8:
-	incbin "data/objects/graphics/sprite_graphic_2BE8.bin"
+clapper_idle_frame7:
+	incbin "data/objects/graphics/clapper_idle_frame7.bin"
 
 ;$D8C03F (sprite graphic)
-SPRITE_GRAPHIC_2BEC:
-	incbin "data/objects/graphics/sprite_graphic_2BEC.bin"
+clapper_idle_frame8:
+	incbin "data/objects/graphics/clapper_idle_frame8.bin"
 
 ;$D8C1F5 (sprite graphic)
-SPRITE_GRAPHIC_2BF0:
-	incbin "data/objects/graphics/sprite_graphic_2BF0.bin"
+clapper_idle_frame9:
+	incbin "data/objects/graphics/clapper_idle_frame9.bin"
 
 ;$D8C3CD (sprite graphic)
-SPRITE_GRAPHIC_2BF4:
-	incbin "data/objects/graphics/sprite_graphic_2BF4.bin"
+k_rool_vacuum_frame1:
+	incbin "data/objects/graphics/k_rool_vacuum_frame1.bin"
 
 ;$D8C9BB (sprite graphic)
-SPRITE_GRAPHIC_2BF8:
-	incbin "data/objects/graphics/sprite_graphic_2BF8.bin"
+k_rool_vacuum_frame2:
+	incbin "data/objects/graphics/k_rool_vacuum_frame2.bin"
 
 ;$D8CF87 (sprite graphic)
-SPRITE_GRAPHIC_2BFC:
-	incbin "data/objects/graphics/sprite_graphic_2BFC.bin"
+k_rool_blunderbuss_vacuum_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_vacuum_frame1.bin"
 
 ;$D8D1A3 (sprite graphic)
-SPRITE_GRAPHIC_2C00:
-	incbin "data/objects/graphics/sprite_graphic_2C00.bin"
+k_rool_blunderbuss_vacuum_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_vacuum_frame2.bin"
 
 ;$D8D3BF (sprite graphic)
-SPRITE_GRAPHIC_2C04:
-	incbin "data/objects/graphics/sprite_graphic_2C04.bin"
+k_rool_blunderbuss_fire_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame1.bin"
 
 ;$D8D50F (sprite graphic)
-SPRITE_GRAPHIC_2C08:
-	incbin "data/objects/graphics/sprite_graphic_2C08.bin"
+k_rool_blunderbuss_fire_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame2.bin"
 
 ;$D8D65F (sprite graphic)
-SPRITE_GRAPHIC_2C0C:
-	incbin "data/objects/graphics/sprite_graphic_2C0C.bin"
+k_rool_blunderbuss_fire_frame3:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame3.bin"
 
 ;$D8D7AF (sprite graphic)
-SPRITE_GRAPHIC_2C10:
-	incbin "data/objects/graphics/sprite_graphic_2C10.bin"
+k_rool_blunderbuss_fire_frame4:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame4.bin"
 
 ;$D8D8FF (sprite graphic)
-SPRITE_GRAPHIC_2C14:
-	incbin "data/objects/graphics/sprite_graphic_2C14.bin"
+k_rool_blunderbuss_fire_frame5:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame5.bin"
 
 ;$D8DA4F (sprite graphic)
-SPRITE_GRAPHIC_2C18:
-	incbin "data/objects/graphics/sprite_graphic_2C18.bin"
+k_rool_blunderbuss_fire_frame6:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame6.bin"
 
 ;$D8DB9F (sprite graphic)
-SPRITE_GRAPHIC_2C1C:
-	incbin "data/objects/graphics/sprite_graphic_2C1C.bin"
+k_rool_blunderbuss_fire_frame7:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame7.bin"
 
 ;$D8DCEF (sprite graphic)
-SPRITE_GRAPHIC_2C20:
-	incbin "data/objects/graphics/sprite_graphic_2C20.bin"
+k_rool_blunderbuss_fire_frame8:
+	incbin "data/objects/graphics/k_rool_blunderbuss_fire_frame8.bin"
 
 ;$D8DE3F (sprite graphic)
-SPRITE_GRAPHIC_2C24:
-	incbin "data/objects/graphics/sprite_graphic_2C24.bin"
+k_rool_idle_frame1:
+	incbin "data/objects/graphics/k_rool_idle_frame1.bin"
 
 ;$D8E4D7 (sprite graphic)
-SPRITE_GRAPHIC_2C28:
-	incbin "data/objects/graphics/sprite_graphic_2C28.bin"
+k_rool_idle_frame2:
+	incbin "data/objects/graphics/k_rool_idle_frame2.bin"
 
 ;$D8EB6F (sprite graphic)
-SPRITE_GRAPHIC_2C2C:
-	incbin "data/objects/graphics/sprite_graphic_2C2C.bin"
+k_rool_concerned_graphic:
+	incbin "data/objects/graphics/k_rool_concerned_graphic.bin"
 
 ;$D8F1E5 (sprite graphic)
-SPRITE_GRAPHIC_2C30:
-	incbin "data/objects/graphics/sprite_graphic_2C30.bin"
+k_rool_blunderbuss_idle_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_idle_frame1.bin"
 
 ;$D8F461 (sprite graphic)
-SPRITE_GRAPHIC_2C34:
-	incbin "data/objects/graphics/sprite_graphic_2C34.bin"
+k_rool_blunderbuss_idle_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_idle_frame2.bin"
 
 ;$D8F6DD (sprite graphic)
-SPRITE_GRAPHIC_2C38:
-	incbin "data/objects/graphics/sprite_graphic_2C38.bin"
+k_rool_blunderbuss_concerned_graphic:
+	incbin "data/objects/graphics/k_rool_blunderbuss_concerned_graphic.bin"
 
 ;$D8F959 (sprite graphic)
-SPRITE_GRAPHIC_2C3C:
-	incbin "data/objects/graphics/sprite_graphic_2C3C.bin"
+clapper_activate_frame1:
+	incbin "data/objects/graphics/clapper_activate_frame1.bin"
 
 check bankcross off
 ;$D8FB53
@@ -10655,460 +10655,460 @@ wasp_hive_honey_layer_1_8x8_tilemap:
 check bankcross full
 
 ;$D90065 (sprite graphic)
-SPRITE_GRAPHIC_2C40:
-	incbin "data/objects/graphics/sprite_graphic_2C40.bin"
+clapper_activate_frame2:
+	incbin "data/objects/graphics/clapper_activate_frame2.bin"
 
 ;$D9021B (sprite graphic)
-SPRITE_GRAPHIC_2C44:
-	incbin "data/objects/graphics/sprite_graphic_2C44.bin"
+clapper_activate_frame3:
+	incbin "data/objects/graphics/clapper_activate_frame3.bin"
 
 ;$D903CB (sprite graphic)
-SPRITE_GRAPHIC_2C48:
-	incbin "data/objects/graphics/sprite_graphic_2C48.bin"
+clapper_activate_frame4:
+	incbin "data/objects/graphics/clapper_activate_frame4.bin"
 
 ;$D9059D (sprite graphic)
-SPRITE_GRAPHIC_2C4C:
-	incbin "data/objects/graphics/sprite_graphic_2C4C.bin"
+clapper_activate_frame5:
+	incbin "data/objects/graphics/clapper_activate_frame5.bin"
 
 ;$D9074D (sprite graphic)
-SPRITE_GRAPHIC_2C50:
-	incbin "data/objects/graphics/sprite_graphic_2C50.bin"
+clapper_activate_frame6:
+	incbin "data/objects/graphics/clapper_activate_frame6.bin"
 
 ;$D90963 (sprite graphic)
-SPRITE_GRAPHIC_2C54:
-	incbin "data/objects/graphics/sprite_graphic_2C54.bin"
+clapper_activate_frame7:
+	incbin "data/objects/graphics/clapper_activate_frame7.bin"
 
 ;$D90B7F (sprite graphic)
-SPRITE_GRAPHIC_2C58:
-	incbin "data/objects/graphics/sprite_graphic_2C58.bin"
+clapper_activate_frame8:
+	incbin "data/objects/graphics/clapper_activate_frame8.bin"
 
 ;$D90DFB (sprite graphic)
-SPRITE_GRAPHIC_2C5C:
-	incbin "data/objects/graphics/sprite_graphic_2C5C.bin"
+clapper_activate_frame9:
+	incbin "data/objects/graphics/clapper_activate_frame9.bin"
 
 ;$D910D7 (sprite graphic)
-SPRITE_GRAPHIC_2C60:
-	incbin "data/objects/graphics/sprite_graphic_2C60.bin"
+clapper_activate_frame10:
+	incbin "data/objects/graphics/clapper_activate_frame10.bin"
 
 ;$D913B3 (sprite graphic)
-SPRITE_GRAPHIC_2C64:
-	incbin "data/objects/graphics/sprite_graphic_2C64.bin"
+clapper_activate_frame11:
+	incbin "data/objects/graphics/clapper_activate_frame11.bin"
 
 ;$D9166D (sprite graphic)
-SPRITE_GRAPHIC_2C68:
-	incbin "data/objects/graphics/sprite_graphic_2C68.bin"
+clapper_activate_frame12:
+	incbin "data/objects/graphics/clapper_activate_frame12.bin"
 
 ;$D918E9 (sprite graphic)
-SPRITE_GRAPHIC_2C6C:
-	incbin "data/objects/graphics/sprite_graphic_2C6C.bin"
+clapper_activate_frame13:
+	incbin "data/objects/graphics/clapper_activate_frame13.bin"
 
 ;$D91B65 (sprite graphic)
-SPRITE_GRAPHIC_2C70:
-	incbin "data/objects/graphics/sprite_graphic_2C70.bin"
+clapper_activate_frame14:
+	incbin "data/objects/graphics/clapper_activate_frame14.bin"
 
 ;$D91DBF (sprite graphic)
-SPRITE_GRAPHIC_2C74:
-	incbin "data/objects/graphics/sprite_graphic_2C74.bin"
+clapper_activate_frame15:
+	incbin "data/objects/graphics/clapper_activate_frame15.bin"
 
 ;$D9201F (sprite graphic)
-SPRITE_GRAPHIC_2C78:
-	incbin "data/objects/graphics/sprite_graphic_2C78.bin"
+snapjaw_bite_frame1:
+	incbin "data/objects/graphics/snapjaw_bite_frame1.bin"
 
 ;$D92257 (sprite graphic)
-SPRITE_GRAPHIC_2C7C:
-	incbin "data/objects/graphics/sprite_graphic_2C7C.bin"
+snapjaw_bite_frame2:
+	incbin "data/objects/graphics/snapjaw_bite_frame2.bin"
 
 ;$D92577 (sprite graphic)
-SPRITE_GRAPHIC_2C80:
-	incbin "data/objects/graphics/sprite_graphic_2C80.bin"
+snapjaw_bite_frame3:
+	incbin "data/objects/graphics/snapjaw_bite_frame3.bin"
 
 ;$D9295D (sprite graphic)
-SPRITE_GRAPHIC_2C84:
-	incbin "data/objects/graphics/sprite_graphic_2C84.bin"
+snapjaw_bite_frame4:
+	incbin "data/objects/graphics/snapjaw_bite_frame4.bin"
 
 ;$D92D21 (sprite graphic)
-SPRITE_GRAPHIC_2C88:
-	incbin "data/objects/graphics/sprite_graphic_2C88.bin"
+snapjaw_bite_frame5:
+	incbin "data/objects/graphics/snapjaw_bite_frame5.bin"
 
 ;$D930DF (sprite graphic)
-SPRITE_GRAPHIC_2C8C:
-	incbin "data/objects/graphics/sprite_graphic_2C8C.bin"
+k_rool_vacuum_particles_frame1:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame1.bin"
 
 ;$D9318B (sprite graphic)
-SPRITE_GRAPHIC_2C90:
-	incbin "data/objects/graphics/sprite_graphic_2C90.bin"
+k_rool_vacuum_particles_frame2:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame2.bin"
 
 ;$D932C5 (sprite graphic)
-SPRITE_GRAPHIC_2C94:
-	incbin "data/objects/graphics/sprite_graphic_2C94.bin"
+k_rool_vacuum_particles_frame3:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame3.bin"
 
 ;$D933FF (sprite graphic)
-SPRITE_GRAPHIC_2C98:
-	incbin "data/objects/graphics/sprite_graphic_2C98.bin"
+k_rool_vacuum_particles_frame4:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame4.bin"
 
 ;$D935BB (sprite graphic)
-SPRITE_GRAPHIC_2C9C:
-	incbin "data/objects/graphics/sprite_graphic_2C9C.bin"
+k_rool_vacuum_particles_frame5:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame5.bin"
 
 ;$D937C1 (sprite graphic)
-SPRITE_GRAPHIC_2CA0:
-	incbin "data/objects/graphics/sprite_graphic_2CA0.bin"
+k_rool_vacuum_particles_frame6:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame6.bin"
 
 ;$D939A5 (sprite graphic)
-SPRITE_GRAPHIC_2CA4:
-	incbin "data/objects/graphics/sprite_graphic_2CA4.bin"
+k_rool_vacuum_particles_frame7:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame7.bin"
 
 ;$D93A9B (sprite graphic)
-SPRITE_GRAPHIC_2CA8:
-	incbin "data/objects/graphics/sprite_graphic_2CA8.bin"
+k_rool_vacuum_particles_frame8:
+	incbin "data/objects/graphics/k_rool_vacuum_particles_frame8.bin"
 
 ;$D93B09 (sprite graphic)
-SPRITE_GRAPHIC_2CAC:
-	incbin "data/objects/graphics/sprite_graphic_2CAC.bin"
+giant_tire_roll_frame1:
+	incbin "data/objects/graphics/giant_tire_roll_frame1.bin"
 
 ;$D94299 (sprite graphic)
-SPRITE_GRAPHIC_2CB0:
-	incbin "data/objects/graphics/sprite_graphic_2CB0.bin"
+giant_tire_roll_frame2:
+	incbin "data/objects/graphics/giant_tire_roll_frame2.bin"
 
 ;$D949C9 (sprite graphic)
-SPRITE_GRAPHIC_2CB4:
-	incbin "data/objects/graphics/sprite_graphic_2CB4.bin"
+giant_tire_roll_frame3:
+	incbin "data/objects/graphics/giant_tire_roll_frame3.bin"
 
 ;$D95137 (sprite graphic)
-SPRITE_GRAPHIC_2CB8:
-	incbin "data/objects/graphics/sprite_graphic_2CB8.bin"
+cart_sparks_frame1:
+	incbin "data/objects/graphics/cart_sparks_frame1.bin"
 
 ;$D95183 (sprite graphic)
-SPRITE_GRAPHIC_2CBC:
-	incbin "data/objects/graphics/sprite_graphic_2CBC.bin"
+cart_sparks_frame2:
+	incbin "data/objects/graphics/cart_sparks_frame2.bin"
 
 ;$D9522F (sprite graphic)
-SPRITE_GRAPHIC_2CC0:
-	incbin "data/objects/graphics/sprite_graphic_2CC0.bin"
+cart_sparks_frame3:
+	incbin "data/objects/graphics/cart_sparks_frame3.bin"
 
 ;$D9531F (sprite graphic)
-SPRITE_GRAPHIC_2CC4:
-	incbin "data/objects/graphics/sprite_graphic_2CC4.bin"
+cart_sparks_frame4:
+	incbin "data/objects/graphics/cart_sparks_frame4.bin"
 
 ;$D95475 (sprite graphic)
-SPRITE_GRAPHIC_2CC8:
-	incbin "data/objects/graphics/sprite_graphic_2CC8.bin"
+cart_sparks_frame5:
+	incbin "data/objects/graphics/cart_sparks_frame5.bin"
 
 ;$D95609 (sprite graphic)
-SPRITE_GRAPHIC_2CCC:
-	incbin "data/objects/graphics/sprite_graphic_2CCC.bin"
+cart_sparks_frame6:
+	incbin "data/objects/graphics/cart_sparks_frame6.bin"
 
 ;$D957DB (sprite graphic)
-SPRITE_GRAPHIC_2CD0:
-	incbin "data/objects/graphics/sprite_graphic_2CD0.bin"
+cart_sparks_frame7:
+	incbin "data/objects/graphics/cart_sparks_frame7.bin"
 
 ;$D959CF (sprite graphic)
-SPRITE_GRAPHIC_2CD4:
-	incbin "data/objects/graphics/sprite_graphic_2CD4.bin"
+cart_sparks_frame8:
+	incbin "data/objects/graphics/cart_sparks_frame8.bin"
 
 ;$D95C07 (sprite graphic)
-SPRITE_GRAPHIC_2CD8:
-	incbin "data/objects/graphics/sprite_graphic_2CD8.bin"
+cart_sparks_frame9:
+	incbin "data/objects/graphics/cart_sparks_frame9.bin"
 
 ;$D95E3F (sprite graphic)
-SPRITE_GRAPHIC_2CDC:
-	incbin "data/objects/graphics/sprite_graphic_2CDC.bin"
+cart_sparks_frame10:
+	incbin "data/objects/graphics/cart_sparks_frame10.bin"
 
 ;$D96077 (sprite graphic)
-SPRITE_GRAPHIC_2CE0:
-	incbin "data/objects/graphics/sprite_graphic_2CE0.bin"
+cart_sparks_frame11:
+	incbin "data/objects/graphics/cart_sparks_frame11.bin"
 
 ;$D9628D (sprite graphic)
-SPRITE_GRAPHIC_2CE4:
-	incbin "data/objects/graphics/sprite_graphic_2CE4.bin"
+hall_left_door_frame1:
+	incbin "data/objects/graphics/hall_left_door_frame1.bin"
 
 ;$D96613 (sprite graphic)
-SPRITE_GRAPHIC_2CE8:
-	incbin "data/objects/graphics/sprite_graphic_2CE8.bin"
+hall_left_door_frame2:
+	incbin "data/objects/graphics/hall_left_door_frame2.bin"
 
 ;$D968AB (sprite graphic)
-SPRITE_GRAPHIC_2CEC:
-	incbin "data/objects/graphics/sprite_graphic_2CEC.bin"
+hall_left_door_frame3:
+	incbin "data/objects/graphics/hall_left_door_frame3.bin"
 
 ;$D969E5 (sprite graphic)
-SPRITE_GRAPHIC_2CF0:
-	incbin "data/objects/graphics/sprite_graphic_2CF0.bin"
+hall_left_door_frame4:
+	incbin "data/objects/graphics/hall_left_door_frame4.bin"
 
 ;$D96C39 (sprite graphic)
-SPRITE_GRAPHIC_2CF4:
-	incbin "data/objects/graphics/sprite_graphic_2CF4.bin"
+hall_left_door_frame5:
+	incbin "data/objects/graphics/hall_left_door_frame5.bin"
 
 ;$D96F59 (sprite graphic)
-SPRITE_GRAPHIC_2CF8:
-	incbin "data/objects/graphics/sprite_graphic_2CF8.bin"
+hall_left_door_frame6:
+	incbin "data/objects/graphics/hall_left_door_frame6.bin"
 
 ;$D97279 (sprite graphic)
-SPRITE_GRAPHIC_2CFC:
-	incbin "data/objects/graphics/sprite_graphic_2CFC.bin"
+hall_left_door_frame7:
+	incbin "data/objects/graphics/hall_left_door_frame7.bin"
 
 ;$D97577 (sprite graphic)
-SPRITE_GRAPHIC_2D00:
-	incbin "data/objects/graphics/sprite_graphic_2D00.bin"
+hall_right_door_frame1:
+	incbin "data/objects/graphics/hall_right_door_frame1.bin"
 
 ;$D97963 (sprite graphic)
-SPRITE_GRAPHIC_2D04:
-	incbin "data/objects/graphics/sprite_graphic_2D04.bin"
+hall_right_door_frame2:
+	incbin "data/objects/graphics/hall_right_door_frame2.bin"
 
 ;$D97CA5 (sprite graphic)
-SPRITE_GRAPHIC_2D08:
-	incbin "data/objects/graphics/sprite_graphic_2D08.bin"
+hall_right_door_frame3:
+	incbin "data/objects/graphics/hall_right_door_frame3.bin"
 
 ;$D97FA3 (sprite graphic)
-SPRITE_GRAPHIC_2D0C:
-	incbin "data/objects/graphics/sprite_graphic_2D0C.bin"
+hall_right_door_frame4:
+	incbin "data/objects/graphics/hall_right_door_frame4.bin"
 
 ;$D981F7 (sprite graphic)
-SPRITE_GRAPHIC_2D10:
-	incbin "data/objects/graphics/sprite_graphic_2D10.bin"
+hall_right_door_frame5:
+	incbin "data/objects/graphics/hall_right_door_frame5.bin"
 
 ;$D98353 (sprite graphic)
-SPRITE_GRAPHIC_2D14:
-	incbin "data/objects/graphics/sprite_graphic_2D14.bin"
+hall_right_door_frame6:
+	incbin "data/objects/graphics/hall_right_door_frame6.bin"
 
 ;$D985C9 (sprite graphic)
-SPRITE_GRAPHIC_2D18:
-	incbin "data/objects/graphics/sprite_graphic_2D18.bin"
+plus_barrel_graphic:
+	incbin "data/objects/graphics/plus_barrel_graphic.bin"
 
 ;$D98861 (sprite graphic)
-SPRITE_GRAPHIC_2D1C:
-	incbin "data/objects/graphics/sprite_graphic_2D1C.bin"
+minus_barrel_graphic:
+	incbin "data/objects/graphics/minus_barrel_graphic.bin"
 
 ;$D98AF9 (sprite graphic)
-SPRITE_GRAPHIC_2D20:
-	incbin "data/objects/graphics/sprite_graphic_2D20.bin"
+arrow_barrel_cannon_frame1:
+	incbin "data/objects/graphics/arrow_barrel_cannon_frame1.bin"
 
 ;$D98E0D (sprite graphic)
-SPRITE_GRAPHIC_2D24:
-	incbin "data/objects/graphics/sprite_graphic_2D24.bin"
+arrow_barrel_cannon_frame2:
+	incbin "data/objects/graphics/arrow_barrel_cannon_frame2.bin"
 
 ;$D99165 (sprite graphic)
-SPRITE_GRAPHIC_2D28:
-	incbin "data/objects/graphics/sprite_graphic_2D28.bin"
+arrow_barrel_cannon_frame3:
+	incbin "data/objects/graphics/arrow_barrel_cannon_frame3.bin"
 
 ;$D994C3 (sprite graphic)
-SPRITE_GRAPHIC_2D2C:
-	incbin "data/objects/graphics/sprite_graphic_2D2C.bin"
+arrow_barrel_cannon_frame4:
+	incbin "data/objects/graphics/arrow_barrel_cannon_frame4.bin"
 
 ;$D99821 (sprite graphic)
-SPRITE_GRAPHIC_2D30:
-	incbin "data/objects/graphics/sprite_graphic_2D30.bin"
+arrow_barrel_cannon_frame5:
+	incbin "data/objects/graphics/arrow_barrel_cannon_frame5.bin"
 
 ;$D99B35 (sprite graphic)
-SPRITE_GRAPHIC_2D34:
-	incbin "data/objects/graphics/sprite_graphic_2D34.bin"
+isle_funky_plane_frame1:
+	incbin "data/objects/graphics/isle_funky_plane_frame1.bin"
 
 ;$D99CAD (sprite graphic)
-SPRITE_GRAPHIC_2D38:
-	incbin "data/objects/graphics/sprite_graphic_2D38.bin"
+isle_funky_plane_frame2:
+	incbin "data/objects/graphics/isle_funky_plane_frame2.bin"
 
 ;$D99E25 (sprite graphic)
-SPRITE_GRAPHIC_2D3C:
-	incbin "data/objects/graphics/sprite_graphic_2D3C.bin"
+isle_funky_plane_frame3:
+	incbin "data/objects/graphics/isle_funky_plane_frame3.bin"
 
 ;$D99FBF (sprite graphic)
-SPRITE_GRAPHIC_2D40:
-	incbin "data/objects/graphics/sprite_graphic_2D40.bin"
+timer_0_graphic:
+	incbin "data/objects/graphics/timer_0_graphic.bin"
 
 ;$D9A08D (sprite graphic)
-SPRITE_GRAPHIC_2D44:
-	incbin "data/objects/graphics/sprite_graphic_2D44.bin"
+timer_1_graphic:
+	incbin "data/objects/graphics/timer_1_graphic.bin"
 
 ;$D9A15B (sprite graphic)
-SPRITE_GRAPHIC_2D48:
-	incbin "data/objects/graphics/sprite_graphic_2D48.bin"
+timer_2_graphic:
+	incbin "data/objects/graphics/timer_2_graphic.bin"
 
 ;$D9A229 (sprite graphic)
-SPRITE_GRAPHIC_2D4C:
-	incbin "data/objects/graphics/sprite_graphic_2D4C.bin"
+timer_3_graphic:
+	incbin "data/objects/graphics/timer_3_graphic.bin"
 
 ;$D9A2F7 (sprite graphic)
-SPRITE_GRAPHIC_2D50:
-	incbin "data/objects/graphics/sprite_graphic_2D50.bin"
+timer_4_graphic:
+	incbin "data/objects/graphics/timer_4_graphic.bin"
 
 ;$D9A3A3 (sprite graphic)
-SPRITE_GRAPHIC_2D54:
-	incbin "data/objects/graphics/sprite_graphic_2D54.bin"
+timer_5_graphic:
+	incbin "data/objects/graphics/timer_5_graphic.bin"
 
 ;$D9A471 (sprite graphic)
-SPRITE_GRAPHIC_2D58:
-	incbin "data/objects/graphics/sprite_graphic_2D58.bin"
+timer_6_graphic:
+	incbin "data/objects/graphics/timer_6_graphic.bin"
 
 ;$D9A53F (sprite graphic)
-SPRITE_GRAPHIC_2D5C:
-	incbin "data/objects/graphics/sprite_graphic_2D5C.bin"
+timer_7_graphic:
+	incbin "data/objects/graphics/timer_7_graphic.bin"
 
 ;$D9A60D (sprite graphic)
-SPRITE_GRAPHIC_2D60:
-	incbin "data/objects/graphics/sprite_graphic_2D60.bin"
+timer_8_graphic:
+	incbin "data/objects/graphics/timer_8_graphic.bin"
 
 ;$D9A6DB (sprite graphic)
-SPRITE_GRAPHIC_2D64:
-	incbin "data/objects/graphics/sprite_graphic_2D64.bin"
+timer_9_graphic:
+	incbin "data/objects/graphics/timer_9_graphic.bin"
 
 ;$D9A7A9 (sprite graphic)
-SPRITE_GRAPHIC_2D68:
-	incbin "data/objects/graphics/sprite_graphic_2D68.bin"
+k_rool_backfire_sparks_frame1:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame1.bin"
 
 ;$D9A817 (sprite graphic)
-SPRITE_GRAPHIC_2D6C:
-	incbin "data/objects/graphics/sprite_graphic_2D6C.bin"
+k_rool_backfire_sparks_frame2:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame2.bin"
 
 ;$D9A8C3 (sprite graphic)
-SPRITE_GRAPHIC_2D70:
-	incbin "data/objects/graphics/sprite_graphic_2D70.bin"
+k_rool_backfire_sparks_frame3:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame3.bin"
 
 ;$D9A9B3 (sprite graphic)
-SPRITE_GRAPHIC_2D74:
-	incbin "data/objects/graphics/sprite_graphic_2D74.bin"
+k_rool_backfire_sparks_frame4:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame4.bin"
 
 ;$D9AB03 (sprite graphic)
-SPRITE_GRAPHIC_2D78:
-	incbin "data/objects/graphics/sprite_graphic_2D78.bin"
+k_rool_backfire_sparks_frame5:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame5.bin"
 
 ;$D9AC97 (sprite graphic)
-SPRITE_GRAPHIC_2D7C:
-	incbin "data/objects/graphics/sprite_graphic_2D7C.bin"
+k_rool_backfire_sparks_frame6:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame6.bin"
 
 ;$D9AE4D (sprite graphic)
-SPRITE_GRAPHIC_2D80:
-	incbin "data/objects/graphics/sprite_graphic_2D80.bin"
+k_rool_backfire_sparks_frame7:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame7.bin"
 
 ;$D9B003 (sprite graphic)
-SPRITE_GRAPHIC_2D84:
-	incbin "data/objects/graphics/sprite_graphic_2D84.bin"
+k_rool_backfire_sparks_frame8:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame8.bin"
 
 ;$D9B1FD (sprite graphic)
-SPRITE_GRAPHIC_2D88:
-	incbin "data/objects/graphics/sprite_graphic_2D88.bin"
+k_rool_backfire_sparks_frame9:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame9.bin"
 
 ;$D9B3D5 (sprite graphic)
-SPRITE_GRAPHIC_2D8C:
-	incbin "data/objects/graphics/sprite_graphic_2D8C.bin"
+k_rool_backfire_sparks_frame10:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame10.bin"
 
 ;$D9B5F1 (sprite graphic)
-SPRITE_GRAPHIC_2D90:
-	incbin "data/objects/graphics/sprite_graphic_2D90.bin"
+k_rool_backfire_sparks_frame11:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame11.bin"
 
 ;$D9B813 (sprite graphic)
-SPRITE_GRAPHIC_2D94:
-	incbin "data/objects/graphics/sprite_graphic_2D94.bin"
+k_rool_backfire_sparks_frame12:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame12.bin"
 
 ;$D9BA13 (sprite graphic)
-SPRITE_GRAPHIC_2D98:
-	incbin "data/objects/graphics/sprite_graphic_2D98.bin"
+k_rool_backfire_sparks_frame13:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame13.bin"
 
 ;$D9BC13 (sprite graphic)
-SPRITE_GRAPHIC_2D9C:
-	incbin "data/objects/graphics/sprite_graphic_2D9C.bin"
+k_rool_backfire_sparks_frame14:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame14.bin"
 
 ;$D9BDF1 (sprite graphic)
-SPRITE_GRAPHIC_2DA0:
-	incbin "data/objects/graphics/sprite_graphic_2DA0.bin"
+k_rool_backfire_sparks_frame15:
+	incbin "data/objects/graphics/k_rool_backfire_sparks_frame15.bin"
 
 ;$D9BF4D (sprite graphic)
-SPRITE_GRAPHIC_2DA4:
-	incbin "data/objects/graphics/sprite_graphic_2DA4.bin"
+k_rool_gas_cloud_frame1:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame1.bin"
 
 ;$D9C11F (sprite graphic)
-SPRITE_GRAPHIC_2DA8:
-	incbin "data/objects/graphics/sprite_graphic_2DA8.bin"
+k_rool_gas_cloud_frame2:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame2.bin"
 
 ;$D9C2D5 (sprite graphic)
-SPRITE_GRAPHIC_2DAC:
-	incbin "data/objects/graphics/sprite_graphic_2DAC.bin"
+k_rool_gas_cloud_frame3:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame3.bin"
 
 ;$D9C4A7 (sprite graphic)
-SPRITE_GRAPHIC_2DB0:
-	incbin "data/objects/graphics/sprite_graphic_2DB0.bin"
+k_rool_gas_cloud_frame4:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame4.bin"
 
 ;$D9C63B (sprite graphic)
-SPRITE_GRAPHIC_2DB4:
-	incbin "data/objects/graphics/sprite_graphic_2DB4.bin"
+k_rool_gas_cloud_frame5:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame5.bin"
 
 ;$D9C7F1 (sprite graphic)
-SPRITE_GRAPHIC_2DB8:
-	incbin "data/objects/graphics/sprite_graphic_2DB8.bin"
+k_rool_gas_cloud_frame6:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame6.bin"
 
 ;$D9C9C9 (sprite graphic)
-SPRITE_GRAPHIC_2DBC:
-	incbin "data/objects/graphics/sprite_graphic_2DBC.bin"
+k_rool_gas_cloud_frame7:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame7.bin"
 
 ;$D9CB7F (sprite graphic)
-SPRITE_GRAPHIC_2DC0:
-	incbin "data/objects/graphics/sprite_graphic_2DC0.bin"
+k_rool_gas_cloud_frame8:
+	incbin "data/objects/graphics/k_rool_gas_cloud_frame8.bin"
 
 ;$D9CD9B (sprite graphic)
-SPRITE_GRAPHIC_2DC4:
-	incbin "data/objects/graphics/sprite_graphic_2DC4.bin"
+yoshi_frame1:
+	incbin "data/objects/graphics/yoshi_frame1.bin"
 
 ;$D9D011 (sprite graphic)
-SPRITE_GRAPHIC_2DC8:
-	incbin "data/objects/graphics/sprite_graphic_2DC8.bin"
+yoshi_frame2:
+	incbin "data/objects/graphics/yoshi_frame2.bin"
 
 ;$D9D2A9 (sprite graphic)
-SPRITE_GRAPHIC_2DCC:
-	incbin "data/objects/graphics/sprite_graphic_2DCC.bin"
+yoshi_frame3:
+	incbin "data/objects/graphics/yoshi_frame3.bin"
 
 ;$D9D541 (sprite graphic)
-SPRITE_GRAPHIC_2DD0:
-	incbin "data/objects/graphics/sprite_graphic_2DD0.bin"
+yoshi_frame4:
+	incbin "data/objects/graphics/yoshi_frame4.bin"
 
 ;$D9D7B7 (sprite graphic)
-SPRITE_GRAPHIC_2DD4:
-	incbin "data/objects/graphics/sprite_graphic_2DD4.bin"
+yoshi_frame5:
+	incbin "data/objects/graphics/yoshi_frame5.bin"
 
 ;$D9DA71 (sprite graphic)
-SPRITE_GRAPHIC_2DD8:
-	incbin "data/objects/graphics/sprite_graphic_2DD8.bin"
+yoshi_frame6:
+	incbin "data/objects/graphics/yoshi_frame6.bin"
 
 ;$D9DD2B (sprite graphic)
-SPRITE_GRAPHIC_2DDC:
-	incbin "data/objects/graphics/sprite_graphic_2DDC.bin"
+yoshi_frame7:
+	incbin "data/objects/graphics/yoshi_frame7.bin"
 
 ;$D9DFE5 (sprite graphic)
-SPRITE_GRAPHIC_2DE0:
-	incbin "data/objects/graphics/sprite_graphic_2DE0.bin"
+yoshi_frame8:
+	incbin "data/objects/graphics/yoshi_frame8.bin"
 
 ;$D9E29F (sprite graphic)
-SPRITE_GRAPHIC_2DE4:
-	incbin "data/objects/graphics/sprite_graphic_2DE4.bin"
+yoshi_frame9:
+	incbin "data/objects/graphics/yoshi_frame9.bin"
 
 ;$D9E559 (sprite graphic)
-SPRITE_GRAPHIC_2DE8:
-	incbin "data/objects/graphics/sprite_graphic_2DE8.bin"
+yoshi_frame10:
+	incbin "data/objects/graphics/yoshi_frame10.bin"
 
 ;$D9E813 (sprite graphic)
-SPRITE_GRAPHIC_2DEC:
-	incbin "data/objects/graphics/sprite_graphic_2DEC.bin"
+yoshi_frame11:
+	incbin "data/objects/graphics/yoshi_frame11.bin"
 
 ;$D9EACD (sprite graphic)
-SPRITE_GRAPHIC_2DF0:
-	incbin "data/objects/graphics/sprite_graphic_2DF0.bin"
+yoshi_frame12:
+	incbin "data/objects/graphics/yoshi_frame12.bin"
 
 ;$D9ED65 (sprite graphic)
-SPRITE_GRAPHIC_2DF4:
-	incbin "data/objects/graphics/sprite_graphic_2DF4.bin"
+mario_frame1:
+	incbin "data/objects/graphics/mario_frame1.bin"
 
 ;$D9EF3D (sprite graphic)
-SPRITE_GRAPHIC_2DF8:
-	incbin "data/objects/graphics/sprite_graphic_2DF8.bin"
+mario_frame2:
+	incbin "data/objects/graphics/mario_frame2.bin"
 
 ;$D9F159 (sprite graphic)
-SPRITE_GRAPHIC_2DFC:
-	incbin "data/objects/graphics/sprite_graphic_2DFC.bin"
+mario_frame3:
+	incbin "data/objects/graphics/mario_frame3.bin"
 
 ;$D9F375 (sprite graphic)
-SPRITE_GRAPHIC_2E00:
-	incbin "data/objects/graphics/sprite_graphic_2E00.bin"
+mario_frame4:
+	incbin "data/objects/graphics/mario_frame4.bin"
 
 ;$D9F591 (sprite graphic)
-SPRITE_GRAPHIC_2E04:
-	incbin "data/objects/graphics/sprite_graphic_2E04.bin"
+mario_frame5:
+	incbin "data/objects/graphics/mario_frame5.bin"
 
 ;$D9F7C9	compressed
 sparkle_layer_3_8x8_tilemap:
@@ -11121,324 +11121,324 @@ gangplank_galleon_8x8_tilemap:
 check bankcross full
 
 ;$DA007B (sprite graphic)
-SPRITE_GRAPHIC_2E08:
-	incbin "data/objects/graphics/sprite_graphic_2E08.bin"
+mario_frame6:
+	incbin "data/objects/graphics/mario_frame6.bin"
 
 ;$DA02B3 (sprite graphic)
-SPRITE_GRAPHIC_2E0C:
-	incbin "data/objects/graphics/sprite_graphic_2E0C.bin"
+funky_frame1:
+	incbin "data/objects/graphics/funky_frame1.bin"
 
 ;$DA0611 (sprite graphic)
-SPRITE_GRAPHIC_2E10:
-	incbin "data/objects/graphics/sprite_graphic_2E10.bin"
+funky_frame2:
+	incbin "data/objects/graphics/funky_frame2.bin"
 
 ;$DA096F (sprite graphic)
-SPRITE_GRAPHIC_2E14:
-	incbin "data/objects/graphics/sprite_graphic_2E14.bin"
+funky_frame3:
+	incbin "data/objects/graphics/funky_frame3.bin"
 
 ;$DA0CCD (sprite graphic)
-SPRITE_GRAPHIC_2E18:
-	incbin "data/objects/graphics/sprite_graphic_2E18.bin"
+funky_frame4:
+	incbin "data/objects/graphics/funky_frame4.bin"
 
 ;$DA0FE7 (sprite graphic)
-SPRITE_GRAPHIC_2E1C:
-	incbin "data/objects/graphics/sprite_graphic_2E1C.bin"
+funky_frame5:
+	incbin "data/objects/graphics/funky_frame5.bin"
 
 ;$DA13AB (sprite graphic)
-SPRITE_GRAPHIC_2E20:
-	incbin "data/objects/graphics/sprite_graphic_2E20.bin"
+funky_frame6:
+	incbin "data/objects/graphics/funky_frame6.bin"
 
 ;$DA17DB (sprite graphic)
-SPRITE_GRAPHIC_2E24:
-	incbin "data/objects/graphics/sprite_graphic_2E24.bin"
+funky_frame7:
+	incbin "data/objects/graphics/funky_frame7.bin"
 
 ;$DA1BE3 (sprite graphic)
-SPRITE_GRAPHIC_2E28:
-	incbin "data/objects/graphics/sprite_graphic_2E28.bin"
+funky_frame8:
+	incbin "data/objects/graphics/funky_frame8.bin"
 
 ;$DA1FCF (sprite graphic)
-SPRITE_GRAPHIC_2E2C:
-	incbin "data/objects/graphics/sprite_graphic_2E2C.bin"
+funky_frame9:
+	incbin "data/objects/graphics/funky_frame9.bin"
 
 ;$DA23DD (sprite graphic)
-SPRITE_GRAPHIC_2E30:
-	incbin "data/objects/graphics/sprite_graphic_2E30.bin"
+funky_frame10:
+	incbin "data/objects/graphics/funky_frame10.bin"
 
 ;$DA2829 (sprite graphic)
-SPRITE_GRAPHIC_2E34:
-	incbin "data/objects/graphics/sprite_graphic_2E34.bin"
+funky_frame11:
+	incbin "data/objects/graphics/funky_frame11.bin"
 
 ;$DA2C75 (sprite graphic)
-SPRITE_GRAPHIC_2E38:
-	incbin "data/objects/graphics/sprite_graphic_2E38.bin"
+funky_frame12:
+	incbin "data/objects/graphics/funky_frame12.bin"
 
 ;$DA30BB (sprite graphic)
-SPRITE_GRAPHIC_2E3C:
-	incbin "data/objects/graphics/sprite_graphic_2E3C.bin"
+funky_frame13:
+	incbin "data/objects/graphics/funky_frame13.bin"
 
 ;$DA3501 (sprite graphic)
-SPRITE_GRAPHIC_2E40:
-	incbin "data/objects/graphics/sprite_graphic_2E40.bin"
+funky_frame14:
+	incbin "data/objects/graphics/funky_frame14.bin"
 
 ;$DA38E7 (sprite graphic)
-SPRITE_GRAPHIC_2E44:
-	incbin "data/objects/graphics/sprite_graphic_2E44.bin"
+funky_frame15:
+	incbin "data/objects/graphics/funky_frame15.bin"
 
 ;$DA3D33 (sprite graphic)
-SPRITE_GRAPHIC_2E48:
-	incbin "data/objects/graphics/sprite_graphic_2E48.bin"
+funky_frame16:
+	incbin "data/objects/graphics/funky_frame16.bin"
 
 ;$DA40DB (sprite graphic)
-SPRITE_GRAPHIC_2E4C:
-	incbin "data/objects/graphics/sprite_graphic_2E4C.bin"
+funky_frame17:
+	incbin "data/objects/graphics/funky_frame17.bin"
 
 ;$DA4461 (sprite graphic)
-SPRITE_GRAPHIC_2E50:
-	incbin "data/objects/graphics/sprite_graphic_2E50.bin"
+funky_frame18:
+	incbin "data/objects/graphics/funky_frame18.bin"
 
 ;$DA484D (sprite graphic)
-SPRITE_GRAPHIC_2E54:
-	incbin "data/objects/graphics/sprite_graphic_2E54.bin"
+funky_frame19:
+	incbin "data/objects/graphics/funky_frame19.bin"
 
 ;$DA4C4F
 krazy_kremland_upper_8x8_tilemap:
 	incbin "data/world_maps/8x8_tilemaps/krazy_kremland_upper_8x8_tilemap.bin"
 
 ;$DA5323 (sprite graphic)
-SPRITE_GRAPHIC_2E58:
-	incbin "data/objects/graphics/sprite_graphic_2E58.bin"
+funky_surf_board_frame1:
+	incbin "data/objects/graphics/funky_surf_board_frame1.bin"
 
 ;$DA53F7 (sprite graphic)
-SPRITE_GRAPHIC_2E5C:
-	incbin "data/objects/graphics/sprite_graphic_2E5C.bin"
+funky_surf_board_frame2:
+	incbin "data/objects/graphics/funky_surf_board_frame2.bin"
 
 ;$DA54CB (sprite graphic)
-SPRITE_GRAPHIC_2E60:
-	incbin "data/objects/graphics/sprite_graphic_2E60.bin"
+funky_surf_board_frame3:
+	incbin "data/objects/graphics/funky_surf_board_frame3.bin"
 
 ;$DA559F (sprite graphic)
-SPRITE_GRAPHIC_2E64:
-	incbin "data/objects/graphics/sprite_graphic_2E64.bin"
+funky_surf_board_frame4:
+	incbin "data/objects/graphics/funky_surf_board_frame4.bin"
 
 ;$DA5673 (sprite graphic)
-SPRITE_GRAPHIC_2E68:
-	incbin "data/objects/graphics/sprite_graphic_2E68.bin"
+funky_surf_board_frame5:
+	incbin "data/objects/graphics/funky_surf_board_frame5.bin"
 
 ;$DA5769 (sprite graphic)
-SPRITE_GRAPHIC_2E6C:
-	incbin "data/objects/graphics/sprite_graphic_2E6C.bin"
+funky_surf_board_frame6:
+	incbin "data/objects/graphics/funky_surf_board_frame6.bin"
 
 ;$DA585F (sprite graphic)
-SPRITE_GRAPHIC_2E70:
-	incbin "data/objects/graphics/sprite_graphic_2E70.bin"
+funky_surf_board_frame7:
+	incbin "data/objects/graphics/funky_surf_board_frame7.bin"
 
 ;$DA5955 (sprite graphic)
-SPRITE_GRAPHIC_2E74:
-	incbin "data/objects/graphics/sprite_graphic_2E74.bin"
+funky_surf_board_frame8:
+	incbin "data/objects/graphics/funky_surf_board_frame8.bin"
 
 ;$DA5A4B (sprite graphic)
-SPRITE_GRAPHIC_2E78:
-	incbin "data/objects/graphics/sprite_graphic_2E78.bin"
+funky_surf_board_frame9:
+	incbin "data/objects/graphics/funky_surf_board_frame9.bin"
 
 ;$DA5B41 (sprite graphic)
-SPRITE_GRAPHIC_2E7C:
-	incbin "data/objects/graphics/sprite_graphic_2E7C.bin"
+funky_surf_board_frame10:
+	incbin "data/objects/graphics/funky_surf_board_frame10.bin"
 
 ;$DA5C37 (sprite graphic)
-SPRITE_GRAPHIC_2E80:
-	incbin "data/objects/graphics/sprite_graphic_2E80.bin"
+funky_surf_board_frame11:
+	incbin "data/objects/graphics/funky_surf_board_frame11.bin"
 
 ;$DA5D2D (sprite graphic)
-SPRITE_GRAPHIC_2E84:
-	incbin "data/objects/graphics/sprite_graphic_2E84.bin"
+funky_surf_board_frame12:
+	incbin "data/objects/graphics/funky_surf_board_frame12.bin"
 
 ;$DA5E23 (sprite graphic)
-SPRITE_GRAPHIC_2E88:
-	incbin "data/objects/graphics/sprite_graphic_2E88.bin"
+funky_surf_board_frame13:
+	incbin "data/objects/graphics/funky_surf_board_frame13.bin"
 
 ;$DA5F19 (sprite graphic)
-SPRITE_GRAPHIC_2E8C:
-	incbin "data/objects/graphics/sprite_graphic_2E8C.bin"
+funky_surf_board_frame14:
+	incbin "data/objects/graphics/funky_surf_board_frame14.bin"
 
 ;$DA600F (sprite graphic)
-SPRITE_GRAPHIC_2E90:
-	incbin "data/objects/graphics/sprite_graphic_2E90.bin"
+funky_surf_board_frame15:
+	incbin "data/objects/graphics/funky_surf_board_frame15.bin"
 
 ;$DA6149 (sprite graphic)
-SPRITE_GRAPHIC_2E94:
-	incbin "data/objects/graphics/sprite_graphic_2E94.bin"
+funky_surf_board_frame16:
+	incbin "data/objects/graphics/funky_surf_board_frame16.bin"
 
 ;$DA6261 (sprite graphic)
-SPRITE_GRAPHIC_2E98:
-	incbin "data/objects/graphics/sprite_graphic_2E98.bin"
+funky_surf_board_frame17:
+	incbin "data/objects/graphics/funky_surf_board_frame17.bin"
 
 ;$DA63D9 (sprite graphic)
-SPRITE_GRAPHIC_2E9C:
-	incbin "data/objects/graphics/sprite_graphic_2E9C.bin"
+funky_surf_board_frame18:
+	incbin "data/objects/graphics/funky_surf_board_frame18.bin"
 
 ;$DA6513 (sprite graphic)
-SPRITE_GRAPHIC_2EA0:
-	incbin "data/objects/graphics/sprite_graphic_2EA0.bin"
+funky_surf_board_frame19:
+	incbin "data/objects/graphics/funky_surf_board_frame19.bin"
 
 ;$DA6609 (sprite graphic)
-SPRITE_GRAPHIC_2EA4:
-	incbin "data/objects/graphics/sprite_graphic_2EA4.bin"
+cranky_frame1:
+	incbin "data/objects/graphics/cranky_frame1.bin"
 
 ;$DA6989 (sprite graphic)
-SPRITE_GRAPHIC_2EA8:
-	incbin "data/objects/graphics/sprite_graphic_2EA8.bin"
+cranky_frame2:
+	incbin "data/objects/graphics/cranky_frame2.bin"
 
 ;$DA6D09 (sprite graphic)
-SPRITE_GRAPHIC_2EAC:
-	incbin "data/objects/graphics/sprite_graphic_2EAC.bin"
+cranky_frame3:
+	incbin "data/objects/graphics/cranky_frame3.bin"
 
 ;$DA7089 (sprite graphic)
-SPRITE_GRAPHIC_2EB0:
-	incbin "data/objects/graphics/sprite_graphic_2EB0.bin"
+cranky_frame4:
+	incbin "data/objects/graphics/cranky_frame4.bin"
 
 ;$DA742B (sprite graphic)
-SPRITE_GRAPHIC_2EB4:
-	incbin "data/objects/graphics/sprite_graphic_2EB4.bin"
+cranky_frame5:
+	incbin "data/objects/graphics/cranky_frame5.bin"
 
 ;$DA77AB (sprite graphic)
-SPRITE_GRAPHIC_2EB8:
-	incbin "data/objects/graphics/sprite_graphic_2EB8.bin"
+cranky_frame6:
+	incbin "data/objects/graphics/cranky_frame6.bin"
 
 ;$DA7B4D (sprite graphic)
-SPRITE_GRAPHIC_2EBC:
-	incbin "data/objects/graphics/sprite_graphic_2EBC.bin"
+cranky_frame7:
+	incbin "data/objects/graphics/cranky_frame7.bin"
 
 ;$DA7F11 (sprite graphic)
-SPRITE_GRAPHIC_2EC0:
-	incbin "data/objects/graphics/sprite_graphic_2EC0.bin"
+cranky_frame8:
+	incbin "data/objects/graphics/cranky_frame8.bin"
 
 ;$DA8313 (sprite graphic)
-SPRITE_GRAPHIC_2EC4:
-	incbin "data/objects/graphics/sprite_graphic_2EC4.bin"
+cranky_frame9:
+	incbin "data/objects/graphics/cranky_frame9.bin"
 
 ;$DA86D1 (sprite graphic)
-SPRITE_GRAPHIC_2EC8:
-	incbin "data/objects/graphics/sprite_graphic_2EC8.bin"
+cranky_frame10:
+	incbin "data/objects/graphics/cranky_frame10.bin"
 
 ;$DA8A8F (sprite graphic)
-SPRITE_GRAPHIC_2ECC:
-	incbin "data/objects/graphics/sprite_graphic_2ECC.bin"
+cranky_frame11:
+	incbin "data/objects/graphics/cranky_frame11.bin"
 
 ;$DA8E6F (sprite graphic)
-SPRITE_GRAPHIC_2ED0:
-	incbin "data/objects/graphics/sprite_graphic_2ED0.bin"
+cranky_frame12:
+	incbin "data/objects/graphics/cranky_frame12.bin"
 
 ;$DA9217 (sprite graphic)
-SPRITE_GRAPHIC_2ED4:
-	incbin "data/objects/graphics/sprite_graphic_2ED4.bin"
+cranky_frame13:
+	incbin "data/objects/graphics/cranky_frame13.bin"
 
 ;$DA9603 (sprite graphic)
-SPRITE_GRAPHIC_2ED8:
-	incbin "data/objects/graphics/sprite_graphic_2ED8.bin"
+cranky_frame14:
+	incbin "data/objects/graphics/cranky_frame14.bin"
 
 ;$DA99CD (sprite graphic)
-SPRITE_GRAPHIC_2EDC:
-	incbin "data/objects/graphics/sprite_graphic_2EDC.bin"
+cranky_frame15:
+	incbin "data/objects/graphics/cranky_frame15.bin"
 
 ;$DA9D75 (sprite graphic)
-SPRITE_GRAPHIC_2EE0:
-	incbin "data/objects/graphics/sprite_graphic_2EE0.bin"
+cranky_frame16:
+	incbin "data/objects/graphics/cranky_frame16.bin"
 
 ;$DAA117 (sprite graphic)
-SPRITE_GRAPHIC_2EE4:
-	incbin "data/objects/graphics/sprite_graphic_2EE4.bin"
+kudgel_jump_graphic:
+	incbin "data/objects/graphics/kudgel_jump_graphic.bin"
 
 ;$DAA70B (sprite graphic)
-SPRITE_GRAPHIC_2EE8:
-	incbin "data/objects/graphics/sprite_graphic_2EE8.bin"
+kudgel_club_jump_graphic:
+	incbin "data/objects/graphics/kudgel_club_jump_graphic.bin"
 
 ;$DAAAB3 (sprite graphic)
-SPRITE_GRAPHIC_2EEC:
-	incbin "data/objects/graphics/sprite_graphic_2EEC.bin"
+kudgel_fall_graphic:
+	incbin "data/objects/graphics/kudgel_fall_graphic.bin"
 
 ;$DAB299 (sprite graphic)
-SPRITE_GRAPHIC_2EF0:
-	incbin "data/objects/graphics/sprite_graphic_2EF0.bin"
+kudgel_club_fall_graphic:
+	incbin "data/objects/graphics/kudgel_club_fall_graphic.bin"
 
 ;$DAB685 (sprite graphic)
-SPRITE_GRAPHIC_2EF4:
-	incbin "data/objects/graphics/sprite_graphic_2EF4.bin"
+kudgel_hurt_frame1:
+	incbin "data/objects/graphics/kudgel_hurt_frame1.bin"
 
 ;$DABEC5 (sprite graphic)
-SPRITE_GRAPHIC_2EF8:
-	incbin "data/objects/graphics/sprite_graphic_2EF8.bin"
+kudgel_club_hurt_frame1:
+	incbin "data/objects/graphics/kudgel_club_hurt_frame1.bin"
 
 ;$DAC32D (sprite graphic)
-SPRITE_GRAPHIC_2EFC:
-	incbin "data/objects/graphics/sprite_graphic_2EFC.bin"
+kudgel_hurt_frame2:
+	incbin "data/objects/graphics/kudgel_hurt_frame2.bin"
 
 ;$DACB73 (sprite graphic)
-SPRITE_GRAPHIC_2F00:
-	incbin "data/objects/graphics/sprite_graphic_2F00.bin"
+kudgel_club_hurt_frame2:
+	incbin "data/objects/graphics/kudgel_club_hurt_frame2.bin"
 
 ;$DACFB9 (sprite graphic)
-SPRITE_GRAPHIC_2F04:
-	incbin "data/objects/graphics/sprite_graphic_2F04.bin"
+screech_idle_frame1:
+	incbin "data/objects/graphics/screech_idle_frame1.bin"
 
 ;$DAD235 (sprite graphic)
-SPRITE_GRAPHIC_2F08:
-	incbin "data/objects/graphics/sprite_graphic_2F08.bin"
+screech_idle_frame2:
+	incbin "data/objects/graphics/screech_idle_frame2.bin"
 
 ;$DAD46D (sprite graphic)
-SPRITE_GRAPHIC_2F0C:
-	incbin "data/objects/graphics/sprite_graphic_2F0C.bin"
+screech_idle_frame3:
+	incbin "data/objects/graphics/screech_idle_frame3.bin"
 
 ;$DAD683 (sprite graphic)
-SPRITE_GRAPHIC_2F10:
-	incbin "data/objects/graphics/sprite_graphic_2F10.bin"
+screech_idle_frame4:
+	incbin "data/objects/graphics/screech_idle_frame4.bin"
 
 ;$DAD8DD (sprite graphic)
-SPRITE_GRAPHIC_2F14:
-	incbin "data/objects/graphics/sprite_graphic_2F14.bin"
+screech_idle_frame5:
+	incbin "data/objects/graphics/screech_idle_frame5.bin"
 
 ;$DADAF9 (sprite graphic)
-SPRITE_GRAPHIC_2F18:
-	incbin "data/objects/graphics/sprite_graphic_2F18.bin"
+screech_idle_frame6:
+	incbin "data/objects/graphics/screech_idle_frame6.bin"
 
 ;$DADD15 (sprite graphic)
-SPRITE_GRAPHIC_2F1C:
-	incbin "data/objects/graphics/sprite_graphic_2F1C.bin"
+screech_idle_frame7:
+	incbin "data/objects/graphics/screech_idle_frame7.bin"
 
 ;$DADF53 (sprite graphic)
-SPRITE_GRAPHIC_2F20:
-	incbin "data/objects/graphics/sprite_graphic_2F20.bin"
+screech_idle_frame8:
+	incbin "data/objects/graphics/screech_idle_frame8.bin"
 
 ;$DAE191 (sprite graphic)
-SPRITE_GRAPHIC_2F24:
-	incbin "data/objects/graphics/sprite_graphic_2F24.bin"
+screech_idle_frame9:
+	incbin "data/objects/graphics/screech_idle_frame9.bin"
 
 ;$DAE3C9 (sprite graphic)
-SPRITE_GRAPHIC_2F28:
-	incbin "data/objects/graphics/sprite_graphic_2F28.bin"
+screech_idle_frame10:
+	incbin "data/objects/graphics/screech_idle_frame10.bin"
 
 ;$DAE667 (sprite graphic)
-SPRITE_GRAPHIC_2F2C:
-	incbin "data/objects/graphics/sprite_graphic_2F2C.bin"
+screech_idle_frame11:
+	incbin "data/objects/graphics/screech_idle_frame11.bin"
 
 ;$DAE927 (sprite graphic)
-SPRITE_GRAPHIC_2F30:
-	incbin "data/objects/graphics/sprite_graphic_2F30.bin"
+screech_idle_frame12:
+	incbin "data/objects/graphics/screech_idle_frame12.bin"
 
 ;$DAEBC5 (sprite graphic)
-SPRITE_GRAPHIC_2F34:
-	incbin "data/objects/graphics/sprite_graphic_2F34.bin"
+screech_turn_frame1:
+	incbin "data/objects/graphics/screech_turn_frame1.bin"
 
 ;$DAEDDB (sprite graphic)
-SPRITE_GRAPHIC_2F38:
-	incbin "data/objects/graphics/sprite_graphic_2F38.bin"
+screech_turn_frame2:
+	incbin "data/objects/graphics/screech_turn_frame2.bin"
 
 ;$DAEF91 (sprite graphic)
-SPRITE_GRAPHIC_2F3C:
-	incbin "data/objects/graphics/sprite_graphic_2F3C.bin"
+kudgel_attack_frame1:
+	incbin "data/objects/graphics/kudgel_attack_frame1.bin"
 
 ;$DAF5C3 (sprite graphic)
-SPRITE_GRAPHIC_2F40:
-	incbin "data/objects/graphics/sprite_graphic_2F40.bin"
+kudgel_attack_frame2:
+	incbin "data/objects/graphics/kudgel_attack_frame2.bin"
 
 ;$DAFBB1
 swamp_fg_2_layer_1_8x8_tilemap:
@@ -11451,332 +11451,332 @@ ice_bg_transparent_layer_3_8x8_tilemap:
 check bankcross full
 
 ;$DB057E (sprite graphic)
-SPRITE_GRAPHIC_2F44:
-	incbin "data/objects/graphics/sprite_graphic_2F44.bin"
+kudgel_attack_frame3:
+	incbin "data/objects/graphics/kudgel_attack_frame3.bin"
 
 ;$DB0BB6 (sprite graphic)
-SPRITE_GRAPHIC_2F48:
-	incbin "data/objects/graphics/sprite_graphic_2F48.bin"
+kudgel_attack_frame4:
+	incbin "data/objects/graphics/kudgel_attack_frame4.bin"
 
 ;$DB12D6 (sprite graphic)
-SPRITE_GRAPHIC_2F4C:
-	incbin "data/objects/graphics/sprite_graphic_2F4C.bin"
+kudgel_attack_frame5:
+	incbin "data/objects/graphics/kudgel_attack_frame5.bin"
 
 ;$DB1A34 (sprite graphic)
-SPRITE_GRAPHIC_2F50:
-	incbin "data/objects/graphics/sprite_graphic_2F50.bin"
+kudgel_attack_frame6:
+	incbin "data/objects/graphics/kudgel_attack_frame6.bin"
 
 ;$DB214E (sprite graphic)
-SPRITE_GRAPHIC_2F54:
-	incbin "data/objects/graphics/sprite_graphic_2F54.bin"
+kudgel_attack_frame7:
+	incbin "data/objects/graphics/kudgel_attack_frame7.bin"
 
 ;$DB2610 (sprite graphic)
-SPRITE_GRAPHIC_2F58:
-	incbin "data/objects/graphics/sprite_graphic_2F58.bin"
+kudgel_attack_frame8:
+	incbin "data/objects/graphics/kudgel_attack_frame8.bin"
 
 ;$DB2C8C (sprite graphic)
-SPRITE_GRAPHIC_2F5C:
-	incbin "data/objects/graphics/sprite_graphic_2F5C.bin"
+kudgel_attack_frame9:
+	incbin "data/objects/graphics/kudgel_attack_frame9.bin"
 
 ;$DB33C8 (sprite graphic)
-SPRITE_GRAPHIC_2F60:
-	incbin "data/objects/graphics/sprite_graphic_2F60.bin"
+kudgel_attack_frame10:
+	incbin "data/objects/graphics/kudgel_attack_frame10.bin"
 
 ;$DB3AC0 (sprite graphic)
-SPRITE_GRAPHIC_2F64:
-	incbin "data/objects/graphics/sprite_graphic_2F64.bin"
+kudgel_attack_frame11:
+	incbin "data/objects/graphics/kudgel_attack_frame11.bin"
 
 ;$DB406A (sprite graphic)
-SPRITE_GRAPHIC_2F68:
-	incbin "data/objects/graphics/sprite_graphic_2F68.bin"
+kudgel_club_attack_frame1:
+	incbin "data/objects/graphics/kudgel_club_attack_frame1.bin"
 
 ;$DB4302 (sprite graphic)
-SPRITE_GRAPHIC_2F6C:
-	incbin "data/objects/graphics/sprite_graphic_2F6C.bin"
+kudgel_club_attack_frame2:
+	incbin "data/objects/graphics/kudgel_club_attack_frame2.bin"
 
 ;$DB4578 (sprite graphic)
-SPRITE_GRAPHIC_2F70:
-	incbin "data/objects/graphics/sprite_graphic_2F70.bin"
+kudgel_club_attack_frame3:
+	incbin "data/objects/graphics/kudgel_club_attack_frame3.bin"
 
 ;$DB482C (sprite graphic)
-SPRITE_GRAPHIC_2F74:
-	incbin "data/objects/graphics/sprite_graphic_2F74.bin"
+kudgel_club_attack_frame4:
+	incbin "data/objects/graphics/kudgel_club_attack_frame4.bin"
 
 ;$DB4BEA (sprite graphic)
-SPRITE_GRAPHIC_2F78:
-	incbin "data/objects/graphics/sprite_graphic_2F78.bin"
+kudgel_club_attack_frame5:
+	incbin "data/objects/graphics/kudgel_club_attack_frame5.bin"
 
 ;$DB4F42 (sprite graphic)
-SPRITE_GRAPHIC_2F7C:
-	incbin "data/objects/graphics/sprite_graphic_2F7C.bin"
+kudgel_club_attack_frame6:
+	incbin "data/objects/graphics/kudgel_club_attack_frame6.bin"
 
 ;$DB52BC (sprite graphic)
-SPRITE_GRAPHIC_2F80:
-	incbin "data/objects/graphics/sprite_graphic_2F80.bin"
+kudgel_club_attack_frame7:
+	incbin "data/objects/graphics/kudgel_club_attack_frame7.bin"
 
 ;$DB56BE (sprite graphic)
-SPRITE_GRAPHIC_2F84:
-	incbin "data/objects/graphics/sprite_graphic_2F84.bin"
+kudgel_club_attack_frame8:
+	incbin "data/objects/graphics/kudgel_club_attack_frame8.bin"
 
 ;$DB59DE (sprite graphic)
-SPRITE_GRAPHIC_2F88:
-	incbin "data/objects/graphics/sprite_graphic_2F88.bin"
+kudgel_club_attack_frame9:
+	incbin "data/objects/graphics/kudgel_club_attack_frame9.bin"
 
 ;$DB5CD6 (sprite graphic)
-SPRITE_GRAPHIC_2F8C:
-	incbin "data/objects/graphics/sprite_graphic_2F8C.bin"
+kudgel_club_attack_frame10:
+	incbin "data/objects/graphics/kudgel_club_attack_frame10.bin"
 
 ;$DB5FAC (sprite graphic)
-SPRITE_GRAPHIC_2F90:
-	incbin "data/objects/graphics/sprite_graphic_2F90.bin"
+kudgel_club_attack_frame11:
+	incbin "data/objects/graphics/kudgel_club_attack_frame11.bin"
 
 ;$DB62A4 (sprite graphic)
-SPRITE_GRAPHIC_2F94:
-	incbin "data/objects/graphics/sprite_graphic_2F94.bin"
+kudgel_defeated_frame1:
+	incbin "data/objects/graphics/kudgel_defeated_frame1.bin"
 
 ;$DB653C (sprite graphic)
-SPRITE_GRAPHIC_2F98:
-	incbin "data/objects/graphics/sprite_graphic_2F98.bin"
+kudgel_defeated_frame2:
+	incbin "data/objects/graphics/kudgel_defeated_frame2.bin"
 
 ;$DB67DA (sprite graphic)
-SPRITE_GRAPHIC_2F9C:
-	incbin "data/objects/graphics/sprite_graphic_2F9C.bin"
+kudgel_club_defeated_frame1:
+	incbin "data/objects/graphics/kudgel_club_defeated_frame1.bin"
 
 ;$DB68A8 (sprite graphic)
-SPRITE_GRAPHIC_2FA0:
-	incbin "data/objects/graphics/sprite_graphic_2FA0.bin"
+kudgel_club_defeated_frame2:
+	incbin "data/objects/graphics/kudgel_club_defeated_frame2.bin"
 
 ;$DB6976 (sprite graphic)
-SPRITE_GRAPHIC_2FA4:
-	incbin "data/objects/graphics/sprite_graphic_2FA4.bin"
+puftup_turn_frame1:
+	incbin "data/objects/graphics/puftup_turn_frame1.bin"
 
 ;$DB6B70 (sprite graphic)
-SPRITE_GRAPHIC_2FA8:
-	incbin "data/objects/graphics/sprite_graphic_2FA8.bin"
+puftup_turn_frame2:
+	incbin "data/objects/graphics/puftup_turn_frame2.bin"
 
 ;$DB6D48 (sprite graphic)
-SPRITE_GRAPHIC_2FAC:
-	incbin "data/objects/graphics/sprite_graphic_2FAC.bin"
+puftup_turn_frame3:
+	incbin "data/objects/graphics/puftup_turn_frame3.bin"
 
 ;$DB6EDC (sprite graphic)
-SPRITE_GRAPHIC_2FB0:
-	incbin "data/objects/graphics/sprite_graphic_2FB0.bin"
+puftup_turn_frame4:
+	incbin "data/objects/graphics/puftup_turn_frame4.bin"
 
 ;$DB7010 (sprite graphic)
-SPRITE_GRAPHIC_2FB4:
-	incbin "data/objects/graphics/sprite_graphic_2FB4.bin"
+puftup_turn_frame5:
+	incbin "data/objects/graphics/puftup_turn_frame5.bin"
 
 ;$DB7182 (sprite graphic)
-SPRITE_GRAPHIC_2FB8:
-	incbin "data/objects/graphics/sprite_graphic_2FB8.bin"
+puftup_turn_frame6:
+	incbin "data/objects/graphics/puftup_turn_frame6.bin"
 
 ;$DB735A (sprite graphic)
-SPRITE_GRAPHIC_2FBC:
-	incbin "data/objects/graphics/sprite_graphic_2FBC.bin"
+kudgel_defeated_explosion_frame1:
+	incbin "data/objects/graphics/kudgel_defeated_explosion_frame1.bin"
 
 ;$DB7384 (sprite graphic)
-SPRITE_GRAPHIC_2FC0:
-	incbin "data/objects/graphics/sprite_graphic_2FC0.bin"
+kudgel_defeated_explosion_frame2:
+	incbin "data/objects/graphics/kudgel_defeated_explosion_frame2.bin"
 
 ;$DB73AE (sprite graphic)
-SPRITE_GRAPHIC_2FC4:
-	incbin "data/objects/graphics/sprite_graphic_2FC4.bin"
+kudgel_defeated_explosion_frame3:
+	incbin "data/objects/graphics/kudgel_defeated_explosion_frame3.bin"
 
 ;$DB73D8 (sprite graphic)
-SPRITE_GRAPHIC_2FC8:
-	incbin "data/objects/graphics/sprite_graphic_2FC8.bin"
+kudgel_defeated_explosion_frame4:
+	incbin "data/objects/graphics/kudgel_defeated_explosion_frame4.bin"
 
 ;$DB7446 (sprite graphic)
-SPRITE_GRAPHIC_2FCC:
-	incbin "data/objects/graphics/sprite_graphic_2FCC.bin"
+kudgel_defeated_explosion_frame5:
+	incbin "data/objects/graphics/kudgel_defeated_explosion_frame5.bin"
 
 ;$DB74B4 (sprite graphic)
-SPRITE_GRAPHIC_2FD0:
-	incbin "data/objects/graphics/sprite_graphic_2FD0.bin"
+kudgel_defeated_explosion_frame6:
+	incbin "data/objects/graphics/kudgel_defeated_explosion_frame6.bin"
 
 ;$DB7522 (sprite graphic)
-SPRITE_GRAPHIC_2FD4:
-	incbin "data/objects/graphics/sprite_graphic_2FD4.bin"
+kudgel_defeated_explosion_frame7:
+	incbin "data/objects/graphics/kudgel_defeated_explosion_frame7.bin"
 
 ;$DB7590 (sprite graphic)
-SPRITE_GRAPHIC_2FD8:
-	incbin "data/objects/graphics/sprite_graphic_2FD8.bin"
+ship_deck_left_wall_graphic:
+	incbin "data/objects/graphics/ship_deck_left_wall_graphic.bin"
 
 ;$DB7916 (sprite graphic)
-SPRITE_GRAPHIC_2FDC:
-	incbin "data/objects/graphics/sprite_graphic_2FDC.bin"
+wasp_hive_right_wall_graphic:
+	incbin "data/objects/graphics/wasp_hive_right_wall_graphic.bin"
 
 ;$DB7B48 (sprite graphic)
-SPRITE_GRAPHIC_2FE0:
-	incbin "data/objects/graphics/sprite_graphic_2FE0.bin"
+forest_left_wall_graphic:
+	incbin "data/objects/graphics/forest_left_wall_graphic.bin"
 
 ;$DB7DE0 (sprite graphic)
-SPRITE_GRAPHIC_2FE4:
-	incbin "data/objects/graphics/sprite_graphic_2FE4.bin"
+unknown_2FE4_graphic:
+	incbin "data/objects/graphics/unknown_2FE4_graphic.bin"
 
 ;$DB7FF0 (sprite graphic)
-SPRITE_GRAPHIC_2FE8:
-	incbin "data/objects/graphics/sprite_graphic_2FE8.bin"
+forest_right_wall_graphic:
+	incbin "data/objects/graphics/forest_right_wall_graphic.bin"
 
 ;$DB824A (sprite graphic)
-SPRITE_GRAPHIC_2FEC:
-	incbin "data/objects/graphics/sprite_graphic_2FEC.bin"
+castle_left_wall_graphic:
+	incbin "data/objects/graphics/castle_left_wall_graphic.bin"
 
 ;$DB847C (sprite graphic)
-SPRITE_GRAPHIC_2FF0:
-	incbin "data/objects/graphics/sprite_graphic_2FF0.bin"
+castle_right_wall_graphic:
+	incbin "data/objects/graphics/castle_right_wall_graphic.bin"
 
 ;$DB864E (sprite graphic)
-SPRITE_GRAPHIC_2FF4:
-	incbin "data/objects/graphics/sprite_graphic_2FF4.bin"
+lava_right_wall_graphic:
+	incbin "data/objects/graphics/lava_right_wall_graphic.bin"
 
 ;$DB8908 (sprite graphic)
-SPRITE_GRAPHIC_2FF8:
-	incbin "data/objects/graphics/sprite_graphic_2FF8.bin"
+ice_left_wall_graphic:
+	incbin "data/objects/graphics/ice_left_wall_graphic.bin"
 
 ;$DB8B84 (sprite graphic)
-SPRITE_GRAPHIC_2FFC:
-	incbin "data/objects/graphics/sprite_graphic_2FFC.bin"
+ship_hold_high_wall_graphic:
+	incbin "data/objects/graphics/ship_hold_high_wall_graphic.bin"
 
 ;$DB8E38 (sprite graphic)
-SPRITE_GRAPHIC_3000:
-	incbin "data/objects/graphics/sprite_graphic_3000.bin"
+ship_hold_low_wall_graphic:
+	incbin "data/objects/graphics/ship_hold_low_wall_graphic.bin"
 
 ;$DB8F2E (sprite graphic)
-SPRITE_GRAPHIC_3004:
-	incbin "data/objects/graphics/sprite_graphic_3004.bin"
+squitter_web_platform_shot_frame1:
+	incbin "data/objects/graphics/squitter_web_platform_shot_frame1.bin"
 
 ;$DB8FB8 (sprite graphic)
-SPRITE_GRAPHIC_3008:
-	incbin "data/objects/graphics/sprite_graphic_3008.bin"
+squitter_web_platform_shot_frame2:
+	incbin "data/objects/graphics/squitter_web_platform_shot_frame2.bin"
 
 ;$DB9042 (sprite graphic)
-SPRITE_GRAPHIC_300C:
-	incbin "data/objects/graphics/sprite_graphic_300C.bin"
+squitter_web_platform_shot_frame3:
+	incbin "data/objects/graphics/squitter_web_platform_shot_frame3.bin"
 
 ;$DB90CC (sprite graphic)
-SPRITE_GRAPHIC_3010:
-	incbin "data/objects/graphics/sprite_graphic_3010.bin"
+swanky_present_frame1:
+	incbin "data/objects/graphics/swanky_present_frame1.bin"
 
 ;$DB94CE (sprite graphic)
-SPRITE_GRAPHIC_3014:
-	incbin "data/objects/graphics/sprite_graphic_3014.bin"
+swanky_present_frame2:
+	incbin "data/objects/graphics/swanky_present_frame2.bin"
 
 ;$DB9892 (sprite graphic)
-SPRITE_GRAPHIC_3018:
-	incbin "data/objects/graphics/sprite_graphic_3018.bin"
+swanky_present_frame3:
+	incbin "data/objects/graphics/swanky_present_frame3.bin"
 
 ;$DB9C56 (sprite graphic)
-SPRITE_GRAPHIC_301C:
-	incbin "data/objects/graphics/sprite_graphic_301C.bin"
+swanky_present_frame4:
+	incbin "data/objects/graphics/swanky_present_frame4.bin"
 
 ;$DBA042 (sprite graphic)
-SPRITE_GRAPHIC_3020:
-	incbin "data/objects/graphics/sprite_graphic_3020.bin"
+swanky_present_frame5:
+	incbin "data/objects/graphics/swanky_present_frame5.bin"
 
 ;$DBA44A (sprite graphic)
-SPRITE_GRAPHIC_3024:
-	incbin "data/objects/graphics/sprite_graphic_3024.bin"
+swanky_present_frame6:
+	incbin "data/objects/graphics/swanky_present_frame6.bin"
 
 ;$DBA852 (sprite graphic)
-SPRITE_GRAPHIC_3028:
-	incbin "data/objects/graphics/sprite_graphic_3028.bin"
+swanky_present_frame7:
+	incbin "data/objects/graphics/swanky_present_frame7.bin"
 
 ;$DBAC7C (sprite graphic)
-SPRITE_GRAPHIC_302C:
-	incbin "data/objects/graphics/sprite_graphic_302C.bin"
+swanky_present_frame8:
+	incbin "data/objects/graphics/swanky_present_frame8.bin"
 
 ;$DBB0A6 (sprite graphic)
-SPRITE_GRAPHIC_3030:
-	incbin "data/objects/graphics/sprite_graphic_3030.bin"
+swanky_present_frame9:
+	incbin "data/objects/graphics/swanky_present_frame9.bin"
 
 ;$DBB4D0 (sprite graphic)
-SPRITE_GRAPHIC_3034:
-	incbin "data/objects/graphics/sprite_graphic_3034.bin"
+swanky_present_frame10:
+	incbin "data/objects/graphics/swanky_present_frame10.bin"
 
 ;$DBB8FA (sprite graphic)
-SPRITE_GRAPHIC_3038:
-	incbin "data/objects/graphics/sprite_graphic_3038.bin"
+swanky_present_frame11:
+	incbin "data/objects/graphics/swanky_present_frame11.bin"
 
 ;$DBBD24 (sprite graphic)
-SPRITE_GRAPHIC_303C:
-	incbin "data/objects/graphics/sprite_graphic_303C.bin"
+swanky_present_frame12:
+	incbin "data/objects/graphics/swanky_present_frame12.bin"
 
 ;$DBC14E (sprite graphic)
-SPRITE_GRAPHIC_3040:
-	incbin "data/objects/graphics/sprite_graphic_3040.bin"
+swanky_present_frame13:
+	incbin "data/objects/graphics/swanky_present_frame13.bin"
 
 ;$DBC578 (sprite graphic)
-SPRITE_GRAPHIC_3044:
-	incbin "data/objects/graphics/sprite_graphic_3044.bin"
+swanky_smile_frame1:
+	incbin "data/objects/graphics/swanky_smile_frame1.bin"
 
 ;$DBC97A (sprite graphic)
-SPRITE_GRAPHIC_3048:
-	incbin "data/objects/graphics/sprite_graphic_3048.bin"
+swanky_smile_frame2:
+	incbin "data/objects/graphics/swanky_smile_frame2.bin"
 
 ;$DBCD7C (sprite graphic)
-SPRITE_GRAPHIC_304C:
-	incbin "data/objects/graphics/sprite_graphic_304C.bin"
+swanky_smile_frame3:
+	incbin "data/objects/graphics/swanky_smile_frame3.bin"
 
 ;$DBD17E (sprite graphic)
-SPRITE_GRAPHIC_3050:
-	incbin "data/objects/graphics/sprite_graphic_3050.bin"
+swanky_smile_sparkle_frame1:
+	incbin "data/objects/graphics/swanky_smile_sparkle_frame1.bin"
 
 ;$DBD1A8 (sprite graphic)
-SPRITE_GRAPHIC_3054:
-	incbin "data/objects/graphics/sprite_graphic_3054.bin"
+swanky_smile_sparkle_frame2:
+	incbin "data/objects/graphics/swanky_smile_sparkle_frame2.bin"
 
 ;$DBD1D2 (sprite graphic)
-SPRITE_GRAPHIC_3058:
-	incbin "data/objects/graphics/sprite_graphic_3058.bin"
+swanky_smile_sparkle_frame3:
+	incbin "data/objects/graphics/swanky_smile_sparkle_frame3.bin"
 
 ;$DBD1FC (sprite graphic)
-SPRITE_GRAPHIC_305C:
-	incbin "data/objects/graphics/sprite_graphic_305C.bin"
+swanky_touch_hair_frame1:
+	incbin "data/objects/graphics/swanky_touch_hair_frame1.bin"
 
 ;$DBD5BA (sprite graphic)
-SPRITE_GRAPHIC_3060:
-	incbin "data/objects/graphics/sprite_graphic_3060.bin"
+swanky_touch_hair_frame2:
+	incbin "data/objects/graphics/swanky_touch_hair_frame2.bin"
 
 ;$DBD95C (sprite graphic)
-SPRITE_GRAPHIC_3064:
-	incbin "data/objects/graphics/sprite_graphic_3064.bin"
+swanky_touch_hair_frame3:
+	incbin "data/objects/graphics/swanky_touch_hair_frame3.bin"
 
 ;$DBDCBA (sprite graphic)
-SPRITE_GRAPHIC_3068:
-	incbin "data/objects/graphics/sprite_graphic_3068.bin"
+swanky_touch_hair_frame4:
+	incbin "data/objects/graphics/swanky_touch_hair_frame4.bin"
 
 ;$DBE018 (sprite graphic)
-SPRITE_GRAPHIC_306C:
-	incbin "data/objects/graphics/sprite_graphic_306C.bin"
+swanky_touch_hair_frame5:
+	incbin "data/objects/graphics/swanky_touch_hair_frame5.bin"
 
 ;$DBE3BA (sprite graphic)
-SPRITE_GRAPHIC_3070:
-	incbin "data/objects/graphics/sprite_graphic_3070.bin"
+swanky_touch_hair_frame6:
+	incbin "data/objects/graphics/swanky_touch_hair_frame6.bin"
 
 ;$DBE75C (sprite graphic)
-SPRITE_GRAPHIC_3074:
-	incbin "data/objects/graphics/sprite_graphic_3074.bin"
+swanky_touch_hair_frame7:
+	incbin "data/objects/graphics/swanky_touch_hair_frame7.bin"
 
 ;$DBEB20 (sprite graphic)
-SPRITE_GRAPHIC_3078:
-	incbin "data/objects/graphics/sprite_graphic_3078.bin"
+swanky_touch_hair_frame8:
+	incbin "data/objects/graphics/swanky_touch_hair_frame8.bin"
 
 ;$DBEEE4 (sprite graphic)
-SPRITE_GRAPHIC_307C:
-	incbin "data/objects/graphics/sprite_graphic_307C.bin"
+swanky_touch_hair_frame9:
+	incbin "data/objects/graphics/swanky_touch_hair_frame9.bin"
 
 ;$DBF2A8 (sprite graphic)
-SPRITE_GRAPHIC_3080:
-	incbin "data/objects/graphics/sprite_graphic_3080.bin"
+swanky_touch_hair_frame10:
+	incbin "data/objects/graphics/swanky_touch_hair_frame10.bin"
 
 ;$DBF66C (sprite graphic)
-SPRITE_GRAPHIC_3084:
-	incbin "data/objects/graphics/sprite_graphic_3084.bin"
+diddy_updraft_frame1:
+	incbin "data/objects/graphics/diddy_updraft_frame1.bin"
 
 ;$DBF8CC (sprite graphic)
-SPRITE_GRAPHIC_3088:
-	incbin "data/objects/graphics/sprite_graphic_3088.bin"
+diddy_updraft_frame2:
+	incbin "data/objects/graphics/diddy_updraft_frame2.bin"
 
 check bankcross off
 ;$DBFB2C
@@ -11785,532 +11785,532 @@ krazy_kremland_lower_8x8_tilemap:
 check bankcross full
 
 ;$DC021A (sprite graphic)
-SPRITE_GRAPHIC_308C:
-	incbin "data/objects/graphics/sprite_graphic_308C.bin"
+diddy_updraft_frame3:
+	incbin "data/objects/graphics/diddy_updraft_frame3.bin"
 
 ;$DC0458 (sprite graphic)
-SPRITE_GRAPHIC_3090:
-	incbin "data/objects/graphics/sprite_graphic_3090.bin"
+diddy_updraft_frame4:
+	incbin "data/objects/graphics/diddy_updraft_frame4.bin"
 
 ;$DC06D4 (sprite graphic)
-SPRITE_GRAPHIC_3094:
-	incbin "data/objects/graphics/sprite_graphic_3094.bin"
+diddy_updraft_frame5:
+	incbin "data/objects/graphics/diddy_updraft_frame5.bin"
 
 ;$DC09D8 (sprite graphic)
-SPRITE_GRAPHIC_3098:
-	incbin "data/objects/graphics/sprite_graphic_3098.bin"
+diddy_updraft_frame6:
+	incbin "data/objects/graphics/diddy_updraft_frame6.bin"
 
 ;$DC0CBA (sprite graphic)
-SPRITE_GRAPHIC_309C:
-	incbin "data/objects/graphics/sprite_graphic_309C.bin"
+diddy_updraft_frame7:
+	incbin "data/objects/graphics/diddy_updraft_frame7.bin"
 
 ;$DC0F9C (sprite graphic)
-SPRITE_GRAPHIC_30A0:
-	incbin "data/objects/graphics/sprite_graphic_30A0.bin"
+diddy_updraft_frame8:
+	incbin "data/objects/graphics/diddy_updraft_frame8.bin"
 
 ;$DC129A (sprite graphic)
-SPRITE_GRAPHIC_30A4:
-	incbin "data/objects/graphics/sprite_graphic_30A4.bin"
+diddy_updraft_frame9:
+	incbin "data/objects/graphics/diddy_updraft_frame9.bin"
 
 ;$DC1598 (sprite graphic)
-SPRITE_GRAPHIC_30A8:
-	incbin "data/objects/graphics/sprite_graphic_30A8.bin"
+diddy_updraft_frame10:
+	incbin "data/objects/graphics/diddy_updraft_frame10.bin"
 
 ;$DC18B8 (sprite graphic)
-SPRITE_GRAPHIC_30AC:
-	incbin "data/objects/graphics/sprite_graphic_30AC.bin"
+diddy_updraft_frame11:
+	incbin "data/objects/graphics/diddy_updraft_frame11.bin"
 
 ;$DC1BDE (sprite graphic)
-SPRITE_GRAPHIC_30B0:
-	incbin "data/objects/graphics/sprite_graphic_30B0.bin"
+diddy_updraft_frame12:
+	incbin "data/objects/graphics/diddy_updraft_frame12.bin"
 
 ;$DC1F26 (sprite graphic)
-SPRITE_GRAPHIC_30B4:
-	incbin "data/objects/graphics/sprite_graphic_30B4.bin"
+dixie_fall_frame1:
+	incbin "data/objects/graphics/dixie_fall_frame1.bin"
 
 ;$DC21E6 (sprite graphic)
-SPRITE_GRAPHIC_30B8:
-	incbin "data/objects/graphics/sprite_graphic_30B8.bin"
+dixie_fall_frame2:
+	incbin "data/objects/graphics/dixie_fall_frame2.bin"
 
 ;$DC24A6 (sprite graphic)
-SPRITE_GRAPHIC_30BC:
-	incbin "data/objects/graphics/sprite_graphic_30BC.bin"
+dixie_fall_frame3:
+	incbin "data/objects/graphics/dixie_fall_frame3.bin"
 
 ;$DC2744 (sprite graphic)
-SPRITE_GRAPHIC_30C0:
-	incbin "data/objects/graphics/sprite_graphic_30C0.bin"
+dixie_fall_frame4:
+	incbin "data/objects/graphics/dixie_fall_frame4.bin"
 
 ;$DC29E2 (sprite graphic)
-SPRITE_GRAPHIC_30C4:
-	incbin "data/objects/graphics/sprite_graphic_30C4.bin"
+dixie_fall_frame5:
+	incbin "data/objects/graphics/dixie_fall_frame5.bin"
 
 ;$DC2C3C (sprite graphic)
-SPRITE_GRAPHIC_30C8:
-	incbin "data/objects/graphics/sprite_graphic_30C8.bin"
+dixie_fall_frame6:
+	incbin "data/objects/graphics/dixie_fall_frame6.bin"
 
 ;$DC2E96 (sprite graphic)
-SPRITE_GRAPHIC_30CC:
-	incbin "data/objects/graphics/sprite_graphic_30CC.bin"
+dixie_fall_frame7:
+	incbin "data/objects/graphics/dixie_fall_frame7.bin"
 
 ;$DC3112 (sprite graphic)
-SPRITE_GRAPHIC_30D0:
-	incbin "data/objects/graphics/sprite_graphic_30D0.bin"
+dixie_updraft_frame1:
+	incbin "data/objects/graphics/dixie_updraft_frame1.bin"
 
 ;$DC3388 (sprite graphic)
-SPRITE_GRAPHIC_30D4:
-	incbin "data/objects/graphics/sprite_graphic_30D4.bin"
+dixie_updraft_frame2:
+	incbin "data/objects/graphics/dixie_updraft_frame2.bin"
 
 ;$DC3604 (sprite graphic)
-SPRITE_GRAPHIC_30D8:
-	incbin "data/objects/graphics/sprite_graphic_30D8.bin"
+dixie_updraft_frame3:
+	incbin "data/objects/graphics/dixie_updraft_frame3.bin"
 
 ;$DC383C (sprite graphic)
-SPRITE_GRAPHIC_30DC:
-	incbin "data/objects/graphics/sprite_graphic_30DC.bin"
+dixie_updraft_frame4:
+	incbin "data/objects/graphics/dixie_updraft_frame4.bin"
 
 ;$DC3A36 (sprite graphic)
-SPRITE_GRAPHIC_30E0:
-	incbin "data/objects/graphics/sprite_graphic_30E0.bin"
+dixie_updraft_frame5:
+	incbin "data/objects/graphics/dixie_updraft_frame5.bin"
 
 ;$DC3C30 (sprite graphic)
-SPRITE_GRAPHIC_30E4:
-	incbin "data/objects/graphics/sprite_graphic_30E4.bin"
+dixie_updraft_frame6:
+	incbin "data/objects/graphics/dixie_updraft_frame6.bin"
 
 ;$DC3E2A (sprite graphic)
-SPRITE_GRAPHIC_30E8:
-	incbin "data/objects/graphics/sprite_graphic_30E8.bin"
+dixie_updraft_frame7:
+	incbin "data/objects/graphics/dixie_updraft_frame7.bin"
 
 ;$DC4024 (sprite graphic)
-SPRITE_GRAPHIC_30EC:
-	incbin "data/objects/graphics/sprite_graphic_30EC.bin"
+dixie_updraft_frame8:
+	incbin "data/objects/graphics/dixie_updraft_frame8.bin"
 
 ;$DC41FC (sprite graphic)
-SPRITE_GRAPHIC_30F0:
-	incbin "data/objects/graphics/sprite_graphic_30F0.bin"
+dixie_updraft_frame9:
+	incbin "data/objects/graphics/dixie_updraft_frame9.bin"
 
 ;$DC43D4 (sprite graphic)
-SPRITE_GRAPHIC_30F4:
-	incbin "data/objects/graphics/sprite_graphic_30F4.bin"
+dixie_updraft_frame10:
+	incbin "data/objects/graphics/dixie_updraft_frame10.bin"
 
 ;$DC45CE (sprite graphic)
-SPRITE_GRAPHIC_30F8:
-	incbin "data/objects/graphics/sprite_graphic_30F8.bin"
+dixie_updraft_frame11:
+	incbin "data/objects/graphics/dixie_updraft_frame11.bin"
 
 ;$DC47A6 (sprite graphic)
-SPRITE_GRAPHIC_30FC:
-	incbin "data/objects/graphics/sprite_graphic_30FC.bin"
+dixie_updraft_frame12:
+	incbin "data/objects/graphics/dixie_updraft_frame12.bin"
 
 ;$DC49C2 (sprite graphic)
-SPRITE_GRAPHIC_3100:
-	incbin "data/objects/graphics/sprite_graphic_3100.bin"
+lava_bubbles_frame1:
+	incbin "data/objects/graphics/lava_bubbles_frame1.bin"
 
 ;$DC4AD4 (sprite graphic)
-SPRITE_GRAPHIC_3104:
-	incbin "data/objects/graphics/sprite_graphic_3104.bin"
+lava_bubbles_frame2:
+	incbin "data/objects/graphics/lava_bubbles_frame2.bin"
 
 ;$DC4C08 (sprite graphic)
-SPRITE_GRAPHIC_3108:
-	incbin "data/objects/graphics/sprite_graphic_3108.bin"
+lava_bubbles_frame3:
+	incbin "data/objects/graphics/lava_bubbles_frame3.bin"
 
 ;$DC4D58 (sprite graphic)
-SPRITE_GRAPHIC_310C:
-	incbin "data/objects/graphics/sprite_graphic_310C.bin"
+lava_bubbles_frame4:
+	incbin "data/objects/graphics/lava_bubbles_frame4.bin"
 
 ;$DC4EA8 (sprite graphic)
-SPRITE_GRAPHIC_3110:
-	incbin "data/objects/graphics/sprite_graphic_3110.bin"
+lava_bubbles_frame5:
+	incbin "data/objects/graphics/lava_bubbles_frame5.bin"
 
 ;$DC4FD6 (sprite graphic)
-SPRITE_GRAPHIC_3114:
-	incbin "data/objects/graphics/sprite_graphic_3114.bin"
+lava_bubbles_frame6:
+	incbin "data/objects/graphics/lava_bubbles_frame6.bin"
 
 ;$DC510A (sprite graphic)
-SPRITE_GRAPHIC_3118:
-	incbin "data/objects/graphics/sprite_graphic_3118.bin"
+lava_bubbles_frame7:
+	incbin "data/objects/graphics/lava_bubbles_frame7.bin"
 
 ;$DC5238 (sprite graphic)
-SPRITE_GRAPHIC_311C:
-	incbin "data/objects/graphics/sprite_graphic_311C.bin"
+lava_bubbles_frame8:
+	incbin "data/objects/graphics/lava_bubbles_frame8.bin"
 
 ;$DC5366 (sprite graphic)
-SPRITE_GRAPHIC_3120:
-	incbin "data/objects/graphics/sprite_graphic_3120.bin"
+isle_zinger_turn_frame1:
+	incbin "data/objects/graphics/isle_zinger_turn_frame1.bin"
 
 ;$DC53F0 (sprite graphic)
-SPRITE_GRAPHIC_3124:
-	incbin "data/objects/graphics/sprite_graphic_3124.bin"
+isle_zinger_turn_frame2:
+	incbin "data/objects/graphics/isle_zinger_turn_frame2.bin"
 
 ;$DC547A (sprite graphic)
-SPRITE_GRAPHIC_3128:
-	incbin "data/objects/graphics/sprite_graphic_3128.bin"
+isle_airship_graphic:
+	incbin "data/objects/graphics/isle_airship_graphic.bin"
 
 ;$DC5570 (sprite graphic)
-SPRITE_GRAPHIC_312C:
-	incbin "data/objects/graphics/sprite_graphic_312C.bin"
+isle_airship_ladder_frame1:
+	incbin "data/objects/graphics/isle_airship_ladder_frame1.bin"
 
 ;$DC559A (sprite graphic)
-SPRITE_GRAPHIC_3130:
-	incbin "data/objects/graphics/sprite_graphic_3130.bin"
+isle_airship_ladder_frame2:
+	incbin "data/objects/graphics/isle_airship_ladder_frame2.bin"
 
 ;$DC55E6 (sprite graphic)
-SPRITE_GRAPHIC_3134:
-	incbin "data/objects/graphics/sprite_graphic_3134.bin"
+isle_airship_ladder_frame3:
+	incbin "data/objects/graphics/isle_airship_ladder_frame3.bin"
 
 ;$DC5654 (sprite graphic)
-SPRITE_GRAPHIC_3138:
-	incbin "data/objects/graphics/sprite_graphic_3138.bin"
+isle_airship_ladder_frame4:
+	incbin "data/objects/graphics/isle_airship_ladder_frame4.bin"
 
 ;$DC56E4 (sprite graphic)
-SPRITE_GRAPHIC_313C:
-	incbin "data/objects/graphics/sprite_graphic_313C.bin"
+isle_airship_ladder_frame5:
+	incbin "data/objects/graphics/isle_airship_ladder_frame5.bin"
 
 ;$DC5796 (sprite graphic)
-SPRITE_GRAPHIC_3140:
-	incbin "data/objects/graphics/sprite_graphic_3140.bin"
+isle_airship_ladder_frame6:
+	incbin "data/objects/graphics/isle_airship_ladder_frame6.bin"
 
 ;$DC586A (sprite graphic)
-SPRITE_GRAPHIC_3144:
-	incbin "data/objects/graphics/sprite_graphic_3144.bin"
+isle_k_rool_fall_frame1:
+	incbin "data/objects/graphics/isle_k_rool_fall_frame1.bin"
 
 ;$DC5976 (sprite graphic)
-SPRITE_GRAPHIC_3148:
-	incbin "data/objects/graphics/sprite_graphic_3148.bin"
+isle_k_rool_fall_frame2:
+	incbin "data/objects/graphics/isle_k_rool_fall_frame2.bin"
 
 ;$DC5AAA (sprite graphic)
-SPRITE_GRAPHIC_314C:
-	incbin "data/objects/graphics/sprite_graphic_314C.bin"
+isle_k_rool_fall_frame3:
+	incbin "data/objects/graphics/isle_k_rool_fall_frame3.bin"
 
 ;$DC5BBC (sprite graphic)
-SPRITE_GRAPHIC_3150:
-	incbin "data/objects/graphics/sprite_graphic_3150.bin"
+isle_k_rool_fall_frame4:
+	incbin "data/objects/graphics/isle_k_rool_fall_frame4.bin"
 
 ;$DC5CAC (sprite graphic)
-SPRITE_GRAPHIC_3154:
-	incbin "data/objects/graphics/sprite_graphic_3154.bin"
+isle_k_rool_climb_frame1:
+	incbin "data/objects/graphics/isle_k_rool_climb_frame1.bin"
 
 ;$DC5D9C (sprite graphic)
-SPRITE_GRAPHIC_3158:
-	incbin "data/objects/graphics/sprite_graphic_3158.bin"
+isle_k_rool_climb_frame2:
+	incbin "data/objects/graphics/isle_k_rool_climb_frame2.bin"
 
 ;$DC5E6A (sprite graphic)
-SPRITE_GRAPHIC_315C:
-	incbin "data/objects/graphics/sprite_graphic_315C.bin"
+isle_k_rool_climb_frame3:
+	incbin "data/objects/graphics/isle_k_rool_climb_frame3.bin"
 
 ;$DC5F38 (sprite graphic)
-SPRITE_GRAPHIC_3160:
-	incbin "data/objects/graphics/sprite_graphic_3160.bin"
+isle_k_rool_climb_frame4:
+	incbin "data/objects/graphics/isle_k_rool_climb_frame4.bin"
 
 ;$DC5FE4 (sprite graphic)
-SPRITE_GRAPHIC_3164:
-	incbin "data/objects/graphics/sprite_graphic_3164.bin"
+isle_k_rool_climb_frame5:
+	incbin "data/objects/graphics/isle_k_rool_climb_frame5.bin"
 
 ;$DC60D4 (sprite graphic)
-SPRITE_GRAPHIC_3168:
-	incbin "data/objects/graphics/sprite_graphic_3168.bin"
+barrel_cannon_direction_icon_graphic:
+	incbin "data/objects/graphics/barrel_cannon_direction_icon_graphic.bin"
 
 ;$DC6186 (sprite graphic)
-SPRITE_GRAPHIC_316C:
-	incbin "data/objects/graphics/sprite_graphic_316C.bin"
+barrel_cannon_rotate_icon_graphic:
+	incbin "data/objects/graphics/barrel_cannon_rotate_icon_graphic.bin"
 
 ;$DC6298 (sprite graphic)
-SPRITE_GRAPHIC_3170:
-	incbin "data/objects/graphics/sprite_graphic_3170.bin"
+barrel_cannon_bonus_icon_graphic:
+	incbin "data/objects/graphics/barrel_cannon_bonus_icon_graphic.bin"
 
 ;$DC63EE (sprite graphic)
-SPRITE_GRAPHIC_3174:
-	incbin "data/objects/graphics/sprite_graphic_3174.bin"
+barrel_cannon_dixie_icon_graphic:
+	incbin "data/objects/graphics/barrel_cannon_dixie_icon_graphic.bin"
 
 ;$DC6566 (sprite graphic)
-SPRITE_GRAPHIC_3178:
-	incbin "data/objects/graphics/sprite_graphic_3178.bin"
+barrel_cannon_diddy_icon_graphic:
+	incbin "data/objects/graphics/barrel_cannon_diddy_icon_graphic.bin"
 
 ;$DC6678 (sprite graphic)
-SPRITE_GRAPHIC_317C:
-	incbin "data/objects/graphics/sprite_graphic_317C.bin"
+banana_coin_frame1:
+	incbin "data/objects/graphics/banana_coin_frame1.bin"
 
 ;$DC67F0 (sprite graphic)
-SPRITE_GRAPHIC_3180:
-	incbin "data/objects/graphics/sprite_graphic_3180.bin"
+banana_coin_frame2:
+	incbin "data/objects/graphics/banana_coin_frame2.bin"
 
 ;$DC6968 (sprite graphic)
-SPRITE_GRAPHIC_3184:
-	incbin "data/objects/graphics/sprite_graphic_3184.bin"
+banana_coin_frame3:
+	incbin "data/objects/graphics/banana_coin_frame3.bin"
 
 ;$DC6AE0 (sprite graphic)
-SPRITE_GRAPHIC_3188:
-	incbin "data/objects/graphics/sprite_graphic_3188.bin"
+banana_coin_frame4:
+	incbin "data/objects/graphics/banana_coin_frame4.bin"
 
 ;$DC6C58 (sprite graphic)
-SPRITE_GRAPHIC_318C:
-	incbin "data/objects/graphics/sprite_graphic_318C.bin"
+banana_coin_frame5:
+	incbin "data/objects/graphics/banana_coin_frame5.bin"
 
 ;$DC6D64 (sprite graphic)
-SPRITE_GRAPHIC_3190:
-	incbin "data/objects/graphics/sprite_graphic_3190.bin"
+banana_coin_frame6:
+	incbin "data/objects/graphics/banana_coin_frame6.bin"
 
 ;$DC6DF4 (sprite graphic)
-SPRITE_GRAPHIC_3194:
-	incbin "data/objects/graphics/sprite_graphic_3194.bin"
+banana_coin_frame7:
+	incbin "data/objects/graphics/banana_coin_frame7.bin"
 
 ;$DC6EE4 (sprite graphic)
-SPRITE_GRAPHIC_3198:
-	incbin "data/objects/graphics/sprite_graphic_3198.bin"
+banana_coin_frame8:
+	incbin "data/objects/graphics/banana_coin_frame8.bin"
 
 ;$DC705C (sprite graphic)
-SPRITE_GRAPHIC_319C:
-	incbin "data/objects/graphics/sprite_graphic_319C.bin"
+kong_letter_g_collected_frame1:
+	incbin "data/objects/graphics/kong_letter_g_collected_frame1.bin"
 
 ;$DC7190 (sprite graphic)
-SPRITE_GRAPHIC_31A0:
-	incbin "data/objects/graphics/sprite_graphic_31A0.bin"
+kong_letter_g_collected_frame2:
+	incbin "data/objects/graphics/kong_letter_g_collected_frame2.bin"
 
 ;$DC72C4 (sprite graphic)
-SPRITE_GRAPHIC_31A4:
-	incbin "data/objects/graphics/sprite_graphic_31A4.bin"
+kong_letter_k_collected_frame1:
+	incbin "data/objects/graphics/kong_letter_k_collected_frame1.bin"
 
 ;$DC73F8 (sprite graphic)
-SPRITE_GRAPHIC_31A8:
-	incbin "data/objects/graphics/sprite_graphic_31A8.bin"
+kong_letter_k_collected_frame2:
+	incbin "data/objects/graphics/kong_letter_k_collected_frame2.bin"
 
 ;$DC752C (sprite graphic)
-SPRITE_GRAPHIC_31AC:
-	incbin "data/objects/graphics/sprite_graphic_31AC.bin"
+kong_letter_n_collected_frame1:
+	incbin "data/objects/graphics/kong_letter_n_collected_frame1.bin"
 
 ;$DC7660 (sprite graphic)
-SPRITE_GRAPHIC_31B0:
-	incbin "data/objects/graphics/sprite_graphic_31B0.bin"
+kong_letter_n_collected_frame2:
+	incbin "data/objects/graphics/kong_letter_n_collected_frame2.bin"
 
 ;$DC7794 (sprite graphic)
-SPRITE_GRAPHIC_31B4:
-	incbin "data/objects/graphics/sprite_graphic_31B4.bin"
+kong_letter_o_collected_frame1:
+	incbin "data/objects/graphics/kong_letter_o_collected_frame1.bin"
 
 ;$DC78C8 (sprite graphic)
-SPRITE_GRAPHIC_31B8:
-	incbin "data/objects/graphics/sprite_graphic_31B8.bin"
+kong_letter_o_collected_frame2:
+	incbin "data/objects/graphics/kong_letter_o_collected_frame2.bin"
 
 ;$DC79FC (sprite graphic)
-SPRITE_GRAPHIC_31BC:
-	incbin "data/objects/graphics/sprite_graphic_31BC.bin"
+token_collected_graphic:
+	incbin "data/objects/graphics/token_collected_graphic.bin"
 
 ;$DC7C72 (sprite graphic)
-SPRITE_GRAPHIC_31C0:
-	incbin "data/objects/graphics/sprite_graphic_31C0.bin"
+hero_coin_collected_graphic:
+	incbin "data/objects/graphics/hero_coin_collected_graphic.bin"
 
 ;$DC7FAE (sprite graphic)
-SPRITE_GRAPHIC_31C4:
-	incbin "data/objects/graphics/sprite_graphic_31C4.bin"
+diddy_rope_hang_frame1:
+	incbin "data/objects/graphics/diddy_rope_hang_frame1.bin"
 
 ;$DC8268 (sprite graphic)
-SPRITE_GRAPHIC_31C8:
-	incbin "data/objects/graphics/sprite_graphic_31C8.bin"
+diddy_rope_hang_frame2:
+	incbin "data/objects/graphics/diddy_rope_hang_frame2.bin"
 
 ;$DC8522 (sprite graphic)
-SPRITE_GRAPHIC_31CC:
-	incbin "data/objects/graphics/sprite_graphic_31CC.bin"
+diddy_rope_hang_frame3:
+	incbin "data/objects/graphics/diddy_rope_hang_frame3.bin"
 
 ;$DC87DC (sprite graphic)
-SPRITE_GRAPHIC_31D0:
-	incbin "data/objects/graphics/sprite_graphic_31D0.bin"
+diddy_rope_hang_frame4:
+	incbin "data/objects/graphics/diddy_rope_hang_frame4.bin"
 
 ;$DC8A96 (sprite graphic)
-SPRITE_GRAPHIC_31D4:
-	incbin "data/objects/graphics/sprite_graphic_31D4.bin"
+diddy_rope_hang_frame5:
+	incbin "data/objects/graphics/diddy_rope_hang_frame5.bin"
 
 ;$DC8D34 (sprite graphic)
-SPRITE_GRAPHIC_31D8:
-	incbin "data/objects/graphics/sprite_graphic_31D8.bin"
+diddy_rope_hang_frame6:
+	incbin "data/objects/graphics/diddy_rope_hang_frame6.bin"
 
 ;$DC8FB0 (sprite graphic)
-SPRITE_GRAPHIC_31DC:
-	incbin "data/objects/graphics/sprite_graphic_31DC.bin"
+diddy_rope_hang_frame7:
+	incbin "data/objects/graphics/diddy_rope_hang_frame7.bin"
 
 ;$DC9226 (sprite graphic)
-SPRITE_GRAPHIC_31E0:
-	incbin "data/objects/graphics/sprite_graphic_31E0.bin"
+diddy_rope_hang_frame8:
+	incbin "data/objects/graphics/diddy_rope_hang_frame8.bin"
 
 ;$DC949C (sprite graphic)
-SPRITE_GRAPHIC_31E4:
-	incbin "data/objects/graphics/sprite_graphic_31E4.bin"
+kiosk_barrel_graphic:
+	incbin "data/objects/graphics/kiosk_barrel_graphic.bin"
 
 ;$DC97F4 (sprite graphic)
-SPRITE_GRAPHIC_31E8:
-	incbin "data/objects/graphics/sprite_graphic_31E8.bin"
+wrinkly_frame1:
+	incbin "data/objects/graphics/wrinkly_frame1.bin"
 
 ;$DC9ABA (sprite graphic)
-SPRITE_GRAPHIC_31EC:
-	incbin "data/objects/graphics/sprite_graphic_31EC.bin"
+wrinkly_frame2:
+	incbin "data/objects/graphics/wrinkly_frame2.bin"
 
 ;$DC9DA2 (sprite graphic)
-SPRITE_GRAPHIC_31F0:
-	incbin "data/objects/graphics/sprite_graphic_31F0.bin"
+wrinkly_frame3:
+	incbin "data/objects/graphics/wrinkly_frame3.bin"
 
 ;$DCA084 (sprite graphic)
-SPRITE_GRAPHIC_31F4:
-	incbin "data/objects/graphics/sprite_graphic_31F4.bin"
+wrinkly_frame4:
+	incbin "data/objects/graphics/wrinkly_frame4.bin"
 
 ;$DCA344 (sprite graphic)
-SPRITE_GRAPHIC_31F8:
-	incbin "data/objects/graphics/sprite_graphic_31F8.bin"
+wrinkly_frame5:
+	incbin "data/objects/graphics/wrinkly_frame5.bin"
 
 ;$DCA604 (sprite graphic)
-SPRITE_GRAPHIC_31FC:
-	incbin "data/objects/graphics/sprite_graphic_31FC.bin"
+wrinkly_frame6:
+	incbin "data/objects/graphics/wrinkly_frame6.bin"
 
 ;$DCA864 (sprite graphic)
-SPRITE_GRAPHIC_3200:
-	incbin "data/objects/graphics/sprite_graphic_3200.bin"
+wrinkly_frame7:
+	incbin "data/objects/graphics/wrinkly_frame7.bin"
 
 ;$DCAAC4 (sprite graphic)
-SPRITE_GRAPHIC_3204:
-	incbin "data/objects/graphics/sprite_graphic_3204.bin"
+wrinkly_frame8:
+	incbin "data/objects/graphics/wrinkly_frame8.bin"
 
 ;$DCACE0 (sprite graphic)
-SPRITE_GRAPHIC_3208:
-	incbin "data/objects/graphics/sprite_graphic_3208.bin"
+wrinkly_frame9:
+	incbin "data/objects/graphics/wrinkly_frame9.bin"
 
 ;$DCAEFC (sprite graphic)
-SPRITE_GRAPHIC_320C:
-	incbin "data/objects/graphics/sprite_graphic_320C.bin"
+wrinkly_frame10:
+	incbin "data/objects/graphics/wrinkly_frame10.bin"
 
 ;$DCB118 (sprite graphic)
-SPRITE_GRAPHIC_3210:
-	incbin "data/objects/graphics/sprite_graphic_3210.bin"
+wrinkly_frame11:
+	incbin "data/objects/graphics/wrinkly_frame11.bin"
 
 ;$DCB356 (sprite graphic)
-SPRITE_GRAPHIC_3214:
-	incbin "data/objects/graphics/sprite_graphic_3214.bin"
+wrinkly_frame12:
+	incbin "data/objects/graphics/wrinkly_frame12.bin"
 
 ;$DCB594 (sprite graphic)
-SPRITE_GRAPHIC_3218:
-	incbin "data/objects/graphics/sprite_graphic_3218.bin"
+wrinkly_frame13:
+	incbin "data/objects/graphics/wrinkly_frame13.bin"
 
 ;$DCB7D2 (sprite graphic)
-SPRITE_GRAPHIC_321C:
-	incbin "data/objects/graphics/sprite_graphic_321C.bin"
+wrinkly_frame14:
+	incbin "data/objects/graphics/wrinkly_frame14.bin"
 
 ;$DCBA10 (sprite graphic)
-SPRITE_GRAPHIC_3220:
-	incbin "data/objects/graphics/sprite_graphic_3220.bin"
+wrinkly_frame15:
+	incbin "data/objects/graphics/wrinkly_frame15.bin"
 
 ;$DCBC2C (sprite graphic)
-SPRITE_GRAPHIC_3224:
-	incbin "data/objects/graphics/sprite_graphic_3224.bin"
+wrinkly_frame16:
+	incbin "data/objects/graphics/wrinkly_frame16.bin"
 
 ;$DCBE6A (sprite graphic)
-SPRITE_GRAPHIC_3228:
-	incbin "data/objects/graphics/sprite_graphic_3228.bin"
+wrinkly_frame17:
+	incbin "data/objects/graphics/wrinkly_frame17.bin"
 
 ;$DCC0A8 (sprite graphic)
-SPRITE_GRAPHIC_322C:
-	incbin "data/objects/graphics/sprite_graphic_322C.bin"
+wrinkly_frame18:
+	incbin "data/objects/graphics/wrinkly_frame18.bin"
 
 ;$DCC2E6 (sprite graphic)
-SPRITE_GRAPHIC_3230:
-	incbin "data/objects/graphics/sprite_graphic_3230.bin"
+wrinkly_frame19:
+	incbin "data/objects/graphics/wrinkly_frame19.bin"
 
 ;$DCC524 (sprite graphic)
-SPRITE_GRAPHIC_3234:
-	incbin "data/objects/graphics/sprite_graphic_3234.bin"
+wrinkly_frame20:
+	incbin "data/objects/graphics/wrinkly_frame20.bin"
 
 ;$DCC762 (sprite graphic)
-SPRITE_GRAPHIC_3238:
-	incbin "data/objects/graphics/sprite_graphic_3238.bin"
+wrinkly_frame21:
+	incbin "data/objects/graphics/wrinkly_frame21.bin"
 
 ;$DCC9C2 (sprite graphic)
-SPRITE_GRAPHIC_323C:
-	incbin "data/objects/graphics/sprite_graphic_323C.bin"
+wrinkly_frame22:
+	incbin "data/objects/graphics/wrinkly_frame22.bin"
 
 ;$DCCC22 (sprite graphic)
-SPRITE_GRAPHIC_3240:
-	incbin "data/objects/graphics/sprite_graphic_3240.bin"
+wrinkly_frame23:
+	incbin "data/objects/graphics/wrinkly_frame23.bin"
 
 ;$DCCE82 (sprite graphic)
-SPRITE_GRAPHIC_3244:
-	incbin "data/objects/graphics/sprite_graphic_3244.bin"
+wrinkly_frame24:
+	incbin "data/objects/graphics/wrinkly_frame24.bin"
 
 ;$DCD0C0 (sprite graphic)
-SPRITE_GRAPHIC_3248:
-	incbin "data/objects/graphics/sprite_graphic_3248.bin"
+wrinkly_frame25:
+	incbin "data/objects/graphics/wrinkly_frame25.bin"
 
 ;$DCD2FE (sprite graphic)
-SPRITE_GRAPHIC_324C:
-	incbin "data/objects/graphics/sprite_graphic_324C.bin"
+wrinkly_frame26:
+	incbin "data/objects/graphics/wrinkly_frame26.bin"
 
 ;$DCD53C (sprite graphic)
-SPRITE_GRAPHIC_3250:
-	incbin "data/objects/graphics/sprite_graphic_3250.bin"
+wrinkly_frame27:
+	incbin "data/objects/graphics/wrinkly_frame27.bin"
 
 ;$DCD796 (sprite graphic)
-SPRITE_GRAPHIC_3254:
-	incbin "data/objects/graphics/sprite_graphic_3254.bin"
+wrinkly_frame28:
+	incbin "data/objects/graphics/wrinkly_frame28.bin"
 
 ;$DCD9D4 (sprite graphic)
-SPRITE_GRAPHIC_3258:
-	incbin "data/objects/graphics/sprite_graphic_3258.bin"
+wrinkly_frame29:
+	incbin "data/objects/graphics/wrinkly_frame29.bin"
 
 ;$DCDC34 (sprite graphic)
-SPRITE_GRAPHIC_325C:
-	incbin "data/objects/graphics/sprite_graphic_325C.bin"
+wrinkly_book_frame1:
+	incbin "data/objects/graphics/wrinkly_book_frame1.bin"
 
 ;$DCDE50 (sprite graphic)
-SPRITE_GRAPHIC_3260:
-	incbin "data/objects/graphics/sprite_graphic_3260.bin"
+wrinkly_book_frame2:
+	incbin "data/objects/graphics/wrinkly_book_frame2.bin"
 
 ;$DCE06C (sprite graphic)
-SPRITE_GRAPHIC_3264:
-	incbin "data/objects/graphics/sprite_graphic_3264.bin"
+wrinkly_book_frame3:
+	incbin "data/objects/graphics/wrinkly_book_frame3.bin"
 
 ;$DCE2AA (sprite graphic)
-SPRITE_GRAPHIC_3268:
-	incbin "data/objects/graphics/sprite_graphic_3268.bin"
+wrinkly_book_frame4:
+	incbin "data/objects/graphics/wrinkly_book_frame4.bin"
 
 ;$DCE4A4 (sprite graphic)
-SPRITE_GRAPHIC_326C:
-	incbin "data/objects/graphics/sprite_graphic_326C.bin"
+wrinkly_book_frame5:
+	incbin "data/objects/graphics/wrinkly_book_frame5.bin"
 
 ;$DCE67C (sprite graphic)
-SPRITE_GRAPHIC_3270:
-	incbin "data/objects/graphics/sprite_graphic_3270.bin"
+wrinkly_book_frame6:
+	incbin "data/objects/graphics/wrinkly_book_frame6.bin"
 
 ;$DCE854 (sprite graphic)
-SPRITE_GRAPHIC_3274:
-	incbin "data/objects/graphics/sprite_graphic_3274.bin"
+wrinkly_book_frame7:
+	incbin "data/objects/graphics/wrinkly_book_frame7.bin"
 
 ;$DCEA2C (sprite graphic)
-SPRITE_GRAPHIC_3278:
-	incbin "data/objects/graphics/sprite_graphic_3278.bin"
+wrinkly_book_frame8:
+	incbin "data/objects/graphics/wrinkly_book_frame8.bin"
 
 ;$DCEBC0 (sprite graphic)
-SPRITE_GRAPHIC_327C:
-	incbin "data/objects/graphics/sprite_graphic_327C.bin"
+wrinkly_book_frame9:
+	incbin "data/objects/graphics/wrinkly_book_frame9.bin"
 
 ;$DCED54 (sprite graphic)
-SPRITE_GRAPHIC_3280:
-	incbin "data/objects/graphics/sprite_graphic_3280.bin"
+wrinkly_book_frame10:
+	incbin "data/objects/graphics/wrinkly_book_frame10.bin"
 
 ;$DCEF0A (sprite graphic)
-SPRITE_GRAPHIC_3284:
-	incbin "data/objects/graphics/sprite_graphic_3284.bin"
+wrinkly_book_frame11:
+	incbin "data/objects/graphics/wrinkly_book_frame11.bin"
 
 ;$DCF0C0 (sprite graphic)
-SPRITE_GRAPHIC_3288:
-	incbin "data/objects/graphics/sprite_graphic_3288.bin"
+wrinkly_book_frame12:
+	incbin "data/objects/graphics/wrinkly_book_frame12.bin"
 
 ;$DCF2BA (sprite graphic)
-SPRITE_GRAPHIC_328C:
-	incbin "data/objects/graphics/sprite_graphic_328C.bin"
+wrinkly_book_frame13:
+	incbin "data/objects/graphics/wrinkly_book_frame13.bin"
 
 ;$DCF492 (sprite graphic)
-SPRITE_GRAPHIC_3290:
-	incbin "data/objects/graphics/sprite_graphic_3290.bin"
+wrinkly_book_frame14:
+	incbin "data/objects/graphics/wrinkly_book_frame14.bin"
 
 ;$DCF66A (sprite graphic)
-SPRITE_GRAPHIC_3294:
-	incbin "data/objects/graphics/sprite_graphic_3294.bin"
+wrinkly_book_frame15:
+	incbin "data/objects/graphics/wrinkly_book_frame15.bin"
 
 ;$DCF864 (sprite graphic)
-SPRITE_GRAPHIC_3298:
-	incbin "data/objects/graphics/sprite_graphic_3298.bin"
+wrinkly_book_frame16:
+	incbin "data/objects/graphics/wrinkly_book_frame16.bin"
 
 check bankcross off
 ;$DCFA5E
@@ -12319,468 +12319,468 @@ ice_bg_layer_2_8x8_tilemap:
 check bankcross full
 
 ;$DD01C4 (sprite graphic)
-SPRITE_GRAPHIC_329C:
-	incbin "data/objects/graphics/sprite_graphic_329C.bin"
+wrinkly_book_frame17:
+	incbin "data/objects/graphics/wrinkly_book_frame17.bin"
 
 ;$DD039C (sprite graphic)
-SPRITE_GRAPHIC_32A0:
-	incbin "data/objects/graphics/sprite_graphic_32A0.bin"
+wrinkly_book_frame18:
+	incbin "data/objects/graphics/wrinkly_book_frame18.bin"
 
 ;$DD0574 (sprite graphic)
-SPRITE_GRAPHIC_32A4:
-	incbin "data/objects/graphics/sprite_graphic_32A4.bin"
+wrinkly_book_frame19:
+	incbin "data/objects/graphics/wrinkly_book_frame19.bin"
 
 ;$DD074C (sprite graphic)
-SPRITE_GRAPHIC_32A8:
-	incbin "data/objects/graphics/sprite_graphic_32A8.bin"
+wrinkly_book_frame20:
+	incbin "data/objects/graphics/wrinkly_book_frame20.bin"
 
 ;$DD0924 (sprite graphic)
-SPRITE_GRAPHIC_32AC:
-	incbin "data/objects/graphics/sprite_graphic_32AC.bin"
+wrinkly_book_frame21:
+	incbin "data/objects/graphics/wrinkly_book_frame21.bin"
 
 ;$DD0AFC	compressed
 crocodile_isle_layer_1_8x8_tilemap:
 	incbin "data/world_maps/8x8_tilemaps/crocodile_isle_layer_1_8x8_tilemap.bin"
 
 ;$DD1326 (sprite graphic)
-SPRITE_GRAPHIC_32B0:
-	incbin "data/objects/graphics/sprite_graphic_32B0.bin"
+wrinkly_book_frame22:
+	incbin "data/objects/graphics/wrinkly_book_frame22.bin"
 
 ;$DD1520 (sprite graphic)
-SPRITE_GRAPHIC_32B4:
-	incbin "data/objects/graphics/sprite_graphic_32B4.bin"
+wrinkly_book_frame23:
+	incbin "data/objects/graphics/wrinkly_book_frame23.bin"
 
 ;$DD171A (sprite graphic)
-SPRITE_GRAPHIC_32B8:
-	incbin "data/objects/graphics/sprite_graphic_32B8.bin"
+wrinkly_book_frame24:
+	incbin "data/objects/graphics/wrinkly_book_frame24.bin"
 
 ;$DD1914 (sprite graphic)
-SPRITE_GRAPHIC_32BC:
-	incbin "data/objects/graphics/sprite_graphic_32BC.bin"
+wrinkly_book_frame25:
+	incbin "data/objects/graphics/wrinkly_book_frame25.bin"
 
 ;$DD1AEC (sprite graphic)
-SPRITE_GRAPHIC_32C0:
-	incbin "data/objects/graphics/sprite_graphic_32C0.bin"
+wrinkly_book_frame26:
+	incbin "data/objects/graphics/wrinkly_book_frame26.bin"
 
 ;$DD1CA2 (sprite graphic)
-SPRITE_GRAPHIC_32C4:
-	incbin "data/objects/graphics/sprite_graphic_32C4.bin"
+wrinkly_book_frame27:
+	incbin "data/objects/graphics/wrinkly_book_frame27.bin"
 
 ;$DD1E7A (sprite graphic)
-SPRITE_GRAPHIC_32C8:
-	incbin "data/objects/graphics/sprite_graphic_32C8.bin"
+wrinkly_book_frame28:
+	incbin "data/objects/graphics/wrinkly_book_frame28.bin"
 
 ;$DD2052 (sprite graphic)
-SPRITE_GRAPHIC_32CC:
-	incbin "data/objects/graphics/sprite_graphic_32CC.bin"
+wrinkly_book_frame29:
+	incbin "data/objects/graphics/wrinkly_book_frame29.bin"
 
 ;$DD222A (sprite graphic)
-SPRITE_GRAPHIC_32D0:
-	incbin "data/objects/graphics/sprite_graphic_32D0.bin"
+krocodile_kore_step1_graphic:
+	incbin "data/objects/graphics/krocodile_kore_step1_graphic.bin"
 
 ;$DD2276 (sprite graphic)
-SPRITE_GRAPHIC_32D4:
-	incbin "data/objects/graphics/sprite_graphic_32D4.bin"
+krocodile_kore_step2_graphic:
+	incbin "data/objects/graphics/krocodile_kore_step2_graphic.bin"
 
 ;$DD2300 (sprite graphic)
-SPRITE_GRAPHIC_32D8:
-	incbin "data/objects/graphics/sprite_graphic_32D8.bin"
+krocodile_kore_step4_graphic:
+	incbin "data/objects/graphics/krocodile_kore_step4_graphic.bin"
 
 ;$DD238A (sprite graphic)
-SPRITE_GRAPHIC_32DC:
-	incbin "data/objects/graphics/sprite_graphic_32DC.bin"
+krocodile_kore_step5_graphic:
+	incbin "data/objects/graphics/krocodile_kore_step5_graphic.bin"
 
 ;$DD2414 (sprite graphic)
-SPRITE_GRAPHIC_32E0:
-	incbin "data/objects/graphics/sprite_graphic_32E0.bin"
+krocodile_kore_step6_graphic:
+	incbin "data/objects/graphics/krocodile_kore_step6_graphic.bin"
 
 ;$DD249E (sprite graphic)
-SPRITE_GRAPHIC_32E4:
-	incbin "data/objects/graphics/sprite_graphic_32E4.bin"
+snapjaw_bite_frame6:
+	incbin "data/objects/graphics/snapjaw_bite_frame6.bin"
 
 ;$DD2780 (sprite graphic)
-SPRITE_GRAPHIC_32E8:
-	incbin "data/objects/graphics/sprite_graphic_32E8.bin"
+snapjaw_bite_frame7:
+	incbin "data/objects/graphics/snapjaw_bite_frame7.bin"
 
 ;$DD29B8 (sprite graphic)
-SPRITE_GRAPHIC_32EC:
-	incbin "data/objects/graphics/sprite_graphic_32EC.bin"
+squawks_mount_graphic:
+	incbin "data/objects/graphics/squawks_mount_graphic.bin"
 
 ;$DD2C9A (sprite graphic)
-SPRITE_GRAPHIC_32F0:
-	incbin "data/objects/graphics/sprite_graphic_32F0.bin"
+squawks_turn_frame1:
+	incbin "data/objects/graphics/squawks_turn_frame1.bin"
 
 ;$DD2E72 (sprite graphic)
-SPRITE_GRAPHIC_32F4:
-	incbin "data/objects/graphics/sprite_graphic_32F4.bin"
+squawks_turn_frame2:
+	incbin "data/objects/graphics/squawks_turn_frame2.bin"
 
 ;$DD3006 (sprite graphic)
-SPRITE_GRAPHIC_32F8:
-	incbin "data/objects/graphics/sprite_graphic_32F8.bin"
+x_barrel_graphic:
+	incbin "data/objects/graphics/x_barrel_graphic.bin"
 
 ;$DD329E (sprite graphic)
-SPRITE_GRAPHIC_32FC:
-	incbin "data/objects/graphics/sprite_graphic_32FC.bin"
+check_barrel_graphic:
+	incbin "data/objects/graphics/check_barrel_graphic.bin"
 
 ;$DD3536 (sprite graphic)
-SPRITE_GRAPHIC_3300:
-	incbin "data/objects/graphics/sprite_graphic_3300.bin"
+cart_race_flag_graphic:
+	incbin "data/objects/graphics/cart_race_flag_graphic.bin"
 
 ;$DD3796 (sprite graphic)
-SPRITE_GRAPHIC_3304:
-	incbin "data/objects/graphics/sprite_graphic_3304.bin"
+cart_race_light_graphic:
+	incbin "data/objects/graphics/cart_race_light_graphic.bin"
 
 ;$DD3A3A (sprite graphic)
-SPRITE_GRAPHIC_3308:
-	incbin "data/objects/graphics/sprite_graphic_3308.bin"
+banana_frame1:
+	incbin "data/objects/graphics/banana_frame1.bin"
 
 ;$DD3AA8 (sprite graphic)
-SPRITE_GRAPHIC_330C:
-	incbin "data/objects/graphics/sprite_graphic_330C.bin"
+banana_frame2:
+	incbin "data/objects/graphics/banana_frame2.bin"
 
 ;$DD3AF4 (sprite graphic)
-SPRITE_GRAPHIC_3310:
-	incbin "data/objects/graphics/sprite_graphic_3310.bin"
+banana_frame3:
+	incbin "data/objects/graphics/banana_frame3.bin"
 
 ;$DD3B40 (sprite graphic)
-SPRITE_GRAPHIC_3314:
-	incbin "data/objects/graphics/sprite_graphic_3314.bin"
+banana_frame4:
+	incbin "data/objects/graphics/banana_frame4.bin"
 
 ;$DD3BAE (sprite graphic)
-SPRITE_GRAPHIC_3318:
-	incbin "data/objects/graphics/sprite_graphic_3318.bin"
+banana_frame5:
+	incbin "data/objects/graphics/banana_frame5.bin"
 
 ;$DD3C1C (sprite graphic)
-SPRITE_GRAPHIC_331C:
-	incbin "data/objects/graphics/sprite_graphic_331C.bin"
+banana_frame6:
+	incbin "data/objects/graphics/banana_frame6.bin"
 
 ;$DD3C8A (sprite graphic)
-SPRITE_GRAPHIC_3320:
-	incbin "data/objects/graphics/sprite_graphic_3320.bin"
+banana_frame7:
+	incbin "data/objects/graphics/banana_frame7.bin"
 
 ;$DD3CF8 (sprite graphic)
-SPRITE_GRAPHIC_3324:
-	incbin "data/objects/graphics/sprite_graphic_3324.bin"
+banana_frame8:
+	incbin "data/objects/graphics/banana_frame8.bin"
 
 ;$DD3D66 (sprite graphic)
-SPRITE_GRAPHIC_3328:
-	incbin "data/objects/graphics/sprite_graphic_3328.bin"
+donkey_scared_frame1:
+	incbin "data/objects/graphics/donkey_scared_frame1.bin"
 
 ;$DD405E (sprite graphic)
-SPRITE_GRAPHIC_332C:
-	incbin "data/objects/graphics/sprite_graphic_332C.bin"
+donkey_scared_frame2:
+	incbin "data/objects/graphics/donkey_scared_frame2.bin"
 
 ;$DD4378 (sprite graphic)
-SPRITE_GRAPHIC_3330:
-	incbin "data/objects/graphics/sprite_graphic_3330.bin"
+donkey_scared_frame3:
+	incbin "data/objects/graphics/donkey_scared_frame3.bin"
 
 ;$DD4692 (sprite graphic)
-SPRITE_GRAPHIC_3334:
-	incbin "data/objects/graphics/sprite_graphic_3334.bin"
+donkey_scared_frame4:
+	incbin "data/objects/graphics/donkey_scared_frame4.bin"
 
 ;$DD49AC (sprite graphic)
-SPRITE_GRAPHIC_3338:
-	incbin "data/objects/graphics/sprite_graphic_3338.bin"
+donkey_scared_frame5:
+	incbin "data/objects/graphics/donkey_scared_frame5.bin"
 
 ;$DD4CC6 (sprite graphic)
-SPRITE_GRAPHIC_333C:
-	incbin "data/objects/graphics/sprite_graphic_333C.bin"
+donkey_scared_frame6:
+	incbin "data/objects/graphics/donkey_scared_frame6.bin"
 
 ;$DD5002 (sprite graphic)
-SPRITE_GRAPHIC_3340:
-	incbin "data/objects/graphics/sprite_graphic_3340.bin"
+donkey_scared_frame7:
+	incbin "data/objects/graphics/donkey_scared_frame7.bin"
 
 ;$DD531C (sprite graphic)
-SPRITE_GRAPHIC_3344:
-	incbin "data/objects/graphics/sprite_graphic_3344.bin"
+donkey_scared_frame8:
+	incbin "data/objects/graphics/donkey_scared_frame8.bin"
 
 ;$DD5636 (sprite graphic)
-SPRITE_GRAPHIC_3348:
-	incbin "data/objects/graphics/sprite_graphic_3348.bin"
+donkey_scared_frame9:
+	incbin "data/objects/graphics/donkey_scared_frame9.bin"
 
 ;$DD5994 (sprite graphic)
-SPRITE_GRAPHIC_334C:
-	incbin "data/objects/graphics/sprite_graphic_334C.bin"
+donkey_scared_frame10:
+	incbin "data/objects/graphics/donkey_scared_frame10.bin"
 
 ;$DD5CF2 (sprite graphic)
-SPRITE_GRAPHIC_3350:
-	incbin "data/objects/graphics/sprite_graphic_3350.bin"
+donkey_scared_frame11:
+	incbin "data/objects/graphics/donkey_scared_frame11.bin"
 
 ;$DD6072 (sprite graphic)
-SPRITE_GRAPHIC_3354:
-	incbin "data/objects/graphics/sprite_graphic_3354.bin"
+donkey_scared_frame12:
+	incbin "data/objects/graphics/donkey_scared_frame12.bin"
 
 ;$DD63F2 (sprite graphic)
-SPRITE_GRAPHIC_3358:
-	incbin "data/objects/graphics/sprite_graphic_3358.bin"
+donkey_scared_frame13:
+	incbin "data/objects/graphics/donkey_scared_frame13.bin"
 
 ;$DD6794 (sprite graphic)
-SPRITE_GRAPHIC_335C:
-	incbin "data/objects/graphics/sprite_graphic_335C.bin"
+donkey_struggle_frame1:
+	incbin "data/objects/graphics/donkey_struggle_frame1.bin"
 
 ;$DD6AAE (sprite graphic)
-SPRITE_GRAPHIC_3360:
-	incbin "data/objects/graphics/sprite_graphic_3360.bin"
+donkey_struggle_frame2:
+	incbin "data/objects/graphics/donkey_struggle_frame2.bin"
 
 ;$DD6DC8 (sprite graphic)
-SPRITE_GRAPHIC_3364:
-	incbin "data/objects/graphics/sprite_graphic_3364.bin"
+donkey_struggle_frame3:
+	incbin "data/objects/graphics/donkey_struggle_frame3.bin"
 
 ;$DD710A (sprite graphic)
-SPRITE_GRAPHIC_3368:
-	incbin "data/objects/graphics/sprite_graphic_3368.bin"
+donkey_struggle_frame4:
+	incbin "data/objects/graphics/donkey_struggle_frame4.bin"
 
 ;$DD742A (sprite graphic)
-SPRITE_GRAPHIC_336C:
-	incbin "data/objects/graphics/sprite_graphic_336C.bin"
+donkey_struggle_frame5:
+	incbin "data/objects/graphics/donkey_struggle_frame5.bin"
 
 ;$DD776C (sprite graphic)
-SPRITE_GRAPHIC_3370:
-	incbin "data/objects/graphics/sprite_graphic_3370.bin"
+donkey_struggle_frame6:
+	incbin "data/objects/graphics/donkey_struggle_frame6.bin"
 
 ;$DD7AA8 (sprite graphic)
-SPRITE_GRAPHIC_3374:
-	incbin "data/objects/graphics/sprite_graphic_3374.bin"
+donkey_struggle_frame7:
+	incbin "data/objects/graphics/donkey_struggle_frame7.bin"
 
 ;$DD7DE4 (sprite graphic)
-SPRITE_GRAPHIC_3378:
-	incbin "data/objects/graphics/sprite_graphic_3378.bin"
+donkey_struggle_frame8:
+	incbin "data/objects/graphics/donkey_struggle_frame8.bin"
 
 ;$DD8142 (sprite graphic)
-SPRITE_GRAPHIC_337C:
-	incbin "data/objects/graphics/sprite_graphic_337C.bin"
+donkey_struggle_frame9:
+	incbin "data/objects/graphics/donkey_struggle_frame9.bin"
 
 ;$DD847E (sprite graphic)
-SPRITE_GRAPHIC_3380:
-	incbin "data/objects/graphics/sprite_graphic_3380.bin"
+donkey_struggle_frame10:
+	incbin "data/objects/graphics/donkey_struggle_frame10.bin"
 
 ;$DD87DC (sprite graphic)
-SPRITE_GRAPHIC_3384:
-	incbin "data/objects/graphics/sprite_graphic_3384.bin"
+donkey_struggle_frame11:
+	incbin "data/objects/graphics/donkey_struggle_frame11.bin"
 
 ;$DD8B18 (sprite graphic)
-SPRITE_GRAPHIC_3388:
-	incbin "data/objects/graphics/sprite_graphic_3388.bin"
+donkey_struggle_frame12:
+	incbin "data/objects/graphics/donkey_struggle_frame12.bin"
 
 ;$DD8E32 (sprite graphic)
-SPRITE_GRAPHIC_338C:
-	incbin "data/objects/graphics/sprite_graphic_338C.bin"
+donkey_struggle_frame13:
+	incbin "data/objects/graphics/donkey_struggle_frame13.bin"
 
 ;$DD912A (sprite graphic)
-SPRITE_GRAPHIC_3390:
-	incbin "data/objects/graphics/sprite_graphic_3390.bin"
+donkey_struggle_frame14:
+	incbin "data/objects/graphics/donkey_struggle_frame14.bin"
 
 ;$DD9422 (sprite graphic)
-SPRITE_GRAPHIC_3394:
-	incbin "data/objects/graphics/sprite_graphic_3394.bin"
+donkey_struggle_frame15:
+	incbin "data/objects/graphics/donkey_struggle_frame15.bin"
 
 ;$DD971A (sprite graphic)
-SPRITE_GRAPHIC_3398:
-	incbin "data/objects/graphics/sprite_graphic_3398.bin"
+donkey_struggle_frame16:
+	incbin "data/objects/graphics/donkey_struggle_frame16.bin"
 
 ;$DD9A12 (sprite graphic)
-SPRITE_GRAPHIC_339C:
-	incbin "data/objects/graphics/sprite_graphic_339C.bin"
+donkey_struggle_frame17:
+	incbin "data/objects/graphics/donkey_struggle_frame17.bin"
 
 ;$DD9D0A (sprite graphic)
-SPRITE_GRAPHIC_33A0:
-	incbin "data/objects/graphics/sprite_graphic_33A0.bin"
+donkey_struggle_frame18:
+	incbin "data/objects/graphics/donkey_struggle_frame18.bin"
 
 ;$DDA002 (sprite graphic)
-SPRITE_GRAPHIC_33A4:
-	incbin "data/objects/graphics/sprite_graphic_33A4.bin"
+donkey_bindings_scared_frame1:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame1.bin"
 
 ;$DDA0F8 (sprite graphic)
-SPRITE_GRAPHIC_33A8:
-	incbin "data/objects/graphics/sprite_graphic_33A8.bin"
+donkey_bindings_scared_frame2:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame2.bin"
 
 ;$DDA1EE (sprite graphic)
-SPRITE_GRAPHIC_33AC:
-	incbin "data/objects/graphics/sprite_graphic_33AC.bin"
+donkey_bindings_scared_frame3:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame3.bin"
 
 ;$DDA2E4 (sprite graphic)
-SPRITE_GRAPHIC_33B0:
-	incbin "data/objects/graphics/sprite_graphic_33B0.bin"
+donkey_bindings_scared_frame4:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame4.bin"
 
 ;$DDA3DA (sprite graphic)
-SPRITE_GRAPHIC_33B4:
-	incbin "data/objects/graphics/sprite_graphic_33B4.bin"
+donkey_bindings_scared_frame5:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame5.bin"
 
 ;$DDA4D0 (sprite graphic)
-SPRITE_GRAPHIC_33B8:
-	incbin "data/objects/graphics/sprite_graphic_33B8.bin"
+donkey_bindings_scared_frame6:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame6.bin"
 
 ;$DDA5C6 (sprite graphic)
-SPRITE_GRAPHIC_33BC:
-	incbin "data/objects/graphics/sprite_graphic_33BC.bin"
+donkey_bindings_scared_frame7:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame7.bin"
 
 ;$DDA6BC (sprite graphic)
-SPRITE_GRAPHIC_33C0:
-	incbin "data/objects/graphics/sprite_graphic_33C0.bin"
+donkey_bindings_scared_frame8:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame8.bin"
 
 ;$DDA7B2 (sprite graphic)
-SPRITE_GRAPHIC_33C4:
-	incbin "data/objects/graphics/sprite_graphic_33C4.bin"
+donkey_bindings_scared_frame9:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame9.bin"
 
 ;$DDA8A8 (sprite graphic)
-SPRITE_GRAPHIC_33C8:
-	incbin "data/objects/graphics/sprite_graphic_33C8.bin"
+donkey_bindings_scared_frame10:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame10.bin"
 
 ;$DDA998 (sprite graphic)
-SPRITE_GRAPHIC_33CC:
-	incbin "data/objects/graphics/sprite_graphic_33CC.bin"
+donkey_bindings_scared_frame11:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame11.bin"
 
 ;$DDAA88 (sprite graphic)
-SPRITE_GRAPHIC_33D0:
-	incbin "data/objects/graphics/sprite_graphic_33D0.bin"
+donkey_bindings_scared_frame12:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame12.bin"
 
 ;$DDAB78 (sprite graphic)
-SPRITE_GRAPHIC_33D4:
-	incbin "data/objects/graphics/sprite_graphic_33D4.bin"
+donkey_bindings_scared_frame13:
+	incbin "data/objects/graphics/donkey_bindings_scared_frame13.bin"
 
 ;$DDAC68 (sprite graphic)
-SPRITE_GRAPHIC_33D8:
-	incbin "data/objects/graphics/sprite_graphic_33D8.bin"
+donkey_bindings_struggle_frame1:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame1.bin"
 
 ;$DDAD7A (sprite graphic)
-SPRITE_GRAPHIC_33DC:
-	incbin "data/objects/graphics/sprite_graphic_33DC.bin"
+donkey_bindings_struggle_frame2:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame2.bin"
 
 ;$DDAEA8 (sprite graphic)
-SPRITE_GRAPHIC_33E0:
-	incbin "data/objects/graphics/sprite_graphic_33E0.bin"
+donkey_bindings_struggle_frame3:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame3.bin"
 
 ;$DDAFF8 (sprite graphic)
-SPRITE_GRAPHIC_33E4:
-	incbin "data/objects/graphics/sprite_graphic_33E4.bin"
+donkey_bindings_struggle_frame4:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame4.bin"
 
 ;$DDB148 (sprite graphic)
-SPRITE_GRAPHIC_33E8:
-	incbin "data/objects/graphics/sprite_graphic_33E8.bin"
+donkey_bindings_struggle_frame5:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame5.bin"
 
 ;$DDB276 (sprite graphic)
-SPRITE_GRAPHIC_33EC:
-	incbin "data/objects/graphics/sprite_graphic_33EC.bin"
+donkey_bindings_struggle_frame6:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame6.bin"
 
 ;$DDB382 (sprite graphic)
-SPRITE_GRAPHIC_33F0:
-	incbin "data/objects/graphics/sprite_graphic_33F0.bin"
+donkey_bindings_struggle_frame7:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame7.bin"
 
 ;$DDB4B0 (sprite graphic)
-SPRITE_GRAPHIC_33F4:
-	incbin "data/objects/graphics/sprite_graphic_33F4.bin"
+donkey_bindings_struggle_frame8:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame8.bin"
 
 ;$DDB600 (sprite graphic)
-SPRITE_GRAPHIC_33F8:
-	incbin "data/objects/graphics/sprite_graphic_33F8.bin"
+donkey_bindings_struggle_frame9:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame9.bin"
 
 ;$DDB750 (sprite graphic)
-SPRITE_GRAPHIC_33FC:
-	incbin "data/objects/graphics/sprite_graphic_33FC.bin"
+donkey_bindings_struggle_frame10:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame10.bin"
 
 ;$DDB8A0 (sprite graphic)
-SPRITE_GRAPHIC_3400:
-	incbin "data/objects/graphics/sprite_graphic_3400.bin"
+donkey_bindings_struggle_frame11:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame11.bin"
 
 ;$DDB9F0 (sprite graphic)
-SPRITE_GRAPHIC_3404:
-	incbin "data/objects/graphics/sprite_graphic_3404.bin"
+donkey_bindings_struggle_frame12:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame12.bin"
 
 ;$DDBB40 (sprite graphic)
-SPRITE_GRAPHIC_3408:
-	incbin "data/objects/graphics/sprite_graphic_3408.bin"
+donkey_bindings_struggle_frame13:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame13.bin"
 
 ;$DDBC90 (sprite graphic)
-SPRITE_GRAPHIC_340C:
-	incbin "data/objects/graphics/sprite_graphic_340C.bin"
+donkey_bindings_struggle_frame14:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame14.bin"
 
 ;$DDBDE0 (sprite graphic)
-SPRITE_GRAPHIC_3410:
-	incbin "data/objects/graphics/sprite_graphic_3410.bin"
+donkey_bindings_struggle_frame15:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame15.bin"
 
 ;$DDBF30 (sprite graphic)
-SPRITE_GRAPHIC_3414:
-	incbin "data/objects/graphics/sprite_graphic_3414.bin"
+donkey_bindings_struggle_frame16:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame16.bin"
 
 ;$DDC042 (sprite graphic)
-SPRITE_GRAPHIC_3418:
-	incbin "data/objects/graphics/sprite_graphic_3418.bin"
+donkey_bindings_struggle_frame17:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame17.bin"
 
 ;$DDC154 (sprite graphic)
-SPRITE_GRAPHIC_341C:
-	incbin "data/objects/graphics/sprite_graphic_341C.bin"
+donkey_bindings_struggle_frame18:
+	incbin "data/objects/graphics/donkey_bindings_struggle_frame18.bin"
 
 ;$DDC26C (sprite graphic)
-SPRITE_GRAPHIC_3420:
-	incbin "data/objects/graphics/sprite_graphic_3420.bin"
+donkey_rope_graphic:
+	incbin "data/objects/graphics/donkey_rope_graphic.bin"
 
 ;$DDC4B6 (sprite graphic)
-SPRITE_GRAPHIC_3424:
-	incbin "data/objects/graphics/sprite_graphic_3424.bin"
+donkey_freed_frame1:
+	incbin "data/objects/graphics/donkey_freed_frame1.bin"
 
 ;$DDC87A (sprite graphic)
-SPRITE_GRAPHIC_3428:
-	incbin "data/objects/graphics/sprite_graphic_3428.bin"
+donkey_freed_frame2:
+	incbin "data/objects/graphics/donkey_freed_frame2.bin"
 
 ;$DDCC5A (sprite graphic)
-SPRITE_GRAPHIC_342C:
-	incbin "data/objects/graphics/sprite_graphic_342C.bin"
+donkey_freed_frame3:
+	incbin "data/objects/graphics/donkey_freed_frame3.bin"
 
 ;$DDD040 (sprite graphic)
-SPRITE_GRAPHIC_3430:
-	incbin "data/objects/graphics/sprite_graphic_3430.bin"
+donkey_freed_frame4:
+	incbin "data/objects/graphics/donkey_freed_frame4.bin"
 
 ;$DDD404 (sprite graphic)
-SPRITE_GRAPHIC_3434:
-	incbin "data/objects/graphics/sprite_graphic_3434.bin"
+donkey_freed_frame5:
+	incbin "data/objects/graphics/donkey_freed_frame5.bin"
 
 ;$DDD7EA (sprite graphic)
-SPRITE_GRAPHIC_3438:
-	incbin "data/objects/graphics/sprite_graphic_3438.bin"
+donkey_freed_frame6:
+	incbin "data/objects/graphics/donkey_freed_frame6.bin"
 
 ;$DDDC0E (sprite graphic)
-SPRITE_GRAPHIC_343C:
-	incbin "data/objects/graphics/sprite_graphic_343C.bin"
+donkey_freed_frame7:
+	incbin "data/objects/graphics/donkey_freed_frame7.bin"
 
 ;$DDDF8E (sprite graphic)
-SPRITE_GRAPHIC_3440:
-	incbin "data/objects/graphics/sprite_graphic_3440.bin"
+donkey_freed_frame8:
+	incbin "data/objects/graphics/donkey_freed_frame8.bin"
 
 ;$DDE22C (sprite graphic)
-SPRITE_GRAPHIC_3444:
-	incbin "data/objects/graphics/sprite_graphic_3444.bin"
+donkey_punch_frame1:
+	incbin "data/objects/graphics/donkey_punch_frame1.bin"
 
 ;$DDE4CA (sprite graphic)
-SPRITE_GRAPHIC_3448:
-	incbin "data/objects/graphics/sprite_graphic_3448.bin"
+donkey_punch_frame2:
+	incbin "data/objects/graphics/donkey_punch_frame2.bin"
 
 ;$DDE80C (sprite graphic)
-SPRITE_GRAPHIC_344C:
-	incbin "data/objects/graphics/sprite_graphic_344C.bin"
+donkey_punch_frame3:
+	incbin "data/objects/graphics/donkey_punch_frame3.bin"
 
 ;$DDEB4E (sprite graphic)
-SPRITE_GRAPHIC_3450:
-	incbin "data/objects/graphics/sprite_graphic_3450.bin"
+donkey_punch_frame4:
+	incbin "data/objects/graphics/donkey_punch_frame4.bin"
 
 ;$DDEE4C (sprite graphic)
-SPRITE_GRAPHIC_3454:
-	incbin "data/objects/graphics/sprite_graphic_3454.bin"
+donkey_punch_frame5:
+	incbin "data/objects/graphics/donkey_punch_frame5.bin"
 
 ;$DDF10C (sprite graphic)
-SPRITE_GRAPHIC_3458:
-	incbin "data/objects/graphics/sprite_graphic_3458.bin"
+donkey_punch_frame6:
+	incbin "data/objects/graphics/donkey_punch_frame6.bin"
 
 ;$DDF3AA (sprite graphic)
-SPRITE_GRAPHIC_345C:
-	incbin "data/objects/graphics/sprite_graphic_345C.bin"
+donkey_punch_frame7:
+	incbin "data/objects/graphics/donkey_punch_frame7.bin"
 
 ;$DDF6D0 (sprite graphic)
-SPRITE_GRAPHIC_3460:
-	incbin "data/objects/graphics/sprite_graphic_3460.bin"
+donkey_punch_frame8:
+	incbin "data/objects/graphics/donkey_punch_frame8.bin"
 
 ;$DDFA34 (sprite graphic)
-SPRITE_GRAPHIC_3464:
-	incbin "data/objects/graphics/sprite_graphic_3464.bin"
+donkey_punch_frame9:
+	incbin "data/objects/graphics/donkey_punch_frame9.bin"
 
 check bankcross off
 ;$DDFDBA
@@ -12789,316 +12789,316 @@ brambles_sky_bg_layer_3_8x8_tilemap:
 check bankcross full
 
 ;$DE0356 (sprite graphic)
-SPRITE_GRAPHIC_3468:
-	incbin "data/objects/graphics/sprite_graphic_3468.bin"
+k_rool_soaked_frame1:
+	incbin "data/objects/graphics/k_rool_soaked_frame1.bin"
 
 ;$DE0B9C (sprite graphic)
-SPRITE_GRAPHIC_346C:
-	incbin "data/objects/graphics/sprite_graphic_346C.bin"
+k_rool_soaked_frame2:
+	incbin "data/objects/graphics/k_rool_soaked_frame2.bin"
 
 ;$DE13E2 (sprite graphic)
-SPRITE_GRAPHIC_3470:
-	incbin "data/objects/graphics/sprite_graphic_3470.bin"
+k_rool_soaked_frame3:
+	incbin "data/objects/graphics/k_rool_soaked_frame3.bin"
 
 ;$DE1C28 (sprite graphic)
-SPRITE_GRAPHIC_3474:
-	incbin "data/objects/graphics/sprite_graphic_3474.bin"
+k_rool_blunderbuss_soaked_frame1:
+	incbin "data/objects/graphics/k_rool_blunderbuss_soaked_frame1.bin"
 
 ;$DE1E66 (sprite graphic)
-SPRITE_GRAPHIC_3478:
-	incbin "data/objects/graphics/sprite_graphic_3478.bin"
+k_rool_blunderbuss_soaked_frame2:
+	incbin "data/objects/graphics/k_rool_blunderbuss_soaked_frame2.bin"
 
 ;$DE20A4 (sprite graphic)
-SPRITE_GRAPHIC_347C:
-	incbin "data/objects/graphics/sprite_graphic_347C.bin"
+k_rool_blunderbuss_soaked_frame3:
+	incbin "data/objects/graphics/k_rool_blunderbuss_soaked_frame3.bin"
 
 ;$DE22E2 (sprite graphic)
-SPRITE_GRAPHIC_3480:
-	incbin "data/objects/graphics/sprite_graphic_3480.bin"
+k_rool_fish_frame1:
+	incbin "data/objects/graphics/k_rool_fish_frame1.bin"
 
 ;$DE2372 (sprite graphic)
-SPRITE_GRAPHIC_3484:
-	incbin "data/objects/graphics/sprite_graphic_3484.bin"
+k_rool_fish_frame2:
+	incbin "data/objects/graphics/k_rool_fish_frame2.bin"
 
 ;$DE2402 (sprite graphic)
-SPRITE_GRAPHIC_3488:
-	incbin "data/objects/graphics/sprite_graphic_3488.bin"
+k_rool_fish_frame3:
+	incbin "data/objects/graphics/k_rool_fish_frame3.bin"
 
 ;$DE2492 (sprite graphic)
-SPRITE_GRAPHIC_348C:
-	incbin "data/objects/graphics/sprite_graphic_348C.bin"
+k_rool_fish_frame4:
+	incbin "data/objects/graphics/k_rool_fish_frame4.bin"
 
 ;$DE2522 (sprite graphic)
-SPRITE_GRAPHIC_3490:
-	incbin "data/objects/graphics/sprite_graphic_3490.bin"
+k_rool_fish_frame5:
+	incbin "data/objects/graphics/k_rool_fish_frame5.bin"
 
 ;$DE25B2 (sprite graphic)
-SPRITE_GRAPHIC_3494:
-	incbin "data/objects/graphics/sprite_graphic_3494.bin"
+k_rool_fish_frame6:
+	incbin "data/objects/graphics/k_rool_fish_frame6.bin"
 
 ;$DE265E (sprite graphic)
-SPRITE_GRAPHIC_3498:
-	incbin "data/objects/graphics/sprite_graphic_3498.bin"
+k_rool_fish_frame7:
+	incbin "data/objects/graphics/k_rool_fish_frame7.bin"
 
 ;$DE26CC (sprite graphic)
-SPRITE_GRAPHIC_349C:
-	incbin "data/objects/graphics/sprite_graphic_349C.bin"
+k_rool_fish_frame8:
+	incbin "data/objects/graphics/k_rool_fish_frame8.bin"
 
 ;$DE273A (sprite graphic)
-SPRITE_GRAPHIC_34A0:
-	incbin "data/objects/graphics/sprite_graphic_34A0.bin"
+k_rool_puddle_graphic:
+	incbin "data/objects/graphics/k_rool_puddle_graphic.bin"
 
 ;$DE28F0 (sprite graphic)
-SPRITE_GRAPHIC_34A4:
-	incbin "data/objects/graphics/sprite_graphic_34A4.bin"
+k_rool_fall_into_kore_frame1:
+	incbin "data/objects/graphics/k_rool_fall_into_kore_frame1.bin"
 
 ;$DE2C32 (sprite graphic)
-SPRITE_GRAPHIC_34A8:
-	incbin "data/objects/graphics/sprite_graphic_34A8.bin"
+k_rool_fall_into_kore_frame2:
+	incbin "data/objects/graphics/k_rool_fall_into_kore_frame2.bin"
 
 ;$DE2F4C (sprite graphic)
-SPRITE_GRAPHIC_34AC:
-	incbin "data/objects/graphics/sprite_graphic_34AC.bin"
+isle_k_rool_splash_frame1:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame1.bin"
 
 ;$DE2F76 (sprite graphic)
-SPRITE_GRAPHIC_34B0:
-	incbin "data/objects/graphics/sprite_graphic_34B0.bin"
+isle_k_rool_splash_frame2:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame2.bin"
 
 ;$DE2FE4 (sprite graphic)
-SPRITE_GRAPHIC_34B4:
-	incbin "data/objects/graphics/sprite_graphic_34B4.bin"
+isle_k_rool_splash_frame3:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame3.bin"
 
 ;$DE30D4 (sprite graphic)
-SPRITE_GRAPHIC_34B8:
-	incbin "data/objects/graphics/sprite_graphic_34B8.bin"
+isle_k_rool_splash_frame4:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame4.bin"
 
 ;$DE3180 (sprite graphic)
-SPRITE_GRAPHIC_34BC:
-	incbin "data/objects/graphics/sprite_graphic_34BC.bin"
+isle_k_rool_splash_frame5:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame5.bin"
 
 ;$DE322C (sprite graphic)
-SPRITE_GRAPHIC_34C0:
-	incbin "data/objects/graphics/sprite_graphic_34C0.bin"
+isle_k_rool_splash_frame6:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame6.bin"
 
 ;$DE32FA (sprite graphic)
-SPRITE_GRAPHIC_34C4:
-	incbin "data/objects/graphics/sprite_graphic_34C4.bin"
+isle_k_rool_splash_frame7:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame7.bin"
 
 ;$DE33C8 (sprite graphic)
-SPRITE_GRAPHIC_34C8:
-	incbin "data/objects/graphics/sprite_graphic_34C8.bin"
+isle_k_rool_splash_frame8:
+	incbin "data/objects/graphics/isle_k_rool_splash_frame8.bin"
 
 ;$DE3458 (sprite graphic)
-SPRITE_GRAPHIC_34CC:
-	incbin "data/objects/graphics/sprite_graphic_34CC.bin"
+isle_k_rool_swim_frame1:
+	incbin "data/objects/graphics/isle_k_rool_swim_frame1.bin"
 
 ;$DE3504 (sprite graphic)
-SPRITE_GRAPHIC_34D0:
-	incbin "data/objects/graphics/sprite_graphic_34D0.bin"
+isle_k_rool_swim_frame2:
+	incbin "data/objects/graphics/isle_k_rool_swim_frame2.bin"
 
 ;$DE35B0 (sprite graphic)
-SPRITE_GRAPHIC_34D4:
-	incbin "data/objects/graphics/sprite_graphic_34D4.bin"
+isle_k_rool_swim_frame3:
+	incbin "data/objects/graphics/isle_k_rool_swim_frame3.bin"
 
 ;$DE365C (sprite graphic)
-SPRITE_GRAPHIC_34D8:
-	incbin "data/objects/graphics/sprite_graphic_34D8.bin"
+isle_k_rool_swim_frame4:
+	incbin "data/objects/graphics/isle_k_rool_swim_frame4.bin"
 
 ;$DE3708 (sprite graphic)
-SPRITE_GRAPHIC_34DC:
-	incbin "data/objects/graphics/sprite_graphic_34DC.bin"
+link_frame1:
+	incbin "data/objects/graphics/link_frame1.bin"
 
 ;$DE39C8 (sprite graphic)
-SPRITE_GRAPHIC_34E0:
-	incbin "data/objects/graphics/sprite_graphic_34E0.bin"
+link_frame2:
+	incbin "data/objects/graphics/link_frame2.bin"
 
 ;$DE3C88 (sprite graphic)
-SPRITE_GRAPHIC_34E4:
-	incbin "data/objects/graphics/sprite_graphic_34E4.bin"
+link_frame3:
+	incbin "data/objects/graphics/link_frame3.bin"
 
 ;$DE3F26 (sprite graphic)
-SPRITE_GRAPHIC_34E8:
-	incbin "data/objects/graphics/sprite_graphic_34E8.bin"
+link_frame4:
+	incbin "data/objects/graphics/link_frame4.bin"
 
 ;$DE41C4 (sprite graphic)
-SPRITE_GRAPHIC_34EC:
-	incbin "data/objects/graphics/sprite_graphic_34EC.bin"
+link_frame5:
+	incbin "data/objects/graphics/link_frame5.bin"
 
 ;$DE4424 (sprite graphic)
-SPRITE_GRAPHIC_34F0:
-	incbin "data/objects/graphics/sprite_graphic_34F0.bin"
+link_frame6:
+	incbin "data/objects/graphics/link_frame6.bin"
 
 ;$DE46A6 (sprite graphic)
-SPRITE_GRAPHIC_34F4:
-	incbin "data/objects/graphics/sprite_graphic_34F4.bin"
+link_frame7:
+	incbin "data/objects/graphics/link_frame7.bin"
 
 ;$DE494A (sprite graphic)
-SPRITE_GRAPHIC_34F8:
-	incbin "data/objects/graphics/sprite_graphic_34F8.bin"
+link_frame8:
+	incbin "data/objects/graphics/link_frame8.bin"
 
 ;$DE4C2C (sprite graphic)
-SPRITE_GRAPHIC_34FC:
-	incbin "data/objects/graphics/sprite_graphic_34FC.bin"
+link_frame9:
+	incbin "data/objects/graphics/link_frame9.bin"
 
 ;$DE4EEC (sprite graphic)
-SPRITE_GRAPHIC_3500:
-	incbin "data/objects/graphics/sprite_graphic_3500.bin"
+link_frame10:
+	incbin "data/objects/graphics/link_frame10.bin"
 
 ;$DE51AC (sprite graphic)
-SPRITE_GRAPHIC_3504:
-	incbin "data/objects/graphics/sprite_graphic_3504.bin"
+link_frame11:
+	incbin "data/objects/graphics/link_frame11.bin"
 
 ;$DE544A (sprite graphic)
-SPRITE_GRAPHIC_3508:
-	incbin "data/objects/graphics/sprite_graphic_3508.bin"
+link_frame12:
+	incbin "data/objects/graphics/link_frame12.bin"
 
 ;$DE56C6 (sprite graphic)
-SPRITE_GRAPHIC_350C:
-	incbin "data/objects/graphics/sprite_graphic_350C.bin"
+link_frame13:
+	incbin "data/objects/graphics/link_frame13.bin"
 
 ;$DE5980 (sprite graphic)
-SPRITE_GRAPHIC_3510:
-	incbin "data/objects/graphics/sprite_graphic_3510.bin"
+link_frame14:
+	incbin "data/objects/graphics/link_frame14.bin"
 
 ;$DE5BB2 (sprite graphic)
-SPRITE_GRAPHIC_3514:
-	incbin "data/objects/graphics/sprite_graphic_3514.bin"
+link_frame15:
+	incbin "data/objects/graphics/link_frame15.bin"
 
 ;$DE5DE4 (sprite graphic)
-SPRITE_GRAPHIC_3518:
-	incbin "data/objects/graphics/sprite_graphic_3518.bin"
+link_frame16:
+	incbin "data/objects/graphics/link_frame16.bin"
 
 ;$DE6016 (sprite graphic)
-SPRITE_GRAPHIC_351C:
-	incbin "data/objects/graphics/sprite_graphic_351C.bin"
+secret_ending_isle_bottom_graphic:
+	incbin "data/objects/graphics/secret_ending_isle_bottom_graphic.bin"
 
 ;$DE6412 (sprite graphic)
-SPRITE_GRAPHIC_3520:
-	incbin "data/objects/graphics/sprite_graphic_3520.bin"
+secret_ending_isle_top_graphic:
+	incbin "data/objects/graphics/secret_ending_isle_top_graphic.bin"
 
 ;$DE66CC (sprite graphic)
-SPRITE_GRAPHIC_3524:
-	incbin "data/objects/graphics/sprite_graphic_3524.bin"
+secret_ending_isle_beam_frame1:
+	incbin "data/objects/graphics/secret_ending_isle_beam_frame1.bin"
 
 ;$DE7076 (sprite graphic)
-SPRITE_GRAPHIC_3528:
-	incbin "data/objects/graphics/sprite_graphic_3528.bin"
+secret_ending_isle_beam_frame2:
+	incbin "data/objects/graphics/secret_ending_isle_beam_frame2.bin"
 
 ;$DE7A04 (sprite graphic)
-SPRITE_GRAPHIC_352C:
-	incbin "data/objects/graphics/sprite_graphic_352C.bin"
+secret_ending_isle_beam_frame3:
+	incbin "data/objects/graphics/secret_ending_isle_beam_frame3.bin"
 
 ;$DE83B4 (sprite graphic)
-SPRITE_GRAPHIC_3530:
-	incbin "data/objects/graphics/sprite_graphic_3530.bin"
+secret_ending_isle_beam_frame4:
+	incbin "data/objects/graphics/secret_ending_isle_beam_frame4.bin"
 
 ;$DE8D64 (sprite graphic)
-SPRITE_GRAPHIC_3534:
-	incbin "data/objects/graphics/sprite_graphic_3534.bin"
+secret_ending_isle_beam_frame5:
+	incbin "data/objects/graphics/secret_ending_isle_beam_frame5.bin"
 
 ;$DE96F2 (sprite graphic)
-SPRITE_GRAPHIC_3538:
-	incbin "data/objects/graphics/sprite_graphic_3538.bin"
+secret_ending_dixie_hair_frame1:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame1.bin"
 
 ;$DE9864 (sprite graphic)
-SPRITE_GRAPHIC_353C:
-	incbin "data/objects/graphics/sprite_graphic_353C.bin"
+secret_ending_dixie_hair_frame2:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame2.bin"
 
 ;$DE9992 (sprite graphic)
-SPRITE_GRAPHIC_3540:
-	incbin "data/objects/graphics/sprite_graphic_3540.bin"
+secret_ending_dixie_hair_frame3:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame3.bin"
 
 ;$DE9AC0 (sprite graphic)
-SPRITE_GRAPHIC_3544:
-	incbin "data/objects/graphics/sprite_graphic_3544.bin"
+secret_ending_dixie_hair_frame4:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame4.bin"
 
 ;$DE9C10 (sprite graphic)
-SPRITE_GRAPHIC_3548:
-	incbin "data/objects/graphics/sprite_graphic_3548.bin"
+secret_ending_dixie_hair_frame5:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame5.bin"
 
 ;$DE9D60 (sprite graphic)
-SPRITE_GRAPHIC_354C:
-	incbin "data/objects/graphics/sprite_graphic_354C.bin"
+secret_ending_dixie_hair_frame6:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame6.bin"
 
 ;$DE9EB0 (sprite graphic)
-SPRITE_GRAPHIC_3550:
-	incbin "data/objects/graphics/sprite_graphic_3550.bin"
+secret_ending_dixie_hair_frame7:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame7.bin"
 
 ;$DEA044 (sprite graphic)
-SPRITE_GRAPHIC_3554:
-	incbin "data/objects/graphics/sprite_graphic_3554.bin"
+secret_ending_dixie_hair_frame8:
+	incbin "data/objects/graphics/secret_ending_dixie_hair_frame8.bin"
 
 ;$DEA1D8 (sprite graphic)
-SPRITE_GRAPHIC_3558:
-	incbin "data/objects/graphics/sprite_graphic_3558.bin"
+secret_ending_boat_frame1:
+	incbin "data/objects/graphics/secret_ending_boat_frame1.bin"
 
 ;$DEA2A6 (sprite graphic)
-SPRITE_GRAPHIC_355C:
-	incbin "data/objects/graphics/sprite_graphic_355C.bin"
+secret_ending_boat_frame2:
+	incbin "data/objects/graphics/secret_ending_boat_frame2.bin"
 
 ;$DEA352 (sprite graphic)
-SPRITE_GRAPHIC_3560:
-	incbin "data/objects/graphics/sprite_graphic_3560.bin"
+secret_ending_boat_frame3:
+	incbin "data/objects/graphics/secret_ending_boat_frame3.bin"
 
 ;$DEA3FE (sprite graphic)
-SPRITE_GRAPHIC_3564:
-	incbin "data/objects/graphics/sprite_graphic_3564.bin"
+secret_ending_boat_frame4:
+	incbin "data/objects/graphics/secret_ending_boat_frame4.bin"
 
 ;$DEA4AA (sprite graphic)
-SPRITE_GRAPHIC_3568:
-	incbin "data/objects/graphics/sprite_graphic_3568.bin"
+secret_ending_boat_frame5:
+	incbin "data/objects/graphics/secret_ending_boat_frame5.bin"
 
 ;$DEA534 (sprite graphic)
-SPRITE_GRAPHIC_356C:
-	incbin "data/objects/graphics/sprite_graphic_356C.bin"
+secret_ending_boat_frame6:
+	incbin "data/objects/graphics/secret_ending_boat_frame6.bin"
 
 ;$DEA5A2 (sprite graphic)
-SPRITE_GRAPHIC_3570:
-	incbin "data/objects/graphics/sprite_graphic_3570.bin"
+secret_ending_boat_frame7:
+	incbin "data/objects/graphics/secret_ending_boat_frame7.bin"
 
 ;$DEA610 (sprite graphic)
-SPRITE_GRAPHIC_3574:
-	incbin "data/objects/graphics/sprite_graphic_3574.bin"
+secret_ending_boat_frame8:
+	incbin "data/objects/graphics/secret_ending_boat_frame8.bin"
 
 ;$DEA67E (sprite graphic)
-SPRITE_GRAPHIC_3578:
-	incbin "data/objects/graphics/sprite_graphic_3578.bin"
+secret_ending_boat_frame9:
+	incbin "data/objects/graphics/secret_ending_boat_frame9.bin"
 
 ;$DEA6EC (sprite graphic)
-SPRITE_GRAPHIC_357C:
-	incbin "data/objects/graphics/sprite_graphic_357C.bin"
+secret_ending_boat_frame10:
+	incbin "data/objects/graphics/secret_ending_boat_frame10.bin"
 
 ;$DEA75A (sprite graphic)
-SPRITE_GRAPHIC_3580:
-	incbin "data/objects/graphics/sprite_graphic_3580.bin"
+secret_ending_boat_frame11:
+	incbin "data/objects/graphics/secret_ending_boat_frame11.bin"
 
 ;$DEA7C8 (sprite graphic)
-SPRITE_GRAPHIC_3584:
-	incbin "data/objects/graphics/sprite_graphic_3584.bin"
+secret_ending_boat_frame12:
+	incbin "data/objects/graphics/secret_ending_boat_frame12.bin"
 
 ;$DEA814 (sprite graphic)
-SPRITE_GRAPHIC_3588:
-	incbin "data/objects/graphics/sprite_graphic_3588.bin"
+secret_ending_boat_frame13:
+	incbin "data/objects/graphics/secret_ending_boat_frame13.bin"
 
 ;$DEA860 (sprite graphic)
-SPRITE_GRAPHIC_358C:
-	incbin "data/objects/graphics/sprite_graphic_358C.bin"
+secret_ending_boat_frame14:
+	incbin "data/objects/graphics/secret_ending_boat_frame14.bin"
 
 ;$DEA88A (sprite graphic)
-SPRITE_GRAPHIC_3590:
-	incbin "data/objects/graphics/sprite_graphic_3590.bin"
+secret_ending_boat_frame15:
+	incbin "data/objects/graphics/secret_ending_boat_frame15.bin"
 
 ;$DEA8B4 (sprite graphic)
-SPRITE_GRAPHIC_3594:
-	incbin "data/objects/graphics/sprite_graphic_3594.bin"
+secret_ending_boat_frame16:
+	incbin "data/objects/graphics/secret_ending_boat_frame16.bin"
 
 ;$DEA8DE (sprite graphic)
-SPRITE_GRAPHIC_3598:
-	incbin "data/objects/graphics/sprite_graphic_3598.bin"
+secret_ending_boat_frame17:
+	incbin "data/objects/graphics/secret_ending_boat_frame17.bin"
 
 ;$DEA908 (sprite graphic)
-SPRITE_GRAPHIC_359C:
-	incbin "data/objects/graphics/sprite_graphic_359C.bin"
+secret_ending_boat_frame18:
+	incbin "data/objects/graphics/secret_ending_boat_frame18.bin"
 
 check bankcross off
 ;$DEA932

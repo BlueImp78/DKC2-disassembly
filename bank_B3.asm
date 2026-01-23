@@ -435,7 +435,7 @@ sprite_main_table:
 	dw null_sprite_main,$0000		;0000
 	dw crocodile_isle_props_main,$0000	;0004 Never actually executes
 	dw map_player_main,$0000		;0008 Also the lost world rocks
-	dw rock_main,$0000			;000C
+	dw rock_main,$0000			;000C Unused
 	dw squawks_egg_main,$0000		;0010
 	dw large_smoke_puff_timestop_main,$0001	;0014 Large smoke puff but processes during timestop
 	dw canball_pieces1_main,$0000		;0018
@@ -12777,15 +12777,15 @@ CODE_B3DDBF:					;	   |
 	ASL A					;$B3DDCC   |
 	ASL A					;$B3DDCD   |
 	CLC					;$B3DDCE   |
-	ADC #$2D40				;$B3DDCF   | Could be a range/base graphic id
-	STA $1A,x				;$B3DDD2   |
+	ADC #!timer_0_graphic			;$B3DDCF   |
+	STA sprite.current_graphic,x		;$B3DDD2   |
 	LDY $4A,x				;$B3DDD4   |
 	LDA temp_33				;$B3DDD6   |
 	AND #$00FF				;$B3DDD8   |
 	ASL A					;$B3DDDB   |
 	ASL A					;$B3DDDC   |
 	CLC					;$B3DDDD   |
-	ADC #$2D40				;$B3DDDE   |
+	ADC #!timer_0_graphic			;$B3DDDE   |
 	STA.w sprite.current_graphic,y		;$B3DDE1   |
 	RTS					;$B3DDE4  /
 
