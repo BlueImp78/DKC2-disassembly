@@ -60,84 +60,23 @@ DATA_FC0660:
 	%offset(DATA_FC13E0, $0D80)
 	%offset(DATA_FC1420, $0DC0)
 	%offset(DATA_FC1460, $0E00)
-	incbin "data/misc_graphics/world_map_8x16_text_tiledata.bin"
+	incbin "data/gfx/sprite/static_oam_sprite_graphics/world_map_8x16_text_graphics.bin"
 
 ;$FC14A0
 DATA_FC14A0:
-	incbin "data/misc_graphics/world_map_arrows_tiledata.bin"
+	incbin "data/gfx/sprite/static_oam_sprite_graphics/world_map_arrow_graphics.bin"
 
 ;$FC14E0
-DATA_FC14E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame1.bin"
-
-;$FC18E0
-DATA_FC18E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame2.bin"
-
-;$FC1CE0
-DATA_FC1CE0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame3.bin"
-
-;$FC20E0
-DATA_FC20E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame4.bin"
-
-;$FC24E0
-DATA_FC24E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame5.bin"
-
-;$FC28E0
-DATA_FC28E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame6.bin"
-
-;$FC2CE0
-DATA_FC2CE0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame7.bin"
-
-;$FC30E0
-DATA_FC30E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame8.bin"
-
-;$FC34E0
-DATA_FC34E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame9.bin"
-
-;$FC38E0
-DATA_FC38E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame10.bin"
-
-;$FC3CE0
-DATA_FC3CE0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame11.bin"
-
-;$FC40E0
-DATA_FC40E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame12.bin"
-
-;$FC44E0
-DATA_FC44E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame13.bin"
-
-;$FC48E0
-DATA_FC48E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame14.bin"
-
-;$FC4CE0
-DATA_FC4CE0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame15.bin"
-
-;$FC50E0
-DATA_FC50E0:
-	incbin "data/misc_graphics/world_map_icons_tiledata_frame16.bin"
+world_map_icon_graphics:
+	incbin "data/gfx/sprite/static_oam_sprite_graphics/world_map_icon_graphics.bin"
 
 ;$FC54E0
-DATA_FC54E0:
-	incbin "data/misc_graphics/k_rool_water_drop_tiledata.bin"
+water_drop_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/water_drop_graphics.bin"
 
 ;$FC5680
-;also used for k.rool roof fragments
-DATA_FC5680:
-	incbin "data/misc_graphics/kleever_fragments_6_tiledata.bin"
+fragment_8_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/fragment_8_graphics.bin"
 
 ;$FC5900
 forest_collision:

@@ -1,1195 +1,1193 @@
 DATA_FE0000:
 	%offset(DATA_FE0002, 2)
 	%offset(DATA_FE0004, 4)
-	dw DATA_FE0400			;0000
-	dw DATA_FE041A			;0001
-	dw DATA_FE0734			;0002
-	dw DATA_FE0A1E			;0003
-	dw DATA_FE0BD8			;0004
-	dw DATA_FE0E7A			;0005
-	dw DATA_FE10F4			;0006
-	dw DATA_FE111E			;0007
-	dw DATA_FE13B8			;0008
-	dw DATA_FE1632			;0009
-	dw DATA_FE1654			;000A
-	dw DATA_FE19CE			;000B
-	dw DATA_FE1BF8			;000C
-	dw DATA_FE1DD2			;000D
-	dw DATA_FE1E0C			;000E
-	dw DATA_FE2076			;000F
-	dw DATA_FE20C8			;0010
-	dw DATA_FE2352			;0011
-	dw DATA_FE2664			;0012
-	dw DATA_FE2676			;0013
-	dw DATA_FE2A90			;0014
-	dw DATA_FE2DE2			;0015
-	dw DATA_FE3024			;0016
-	dw DATA_FE3416			;0017
-	dw DATA_FE3780			;0018
-	dw DATA_FE39CA			;0019
-	dw DATA_FE3CAC			;001A
-	dw DATA_FE3CBE			;001B
-	dw DATA_FE3CE8			;001C
-	dw DATA_FE3D02			;001D
-	dw DATA_FE3D0C			;001E
-	dw DATA_FE3D2E			;001F
-	dw DATA_FE3D38			;0020
-	dw DATA_FE3D4A			;0021
-	dw DATA_FE3DE4			;0022
-	dw DATA_FE3DF6			;0023
-	dw DATA_FE41F0			;0024
-	dw DATA_FE450A			;0025
-	dw DATA_FE4874			;0026
-	dw DATA_FE487E			;0027
-	dw DATA_FE4890			;0028
-	dw DATA_FE4B42			;0029
-	dw DATA_FE4F04			;002A
-	dw DATA_FE4F1E			;002B
-	dw DATA_FE4F28			;002C
-	dw DATA_FE532A			;002D
-	dw DATA_FE595C			;002E
-	dw DATA_FE5D5E			;002F
-	dw DATA_FE6068			;0030
-	dw DATA_FE606A			;0031
-	dw DATA_FE606C			;0032
-	dw DATA_FE606E			;0033
-	dw DATA_FE6070			;0034
-	dw DATA_FE6072			;0035
-	dw DATA_FE6074			;0036
-	dw DATA_FE6076			;0037
-	dw DATA_FE6078			;0038
-	dw DATA_FE607A			;0039
-	dw DATA_FE607C			;003A
-	dw DATA_FE607E			;003B
-	dw DATA_FE6080			;003C
-	dw DATA_FE6082			;003D
-	dw DATA_FE6084			;003E
-	dw DATA_FE6086			;003F
-	dw DATA_FE6088			;0040
-	dw DATA_FE608A			;0041
-	dw DATA_FE608C			;0042
-	dw DATA_FE608E			;0043
-	dw DATA_FE6090			;0044
-	dw DATA_FE6092			;0045
-	dw DATA_FE6094			;0046
-	dw DATA_FE6096			;0047
-	dw DATA_FE6098			;0048
-	dw DATA_FE609A			;0049
-	dw DATA_FE609C			;004A
-	dw DATA_FE609E			;004B
-	dw DATA_FE60A0			;004C
-	dw DATA_FE60A2			;004D
-	dw DATA_FE60A4			;004E
-	dw DATA_FE60A6			;004F
-	dw DATA_FE60A8			;0050
-	dw DATA_FE60AA			;0051
-	dw DATA_FE60AC			;0052
-	dw DATA_FE60AE			;0053
-	dw DATA_FE60B0			;0054
-	dw DATA_FE60B2			;0055
-	dw DATA_FE60B4			;0056
-	dw DATA_FE60B6			;0057
-	dw DATA_FE60B8			;0058
-	dw DATA_FE60BA			;0059
-	dw DATA_FE60BC			;005A
-	dw DATA_FE60BE			;005B
-	dw DATA_FE60C0			;005C
-	dw DATA_FE60C2			;005D
-	dw DATA_FE60C4			;005E
-	dw DATA_FE60C6			;005F
-	dw DATA_FE60C8			;0060
-	dw DATA_FE60F2			;0061
-	dw DATA_FE6104			;0062
-	dw DATA_FE641E			;0063
-	dw DATA_FE6430			;0064
-	dw DATA_FE6432			;0065
-	dw DATA_FE6434			;0066
-	dw DATA_FE6436			;0067
-	dw DATA_FE6438			;0068
-	dw DATA_FE6452			;0069
-	dw DATA_FE645C			;006A
-	dw DATA_FE646E			;006B
-	dw DATA_FE6480			;006C
-	dw DATA_FE679A			;006D
-	dw DATA_FE6B5C			;006E
-	dw DATA_FE6EDE			;006F
-	dw DATA_FE6EF8			;0070
-	dw DATA_FE6F4A			;0071
-	dw DATA_FE6F9C			;0072
-	dw DATA_FE6FAE			;0073
-	dw DATA_FE6FC8			;0074
-	dw DATA_FE6FE2			;0075
-	dw DATA_FE7014			;0076
-	dw DATA_FE706E			;0077
-	dw DATA_FE7088			;0078
-	dw DATA_FE709A			;0079
-	dw DATA_FE70F4			;007A
-	dw DATA_FE711E			;007B
-	dw DATA_FE7168			;007C
-	dw DATA_FE719A			;007D
-	dw DATA_FE71AC			;007E
-	dw DATA_FE7216			;007F
-	dw DATA_FE7268			;0080
-	dw DATA_FE7682			;0081
-	dw DATA_FE769C			;0082
-	dw DATA_FE76BE			;0083
-	dw DATA_FE7730			;0084
-	dw DATA_FE774A			;0085
-	dw DATA_FE7764			;0086
-	dw DATA_FE77A6			;0087
-	dw DATA_FE77D0			;0088
-	dw DATA_FE7802			;0089
-	dw DATA_FE7834			;008A
-	dw DATA_FE787E			;008B
-	dw DATA_FE78B8			;008C
-	dw DATA_FE78D2			;008D
-	dw DATA_FE791C			;008E
-	dw DATA_FE7926			;008F
-	dw DATA_FE7CA8			;0090
-	dw DATA_FE7D92			;0091
-	dw DATA_FE7DA4			;0092
-	dw DATA_FE7DD6			;0093
-	dw DATA_FE7DF0			;0094
-	dw DATA_FE7E32			;0095
-	dw DATA_FE7E74			;0096
-	dw DATA_FE81AE			;0097
-	dw DATA_FE8230			;0098
-	dw DATA_FE8282			;0099
-	dw DATA_FE856C			;009A
-	dw DATA_FE860E			;009B
-	dw DATA_FE8730			;009C
-	dw DATA_FE87AA			;009D
-	dw DATA_FE8814			;009E
-	dw DATA_FE8886			;009F
-	dw DATA_FE89F8			;00A0
-	dw DATA_FE8A1A			;00A1
-	dw DATA_FE8A84			;00A2
-	dw DATA_FE8AF6			;00A3
-	dw DATA_FE8B10			;00A4
-	dw DATA_FE8B42			;00A5
-	dw DATA_FE8B5C			;00A6
-	dw DATA_FE8C36			;00A7
-	dw DATA_FE8C50			;00A8
-	dw DATA_FE8C6A			;00A9
-	dw DATA_FE8CC4			;00AA
-	dw DATA_FE8D06			;00AB
-	dw DATA_FE8D68			;00AC
-	dw DATA_FE8DB2			;00AD
-	dw DATA_FE8E14			;00AE
-	dw DATA_FE8E66			;00AF
-	dw DATA_FE8EC8			;00B0
-	dw DATA_FE8EE2			;00B1
-	dw DATA_FE8EFC			;00B2
-	dw DATA_FE8F56			;00B3
-	dw DATA_FE8F68			;00B4
-	dw DATA_FE8F7A			;00B5
-	dw DATA_FE9004			;00B6
-	dw DATA_FE904E			;00B7
-	dw DATA_FE90A0			;00B8
-	dw DATA_FE90CA			;00B9
-	dw DATA_FE90F4			;00BA
-	dw DATA_FE914E			;00BB
-	dw DATA_FE91B0			;00BC
-	dw DATA_FE91CA			;00BD
-	dw DATA_FE91EC			;00BE
-	dw DATA_FE920E			;00BF
-	dw DATA_FE9238			;00C0
-	dw DATA_FE9252			;00C1
-	dw DATA_FE92BC			;00C2
-	dw DATA_FE92DE			;00C3
-	dw DATA_FE9350			;00C4
-	dw DATA_FE9352			;00C5
-	dw DATA_FE9354			;00C6
-	dw DATA_FE9356			;00C7
-	dw DATA_FE9358			;00C8
-	dw DATA_FE935A			;00C9
-	dw DATA_FE935C			;00CA
-	dw DATA_FE935E			;00CB
-	dw DATA_FE9360			;00CC
-	dw DATA_FE9362			;00CD
-	dw DATA_FE9364			;00CE
-	dw DATA_FE9366			;00CF
-	dw DATA_FE9368			;00D0
-	dw DATA_FE936A			;00D1
-	dw DATA_FE936C			;00D2
-	dw DATA_FE936E			;00D3
-	dw DATA_FE9370			;00D4
-	dw DATA_FE9372			;00D5
-	dw DATA_FE9374			;00D6
-	dw DATA_FE9376			;00D7
-	dw DATA_FE9378			;00D8
-	dw DATA_FE937A			;00D9
-	dw DATA_FE937C			;00DA
-	dw DATA_FE937E			;00DB
-	dw DATA_FE9380			;00DC
-	dw DATA_FE9382			;00DD
-	dw DATA_FE9384			;00DE
-	dw DATA_FE9386			;00DF
-	dw !null_pointer		;00E0
-	dw !null_pointer		;00E1
-	dw !null_pointer		;00E2
-	dw !null_pointer		;00E3
-	dw !null_pointer		;00E4
-	dw !null_pointer		;00E5
-	dw !null_pointer		;00E6
-	dw !null_pointer		;00E7
-	dw !null_pointer		;00E8
-	dw !null_pointer		;00E9
-	dw !null_pointer		;00EA
-	dw !null_pointer		;00EB
-	dw !null_pointer		;00EC
-	dw !null_pointer		;00ED
-	dw !null_pointer		;00EE
-	dw !null_pointer		;00EF
-	dw !null_pointer		;00F0
-	dw !null_pointer		;00F1
-	dw !null_pointer		;00F2
-	dw !null_pointer		;00F3
-	dw !null_pointer		;00F4
-	dw !null_pointer		;00F5
-	dw !null_pointer		;00F6
-	dw !null_pointer		;00F7
-	dw !null_pointer		;00F8
-	dw !null_pointer		;00F9
-	dw !null_pointer		;00FA
-	dw !null_pointer		;00FB
-	dw !null_pointer		;00FC
-	dw !null_pointer		;00FD
-	dw !null_pointer		;00FE
-	dw !null_pointer		;00FF
-	dw !null_pointer		;0100
-	dw !null_pointer		;0101
-	dw !null_pointer		;0102
-	dw !null_pointer		;0103
-	dw !null_pointer		;0104
-	dw !null_pointer		;0105
-	dw !null_pointer		;0106
-	dw !null_pointer		;0107
-	dw !null_pointer		;0108
-	dw !null_pointer		;0109
-	dw !null_pointer		;010A
-	dw !null_pointer		;010B
-	dw !null_pointer		;010C
-	dw !null_pointer		;010D
-	dw !null_pointer		;010E
-	dw !null_pointer		;010F
-	dw !null_pointer		;0110
-	dw !null_pointer		;0111
-	dw !null_pointer		;0112
-	dw !null_pointer		;0113
-	dw !null_pointer		;0114
-	dw !null_pointer		;0115
-	dw !null_pointer		;0116
-	dw !null_pointer		;0117
-	dw !null_pointer		;0118
-	dw !null_pointer		;0119
-	dw !null_pointer		;011A
-	dw !null_pointer		;011B
-	dw !null_pointer		;011C
-	dw !null_pointer		;011D
-	dw !null_pointer		;011E
-	dw !null_pointer		;011F
-	dw !null_pointer		;0120
-	dw !null_pointer		;0121
-	dw !null_pointer		;0122
-	dw !null_pointer		;0123
-	dw !null_pointer		;0124
-	dw !null_pointer		;0125
-	dw !null_pointer		;0126
-	dw !null_pointer		;0127
-	dw !null_pointer		;0128
-	dw !null_pointer		;0129
-	dw !null_pointer		;012A
-	dw !null_pointer		;012B
-	dw !null_pointer		;012C
-	dw !null_pointer		;012D
-	dw !null_pointer		;012E
-	dw !null_pointer		;012F
-	dw !null_pointer		;0130
-	dw !null_pointer		;0131
-	dw !null_pointer		;0132
-	dw !null_pointer		;0133
-	dw !null_pointer		;0134
-	dw !null_pointer		;0135
-	dw !null_pointer		;0136
-	dw !null_pointer		;0137
-	dw !null_pointer		;0138
-	dw !null_pointer		;0139
-	dw !null_pointer		;013A
-	dw !null_pointer		;013B
-	dw !null_pointer		;013C
-	dw !null_pointer		;013D
-	dw !null_pointer		;013E
-	dw !null_pointer		;013F
-	dw !null_pointer		;0140
-	dw !null_pointer		;0141
-	dw !null_pointer		;0142
-	dw !null_pointer		;0143
-	dw !null_pointer		;0144
-	dw !null_pointer		;0145
-	dw !null_pointer		;0146
-	dw !null_pointer		;0147
-	dw !null_pointer		;0148
-	dw !null_pointer		;0149
-	dw !null_pointer		;014A
-	dw !null_pointer		;014B
-	dw !null_pointer		;014C
-	dw !null_pointer		;014D
-	dw !null_pointer		;014E
-	dw !null_pointer		;014F
-	dw !null_pointer		;0150
-	dw !null_pointer		;0151
-	dw !null_pointer		;0152
-	dw !null_pointer		;0153
-	dw !null_pointer		;0154
-	dw !null_pointer		;0155
-	dw !null_pointer		;0156
-	dw !null_pointer		;0157
-	dw !null_pointer		;0158
-	dw !null_pointer		;0159
-	dw !null_pointer		;015A
-	dw !null_pointer		;015B
-	dw !null_pointer		;015C
-	dw !null_pointer		;015D
-	dw !null_pointer		;015E
-	dw !null_pointer		;015F
-	dw !null_pointer		;0160
-	dw !null_pointer		;0161
-	dw !null_pointer		;0162
-	dw !null_pointer		;0163
-	dw !null_pointer		;0164
-	dw !null_pointer		;0165
-	dw !null_pointer		;0166
-	dw !null_pointer		;0167
-	dw !null_pointer		;0168
-	dw !null_pointer		;0169
-	dw !null_pointer		;016A
-	dw !null_pointer		;016B
-	dw !null_pointer		;016C
-	dw !null_pointer		;016D
-	dw !null_pointer		;016E
-	dw !null_pointer		;016F
-	dw !null_pointer		;0170
-	dw !null_pointer		;0171
-	dw !null_pointer		;0172
-	dw !null_pointer		;0173
-	dw !null_pointer		;0174
-	dw !null_pointer		;0175
-	dw !null_pointer		;0176
-	dw !null_pointer		;0177
-	dw !null_pointer		;0178
-	dw !null_pointer		;0179
-	dw !null_pointer		;017A
-	dw !null_pointer		;017B
-	dw !null_pointer		;017C
-	dw !null_pointer		;017D
-	dw !null_pointer		;017E
-	dw !null_pointer		;017F
-	dw !null_pointer		;0180
-	dw !null_pointer		;0181
-	dw !null_pointer		;0182
-	dw !null_pointer		;0183
-	dw !null_pointer		;0184
-	dw !null_pointer		;0185
-	dw !null_pointer		;0186
-	dw !null_pointer		;0187
-	dw !null_pointer		;0188
-	dw !null_pointer		;0189
-	dw !null_pointer		;018A
-	dw !null_pointer		;018B
-	dw !null_pointer		;018C
-	dw !null_pointer		;018D
-	dw !null_pointer		;018E
-	dw !null_pointer		;018F
-	dw !null_pointer		;0190
-	dw !null_pointer		;0191
-	dw !null_pointer		;0192
-	dw !null_pointer		;0193
-	dw !null_pointer		;0194
-	dw !null_pointer		;0195
-	dw !null_pointer		;0196
-	dw !null_pointer		;0197
-	dw !null_pointer		;0198
-	dw !null_pointer		;0199
-	dw !null_pointer		;019A
-	dw !null_pointer		;019B
-	dw !null_pointer		;019C
-	dw !null_pointer		;019D
-	dw !null_pointer		;019E
-	dw !null_pointer		;019F
-	dw !null_pointer		;01A0
-	dw !null_pointer		;01A1
-	dw !null_pointer		;01A2
-	dw !null_pointer		;01A3
-	dw !null_pointer		;01A4
-	dw !null_pointer		;01A5
-	dw !null_pointer		;01A6
-	dw !null_pointer		;01A7
-	dw !null_pointer		;01A8
-	dw !null_pointer		;01A9
-	dw !null_pointer		;01AA
-	dw !null_pointer		;01AB
-	dw !null_pointer		;01AC
-	dw !null_pointer		;01AD
-	dw !null_pointer		;01AE
-	dw !null_pointer		;01AF
-	dw !null_pointer		;01B0
-	dw !null_pointer		;01B1
-	dw !null_pointer		;01B2
-	dw !null_pointer		;01B3
-	dw !null_pointer		;01B4
-	dw !null_pointer		;01B5
-	dw !null_pointer		;01B6
-	dw !null_pointer		;01B7
-	dw !null_pointer		;01B8
-	dw !null_pointer		;01B9
-	dw !null_pointer		;01BA
-	dw !null_pointer		;01BB
-	dw !null_pointer		;01BC
-	dw !null_pointer		;01BD
-	dw !null_pointer		;01BE
-	dw !null_pointer		;01BF
-	dw !null_pointer		;01C0
-	dw !null_pointer		;01C1
-	dw !null_pointer		;01C2
-	dw !null_pointer		;01C3
-	dw !null_pointer		;01C4
-	dw !null_pointer		;01C5
-	dw !null_pointer		;01C6
-	dw !null_pointer		;01C7
-	dw !null_pointer		;01C8
-	dw !null_pointer		;01C9
-	dw !null_pointer		;01CA
-	dw !null_pointer		;01CB
-	dw !null_pointer		;01CC
-	dw !null_pointer		;01CD
-	dw !null_pointer		;01CE
-	dw !null_pointer		;01CF
-	dw !null_pointer		;01D0
-	dw !null_pointer		;01D1
-	dw !null_pointer		;01D2
-	dw !null_pointer		;01D3
-	dw !null_pointer		;01D4
-	dw !null_pointer		;01D5
-	dw !null_pointer		;01D6
-	dw !null_pointer		;01D7
-	dw !null_pointer		;01D8
-	dw !null_pointer		;01D9
-	dw !null_pointer		;01DA
-	dw !null_pointer		;01DB
-	dw !null_pointer		;01DC
-	dw !null_pointer		;01DD
-	dw !null_pointer		;01DE
-	dw !null_pointer		;01DF
-	dw !null_pointer		;01E0
-	dw !null_pointer		;01E1
-	dw !null_pointer		;01E2
-	dw !null_pointer		;01E3
-	dw !null_pointer		;01E4
-	dw !null_pointer		;01E5
-	dw !null_pointer		;01E6
-	dw !null_pointer		;01E7
-	dw !null_pointer		;01E8
-	dw !null_pointer		;01E9
-	dw !null_pointer		;01EA
-	dw !null_pointer		;01EB
-	dw !null_pointer		;01EC
-	dw !null_pointer		;01ED
-	dw !null_pointer		;01EE
-	dw !null_pointer		;01EF
-	dw !null_pointer		;01F0
-	dw !null_pointer		;01F1
-	dw !null_pointer		;01F2
-	dw !null_pointer		;01F3
-	dw !null_pointer		;01F4
-	dw !null_pointer		;01F5
-	dw !null_pointer		;01F6
-	dw !null_pointer		;01F7
-	dw !null_pointer		;01F8
-	dw !null_pointer		;01F9
-	dw !null_pointer		;01FA
-	dw !null_pointer		;01FB
-	dw !null_pointer		;01FC
-	dw !null_pointer		;01FD
-	dw !null_pointer		;01FE
-	dw !null_pointer		;01FF
+	dw web_woods_unused_objects				;0000
+	dw glimmers_galleon_objects				;0001
+	dw rambi_rumble_objects					;0002
+	dw pirate_panic_objects					;0003
+	dw gangplank_galley_objects				;0004
+	dw rattle_battle_objects				;0005
+	dw glimmers_galleon_exit_room_objects			;0006
+	dw hot_head_hop_objects					;0007
+	dw red_hot_ride_objects					;0008
+	dw krows_nest_objects					;0009
+	dw slime_climb_objects					;000A
+	dw topsail_trouble_objects				;000B
+	dw mainbrace_mayhem_objects				;000C
+	dw kreepy_krow_objects					;000D
+	dw target_terror_objects				;000E
+	dw rickety_race_objects					;000F
+	dw haunted_hall_objects					;0010
+	dw hornet_hole_objects					;0011
+	dw rambi_rumble_rambi_room_objects			;0012
+	dw parrot_chute_panic_objects				;0013
+	dw lava_lagoon_objects					;0014
+	dw lockjaws_locker_objects				;0015
+	dw fiery_furnace_objects				;0016
+	dw web_woods_objects					;0017
+	dw gusty_glade_objects					;0018
+	dw ghostly_grove_objects				;0019
+	dw topsail_trouble_warp_room_objects			;001A
+	dw pirate_panic_k_rools_cabin_objects			;001B
+	dw hot_head_hop_bonus_2_objects				;001C
+	dw pirate_panic_warp_room_objects			;001D
+	dw target_terror_exit_room_objects			;001E
+	dw web_woods_room_unused_objects			;001F
+	dw mainbrace_mayhem_warp_room_objects			;0020
+	dw kleevers_kiln_objects				;0021
+	dw rattle_battle_rattly_room_objects			;0022
+	dw windy_well_objects					;0023
+	dw squawks_shaft_objects				;0024
+	dw kannons_klaim_objects				;0025
+	dw parrot_chute_panic_warp_room_objects			;0026
+	dw kannons_klaim_warp_room_objects			;0027
+	dw barrel_bayou_objects					;0028
+	dw krockhead_klamber_objects				;0029
+	dw web_woods_squitter_room_objects			;002A
+	dw barrel_bayou_warp_room_objects			;002B
+	dw mudhole_marsh_objects				;002C
+	dw bramble_blast_objects				;002D
+	dw bramble_scramble_objects				;002E
+	dw screechs_sprint_objects				;002F
+	dw gangplank_galleon_objects				;0030
+	dw crocodile_cauldron_objects				;0031
+	dw krem_quay_objects					;0032
+	dw krazy_kremland_objects				;0033
+	dw gloomy_gulch_objects					;0034
+	dw k_rools_keep_objects					;0035
+	dw the_flying_krock_objects				;0036
+	dw lost_world_objects					;0037
+	dw monkey_museum_gangplank_galleon_objects		;0038
+	dw monkey_museum_crocodile_cauldron_objects		;0039
+	dw monkey_museum_krem_quay_objects			;003A
+	dw monkey_museum_krazy_kremland_upper_objects		;003B
+	dw monkey_museum_gloomy_gulch_objects			;003C
+	dw monkey_museum_k_rools_keep_objects			;003D
+	dw level_3E_objects					;003E
+	dw level_3F_objects					;003F
+	dw kong_kollege_gangplank_galleon_objects		;0040
+	dw swankys_bonus_bonanza_crocodile_cauldron_objects	;0041
+	dw swankys_bonus_bonanza_krem_quay_objects		;0042
+	dw swankys_bonus_bonanza_krazy_kremland_upper_objects	;0043
+	dw swankys_bonus_bonanza_gloomy_gulch_objects		;0044
+	dw kong_kollege_k_rools_keep_objects			;0045
+	dw level_46_objects					;0046
+	dw level_47_objects					;0047
+	dw swankys_bonus_bonanza_gangplank_galleon_objects	;0048
+	dw kong_kollege_crocodile_cauldron_objects		;0049
+	dw kong_kollege_krem_quay_objects			;004A
+	dw kong_kollege_krazy_kremland_lower_objects		;004B
+	dw kong_kollege_gloomy_gulch_objects			;004C
+	dw swankys_bonus_bonanza_k_rools_keep_objects		;004D
+	dw kong_kollege_the_flying_krock_objects		;004E
+	dw level_4F_objects					;004F
+	dw funkys_flights_gangplank_galleon_objects		;0050
+	dw funkys_flights_crocodile_cauldron_objects		;0051
+	dw funkys_flights_krem_quay_objects			;0052
+	dw funkys_flights_krazy_kremland_upper_objects		;0053
+	dw funkys_flights_gloomy_gulch_objects			;0054
+	dw funkys_flights_k_rools_keep_objects			;0055
+	dw funkys_flights_the_flying_krock_objects		;0056
+	dw level_57_objects					;0057
+	dw level_58_objects					;0058
+	dw klubbas_kiosk_crocodile_cauldron_objects		;0059
+	dw klubbas_kiosk_krem_quay_objects			;005A
+	dw klubbas_kiosk_krazy_kremland_lower_objects		;005B
+	dw klubbas_kiosk_gloomy_gulch_objects			;005C
+	dw klubbas_kiosk_k_rools_keep_objects			;005D
+	dw level_5E_objects					;005E
+	dw level_5F_objects					;005F
+	dw king_zing_sting_objects				;0060
+	dw k_rool_duel_objects					;0061
+	dw castle_crush_objects					;0062
+	dw kudgels_kontest_objects				;0063
+	dw krazy_kremland_lower_to_upper_left_objects		;0064
+	dw krazy_kremland_upper_to_lower_left_objects		;0065
+	dw krazy_kremland_upper_to_lower_right_objects		;0066
+	dw krazy_kremland_lower_to_upper_right_objects		;0067
+	dw lockjaws_locker_warp_room_objects			;0068
+	dw lava_lagoon_warp_room_objects			;0069
+	dw squawks_shaft_warp_room_objects			;006A
+	dw krocodile_kore_objects				;006B
+	dw arctic_abyss_objects					;006C
+	dw chain_link_chamber_objects				;006D
+	dw toxic_tower_objects					;006E
+	dw pirate_panic_bonus_1_objects				;006F
+	dw pirate_panic_bonus_2_objects				;0070
+	dw gangplank_galley_bonus_2_objects			;0071
+	dw rattle_battle_bonus_1_objects			;0072
+	dw rattle_battle_bonus_3_objects			;0073
+	dw hot_head_hop_bonus_3_objects				;0074
+	dw hot_head_hop_bonus_1_objects				;0075
+	dw red_hot_ride_bonus_1_objects				;0076
+	dw red_hot_ride_bonus_2_objects				;0077
+	dw mainbrace_mayhem_bonus_1_objects			;0078
+	dw mainbrace_mayhem_bonus_2_objects			;0079
+	dw slime_climb_bonus_1_objects				;007A
+	dw topsail_trouble_bonus_1_objects			;007B
+	dw topsail_trouble_bonus_2_objects			;007C
+	dw mainbrace_mayhem_bonus_3_objects			;007D
+	dw slime_climb_bonus_2_objects				;007E
+	dw rattle_battle_bonus_2_objects			;007F
+	dw klobber_karnage_objects				;0080
+	dw lockjaws_locker_bonus_1_objects			;0081
+	dw glimmers_galleon_bonus_2_objects			;0082
+	dw lava_lagoon_bonus_1_objects				;0083
+	dw glimmers_galleon_bonus_1_objects			;0084
+	dw ghostly_grove_bonus_1_objects			;0085
+	dw gusty_glade_bonus_1_objects				;0086
+	dw gusty_glade_bonus_2_objects				;0087
+	dw ghostly_grove_bonus_2_objects			;0088
+	dw barrel_bayou_bonus_1_objects				;0089
+	dw barrel_bayou_bonus_2_objects				;008A
+	dw krockhead_klamber_bonus_1_objects			;008B
+	dw mudhole_marsh_bonus_1_objects			;008C
+	dw mudhole_marsh_bonus_2_objects			;008D
+	dw hot_head_hop_warp_room_objects			;008E
+	dw clappers_cavern_objects				;008F
+	dw animal_antics_enguarde_area_objects			;0090
+	dw clappers_cavern_bonus_1_objects			;0091
+	dw clappers_cavern_bonus_2_objects			;0092
+	dw arctic_abyss_bonus_1_objects				;0093
+	dw black_ice_battle_bonus_1_objects			;0094
+	dw arctic_abyss_bonus_2_objects				;0095
+	dw black_ice_battle_objects				;0096
+	dw klobber_karnage_bonus_1_objects			;0097
+	dw jungle_jinx_bonus_1_objects				;0098
+	dw jungle_jinx_objects					;0099
+	dw animal_antics_rambi_area_objects			;009A
+	dw animal_antics_squitter_area_objects			;009B
+	dw animal_antics_rattly_area_objects			;009C
+	dw animal_antics_bonus_1_objects			;009D
+	dw fiery_furnace_bonus_1_objects			;009E
+	dw animal_antics_squawks_area_objects			;009F
+	dw bramble_blast_bonus_2_objects			;00A0
+	dw target_terror_bonus_1_objects			;00A1
+	dw bramble_scramble_bonus_1_objects			;00A2
+	dw windy_well_bonus_2_objects				;00A3
+	dw web_woods_bonus_1_objects				;00A4
+	dw toxic_tower_bonus_1_objects				;00A5
+	dw bramble_blast_bonus_1_objects			;00A6
+	dw screechs_sprint_bonus_1_objects			;00A7
+	dw gangplank_galley_bonus_1_objects			;00A8
+	dw squawks_shaft_bonus_3_objects			;00A9
+	dw kannons_klaim_bonus_3_objects			;00AA
+	dw kannons_klaim_bonus_1_objects			;00AB
+	dw squawks_shaft_bonus_1_objects			;00AC
+	dw kannons_klaim_bonus_2_objects			;00AD
+	dw hornet_hole_bonus_1_objects				;00AE
+	dw parrot_chute_panic_bonus_2_objects			;00AF
+	dw hornet_hole_bonus_3_objects				;00B0
+	dw parrot_chute_panic_bonus_1_objects			;00B1
+	dw rambi_rumble_bonus_2_objects				;00B2
+	dw hornet_hole_bonus_2_objects				;00B3
+	dw rambi_rumble_bonus_1_objects				;00B4
+	dw chain_link_chamber_bonus_1_objects			;00B5
+	dw chain_link_chamber_bonus_2_objects			;00B6
+	dw castle_crush_bonus_1_objects				;00B7
+	dw castle_crush_bonus_2_objects				;00B8
+	dw stronghold_showdown_objects				;00B9
+	dw squawks_shaft_bonus_2_objects			;00BA
+	dw windy_well_bonus_1_objects				;00BB
+	dw web_woods_bonus_2_objects				;00BC
+	dw haunted_hall_bonus_1_objects				;00BD
+	dw rickety_race_exit_objects				;00BE
+	dw haunted_hall_exit_objects				;00BF
+	dw haunted_hall_bonus_3_objects				;00C0
+	dw target_terror_bonus_2_objects			;00C1
+	dw haunted_hall_bonus_2_objects				;00C2
+	dw rickety_race_bonus_1_objects				;00C3
+	dw return_to_crocodile_cauldron_objects			;00C4
+	dw return_to_krem_quay_objects				;00C5
+	dw return_to_krazy_kremland_objects			;00C6
+	dw return_to_gloomy_gulch_objects			;00C7
+	dw return_to_k_rools_keep_objects			;00C8
+	dw monkey_museum_crocodile_cauldron_lost_world_objects	;00C9
+	dw monkey_museum_krem_quay_lost_world_objects		;00CA
+	dw monkey_museum_krazy_kremland_lost_world_objects	;00CB
+	dw monkey_museum_gloomy_gulch_lost_world_objects	;00CC
+	dw monkey_museum_k_rools_keep_lost_world_objects	;00CD
+	dw kroc_kore_crocodile_cauldron_lost_world_objects	;00CE
+	dw kroc_kore_krem_quay_lost_world_objects		;00CF
+	dw kroc_kore_krazy_kremland_lost_world_objects		;00D0
+	dw kroc_kore_gloomy_gulch_lost_world_objects		;00D1
+	dw kroc_kore_k_rools_keep_lost_world_objects		;00D2
+	dw level_D3_objects					;00D3
+	dw level_D4_objects					;00D4
+	dw level_D5_objects					;00D5
+	dw level_D6_objects					;00D6
+	dw level_D7_objects					;00D7
+	dw level_D8_objects					;00D8
+	dw level_D9_objects					;00D9
+	dw level_DA_objects					;00DA
+	dw level_DB_objects					;00DB
+	dw level_DC_objects					;00DC
+	dw level_DD_objects					;00DD
+	dw level_DE_objects					;00DE
+	dw level_DF_objects					;00DF
+	dw !null_pointer					;00E0
+	dw !null_pointer					;00E1
+	dw !null_pointer					;00E2
+	dw !null_pointer					;00E3
+	dw !null_pointer					;00E4
+	dw !null_pointer					;00E5
+	dw !null_pointer					;00E6
+	dw !null_pointer					;00E7
+	dw !null_pointer					;00E8
+	dw !null_pointer					;00E9
+	dw !null_pointer					;00EA
+	dw !null_pointer					;00EB
+	dw !null_pointer					;00EC
+	dw !null_pointer					;00ED
+	dw !null_pointer					;00EE
+	dw !null_pointer					;00EF
+	dw !null_pointer					;00F0
+	dw !null_pointer					;00F1
+	dw !null_pointer					;00F2
+	dw !null_pointer					;00F3
+	dw !null_pointer					;00F4
+	dw !null_pointer					;00F5
+	dw !null_pointer					;00F6
+	dw !null_pointer					;00F7
+	dw !null_pointer					;00F8
+	dw !null_pointer					;00F9
+	dw !null_pointer					;00FA
+	dw !null_pointer					;00FB
+	dw !null_pointer					;00FC
+	dw !null_pointer					;00FD
+	dw !null_pointer					;00FE
+	dw !null_pointer					;00FF
+	dw !null_pointer					;0100
+	dw !null_pointer					;0101
+	dw !null_pointer					;0102
+	dw !null_pointer					;0103
+	dw !null_pointer					;0104
+	dw !null_pointer					;0105
+	dw !null_pointer					;0106
+	dw !null_pointer					;0107
+	dw !null_pointer					;0108
+	dw !null_pointer					;0109
+	dw !null_pointer					;010A
+	dw !null_pointer					;010B
+	dw !null_pointer					;010C
+	dw !null_pointer					;010D
+	dw !null_pointer					;010E
+	dw !null_pointer					;010F
+	dw !null_pointer					;0110
+	dw !null_pointer					;0111
+	dw !null_pointer					;0112
+	dw !null_pointer					;0113
+	dw !null_pointer					;0114
+	dw !null_pointer					;0115
+	dw !null_pointer					;0116
+	dw !null_pointer					;0117
+	dw !null_pointer					;0118
+	dw !null_pointer					;0119
+	dw !null_pointer					;011A
+	dw !null_pointer					;011B
+	dw !null_pointer					;011C
+	dw !null_pointer					;011D
+	dw !null_pointer					;011E
+	dw !null_pointer					;011F
+	dw !null_pointer					;0120
+	dw !null_pointer					;0121
+	dw !null_pointer					;0122
+	dw !null_pointer					;0123
+	dw !null_pointer					;0124
+	dw !null_pointer					;0125
+	dw !null_pointer					;0126
+	dw !null_pointer					;0127
+	dw !null_pointer					;0128
+	dw !null_pointer					;0129
+	dw !null_pointer					;012A
+	dw !null_pointer					;012B
+	dw !null_pointer					;012C
+	dw !null_pointer					;012D
+	dw !null_pointer					;012E
+	dw !null_pointer					;012F
+	dw !null_pointer					;0130
+	dw !null_pointer					;0131
+	dw !null_pointer					;0132
+	dw !null_pointer					;0133
+	dw !null_pointer					;0134
+	dw !null_pointer					;0135
+	dw !null_pointer					;0136
+	dw !null_pointer					;0137
+	dw !null_pointer					;0138
+	dw !null_pointer					;0139
+	dw !null_pointer					;013A
+	dw !null_pointer					;013B
+	dw !null_pointer					;013C
+	dw !null_pointer					;013D
+	dw !null_pointer					;013E
+	dw !null_pointer					;013F
+	dw !null_pointer					;0140
+	dw !null_pointer					;0141
+	dw !null_pointer					;0142
+	dw !null_pointer					;0143
+	dw !null_pointer					;0144
+	dw !null_pointer					;0145
+	dw !null_pointer					;0146
+	dw !null_pointer					;0147
+	dw !null_pointer					;0148
+	dw !null_pointer					;0149
+	dw !null_pointer					;014A
+	dw !null_pointer					;014B
+	dw !null_pointer					;014C
+	dw !null_pointer					;014D
+	dw !null_pointer					;014E
+	dw !null_pointer					;014F
+	dw !null_pointer					;0150
+	dw !null_pointer					;0151
+	dw !null_pointer					;0152
+	dw !null_pointer					;0153
+	dw !null_pointer					;0154
+	dw !null_pointer					;0155
+	dw !null_pointer					;0156
+	dw !null_pointer					;0157
+	dw !null_pointer					;0158
+	dw !null_pointer					;0159
+	dw !null_pointer					;015A
+	dw !null_pointer					;015B
+	dw !null_pointer					;015C
+	dw !null_pointer					;015D
+	dw !null_pointer					;015E
+	dw !null_pointer					;015F
+	dw !null_pointer					;0160
+	dw !null_pointer					;0161
+	dw !null_pointer					;0162
+	dw !null_pointer					;0163
+	dw !null_pointer					;0164
+	dw !null_pointer					;0165
+	dw !null_pointer					;0166
+	dw !null_pointer					;0167
+	dw !null_pointer					;0168
+	dw !null_pointer					;0169
+	dw !null_pointer					;016A
+	dw !null_pointer					;016B
+	dw !null_pointer					;016C
+	dw !null_pointer					;016D
+	dw !null_pointer					;016E
+	dw !null_pointer					;016F
+	dw !null_pointer					;0170
+	dw !null_pointer					;0171
+	dw !null_pointer					;0172
+	dw !null_pointer					;0173
+	dw !null_pointer					;0174
+	dw !null_pointer					;0175
+	dw !null_pointer					;0176
+	dw !null_pointer					;0177
+	dw !null_pointer					;0178
+	dw !null_pointer					;0179
+	dw !null_pointer					;017A
+	dw !null_pointer					;017B
+	dw !null_pointer					;017C
+	dw !null_pointer					;017D
+	dw !null_pointer					;017E
+	dw !null_pointer					;017F
+	dw !null_pointer					;0180
+	dw !null_pointer					;0181
+	dw !null_pointer					;0182
+	dw !null_pointer					;0183
+	dw !null_pointer					;0184
+	dw !null_pointer					;0185
+	dw !null_pointer					;0186
+	dw !null_pointer					;0187
+	dw !null_pointer					;0188
+	dw !null_pointer					;0189
+	dw !null_pointer					;018A
+	dw !null_pointer					;018B
+	dw !null_pointer					;018C
+	dw !null_pointer					;018D
+	dw !null_pointer					;018E
+	dw !null_pointer					;018F
+	dw !null_pointer					;0190
+	dw !null_pointer					;0191
+	dw !null_pointer					;0192
+	dw !null_pointer					;0193
+	dw !null_pointer					;0194
+	dw !null_pointer					;0195
+	dw !null_pointer					;0196
+	dw !null_pointer					;0197
+	dw !null_pointer					;0198
+	dw !null_pointer					;0199
+	dw !null_pointer					;019A
+	dw !null_pointer					;019B
+	dw !null_pointer					;019C
+	dw !null_pointer					;019D
+	dw !null_pointer					;019E
+	dw !null_pointer					;019F
+	dw !null_pointer					;01A0
+	dw !null_pointer					;01A1
+	dw !null_pointer					;01A2
+	dw !null_pointer					;01A3
+	dw !null_pointer					;01A4
+	dw !null_pointer					;01A5
+	dw !null_pointer					;01A6
+	dw !null_pointer					;01A7
+	dw !null_pointer					;01A8
+	dw !null_pointer					;01A9
+	dw !null_pointer					;01AA
+	dw !null_pointer					;01AB
+	dw !null_pointer					;01AC
+	dw !null_pointer					;01AD
+	dw !null_pointer					;01AE
+	dw !null_pointer					;01AF
+	dw !null_pointer					;01B0
+	dw !null_pointer					;01B1
+	dw !null_pointer					;01B2
+	dw !null_pointer					;01B3
+	dw !null_pointer					;01B4
+	dw !null_pointer					;01B5
+	dw !null_pointer					;01B6
+	dw !null_pointer					;01B7
+	dw !null_pointer					;01B8
+	dw !null_pointer					;01B9
+	dw !null_pointer					;01BA
+	dw !null_pointer					;01BB
+	dw !null_pointer					;01BC
+	dw !null_pointer					;01BD
+	dw !null_pointer					;01BE
+	dw !null_pointer					;01BF
+	dw !null_pointer					;01C0
+	dw !null_pointer					;01C1
+	dw !null_pointer					;01C2
+	dw !null_pointer					;01C3
+	dw !null_pointer					;01C4
+	dw !null_pointer					;01C5
+	dw !null_pointer					;01C6
+	dw !null_pointer					;01C7
+	dw !null_pointer					;01C8
+	dw !null_pointer					;01C9
+	dw !null_pointer					;01CA
+	dw !null_pointer					;01CB
+	dw !null_pointer					;01CC
+	dw !null_pointer					;01CD
+	dw !null_pointer					;01CE
+	dw !null_pointer					;01CF
+	dw !null_pointer					;01D0
+	dw !null_pointer					;01D1
+	dw !null_pointer					;01D2
+	dw !null_pointer					;01D3
+	dw !null_pointer					;01D4
+	dw !null_pointer					;01D5
+	dw !null_pointer					;01D6
+	dw !null_pointer					;01D7
+	dw !null_pointer					;01D8
+	dw !null_pointer					;01D9
+	dw !null_pointer					;01DA
+	dw !null_pointer					;01DB
+	dw !null_pointer					;01DC
+	dw !null_pointer					;01DD
+	dw !null_pointer					;01DE
+	dw !null_pointer					;01DF
+	dw !null_pointer					;01E0
+	dw !null_pointer					;01E1
+	dw !null_pointer					;01E2
+	dw !null_pointer					;01E3
+	dw !null_pointer					;01E4
+	dw !null_pointer					;01E5
+	dw !null_pointer					;01E6
+	dw !null_pointer					;01E7
+	dw !null_pointer					;01E8
+	dw !null_pointer					;01E9
+	dw !null_pointer					;01EA
+	dw !null_pointer					;01EB
+	dw !null_pointer					;01EC
+	dw !null_pointer					;01ED
+	dw !null_pointer					;01EE
+	dw !null_pointer					;01EF
+	dw !null_pointer					;01F0
+	dw !null_pointer					;01F1
+	dw !null_pointer					;01F2
+	dw !null_pointer					;01F3
+	dw !null_pointer					;01F4
+	dw !null_pointer					;01F5
+	dw !null_pointer					;01F6
+	dw !null_pointer					;01F7
+	dw !null_pointer					;01F8
+	dw !null_pointer					;01F9
+	dw !null_pointer					;01FA
+	dw !null_pointer					;01FB
+	dw !null_pointer					;01FC
+	dw !null_pointer					;01FD
+	dw !null_pointer					;01FE
+	dw !null_pointer					;01FF
 
-DATA_FE0400:
+web_woods_unused_objects:
 	incsrc "data/levels/objects/web_woods_unused_objects.asm"
 
-DATA_FE041A:
+glimmers_galleon_objects:
 	incsrc "data/levels/objects/glimmers_galleon_objects.asm"
 
-DATA_FE0734:
+rambi_rumble_objects:
 	incsrc "data/levels/objects/rambi_rumble_objects.asm"
 
-DATA_FE0A1E:
+pirate_panic_objects:
 	incsrc "data/levels/objects/pirate_panic_objects.asm"
 
-DATA_FE0BD8:
+gangplank_galley_objects:
 	incsrc "data/levels/objects/gangplank_galley_objects.asm"
 
-DATA_FE0E7A:
+rattle_battle_objects:
 	incsrc "data/levels/objects/rattle_battle_objects.asm"
 
-DATA_FE10F4:
+glimmers_galleon_exit_room_objects:
 	incsrc "data/levels/objects/glimmers_galleon_exit_room_objects.asm"
 
-DATA_FE111E:
+hot_head_hop_objects:
 	incsrc "data/levels/objects/hot_head_hop_objects.asm"
 
-DATA_FE13B8:
+red_hot_ride_objects:
 	incsrc "data/levels/objects/red_hot_ride_objects.asm"
 
-DATA_FE1632:
+krows_nest_objects:
 	incsrc "data/levels/objects/krows_nest_objects.asm"
 
-DATA_FE1654:
+slime_climb_objects:
 	incsrc "data/levels/objects/slime_climb_objects.asm"
 
-DATA_FE19CE:
+topsail_trouble_objects:
 	incsrc "data/levels/objects/topsail_trouble_objects.asm"
 
-DATA_FE1BF8:
+mainbrace_mayhem_objects:
 	incsrc "data/levels/objects/mainbrace_mayhem_objects.asm"
 
-DATA_FE1DD2:
+kreepy_krow_objects:
 	incsrc "data/levels/objects/kreepy_krow_objects.asm"
 
-DATA_FE1E0C:
+target_terror_objects:
 	incsrc "data/levels/objects/target_terror_objects.asm"
 
-DATA_FE2076:
+rickety_race_objects:
 	incsrc "data/levels/objects/rickety_race_objects.asm"
 
-DATA_FE20C8:
+haunted_hall_objects:
 	incsrc "data/levels/objects/haunted_hall_objects.asm"
 
-DATA_FE2352:
+hornet_hole_objects:
 	incsrc "data/levels/objects/hornet_hole_objects.asm"
 
-DATA_FE2664:
+rambi_rumble_rambi_room_objects:
 	incsrc "data/levels/objects/rambi_rumble_rambi_room_objects.asm"
 
-DATA_FE2676:
+parrot_chute_panic_objects:
 	incsrc "data/levels/objects/parrot_chute_panic_objects.asm"
 
-DATA_FE2A90:
+lava_lagoon_objects:
 	incsrc "data/levels/objects/lava_lagoon_objects.asm"
 
-DATA_FE2DE2:
+lockjaws_locker_objects:
 	incsrc "data/levels/objects/lockjaws_locker_objects.asm"
 
-DATA_FE3024:
+fiery_furnace_objects:
 	incsrc "data/levels/objects/fiery_furnace_objects.asm"
 
-DATA_FE3416:
+web_woods_objects:
 	incsrc "data/levels/objects/web_woods_objects.asm"
 
-DATA_FE3780:
+gusty_glade_objects:
 	incsrc "data/levels/objects/gusty_glade_objects.asm"
 
-DATA_FE39CA:
+ghostly_grove_objects:
 	incsrc "data/levels/objects/ghostly_grove_objects.asm"
 
-DATA_FE3CAC:
+topsail_trouble_warp_room_objects:
 	incsrc "data/levels/objects/topsail_trouble_warp_room_objects.asm"
 
-DATA_FE3CBE:
+pirate_panic_k_rools_cabin_objects:
 	incsrc "data/levels/objects/pirate_panic_k_rools_cabin_objects.asm"
 
-DATA_FE3CE8:
+hot_head_hop_bonus_2_objects:
 	incsrc "data/levels/objects/hot_head_hop_bonus_2_objects.asm"
 
-DATA_FE3D02:
+pirate_panic_warp_room_objects:
 	incsrc "data/levels/objects/pirate_panic_warp_room_objects.asm"
 
-DATA_FE3D0C:
+target_terror_exit_room_objects:
 	incsrc "data/levels/objects/target_terror_exit_room_objects.asm"
 
-DATA_FE3D2E:
+web_woods_room_unused_objects:
 	incsrc "data/levels/objects/web_woods_room_unused_objects.asm"
 
-DATA_FE3D38:
+mainbrace_mayhem_warp_room_objects:
 	incsrc "data/levels/objects/mainbrace_mayhem_warp_room_objects.asm"
 
-DATA_FE3D4A:
+kleevers_kiln_objects:
 	incsrc "data/levels/objects/kleevers_kiln_objects.asm"
 
-DATA_FE3DE4:
+rattle_battle_rattly_room_objects:
 	incsrc "data/levels/objects/rattle_battle_rattly_room_objects.asm"
 
-DATA_FE3DF6:
+windy_well_objects:
 	incsrc "data/levels/objects/windy_well_objects.asm"
 
-DATA_FE41F0:
+squawks_shaft_objects:
 	incsrc "data/levels/objects/squawks_shaft_objects.asm"
 
-DATA_FE450A:
+kannons_klaim_objects:
 	incsrc "data/levels/objects/kannons_klaim_objects.asm"
 
-DATA_FE4874:
+parrot_chute_panic_warp_room_objects:
 	incsrc "data/levels/objects/parrot_chute_panic_warp_room_objects.asm"
 
-DATA_FE487E:
+kannons_klaim_warp_room_objects:
 	incsrc "data/levels/objects/kannons_klaim_warp_room_objects.asm"
 
-DATA_FE4890:
+barrel_bayou_objects:
 	incsrc "data/levels/objects/barrel_bayou_objects.asm"
 
-DATA_FE4B42:
+krockhead_klamber_objects:
 	incsrc "data/levels/objects/krockhead_klamber_objects.asm"
 
-DATA_FE4F04:
+web_woods_squitter_room_objects:
 	incsrc "data/levels/objects/web_woods_squitter_room_objects.asm"
 
-DATA_FE4F1E:
+barrel_bayou_warp_room_objects:
 	incsrc "data/levels/objects/barrel_bayou_warp_room_objects.asm"
 
-DATA_FE4F28:
+mudhole_marsh_objects:
 	incsrc "data/levels/objects/mudhole_marsh_objects.asm"
 
-DATA_FE532A:
+bramble_blast_objects:
 	incsrc "data/levels/objects/bramble_blast_objects.asm"
 
-DATA_FE595C:
+bramble_scramble_objects:
 	incsrc "data/levels/objects/bramble_scramble_objects.asm"
 
-DATA_FE5D5E:
+screechs_sprint_objects:
 	incsrc "data/levels/objects/screechs_sprint_objects.asm"
 
-DATA_FE6068:
+gangplank_galleon_objects:
 	dw $0000
 
-DATA_FE606A:
+crocodile_cauldron_objects:
 	dw $0000
 
-DATA_FE606C:
+krem_quay_objects:
 	dw $0000
 
-DATA_FE606E:
+krazy_kremland_objects:
 	dw $0000
 
-DATA_FE6070:
+gloomy_gulch_objects:
 	dw $0000
 
-DATA_FE6072:
+k_rools_keep_objects:
 	dw $0000
 
-DATA_FE6074:
+the_flying_krock_objects:
 	dw $0000
 
-DATA_FE6076:
+lost_world_objects:
 	dw $0000
 
-DATA_FE6078:
+monkey_museum_gangplank_galleon_objects:
 	dw $0000
 
-DATA_FE607A:
+monkey_museum_crocodile_cauldron_objects:
 	dw $0000
 
-DATA_FE607C:
+monkey_museum_krem_quay_objects:
 	dw $0000
 
-DATA_FE607E:
+monkey_museum_krazy_kremland_upper_objects:
 	dw $0000
 
-DATA_FE6080:
+monkey_museum_gloomy_gulch_objects:
 	dw $0000
 
-DATA_FE6082:
+monkey_museum_k_rools_keep_objects:
 	dw $0000
 
-DATA_FE6084:
+level_3E_objects:
 	dw $0000
 
-DATA_FE6086:
+level_3F_objects:
 	dw $0000
 
-DATA_FE6088:
+kong_kollege_gangplank_galleon_objects:
 	dw $0000
 
-DATA_FE608A:
+swankys_bonus_bonanza_crocodile_cauldron_objects:
 	dw $0000
 
-DATA_FE608C:
+swankys_bonus_bonanza_krem_quay_objects:
 	dw $0000
 
-DATA_FE608E:
+swankys_bonus_bonanza_krazy_kremland_upper_objects:
 	dw $0000
 
-DATA_FE6090:
+swankys_bonus_bonanza_gloomy_gulch_objects:
 	dw $0000
 
-DATA_FE6092:
+kong_kollege_k_rools_keep_objects:
 	dw $0000
 
-DATA_FE6094:
+level_46_objects:
 	dw $0000
 
-DATA_FE6096:
+level_47_objects:
 	dw $0000
 
-DATA_FE6098:
+swankys_bonus_bonanza_gangplank_galleon_objects:
 	dw $0000
 
-DATA_FE609A:
+kong_kollege_crocodile_cauldron_objects:
 	dw $0000
 
-DATA_FE609C:
+kong_kollege_krem_quay_objects:
 	dw $0000
 
-DATA_FE609E:
+kong_kollege_krazy_kremland_lower_objects:
 	dw $0000
 
-DATA_FE60A0:
+kong_kollege_gloomy_gulch_objects:
 	dw $0000
 
-DATA_FE60A2:
+swankys_bonus_bonanza_k_rools_keep_objects:
 	dw $0000
 
-DATA_FE60A4:
+kong_kollege_the_flying_krock_objects:
 	dw $0000
 
-DATA_FE60A6:
+level_4F_objects:
 	dw $0000
 
-DATA_FE60A8:
+funkys_flights_gangplank_galleon_objects:
 	dw $0000
 
-DATA_FE60AA:
+funkys_flights_crocodile_cauldron_objects:
 	dw $0000
 
-DATA_FE60AC:
+funkys_flights_krem_quay_objects:
 	dw $0000
 
-DATA_FE60AE:
+funkys_flights_krazy_kremland_upper_objects:
 	dw $0000
 
-DATA_FE60B0:
+funkys_flights_gloomy_gulch_objects:
 	dw $0000
 
-DATA_FE60B2:
+funkys_flights_k_rools_keep_objects:
 	dw $0000
 
-DATA_FE60B4:
+funkys_flights_the_flying_krock_objects:
 	dw $0000
 
-DATA_FE60B6:
+level_57_objects:
 	dw $0000
 
-DATA_FE60B8:
+level_58_objects:
 	dw $0000
 
-DATA_FE60BA:
+klubbas_kiosk_crocodile_cauldron_objects:
 	dw $0000
 
-DATA_FE60BC:
+klubbas_kiosk_krem_quay_objects:
 	dw $0000
 
-DATA_FE60BE:
+klubbas_kiosk_krazy_kremland_lower_objects:
 	dw $0000
 
-DATA_FE60C0:
+klubbas_kiosk_gloomy_gulch_objects:
 	dw $0000
 
-DATA_FE60C2:
+klubbas_kiosk_k_rools_keep_objects:
 	dw $0000
 
-DATA_FE60C4:
+level_5E_objects:
 	dw $0000
 
-DATA_FE60C6:
+level_5F_objects:
 	dw $0000
 
-DATA_FE60C8:
+king_zing_sting_objects:
 	incsrc "data/levels/objects/king_zing_sting_objects.asm"
 
-DATA_FE60F2:
+k_rool_duel_objects:
 	incsrc "data/levels/objects/k_rool_duel_objects.asm"
 
-DATA_FE6104:
+castle_crush_objects:
 	incsrc "data/levels/objects/castle_crush_objects.asm"
 
-DATA_FE641E:
+kudgels_kontest_objects:
 	incsrc "data/levels/objects/kudgels_kontest_objects.asm"
 
-DATA_FE6430:
+krazy_kremland_lower_to_upper_left_objects:
 	dw $0000
 
-DATA_FE6432:
+krazy_kremland_upper_to_lower_left_objects:
 	dw $0000
 
-DATA_FE6434:
+krazy_kremland_upper_to_lower_right_objects:
 	dw $0000
 
-DATA_FE6436:
+krazy_kremland_lower_to_upper_right_objects:
 	dw $0000
 
-DATA_FE6438:
+lockjaws_locker_warp_room_objects:
 	incsrc "data/levels/objects/lockjaws_locker_warp_room_objects.asm"
 
-DATA_FE6452:
+lava_lagoon_warp_room_objects:
 	incsrc "data/levels/objects/lava_lagoon_warp_room_objects.asm"
 
-DATA_FE645C:
+squawks_shaft_warp_room_objects:
 	incsrc "data/levels/objects/squawks_shaft_warp_room_objects.asm"
 
-DATA_FE646E:
+krocodile_kore_objects:
 	incsrc "data/levels/objects/krocodile_kore_objects.asm"
 
-DATA_FE6480:
+arctic_abyss_objects:
 	incsrc "data/levels/objects/arctic_abyss_objects.asm"
 
-DATA_FE679A:
+chain_link_chamber_objects:
 	incsrc "data/levels/objects/chain_link_chamber_objects.asm"
 
-DATA_FE6B5C:
+toxic_tower_objects:
 	incsrc "data/levels/objects/toxic_tower_objects.asm"
 
-DATA_FE6EDE:
+pirate_panic_bonus_1_objects:
 	incsrc "data/levels/objects/pirate_panic_bonus_1_objects.asm"
 
-DATA_FE6EF8:
+pirate_panic_bonus_2_objects:
 	incsrc "data/levels/objects/pirate_panic_bonus_2_objects.asm"
 
-DATA_FE6F4A:
+gangplank_galley_bonus_2_objects:
 	incsrc "data/levels/objects/gangplank_galley_bonus_2_objects.asm"
 
-DATA_FE6F9C:
+rattle_battle_bonus_1_objects:
 	incsrc "data/levels/objects/rattle_battle_bonus_1_objects.asm"
 
-DATA_FE6FAE:
+rattle_battle_bonus_3_objects:
 	incsrc "data/levels/objects/rattle_battle_bonus_3_objects.asm"
 
-DATA_FE6FC8:
+hot_head_hop_bonus_3_objects:
 	incsrc "data/levels/objects/hot_head_hop_bonus_3_objects.asm"
 
-DATA_FE6FE2:
+hot_head_hop_bonus_1_objects:
 	incsrc "data/levels/objects/hot_head_hop_bonus_1_objects.asm"
 
-DATA_FE7014:
+red_hot_ride_bonus_1_objects:
 	incsrc "data/levels/objects/red_hot_ride_bonus_1_objects.asm"
 
-DATA_FE706E:
+red_hot_ride_bonus_2_objects:
 	incsrc "data/levels/objects/red_hot_ride_bonus_2_objects.asm"
 
-DATA_FE7088:
+mainbrace_mayhem_bonus_1_objects:
 	incsrc "data/levels/objects/mainbrace_mayhem_bonus_1_objects.asm"
 
-DATA_FE709A:
+mainbrace_mayhem_bonus_2_objects:
 	incsrc "data/levels/objects/mainbrace_mayhem_bonus_2_objects.asm"
 
-DATA_FE70F4:
+slime_climb_bonus_1_objects:
 	incsrc "data/levels/objects/slime_climb_bonus_1_objects.asm"
 
-DATA_FE711E:
+topsail_trouble_bonus_1_objects:
 	incsrc "data/levels/objects/topsail_trouble_bonus_1_objects.asm"
 
-DATA_FE7168:
+topsail_trouble_bonus_2_objects:
 	incsrc "data/levels/objects/topsail_trouble_bonus_2_objects.asm"
 
-DATA_FE719A:
+mainbrace_mayhem_bonus_3_objects:
 	incsrc "data/levels/objects/mainbrace_mayhem_bonus_3_objects.asm"
 
-DATA_FE71AC:
+slime_climb_bonus_2_objects:
 	incsrc "data/levels/objects/slime_climb_bonus_2_objects.asm"
 
-DATA_FE7216:
+rattle_battle_bonus_2_objects:
 	incsrc "data/levels/objects/rattle_battle_bonus_2_objects.asm"
 
-DATA_FE7268:
+klobber_karnage_objects:
 	incsrc "data/levels/objects/klobber_karnage_objects.asm"
 
-DATA_FE7682:
+lockjaws_locker_bonus_1_objects:
 	incsrc "data/levels/objects/lockjaws_locker_bonus_1_objects.asm"
 
-DATA_FE769C:
+glimmers_galleon_bonus_2_objects:
 	incsrc "data/levels/objects/glimmers_galleon_bonus_2_objects.asm"
 
-DATA_FE76BE:
+lava_lagoon_bonus_1_objects:
 	incsrc "data/levels/objects/lava_lagoon_bonus_1_objects.asm"
 
-DATA_FE7730:
+glimmers_galleon_bonus_1_objects:
 	incsrc "data/levels/objects/glimmers_galleon_bonus_1_objects.asm"
 
-DATA_FE774A:
+ghostly_grove_bonus_1_objects:
 	incsrc "data/levels/objects/ghostly_grove_bonus_1_objects.asm"
 
-DATA_FE7764:
+gusty_glade_bonus_1_objects:
 	incsrc "data/levels/objects/gusty_glade_bonus_1_objects.asm"
 
-DATA_FE77A6:
+gusty_glade_bonus_2_objects:
 	incsrc "data/levels/objects/gusty_glade_bonus_2_objects.asm"
 
-DATA_FE77D0:
+ghostly_grove_bonus_2_objects:
 	incsrc "data/levels/objects/ghostly_grove_bonus_2_objects.asm"
 
-DATA_FE7802:
+barrel_bayou_bonus_1_objects:
 	incsrc "data/levels/objects/barrel_bayou_bonus_1_objects.asm"
 
-DATA_FE7834:
+barrel_bayou_bonus_2_objects:
 	incsrc "data/levels/objects/barrel_bayou_bonus_2_objects.asm"
 
-DATA_FE787E:
+krockhead_klamber_bonus_1_objects:
 	incsrc "data/levels/objects/krockhead_klamber_bonus_1_objects.asm"
 
-DATA_FE78B8:
+mudhole_marsh_bonus_1_objects:
 	incsrc "data/levels/objects/mudhole_marsh_bonus_1_objects.asm"
 
-DATA_FE78D2:
+mudhole_marsh_bonus_2_objects:
 	incsrc "data/levels/objects/mudhole_marsh_bonus_2_objects.asm"
 
-DATA_FE791C:
+hot_head_hop_warp_room_objects:
 	incsrc "data/levels/objects/hot_head_hop_warp_room_objects.asm"
 
-DATA_FE7926:
+clappers_cavern_objects:
 	incsrc "data/levels/objects/clappers_cavern_objects.asm"
 
-DATA_FE7CA8:
+animal_antics_enguarde_area_objects:
 	incsrc "data/levels/objects/animal_antics_enguarde_section_objects.asm"
 
-DATA_FE7D92:
+clappers_cavern_bonus_1_objects:
 	incsrc "data/levels/objects/clappers_cavern_bonus_1_objects.asm"
 
-DATA_FE7DA4:
+clappers_cavern_bonus_2_objects:
 	incsrc "data/levels/objects/clappers_cavern_bonus_2_objects.asm"
 
-DATA_FE7DD6:
+arctic_abyss_bonus_1_objects:
 	incsrc "data/levels/objects/arctic_abyss_bonus_1_objects.asm"
 
-DATA_FE7DF0:
+black_ice_battle_bonus_1_objects:
 	incsrc "data/levels/objects/black_ice_battle_bonus_1_objects.asm"
 
-DATA_FE7E32:
+arctic_abyss_bonus_2_objects:
 	incsrc "data/levels/objects/arctic_abyss_bonus_2_objects.asm"
 
-DATA_FE7E74:
+black_ice_battle_objects:
 	incsrc "data/levels/objects/black_ice_battle_objects.asm"
 
-DATA_FE81AE:
+klobber_karnage_bonus_1_objects:
 	incsrc "data/levels/objects/klobber_karnage_bonus_1_objects.asm"
 
-DATA_FE8230:
+jungle_jinx_bonus_1_objects:
 	incsrc "data/levels/objects/jungle_jinx_bonus_1_objects.asm"
 
-DATA_FE8282:
+jungle_jinx_objects:
 	incsrc "data/levels/objects/jungle_jinx_objects.asm"
 
-DATA_FE856C:
+animal_antics_rambi_area_objects:
 	incsrc "data/levels/objects/animal_antics_rambi_section_objects.asm"
 
-DATA_FE860E:
+animal_antics_squitter_area_objects:
 	incsrc "data/levels/objects/animal_antics_squitter_section_objects.asm"
 
-DATA_FE8730:
+animal_antics_rattly_area_objects:
 	incsrc "data/levels/objects/animal_antics_rattly_section_objects.asm"
 
-DATA_FE87AA:
+animal_antics_bonus_1_objects:
 	incsrc "data/levels/objects/animal_antics_bonus_1_objects.asm"
 
-DATA_FE8814:
+fiery_furnace_bonus_1_objects:
 	incsrc "data/levels/objects/fiery_furnace_bonus_1_objects.asm"
 
-DATA_FE8886:
+animal_antics_squawks_area_objects:
 	incsrc "data/levels/objects/animal_antics_squawks_section_objects.asm"
 
-DATA_FE89F8:
+bramble_blast_bonus_2_objects:
 	incsrc "data/levels/objects/bramble_blast_bonus_2_objects.asm"
 
-DATA_FE8A1A:
+target_terror_bonus_1_objects:
 	incsrc "data/levels/objects/target_terror_bonus_1_objects.asm"
 
-DATA_FE8A84:
+bramble_scramble_bonus_1_objects:
 	incsrc "data/levels/objects/bramble_scramble_bonus_1_objects.asm"
 
-DATA_FE8AF6:
+windy_well_bonus_2_objects:
 	incsrc "data/levels/objects/windy_well_bonus_2_objects.asm"
 
-DATA_FE8B10:
+web_woods_bonus_1_objects:
 	incsrc "data/levels/objects/web_woods_bonus_1_objects.asm"
 
-DATA_FE8B42:
+toxic_tower_bonus_1_objects:
 	incsrc "data/levels/objects/toxic_tower_bonus_1_objects.asm"
 
-DATA_FE8B5C:
+bramble_blast_bonus_1_objects:
 	incsrc "data/levels/objects/bramble_blast_bonus_1_objects.asm"
 
-DATA_FE8C36:
+screechs_sprint_bonus_1_objects:
 	incsrc "data/levels/objects/screechs_sprint_bonus_1_objects.asm"
 
-DATA_FE8C50:
+gangplank_galley_bonus_1_objects:
 	incsrc "data/levels/objects/gangplank_galley_bonus_1_objects.asm"
 
-DATA_FE8C6A:
+squawks_shaft_bonus_3_objects:
 	incsrc "data/levels/objects/squawks_shaft_bonus_3_objects.asm"
 
-DATA_FE8CC4:
+kannons_klaim_bonus_3_objects:
 	incsrc "data/levels/objects/kannons_klaim_bonus_3_objects.asm"
 
-DATA_FE8D06:
+kannons_klaim_bonus_1_objects:
 	incsrc "data/levels/objects/kannons_klaim_bonus_1_objects.asm"
 
-DATA_FE8D68:
+squawks_shaft_bonus_1_objects:
 	incsrc "data/levels/objects/squawks_shaft_bonus_1_objects.asm"
 
-DATA_FE8DB2:
+kannons_klaim_bonus_2_objects:
 	incsrc "data/levels/objects/kannons_klaim_bonus_2_objects.asm"
 
-DATA_FE8E14:
+hornet_hole_bonus_1_objects:
 	incsrc "data/levels/objects/hornet_hole_bonus_1_objects.asm"
 
-DATA_FE8E66:
+parrot_chute_panic_bonus_2_objects:
 	incsrc "data/levels/objects/parrot_chute_panic_bonus_2_objects.asm"
 
-DATA_FE8EC8:
+hornet_hole_bonus_3_objects:
 	incsrc "data/levels/objects/hornet_hole_bonus_3_objects.asm"
 
-DATA_FE8EE2:
+parrot_chute_panic_bonus_1_objects:
 	incsrc "data/levels/objects/parrot_chute_panic_bonus_1_objects.asm"
 
-DATA_FE8EFC:
+rambi_rumble_bonus_2_objects:
 	incsrc "data/levels/objects/rambi_rumble_bonus_2_objects.asm"
 
-DATA_FE8F56:
+hornet_hole_bonus_2_objects:
 	incsrc "data/levels/objects/hornet_hole_bonus_2_objects.asm"
 
-DATA_FE8F68:
+rambi_rumble_bonus_1_objects:
 	incsrc "data/levels/objects/rambi_rumble_bonus_1_objects.asm"
 
-DATA_FE8F7A:
+chain_link_chamber_bonus_1_objects:
 	incsrc "data/levels/objects/chain_link_chamber_bonus_1_objects.asm"
 
-DATA_FE9004:
+chain_link_chamber_bonus_2_objects:
 	incsrc "data/levels/objects/chain_link_chamber_bonus_2_objects.asm"
 
-DATA_FE904E:
+castle_crush_bonus_1_objects:
 	incsrc "data/levels/objects/castle_crush_bonus_1_objects.asm"
 
-DATA_FE90A0:
+castle_crush_bonus_2_objects:
 	incsrc "data/levels/objects/castle_crush_bonus_2_objects.asm"
 
-DATA_FE90CA:
+stronghold_showdown_objects:
 	incsrc "data/levels/objects/stronghold_showdown_objects.asm"
 
-DATA_FE90F4:
+squawks_shaft_bonus_2_objects:
 	incsrc "data/levels/objects/squawks_shaft_bonus_2_objects.asm"
 
-DATA_FE914E:
+windy_well_bonus_1_objects:
 	incsrc "data/levels/objects/windy_well_bonus_1_objects.asm"
 
-DATA_FE91B0:
+web_woods_bonus_2_objects:
 	incsrc "data/levels/objects/web_woods_bonus_2_objects.asm"
 
-DATA_FE91CA:
+haunted_hall_bonus_1_objects:
 	incsrc "data/levels/objects/haunted_hall_bonus_1_objects.asm"
 
-DATA_FE91EC:
+rickety_race_exit_objects:
 	incsrc "data/levels/objects/rickety_race_exit_objects.asm"
 
-DATA_FE920E:
+haunted_hall_exit_objects:
 	incsrc "data/levels/objects/haunted_hall_exit_objects.asm"
 
-DATA_FE9238:
+haunted_hall_bonus_3_objects:
 	incsrc "data/levels/objects/haunted_hall_bonus_3_objects.asm"
 
-DATA_FE9252:
+target_terror_bonus_2_objects:
 	incsrc "data/levels/objects/target_terror_bonus_2_objects.asm"
 
-DATA_FE92BC:
+haunted_hall_bonus_2_objects:
 	incsrc "data/levels/objects/haunted_hall_bonus_2_objects.asm"
 
-DATA_FE92DE:
+rickety_race_bonus_1_objects:
 	incsrc "data/levels/objects/rickety_race_bonus_1_objects.asm"
 
-DATA_FE9350:
+return_to_crocodile_cauldron_objects:
 	dw $0000
 
-DATA_FE9352:
+return_to_krem_quay_objects:
 	dw $0000
 
-DATA_FE9354:
+return_to_krazy_kremland_objects:
 	dw $0000
 
-DATA_FE9356:
+return_to_gloomy_gulch_objects:
 	dw $0000
 
-DATA_FE9358:
+return_to_k_rools_keep_objects:
 	dw $0000
 
-DATA_FE935A:
+monkey_museum_crocodile_cauldron_lost_world_objects:
 	dw $0000
 
-DATA_FE935C:
+monkey_museum_krem_quay_lost_world_objects:
 	dw $0000
 
-DATA_FE935E:
+monkey_museum_krazy_kremland_lost_world_objects:
 	dw $0000
 
-DATA_FE9360:
+monkey_museum_gloomy_gulch_lost_world_objects:
 	dw $0000
 
-DATA_FE9362:
+monkey_museum_k_rools_keep_lost_world_objects:
 	dw $0000
 
-DATA_FE9364:
+kroc_kore_crocodile_cauldron_lost_world_objects:
 	dw $0000
 
-DATA_FE9366:
+kroc_kore_krem_quay_lost_world_objects:
 	dw $0000
 
-DATA_FE9368:
+kroc_kore_krazy_kremland_lost_world_objects:
 	dw $0000
 
-DATA_FE936A:
+kroc_kore_gloomy_gulch_lost_world_objects:
 	dw $0000
 
-DATA_FE936C:
+kroc_kore_k_rools_keep_lost_world_objects:
 	dw $0000
 
-DATA_FE936E:
+level_D3_objects:
 	dw $0000
 
-DATA_FE9370:
+level_D4_objects:
 	dw $0000
 
-DATA_FE9372:
+level_D5_objects:
 	dw $0000
 
-DATA_FE9374:
+level_D6_objects:
 	dw $0000
 
-DATA_FE9376:
+level_D7_objects:
 	dw $0000
 
-DATA_FE9378:
+level_D8_objects:
 	dw $0000
 
-DATA_FE937A:
+level_D9_objects:
 	dw $0000
 
-DATA_FE937C:
+level_DA_objects:
 	dw $0000
 
-DATA_FE937E:
+level_DB_objects:
 	dw $0000
 
-DATA_FE9380:
+level_DC_objects:
 	dw $0000
 
-DATA_FE9382:
+level_DD_objects:
 	dw $0000
 
-DATA_FE9384:
+level_DE_objects:
 	dw $0000
 
-DATA_FE9386:
+level_DF_objects:
 	dw $0000
 
 DATA_FE9388:
-	dw $0000
-
-DATA_FE938A:
+	%offset(DATA_FE938A, 2)
 	db $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00
@@ -1254,7 +1252,7 @@ DATA_FE938A:
 	db $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00
 	db $00, $00, $00, $00, $00, $00, $00, $00
-	db $00, $00, $00, $00
+	db $00, $00, $00, $00, $00, $00
 
 demo_level_scripts_table:
 	dw mainbrace_mayhem_demo_script

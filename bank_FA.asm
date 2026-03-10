@@ -1,21 +1,21 @@
 ;$FA0000
-DATA_FA0000:
-	incbin "data/misc_graphics/kleever_fragments_tiledata.bin"
+kleever_bone_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/kleever_bone_graphics.bin"
 
 ;$FA0360
-DATA_FA0360:
-	incbin "data/misc_graphics/kleever_fragments_2_tiledata.bin"
+fragment_7_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/fragment_7_graphics.bin"
 
 ;$FA0660
-DATA_FA0660:
-	incbin "data/misc_graphics/barrel_fragments_tiledata.bin"
+barrel_fragment_2_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/barrel_fragment_2_graphics.bin"
 
 ;$FA0A60
 DATA_FA0A60:
 	%offset(DATA_FA0AA0, $40)
 	%offset(DATA_FA0AC0, $60)
 	%offset(DATA_FA0AE0, $80)
-	incbin "data/misc_graphics/ship_hold_window_tiledata.bin"
+	incbin "data/gfx/background/ship_hold_window_tiledata.bin"
 
 ;$FA0B20
 DATA_FA0B20:
@@ -70,8 +70,8 @@ lost_world_head_layer_1_tiledata:
 	incbin "data/world_maps/8x8_tilemaps/lost_world_beam_layer_1_8x8_tilemap.bin"
 
 ;$FA443E
-DATA_FA443E:
-	incbin "data/misc_graphics/world_map_boss_icon_tiledata.bin"
+world_map_boss_icon_graphics:
+	incbin "data/gfx/sprite/static_oam_sprite_graphics/world_map_boss_icon_graphics.bin"
 
 ;$FA4C3E	compressed
 DATA_FA4C3E:

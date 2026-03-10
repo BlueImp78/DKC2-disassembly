@@ -426,8 +426,8 @@ CODE_BEBB2A:
 	ASL A					;$BEBB37   |
 	ASL A					;$BEBB38   |
 	ASL A					;$BEBB39   |
-	LDX.w #DATA_C02401>>16|$0800		;$BEBB3A   |
-	LDY #DATA_C02401			;$BEBB3D   | kong letters top tiledata
+	LDX.w #kong_letter_graphics>>16|$0800	;$BEBB3A   |
+	LDY #kong_letter_graphics		;$BEBB3D   | kong letters top tiledata
 	PHA					;$BEBB40   |
 	JSR CODE_BEBD5C				;$BEBB41   |
 	PLA					;$BEBB44   |

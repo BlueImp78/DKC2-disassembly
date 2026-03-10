@@ -5764,8 +5764,8 @@ setup_title_screen_screen:			;	  \
 	LDY #$0700				;$80B5D5   | |
 	JSL DMA_to_VRAM				;$80B5D8   |/
 	STZ PPU.vram_address			;$80B5DC   | Set the VRAM address to zero
-	LDX.w #intro_sparkle_graphics>>16	;$80B5DF   |\ DMA the title screen sprite sparkles to VRAM
-	LDA #intro_sparkle_graphics		;$80B5E2   | |
+	LDX.w #sparkle_graphics>>16		;$80B5DF   |\ DMA the title screen sprite sparkles to VRAM
+	LDA #sparkle_graphics			;$80B5E2   | |
 	LDY #$01A0				;$80B5E5   | |
 	JSL DMA_to_VRAM				;$80B5E8   |/
 	LDY #$0000				;$80B5EC   |\ DMA the title screen palette to CGRAM

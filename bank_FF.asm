@@ -1804,11 +1804,11 @@ DATA_FF0FAC:
 	dw !initcommand_success
 
 DATA_FF0FD2:
-	dw !initcommand_setup_static, !sprite_air_bubble_generator, global_sprite_palette : dl DATA_C00B21 : db $06
+	dw !initcommand_setup_static, !sprite_air_bubble_generator, global_sprite_palette : dl bubble_graphics : db $06
 	dw !initcommand_success
 
 DATA_FF0FDE:
-	dw !initcommand_setup_static2, !sprite_rock, !barrel_sprite_palette : dl DATA_C01B21 : db $20
+	dw !initcommand_setup_static2, !sprite_rock, !barrel_sprite_palette : dl rock_graphics : db $20
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.render_order, $00C8
 	dw sprite.x_speed, $0000
@@ -1818,7 +1818,7 @@ DATA_FF0FDE:
 	dw !initcommand_success
 
 DATA_FF1004:
-	dw !initcommand_setup_static2, !sprite_squawks_egg, !squawks_sprite_palette : dl DATA_C01F21 : db $20
+	dw !initcommand_setup_static2, !sprite_squawks_egg, !squawks_sprite_palette : dl squawks_egg_graphics : db $20
 	dw !initcommand_spawn_relative, $0008, $FFF0
 	dw sprite.constants_address, DATA_FF0244
 	dw sprite.state, $0000
@@ -2030,7 +2030,7 @@ DATA_FF124C:
 	dw !initcommand_success
 
 DATA_FF1260:
-	dw !initcommand_setup_static, !sprite_large_smoke_puff_timestop, global_sprite_palette : dl DATA_C02321 : db $20
+	dw !initcommand_setup_static, !sprite_large_smoke_puff_timestop, global_sprite_palette : dl dust_graphics : db $20
 	dw sprite.constants_address, DATA_FF021C
 	dw !initcommand_set_animation, $01F8
 	dw sprite.movement_state, $0001
@@ -2296,7 +2296,7 @@ DATA_FF1554:
 	dw !initcommand_success
 
 DATA_FF1576:
-	dw !initcommand_setup_static2, !sprite_barrel_pieces, !barrel_sprite_palette : dl DATA_FB0800 : db $17
+	dw !initcommand_setup_static2, !sprite_barrel_pieces, !barrel_sprite_palette : dl barrel_fragment_1_graphics : db $17
 	dw sprite.render_order, $00F4
 	dw sprite.state, $0000
 	dw sprite.interaction_flags, $0000
@@ -2305,7 +2305,7 @@ DATA_FF1576:
 	dw !initcommand_success
 
 DATA_FF1596:
-	dw !initcommand_setup_static2, !sprite_unknown_0064, !barrel_sprite_palette : dl DATA_FA0660 : db $20
+	dw !initcommand_setup_static2, !sprite_unknown_0064, !barrel_sprite_palette : dl barrel_fragment_2_graphics : db $20
 	dw sprite.render_order, $00F4
 	dw sprite.state, $0000
 	dw sprite.interaction_flags, $0000
@@ -2342,7 +2342,7 @@ DATA_FF15F2:
 	dw !initcommand_success
 
 DATA_FF1606:
-	dw !initcommand_setup_static2, !sprite_unknown_0064, !plus_minus_barrel_sprite_palette : dl DATA_FA0660 : db $20
+	dw !initcommand_setup_static2, !sprite_unknown_0064, !plus_minus_barrel_sprite_palette : dl barrel_fragment_2_graphics : db $20
 	dw sprite.render_order, $00F4
 	dw sprite.state, $0000
 	dw sprite.interaction_flags, $0000
@@ -2515,7 +2515,7 @@ DATA_FF1804:
 	dw !initcommand_success
 
 DATA_FF1824:
-	dw !initcommand_setup_static2, !sprite_lilypad, !bullrush_sprite_palette : dl DATA_C008E1 : db $12
+	dw !initcommand_setup_static2, !sprite_lilypad, !bullrush_sprite_palette : dl lilypad_graphics : db $12
 	dw sprite.type, !sprite_lilypad
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.state, $0000
@@ -2524,7 +2524,7 @@ DATA_FF1824:
 	dw !initcommand_success
 
 DATA_FF1846:
-	dw !initcommand_setup_static2, !sprite_puftup_spikes, !puftup_brown_sprite_palette : dl DATA_C006E1 : db $10
+	dw !initcommand_setup_static2, !sprite_puftup_spikes, !puftup_brown_sprite_palette : dl spike_graphics : db $10
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.constants_address, DATA_FF021C
 	dw sprite.movement_state, $0001
@@ -2858,7 +2858,7 @@ DATA_FF1B56:
 	dw !initcommand_success
 
 DATA_FF1B72:
-	dw !initcommand_setup_static2, !sprite_canball_pieces1, !krows_eggs_sprite_palette : dl DATA_C01021 : db $20
+	dw !initcommand_setup_static2, !sprite_canball_pieces1, !krows_eggs_sprite_palette : dl fragment_1_graphics : db $20
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.constants_address, DATA_FF0252
 	dw sprite.render_order, $00C8
@@ -2870,7 +2870,7 @@ DATA_FF1B72:
 	dw !initcommand_success
 
 DATA_FF1BA0:
-	dw !initcommand_setup_static2, !sprite_canball_pieces2, !krows_eggs_sprite_palette : dl DATA_C01421 : db $19
+	dw !initcommand_setup_static2, !sprite_canball_pieces2, !krows_eggs_sprite_palette : dl fragment_2_graphics : db $19
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.constants_address, DATA_FF0252
 	dw sprite.render_order, $00C8
@@ -2882,7 +2882,7 @@ DATA_FF1BA0:
 	dw !initcommand_success
 
 DATA_FF1BCE:
-	dw !initcommand_setup_static2, !sprite_egg_shell_pieces, !krows_eggs_sprite_palette : dl DATA_C01741 : db $1F
+	dw !initcommand_setup_static2, !sprite_egg_shell_pieces, !krows_eggs_sprite_palette : dl fragment_3_graphics : db $1F
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.constants_address, DATA_FF0252
 	dw sprite.render_order, $00C8
@@ -3044,7 +3044,7 @@ DATA_FF1D8E:
 	dw !initcommand_success
 
 DATA_FF1DC8:
-	dw !initcommand_setup_static2, !sprite_kleever_dropping_hooks, !canball_sprite_palette : dl DATA_C00DA1 : db $14
+	dw !initcommand_setup_static2, !sprite_kleever_dropping_hooks, !canball_sprite_palette : dl hook_graphics : db $14
 	dw sprite.render_order, $00D4
 	dw sprite.y_position, $0100
 	dw sprite.general_purpose_42, $0000
@@ -3111,7 +3111,7 @@ DATA_FF1E74:
 	dw !initcommand_success
 
 DATA_FF1EAA:
-	dw !initcommand_setup_static2, !sprite_king_zing_spikes, !puftup_brown_sprite_palette : dl DATA_C006E1 : db $10
+	dw !initcommand_setup_static2, !sprite_king_zing_spikes, !puftup_brown_sprite_palette : dl spike_graphics : db $10
 	dw !initcommand_spawn_relative, $0000, $FFF6
 	dw sprite.render_order, $00D3
 	dw sprite.display_mode, $0000
@@ -3345,7 +3345,7 @@ DATA_FF2162:
 	dw !initcommand_success
 
 DATA_FF217A:
-	dw !initcommand_setup_static, !sprite_lava_splash, global_sprite_palette : dl DATA_C02321 : db $20
+	dw !initcommand_setup_static, !sprite_lava_splash, global_sprite_palette : dl dust_graphics : db $20
 	dw !initcommand_spawn_relative, $0000, $0005
 	dw sprite.render_order, $00F8
 	dw sprite.x_speed, $FE50
@@ -3360,7 +3360,7 @@ DATA_FF217A:
 	dw !initcommand_success
 
 DATA_FF21B4:
-	dw !initcommand_setup_static, !sprite_lava_splash, global_sprite_palette : dl DATA_C02321 : db $20
+	dw !initcommand_setup_static, !sprite_lava_splash, global_sprite_palette : dl dust_graphics : db $20
 	dw !initcommand_spawn_relative, $0000, $0005
 	dw sprite.render_order, $00F8
 	dw sprite.x_speed, $01B0
@@ -3398,7 +3398,7 @@ DATA_FF2216:
 	dw !initcommand_success
 
 DATA_FF2238:
-	dw !initcommand_setup_static2, !sprite_canball_pieces1, !krow_egg_fragment_sprite_palette : dl DATA_C01021 : db $20
+	dw !initcommand_setup_static2, !sprite_canball_pieces1, !krow_egg_fragment_sprite_palette : dl fragment_1_graphics : db $20
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.constants_address, DATA_FF0252
 	dw sprite.render_order, $00C8
@@ -3411,7 +3411,7 @@ DATA_FF2238:
 	dw !initcommand_success
 
 DATA_FF226A:
-	dw !initcommand_setup_static2, !sprite_canball_pieces2, !krow_egg_fragment_sprite_palette : dl DATA_C01421 : db $19
+	dw !initcommand_setup_static2, !sprite_canball_pieces2, !krow_egg_fragment_sprite_palette : dl fragment_2_graphics : db $19
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.constants_address, DATA_FF0252
 	dw sprite.render_order, $00C8
@@ -3518,7 +3518,7 @@ DATA_FF23AC:
 	dw !initcommand_success
 
 DATA_FF23D0:
-	dw !initcommand_setup_static2, !sprite_kleever_pieces1, !kleever_1_sprite_palette : dl DATA_FB64E0 : db $17
+	dw !initcommand_setup_static2, !sprite_kleever_pieces1, !kleever_1_sprite_palette : dl fragment_4_graphics : db $17
 	dw sprite.render_order, $00F9
 	dw sprite.general_purpose_46, $0000
 	dw !initcommand_set_oam, $2000
@@ -3526,7 +3526,7 @@ DATA_FF23D0:
 	dw !initcommand_success
 
 DATA_FF23EC:
-	dw !initcommand_setup_static2, !sprite_kleever_pieces2, !kleever_1_sprite_palette : dl DATA_FB67C0 : db $20
+	dw !initcommand_setup_static2, !sprite_kleever_pieces2, !kleever_1_sprite_palette : dl fragment_5_graphics : db $20
 	dw sprite.render_order, $00F9
 	dw sprite.general_purpose_46, $0000
 	dw !initcommand_set_oam, $2000
@@ -3534,7 +3534,7 @@ DATA_FF23EC:
 	dw !initcommand_success
 
 DATA_FF2408:
-	dw !initcommand_setup_static2, !sprite_kleever_pieces3, !kleever_1_sprite_palette : dl DATA_FB6BC0 : db $20
+	dw !initcommand_setup_static2, !sprite_kleever_pieces3, !kleever_1_sprite_palette : dl fragment_6_graphics : db $20
 	dw sprite.render_order, $00F9
 	dw sprite.general_purpose_46, $0000
 	dw !initcommand_set_oam, $2000
@@ -3542,7 +3542,7 @@ DATA_FF2408:
 	dw !initcommand_success
 
 DATA_FF2424:
-	dw !initcommand_setup_static2, !sprite_kleever_pieces4, !kleever_1_sprite_palette : dl DATA_FA0360 : db $18
+	dw !initcommand_setup_static2, !sprite_kleever_pieces4, !kleever_1_sprite_palette : dl fragment_7_graphics : db $18
 	dw sprite.render_order, $00F9
 	dw sprite.general_purpose_46, $0000
 	dw !initcommand_set_oam, $2000
@@ -3550,7 +3550,7 @@ DATA_FF2424:
 	dw !initcommand_success
 
 DATA_FF2440:
-	dw !initcommand_setup_static2, !sprite_kleever_pieces5, !kleever_1_sprite_palette : dl DATA_FC5680 : db $14
+	dw !initcommand_setup_static2, !sprite_kleever_pieces5, !kleever_1_sprite_palette : dl fragment_8_graphics : db $14
 	dw sprite.render_order, $00F9
 	dw sprite.general_purpose_46, $0000
 	dw !initcommand_set_oam, $2000
@@ -3558,7 +3558,7 @@ DATA_FF2440:
 	dw !initcommand_success
 
 DATA_FF245C:
-	dw !initcommand_setup_static2, !sprite_kleever_bone_pieces, !kleever_1_sprite_palette : dl DATA_FA0000 : db $1B
+	dw !initcommand_setup_static2, !sprite_kleever_bone_pieces, !kleever_1_sprite_palette : dl kleever_bone_graphics : db $1B
 	dw sprite.render_order, $00F9
 	dw sprite.general_purpose_46, $0000
 	dw !initcommand_set_oam, $2000
@@ -3831,7 +3831,7 @@ DATA_FF2774:
 	dw !initcommand_success
 
 DATA_FF278E:
-	dw !initcommand_setup_static2, !sprite_krool_water_drips, !krool_puddle_sprite_palette : dl DATA_FC54E0 : db $0D
+	dw !initcommand_setup_static2, !sprite_krool_water_drips, !krool_puddle_sprite_palette : dl water_drop_graphics : db $0D
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.render_order, $00F8
 	dw sprite.x_speed, $0000
@@ -3910,7 +3910,7 @@ DATA_FF286A:
 	dw !initcommand_success
 
 DATA_FF287C:
-	dw !initcommand_setup_static, !sprite_sparkle, global_sprite_palette : dl intro_sparkle_graphics : db $0D
+	dw !initcommand_setup_static, !sprite_sparkle, global_sprite_palette : dl sparkle_graphics : db $0D
 	dw sprite.render_order, $00FA
 	dw sprite.display_mode, $0000
 	dw !initcommand_set_oam, $3000
@@ -3999,7 +3999,7 @@ DATA_FF296E:
 	dw !initcommand_success
 
 DATA_FF299A:
-	dw !initcommand_setup_static, !sprite_kreepy_krow_sparkle, global_sprite_palette : dl intro_sparkle_graphics : db $0D
+	dw !initcommand_setup_static, !sprite_kreepy_krow_sparkle, global_sprite_palette : dl sparkle_graphics : db $0D
 	dw !initcommand_spawn_relative, $0000, $0000
 	dw sprite.render_order, $00FA
 	dw sprite.display_mode, $0000
@@ -4021,7 +4021,7 @@ DATA_FF29BC:
 	dw !initcommand_success
 
 DATA_FF29E8:
-	dw !initcommand_setup_static, !sprite_krocodile_kore_sparkle, global_sprite_palette : dl intro_sparkle_graphics : db $0D
+	dw !initcommand_setup_static, !sprite_krocodile_kore_sparkle, global_sprite_palette : dl sparkle_graphics : db $0D
 	dw sprite.render_order, $00FA
 	dw sprite.display_mode, $0000
 	dw !initcommand_set_oam, $2000
@@ -18013,7 +18013,7 @@ DATA_FFCCE8:
 	db $10, $10, $80, $07, $00, $00, $80, $F8
 
 DATA_FFCCF0:
-	dw !initcommand_setup_static2, !sprite_kleever_dropping_hooks, !canball_sprite_palette : dl DATA_C00DA1 : db $14
+	dw !initcommand_setup_static2, !sprite_kleever_dropping_hooks, !canball_sprite_palette : dl hook_graphics : db $14
 	dw sprite.render_order, $00D4
 	dw sprite.y_position, $0100
 	dw sprite.general_purpose_42, $0000

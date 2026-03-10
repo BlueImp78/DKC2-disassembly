@@ -495,9 +495,9 @@ CODE_B48423:
 	LDA $0699				;$B48426   |
 	CLC					;$B48429   |
 	ADC #$0400				;$B4842A   |
-	CMP #DATA_FC54E0			;$B4842D   |
+	CMP #water_drop_graphics		;$B4842D   |
 	BNE CODE_B48435				;$B48430   |
-	LDA #DATA_FC14E0			;$B48432   |
+	LDA #world_map_icon_graphics		;$B48432   |
 CODE_B48435:					;	   |
 	TAX					;$B48435   |
 	STA $0699				;$B48436   |
@@ -507,7 +507,7 @@ CODE_B48435:					;	   |
 	LDA #$18				;$B48440   |
 	STA DMA[0].destination			;$B48442   |
 	STX DMA[0].source			;$B48445   |
-	LDA #DATA_FC14E0>>16			;$B48448   |
+	LDA #world_map_icon_graphics>>16	;$B48448   |
 	STA DMA[0].source_bank			;$B4844A   |
 	LDX #$0400				;$B4844D   |
 	STX DMA[0].size				;$B48450   |
@@ -521,19 +521,19 @@ CODE_B48435:					;	   |
 	STA PPU.vram_address			;$B48465   |
 	LDA $0699				;$B48468   |
 	SEC					;$B4846B   |
-	SBC #DATA_FC14E0			;$B4846C   |
+	SBC #world_map_icon_graphics		;$B4846C   |
 	LSR A					;$B4846F   |
 	LSR A					;$B48470   |
 	LSR A					;$B48471   |
 	CLC					;$B48472   |
-	ADC #DATA_FA443E			;$B48473   | boss map icon tiledata offset
+	ADC #world_map_boss_icon_graphics	;$B48473   | boss map icon tiledata offset
 	STA DMA[0].source			;$B48476   |
 	SEP #$20				;$B48479   |
 	LDA #$01				;$B4847B   |
 	STA DMA[0].settings			;$B4847D   |
 	LDA #$18				;$B48480   |
 	STA DMA[0].destination			;$B48482   |
-	LDA #DATA_FA443E>>16			;$B48485   |
+	LDA #world_map_boss_icon_graphics>>16	;$B48485   |
 	STA DMA[0].source_bank			;$B48487   |
 	LDX #$0040				;$B4848A   |
 	STX DMA[0].size				;$B4848D   |
@@ -1210,7 +1210,7 @@ CODE_B489ED:
 	PHP					;$B489ED  \
 	PHB					;$B489EE   |
 	REP #$20				;$B489EF   |
-	LDA #DATA_FC14E0			;$B489F1   |
+	LDA #world_map_icon_graphics		;$B489F1   |
 	STA $0699				;$B489F4   |
 	LDA $06A1				;$B489F7   |
 	AND #$022C				;$B489FA   |
@@ -2965,9 +2965,9 @@ CODE_B4998D:
 	STA DMA[0].settings			;$B499A5   |
 	LDA #$18				;$B499A8   |
 	STA DMA[0].destination			;$B499AA   |
-	LDX #DATA_FC14E0			;$B499AD   | get map icons tiledata
+	LDX #world_map_icon_graphics		;$B499AD   | get map icons tiledata
 	STX DMA[0].source			;$B499B0   |
-	LDA #DATA_FC14E0>>16			;$B499B3   | get bank of data
+	LDA #world_map_icon_graphics>>16	;$B499B3   | get bank of data
 	STA DMA[0].source_bank			;$B499B5   |
 	LDY #$0400				;$B499B8   |
 	STY DMA[0].size				;$B499BB   |
@@ -3430,7 +3430,7 @@ CODE_B49D6B:					;	   |
 	REP #$10				;$B49D6B   | 16-bit X/Y
 	LDA #CODE_B49E48			;$B49D6D   |
 	STA $067A				;$B49D70   |
-	LDA #DATA_FC14E0			;$B49D73   |
+	LDA #world_map_icon_graphics		;$B49D73   |
 	STA $0699				;$B49D76   |
 	LDA #$0001				;$B49D79   |
 	STA $0650				;$B49D7C   |
@@ -3584,7 +3584,7 @@ CODE_B49E48:
 	TXA					;$B49E80   |
 	CLC					;$B49E81   |
 	ADC #$0400				;$B49E82   |
-	CMP #DATA_FC54E0			;$B49E85   |
+	CMP #water_drop_graphics		;$B49E85   |
 	BNE CODE_B49E9B				;$B49E88   |
 	STZ $0699				;$B49E8A   |
 	LDA #CODE_808D70			;$B49E8D   |
@@ -4336,9 +4336,9 @@ CODE_B4A4D9:
 	STA DMA[0].settings			;$B4A4F4   |
 	LDA #$18				;$B4A4F7   |
 	STA DMA[0].destination			;$B4A4F9   |
-	LDX #DATA_FC14E0			;$B4A4FC   |
+	LDX #world_map_icon_graphics		;$B4A4FC   |
 	STX DMA[0].source			;$B4A4FF   |
-	LDA #DATA_FC14E0>>16			;$B4A502   |
+	LDA #world_map_icon_graphics>>16	;$B4A502   |
 	STA DMA[0].source_bank			;$B4A504   |
 	LDY #$0400				;$B4A507   |
 	STY DMA[0].size				;$B4A50A   |

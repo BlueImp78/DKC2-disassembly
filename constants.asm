@@ -6305,8 +6305,8 @@
 !unused_bramble_effect			= $0200 ;unknown/unused (enabled in bramble levels)
 !defeated_sprite_priority_effect	= $0400 ;never do dynamic rewriting sprite priority when killing enemy
 !sticky_honey_effect			= $0800 ;enable honey
-!icey_slope_slide_effect		= $1000 ;enable sliding down ice slopes
-!icey_acceleration_effect		= $2000 ;use slower x acceleration (used in ice levels)
+!icy_slope_slide_effect			= $1000 ;enable sliding down ice slopes
+!icy_acceleration_effect		= $2000 ;use slower x acceleration (used in ice levels)
 !unknown_4000_effect			= $4000 ;unknown
 !wind_sound_effect			= $8000 ;enable wind sound effect
 

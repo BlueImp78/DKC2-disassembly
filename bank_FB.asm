@@ -2,11 +2,11 @@
 DATA_FB0000:
 	%offset(DATA_FB0180, $0180)
 	%offset(DATA_FB0400, $0400)
-	incbin "data/misc_graphics/file_select_coins_tiledata.bin"
+	incbin "data/gfx/sprite/static_oam_sprite_graphics/file_select_coin_graphics.bin"
 
 ;$FB0800
-DATA_FB0800:
-	incbin "data/misc_graphics/barrel_fragments_2_tiledata.bin"
+barrel_fragment_1_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/barrel_fragment_1_graphics.bin"
 
 ;$FB0AE0
 DATA_FB0AE0:
@@ -189,19 +189,16 @@ DATA_FB6340:
 	incbin "data/backgrounds/animated_graphics/lava_level_medium_bubbles_2_tiledata_frame15.bin"
 
 ;$FB64E0
-;also used for k.rool roof fragments
-DATA_FB64E0:
-	incbin "data/misc_graphics/kleever_fragments_3_tiledata.bin"
+fragment_4_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/fragment_4_graphics.bin"
 
 ;$FB67C0
-;also used for k.rool roof fragments
-DATA_FB67C0:
-	incbin "data/misc_graphics/kleever_fragments_4_tiledata.bin"
+fragment_5_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/fragment_5_graphics.bin"
 
 ;$FB6BC0
-;also used for k.rool roof fragments
-DATA_FB6BC0:
-	incbin "data/misc_graphics/kleever_fragments_5_tiledata.bin"
+fragment_6_graphics:
+	incbin "data/gfx/sprite/static_vram_entity_graphics/fragment_6_graphics.bin"
 
 ;$FB6FC0
 forest_bg_layer_3_tiledata:

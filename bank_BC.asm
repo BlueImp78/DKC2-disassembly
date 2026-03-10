@@ -3253,11 +3253,11 @@ sprite_graphic_table:
 	dl wrinkly_book_frame27 : db $00			;32C4
 	dl wrinkly_book_frame28 : db $00			;32C8
 	dl wrinkly_book_frame29 : db $00			;32CC
-	dl krocodile_kore_step1_graphic : db $00		;32D0
-	dl krocodile_kore_step2_graphic : db $00		;32D4
-	dl krocodile_kore_step4_graphic : db $00		;32D8
-	dl krocodile_kore_step5_graphic : db $00		;32DC
-	dl krocodile_kore_step6_graphic : db $00		;32E0
+	dl krocodile_kore_step_1_graphic : db $00		;32D0
+	dl krocodile_kore_step_2_graphic : db $00		;32D4
+	dl krocodile_kore_step_3_graphic : db $00		;32D8
+	dl krocodile_kore_step_4_graphic : db $00		;32DC
+	dl krocodile_kore_step_5_graphic : db $00		;32E0
 	dl snapjaw_bite_frame6 : db $00				;32E4
 	dl snapjaw_bite_frame7 : db $00				;32E8
 	dl squawks_mount_graphic : db $00			;32EC
