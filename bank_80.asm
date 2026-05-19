@@ -1,3 +1,5 @@
+bank_80:
+
 ;HDMA gradient (blue) used in Lockjaw's Locker/Toxic Tower
 DATA_808000:
 	db $00, $00, $72, $4E, $00, $00, $71, $4E
@@ -132,17 +134,17 @@ piracy_string:
 
 display_error_message:
 	TYA					;$8083D0  \ Copy message id to A
-	JSL VRAM_payload_handler_global		;$8083D1   | Upload the anti-piracy screen contents
+	JSL vram_payload_handler_global		;$8083D1   | Upload the anti-piracy screen contents
 	LDA #gameover_screen_palette		;$8083D5   |\ Upload background palette
 	LDY #$0000				;$8083D8   | |
 	LDX #$0020				;$8083DB   | |
-	JSL DMA_palette				;$8083DE   |/
+	JSL dma_palette				;$8083DE   |/
 	LDA #error_screen_text_layer_3_palette	;$8083E2   |\ Upload piracy text color
 	LDY #$0000				;$8083E5   | |
 	LDX #$0001				;$8083E8   | |
-	JSL DMA_palette				;$8083EB   |/
+	JSL dma_palette				;$8083EB   |/
 	LDA #!error_generic_ppu_config_id	;$8083EF   |\ Load PPU settings for anti-piracy screen
-	JSL set_PPU_registers_global		;$8083F2   |/
+	JSL set_ppu_registers_global		;$8083F2   |/
 	STP					;$8083F6  /
 
 RESET_start:
@@ -265,7 +267,7 @@ RESET_start:
 	LDX #stack				;$8084C8   |\ Reset the stack register
 	TXS					;$8084CB   |/
 	%return(display_error_message)		;$8084CC   | Push address to decompress and display the message
-	%return(clear_VRAM)			;$8084CF   | Push address for clearing VRAM
+	%return(clear_vram)			;$8084CF   | Push address for clearing VRAM
 	BRA init_registers			;$8084D2  / Initialize MMIO registers
 
 .final_piracy_test				;	  \
@@ -287,22 +289,22 @@ RESET_start:
 	LDX #stack				;$8084EE   |\ Reset the stack register
 	TXS					;$8084F1   |/
 	%return(start_engine)			;$8084F2   | Push address to start the game engine
-	%return(clear_VRAM)			;$8084F5   | Push address for clearing VRAM
+	%return(clear_vram)			;$8084F5   | Push address for clearing VRAM
 init_registers:					;	   |
 	SEP #$30				;$8084F8   | Use 8 bit to manipulate MMIO
 	LDX #$00				;$8084FA   | Reset index to clear PPU MMIO
-.clear_PPU					;	   |
+.clear_ppu					;	   |
 	STZ $2101,x				;$8084FC   |\ Clear $2101 - $2134
 	STZ $2101,x				;$8084FF   | | Clear twice to handle write twice registers
 	INX					;$808502   | |
 	CPX #$34				;$808503   | |
-	BNE .clear_PPU				;$808505   |/
+	BNE .clear_ppu				;$808505   |/
 	LDX #$00				;$808507   | Reset index to clear CPU MMIO
-.clear_CPU					;	   |
+.clear_cpu					;	   |
 	STZ $4202,x				;$808509   |\ Clear 4202-420C
 	INX					;$80850C   | |
 	CPX #$0B				;$80850D   | |
-	BNE .clear_CPU				;$80850F   |/
+	BNE .clear_cpu				;$80850F   |/
 	LDA #$8F				;$808511   |\ Enable F-Blank with full brightness
 	STA PPU.screen				;$808513   |/
 	LDA #$80				;$808516   |\
@@ -337,7 +339,7 @@ init_registers:					;	   |
 	REP #$30				;$808566   | Restore to 16 bit access...
 	SEP #$20				;$808568   | ...Just to make A 8 bit again
 	LDX #$000A				;$80856A   | Load up the number of H/DMA bytes to clear
-.clear_DMA					;	   |
+.clear_dma					;	   |
 	STZ DMA[0].settings,x			;$80856D   |\ Zero out channels 0-7
 	STZ DMA[1].settings,x			;$808570   | |
 	STZ DMA[2].settings,x			;$808573   | |
@@ -347,7 +349,7 @@ init_registers:					;	   |
 	STZ DMA[6].settings,x			;$80857F   | |
 	STZ DMA[7].settings,x			;$808582   | |
 	DEX					;$808585   | | Next byte
-	BPL .clear_DMA				;$808586   |/ Continue until addresses from all channel are clear
+	BPL .clear_dma				;$808586   |/ Continue until addresses from all channel are clear
 	REP #$20				;$808588   | Back to a full 16 bit
 	RTS					;$80858A  /
 
@@ -355,27 +357,27 @@ init_registers_global:
 	JSR init_registers			;$80858B  \ Wrapper for long calls
 	RTL					;$80858E  /
 
-VRAM_zero_fill:
+vram_zero_fill:
 	dw $0000				;$80858F  > Used for VRAM fill byte
 
-clear_VRAM:
+clear_vram:
 	STZ PPU.vram_address			;$808591  \ Initialize VRAM to zeros
-	LDA #VRAM_zero_fill			;$808594   |\ Set DMA source word
+	LDA #vram_zero_fill			;$808594   |\ Set DMA source word
 	STA DMA[0].source			;$808597   |/
 	STA DMA[0].unused_2			;$80859A   | Set HDMA word (not used.)
 	STZ DMA[0].size				;$80859D   | Set size to zero, (full 64K)
 	LDA #$1809				;$8085A0   |\ Set DMA destination 2118, fixed transfer,
 	STA DMA[0].settings			;$8085A3   |/ with two register write once
 	SEP #$20				;$8085A6   |
-	LDA #VRAM_zero_fill>>16			;$8085A8   |\ Set DMA source bank
+	LDA #vram_zero_fill>>16			;$8085A8   |\ Set DMA source bank
 	STA DMA[0].source_bank			;$8085AA   |/
 	LDA #$01				;$8085AD   |\
 	STA CPU.enable_dma			;$8085AF   |/ Enable channel 1 DMA
 	REP #$20				;$8085B2   |
 	RTS					;$8085B4  /
 
-clear_VRAM_global:
-	JSR clear_VRAM				;$8085B5  \ Wrapper for long calls
+clear_vram_global:
+	JSR clear_vram				;$8085B5  \ Wrapper for long calls
 	RTL					;$8085B8  /
 
 start_engine:					;	  \
@@ -408,19 +410,19 @@ setup_title_screen_transition:			;	  \
 	STA.l enable_intro_bypass		;$8085F2   |/ allow it to be bypassed.
 	JSL disable_screen			;$8085F6   | Turn the screen off to allow for f-blank
 	LDA #init_title_screen			;$8085FA   |\ Set the active game mode to title screen init
-	STA gamemode_pointer			;$8085FD   |/
+	STA game_mode_pointer			;$8085FD   |/
 	STZ PPU.oam_address			;$8085FF   |
-	LDA #simple_gamemode_nmi		;$808602   | Use a basic nmi routine that delegates to the game mode
-	JMP set_nmi_pointer_keep_bank		;$808605  / Set the nmi pointer (skip bank reset)
+	LDA #run_simple_game_mode		;$808602   | Use a basic nmi routine that delegates to the game mode
+	JMP set_nmi_and_wait_keep_bank		;$808605  / Set the nmi pointer (skip bank reset)
 
-simple_gamemode_nmi:				;	  \
+run_simple_game_mode:				;	  \
 	LDA #stack				;$808608   |\ Reset the stack to clear off the bytes used by the
 	TCS					;$80860B   |/ interrupt handled (and interrupt itself)
 CODE_80860C:					;	   |
-	LDA #incomplete_frame_nmi		;$80860C   |\ Setup a dummy NMI pointer for lag frames
-	STA NMI_pointer				;$80860F   |/
+	LDA #run_incomplete_frame		;$80860C   |\ Setup a dummy NMI pointer for lag frames
+	STA nmi_pointer				;$80860F   |/
 	INC active_frame_counter		;$808611   | Increment the frame counter
-	JMP.w (gamemode_pointer)		;$808613  / Run the active gamemode
+	JMP.w (game_mode_pointer)		;$808613  / Run the active gamemode
 
 CODE_808616:
 	LDA #$0100				;$808616  \
@@ -451,8 +453,8 @@ CODE_808636:
 	BNE .CODE_808640			;$80863C   |
 	DEC gameplay_frame_counter_high		;$80863E   |
 .CODE_808640:					;	   |
-	LDA #simple_gamemode_nmi		;$808640   |
-	STA NMI_pointer				;$808643   |
+	LDA #run_simple_game_mode		;$808640   |
+	STA nmi_pointer				;$808643   |
 	SEP #$20				;$808645   |
 	LDA CPU.nmi_flag			;$808647   |
 	LDA #$81				;$80864A   |
@@ -499,11 +501,11 @@ CODE_808684:
 	LDA #monkey_museum_palette		;$808694   |
 	LDY #$0000				;$808697   |
 	LDX #$0040				;$80869A   |
-	JSL DMA_palette				;$80869D   |
+	JSL dma_palette				;$80869D   |
 	LDA #!monkey_museum_vram_payload_id	;$8086A1   |
-	JSL VRAM_payload_handler_global		;$8086A4   |
+	JSL vram_payload_handler_global		;$8086A4   |
 	LDA #!npc_generic_ppu_config_id		;$8086A8   |
-	JSL set_PPU_registers_global		;$8086AB   |
+	JSL set_ppu_registers_global		;$8086AB   |
 	LDA #$7000				;$8086AF   |
 	STA PPU.vram_address			;$8086B2   |
 	LDY #$0064				;$8086B5   |
@@ -545,7 +547,7 @@ CODE_8086F6:
 	STA demo_status				;$808705   |
 	JSR CODE_808712				;$808708   |
 	LDA #CODE_8087E1			;$80870B   |
-	JML CODE_808C9E				;$80870E  /
+	JML set_game_mode_and_return		;$80870E  /
 
 CODE_808712:
 	LDA #$AA55				;$808712  \
@@ -623,15 +625,15 @@ CODE_80876E:
 CODE_8087B8:					;	   |
 	RTS					;$8087B8  /
 
-CODE_8087B9:
+start_ending_parade:
 	JSL init_ending_parade			;$8087B9  \
 	PHK					;$8087BD   |
 	PLB					;$8087BE   |
-	LDA #CODE_8087C5			;$8087BF   |
-	JMP CODE_808C9E				;$8087C2  /
+	LDA #ending_parade_game_mode		;$8087BF   |
+	JMP set_game_mode_and_return		;$8087C2  /
 
-CODE_8087C5:
-	JML CODE_80F482				;$8087C5  /
+ending_parade_game_mode:
+	JML ending_parade_game_mode_hop		;$8087C5  /
 
 CODE_8087C9:
 	JSL disable_screen			;$8087C9   |
@@ -639,7 +641,7 @@ CODE_8087C9:
 	PLB					;$8087CE   |
 	JSR CODE_808712				;$8087CF   |
 	LDA #CODE_8087E1			;$8087D2   |
-	JML CODE_808C9E				;$8087D5  /
+	JML set_game_mode_and_return		;$8087D5  /
 
 CODE_8087D9:
 	LDA.l world_number			;$8087D9  \
@@ -657,28 +659,28 @@ CODE_8087E1:
 	JSR prepare_oam_dma_channel		;$8087F3   |
 	SEP #$20				;$8087F6   |
 	LDA main_level.logic_number		;$8087F8   |
-	STA gamemode_submode			;$8087FB   |
+	STA game_sub_mode			;$8087FB   |
 	LDA main_level.NMI_number		;$8087FD   |
-	STA nmi_submode				;$808800   |
+	STA nmi_sub_mode			;$808800   |
 	REP #$20				;$808802   |
 	LDA #CODE_808819			;$808804   |
-	JMP CODE_808C9E				;$808807  /
+	JMP set_game_mode_and_return		;$808807  /
 
 ;Unreferenced
 CODE_80880A:
 	SEP #$20				;$80880A   |
-	STA gamemode_submode			;$80880C   |
+	STA game_sub_mode			;$80880C   |
 	XBA					;$80880E   |
-	STA nmi_submode				;$80880F   |
+	STA nmi_sub_mode			;$80880F   |
 	REP #$20				;$808811   |
 	LDA #CODE_808819			;$808813   |
-	JMP CODE_808C9E				;$808816  /
+	JMP set_game_mode_and_return		;$808816  /
 
 CODE_808819:
-	LDA nmi_submode				;$808819  \
+	LDA nmi_sub_mode			;$808819  \
 	ASL A					;$80881B   |
 	TAX					;$80881C   |
-	JSR (tileset_NMI_table,x)		;$80881D   |
+	JSR (nmi_sub_mode_table,x)		;$80881D   |
 	SEP #$20				;$808820   |
 	LDA CPU.ppu_status			;$808822   |
 	REP #$20				;$808825   |
@@ -686,10 +688,10 @@ CODE_808819:
 	LDA #$0005				;$808829   |
 	JSL throw_exception			;$80882C   |
 CODE_808830:					;	   |
-	LDA gamemode_submode			;$808830   |
+	LDA game_sub_mode			;$808830   |
 	ASL A					;$808832   |
 	TAX					;$808833   |
-	JMP (tileset_logic_table,x)		;$808834  /
+	JMP (game_sub_mode_table,x)		;$808834  /
 
 set_active_kong_global:
 	JSR set_active_kong			;$808837  \
@@ -819,7 +821,7 @@ clear_wram_tables:
 	dw time_stop_flags, $0002
 	dw time_stop_timer, $0002
 	dw sprite_vram_allocation_table, $0020
-	dw sprite_palette_DMA_buffer, $0040
+	dw sprite_palette_dma_buffer, $0040
 	dw previous_palette_buffer_slot, $0002
 	dw current_palette_buffer_slot, $0002
 	dw active_sprite_palettes_table, $0010
@@ -840,11 +842,11 @@ clear_wram_tables:
 	dw $FFFF
 
 
-DMA_to_VRAM:
-	JSR .DMA_to_VRAM			;$80895F  \ Simple JSL to RTS wrapper
+dma_to_vram_global:
+	JSR dma_to_vram				;$80895F  \ Simple JSL to RTS wrapper
 	RTL					;$808962  /
 
-.DMA_to_VRAM
+dma_to_vram:
 	STA DMA[0].source			;$808963  \ Store the DMA source word
 	STY DMA[0].size				;$808966   | Store the DMA size
 	LDA #$1801				;$808969   |\ Set DMA destination to $2118, write once, two registers
@@ -1239,31 +1241,31 @@ fade_screen:
 	REP #$20				;$808C7D   | Back to the joy of 16 bit land
 	RTS					;$808C7F  / No more fading for now. Cya next frame
 
-set_nmi_pointer:
-	PHK					;$808C80  \
-	PLB					;$808C81   |
-set_nmi_pointer_keep_bank:			;	   |
-	STA NMI_pointer				;$808C82   |
-CODE_808C84:					;	   |
-	SEP #$20				;$808C84   |
-	LDA CPU.irq_flag			;$808C86   |
-	LDA CPU.nmi_flag			;$808C89   |
-CODE_808C8C:					;	   |
-	LDA CPU.nmi_flag			;$808C8C   |
-	AND #$80				;$808C8F   |
-	BNE CODE_808C8C				;$808C91   |
-	LDA #$81				;$808C93   |
-	STA CPU.enable_interrupts		;$808C95   |
-	STZ joypad.port_0			;$808C98   |
-CODE_808C9B:					;	   |
-	WAI					;$808C9B   |
-	BRA CODE_808C9B				;$808C9C  /
+set_nmi_and_wait:
+	PHK					;$808C80  \ \ Use program bank as current bank
+	PLB					;$808C81   |/
+set_nmi_and_wait_keep_bank:			;	   |
+	STA nmi_pointer				;$808C82   |> Write new NMI pointer
+wait_for_next_nmi:				;	   |
+	SEP #$20				;$808C84   |> 8 bit A
+	LDA CPU.irq_flag			;$808C86   |\ Acknowledge IRQ
+	LDA CPU.nmi_flag			;$808C89   |/ Acknowledge NMI
+.wait_for_nmi_clear:				;	   |
+	LDA CPU.nmi_flag			;$808C8C   |\
+	AND #$80				;$808C8F   | |
+	BNE .wait_for_nmi_clear			;$808C91   |/ If VBlank NMI is enabled then wait until it gets disabled
+	LDA #$81				;$808C93   |\
+	STA CPU.enable_interrupts		;$808C95   | | Re-enable VBlank NMI and auto joy
+	STZ joypad.port_0			;$808C98   |/ Clear joypad strobe
+.wait_for_interrupt:				;	   |
+	WAI					;$808C9B   |\ Wait for the next NMI
+	BRA .wait_for_interrupt			;$808C9C  /_/ If we somehow miss the WAI then WAI again
 
-CODE_808C9E:
-	PHK					;$808C9E  \
-	PLB					;$808C9F   |
-	STA gamemode_pointer			;$808CA0   |
-tileset_logic_return:				;	   |
+set_game_mode_and_return:
+	PHK					;$808C9E  \ \ Use program bank as current bank
+	PLB					;$808C9F   |/
+	STA game_mode_pointer			;$808CA0   |> Write new game mode pointer
+game_sub_mode_return:				;	   |
 	JSR prepare_oam_dma_channel		;$808CA2   |
 	JMP CODE_80862A				;$808CA5  /
 
@@ -1284,112 +1286,112 @@ prepare_oam_dma_channel:			;	  \
 	REP #$20				;$808CC6   |
 	RTS					;$808CC8  /
 
-bonus_and_credits_screen_NMI:
+run_bonus_and_credits_screen:
 	LDX #stack				;$808CC9  \
 	TXS					;$808CCC   |
 	INC active_frame_counter		;$808CCD   |
 	JSL CODE_BAB31B				;$808CCF   |
 	JSL input_and_pause_handler_global	;$808CD3   |
-	BRA CODE_808D1C				;$808CD7  /
+	BRA npc_wait_for_nmi			;$808CD7  /
 
 ;Also used for video game hero screen
-ending_museum_NMI:
+run_ending_monkey_museum:
 	LDX #stack				;$808CD9  \
 	TXS					;$808CDC   |
 	INC active_frame_counter		;$808CDD   |
 	JSL CODE_B4BE60				;$808CDF   |
 	JSL input_and_pause_handler_global	;$808CE3   |
-	BRA CODE_808D1C				;$808CE7  /
+	BRA npc_wait_for_nmi			;$808CE7  /
 
-crocodile_isle_NMI_hop:
-	JML crocodile_isle_NMI			;$808CE9  /
+run_crocodile_isle:
+	JML run_crocodile_isle_hop		;$808CE9  /
 
-crocodile_isle_krool_fall_NMI_hop:
-	JML crocodile_isle_krool_fall_NMI	;$808CED  /
+run_crocodile_isle_krool_fall:
+	JML run_crocodile_isle_krool_fall_hop	;$808CED  /
 
-generic_world_map_NMI_hop:
-	JML generic_world_map_NMI		;$808CF1  /
+run_simple_world_map:
+	JML run_simple_world_map_hop		;$808CF1  /
 
 
 ;NPC screen NMI routines
-CODE_808CF5:
+run_808CF5:
 	LDX #stack				;$808CF5  \
 	TXS					;$808CF8   |
 	INC active_frame_counter		;$808CF9   |
 	JSL CODE_B491D7				;$808CFB   |
-	BRL CODE_808D1C				;$808CFF  /
+	BRL npc_wait_for_nmi			;$808CFF  /
 
-CODE_808D02:
+run_808D02:
 	LDX #stack				;$808D02  \
 	TXS					;$808D05   |
 	INC active_frame_counter		;$808D06   |
 	JSL CODE_B48B15				;$808D08   |
-	BRA CODE_808D1C				;$808D0C  /
+	BRA npc_wait_for_nmi			;$808D0C  /
 
-CODE_808D0E:
+run_npc_intro_dialogue:
 	LDX #stack				;$808D0E  \
 	TXS					;$808D11   |
 	INC active_frame_counter		;$808D12   |
 	JSL CODE_B4935E				;$808D14   |
 	JSL input_and_pause_handler_global	;$808D18   |
-CODE_808D1C:					;	   |
+npc_wait_for_nmi:				;	   |
 	WAI					;$808D1C   |
-	BRA CODE_808D1C				;$808D1D  /
+	BRA npc_wait_for_nmi			;$808D1D  /
 
-CODE_808D1F:
+run_npc_dialogue_selection:
 	LDX #stack				;$808D1F  \
 	TXS					;$808D22   |
 	INC active_frame_counter		;$808D23   |
 	JSL CODE_B49978				;$808D25   |
 	JSL input_and_pause_handler_global	;$808D29   |
-	BRL CODE_808D1C				;$808D2D  /
+	BRL npc_wait_for_nmi			;$808D2D  /
 
-CODE_808D30:
+run_808D30:
 	LDX #stack				;$808D30  \
 	TXS					;$808D33   |
 	INC active_frame_counter		;$808D34   |
 	JSL CODE_B49886				;$808D36   |
-	BRL CODE_808D1C				;$808D3A  /
+	BRL npc_wait_for_nmi			;$808D3A  /
 
-CODE_808D3D:
+run_808D3D:
 	LDX #stack				;$808D3D  \
 	TXS					;$808D40   |
 	INC active_frame_counter		;$808D41   |
 	JSL CODE_B49F1D				;$808D43   |
 	JSL input_and_pause_handler_global	;$808D47   |
-	BRL CODE_808D1C				;$808D4B  /
+	BRL npc_wait_for_nmi			;$808D4B  /
 
-CODE_808D4E:
+run_808D4E:
 	LDX #stack				;$808D4E  \
 	TXS					;$808D51   |
 	INC active_frame_counter		;$808D52   |
 	JSL CODE_B49ED7				;$808D54   |
 	JSL input_and_pause_handler_global	;$808D58   |
-	BRL CODE_808D1C				;$808D5C  /
+	BRL npc_wait_for_nmi			;$808D5C  /
 
-CODE_808D5F:
+run_808D5F:
 	LDX #stack				;$808D5F  \
 	TXS					;$808D62   |
 	INC active_frame_counter		;$808D63   |
 	JSL CODE_B4AB6E				;$808D65   |
 	JSL input_and_pause_handler_global	;$808D69   |
-	BRL CODE_808D1C				;$808D6D  /
+	BRL npc_wait_for_nmi			;$808D6D  /
 
-CODE_808D70:
+run_808D70:
 	LDX #stack				;$808D70  \
 	TXS					;$808D73   |
 	INC active_frame_counter		;$808D74   |
 	JSL CODE_B4990F				;$808D76   |
-	BRL CODE_808D1C				;$808D7A  /
+	BRL npc_wait_for_nmi			;$808D7A  /
 
-CODE_808D7D:
+run_npc_exit:
 	LDX #stack				;$808D7D  \
 	TXS					;$808D80   |
 	INC active_frame_counter		;$808D81   |
 	JSL CODE_B49B63				;$808D83   |
-	BRL CODE_808D1C				;$808D87  /
+	BRL npc_wait_for_nmi			;$808D87  /
 
-setup_npc_screen_kongs:
+init_npc_screen_kongs:
 	LDA #$8000				;$808D8A  \
 	ORA game_state_flags			;$808D8D   |
 	STA game_state_flags			;$808D90   |
@@ -1471,11 +1473,11 @@ spawn_npc_screen_diddy:
 	STA diddy_control_variables+$A		;$808E4B   |
 	RTS					;$808E4E  /
 
-CODE_808E4F:
-	JSR CODE_808E53				;$808E4F  \
+get_random_number_2_global:
+	JSR get_random_number_2			;$808E4F  \
 	RTL					;$808E52  /
 
-CODE_808E53:
+get_random_number_2:
 	LDA rng_result				;$808E53  \
 	STA temp_34				;$808E55   |
 	ASL A					;$808E57   |
@@ -1561,7 +1563,7 @@ init_new_file:
 	JSL set_active_kong_global		;$808EF6   |
 	JSR CODE_808F4A				;$808EFA   |
 	LDA #CODE_8087D9			;$808EFD   |
-	JML CODE_808C9E				;$808F00  /
+	JML set_game_mode_and_return		;$808F00  /
 
 init_existing_file:
 	JSL disable_screen			;$808F04  \
@@ -1575,20 +1577,20 @@ init_existing_file:
 	AND #$0003				;$808F1B   |
 	STA current_game_mode			;$808F1E   |
 	CMP #!gamemode_2_player_contest		;$808F21   |
-	BEQ CODE_808F35				;$808F24   |
+	BEQ .CODE_808F35			;$808F24   |
 	JSR CODE_808FDC				;$808F26   |
 	JSL CODE_BBC736				;$808F29   |
-CODE_808F2D:					;	   |
+.CODE_808F2D:					;	   |
 	LDA.l world_number			;$808F2D   |
 	JML init_world_map			;$808F31  /
 
-CODE_808F35:
+.CODE_808F35:
 	JSR CODE_808FDC				;$808F35  \
 	JSL CODE_BBC736				;$808F38   |
 	JSL CODE_BBC85B				;$808F3C   |
 	JSL CODE_BBC736				;$808F40   |
 	JSL CODE_BBC85B				;$808F44   |
-	BRA CODE_808F2D				;$808F48  /
+	BRA .CODE_808F2D			;$808F48  /
 
 CODE_808F4A:
 	JSR CODE_808FDC				;$808F4A  \
@@ -1640,7 +1642,7 @@ set_default_new_file_status:
 	LDA #$0080				;$808FB4   |
 	STA screen_brightness			;$808FB7   |
 	LDA #$002C				;$808FBA   |
-	STA $78					;$808FBD   |
+	STA sprite_dma_buffer_limit		;$808FBD   |
 	LDA active_kong_number			;$808FBF   |
 	JSL set_active_kong_global		;$808FC2   |
 	JSL CODE_B48000				;$808FC6   | Initialize world map
@@ -1660,11 +1662,11 @@ CODE_808FDC:
 	LDA #$1234				;$808FDC  \
 	STA rng_result				;$808FDF   |
 	STA rng_seed_2				;$808FE1   |
-	LDA #$0080				;$808FE3   |
-	CMP #$0080				;$808FE6   |
+	LDA.w #<:rom_header			;$808FE3   |
+	CMP.w #<:bank_80			;$808FE6   |
 	BNE CODE_808FF3				;$808FE9   |
 	LDA #bank_80_end			;$808FEB   |
-	CMP #$FFB0				;$808FEE   |
+	CMP #rom_header				;$808FEE   |
 	BMI CODE_808FFA				;$808FF1   |
 CODE_808FF3:					;	   |
 	LDA #$000F				;$808FF3   |
@@ -1763,7 +1765,7 @@ CODE_809088:					;	   |
 CODE_8090A0:
 	JSR CODE_8090B1				;$8090A0  \
 	LDA #CODE_8086F6			;$8090A3   |
-	JML CODE_808C9E				;$8090A6  /
+	JML set_game_mode_and_return		;$8090A6  /
 
 CODE_8090AA:
 	JSR CODE_8090B1				;$8090AA  \
@@ -1779,8 +1781,8 @@ CODE_8090BB:
 	JSL disable_screen			;$8090BB  \
 	LDA #!npc_screen_type_wrinkly		;$8090BF   |
 	STA.l npc_screen_type			;$8090C2   |
-	LDA #CODE_808D02			;$8090C6   |
-	JML set_nmi_pointer			;$8090C9  /
+	LDA #run_808D02				;$8090C6   |
+	JML set_nmi_and_wait			;$8090C9  /
 
 reset_controller_state:
 	STZ active_controller			;$8090CD  \
@@ -1792,9 +1794,9 @@ reset_controller_state:
 init_rareware_logo:
 	JSR reset_controller_state		;$8090DA  \
 	LDA #$002C				;$8090DD   |\
-	STA $78					;$8090E0   |/
+	STA sprite_dma_buffer_limit		;$8090E0   |/
 	JSR init_registers			;$8090E2   | Reset registers to a known state
-	JSR clear_VRAM				;$8090E5   | Nuke VRAM
+	JSR clear_vram				;$8090E5   | Nuke VRAM
 	STZ active_frame_counter		;$8090E8   | Reset effective frame counter
 	LDA #$AA55				;$8090EA   |\ Initialize the random number generator
 	STA rng_result				;$8090ED   | |
@@ -1824,10 +1826,10 @@ init_rareware_logo:
 	STA PPU.layer_3_4_tilemap_base		;$809130   |/ Addresses: $E000, $0000
 	STZ PPU.vram_address			;$809133   | Zero VRAM address
 	LDX #$4000				;$809136   | Load number of VRAM words to clear (minus 1...)
-.clear_VRAM					;	   |
+.clear_vram					;	   |
 	STZ PPU.vram_write			;$809139   |\ Clear VRAM byte
 	DEX					;$80913C   | | Decrement counter
-	BNE .clear_VRAM				;$80913D   |/ Loop until done
+	BNE .clear_vram				;$80913D   |/ Loop until done
 	LDX #DATA_FA4C3E			;$80913F   |\ Decompress mode 7 tile data to $7F0000
 	LDY.w #DATA_FA4C3E>>16			;$809142   | |
 	LDA #$0000				;$809145   | |
@@ -1869,13 +1871,13 @@ init_rareware_logo:
 	STA PPU.set_mode_7			;$809195   |/
 	REP #$20				;$809198   |
 	LDA #vram_intro_block_1			;$80919A   |\ Clear $800 of VRAM at $E800
-	JSR clear_VRAM_block			;$80919D   |/
+	JSR clear_vram_block			;$80919D   |/
 	LDA #vram_intro_block_2			;$8091A0   |\ Clear $800 of VRAM at $E000
-	JSR clear_VRAM_block			;$8091A3   |/
+	JSR clear_vram_block			;$8091A3   |/
 	LDA #vram_intro_block_3			;$8091A6   |\ Clear $800 of VRAM at $F000
-	JSR clear_VRAM_block			;$8091A9   |/
+	JSR clear_vram_block			;$8091A9   |/
 	LDA #vram_intro_block_4			;$8091AC   |\ Clear $800 of VRAM at $F800
-	JSR clear_VRAM_block			;$8091AF   |/
+	JSR clear_vram_block			;$8091AF   |/
 	LDX #DATA_F52FC7			;$8091B2   |\ Load pointer to Nintendo presents layer 1 tilemap
 	LDY.w #DATA_F52FC7>>16			;$8091B5   | |
 	LDA #$0000				;$8091B8   | |
@@ -1890,7 +1892,7 @@ namespace off					;	   | |
 	LDX #$007F				;$8091D0   |\ Upload $0340 bytes from $7F0000 to VRAM address $E940
 	LDA #$0000				;$8091D3   | |
 	LDY #$0340				;$8091D6   | |
-	JSL DMA_to_VRAM				;$8091D9   |/ DMA the payload
+	JSL dma_to_vram_global			;$8091D9   |/ DMA the payload
 	LDX #DATA_F80D10			;$8091DD   |\ Load pointer to mini Rare logo layer 1 tilemap
 	LDY.w #DATA_F80D10>>16			;$8091E0   | |
 	LDA #$0000				;$8091E3   | |
@@ -1900,7 +1902,7 @@ namespace off					;	   | |
 	LDX #$007F				;$8091F0   |\ Upload $00C8 bytes from $7F0000 to VRAM address $ED74
 	LDA #$0000				;$8091F3   | |
 	LDY #$00C8				;$8091F6   | |
-	JSL DMA_to_VRAM				;$8091F9   |/ DMA the payload
+	JSL dma_to_vram_global			;$8091F9   |/ DMA the payload
 	LDX #DATA_F50004			;$8091FD   |\
 	LDY.w #DATA_F50004>>16			;$809200   | |
 	LDA #$0000				;$809203   | |
@@ -1910,7 +1912,7 @@ namespace off					;	   | |
 	LDX #$007F				;$809210   |\
 	LDA #$0000				;$809213   | |
 	LDY #$0380				;$809216   | |
-	JSL DMA_to_VRAM				;$809219   |/
+	JSL dma_to_vram_global			;$809219   |/
 	LDX #DATA_F56AC9			;$80921D   |\ Upload $0380 bytes from $7F0000 to VRAM address $F1C0
 	LDY.w #DATA_F56AC9>>16			;$809220   | |
 	LDA #$0000				;$809223   | |
@@ -1920,7 +1922,7 @@ namespace off					;	   | |
 	LDX #$007F				;$809230   |\ Upload $0380 bytes from $7F0000 to VRAM address $F9C0
 	LDA #$0000				;$809233   | |
 	LDY #$0380				;$809236   | |
-	JSL DMA_to_VRAM				;$809239   |/ DMA the payload
+	JSL dma_to_vram_global			;$809239   |/ DMA the payload
 	LDX #DATA_F55D4A			;$80923D   |\
 	LDY.w #DATA_F55D4A>>16			;$809240   | |
 	LDA #$0000				;$809243   | |
@@ -1930,7 +1932,7 @@ namespace off					;	   | |
 	LDX #$007F				;$809250   |\ Upload $2400 bytes from $7F0000 to VRAM address $8000
 	LDA #$0000				;$809253   | |
 	LDY #$2400				;$809256   | |
-	JSL DMA_to_VRAM				;$809259   |/ DMA the payload
+	JSL dma_to_vram_global			;$809259   |/ DMA the payload
 	LDX #DATA_F8063E			;$80925D   |\
 	LDY.w #DATA_F8063E>>16			;$809260   | |
 	LDA #$0000				;$809263   | |
@@ -1940,7 +1942,7 @@ namespace off					;	   | |
 	LDX #$007F				;$809270   |\ Upload $1000 bytes from $7F0000 to VRAM address $C000
 	LDA #$0000				;$809273   | |
 	LDY #$1000				;$809276   | |
-	JSL DMA_to_VRAM				;$809279   |/ DMA the payload
+	JSL dma_to_vram_global			;$809279   |/ DMA the payload
 	LDX #sparkle_layer_3_8x8_tilemap	;$80927D   |\ Load pointer to Nintendo presents screen layer 3 tilemap
 	LDY.w #sparkle_layer_3_8x8_tilemap>>16	;$809280   | |
 	LDA #$0000				;$809283   | |
@@ -1950,7 +1952,7 @@ namespace off					;	   | |
 	LDX #$007F				;$809290   |\ Upload $800 bytes from $7F0000 to VRAM address $E000
 	LDA #$0000				;$809293   | |
 	LDY #$0800				;$809296   | |
-	JSL DMA_to_VRAM				;$809299   |/ DMA the payload
+	JSL dma_to_vram_global			;$809299   |/ DMA the payload
 	LDX #DATA_F5325B			;$80929D   |\ Decompress the Nintendo presents logo
 	LDY.w #DATA_F5325B>>16			;$8092A0   | |
 	LDA #$0000				;$8092A3   | |
@@ -1973,11 +1975,11 @@ namespace off					;	   | |
 	DEX					;$8092D5   | |
 	BPL .clear_palette			;$8092D6   |/ Loop until all clear
 	LDX #$001C				;$8092D8   | Load number of bytes minus two to clear
-.clear_scratch_RAM				;	   |\ Clear scratch RAM
+.clear_scratch_ram				;	   |\ Clear scratch RAM
 	STZ temp_32,x				;$8092DB   | |
 	DEX					;$8092DD   | |
 	DEX					;$8092DE   | |
-	BPL .clear_scratch_RAM			;$8092DF   |/ Continue to loop until all is cleared
+	BPL .clear_scratch_ram			;$8092DF   |/ Continue to loop until all is cleared
 namespace hdma_intro				;	   |
 	LDA #$007F				;$8092E1   |\ For $7F scanlines set the bg mode to 3
 	STA bgmode+write_byte[0].count		;$8092E4   | |
@@ -2046,7 +2048,7 @@ namespace off					;	   |
 	REP #$20				;$8093AD   |
 	INC intro_sparkle_timer			;$8093AF   | Increment the Nintendo "Sparkle" timer
 	LDA #run_rareware_logo			;$8093B2   | Load NMI pointer for Rareware logo
-	JMP set_and_wait_for_nmi		;$8093B5  / Set NMI pointer and wait for NMI
+	JMP set_nmi_and_wait_2			;$8093B5  / Set NMI pointer and wait for NMI
 
 run_rareware_logo:				;	  \
 	LDX #stack				;$8093B8   |\ Reset the stack
@@ -2098,7 +2100,7 @@ namespace off					;	   | |
 	LDX #$007F				;$809423   |\ Upload $1440 bytes from $7F0500 to VRAM address $8000
 	LDA #$0500				;$809426   | | The first half of tiledata for the Nintendo Presents
 	LDY #$1440				;$809429   | |
-	JSL DMA_to_VRAM				;$80942C   |/ DMA the payload
+	JSL dma_to_vram_global			;$80942C   |/ DMA the payload
 .skip_nintendo_presents_upload			;	   |
 	LDA active_frame_counter		;$809430   |\ If the frame count is not exactly $0111
 	CMP #$0111				;$809432   | |
@@ -2110,7 +2112,7 @@ namespace off					;	   | |
 	LDX #$007F				;$80943D   |\ Upload $1440 bytes from $7F1940 to VRAM address $9440
 	LDA #$1940				;$809440   | | The second half of tiledata for the Nintendo Presents
 	LDY #$1440				;$809443   | |
-	JSL DMA_to_VRAM				;$809446   |/ DMA the payload
+	JSL dma_to_vram_global			;$809446   |/ DMA the payload
 	LDA #$0000				;$80944A   |
 	LDX #$001E				;$80944D   | Number of bytes to clear minus 2
 .clear_palette					;	   |
@@ -2127,7 +2129,7 @@ namespace off					;	   | |
 	LDX #$007F				;$809465   |\ Upload $500 bytes from $7F0000 to VRAM address $6000
 	LDA #$0000				;$809468   | | The source is the tiledata for the sparkles
 	LDY #$0500				;$80946B   | |
-	JSL DMA_to_VRAM				;$80946E   |/ DMA the payload
+	JSL dma_to_vram_global			;$80946E   |/ DMA the payload
 	SEP #$20				;$809472   |
 namespace hdma_intro				;	   |
 	LDA #$01				;$809474   |\ Use mode 1 for $97 scanlines
@@ -2568,7 +2570,7 @@ init_game_mode_select:
 	JSL disable_screen			;$8097CD  \
 	PHK					;$8097D1   |
 	PLB					;$8097D2   |
-	JSR clear_VRAM				;$8097D3   |
+	JSR clear_vram				;$8097D3   |
 	JSL init_registers_global		;$8097D6   |
 	JSL clear_noncritical_wram		;$8097DA   |
 	JSL set_all_oam_offscreen		;$8097DE   |
@@ -2649,7 +2651,7 @@ CODE_8097EB:					;	   | | Clear scratch RAM
 	LDX #$007F				;$8098B9   |
 	LDA #$0000				;$8098BC   |
 	LDY #$6000				;$8098BF   |
-	JSL DMA_to_VRAM				;$8098C2   |
+	JSL dma_to_vram_global			;$8098C2   |
 	LDX #DATA_EC4D40			;$8098C6   |
 	LDY.w #DATA_EC4D40>>16			;$8098C9   |
 	LDA #$0000				;$8098CC   |
@@ -2659,13 +2661,13 @@ CODE_8097EB:					;	   | | Clear scratch RAM
 	LDX #$007F				;$8098D9   |
 	LDA #$0000				;$8098DC   |
 	LDY #$8000				;$8098DF   |
-	JSL DMA_to_VRAM				;$8098E2   |
+	JSL dma_to_vram_global			;$8098E2   |
 	LDA #$0020				;$8098E6   |
 	STA PPU.vram_address			;$8098E9   |
 	LDX.w #DATA_FC0660>>16			;$8098EC   |
 	LDA #DATA_FC0660			;$8098EF   |
 	LDY #$1E00				;$8098F2   |
-	JSL DMA_to_VRAM				;$8098F5   |
+	JSL dma_to_vram_global			;$8098F5   |
 	LDX #DATA_EC7CF0			;$8098F9   |
 	LDY.w #DATA_EC7CF0>>16			;$8098FC   |
 	LDA #$0000				;$8098FF   |
@@ -2675,11 +2677,11 @@ CODE_8097EB:					;	   | | Clear scratch RAM
 	LDX #$007F				;$80990C   |
 	LDA #$0000				;$80990F   |
 	LDY #$0800				;$809912   |
-	JSL DMA_to_VRAM				;$809915   |
+	JSL dma_to_vram_global			;$809915   |
 	LDA #$7400				;$809919   |
-	JSR clear_VRAM_block			;$80991C   |
+	JSR clear_vram_block			;$80991C   |
 	LDA #$7800				;$80991F   |
-	JSR clear_VRAM_block			;$809922   |
+	JSR clear_vram_block			;$809922   |
 	LDX #DATA_EC4749			;$809925   |
 	LDY.w #DATA_EC4749>>16			;$809928   |
 	LDA #$0000				;$80992B   |
@@ -2689,7 +2691,7 @@ CODE_8097EB:					;	   | | Clear scratch RAM
 	LDX #$007F				;$809938   |
 	LDA #$0000				;$80993B   |
 	LDY #$0680				;$80993E   |
-	JSL DMA_to_VRAM				;$809941   |
+	JSL dma_to_vram_global			;$809941   |
 	LDX #DATA_EC4AAD			;$809945   |
 	LDY.w #DATA_EC4AAD>>16			;$809948   |
 	LDA #$0000				;$80994B   |
@@ -2699,7 +2701,7 @@ CODE_8097EB:					;	   | | Clear scratch RAM
 	LDX #$007F				;$809958   |
 	LDA #$0000				;$80995B   |
 	LDY #$0240				;$80995E   |
-	JSL DMA_to_VRAM				;$809961   |
+	JSL dma_to_vram_global			;$809961   |
 	LDX #DATA_EC4C1C			;$809965   |
 	LDY.w #DATA_EC4C1C>>16			;$809968   |
 	LDA #$0000				;$80996B   |
@@ -2709,15 +2711,15 @@ CODE_8097EB:					;	   | | Clear scratch RAM
 	LDX #$007F				;$809978   |
 	LDA #$0000				;$80997B   |
 	LDY #$01C0				;$80997E   |
-	JSL DMA_to_VRAM				;$809981   |
+	JSL dma_to_vram_global			;$809981   |
 	LDY #$0000				;$809985   |
 	LDX #$0040				;$809988   |
 	LDA #file_select_screen_palette		;$80998B   |
-	JSL DMA_palette				;$80998E   |
+	JSL dma_palette				;$80998E   |
 	LDY #$0080				;$809992   |
 	LDX #$0004				;$809995   |
 	LDA #!map_p1_kong_and_text_spr_palette	;$809998   |
-	JSL DMA_sprite_palette_from_index	;$80999B   |
+	JSL dma_sprite_palette_from_index	;$80999B   |
 	STZ $84					;$80999F   |
 	LDA #$0300				;$8099A1   |
 	JSR set_fade				;$8099A4   |
@@ -2732,7 +2734,7 @@ CODE_8099A7:					;	   |
 	REP #$20				;$8099B8   |
 	JSR prepare_oam_dma_channel		;$8099BA   |
 	LDA #run_game_mode_select		;$8099BD   |
-	JMP set_and_wait_for_nmi		;$8099C0  /
+	JMP set_nmi_and_wait_2			;$8099C0  /
 
 run_game_mode_select:
 	LDX #stack				;$8099C3  \
@@ -3329,7 +3331,7 @@ init_secret_ending:
 	JSL disable_screen			;$809F85  \
 	PHK					;$809F89   |
 	PLB					;$809F8A   |
-	JSR clear_VRAM				;$809F8B   |
+	JSR clear_vram				;$809F8B   |
 	JSL init_registers_global		;$809F8E   |
 	JSL clear_noncritical_wram		;$809F92   |
 	JSL init_sprite_render_order_global	;$809F96   |
@@ -3490,7 +3492,7 @@ CODE_80A0E9:					;	   |
 	LDX #$007F				;$80A146   |
 	LDA #$0000				;$80A149   |
 	LDY #$8000				;$80A14C   |
-	JSL DMA_to_VRAM				;$80A14F   |
+	JSL dma_to_vram_global			;$80A14F   |
 	LDX #DATA_F661C1			;$80A153   |
 	LDY.w #DATA_F661C1>>16			;$80A156   |
 	LDA #$0000				;$80A159   |
@@ -3500,7 +3502,7 @@ CODE_80A0E9:					;	   |
 	LDX #$007F				;$80A166   |
 	LDA #$0000				;$80A169   |
 	LDY #$4000				;$80A16C   |
-	JSL DMA_to_VRAM				;$80A16F   |
+	JSL dma_to_vram_global			;$80A16F   |
 	LDX #DATA_F9C775			;$80A173   |
 	LDY.w #DATA_F9C775>>16			;$80A176   |
 	LDA #$0000				;$80A179   |
@@ -3510,13 +3512,13 @@ CODE_80A0E9:					;	   |
 	LDX #$007F				;$80A186   |
 	LDA #$0000				;$80A189   |
 	LDY #$0700				;$80A18C   |
-	JSL DMA_to_VRAM				;$80A18F   |
+	JSL dma_to_vram_global			;$80A18F   |
 	LDA #$7C00				;$80A193   |
 	STA PPU.vram_address			;$80A196   |
 	LDX #$007F				;$80A199   |
 	LDA #$0000				;$80A19C   |
 	LDY #$0700				;$80A19F   |
-	JSL DMA_to_VRAM				;$80A1A2   |
+	JSL dma_to_vram_global			;$80A1A2   |
 	LDX #DATA_F67D1B			;$80A1A6   |
 	LDY.w #DATA_F67D1B>>16			;$80A1A9   |
 	LDA #$0000				;$80A1AC   |
@@ -3526,7 +3528,7 @@ CODE_80A0E9:					;	   |
 	LDX #$007F				;$80A1B9   |
 	LDA #$0000				;$80A1BC   |
 	LDY #$0800				;$80A1BF   |
-	JSL DMA_to_VRAM				;$80A1C2   |
+	JSL dma_to_vram_global			;$80A1C2   |
 	STZ screen_scroll_x_position		;$80A1C6   |
 	LDA #$0100				;$80A1C9   |
 	STZ screen_scroll_y_position		;$80A1CC   |
@@ -3593,17 +3595,17 @@ CODE_80A0E9:					;	   |
 	LDY #$0000				;$80A283   |
 	LDX #$0020				;$80A286   |
 	LDA #secret_ending_screen_palette	;$80A289   |
-	JSL DMA_palette				;$80A28C   |
+	JSL dma_palette				;$80A28C   |
 	LDY #$0080				;$80A290   |
 	LDX #$0020				;$80A293   |
 	LDA #secret_ending_beam_sprite_palette	;$80A296   |
-	JSL DMA_palette				;$80A299   |
+	JSL dma_palette				;$80A299   |
 	LDY #$00D0				;$80A29D   |
 	LDX #$0004				;$80A2A0   |
 	LDA.l kleever_hand_sprite_pal_ptr	;$80A2A3   |
 	DEC A					;$80A2A7   |
 	DEC A					;$80A2A8   |
-	JSL DMA_palette				;$80A2A9   |
+	JSL dma_palette				;$80A2A9   |
 	SEP #$20				;$80A2AD   |
 	LDA CPU.irq_flag			;$80A2AF   |
 	LDA #$80				;$80A2B2   |
@@ -3616,7 +3618,7 @@ CODE_80A0E9:					;	   |
 	JSR set_fade				;$80A2C3   |
 	JSR prepare_oam_dma_channel		;$80A2C6   |
 	LDA #run_secret_ending			;$80A2C9   |
-	JMP set_and_wait_for_nmi		;$80A2CC  /
+	JMP set_nmi_and_wait_2			;$80A2CC  /
 
 run_secret_ending:
 	LDX #stack				;$80A2CF  \
@@ -3634,8 +3636,8 @@ run_secret_ending:
 	LDY #$0090				;$80A2EB   |
 	LDX #$0004				;$80A2EE   |
 	LDA #secret_ending_isle_sprite_palette	;$80A2F1   |
-	JSL DMA_palette				;$80A2F4   |
-	JSL DMA_queued_sprite_graphics		;$80A2F8   |
+	JSL dma_palette				;$80A2F4   |
+	JSL dma_queued_sprite_graphics		;$80A2F8   |
 	LDA screen_scroll_y_position		;$80A2FC   |
 	SEP #$20				;$80A2FF   |
 	STA PPU.layer_2_scroll_y		;$80A301   |
@@ -3645,8 +3647,8 @@ run_secret_ending:
 	LDA screen_brightness			;$80A30B   |
 	STA PPU.screen				;$80A30E   |
 	REP #$20				;$80A311   |
-	LDA #incomplete_frame_nmi		;$80A313   |
-	STA NMI_pointer				;$80A316   |
+	LDA #run_incomplete_frame		;$80A313   |
+	STA nmi_pointer				;$80A316   |
 	JSR fade_screen				;$80A318   |
 	JSR input_and_pause_handler		;$80A31B   |
 	INC active_frame_counter		;$80A31E   |
@@ -3807,13 +3809,13 @@ CODE_80A44D:					;	   |
 	STZ oam_attribute[$1C].size		;$80A480   |
 	STZ oam_attribute[$1E].size		;$80A483   |
 	LDA #$0044				;$80A486   |
-	STA $78					;$80A489   |
+	STA sprite_dma_buffer_limit		;$80A489   |
 	JSL CODE_B59F40				;$80A48B   |
-	STZ next_sprite_DMA_buffer_slot		;$80A48F   |
+	STZ next_sprite_dma_buffer_slot		;$80A48F   |
 	JSL set_unused_oam_offscreen_global	;$80A492   |
 	JSR prepare_oam_dma_channel		;$80A496   |
 	LDA #run_secret_ending			;$80A499   |
-	STA NMI_pointer				;$80A49C   |
+	STA nmi_pointer				;$80A49C   |
 -						;	   |
 	WAI					;$80A49E   | Wait until the next frame
 	BRA -					;$80A49F  / Branch back sanity check
@@ -4008,7 +4010,7 @@ init_file_select:
 	JSL disable_screen			;$80A5F1  \ Turn off the screen and enable F-blank
 	PHK					;$80A5F5   |\ Welcome back to bank 80
 	PLB					;$80A5F6   |/
-	JSR clear_VRAM				;$80A5F7   | Clear the entire contents of VRAM
+	JSR clear_vram				;$80A5F7   | Clear the entire contents of VRAM
 	JSL init_registers_global		;$80A5FA   | Run the standard hardware MMIO reset
 	JSL clear_noncritical_wram		;$80A5FE   | Clear all non critical WRAM
 	JSL set_all_oam_offscreen		;$80A602   | Move all sprite tiles off screen
@@ -4043,12 +4045,12 @@ namespace off					;	   |
 	BEQ .copy_player_1			;$80A642   |/
 	LDA .sram_pointer			;$80A644   |\ Skip $14E bytes of the file
 	CLC					;$80A646   | |
-	ADC.w #sizeof(subfile)			;$80A647   | |
+	ADC.w #sizeof(sub_file)			;$80A647   | |
 	STA .sram_pointer			;$80A64A   |/
 .copy_player_1					;	   |
 	%pea_use_dbr(sram_file_buffer)		;$80A64C   |\ Swap out dbr to access full wram
 	PLB					;$80A64F   |/
-	LDY.w #sizeof(subfile)-2		;$80A650   | Load subfile length
+	LDY.w #sizeof(sub_file)-2		;$80A650   | Load sub-file length
 .copy_sram					;	   |
 	LDA.w sram_file_buffer,y		;$80A653   |\ Simple copy loop from the SRAM buffer to actual SRAM
 	STA [.sram_pointer],y			;$80A656   | |
@@ -4132,7 +4134,7 @@ namespace off					;	   |
 	LDX #$007F				;$80A733   |\ Upload the layer 1 tiledata to VRAM address $A000
 	LDA #$0000				;$80A736   | |
 	LDY #$6000				;$80A739   | |
-	JSL DMA_to_VRAM				;$80A73C   |/
+	JSL dma_to_vram_global			;$80A73C   |/
 	LDX #DATA_ED7507			;$80A740   |\ Upload tilemap for the "SELECT GAME" text
 	LDY.w #DATA_ED7507>>16			;$80A743   | |
 	LDA #vram_menus_select_game_tilemap	;$80A746   | |
@@ -4174,7 +4176,7 @@ namespace off					;	   |
 	LDX #$007F				;$80A7A8   |\ Upload the layer 2 tiledata to VRAM address $2000
 	LDA #$0000				;$80A7AB   | |
 	LDY #$8000				;$80A7AE   | |
-	JSL DMA_to_VRAM				;$80A7B1   |/
+	JSL dma_to_vram_global			;$80A7B1   |/
 	LDX #DATA_EC7CF0			;$80A7B5   |\ Decompress the file select layer 2 tilemap
 	LDY.w #DATA_EC7CF0>>16			;$80A7B8   | | This is the tilemap for the "map" background
 	LDA #$0000				;$80A7BB   | |
@@ -4184,21 +4186,21 @@ namespace off					;	   |
 	LDX #$007F				;$80A7C8   |\ Upload the layer 2 tilemap to VRAM address $F800
 	LDA #$0000				;$80A7CB   | |
 	LDY #$0800				;$80A7CE   | |
-	JSL DMA_to_VRAM				;$80A7D1   |/
+	JSL dma_to_vram_global			;$80A7D1   |/
 	JSR upload_file_tilemaps		;$80A7D5   | Upload all three file tilemaps
 	LDY #$0000				;$80A7D8   |\ Upload file select palette
 	LDX #$0040				;$80A7DB   | |
 	LDA #file_select_screen_palette		;$80A7DE   | |
-	JSL DMA_palette				;$80A7E1   |/
+	JSL dma_palette				;$80A7E1   |/
 	STZ PPU.vram_address			;$80A7E5   |
 	LDX.w #DATA_FB0180>>16			;$80A7E8   |\ Upload initial DK coin frame
 	LDA #DATA_FB0180			;$80A7EB   | |
 	LDY #$0080				;$80A7EE   | |
-	JSL DMA_to_VRAM				;$80A7F1   |/
+	JSL dma_to_vram_global			;$80A7F1   |/
 	LDX.w #DATA_FB0400>>16			;$80A7F5   |\ Upload initial Kremkoin frame
 	LDA #DATA_FB0400			;$80A7F8   | |
 	LDY #$0080				;$80A7FB   | |
-	JSL DMA_to_VRAM				;$80A7FE   |/
+	JSL dma_to_vram_global			;$80A7FE   |/
 	STZ oam_attribute[$00].size		;$80A802   |\ Reset the OAM size of 12 tiles
 	STZ oam_attribute[$02].size		;$80A805   | |
 	STZ oam_attribute[$04].size		;$80A808   |/
@@ -4213,7 +4215,7 @@ namespace off					;	   |
 	REP #$20				;$80A820   |
 	JSR prepare_oam_dma_channel		;$80A822   | Prepare the standard OAM channel
 	LDA #run_file_select			;$80A825   | Init is finished, set the game loop to run the file select
-	JMP set_and_wait_for_nmi		;$80A828  /
+	JMP set_nmi_and_wait_2			;$80A828  /
 
 CODE_80A82B:
 	LDA $36					;$80A82B  \
@@ -4373,8 +4375,8 @@ run_file_select:				;	  \
 	LDA screen_brightness			;$80A970   |\ Mirror the screen brightness to the screen
 	STA PPU.screen				;$80A973   |/
 	REP #$20				;$80A976   |
-	LDA #incomplete_frame_nmi		;$80A978   |\ Set the NMI lag handler
-	STA NMI_pointer				;$80A97B   |/
+	LDA #run_incomplete_frame		;$80A978   |\ Set the NMI lag handler
+	STA nmi_pointer				;$80A97B   |/
 	JSR fade_screen				;$80A97D   | Run the screen fade routine
 namespace hdma_menu				;	   |
 	LDA #$FF00				;$80A980   |\ Disable the color window on all but the first block
@@ -4620,7 +4622,7 @@ namespace off					;	   |/
 .prepare_file_select_nmi			;	  \
 	JSR prepare_oam_dma_channel		;$80AB70   | Prepare the OAM DMA channel for DMA next frame
 	LDA #run_file_select			;$80AB73   |\ Transition from the lag handler to the file select handler
-	STA NMI_pointer				;$80AB76   |/
+	STA nmi_pointer				;$80AB76   |/
 .spinlock					;	   |
 	WAI					;$80AB78   | You spin me right round right round waiting for an NMI
 	BRA .spinlock				;$80AB79  /
@@ -5320,8 +5322,8 @@ intro_controller_read:
 	STA player_1_pressed			;$80B0EA   |/
 	RTS					;$80B0ED  /
 
-set_and_wait_for_nmi:
-	STA NMI_pointer				;$80B0EE  \ Set the active NMI pointer
+set_nmi_and_wait_2:
+	STA nmi_pointer				;$80B0EE  \ Set the active NMI pointer
 	SEP #$20				;$80B0F0   |
 	LDA CPU.nmi_flag			;$80B0F2   | Clear the NMI flag
 .check_nmi_status				;	   |
@@ -5336,12 +5338,12 @@ set_and_wait_for_nmi:
 	WAI					;$80B106   | Wait for NMI
 	BRA -					;$80B107  / If something managed to break the WAI resume waiting
 
-clear_VRAM_block:
+clear_vram_block:
 	STA PPU.vram_address			;$80B109  \ Store address to VRAM block to clear
-	LDA #.VRAM_zero_fill			;$80B10C   |\ Set DMA source word (uses low byte of size as fixed data)
+	LDA #.vram_zero_fill			;$80B10C   |\ Set DMA source word (uses low byte of size as fixed data)
 	STA DMA[0].source			;$80B10F   | |
 	STA DMA[0].unused_2			;$80B112   |/
-	%offset(.VRAM_zero_fill, 1)		;	   | Generate a label for fixed VRAM data
+	%offset(.vram_zero_fill, 1)		;	   | Generate a label for fixed VRAM data
 	LDA #$0800				;$80B115   |\ Set DMA size to $0800
 	STA DMA[0].size				;$80B118   |/
 	LDA #$1809				;$80B11B   |\ Set DMA destination to $2118, 2 register write once, fixed
@@ -5553,7 +5555,7 @@ init_title_screen:
 	PLB					;$80B3DC   |/
 	STZ player_skipped_demo			;$80B3DD   | Reset the demo skip status
 	STZ cheat_enable_flags			;$80B3E0   |
-	JSR clear_VRAM				;$80B3E3   | Clear all of VRAM
+	JSR clear_vram				;$80B3E3   | Clear all of VRAM
 	JSL init_registers_global		;$80B3E6   | Do some basic initializations of hardware
 	JSL clear_wram_tables			;$80B3EA   | Clear some basic tables used by core systems
 	JSL init_sprite_render_order_global	;$80B3EE   |
@@ -5604,7 +5606,7 @@ init_title_screen:
 	STA CPU.enable_dma			;$80B455   |/ And run the DMA
 	JSR prepare_oam_dma_channel		;$80B458   | Prepare the OAM DMA channel again (For active title screen)
 	LDA #run_title_screen			;$80B45B   | Prepare the title screen gameloop pointer
-	JMP set_and_wait_for_nmi		;$80B45E  / Banish the init phase, on to the run phase
+	JMP set_nmi_and_wait_2			;$80B45E  / Banish the init phase, on to the run phase
 
 run_title_screen:				;	  \
 	LDX #stack				;$80B461   |\ Reset the stack (gameloop entry point for title screen)
@@ -5679,9 +5681,9 @@ run_title_screen:				;	  \
 	STZ oam_attribute[$1C].size		;$80B4FE   | |
 	STZ oam_attribute[$1E].size		;$80B501   |/
 	LDA #$001C				;$80B504   |\
-	STA $78					;$80B507   |/
+	STA sprite_dma_buffer_limit		;$80B507   |/
 	JSL CODE_B59F40				;$80B509   |
-	STZ next_sprite_DMA_buffer_slot		;$80B50D   |
+	STZ next_sprite_dma_buffer_slot		;$80B50D   |
 	JSR set_unused_oam_offscreen		;$80B510   | Place any unused OAM tiles off the screen
 	JSR prepare_oam_dma_channel		;$80B513   | Prepare channel 1 for the OAM DMA
 	LDA screen_brightness			;$80B516   |\ If the brightness isn't full, run the fadeout routine
@@ -5719,7 +5721,7 @@ run_title_screen:				;	  \
 
 .set_demo_transition
 	LDA #CODE_8086F6			;$80B559  \
-	JML CODE_808C9E				;$80B55C  /
+	JML set_game_mode_and_return		;$80B55C  /
 
 setup_title_screen_screen:			;	  \
 	LDA #$0001				;$80B560   |\ Set screen to mode 1
@@ -5752,7 +5754,7 @@ setup_title_screen_screen:			;	  \
 	LDX #$007F				;$80B5AF   |\ DMA the title screen tiledata to VRAM
 	LDA #$0000				;$80B5B2   | |
 	LDY #$6400				;$80B5B5   | |
-	JSL DMA_to_VRAM				;$80B5B8   |/
+	JSL dma_to_vram_global			;$80B5B8   |/
 	LDX #title_screen_tilemap		;$80B5BC   |\ decompress the tilemap for the title screen
 	LDY.w #title_screen_tilemap>>16		;$80B5BF   | |
 	LDA #$0000				;$80B5C2   | |
@@ -5762,21 +5764,21 @@ setup_title_screen_screen:			;	  \
 	LDX #$007F				;$80B5CF   |\ DMA the title screen tilemap to VRAM
 	LDA #$0000				;$80B5D2   | |
 	LDY #$0700				;$80B5D5   | |
-	JSL DMA_to_VRAM				;$80B5D8   |/
+	JSL dma_to_vram_global			;$80B5D8   |/
 	STZ PPU.vram_address			;$80B5DC   | Set the VRAM address to zero
 	LDX.w #sparkle_graphics>>16		;$80B5DF   |\ DMA the title screen sprite sparkles to VRAM
 	LDA #sparkle_graphics			;$80B5E2   | |
 	LDY #$01A0				;$80B5E5   | |
-	JSL DMA_to_VRAM				;$80B5E8   |/
+	JSL dma_to_vram_global			;$80B5E8   |/
 	LDY #$0000				;$80B5EC   |\ DMA the title screen palette to CGRAM
 	LDX #$0040				;$80B5EF   | |
 	LDA #title_screen_palette		;$80B5F2   | |
-	JSL DMA_palette				;$80B5F5   |/
+	JSL dma_palette				;$80B5F5   |/
 	RTS					;$80B5F9  /
 
 init_nintendo_copyright:
 	JSL disable_screen			;$80B5FA  \ Turn off the screen and enable f-blank
-	JSL clear_VRAM				;$80B5FE   | Zero all VRAM
+	JSL clear_vram				;$80B5FE   | Zero all VRAM
 	JSL init_registers_global		;$80B602   | Run basic initialization of hardware registers
 	JSL init_sprite_render_order_global	;$80B606   |
 	LDA #$0001				;$80B60A   |\ Enable mode 1 and place layer 1 on the mainscreen
@@ -5790,9 +5792,9 @@ init_nintendo_copyright:
 	LDX.w #nintendo_copyright_tiledata>>16	;$80B622   |\ DMA tiledata for Nintendo copyright message
 	LDA #nintendo_copyright_tiledata	;$80B625   | |
 	LDY #$2000				;$80B628   | |
-	JSL DMA_to_VRAM				;$80B62B   |/
+	JSL dma_to_vram_global			;$80B62B   |/
 	LDA #vram_intro_block_4			;$80B62F   |\ Clear the $0800 block at $F800
-	JSR clear_VRAM_block			;$80B632   |/
+	JSR clear_vram_block			;$80B632   |/
 namespace vram					;	   |\
 	LDA #intro_nintendo_copyright_tilemap	;$80B635   | | Set the VRAM address to $FA00
 namespace off					;	   | |
@@ -5800,15 +5802,15 @@ namespace off					;	   | |
 	LDX.w #nintendo_copyright_tilemap>>16	;$80B63B   |\ DMA the Nintendo copyright tilemap
 	LDA #nintendo_copyright_tilemap		;$80B63E   | |
 	LDY #$0240				;$80B641   | |
-	JSL DMA_to_VRAM				;$80B644   |/
+	JSL dma_to_vram_global			;$80B644   |/
 	LDA #nintendo_copyright_palette		;$80B648   |\ DMA nintendo copyright palette to the first row
 	LDY #$0000				;$80B64B   | | This one isn't actually used
 	LDX #$0004				;$80B64E   | |
-	JSL DMA_palette				;$80B651   |/
+	JSL dma_palette				;$80B651   |/
 	LDA #nintendo_copyright_palette		;$80B655   |\ DMA nintendo copyright palette to the seventh row
 	LDY #$0070				;$80B658   | | This is the viewable palette
 	LDX #$0004				;$80B65B   | |
-	JSL DMA_palette				;$80B65E   |/
+	JSL dma_palette				;$80B65E   |/
 	LDA #$0200				;$80B662   |\ Set the current brightness to zero (used to fade in)
 	STA screen_brightness			;$80B665   |/
 	SEP #$20				;$80B668   |
@@ -5820,7 +5822,7 @@ namespace off					;	   | |
 	REP #$20				;$80B677   |\ Return to 16 bit mode and reset the frame counter
 	STZ active_frame_counter		;$80B679   |/
 	LDA #run_nintendo_copyright		;$80B67B   |
-	JMP set_and_wait_for_nmi		;$80B67E  /
+	JMP set_nmi_and_wait_2			;$80B67E  /
 
 run_nintendo_copyright:				;	  \
 	LDX #stack				;$80B681   |\ Stack reset time!
@@ -5853,47 +5855,47 @@ run_nintendo_copyright:				;	  \
 	BRA .wait_for_next_frame		;$80B6BF  / you are messing with dark magic. I sympathize.
 
 ;$80B6C1
-tileset_NMI_table:
-	dw CODE_80B705				;00
-	dw forest_unused_tileset_NMI		;01 Forest (Unused)
-	dw ship_hold_tileset_NMI		;02 Ship Hold
-	dw wasp_hive_tileset_NMI		;03 Wasp Hive
-	dw CODE_80B95F				;04
-	dw CODE_80B720				;05
-	dw ship_deck_tileset_NMI		;06 Ship Deck
-	dw lava_tileset_NMI			;07 Lava
-	dw ship_mast_rain_tileset_NMI		;08 Ship Mast (Rain)
-	dw roller_coaster_tileset_NMI		;09 Roller Coaster
-	dw ship_deck_cabin_tileset_NMI		;0A Ship Deck (Cabin)
-	dw CODE_80BC6D				;0B
-	dw mine_tileset_NMI			;0C Mine
-	dw ship_mast_clouds_tileset_NMI		;0D Ship Mast (Clouds)
-	dw forest_lights_tileset_NMI		;0E Forest (Lights)
-	dw forest_windy_tileset_NMI		;0F Forest (Windy)
-	dw swamp_tileset_NMI			;10 Swamp
-	dw brambles_tileset_NMI			;11 Brambles
-	dw ship_hold_dark_tileset_NMI		;12 Ship Hold (Dark)
-	dw lava_geyser_tileset_NMI		;13 Lava (Geyser)
-	dw krocodile_kore_tileset_NMI		;14 Krocodile Kore
-	dw castle_tileset_NMI			;15 Castle
-	dw haunted_tileset_NMI			;16 Haunted
-	dw ship_mast_water_tileset_NMI		;17 Ship Mast (Water)
-	dw ship_hold_hot_tileset_NMI		;18 Ship Hold (Hot)
-	dw krool_duel_tileset_NMI		;19 K. Rool Duel
-	dw ship_deck_sunset_tileset_NMI		;1A Ship Deck (Sunset)
-	dw ice_water_tileset_NMI		;1B Ice (Water)
-	dw jungle_tileset_NMI			;1C Jungle
-	dw ice_transparent_tileset_NMI		;1D Ice (Transparent)
-	dw castle_toxic_tileset_NMI		;1E Castle (Toxic)
-	dw brambles_windy_tileset_NMI		;1F Brambles (Windy)
-	dw mine_windy_tileset_NMI		;20 Mine (Windy)
-	dw forest_misty_tileset_NMI		;21 Forest (Misty)
+nmi_sub_mode_table:
+	dw nmi_sub_mode_00			;00
+	dw forest_unused_nmi_sub_mode		;01 Forest (Unused)
+	dw ship_hold_nmi_sub_mode		;02 Ship Hold
+	dw wasp_hive_nmi_sub_mode		;03 Wasp Hive
+	dw nmi_sub_mode_04			;04
+	dw nmi_sub_mode_05			;05
+	dw ship_deck_nmi_sub_mode		;06 Ship Deck
+	dw lava_nmi_sub_mode			;07 Lava
+	dw ship_mast_rain_nmi_sub_mode		;08 Ship Mast (Rain)
+	dw roller_coaster_nmi_sub_mode		;09 Roller Coaster
+	dw ship_deck_cabin_nmi_sub_mode		;0A Ship Deck (Cabin)
+	dw nmi_sub_mode_0B			;0B
+	dw mine_nmi_sub_mode			;0C Mine
+	dw ship_mast_clouds_nmi_sub_mode	;0D Ship Mast (Clouds)
+	dw forest_lights_nmi_sub_mode		;0E Forest (Lights)
+	dw forest_windy_nmi_sub_mode		;0F Forest (Windy)
+	dw swamp_nmi_sub_mode			;10 Swamp
+	dw brambles_nmi_sub_mode		;11 Brambles
+	dw ship_hold_dark_nmi_sub_mode		;12 Ship Hold (Dark)
+	dw lava_geyser_nmi_sub_mode		;13 Lava (Geyser)
+	dw krocodile_kore_nmi_sub_mode		;14 Krocodile Kore
+	dw castle_nmi_sub_mode			;15 Castle
+	dw haunted_nmi_sub_mode			;16 Haunted
+	dw ship_mast_water_nmi_sub_mode		;17 Ship Mast (Water)
+	dw ship_hold_hot_nmi_sub_mode		;18 Ship Hold (Hot)
+	dw krool_duel_nmi_sub_mode		;19 K. Rool Duel
+	dw ship_deck_sunset_nmi_sub_mode	;1A Ship Deck (Sunset)
+	dw ice_water_nmi_sub_mode		;1B Ice (Water)
+	dw jungle_nmi_sub_mode			;1C Jungle
+	dw ice_transparent_nmi_sub_mode		;1D Ice (Transparent)
+	dw castle_toxic_nmi_sub_mode		;1E Castle (Toxic)
+	dw brambles_windy_nmi_sub_mode		;1F Brambles (Windy)
+	dw mine_windy_nmi_sub_mode		;20 Mine (Windy)
+	dw forest_misty_nmi_sub_mode		;21 Forest (Misty)
 
-CODE_80B705:
+nmi_sub_mode_00:
 	LDA pending_dma_hdma_channels		;$80B705  \
 	STA CPU.enable_dma			;$80B708   |
-	JSL DMA_queued_sprite_graphics		;$80B70B   |
-	JSR DMA_queued_sprite_palette		;$80B70F   |
+	JSL dma_queued_sprite_graphics		;$80B70B   |
+	JSR dma_queued_sprite_palette		;$80B70F   |
 	SEP #$20				;$80B712   |
 	LDA screen_brightness			;$80B714   |
 	STA PPU.screen				;$80B717   |
@@ -5901,7 +5903,7 @@ CODE_80B705:
 	JSR input_and_pause_handler		;$80B71C   |
 	RTS					;$80B71F  /
 
-CODE_80B720:
+nmi_sub_mode_05:
 	LDA pending_dma_hdma_channels		;$80B720  \
 	STA CPU.enable_dma			;$80B723   |
 	SEP #$20				;$80B726   |
@@ -5910,16 +5912,16 @@ CODE_80B720:
 	REP #$20				;$80B72E   |
 	RTS					;$80B730  /
 
-DMA_level_and_sprite_graphics:
+dma_level_and_sprite_graphics:
 	LDA pending_dma_hdma_channels		;$80B731  \
 	STA CPU.enable_dma			;$80B734   |
-	JSL DMA_queued_sprite_graphics		;$80B737   |
-	JSL DMA_level_columns			;$80B73B   |
-	JSL DMA_level_rows			;$80B73F   |
-	JMP DMA_queued_sprite_palette		;$80B743  /
+	JSL dma_queued_sprite_graphics		;$80B737   |
+	JSL dma_level_columns			;$80B73B   |
+	JSL dma_level_rows			;$80B73F   |
+	JMP dma_queued_sprite_palette		;$80B743  /
 
-forest_unused_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80B746  \
+forest_unused_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80B746  \
 	LDA screen_scroll_x_position		;$80B749   |
 	LSR A					;$80B74C   |
 	SEP #$20				;$80B74D   |
@@ -5939,14 +5941,14 @@ forest_unused_tileset_NMI:
 	REP #$20				;$80B776   |
 	RTS					;$80B778  /
 
-ship_hold_tileset_NMI:
+ship_hold_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80B779  \
 	STA CPU.enable_dma			;$80B77C   |
 	JSR CODE_80B89C				;$80B77F   |
-	JSL DMA_queued_sprite_graphics		;$80B782   |
-	JSL DMA_level_columns			;$80B786   |
-	JSL DMA_level_rows			;$80B78A   |
-	JSR DMA_queued_sprite_palette		;$80B78E   |
+	JSL dma_queued_sprite_graphics		;$80B782   |
+	JSL dma_level_columns			;$80B786   |
+	JSL dma_level_rows			;$80B78A   |
+	JSR dma_queued_sprite_palette		;$80B78E   |
 	SEP #$20				;$80B791   |
 	LDA screen_brightness			;$80B793   |
 	STA PPU.screen				;$80B796   |
@@ -5963,8 +5965,8 @@ CODE_80B79C:
 	PLA					;$80B7A4   |
 	RTS					;$80B7A5  /
 
-wasp_hive_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80B7A6  \
+wasp_hive_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80B7A6  \
 	JSR CODE_80CCF8				;$80B7A9   |
 	SEP #$20				;$80B7AC   |
 	LDA screen_scroll_y_position		;$80B7AE   |
@@ -6168,10 +6170,10 @@ CODE_80B938:					;	   |
 	STA $C4					;$80B95C   |
 	RTS					;$80B95E  /
 
-CODE_80B95F:
+nmi_sub_mode_04:
 	LDA pending_dma_hdma_channels		;$80B95F  \
 	STA CPU.enable_dma			;$80B962   |
-	JSL DMA_queued_sprite_graphics		;$80B965   |
+	JSL dma_queued_sprite_graphics		;$80B965   |
 	STA PPU.layer_1_scroll_y		;$80B969   |
 	SEP #$20				;$80B96C   |
 	LDA screen_brightness			;$80B96E   |
@@ -6179,15 +6181,15 @@ CODE_80B95F:
 	REP #$20				;$80B974   |
 	RTS					;$80B976  /
 
-ship_deck_tileset_NMI:
+ship_deck_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80B977  \
 	STA CPU.enable_dma			;$80B97A   |
-	JSL DMA_queued_sprite_graphics		;$80B97D   |
-	JSL DMA_ship_deck_rigging_columns	;$80B981   |
-	JSL DMA_ship_deck_rigging_rows		;$80B985   |
-	JSL DMA_level_columns			;$80B989   |
-	JSL DMA_level_rows			;$80B98D   |
-	JSR DMA_queued_sprite_palette		;$80B991   |
+	JSL dma_queued_sprite_graphics		;$80B97D   |
+	JSL dma_ship_deck_rigging_columns	;$80B981   |
+	JSL dma_ship_deck_rigging_rows		;$80B985   |
+	JSL dma_level_columns			;$80B989   |
+	JSL dma_level_rows			;$80B98D   |
+	JSR dma_queued_sprite_palette		;$80B991   |
 	LDA screen_scroll_x_position		;$80B994   |
 	SEP #$20				;$80B997   |
 	STA PPU.layer_1_scroll_x		;$80B999   |
@@ -6209,8 +6211,8 @@ ship_deck_tileset_NMI:
 	REP #$20				;$80B9C3   |
 	RTS					;$80B9C5  /
 
-lava_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80B9C6  \
+lava_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80B9C6  \
 	JSR update_lava_bubble_graphics		;$80B9C9   |
 	JSR update_lava_fall_effect		;$80B9CC   |
 	JSR update_lava_palette_glow_effect	;$80B9CF   |
@@ -6407,8 +6409,8 @@ CODE_80BB49:					;	   |
 	REP #$20				;$80BB74   |
 	RTS					;$80BB76  /
 
-ship_mast_rain_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BB77  \
+ship_mast_rain_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BB77  \
 	JSR update_rigging_graphics		;$80BB7A   |
 	LDA active_frame_counter		;$80BB7D   |
 	LSR A					;$80BB7F   |
@@ -6449,8 +6451,8 @@ ship_mast_rain_tileset_NMI:
 	REP #$20				;$80BBD2   |
 	RTS					;$80BBD4  /
 
-roller_coaster_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BBD5  \
+roller_coaster_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BBD5  \
 	LDA $0929				;$80BBD8   |
 	BEQ CODE_80BBF7				;$80BBDB   |
 	TAY					;$80BBDD   |
@@ -6464,7 +6466,7 @@ roller_coaster_tileset_NMI:
 	CLC					;$80BBEC   |
 	ADC #fireworks_palette			;$80BBED   | Base address of fireworks palettes
 	LDX #$0004				;$80BBF0   |
-	JSL DMA_palette				;$80BBF3   |
+	JSL dma_palette				;$80BBF3   |
 CODE_80BBF7:					;	   |
 	SEP #$20				;$80BBF7   |
 	LDA #$E0				;$80BBF9   |
@@ -6498,11 +6500,11 @@ CODE_80BC0A:					;	   |
 	REP #$20				;$80BC3A   |
 	RTS					;$80BC3C  /
 
-ship_deck_cabin_tileset_NMI:
+ship_deck_cabin_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80BC3D  \
 	STA CPU.enable_dma			;$80BC40   |
-	JSL DMA_queued_sprite_graphics		;$80BC43   |
-	JSR DMA_queued_sprite_palette		;$80BC47   |
+	JSL dma_queued_sprite_graphics		;$80BC43   |
+	JSR dma_queued_sprite_palette		;$80BC47   |
 	LDA screen_scroll_x_position		;$80BC4A   |
 	SEP #$20				;$80BC4D   |
 	STA PPU.layer_1_scroll_x		;$80BC4F   |
@@ -6519,10 +6521,10 @@ ship_deck_cabin_tileset_NMI:
 	REP #$20				;$80BC6A   |
 	RTS					;$80BC6C  /
 
-CODE_80BC6D:
+nmi_sub_mode_0B:
 	LDA pending_dma_hdma_channels		;$80BC6D  \
 	STA CPU.enable_dma			;$80BC70   |
-	JSL DMA_queued_sprite_graphics		;$80BC73   |
+	JSL dma_queued_sprite_graphics		;$80BC73   |
 	STA PPU.layer_1_scroll_y		;$80BC77   |
 	SEP #$20				;$80BC7A   |
 	LDA screen_brightness			;$80BC7C   |
@@ -6530,8 +6532,8 @@ CODE_80BC6D:
 	REP #$20				;$80BC82   |
 	RTS					;$80BC84  /
 
-mine_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BC85  \
+mine_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BC85  \
 	LDA screen_scroll_x_position		;$80BC88   |
 	LSR A					;$80BC8B   |
 	LSR A					;$80BC8C   |
@@ -6640,8 +6642,8 @@ CODE_80BD2F:					;	   |
 	REP #$20				;$80BDA7   |
 	RTS					;$80BDA9  /
 
-ship_mast_clouds_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BDAA  \
+ship_mast_clouds_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BDAA  \
 	LDA level_number			;$80BDAD   |
 	CMP #!level_krows_nest			;$80BDAF   |
 	BEQ .mast_flag_update_done		;$80BDB2   |
@@ -6738,8 +6740,8 @@ CODE_80BE93:					;	   |
 	REP #$20				;$80BE99   |
 	RTS					;$80BE9B  /
 
-forest_lights_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BE9C  \
+forest_lights_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BE9C  \
 	JSR update_forest_light_shaft_effect	;$80BE9F   |
 	LDA screen_scroll_x_position		;$80BEA2   |
 	LSR A					;$80BEA5   |
@@ -6760,8 +6762,8 @@ forest_lights_tileset_NMI:
 	REP #$20				;$80BECF   |
 	RTS					;$80BED1  /
 
-forest_windy_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BED2  \
+forest_windy_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BED2  \
 	JSR update_forest_leaves_effect		;$80BED5   |
 	LDA screen_scroll_x_position		;$80BED8   |
 	LSR A					;$80BEDB   |
@@ -6782,8 +6784,8 @@ forest_windy_tileset_NMI:
 	REP #$20				;$80BF05   |
 	RTS					;$80BF07  /
 
-swamp_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BF08  \
+swamp_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BF08  \
 	LDA screen_scroll_y_position		;$80BF0B   |
 	CLC					;$80BF0E   |
 	ADC $19CA				;$80BF0F   |
@@ -6836,8 +6838,8 @@ CODE_80BF2E:					;	   |
 	REP #$20				;$80BF7F   |
 	RTS					;$80BF81  /
 
-brambles_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80BF82  \
+brambles_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80BF82  \
 	LDA screen_scroll_x_position		;$80BF85   |
 	CLC					;$80BF88   |
 	ADC active_frame_counter		;$80BF89   |
@@ -6877,7 +6879,7 @@ brambles_tileset_NMI:
 	REP #$20				;$80BFDB   |
 	RTS					;$80BFDD  /
 
-ship_hold_dark_tileset_NMI:
+ship_hold_dark_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80BFDE  \
 	STA CPU.enable_dma			;$80BFE1   |
 	LDA #$FE01				;$80BFE4   |
@@ -6927,18 +6929,18 @@ CODE_80C02A:					;	   |
 	STA HDMA[2].source			;$80C03A   |
 CODE_80C03D:					;	   |
 	JSR CODE_80B89C				;$80C03D   |
-	JSL DMA_queued_sprite_graphics		;$80C040   |
-	JSL DMA_level_columns			;$80C044   |
-	JSL DMA_level_rows			;$80C048   |
-	JSR DMA_queued_sprite_palette		;$80C04C   |
+	JSL dma_queued_sprite_graphics		;$80C040   |
+	JSL dma_level_columns			;$80C044   |
+	JSL dma_level_rows			;$80C048   |
+	JSR dma_queued_sprite_palette		;$80C04C   |
 	SEP #$20				;$80C04F   |
 	LDA screen_brightness			;$80C051   |
 	STA PPU.screen				;$80C054   |
 	REP #$20				;$80C057   |
 	RTS					;$80C059  /
 
-lava_geyser_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80C05A  \
+lava_geyser_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80C05A  \
 	JSR update_lava_bubble_graphics		;$80C05D   |
 	SEP #$20				;$80C060   |
 	LDA $17C2				;$80C062   |
@@ -6949,8 +6951,8 @@ lava_geyser_tileset_NMI:
 	JSR CODE_80BAB1				;$80C070   |
 	RTS					;$80C073  /
 
-krocodile_kore_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80C074  \
+krocodile_kore_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80C074  \
 	LDA.l $0006A5				;$80C077   |
 	BIT #$0200				;$80C07B   |
 	BNE CODE_80C083				;$80C07E   |
@@ -7046,12 +7048,12 @@ CODE_80C134:					;	   |
 	BIT #$0007				;$80C135   |
 	BNE CODE_80C141				;$80C138   |
 	LDA #$0004				;$80C13A   |
-	STA $78					;$80C13D   |
+	STA sprite_dma_buffer_limit		;$80C13D   |
 	BRA CODE_80C146				;$80C13F  /
 
 CODE_80C141:
 	LDA $0B00				;$80C141  \
-	STA $78					;$80C144   |
+	STA sprite_dma_buffer_limit		;$80C144   |
 CODE_80C146:					;	   |
 	LDA screen_scroll_x_position		;$80C146   |
 	SEP #$20				;$80C149   |
@@ -7082,14 +7084,14 @@ CODE_80C17A:
 CODE_80C17F:					;	   |
 	RTS					;$80C17F  /
 
-castle_tileset_NMI:
+castle_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C180  \
 	STA CPU.enable_dma			;$80C183   |
 	JSR CODE_80B89C				;$80C186   |
-	JSL DMA_queued_sprite_graphics		;$80C189   |
-	JSL DMA_level_columns			;$80C18D   |
-	JSL DMA_level_rows			;$80C191   |
-	JSR DMA_queued_sprite_palette		;$80C195   |
+	JSL dma_queued_sprite_graphics		;$80C189   |
+	JSL dma_level_columns			;$80C18D   |
+	JSL dma_level_rows			;$80C191   |
+	JSR dma_queued_sprite_palette		;$80C195   |
 	JSR CODE_80CA1B				;$80C198   |
 	JSR CODE_80C1A9				;$80C19B   |
 	SEP #$20				;$80C19E   |
@@ -7119,12 +7121,12 @@ CODE_80C1C5:					;	   |
 	STX PPU.vram_address			;$80C1CB   |
 	ASL A					;$80C1CE   |
 	TAX					;$80C1CF   |
-	LDA.l DATA_80C25F,x			;$80C1D0   |
+	LDA.l castle_torch_tiledata_table,x	;$80C1D0   |
 	LDY #$0380				;$80C1D4   |
-	LDX.w #DATA_F5484A>>16			;$80C1D7   |
-	JSL DMA_to_VRAM				;$80C1DA   |
+	LDX.w #castle_torch_tiledata_frame1>>16	;$80C1D7   |
+	JSL dma_to_vram_global			;$80C1DA   |
 	LDA $0B00				;$80C1DE   |
-	STA $78					;$80C1E1   |
+	STA sprite_dma_buffer_limit		;$80C1E1   |
 	BRA CODE_80C1F0				;$80C1E3  /
 
 CODE_80C1E5:
@@ -7132,7 +7134,7 @@ CODE_80C1E5:
 	BIT #$0003				;$80C1E6   |
 	BNE CODE_80C1F0				;$80C1E9   |
 	LDA #$0014				;$80C1EB   |
-	STA $78					;$80C1EE   |
+	STA sprite_dma_buffer_limit		;$80C1EE   |
 CODE_80C1F0:					;	   |
 	LDA active_frame_counter		;$80C1F0   |
 	LSR A					;$80C1F2   |
@@ -7195,16 +7197,16 @@ CODE_80C24A:					;	   |
 	RTS					;$80C25E  /
 
 ;Castle torch tiledata pointers
-DATA_80C25F:
-	dw DATA_F5484A
-	dw DATA_F54BCA
-	dw DATA_F54F4A
-	dw DATA_F552CA
-	dw DATA_F5564A
-	dw DATA_F559CA
+castle_torch_tiledata_table:
+	dw castle_torch_tiledata_frame1
+	dw castle_torch_tiledata_frame2
+	dw castle_torch_tiledata_frame3
+	dw castle_torch_tiledata_frame4
+	dw castle_torch_tiledata_frame5
+	dw castle_torch_tiledata_frame6
 
-haunted_tileset_NMI:
-	JSR DMA_level_and_sprite_graphics	;$80C26B  \
+haunted_nmi_sub_mode:
+	JSR dma_level_and_sprite_graphics	;$80C26B  \
 	JSR update_kackle_graphics		;$80C26E   |
 	LDA #$0100				;$80C271   |
 	LDX $0D5A				;$80C274   |
@@ -7453,14 +7455,14 @@ DATA_80C446:
 	dw DATA_F41852
 
 
-ship_mast_water_tileset_NMI:
+ship_mast_water_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C466  \
 	STA CPU.enable_dma			;$80C469   |
 	JSR CODE_80B83D				;$80C46C   |
-	JSL DMA_queued_sprite_graphics		;$80C46F   |
-	JSL DMA_level_columns			;$80C473   |
-	JSL DMA_level_rows			;$80C477   |
-	JSR DMA_queued_sprite_palette		;$80C47B   |
+	JSL dma_queued_sprite_graphics		;$80C46F   |
+	JSL dma_level_columns			;$80C473   |
+	JSL dma_level_rows			;$80C477   |
+	JSR dma_queued_sprite_palette		;$80C47B   |
 	JSR update_ship_mast_flag_graphics	;$80C47E   |
 	LDA $17C2				;$80C481   |
 	LSR A					;$80C484   |
@@ -7477,14 +7479,14 @@ ship_mast_water_tileset_NMI:
 	REP #$20				;$80C4A2   |
 	RTS					;$80C4A4  /
 
-ship_hold_hot_tileset_NMI:
+ship_hold_hot_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C4A5  \
 	STA CPU.enable_dma			;$80C4A8   |
 	JSR CODE_80B89C				;$80C4AB   |
-	JSL DMA_queued_sprite_graphics		;$80C4AE   |
-	JSL DMA_level_columns			;$80C4B2   |
-	JSL DMA_level_rows			;$80C4B6   |
-	JSR DMA_queued_sprite_palette		;$80C4BA   |
+	JSL dma_queued_sprite_graphics		;$80C4AE   |
+	JSL dma_level_columns			;$80C4B2   |
+	JSL dma_level_rows			;$80C4B6   |
+	JSR dma_queued_sprite_palette		;$80C4BA   |
 	LDA game_state_flags			;$80C4BD   |
 	BIT #$0140				;$80C4C0   |
 	BNE CODE_80C4F8				;$80C4C3   |
@@ -7569,7 +7571,7 @@ CODE_80C515:					;	   |
 CODE_80C55C:
 	TXA					;$80C55C  \
 	LDX #$0004				;$80C55D   |
-	JSL DMA_palette				;$80C560   |
+	JSL dma_palette				;$80C560   |
 	SEP #$20				;$80C564   |
 	STZ PPU.cgram_address			;$80C566   |
 	LDA $0913				;$80C569   |
@@ -7587,13 +7589,13 @@ CODE_80C57E:
 CODE_80C583:					;	   |
 	RTS					;$80C583  /
 
-krool_duel_tileset_NMI:
+krool_duel_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C584  \
 	STA CPU.enable_dma			;$80C587   |
-	JSL DMA_queued_sprite_graphics		;$80C58A   |
-	JSL DMA_level_columns			;$80C58E   |
-	JSL DMA_level_rows			;$80C592   |
-	JSR DMA_queued_sprite_palette		;$80C596   |
+	JSL dma_queued_sprite_graphics		;$80C58A   |
+	JSL dma_level_columns			;$80C58E   |
+	JSL dma_level_rows			;$80C592   |
+	JSR dma_queued_sprite_palette		;$80C596   |
 	LDA screen_scroll_x_position		;$80C599   |
 	SEP #$20				;$80C59C   |
 	STA PPU.layer_1_scroll_x		;$80C59E   |
@@ -7625,15 +7627,15 @@ krool_duel_tileset_NMI:
 	REP #$20				;$80C5DB   |
 	RTS					;$80C5DD  /
 
-ship_deck_sunset_tileset_NMI:
+ship_deck_sunset_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C5DE  \
 	STA CPU.enable_dma			;$80C5E1   |
-	JSL DMA_queued_sprite_graphics		;$80C5E4   |
-	JSL DMA_ship_deck_rigging_columns	;$80C5E8   |
-	JSL DMA_ship_deck_rigging_rows		;$80C5EC   |
-	JSL DMA_level_columns			;$80C5F0   |
-	JSL DMA_level_rows			;$80C5F4   |
-	JSR DMA_queued_sprite_palette		;$80C5F8   |
+	JSL dma_queued_sprite_graphics		;$80C5E4   |
+	JSL dma_ship_deck_rigging_columns	;$80C5E8   |
+	JSL dma_ship_deck_rigging_rows		;$80C5EC   |
+	JSL dma_level_columns			;$80C5F0   |
+	JSL dma_level_rows			;$80C5F4   |
+	JSR dma_queued_sprite_palette		;$80C5F8   |
 	LDA $0913				;$80C5FB   |
 	BEQ CODE_80C629				;$80C5FE   |
 	LDA #primary_palette			;$80C600   |
@@ -7673,14 +7675,14 @@ CODE_80C629:					;	   |
 	REP #$20				;$80C658   |
 	RTS					;$80C65A  /
 
-ice_water_tileset_NMI:
+ice_water_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C65B  \
 	STA CPU.enable_dma			;$80C65E   |
 	JSR CODE_80B86E				;$80C661   |
-	JSL DMA_queued_sprite_graphics		;$80C664   |
-	JSL DMA_level_columns			;$80C668   |
-	JSL DMA_level_rows			;$80C66C   |
-	JSR DMA_queued_sprite_palette		;$80C670   |
+	JSL dma_queued_sprite_graphics		;$80C664   |
+	JSL dma_level_columns			;$80C668   |
+	JSL dma_level_rows			;$80C66C   |
+	JSR dma_queued_sprite_palette		;$80C670   |
 	LDA screen_scroll_x_position		;$80C673   |
 	LSR A					;$80C676   |
 	SEP #$20				;$80C677   |
@@ -7777,7 +7779,7 @@ CODE_80C6E7:					;	   |
 CODE_80C72E:
 	TXA					;$80C72E  \
 	LDX #$0004				;$80C72F   |
-	JSL DMA_palette				;$80C732   |
+	JSL dma_palette				;$80C732   |
 	SEP #$20				;$80C736   |
 	STZ PPU.cgram_address			;$80C738   |
 	LDA $0913				;$80C73B   |
@@ -7789,13 +7791,13 @@ CODE_80C72E:
 	REP #$20				;$80C74D   |
 	RTS					;$80C74F  /
 
-jungle_tileset_NMI:
+jungle_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C750  \
 	STA CPU.enable_dma			;$80C753   |
-	JSL DMA_queued_sprite_graphics		;$80C756   |
-	JSL DMA_level_columns			;$80C75A   |
-	JSL DMA_level_rows			;$80C75E   |
-	JSR DMA_queued_sprite_palette		;$80C762   |
+	JSL dma_queued_sprite_graphics		;$80C756   |
+	JSL dma_level_columns			;$80C75A   |
+	JSL dma_level_rows			;$80C75E   |
+	JSR dma_queued_sprite_palette		;$80C762   |
 	LDA screen_scroll_x_position		;$80C765   |
 	SEP #$20				;$80C768   |
 	STA PPU.layer_1_scroll_x		;$80C76A   |
@@ -7840,13 +7842,13 @@ jungle_tileset_NMI:
 	REP #$20				;$80C7C3   |
 	RTS					;$80C7C5  /
 
-ice_transparent_tileset_NMI:
+ice_transparent_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C7C6  \
 	STA CPU.enable_dma			;$80C7C9   |
-	JSL DMA_queued_sprite_graphics		;$80C7CC   |
-	JSL DMA_level_columns			;$80C7D0   |
-	JSL DMA_level_rows			;$80C7D4   |
-	JSR DMA_queued_sprite_palette		;$80C7D8   |
+	JSL dma_queued_sprite_graphics		;$80C7CC   |
+	JSL dma_level_columns			;$80C7D0   |
+	JSL dma_level_rows			;$80C7D4   |
+	JSR dma_queued_sprite_palette		;$80C7D8   |
 	JSR update_ice_distortion_effect	;$80C7DB   |
 	LDA screen_scroll_x_position		;$80C7DE   |
 	SEP #$20				;$80C7E1   |
@@ -7877,14 +7879,14 @@ ice_transparent_tileset_NMI:
 	REP #$20				;$80C81E   |
 	RTS					;$80C820  /
 
-castle_toxic_tileset_NMI:
+castle_toxic_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C821  \
 	STA CPU.enable_dma			;$80C824   |
 	JSR CODE_80B89C				;$80C827   |
-	JSL DMA_queued_sprite_graphics		;$80C82A   |
-	JSL DMA_level_columns			;$80C82E   |
-	JSL DMA_level_rows			;$80C832   |
-	JSR DMA_queued_sprite_palette		;$80C836   |
+	JSL dma_queued_sprite_graphics		;$80C82A   |
+	JSL dma_level_columns			;$80C82E   |
+	JSL dma_level_rows			;$80C832   |
+	JSR dma_queued_sprite_palette		;$80C836   |
 	JSR CODE_80C1A9				;$80C839   |
 	SEP #$20				;$80C83C   |
 	LDA screen_brightness			;$80C83E   |
@@ -7892,13 +7894,13 @@ castle_toxic_tileset_NMI:
 	REP #$20				;$80C844   |
 	RTS					;$80C846  /
 
-brambles_windy_tileset_NMI:
+brambles_windy_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C847  \
 	STA CPU.enable_dma			;$80C84A   |
-	JSL DMA_queued_sprite_graphics		;$80C84D   |
-	JSL DMA_level_columns			;$80C851   |
-	JSL DMA_level_rows			;$80C855   |
-	JSR DMA_queued_sprite_palette		;$80C859   |
+	JSL dma_queued_sprite_graphics		;$80C84D   |
+	JSL dma_level_columns			;$80C851   |
+	JSL dma_level_rows			;$80C855   |
+	JSR dma_queued_sprite_palette		;$80C859   |
 	JSR update_forest_leaves_effect		;$80C85C   |
 	LDA screen_scroll_x_position		;$80C85F   |
 	CLC					;$80C862   |
@@ -7933,13 +7935,13 @@ brambles_windy_tileset_NMI:
 	REP #$20				;$80C8A7   |
 	RTS					;$80C8A9  /
 
-mine_windy_tileset_NMI:
+mine_windy_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C8AA  \
 	STA CPU.enable_dma			;$80C8AD   |
-	JSL DMA_queued_sprite_graphics		;$80C8B0   |
-	JSL DMA_level_columns			;$80C8B4   |
-	JSL DMA_level_rows			;$80C8B8   |
-	JSR DMA_queued_sprite_palette		;$80C8BC   |
+	JSL dma_queued_sprite_graphics		;$80C8B0   |
+	JSL dma_level_columns			;$80C8B4   |
+	JSL dma_level_rows			;$80C8B8   |
+	JSR dma_queued_sprite_palette		;$80C8BC   |
 	JSR update_mine_debris_effect		;$80C8BF   |
 	LDA screen_scroll_x_position		;$80C8C2   |
 	LSR A					;$80C8C5   |
@@ -7967,13 +7969,13 @@ mine_windy_tileset_NMI:
 	REP #$20				;$80C8FC   |
 	RTS					;$80C8FE  /
 
-forest_misty_tileset_NMI:
+forest_misty_nmi_sub_mode:
 	LDA pending_dma_hdma_channels		;$80C8FF  \
 	STA CPU.enable_dma			;$80C902   |
-	JSL DMA_queued_sprite_graphics		;$80C905   |
-	JSL DMA_level_columns			;$80C909   |
-	JSL DMA_level_rows			;$80C90D   |
-	JSR DMA_queued_sprite_palette		;$80C911   |
+	JSL dma_queued_sprite_graphics		;$80C905   |
+	JSL dma_level_columns			;$80C909   |
+	JSL dma_level_rows			;$80C90D   |
+	JSR dma_queued_sprite_palette		;$80C911   |
 	LDX #$80F2				;$80C914   |
 	STX HDMA[1].source			;$80C917   |
 	LDX #$8012				;$80C91A   |
@@ -9061,53 +9063,53 @@ DATA_80D3ED:
 	dl DATA_80D1D1 : db $00
 
 ;$80D411
-tileset_logic_table:
-	dw null_tileset_logic			;00
-	dw forest_unused_tileset_logic		;01 Forest (Unused)
-	dw ship_hold_tileset_logic		;02 Ship Hold
-	dw wasp_hive_tileset_logic		;03 Wasp Hive
-	dw simple_tileset_logic_1		;04
-	dw simple_tileset_logic_2		;05
-	dw ship_deck_tileset_logic		;06 Ship Deck
-	dw lava_tileset_logic			;07 Lava
-	dw ship_mast_tileset_logic		;08 Ship Mast
-	dw roller_coaster_tileset_logic		;09 Roller Coaster
-	dw ship_deck_cabin_tileset_logic	;0A Ship Deck (Cabin)
-	dw simple_tileset_logic_3		;0B
-	dw mine_tileset_logic			;0C Mine
-	dw forest_lights_tileset_logic		;0D Forest (Lights)
-	dw forest_windy_tileset_logic		;0E Forest (Windy)
-	dw swamp_tileset_logic			;0F Swamp
-	dw brambles_tileset_logic		;10 Brambles
-	dw ship_hold_dark_tileset_logic		;11 Ship Hold (Dark)
-	dw lava_geyser_tileset_logic		;12 Lava (Geyser)
-	dw krocodile_kore_tileset_logic		;13 Krocodile Kore
-	dw castle_crush_tileset_logic		;14 Castle (Crush)
-	dw haunted_tileset_logic		;15 Haunted
-	dw ship_mast_water_tileset_logic	;16 Ship Mast (Water)
-	dw krool_duel_tileset_logic		;17 K. Rool Duel
-	dw ship_deck_sunset_tileset_logic	;18 Ship Deck (Sunset)
-	dw ice_water_tileset_logic		;19 Ice (Water)
-	dw jungle_tileset_logic			;1A Jungle
-	dw ice_transparent_tileset_logic	;1B Ice (Transparent)
-	dw castle_toxic_tileset_logic		;1C Castle (Toxic)
-	dw brambles_windy_tileset_logic		;1D Brambles (Windy)
-	dw mine_windy_tileset_logic		;1E Mine (Windy)
-	dw forest_misty_tileset_logic		;1F Forest (Misty)
+game_sub_mode_table:
+	dw null_game_sub_mode			;00
+	dw forest_unused_game_sub_mode		;01 Forest (Unused)
+	dw ship_hold_game_sub_mode		;02 Ship Hold
+	dw wasp_hive_game_sub_mode		;03 Wasp Hive
+	dw simple_game_sub_mode_04		;04
+	dw simple_game_sub_mode_05		;05
+	dw ship_deck_game_sub_mode		;06 Ship Deck
+	dw lava_game_sub_mode			;07 Lava
+	dw ship_mast_game_sub_mode		;08 Ship Mast
+	dw roller_coaster_game_sub_mode		;09 Roller Coaster
+	dw ship_deck_cabin_game_sub_mode	;0A Ship Deck (Cabin)
+	dw simple_game_sub_mode_0B		;0B
+	dw mine_game_sub_mode			;0C Mine
+	dw forest_lights_game_sub_mode		;0D Forest (Lights)
+	dw forest_windy_game_sub_mode		;0E Forest (Windy)
+	dw swamp_game_sub_mode			;0F Swamp
+	dw brambles_game_sub_mode		;10 Brambles
+	dw ship_hold_dark_game_sub_mode		;11 Ship Hold (Dark)
+	dw lava_geyser_game_sub_mode		;12 Lava (Geyser)
+	dw krocodile_kore_game_sub_mode		;13 Krocodile Kore
+	dw castle_crush_game_sub_mode		;14 Castle (Crush)
+	dw haunted_game_sub_mode		;15 Haunted
+	dw ship_mast_water_game_sub_mode	;16 Ship Mast (Water)
+	dw krool_duel_game_sub_mode		;17 K. Rool Duel
+	dw ship_deck_sunset_game_sub_mode	;18 Ship Deck (Sunset)
+	dw ice_water_game_sub_mode		;19 Ice (Water)
+	dw jungle_game_sub_mode			;1A Jungle
+	dw ice_transparent_game_sub_mode	;1B Ice (Transparent)
+	dw castle_toxic_game_sub_mode		;1C Castle (Toxic)
+	dw brambles_windy_game_sub_mode		;1D Brambles (Windy)
+	dw mine_windy_game_sub_mode		;1E Mine (Windy)
+	dw forest_misty_game_sub_mode		;1F Forest (Misty)
 
-simple_tileset_logic_2:
+simple_game_sub_mode_05:
 	JSR input_and_pause_handler		;$80D451  \
 	JSR fade_screen				;$80D454   |
-	JMP tileset_logic_return		;$80D457  /
+	JMP game_sub_mode_return		;$80D457  /
 
-null_tileset_logic:
-	JMP tileset_logic_return		;$80D45A  /
+null_game_sub_mode:
+	JMP game_sub_mode_return		;$80D45A  /
 
-paused_tileset_logic:
+paused_game_sub_mode:
 	DEC active_frame_counter		;$80D45D  \
-	JMP tileset_logic_return		;$80D45F  /
+	JMP game_sub_mode_return		;$80D45F  /
 
-forest_unused_tileset_logic:
+forest_unused_game_sub_mode:
 	JSR input_and_pause_handler		;$80D462  \
 	BNE .paused				;$80D465   |
 	JSL sprite_loader			;$80D467   |
@@ -9117,12 +9119,12 @@ forest_unused_tileset_logic:
 	JSR render_sprites			;$80D477   |
 	JSR set_unused_oam_offscreen		;$80D47A   |
 	JSR fade_screen				;$80D47D   |
-	JMP tileset_logic_return		;$80D480  /
+	JMP game_sub_mode_return		;$80D480  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D483  /
+	JMP paused_game_sub_mode		;$80D483  /
 
-ship_hold_tileset_logic:
+ship_hold_game_sub_mode:
 	JSR handle_water_and_3D_bg_scroll	;$80D486  \
 	JSR input_and_pause_handler		;$80D489   |
 	BNE .paused				;$80D48C   |
@@ -9136,10 +9138,10 @@ ship_hold_tileset_logic:
 	JSR set_unused_oam_offscreen		;$80D4A8   |
 	JSR handle_kong_water_splash		;$80D4AB   |
 	JSR fade_screen				;$80D4AE   |
-	JMP tileset_logic_return		;$80D4B1  /
+	JMP game_sub_mode_return		;$80D4B1  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D4B4  /
+	JMP paused_game_sub_mode		;$80D4B4  /
 
 handle_kong_water_splash:
 	LDX active_kong_sprite			;$80D4B7  \
@@ -9153,7 +9155,7 @@ handle_kong_water_splash:
 	STX current_sprite			;$80D4CC   |
 	LDY #!special_sprite_spawn_id_0018	;$80D4CE   |
 	JSL spawn_special_sprite_index		;$80D4D1   |
-	%lda_sound(6, kong_enter_water	)	;$80D4D5   |
+	%lda_sound(6, kong_enter_water)		;$80D4D5   |
 	JSL queue_sound_effect			;$80D4D8   |
 	BRA .return				;$80D4DC  /
 
@@ -9165,7 +9167,7 @@ handle_kong_water_splash:
 	STX current_sprite			;$80D4E9   |
 	LDY #!special_sprite_spawn_id_001A	;$80D4EB   |
 	JSL spawn_special_sprite_index		;$80D4EE   |
-	%lda_sound(6, kong_enter_water	)	;$80D4F2   |
+	%lda_sound(6, kong_enter_water)		;$80D4F2   |
 	JSL queue_sound_effect			;$80D4F5   |
 .return:					;	   |
 	RTS					;$80D4F9  /
@@ -9212,7 +9214,7 @@ handle_water_velocities:
 .return:					;	   |
 	RTS					;$80D556  /
 
-wasp_hive_tileset_logic:
+wasp_hive_game_sub_mode:
 	JSR input_and_pause_handler		;$80D557  \
 	BNE .paused				;$80D55A   |
 	JSL sprite_loader			;$80D55C   |
@@ -9231,17 +9233,17 @@ wasp_hive_tileset_logic:
 	JSR render_sprites			;$80D57D   |
 	JSR set_unused_oam_offscreen		;$80D580   |
 	JSR fade_screen				;$80D583   |
-	JMP tileset_logic_return		;$80D586  /
+	JMP game_sub_mode_return		;$80D586  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D589  /
+	JMP paused_game_sub_mode		;$80D589  /
 
-simple_tileset_logic_1:
+simple_game_sub_mode_04:
 	JSR input_and_pause_handler		;$80D58C  \
 	JSR fade_screen				;$80D58F   |
-	JMP tileset_logic_return		;$80D592  /
+	JMP game_sub_mode_return		;$80D592  /
 
-ship_deck_tileset_logic:
+ship_deck_game_sub_mode:
 	JSR input_and_pause_handler		;$80D595  \
 	BNE .paused				;$80D598   |
 	JSL sprite_loader			;$80D59A   |
@@ -9254,12 +9256,12 @@ ship_deck_tileset_logic:
 	JSR set_unused_oam_offscreen		;$80D5B4   |
 	JSR handle_ship_deck_water_sky_scroll	;$80D5B7   |
 	JSR fade_screen				;$80D5BA   |
-	JMP tileset_logic_return		;$80D5BD  /
+	JMP game_sub_mode_return		;$80D5BD  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D5C0  /
+	JMP paused_game_sub_mode		;$80D5C0  /
 
-lava_tileset_logic:
+lava_game_sub_mode:
 	JSR input_and_pause_handler		;$80D5C3  \
 	BNE .paused				;$80D5C6   |
 	JSL sprite_loader			;$80D5C8   |
@@ -9269,12 +9271,12 @@ lava_tileset_logic:
 	JSR render_sprites			;$80D5D8   |
 	JSR set_unused_oam_offscreen		;$80D5DB   |
 	JSR fade_screen				;$80D5DE   |
-	JMP tileset_logic_return		;$80D5E1  /
+	JMP game_sub_mode_return		;$80D5E1  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D5E4  /
+	JMP paused_game_sub_mode		;$80D5E4  /
 
-ship_mast_tileset_logic:
+ship_mast_game_sub_mode:
 	JSR input_and_pause_handler		;$80D5E7  \
 	BNE .paused				;$80D5EA   |
 	LDX #$002C				;$80D5EC   |
@@ -9292,12 +9294,12 @@ ship_mast_tileset_logic:
 	JSR render_sprites			;$80D60C   |
 	JSR set_unused_oam_offscreen		;$80D60F   |
 	JSR fade_screen				;$80D612   |
-	JMP tileset_logic_return		;$80D615  /
+	JMP game_sub_mode_return		;$80D615  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D618  /
+	JMP paused_game_sub_mode		;$80D618  /
 
-roller_coaster_tileset_logic:
+roller_coaster_game_sub_mode:
 	JSR input_and_pause_handler		;$80D61B  \
 	BNE .paused				;$80D61E   |
 	JSL sprite_loader			;$80D620   |
@@ -9308,12 +9310,12 @@ roller_coaster_tileset_logic:
 	JSR render_sprites			;$80D633   |
 	JSR set_unused_oam_offscreen		;$80D636   |
 	JSR fade_screen				;$80D639   |
-	JMP tileset_logic_return		;$80D63C  /
+	JMP game_sub_mode_return		;$80D63C  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D63F  /
+	JMP paused_game_sub_mode		;$80D63F  /
 
-ship_deck_cabin_tileset_logic:
+ship_deck_cabin_game_sub_mode:
 	JSR input_and_pause_handler		;$80D642  \
 	BNE .paused				;$80D645   |
 	JSL sprite_loader			;$80D647   |
@@ -9323,17 +9325,17 @@ ship_deck_cabin_tileset_logic:
 	JSR set_unused_oam_offscreen		;$80D656   |
 	JSR handle_ship_deck_water_sky_scroll	;$80D659   |
 	JSR fade_screen				;$80D65C   |
-	JMP tileset_logic_return		;$80D65F  /
+	JMP game_sub_mode_return		;$80D65F  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D662  /
+	JMP paused_game_sub_mode		;$80D662  /
 
-simple_tileset_logic_3:
+simple_game_sub_mode_0B:
 	JSR input_and_pause_handler		;$80D665  \
 	JSR fade_screen				;$80D668   |
-	JMP tileset_logic_return		;$80D66B  /
+	JMP game_sub_mode_return		;$80D66B  /
 
-mine_tileset_logic:
+mine_game_sub_mode:
 	JSR input_and_pause_handler		;$80D66E  \
 	BNE .paused				;$80D671   |
 	JSL sprite_loader			;$80D673   |
@@ -9344,10 +9346,10 @@ mine_tileset_logic:
 	JSR render_sprites			;$80D686   |
 	JSR set_unused_oam_offscreen		;$80D689   |
 	JSR fade_screen				;$80D68C   |
-	JMP tileset_logic_return		;$80D68F  /
+	JMP game_sub_mode_return		;$80D68F  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D692  /
+	JMP paused_game_sub_mode		;$80D692  /
 
 handle_mine_glint:
 	LDA active_frame_counter		;$80D695  \
@@ -9474,7 +9476,7 @@ handle_mine_glint:
 	ADC $38					;$80D781   |
 	RTS					;$80D783  /
 
-forest_lights_tileset_logic:
+forest_lights_game_sub_mode:
 	JSR input_and_pause_handler		;$80D784  \
 	BNE .paused				;$80D787   |
 	JSL sprite_loader			;$80D789   |
@@ -9485,12 +9487,12 @@ forest_lights_tileset_logic:
 	JSR set_unused_oam_offscreen		;$80D79C   |
 	JSR handle_forest_lights_scroll		;$80D79F   |
 	JSR fade_screen				;$80D7A2   |
-	JMP tileset_logic_return		;$80D7A5  /
+	JMP game_sub_mode_return		;$80D7A5  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D7A8  /
+	JMP paused_game_sub_mode		;$80D7A8  /
 
-forest_windy_tileset_logic:
+forest_windy_game_sub_mode:
 	JSR input_and_pause_handler		;$80D7AB  \
 	BNE .paused				;$80D7AE   |
 	JSL sprite_loader			;$80D7B0   |
@@ -9501,10 +9503,10 @@ forest_windy_tileset_logic:
 	JSR render_sprites			;$80D7C3   |
 	JSR set_unused_oam_offscreen		;$80D7C6   |
 	JSR fade_screen				;$80D7C9   |
-	JMP tileset_logic_return		;$80D7CC  /
+	JMP game_sub_mode_return		;$80D7CC  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D7CF  /
+	JMP paused_game_sub_mode		;$80D7CF  /
 
 wind_speeds_right:
 	dw $0010				;idle blowing right
@@ -9569,7 +9571,7 @@ wind_force_handler:
 	STA $2C,x				;$80D82D   |
 	RTS					;$80D82F  /
 
-swamp_tileset_logic:
+swamp_game_sub_mode:
 	JSR input_and_pause_handler		;$80D830  \
 	BNE .paused				;$80D833   |
 	JSL sprite_loader			;$80D835   |
@@ -9579,12 +9581,12 @@ swamp_tileset_logic:
 	JSR render_sprites			;$80D845   |
 	JSR set_unused_oam_offscreen		;$80D848   |
 	JSR fade_screen				;$80D84B   |
-	JMP tileset_logic_return		;$80D84E  /
+	JMP game_sub_mode_return		;$80D84E  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D851  /
+	JMP paused_game_sub_mode		;$80D851  /
 
-brambles_tileset_logic:
+brambles_game_sub_mode:
 	JSR input_and_pause_handler		;$80D854  \
 	BNE .paused				;$80D857   |
 	JSL sprite_loader			;$80D859   |
@@ -9602,12 +9604,12 @@ brambles_tileset_logic:
 	JSR render_sprites			;$80D877   |
 	JSR set_unused_oam_offscreen		;$80D87A   |
 	JSR fade_screen				;$80D87D   |
-	JMP tileset_logic_return		;$80D880  /
+	JMP game_sub_mode_return		;$80D880  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D883  /
+	JMP paused_game_sub_mode		;$80D883  /
 
-ship_hold_dark_tileset_logic:
+ship_hold_dark_game_sub_mode:
 	JSR handle_3d_bg_scroll			;$80D886  \
 	JSR input_and_pause_handler		;$80D889   |
 	BNE .paused				;$80D88C   |
@@ -9621,12 +9623,12 @@ ship_hold_dark_tileset_logic:
 	JSL CODE_BEC9C0				;$80D8A7   |
 	JSR set_unused_oam_offscreen		;$80D8AB   |
 	JSR fade_screen				;$80D8AE   |
-	JMP tileset_logic_return		;$80D8B1  /
+	JMP game_sub_mode_return		;$80D8B1  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D8B4  /
+	JMP paused_game_sub_mode		;$80D8B4  /
 
-lava_geyser_tileset_logic:
+lava_geyser_game_sub_mode:
 	JSR input_and_pause_handler		;$80D8B7  \
 	BNE .paused				;$80D8BA   |
 	JSL sprite_loader			;$80D8BC   |
@@ -9637,14 +9639,14 @@ lava_geyser_tileset_logic:
 	JSR set_unused_oam_offscreen		;$80D8CF   |
 	JSR handle_lava_geyser_positioning	;$80D8D2   | Visual position only
 	JSR fade_screen				;$80D8D5   |
-	JMP tileset_logic_return		;$80D8D8  /
+	JMP game_sub_mode_return		;$80D8D8  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D8DB  /
+	JMP paused_game_sub_mode		;$80D8DB  /
 
-krocodile_kore_tileset_logic:
+krocodile_kore_game_sub_mode:
 	JSR input_and_pause_handler		;$80D8DE  \
-	BNE lava_geyser_tileset_logic_paused	;$80D8E1   |
+	BNE lava_geyser_game_sub_mode_paused	;$80D8E1   |
 	JSL sprite_loader			;$80D8E3   |
 	JSL sprite_handler			;$80D8E7   |
 	JSL camera_handler			;$80D8EB   |
@@ -9652,12 +9654,12 @@ krocodile_kore_tileset_logic:
 	JSR render_sprites			;$80D8F3   |
 	JSR set_unused_oam_offscreen		;$80D8F6   |
 	JSR fade_screen				;$80D8F9   |
-	JMP tileset_logic_return		;$80D8FC  /
+	JMP game_sub_mode_return		;$80D8FC  /
 
 ;Dead code
-	JMP paused_tileset_logic		;$80D8FF  /
+	JMP paused_game_sub_mode		;$80D8FF  /
 
-castle_crush_tileset_logic:
+castle_crush_game_sub_mode:
 	JSR handle_3d_bg_scroll			;$80D902  \
 	JSR input_and_pause_handler		;$80D905   |
 	BNE .paused				;$80D908   |
@@ -9679,10 +9681,10 @@ castle_crush_tileset_logic:
 	JSR render_sprites			;$80D932   |
 	JSR set_unused_oam_offscreen		;$80D935   |
 	JSR fade_screen				;$80D938   |
-	JMP tileset_logic_return		;$80D93B  /
+	JMP game_sub_mode_return		;$80D93B  /
 
 .paused:
-	JMP paused_tileset_logic		;$80D93E  /
+	JMP paused_game_sub_mode		;$80D93E  /
 
 handle_castle_crush_floor_movement:
 	LDA time_stop_flags			;$80D941  \
@@ -9799,7 +9801,7 @@ handle_castle_crush_floor_movement:
 	STA $0AFE				;$80DA1D   |
 	RTS					;$80DA20  /
 
-haunted_tileset_logic:
+haunted_game_sub_mode:
 	JSR input_and_pause_handler		;$80DA21  \
 	BNE .paused				;$80DA24   |
 	JSL sprite_loader			;$80DA26   |
@@ -9809,12 +9811,12 @@ haunted_tileset_logic:
 	JSR render_sprites			;$80DA36   |
 	JSR set_unused_oam_offscreen		;$80DA39   |
 	JSR fade_screen				;$80DA3C   |
-	JMP tileset_logic_return		;$80DA3F  /
+	JMP game_sub_mode_return		;$80DA3F  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DA42  /
+	JMP paused_game_sub_mode		;$80DA42  /
 
-ship_mast_water_tileset_logic:
+ship_mast_water_game_sub_mode:
 	JSR handle_water_scroll_hop		;$80DA45  \
 	JSR input_and_pause_handler		;$80DA48   |
 	BNE .paused				;$80DA4B   |
@@ -9828,12 +9830,12 @@ ship_mast_water_tileset_logic:
 	JSR set_unused_oam_offscreen		;$80DA67   |
 	JSR handle_kong_water_splash		;$80DA6A   |
 	JSR fade_screen				;$80DA6D   |
-	JMP tileset_logic_return		;$80DA70  /
+	JMP game_sub_mode_return		;$80DA70  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DA73  /
+	JMP paused_game_sub_mode		;$80DA73  /
 
-krool_duel_tileset_logic:
+krool_duel_game_sub_mode:
 	JSR input_and_pause_handler		;$80DA76  \
 	BNE .paused				;$80DA79   |
 	JSL sprite_loader			;$80DA7B   |
@@ -9843,14 +9845,14 @@ krool_duel_tileset_logic:
 	JSR render_sprites			;$80DA8B   |
 	JSR set_unused_oam_offscreen		;$80DA8E   |
 	JSR fade_screen				;$80DA91   |
-	JMP tileset_logic_return		;$80DA94  /
+	JMP game_sub_mode_return		;$80DA94  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DA97  /
+	JMP paused_game_sub_mode		;$80DA97  /
 
-ship_deck_sunset_tileset_logic:
+ship_deck_sunset_game_sub_mode:
 	JSR input_and_pause_handler		;$80DA9A  \
-	BNE CODE_80DAC8				;$80DA9D   |
+	BNE ice_game_sub_mode_paused				;$80DA9D   |
 	JSL sprite_loader			;$80DA9F   |
 	JSL sprite_handler			;$80DAA3   |
 	JSL camera_handler			;$80DAA7   |
@@ -9862,15 +9864,15 @@ ship_deck_sunset_tileset_logic:
 	JSR handle_ship_deck_water_sky_scroll	;$80DABC   |
 	JSR handle_ship_deck_sunset		;$80DABF   |
 	JSR fade_screen				;$80DAC2   |
-	JMP tileset_logic_return		;$80DAC5  /
+	JMP game_sub_mode_return		;$80DAC5  /
 
-CODE_80DAC8:
-	JMP paused_tileset_logic		;$80DAC8  /
+ice_game_sub_mode_paused:
+	JMP paused_game_sub_mode		;$80DAC8  /
 
-ice_water_tileset_logic:
+ice_water_game_sub_mode:
 	JSR handle_water_scroll_hop		;$80DACB  \
 	JSR input_and_pause_handler		;$80DACE   |
-	BNE CODE_80DAC8				;$80DAD1   |
+	BNE ice_game_sub_mode_paused		;$80DAD1   |
 	JSR handle_water_velocities		;$80DAD3   |
 	JSL sprite_loader			;$80DAD6   |
 	JSL sprite_handler			;$80DADA   |
@@ -9893,11 +9895,11 @@ ice_water_tileset_logic:
 	JSR handle_kong_water_splash		;$80DB06   |
 .CODE_80DB09:					;	   |
 	JSR fade_screen				;$80DB09   |
-	JMP tileset_logic_return		;$80DB0C  /
+	JMP game_sub_mode_return		;$80DB0C  /
 
-	JMP paused_tileset_logic		;$80DB0F  /
+	JMP paused_game_sub_mode		;$80DB0F  /
 
-jungle_tileset_logic:
+jungle_game_sub_mode:
 	JSR input_and_pause_handler		;$80DB12  \
 	BNE .paused				;$80DB15   |
 	JSL sprite_loader			;$80DB17   |
@@ -9907,14 +9909,14 @@ jungle_tileset_logic:
 	JSR render_sprites			;$80DB27   |
 	JSR set_unused_oam_offscreen		;$80DB2A   |
 	JSR fade_screen				;$80DB2D   |
-	JMP tileset_logic_return		;$80DB30  /
+	JMP game_sub_mode_return		;$80DB30  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DB33  /
+	JMP paused_game_sub_mode		;$80DB33  /
 
-ice_transparent_tileset_logic:
+ice_transparent_game_sub_mode:
 	JSR input_and_pause_handler		;$80DB36  \
-	BNE CODE_80DAC8				;$80DB39   |
+	BNE ice_game_sub_mode_paused		;$80DB39   |
 	JSL sprite_loader			;$80DB3B   |
 	JSL sprite_handler			;$80DB3F   |
 	JSL camera_handler			;$80DB43   |
@@ -9931,11 +9933,11 @@ ice_transparent_tileset_logic:
 	JSR render_sprites			;$80DB5C   |
 	JSR set_unused_oam_offscreen		;$80DB5F   |
 	JSR fade_screen				;$80DB62   |
-	JMP tileset_logic_return		;$80DB65  /
+	JMP game_sub_mode_return		;$80DB65  /
 
-	JMP paused_tileset_logic		;$80DB68  /
+	JMP paused_game_sub_mode		;$80DB68  /
 
-castle_toxic_tileset_logic:
+castle_toxic_game_sub_mode:
 	JSR handle_water_and_3D_bg_scroll	;$80DB6B  \
 	JSR input_and_pause_handler		;$80DB6E   |
 	BNE .paused				;$80DB71   |
@@ -9948,12 +9950,12 @@ castle_toxic_tileset_logic:
 	JSL CODE_BEC9C0				;$80DB89   |
 	JSR set_unused_oam_offscreen		;$80DB8D   |
 	JSR fade_screen				;$80DB90   |
-	JMP tileset_logic_return		;$80DB93  /
+	JMP game_sub_mode_return		;$80DB93  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DB96  /
+	JMP paused_game_sub_mode		;$80DB96  /
 
-brambles_windy_tileset_logic:
+brambles_windy_game_sub_mode:
 	JSR input_and_pause_handler		;$80DB99  \
 	BNE .paused				;$80DB9C   |
 	JSL sprite_loader			;$80DB9E   |
@@ -9972,12 +9974,12 @@ brambles_windy_tileset_logic:
 	JSR render_sprites			;$80DBBF   |
 	JSR set_unused_oam_offscreen		;$80DBC2   |
 	JSR fade_screen				;$80DBC5   |
-	JMP tileset_logic_return		;$80DBC8  /
+	JMP game_sub_mode_return		;$80DBC8  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DBCB  /
+	JMP paused_game_sub_mode		;$80DBCB  /
 
-mine_windy_tileset_logic:
+mine_windy_game_sub_mode:
 	JSR input_and_pause_handler		;$80DBCE  \
 	BNE .paused				;$80DBD1   |
 	JSL sprite_loader			;$80DBD3   |
@@ -9987,10 +9989,10 @@ mine_windy_tileset_logic:
 	JSR render_sprites			;$80DBE3   |
 	JSR set_unused_oam_offscreen		;$80DBE6   |
 	JSR fade_screen				;$80DBE9   |
-	JMP tileset_logic_return		;$80DBEC  /
+	JMP game_sub_mode_return		;$80DBEC  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DBEF  /
+	JMP paused_game_sub_mode		;$80DBEF  /
 
 handle_forest_mist_scroll:
 	LDA screen_scroll_y_position		;$80DBF2  \
@@ -10176,7 +10178,7 @@ CODE_80DD32:
 	PLA					;$80DD3A   |
 	RTS					;$80DD3B  /
 
-forest_misty_tileset_logic:
+forest_misty_game_sub_mode:
 	JSR input_and_pause_handler		;$80DD3C  \
 	BNE .paused				;$80DD3F   |
 	JSL sprite_loader			;$80DD41   |
@@ -10187,10 +10189,10 @@ forest_misty_tileset_logic:
 	JSR render_sprites			;$80DD54   |
 	JSR set_unused_oam_offscreen		;$80DD57   |
 	JSR fade_screen				;$80DD5A   |
-	JMP tileset_logic_return		;$80DD5D  /
+	JMP game_sub_mode_return		;$80DD5D  /
 
 .paused:
-	JMP paused_tileset_logic		;$80DD60  /
+	JMP paused_game_sub_mode		;$80DD60  /
 
 handle_ship_deck_sunset_global:
 	JSR handle_ship_deck_sunset		;$80DD63  \
@@ -10840,12 +10842,12 @@ handle_fireworks:
 	BCS .return				;$80E491   | If yes, return.
 	DEC $19C0				;$80E493   | Else
 	BPL .CODE_80E4B0			;$80E496   |
-	JSR CODE_808E53				;$80E498   | Get RNG
+	JSR get_random_number_2			;$80E498   | Get RNG
 	AND #$007F				;$80E49B   |
 	CLC					;$80E49E   |
 	ADC #$00B4				;$80E49F   |
 	STA $19BE				;$80E4A2   | Set timer until next fireworks can spawn
-	JSR CODE_808E53				;$80E4A5   | Get RNG
+	JSR get_random_number_2			;$80E4A5   | Get RNG
 	AND #$0003				;$80E4A8   |
 	INC A					;$80E4AB   |
 	INC A					;$80E4AC   |
@@ -10867,7 +10869,7 @@ handle_fireworks:
 	LDA fireworks_spawn_x_positions,y	;$80E4CD   |
 	AND #$00FF				;$80E4D0   |
 	STA $06,x				;$80E4D3   |
-	JSR CODE_808E53				;$80E4D5   | Get RNG
+	JSR get_random_number_2			;$80E4D5   | Get RNG
 	AND #$003F				;$80E4D8   |
 	CLC					;$80E4DB   |
 	ADC #$0050				;$80E4DC   |
@@ -10886,7 +10888,7 @@ handle_fireworks:
 	CLC					;$80E4F5   |
 	ADC #$0080				;$80E4F6   |
 	STA $0929				;$80E4F9   |
-	JSR CODE_808E53				;$80E4FC   | Get RNG
+	JSR get_random_number_2			;$80E4FC   | Get RNG
 	LSR A					;$80E4FF   |
 	BCS .CODE_80E50A			;$80E500   |
 	LDA #!firework_1_anim_id		;$80E502   |
@@ -12680,11 +12682,11 @@ DATA_80F300:
 	db $07, $19, $8B, $25, $2E, $32, $62, $08
 	db $A4, $10, $07, $19, $8B, $25, $2E, $32
 
-DMA_queued_sprite_palette_global:
-	JSR DMA_queued_sprite_palette		;$80F320  \
+dma_queued_sprite_palette_global:
+	JSR dma_queued_sprite_palette		;$80F320  \
 	RTL					;$80F323  /
 
-DMA_queued_sprite_palette:
+dma_queued_sprite_palette:
 	LDA previous_palette_buffer_slot	;$80F324  \
 	CMP current_palette_buffer_slot		;$80F326   |
 	BEQ .return				;$80F328   |
@@ -12699,9 +12701,9 @@ DMA_queued_sprite_palette:
 	STA DMA[0].settings			;$80F338   |
 	LDA #$001E				;$80F33B   |
 	STA DMA[0].size				;$80F33E   |
-	LDA sprite_palette_DMA.source_word,x	;$80F341   |
+	LDA sprite_palette_dma.source_word,x	;$80F341   |
 	STA DMA[0].source			;$80F344   |
-	LDA sprite_palette_DMA.source_bank,x	;$80F347   |
+	LDA sprite_palette_dma.source_bank,x	;$80F347   |
 	SEP #$20				;$80F34A   |
 	STA DMA[0].source_bank			;$80F34C   |
 	XBA					;$80F34F   |
@@ -12743,7 +12745,7 @@ render_sprites:
 	BEQ CODE_80F3B0				;$80F3AA   |
 	JSL CODE_B59C52				;$80F3AC   |
 CODE_80F3B0:					;	   |
-	STZ next_sprite_DMA_buffer_slot		;$80F3B0   |
+	STZ next_sprite_dma_buffer_slot		;$80F3B0   |
 	RTS					;$80F3B3  /
 
 ;Unreferenced
@@ -12772,9 +12774,9 @@ NMI_start:
 	LDA.l global_frame_counter		;$80F3DA   |\ Increment the global frame counter
 	INC A					;$80F3DE   | | It is never actually used. But it counts all frames
 	STA.l global_frame_counter		;$80F3DF   |/
-	JMP.w (NMI_pointer)			;$80F3E3  / Jump to the true NMI payload
+	JMP.w (nmi_pointer)			;$80F3E3  / Jump to the true NMI payload
 
-incomplete_frame_nmi:
+run_incomplete_frame:
 	SEP #$20				;$80F3E6  \
 	LDA.l screen_brightness			;$80F3E8   |\ Write screen brightness
 	STA.l PPU.screen			;$80F3EC   |/
@@ -12795,22 +12797,22 @@ init_ending_parade:
 	JSL disable_screen			;$80F3FB  \
 	PHK					;$80F3FF   |
 	PLB					;$80F400   |
-	JSL clear_VRAM_global			;$80F401   |
+	JSL clear_vram_global			;$80F401   |
 	JSL init_registers_global		;$80F405   |
 	JSL clear_noncritical_wram		;$80F409   |
 	JSL set_all_oam_offscreen		;$80F40D   |
 	JSL init_sprite_render_order_global	;$80F411   |
 	LDA #!music_credits			;$80F415   |
 	JSL play_song				;$80F418   |
-	STZ next_sprite_DMA_buffer_slot		;$80F41C   |
+	STZ next_sprite_dma_buffer_slot		;$80F41C   |
 	LDA #!end_parade_ppu_config_id		;$80F41F   |
-	JSL set_PPU_registers_global		;$80F422   |
+	JSL set_ppu_registers_global		;$80F422   |
 	LDA #!end_parade_vram_payload_id	;$80F426   |
-	JSL VRAM_payload_handler_global		;$80F429   |
+	JSL vram_payload_handler_global		;$80F429   |
 	LDY #$0000				;$80F42D   |
 	LDA #klubbas_kiosk_palette		;$80F430   |
 	LDX #$0020				;$80F433   |
-	JSL DMA_palette				;$80F436   |
+	JSL dma_palette				;$80F436   |
 	LDA #$0100				;$80F43A   |
 	JSL set_fade_global			;$80F43D   |
 	LDA #$0100				;$80F441   |
@@ -12831,16 +12833,16 @@ init_ending_parade:
 	LDY #$00F0				;$80F46E   |
 	LDX #$0004				;$80F471   |
 	LDA #!map_p1_kong_and_text_spr_palette	;$80F474   |
-	JSL DMA_sprite_palette_from_index	;$80F477   |
+	JSL dma_sprite_palette_from_index	;$80F477   |
 	LDA #$0001				;$80F47B   |
 	STA pending_dma_hdma_channels		;$80F47E   |
 	RTL					;$80F481  /
 
-CODE_80F482:
+ending_parade_game_mode_hop:
 	LDA pending_dma_hdma_channels		;$80F482  \
 	STA CPU.enable_dma			;$80F485   |
-	JSL DMA_queued_sprite_graphics		;$80F488   |
-	JSR DMA_queued_sprite_palette		;$80F48C   |
+	JSL dma_queued_sprite_graphics		;$80F488   |
+	JSR dma_queued_sprite_palette		;$80F48C   |
 	JSL update_kackle_graphics_global	;$80F48F   |
 	LDA screen_scroll_x_sub_position_low	;$80F493   |
 	SEP #$20				;$80F496   |
@@ -12943,8 +12945,8 @@ CODE_80F551:					;	   |
 	BNE CODE_80F567				;$80F557   |
 	LDA #init_credits_screen		;$80F559   |
 	STA $00067D				;$80F55C   |
-	LDA #bonus_and_credits_screen_NMI	;$80F560   |
-	JML set_nmi_pointer			;$80F563  /
+	LDA #run_bonus_and_credits_screen	;$80F560   |
+	JML set_nmi_and_wait			;$80F563  /
 
 CODE_80F567:
 	JSL sprite_handler			;$80F567  \
@@ -12952,7 +12954,7 @@ CODE_80F567:
 	JSR update_ending_parade_text		;$80F56F   |
 	JSR set_unused_oam_offscreen		;$80F572   |
 	JSR fade_screen				;$80F575   |
-	JML tileset_logic_return		;$80F578  /
+	JML game_sub_mode_return		;$80F578  /
 
 
 ;display duration, init script table index (DATA_FF047E), text table index
@@ -13330,9 +13332,9 @@ update_ending_parade_text:
 	STZ oam_attribute[$1C].size		;$80F9FD   |
 	STZ oam_attribute[$1E].size		;$80FA00   |
 	LDA #$0054				;$80FA03   |
-	STA $78					;$80FA06   |
+	STA sprite_dma_buffer_limit		;$80FA06   |
 	JSL CODE_B59F40				;$80FA08   |
-	STZ next_sprite_DMA_buffer_slot		;$80FA0C   |
+	STZ next_sprite_dma_buffer_slot		;$80FA0C   |
 	PLB					;$80FA0F   |
 	RTS					;$80FA10  /
 
@@ -13396,12 +13398,12 @@ init_game_over_screen:
 	JSL disable_screen			;$80FA7C  \
 	PHK					;$80FA80   |
 	PLB					;$80FA81   |
-	JSL clear_VRAM_global			;$80FA82   |
+	JSL clear_vram_global			;$80FA82   |
 	JSL init_registers_global		;$80FA86   |
 	LDA #!gameover_vram_payload_id		;$80FA8A   |
-	JSL VRAM_payload_handler_global		;$80FA8D   |
+	JSL vram_payload_handler_global		;$80FA8D   |
 	LDA #!gameover_ppu_config_id		;$80FA91   |
-	JSL set_PPU_registers_global		;$80FA94   |
+	JSL set_ppu_registers_global		;$80FA94   |
 	LDA #!music_game_over			;$80FA98   |
 	JSL play_song				;$80FA9B   |
 	LDA #$0100				;$80FA9F   |
@@ -13409,12 +13411,12 @@ init_game_over_screen:
 	LDA #gameover_screen_palette		;$80FAA5   |
 	LDY #$0000				;$80FAA8   |
 	LDX #$0020				;$80FAAB   |
-	JSL DMA_palette				;$80FAAE   |
+	JSL dma_palette				;$80FAAE   |
 	STZ active_frame_counter		;$80FAB2   |
 	LDA #$0001				;$80FAB4   |
 	STA pending_dma_hdma_channels		;$80FAB7   |
 	LDA #run_game_over_screen		;$80FABA   |
-	JMP CODE_808C9E				;$80FABD  /
+	JMP set_game_mode_and_return		;$80FABD  /
 
 run_game_over_screen:
 	LDA pending_dma_hdma_channels		;$80FAC0  \
@@ -13521,7 +13523,7 @@ run_game_over_screen:
 	JSR fade_screen				;$80FB93   |
 	LDA screen_brightness			;$80FB96   |
 	BEQ .fade_finished			;$80FB99   |
-	JMP tileset_logic_return		;$80FB9B  /
+	JMP game_sub_mode_return		;$80FB9B  /
 
 .fade_finished:
 	JML restart_logo_or_world_map		;$80FB9E  /

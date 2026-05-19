@@ -30,10 +30,10 @@ UNKNOWN_19				= $19	;byte	unknown appears to always be 0
 UNKNOWN_1A				= $1A	;word	unknown appears to always be 0
 current_song				= $1C	;word	index
 stereo_select				= $1E	;word	boolean
-NMI_pointer				= $20	;word	pointer
+nmi_pointer				= $20	;word	pointer
 UNUSED_22				= $22	;byte	unused
 UNUSED_23				= $23	;byte	unused
-gamemode_pointer			= $24	;word	pointer
+game_mode_pointer			= $24	;word	pointer
 temp_26					= $26	;byte	temp
 temp_27					= $27	;byte	temp
 temp_28					= $28	;byte	temp
@@ -76,11 +76,13 @@ current_player_mount			= $6C	;word	pointer
 animal_type				= $6E	;word	index
 next_oam_slot				= $70	;word	index
 
+sprite_dma_buffer_limit			= $78
+
 current_sprite_constants		= $8E	;\ long	pointer
 current_sprite_constants_bank		= $90	;/
 current_player_action			= $92	;word	index
-nmi_submode				= $94	;word	index
-gamemode_submode			= $96	;word	index
+nmi_sub_mode				= $94	;word	index
+game_sub_mode				= $96	;word	index
 level_tilemap				= $98	;long	pointer
 level_collision_tilemap			= $9C	;long	pointer
 
@@ -300,7 +302,7 @@ level_palette_address			= $0A8E
 
 RAM_0B02				= $0B02	;Possible future name: player_input_action_flags
 sprite_vram_allocation_table		= $0B04
-sprite_palette_DMA_buffer		= $0B24
+sprite_palette_dma_buffer		= $0B24
 active_sprite_palettes_table		= $0B64
 sprite_palette_reference_count		= $0B74
 
@@ -331,8 +333,8 @@ non_kong_sprite_slots			= $0E9E
 diddy_control_variables			= $16B2
 dixie_control_variables			= $16D8
 sprite_render_table			= $16FE	;Word Array[25]
-next_sprite_DMA_buffer_slot		= $1730	;Word
-sprite_DMA_buffer			= $1732	;(Word,Word,Double) Array[6]
+next_sprite_dma_buffer_slot		= $1730	;Word
+sprite_dma_buffer			= $1732	;(Word,Word,Double) Array[6]
 
 unknown_17B4				= $17B4
 level_tilemap_vram_address		= $17B6
@@ -344,12 +346,12 @@ layer_screen_scroll_x_position		= $17BC
 
 screen_scroll_y_position		= $17C0
 
-level_row_left_DMA_buffer		= $17DA
-level_row_right_DMA_buffer		= $181A
-level_column_DMA_buffer			= $185A
-layer_column_DMA_buffer			= $189A ;Used by ship deck rigging
-layer_row_left_DMA_buffer		= $18DA ;Used by ship deck rigging
-layer_row_right_DMA_buffer		= $191A ;Used by ship deck rigging
+level_row_left_dma_buffer		= $17DA
+level_row_right_dma_buffer		= $181A
+level_column_dma_buffer			= $185A
+layer_column_dma_buffer			= $189A ;Used by ship deck rigging
+layer_row_left_dma_buffer		= $18DA ;Used by ship deck rigging
+layer_row_right_dma_buffer		= $191A ;Used by ship deck rigging
 column_row_temp_buffer			= $195A
 
 last_squitter_web_shot_time		= $19A2
@@ -379,11 +381,11 @@ kong_cutscene_command_timer		= $19D4
 ;Used for text tile map in NPC screens
 ;Used for text tile map in ship cabin
 ;Used for bonus intro text tile data
-text_VRAM_buffer			= $7E3E00	;largest observed size: $680 bytes
-text_VRAM_buffer_2			= $7E4A00	;size: $180, used by funky/klubba when entering new area
+text_vram_buffer			= $7E3E00	;largest observed size: $680 bytes
+text_vram_buffer_2			= $7E4A00	;size: $180, used by funky/klubba when entering new area
 
-player_1_RAM_buffer			= $7E5000
-player_2_RAM_buffer			= $7E5365
+player_1_ram_buffer			= $7E5000
+player_2_ram_buffer			= $7E5365
 sram_file_buffer			= $7E56CA
 map_icon_unlocks_buffer			= $7E5972
 map_path_unlocks_buffer			= $7E5992
@@ -412,7 +414,7 @@ namespace off
 working_palette = $7E8928
 primary_palette = $7E8C28
 
-writable_palette_RAM = $7F9650
+writable_palette_ram = $7F9650
 
 kong_follow_x_position_buffer		= $7FA532
 kong_follow_y_position_buffer		= $7FA572

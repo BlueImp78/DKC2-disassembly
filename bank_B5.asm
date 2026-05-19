@@ -716,8 +716,8 @@ assert pc() <= $B59C00 : padbyte $00 : pad $B59C00
 CODE_B59C00:
 	LDY current_sprite			;$B59C00  \ Y = current sprite
 	LDX sprite.current_graphic,y		;$B59C02   | X = current sprite graphic number
-	LDA next_sprite_DMA_buffer_slot		;$B59C04   |\ Get next free slot in sprite DMA buffer
-	CMP $78					;$B59C07   | | Compare to DMA buffer cap
+	LDA next_sprite_dma_buffer_slot		;$B59C04   |\ Get next free slot in sprite DMA buffer
+	CMP sprite_dma_buffer_limit		;$B59C07   | | Compare to DMA buffer cap
 	BCC .free_slot_in_buffer		;$B59C09   |/ If there are more slots in the DMA buffer then continue
 	RTL					;$B59C0B  /> Else return and dont queue sprite graphic for DMA
 
@@ -874,8 +874,8 @@ CODE_B59D14:
 	TXA					;$B59D14  \
 	CMP $0018,y				;$B59D15   |
 	BEQ CODE_B59D00				;$B59D18   |
-	LDA next_sprite_DMA_buffer_slot		;$B59D1A   |
-	CMP $78					;$B59D1D   |
+	LDA next_sprite_dma_buffer_slot		;$B59D1A   |
+	CMP sprite_dma_buffer_limit		;$B59D1D   |
 	BCC CODE_B59D26				;$B59D1F   |
 	LDX $16,y				;$B59D21   |
 	BNE CODE_B59D00				;$B59D23   |
@@ -893,11 +893,11 @@ CODE_B59D26:
 	STA $46					;$B59D39   |
 	JSR CODE_B59DC5				;$B59D3B   |
 CODE_B59D3E:					;	   |
-	LDX next_sprite_DMA_buffer_slot		;$B59D3E   |> Get next free slot in sprite graphic DMA buffer
+	LDX next_sprite_dma_buffer_slot		;$B59D3E   |> Get next free slot in sprite graphic DMA buffer
 	TYA					;$B59D41   |\
 	CLC					;$B59D42   | |
 	ADC $40					;$B59D43   |/ Offset by header size so we can find the actual tile data
-	STA sprite_DMA[0].source_word,x		;$B59D45   |> Save DMA source address of group A to sprite DMA buffer
+	STA sprite_dma[0].source_word,x		;$B59D45   |> Save DMA source address of group A to sprite DMA buffer
 	LDA $3B					;$B59D48   |\ Get number of tiles in DMA group A
 	AND #$00FF				;$B59D4A   |/
 	ASL A					;$B59D4D   |\ Then multiply it by 32 to get the actual size of the DMA
@@ -905,8 +905,8 @@ CODE_B59D3E:					;	   |
 	ASL A					;$B59D4F   | |
 	ASL A					;$B59D50   | |
 	ASL A					;$B59D51   |/
-	STA sprite_DMA[0].size,x		;$B59D52   |> Save DMA size of DMA group A to sprite DMA buffer
-	ADC sprite_DMA[0].source_word,x		;$B59D55   |\ Calculate offset address of group B tile data
+	STA sprite_dma[0].size,x		;$B59D52   |> Save DMA size of DMA group A to sprite DMA buffer
+	ADC sprite_dma[0].source_word,x		;$B59D55   |\ Calculate offset address of group B tile data
 	TAY					;$B59D58   |/ And store it in Y
 	LDA $32					;$B59D59   |\ Get VRAM destination address from sprites OAM properties
 	AND #$01FF				;$B59D5B   |/
@@ -914,17 +914,17 @@ CODE_B59D3E:					;	   |
 	ASL A					;$B59D5F   | |
 	ASL A					;$B59D60   | |
 	ASL A					;$B59D61   |/
-	STA sprite_DMA[0].destination,x		;$B59D62   |> Save VRAM destination of DMA group A to sprite DMA buffer
+	STA sprite_dma[0].destination,x		;$B59D62   |> Save VRAM destination of DMA group A to sprite DMA buffer
 	LDA $42					;$B59D65   |\ Get DMA source bank of group A
 	ORA #$FF00				;$B59D67   | | Add FF to high byte
-	STA sprite_DMA[0].source_bank,x		;$B59D6A   |/ Save DMA source bank of group A to sprite DMA buffer
+	STA sprite_dma[0].source_bank,x		;$B59D6A   |/ Save DMA source bank of group A to sprite DMA buffer
 	LDA $3D					;$B59D6D   |\ Get number of tiles in DMA group B
 	AND #$000F				;$B59D6F   | | If the tiles wont perfectly fill the row in VRAM
 	BNE .handle_dma_group_b			;$B59D72   |/ Which doesnt really make sense...
 	TXA					;$B59D74   |\
-	ADC #sizeof(sprite_DMA)			;$B59D75   | |
-	STA next_sprite_DMA_buffer_slot		;$B59D78   | | Update next free slot of sprite DMA buffer
-	STZ sprite_DMA[1].terminate,x		;$B59D7B   |/
+	ADC #sizeof(sprite_dma)			;$B59D75   | |
+	STA next_sprite_dma_buffer_slot		;$B59D78   | | Update next free slot of sprite DMA buffer
+	STZ sprite_dma[1].terminate,x		;$B59D7B   |/
 	RTS					;$B59D7E  /
 
 .handle_dma_group_b
@@ -933,23 +933,23 @@ CODE_B59D3E:					;	   |
 	ASL A					;$B59D81   | |
 	ASL A					;$B59D82   | |
 	ASL A					;$B59D83   |/
-	STA sprite_DMA[1].size,x		;$B59D84   |> Save DMA transfer size of DMA group B to sprite DMA buffer
+	STA sprite_dma[1].size,x		;$B59D84   |> Save DMA transfer size of DMA group B to sprite DMA buffer
 	TXA					;$B59D87   |\
-	ADC #sizeof(sprite_DMA)*2		;$B59D88   | |
-	STA next_sprite_DMA_buffer_slot		;$B59D8B   |/ Update next free slot of sprite DMA buffer
-	STZ sprite_DMA[2].terminate,x		;$B59D8E   |
+	ADC #sizeof(sprite_dma)*2		;$B59D88   | |
+	STA next_sprite_dma_buffer_slot		;$B59D8B   |/ Update next free slot of sprite DMA buffer
+	STZ sprite_dma[2].terminate,x		;$B59D8E   |
 	LDA $3C					;$B59D91   |\ Get VRAM offset of DMA group B
 	AND #$00FF				;$B59D93   |/
 	ASL A					;$B59D96   |\ * 16
 	ASL A					;$B59D97   | |
 	ASL A					;$B59D98   | |
 	ASL A					;$B59D99   |/
-	ADC sprite_DMA[0].destination,x		;$B59D9A   |\ Get VRAM offset of DMA group B
-	STA sprite_DMA[1].destination,x		;$B59D9D   |/ Save VRAM destination of DMA group B to sprite DMA buffer
+	ADC sprite_dma[0].destination,x		;$B59D9A   |\ Get VRAM offset of DMA group B
+	STA sprite_dma[1].destination,x		;$B59D9D   |/ Save VRAM destination of DMA group B to sprite DMA buffer
 	TYA					;$B59DA0   |\
-	STA sprite_DMA[1].source_word,x		;$B59DA1   |/ Save DMA source address of group B to sprite DMA buffer
-	LDA sprite_DMA[0].source_bank,x		;$B59DA4   |\ Copy DMA source bank from group A to group B
-	STA sprite_DMA[1].source_bank,x		;$B59DA7   |/ Save DMA source bank of group B to sprite DMA buffer
+	STA sprite_dma[1].source_word,x		;$B59DA1   |/ Save DMA source address of group B to sprite DMA buffer
+	LDA sprite_dma[0].source_bank,x		;$B59DA4   |\ Copy DMA source bank from group A to group B
+	STA sprite_dma[1].source_bank,x		;$B59DA7   |/ Save DMA source bank of group B to sprite DMA buffer
 	RTS					;$B59DAA  /
 
 CODE_B59DAB:
@@ -1235,8 +1235,8 @@ CODE_B59F53:					;	   |
 	JMP .CODE_B5A17C			;$B59F76  /
 
 .CODE_B59F79:
-	LDA next_sprite_DMA_buffer_slot		;$B59F79  \
-	CMP $78					;$B59F7C   |
+	LDA next_sprite_dma_buffer_slot		;$B59F79  \
+	CMP sprite_dma_buffer_limit		;$B59F7C   |
 	BCS .CODE_B59F84			;$B59F7E   |
 	LDX sprite.current_graphic,y		;$B59F80   |
 	BRA .handle_positioning			;$B59F82  /
@@ -1425,8 +1425,8 @@ CODE_B59F53:					;	   |
 .CODE_B5A0E1:
 	JSR CODE_B5A733				;$B5A0E1  \
 .CODE_B5A0E4:					;	   |
-	LDA next_sprite_DMA_buffer_slot		;$B5A0E4   |
-	CMP $78					;$B5A0E7   |
+	LDA next_sprite_dma_buffer_slot		;$B5A0E4   |
+	CMP sprite_dma_buffer_limit		;$B5A0E7   |
 	BCS .CODE_B5A0F7			;$B5A0E9   |
 	LDX $62					;$B5A0EB   |
 	LDA sprite_render_table,x		;$B5A0ED   |
@@ -1439,12 +1439,12 @@ CODE_B59F53:					;	   |
 
 .CODE_B5A0FA:
 	STA $16,x				;$B5A0FA  \
-	LDX next_sprite_DMA_buffer_slot		;$B5A0FC   |
+	LDX next_sprite_dma_buffer_slot		;$B5A0FC   |
 	TYA					;$B5A0FF   |
 	CLC					;$B5A100   |
 	ADC $40					;$B5A101   |
 	TAY					;$B5A103   |
-	STA sprite_DMA[0].source_word,x		;$B5A104   |
+	STA sprite_dma[0].source_word,x		;$B5A104   |
 	LDA $3B					;$B5A107   |
 	AND #$00FF				;$B5A109   |
 	ASL A					;$B5A10C   |
@@ -1452,7 +1452,7 @@ CODE_B59F53:					;	   |
 	ASL A					;$B5A10E   |
 	ASL A					;$B5A10F   |
 	ASL A					;$B5A110   |
-	STA sprite_DMA[0].size,x		;$B5A111   |
+	STA sprite_dma[0].size,x		;$B5A111   |
 	STA $54					;$B5A114   |
 	TYA					;$B5A116   |
 	CLC					;$B5A117   |
@@ -1464,15 +1464,15 @@ CODE_B59F53:					;	   |
 	ASL A					;$B5A121   |
 	ASL A					;$B5A122   |
 	ASL A					;$B5A123   |
-	STA sprite_DMA[0].destination,x		;$B5A124   |
+	STA sprite_dma[0].destination,x		;$B5A124   |
 	LDA $42					;$B5A127   |
 	ORA #$FF00				;$B5A129   |
-	STA sprite_DMA[0].source_bank,x		;$B5A12C   |
+	STA sprite_dma[0].source_bank,x		;$B5A12C   |
 	TXA					;$B5A12F   |
 	CLC					;$B5A130   |
-	ADC #sizeof(sprite_DMA)			;$B5A131   |
+	ADC #sizeof(sprite_dma)			;$B5A131   |
 	TAX					;$B5A134   |
-	STZ sprite_DMA[0].terminate,x		;$B5A135   |
+	STZ sprite_dma[0].terminate,x		;$B5A135   |
 	LDA $3D					;$B5A138   |
 	AND #$000F				;$B5A13A   |
 	CMP #$0000				;$B5A13D   |
@@ -1482,7 +1482,7 @@ CODE_B59F53:					;	   |
 	ASL A					;$B5A144   |
 	ASL A					;$B5A145   |
 	ASL A					;$B5A146   |
-	STA sprite_DMA[0].size,x		;$B5A147   |
+	STA sprite_dma[0].size,x		;$B5A147   |
 	LDA $3C					;$B5A14A   |
 	AND #$00FF				;$B5A14C   |
 	ASL A					;$B5A14F   |
@@ -1498,19 +1498,19 @@ CODE_B59F53:					;	   |
 	ASL A					;$B5A15D   |
 	CLC					;$B5A15E   |
 	ADC $54					;$B5A15F   |
-	STA sprite_DMA[0].destination,x		;$B5A161   |
+	STA sprite_dma[0].destination,x		;$B5A161   |
 	TYA					;$B5A164   |
-	STA sprite_DMA[0].source_word,x		;$B5A165   |
+	STA sprite_dma[0].source_word,x		;$B5A165   |
 	LDA $42					;$B5A168   |
 	ORA #$FF00				;$B5A16A   |
-	STA sprite_DMA[0].source_bank,x		;$B5A16D   |
+	STA sprite_dma[0].source_bank,x		;$B5A16D   |
 	TXA					;$B5A170   |
 	CLC					;$B5A171   |
-	ADC #sizeof(sprite_DMA)			;$B5A172   |
+	ADC #sizeof(sprite_dma)			;$B5A172   |
 	TAX					;$B5A175   |
 .CODE_B5A176:					;	   |
-	STX next_sprite_DMA_buffer_slot		;$B5A176   |
-	STZ sprite_DMA[0].terminate,x		;$B5A179   |
+	STX next_sprite_dma_buffer_slot		;$B5A176   |
+	STZ sprite_dma[0].terminate,x		;$B5A179   |
 .CODE_B5A17C:					;	   |
 	INC $62					;$B5A17C   |
 	INC $62					;$B5A17E   |
@@ -2635,27 +2635,27 @@ sort_sprite_render_orders:
 	BNE .sort_backward_slot			;$B5A916   |/ If not at the start of render table then continue sorting
 	RTL					;$B5A918  /> Return
 
-DMA_queued_sprite_graphics:
+dma_queued_sprite_graphics:
 	LDA #$1801				;$B5A919  \
 	STA DMA[0].settings			;$B5A91C   |
 	SEP #$10				;$B5A91F   |
 	LDY #$01				;$B5A921   |
 	LDX #$00				;$B5A923   |
 .next_DMA					;	   |
-	LDA sprite_DMA[0].source_bank,x		;$B5A925   |
+	LDA sprite_dma[0].source_bank,x		;$B5A925   |
 	BPL .return				;$B5A928   |
 	STA DMA[0].source_bank			;$B5A92A   |
-	LDA sprite_DMA[0].size,x		;$B5A92D   |
+	LDA sprite_dma[0].size,x		;$B5A92D   |
 	STA DMA[0].size				;$B5A930   |
-	LDA sprite_DMA[0].destination,x		;$B5A933   |
+	LDA sprite_dma[0].destination,x		;$B5A933   |
 	STA PPU.vram_address			;$B5A936   |
-	LDA sprite_DMA[0].source_word,x		;$B5A939   |
+	LDA sprite_dma[0].source_word,x		;$B5A939   |
 	STA DMA[0].source			;$B5A93C   |
-	STZ sprite_DMA[0].terminate,x		;$B5A93F   |
+	STZ sprite_dma[0].terminate,x		;$B5A93F   |
 	STY CPU.enable_dma			;$B5A942   |
 	TXA					;$B5A945   |
 	CLC					;$B5A946   |
-	ADC #sizeof(sprite_DMA)			;$B5A947   |
+	ADC #sizeof(sprite_dma)			;$B5A947   |
 	TAX					;$B5A94A   |
 	BRA .next_DMA				;$B5A94B  /
 
@@ -2823,7 +2823,7 @@ CODE_B5AA5F:
 	STA $34					;$B5AA70   |
 CODE_B5AA72:					;	   |
 	LDA column_row_temp_buffer,x		;$B5AA72   |
-	STA layer_column_DMA_buffer,y		;$B5AA75   |
+	STA layer_column_dma_buffer,y		;$B5AA75   |
 	TYA					;$B5AA78   |
 	CLC					;$B5AA79   |
 	ADC #$0002				;$B5AA7A   |
@@ -2835,7 +2835,7 @@ CODE_B5AA72:					;	   |
 	BNE CODE_B5AA72				;$B5AA85   |
 	RTS					;$B5AA87  /
 
-DMA_ship_deck_rigging_columns:
+dma_ship_deck_rigging_columns:
 	LDA $B8					;$B5AA88  \
 	AND #$FFF8				;$B5AA8A   |
 	TAY					;$B5AA8D   |
@@ -2865,7 +2865,7 @@ CODE_B5AAA6:					;	   |
 CODE_B5AAB5:					;	   |
 	ADC #$7800				;$B5AAB5   |
 	STA PPU.vram_address			;$B5AAB8   |
-	LDA #layer_column_DMA_buffer		;$B5AABB   |
+	LDA #layer_column_dma_buffer		;$B5AABB   |
 	STA DMA[0].source			;$B5AABE   |
 	STA DMA[0].unused_2			;$B5AAC1   |
 	LDA #$0040				;$B5AAC4   |
@@ -3045,7 +3045,7 @@ CODE_B5ABFD:
 	STA $34					;$B5AC0D   |
 CODE_B5AC0F:					;	   |
 	LDA column_row_temp_buffer,x		;$B5AC0F   |
-	STA layer_row_left_DMA_buffer,y		;$B5AC12   |
+	STA layer_row_left_dma_buffer,y		;$B5AC12   |
 	TYA					;$B5AC15   |
 	CLC					;$B5AC16   |
 	ADC #$0002				;$B5AC17   |
@@ -3057,7 +3057,7 @@ CODE_B5AC0F:					;	   |
 	BNE CODE_B5AC0F				;$B5AC22   |
 	RTL					;$B5AC24  /
 
-DMA_ship_deck_rigging_rows:
+dma_ship_deck_rigging_rows:
 	LDA screen_scroll_y_position		;$B5AC25  \
 	AND #$00F8				;$B5AC28   |
 	CMP $17CE				;$B5AC2B   |
@@ -3082,7 +3082,7 @@ CODE_B5AC42:					;	   |
 	ADC #$7800				;$B5AC48   |
 	STA $32					;$B5AC4B   |
 	STA PPU.vram_address			;$B5AC4D   |
-	LDA #layer_row_left_DMA_buffer		;$B5AC50   |
+	LDA #layer_row_left_dma_buffer		;$B5AC50   |
 	STA DMA[0].source			;$B5AC53   |
 	STA DMA[0].unused_2			;$B5AC56   |
 	LDA #$0040				;$B5AC59   |
@@ -3098,7 +3098,7 @@ CODE_B5AC42:					;	   |
 	CLC					;$B5AC73   |
 	ADC #$0400				;$B5AC74   |
 	STA PPU.vram_address			;$B5AC77   |
-	LDA #layer_row_right_DMA_buffer		;$B5AC7A   |
+	LDA #layer_row_right_dma_buffer		;$B5AC7A   |
 	STA DMA[0].source			;$B5AC7D   |
 	STA DMA[0].unused_2			;$B5AC80   |
 	LDA #$0040				;$B5AC83   |
@@ -3272,7 +3272,7 @@ CODE_B5ADA9:
 	STA $34					;$B5ADBD   |
 CODE_B5ADBF:					;	   |
 	LDA column_row_temp_buffer,x		;$B5ADBF   |
-	STA level_column_DMA_buffer,y		;$B5ADC2   |
+	STA level_column_dma_buffer,y		;$B5ADC2   |
 	TYA					;$B5ADC5   |
 	CLC					;$B5ADC6   |
 	ADC #$0002				;$B5ADC7   |
@@ -3285,7 +3285,7 @@ CODE_B5ADBF:					;	   |
 	BNE CODE_B5ADBF				;$B5ADD5   |
 	RTL					;$B5ADD7  /
 
-DMA_level_columns:
+dma_level_columns:
 	LDA screen_scroll_x_position		;$B5ADD8  \ \ Get current level x scroll
 	AND #$FFF8				;$B5ADDB   |/ Round to nearest 8x8 tile position
 	CMP $17CA				;$B5ADDE   |\ If the level x scrolled more than 8 pixels
@@ -3319,7 +3319,7 @@ CODE_B5AE01:					;	   |
 CODE_B5AE10:					;	   |
 	ADC level_tilemap_vram_address		;$B5AE10   |
 	STA PPU.vram_address			;$B5AE13   |
-	LDA #level_column_DMA_buffer		;$B5AE16   |
+	LDA #level_column_dma_buffer		;$B5AE16   |
 	STA DMA[0].source			;$B5AE19   |
 	STA DMA[0].unused_2			;$B5AE1C   |
 	LDA #$0040				;$B5AE1F   |
@@ -3370,7 +3370,7 @@ CODE_B5AE67:					;	   |
 CODE_B5AE76:					;	   |
 	ADC #$7800				;$B5AE76   |
 	STA PPU.vram_address			;$B5AE79   |
-	LDA #layer_row_right_DMA_buffer		;$B5AE7C   |
+	LDA #layer_row_right_dma_buffer		;$B5AE7C   |
 	STA DMA[0].source			;$B5AE7F   |
 	STA DMA[0].unused_2			;$B5AE82   |
 	LDA #$0040				;$B5AE85   |
@@ -3546,7 +3546,7 @@ CODE_B5AFB4:
 	STA $34					;$B5AFCA   |
 CODE_B5AFCC:					;	   |
 	LDA column_row_temp_buffer,x		;$B5AFCC   |
-	STA level_row_left_DMA_buffer,y		;$B5AFCF   |
+	STA level_row_left_dma_buffer,y		;$B5AFCF   |
 	TYA					;$B5AFD2   |
 	CLC					;$B5AFD3   |
 	ADC #$0002				;$B5AFD4   |
@@ -3571,7 +3571,7 @@ CODE_B5AFE2:
 	STA $34					;$B5AFF3   |
 CODE_B5AFF5:					;	   |
 	LDA column_row_temp_buffer,x		;$B5AFF5   |
-	STA layer_column_DMA_buffer,y		;$B5AFF8   |
+	STA layer_column_dma_buffer,y		;$B5AFF8   |
 	TYA					;$B5AFFB   |
 	CLC					;$B5AFFC   |
 	ADC #$0002				;$B5AFFD   |
@@ -3583,7 +3583,7 @@ CODE_B5AFF5:					;	   |
 	BNE CODE_B5AFF5				;$B5B008   |
 	RTL					;$B5B00A  /
 
-DMA_level_rows:
+dma_level_rows:
 	LDA screen_scroll_y_position		;$B5B00B  \
 	AND #$00F8				;$B5B00E   |
 	CMP $17CE				;$B5B011   |
@@ -3609,7 +3609,7 @@ CODE_B5B02B:					;	   |
 	ADC level_tilemap_vram_address		;$B5B031   |
 	STA $32					;$B5B034   |
 	STA PPU.vram_address			;$B5B036   |
-	LDA #level_row_left_DMA_buffer		;$B5B039   |
+	LDA #level_row_left_dma_buffer		;$B5B039   |
 	STA DMA[0].source			;$B5B03C   |
 	STA DMA[0].unused_2			;$B5B03F   |
 	LDA #$0040				;$B5B042   |
@@ -3625,7 +3625,7 @@ CODE_B5B02B:					;	   |
 	CLC					;$B5B05C   |
 	ADC #$0400				;$B5B05D   |
 	STA PPU.vram_address			;$B5B060   |
-	LDA #level_row_right_DMA_buffer		;$B5B063   |
+	LDA #level_row_right_dma_buffer		;$B5B063   |
 	STA DMA[0].source			;$B5B066   |
 	STA DMA[0].unused_2			;$B5B069   |
 	LDA #$0040				;$B5B06C   |
@@ -3664,7 +3664,7 @@ CODE_B5B0A2:					;	   |
 	ADC #$7800				;$B5B0A8   |
 	STA $32					;$B5B0AB   |
 	STA PPU.vram_address			;$B5B0AD   |
-	LDA #layer_column_DMA_buffer		;$B5B0B0   |
+	LDA #layer_column_dma_buffer		;$B5B0B0   |
 	STA DMA[0].source			;$B5B0B3   |
 	STA DMA[0].unused_2			;$B5B0B6   |
 	LDA #$0040				;$B5B0B9   |
@@ -3680,7 +3680,7 @@ CODE_B5B0A2:					;	   |
 	CLC					;$B5B0D3   |
 	ADC #$0400				;$B5B0D4   |
 	STA PPU.vram_address			;$B5B0D7   |
-	LDA #layer_row_left_DMA_buffer		;$B5B0DA   |
+	LDA #layer_row_left_dma_buffer		;$B5B0DA   |
 	STA DMA[0].source			;$B5B0DD   |
 	STA DMA[0].unused_2			;$B5B0E0   |
 	LDA #$0040				;$B5B0E3   |
@@ -5029,9 +5029,9 @@ CODE_B5BADE:
 	LDA main_level.effects			;$B5BADE  \
 	AND #!unknown_camera_effect		;$B5BAE1   |
 	BEQ CODE_B5BAEA				;$B5BAE4   |
-	JSL DMA_ship_deck_rigging_columns	;$B5BAE6   |
+	JSL dma_ship_deck_rigging_columns	;$B5BAE6   |
 CODE_B5BAEA:					;	   |
-	JSL DMA_level_columns			;$B5BAEA   |
+	JSL dma_level_columns			;$B5BAEA   |
 	RTS					;$B5BAEE  /
 
 DATA_B5BAEF:
@@ -7529,11 +7529,11 @@ CODE_B5CF20:					;	   |
 	LDA.l $0006A3				;$B5CF45   |
 	AND #$FF9F				;$B5CF49   |
 	STA $0006A3				;$B5CF4C   |
-	LDX #generic_world_map_NMI_hop		;$B5CF50   |
+	LDX #run_simple_world_map		;$B5CF50   |
 	LDA.l $0006A3				;$B5CF53   |
 	BIT #$8000				;$B5CF57   |
 	BEQ CODE_B5CF5F				;$B5CF5A   |
-	LDX #ending_museum_NMI			;$B5CF5C   |
+	LDX #run_ending_monkey_museum		;$B5CF5C   |
 CODE_B5CF5F:					;	   |
 	TXA					;$B5CF5F   |
 	JMP set_and_wait_for_nmi_B5		;$B5CF60  /
@@ -7574,11 +7574,11 @@ CODE_B5CF99:					;	   |
 	LDA.l $0006A3				;$B5CFB5   |
 	AND #$FF9F				;$B5CFB9   |
 	STA $0006A3				;$B5CFBC   |
-	LDX #crocodile_isle_NMI_hop		;$B5CFC0   |
+	LDX #run_crocodile_isle		;$B5CFC0   |
 	LDA.l $0006A3				;$B5CFC3   |
 	BIT #$8000				;$B5CFC7   |
 	BEQ CODE_B5CFCF				;$B5CFCA   |
-	LDX #ending_museum_NMI			;$B5CFCC   |
+	LDX #run_ending_monkey_museum		;$B5CFCC   |
 CODE_B5CFCF:					;	   |
 	TXA					;$B5CFCF   |
 	JMP set_and_wait_for_nmi_B5		;$B5CFD0  /
@@ -7594,11 +7594,11 @@ CODE_B5CFD3:
 	STA screen_brightness			;$B5CFE7   |
 	JSL prepare_oam_dma_channel_global	;$B5CFEA   |
 	STZ active_frame_counter		;$B5CFEE   |
-	LDA #crocodile_isle_krool_fall_NMI_hop	;$B5CFF0   |
+	LDA #run_crocodile_isle_krool_fall	;$B5CFF0   |
 	JMP set_and_wait_for_nmi_B5		;$B5CFF3  /
 
 set_and_wait_for_nmi_B5:
-	STA NMI_pointer				;$B5CFF6  \ Set the active NMI pointer
+	STA nmi_pointer				;$B5CFF6  \ Set the active NMI pointer
 	SEP #$20				;$B5CFF8   |
 	LDA CPU.nmi_flag			;$B5CFFA   | Clear the NMI flag
 .check_nmi_status:				;	   |
@@ -7653,7 +7653,7 @@ crocodile_isle_water_hdma_table:
 	db $FE, $00, $00, $7F, $80, $00, $01, $00
 	db $00, $00
 
-crocodile_isle_NMI:
+run_crocodile_isle_hop:
 	PHK					;$B5D13B  \
 	PLB					;$B5D13C   |
 	LDX #stack				;$B5D13D   |
@@ -7661,7 +7661,7 @@ crocodile_isle_NMI:
 	STZ PPU.oam_address			;$B5D141   |
 	LDA #$1E01				;$B5D144   |
 	STA CPU.enable_dma			;$B5D147   |
-	JSL DMA_queued_sprite_graphics		;$B5D14A   |
+	JSL dma_queued_sprite_graphics		;$B5D14A   |
 	LDA screen_scroll_y_position		;$B5D14E   |
 	STA $7E8051				;$B5D151   |
 	STA $7E8056				;$B5D155   |
@@ -7716,8 +7716,8 @@ CODE_B5D1BD:
 	BEQ CODE_B5D1D0				;$B5D1C4   |
 	LDA screen_brightness			;$B5D1C6   |
 	BNE CODE_B5D1D0				;$B5D1C9   |
-	LDA #ending_museum_NMI			;$B5D1CB   |
-	STA NMI_pointer				;$B5D1CE   |
+	LDA #run_ending_monkey_museum		;$B5D1CB   |
+	STA nmi_pointer				;$B5D1CE   |
 CODE_B5D1D0:					;	   |
 	LDA.l $0006A5				;$B5D1D0   |
 	BIT #$2000				;$B5D1D4   |
@@ -7728,9 +7728,9 @@ CODE_B5D1D0:					;	   |
 	AND #$DFFF				;$B5D1E2   |
 	STA $0006A5				;$B5D1E5   |
 	LDA #CODE_8087D9			;$B5D1E9   |
-	STA gamemode_pointer			;$B5D1EC   |
-	LDA #simple_gamemode_nmi		;$B5D1EE   |
-	JML set_nmi_pointer			;$B5D1F1  /
+	STA game_mode_pointer			;$B5D1EC   |
+	LDA #run_simple_game_mode		;$B5D1EE   |
+	JML set_nmi_and_wait			;$B5D1F1  /
 
 CODE_B5D1F5:
 	JSL input_and_pause_handler_global	;$B5D1F5  \
@@ -7883,7 +7883,7 @@ DATA_B5D32C:
 	dw DATA_FA3520
 	dw lost_world_head_layer_1_8x8_tilemap
 
-generic_world_map_NMI:
+run_simple_world_map_hop:
 	PHK					;$B5D334  \
 	PLB					;$B5D335   |
 	LDX #stack				;$B5D336   |
@@ -7961,7 +7961,7 @@ CODE_B5D3D9:
 	LDA #$0001				;$B5D3D9  \
 CODE_B5D3DC:					;	   |
 	STA CPU.enable_dma			;$B5D3DC   |
-	JSL DMA_queued_sprite_graphics		;$B5D3DF   |
+	JSL dma_queued_sprite_graphics		;$B5D3DF   |
 	JSL CODE_B48368				;$B5D3E3   |
 	LDA.l $0006A3				;$B5D3E7   |
 	BIT #$0020				;$B5D3EB   |
@@ -7989,8 +7989,8 @@ CODE_B5D411:
 	BEQ CODE_B5D424				;$B5D418   |
 	LDA screen_brightness			;$B5D41A   |
 	BNE CODE_B5D424				;$B5D41D   |
-	LDA #ending_museum_NMI			;$B5D41F   |
-	STA NMI_pointer				;$B5D422   |
+	LDA #run_ending_monkey_museum		;$B5D41F   |
+	STA nmi_pointer				;$B5D422   |
 CODE_B5D424:					;	   |
 	SEP #$20				;$B5D424   |
 	LDA screen_brightness			;$B5D426   |
@@ -8019,9 +8019,9 @@ CODE_B5D44A:
 	STA $0006A3				;$B5D467   |
 	STZ $06AF				;$B5D46B   |
 	LDA #CODE_8087D9			;$B5D46E   |
-	STA gamemode_pointer			;$B5D471   |
-	LDA #simple_gamemode_nmi		;$B5D473   |
-	JML set_nmi_pointer			;$B5D476  /
+	STA game_mode_pointer			;$B5D471   |
+	LDA #run_simple_game_mode		;$B5D473   |
+	JML set_nmi_and_wait			;$B5D476  /
 
 CODE_B5D47A:
 	LDA level_number			;$B5D47A  \
@@ -8038,13 +8038,13 @@ CODE_B5D48E:
 	LDA #$0404				;$B5D494   |
 	STA $56					;$B5D497   |
 	LDA #$0054				;$B5D499   |
-	STA $78					;$B5D49C   |
+	STA sprite_dma_buffer_limit		;$B5D49C   |
 	JSL CODE_B59F40				;$B5D49E   |
-	STZ next_sprite_DMA_buffer_slot		;$B5D4A2   |
+	STZ next_sprite_dma_buffer_slot		;$B5D4A2   |
 	PLB					;$B5D4A5   |
 	RTS					;$B5D4A6  /
 
-crocodile_isle_krool_fall_NMI:
+run_crocodile_isle_krool_fall_hop:
 	LDX #stack				;$B5D4A7  \
 	TXS					;$B5D4AA   |
 	PHK					;$B5D4AB   |
@@ -8052,7 +8052,7 @@ crocodile_isle_krool_fall_NMI:
 	STZ PPU.oam_address			;$B5D4AD   |
 	LDA #$1E01				;$B5D4B0   |
 	STA CPU.enable_dma			;$B5D4B3   |
-	JSL DMA_queued_sprite_graphics		;$B5D4B6   |
+	JSL dma_queued_sprite_graphics		;$B5D4B6   |
 	LDA screen_scroll_y_position		;$B5D4BA   |
 	STA $7E8051				;$B5D4BD   |
 	STA $7E8056				;$B5D4C1   |
@@ -8133,8 +8133,8 @@ CODE_B5D52C:					;	   |
 	BNE CODE_B5D57D				;$B5D56D   |
 	LDA #CODE_B48DFA			;$B5D56F   |
 	STA $00067D				;$B5D572   |
-	LDA #ending_museum_NMI			;$B5D576   |
-	JML set_nmi_pointer			;$B5D579  /
+	LDA #run_ending_monkey_museum		;$B5D576   |
+	JML set_nmi_and_wait			;$B5D579  /
 
 CODE_B5D57D:
 	WAI					;$B5D57D  \
@@ -8418,13 +8418,13 @@ CODE_B5D7C4:
 	LDA.l map_krool_sprite_pal_ptr		;$B5D88A   |
 	DEC A					;$B5D88E   |
 	DEC A					;$B5D88F   |
-	JSL DMA_palette				;$B5D890   |
+	JSL dma_palette				;$B5D890   |
 	LDX #$0004				;$B5D894   |
 	LDY #$00F0				;$B5D897   |
 	LDA.l map_krool_splash_sprite_pal_ptr	;$B5D89A   |
 	DEC A					;$B5D89E   |
 	DEC A					;$B5D89F   |
-	JSL DMA_palette				;$B5D8A0   |
+	JSL dma_palette				;$B5D8A0   |
 	LDA #$0000				;$B5D8A4   |
 	STA screen_scroll_y_position		;$B5D8A7   |
 	STA $D2					;$B5D8AA   |
@@ -8450,7 +8450,7 @@ CODE_B5D8AE:
 	LDA.l map_krool_sprite_pal_ptr		;$B5D8DD   |
 	DEC A					;$B5D8E1   |
 	DEC A					;$B5D8E2   |
-	JSL DMA_palette				;$B5D8E3   |
+	JSL dma_palette				;$B5D8E3   |
 	BRA CODE_B5D8FB				;$B5D8E7  /
 
 CODE_B5D8E9:
@@ -9277,7 +9277,7 @@ CODE_B5DF4F:
 CODE_B5DF6C:					;	   |
 	LDX #$0004				;$B5DF6C   |
 	LDY #$00A0				;$B5DF6F   |
-	JSL DMA_palette				;$B5DF72   |
+	JSL dma_palette				;$B5DF72   |
 	LDX #$0000				;$B5DF76   |
 	LDA active_frame_counter		;$B5DF79   |
 	BIT #$0080				;$B5DF7B   |
@@ -9432,32 +9432,32 @@ CODE_B5E0A1:
 	INX					;$B5E0A2   |
 	PHK					;$B5E0A3   |
 	PLB					;$B5E0A4   |
-	JSL clear_VRAM_global			;$B5E0A5   |
+	JSL clear_vram_global			;$B5E0A5   |
 	LDA $0000,x				;$B5E0A9   |
 	AND #$00FF				;$B5E0AC   |
 	PHX					;$B5E0AF   |
-	JSL VRAM_payload_handler_global		;$B5E0B0   |
+	JSL vram_payload_handler_global		;$B5E0B0   |
 	PLX					;$B5E0B4   |
 	INX					;$B5E0B5   |
 	LDA $0000,x				;$B5E0B6   |
 	AND #$00FF				;$B5E0B9   |
 	PHX					;$B5E0BC   |
-	JSL set_PPU_registers_global		;$B5E0BD   |
+	JSL set_ppu_registers_global		;$B5E0BD   |
 	PLX					;$B5E0C1   |
 	INX					;$B5E0C2   |
 	LDA $0000,x				;$B5E0C3   |
 	PHX					;$B5E0C6   |
 	LDY #$0000				;$B5E0C7   |
 	LDX #$0040				;$B5E0CA   |
-	JSL DMA_palette				;$B5E0CD   |
+	JSL dma_palette				;$B5E0CD   |
 	PLX					;$B5E0D1   |
 	INX					;$B5E0D2   |
 	INX					;$B5E0D3   |
 	LDA $0000,x				;$B5E0D4   |
 	SEP #$20				;$B5E0D7   |
-	STA nmi_submode				;$B5E0D9   |
+	STA nmi_sub_mode			;$B5E0D9   |
 	XBA					;$B5E0DB   |
-	STA gamemode_submode			;$B5E0DC   |
+	STA game_sub_mode			;$B5E0DC   |
 	REP #$20				;$B5E0DE   |
 	RTS					;$B5E0E0  /
 

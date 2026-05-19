@@ -1266,730 +1266,730 @@ DATA_FD470E:
 	db $C0, $40, $9C, $38, $53, $43, $10, $08	;11
 
 jungle_klobber_karnage_tileset_config:
-	dw !tileset_init_000B
-	dw !tileset_HDMA_init_0000
+	dw !graphics_init_000B
+	dw !dma_init_0000
 	dw !music_jungle
 	dw klobber_karnage_level_palette
 	dw CODE_BBACFA
 	dw spawn_kongs_in_level
 	db !jungle_generic_ppu_config_id
 	db !jungle_generic_vram_payload_id
-	dw !tileset_NMI_001C
-	dw !tileset_logic_001A
+	dw !nmi_sub_mode_001C
+	dw !game_sub_mode_001A
 	db !jungle_layout_id
 	%bit_flags_word()
 
 jungle_jinx_tileset_config:
-	dw !tileset_init_000B
-	dw !tileset_HDMA_init_0000
+	dw !graphics_init_000B
+	dw !dma_init_0000
 	dw !music_jungle
 	dw jungle_jinx_level_palette
 	dw CODE_BBACFA
 	dw spawn_kongs_in_level
 	db !jungle_generic_ppu_config_id
 	db !jungle_generic_vram_payload_id
-	dw !tileset_NMI_001C
-	dw !tileset_logic_001A
+	dw !nmi_sub_mode_001C
+	dw !game_sub_mode_001A
 	db !jungle_layout_id
 	%bit_flags_word()
 
 swamp_krockhead_klamber_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0003
+	dw !graphics_init_0011
+	dw !dma_init_0003
 	dw !music_swamp
 	dw krockhead_klamber_level_palette
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !swamp_generic_ppu_config_id
 	db !swamp_generic_vram_payload_id
-	dw !tileset_NMI_0010
-	dw !tileset_logic_000F
+	dw !nmi_sub_mode_0010
+	dw !game_sub_mode_000F
 	db !swamp_layout_id
 	%bit_flags_word(!offscreen_water_splash_effect, !icy_slope_slide_effect)
 
 swamp_mudhole_marsh_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0003
+	dw !graphics_init_0011
+	dw !dma_init_0003
 	dw !music_swamp
 	dw mudhole_marsh_level_palette
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !swamp_generic_ppu_config_id
 	db !swamp_generic_vram_payload_id
-	dw !tileset_NMI_0010
-	dw !tileset_logic_000F
+	dw !nmi_sub_mode_0010
+	dw !game_sub_mode_000F
 	db !swamp_layout_id
 	%bit_flags_word(!offscreen_water_splash_effect, !icy_slope_slide_effect)
 
 jungle_animal_antics_tileset_config:
-	dw !tileset_init_000B
-	dw !tileset_HDMA_init_0000
+	dw !graphics_init_000B
+	dw !dma_init_0000
 	dw !music_jungle
 	dw !null_pointer
 	dw CODE_BBACFA
 	dw spawn_kongs_in_level
 	db !jungle_generic_ppu_config_id
 	db !jungle_generic_vram_payload_id
-	dw !tileset_NMI_001C
-	dw !tileset_logic_001A
+	dw !nmi_sub_mode_001C
+	dw !game_sub_mode_001A
 	db !jungle_layout_id
 	%bit_flags_word()
 
 ice_flooded_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_000E
+	dw !graphics_init_0011
+	dw !dma_init_000E
 	dw !music_ice
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ice_flooded_ppu_config_id
 	db !ice_generic_vram_payload_id
-	dw !tileset_NMI_001B
-	dw !tileset_logic_0019
+	dw !nmi_sub_mode_001B
+	dw !game_sub_mode_0019
 	db !ice_1_layout_id
 	%bit_flags_word(!door_occlusion_effect, !icy_slope_slide_effect, !icy_acceleration_effect)
 
 ice_translucent_1_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_000D
+	dw !graphics_init_0011
+	dw !dma_init_000D
 	dw !music_ice
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ice_translucent_ppu_config_id
 	db !ice_generic_vram_payload_id
-	dw !tileset_NMI_001D
-	dw !tileset_logic_001B
+	dw !nmi_sub_mode_001D
+	dw !game_sub_mode_001B
 	db !ice_1_layout_id
 	%bit_flags_word(!door_occlusion_effect, !icy_slope_slide_effect, !icy_acceleration_effect)
 
 ice_translucent_2_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_000D
+	dw !graphics_init_0011
+	dw !dma_init_000D
 	dw !music_ice
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ice_translucent_ppu_config_id
 	db !ice_generic_vram_payload_id
-	dw !tileset_NMI_001D
-	dw !tileset_logic_001B
+	dw !nmi_sub_mode_001D
+	dw !game_sub_mode_001B
 	db !ice_2_layout_id
 	%bit_flags_word(!door_occlusion_effect, !icy_slope_slide_effect, !icy_acceleration_effect)
 
 castle_chain_link_chamber_tileset_config:
-	dw !tileset_init_0013
-	dw !tileset_HDMA_init_001A
+	dw !graphics_init_0013
+	dw !dma_init_001A
 	dw !music_castle
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !castle_generic_ppu_config_id
 	db !castle_generic_vram_payload_id
-	dw !tileset_NMI_0015
-	dw !tileset_logic_0014
+	dw !nmi_sub_mode_0015
+	dw !game_sub_mode_0014
 	db !castle_1_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect)
 
 castle_stronghold_showdown_tileset_config:
-	dw !tileset_init_0013
-	dw !tileset_HDMA_init_001A
+	dw !graphics_init_0013
+	dw !dma_init_001A
 	dw !music_castle
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw CODE_BBAD06
 	db !castle_generic_ppu_config_id
 	db !castle_generic_vram_payload_id
-	dw !tileset_NMI_0015
-	dw !tileset_logic_0014
+	dw !nmi_sub_mode_0015
+	dw !game_sub_mode_0014
 	db !castle_1_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect)
 
 castle_toxic_tower_tileset_config:
-	dw !tileset_init_0012
-	dw !tileset_HDMA_init_0019
+	dw !graphics_init_0012
+	dw !dma_init_0019
 	dw !music_castle
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !castle_flooded_ppu_config_id
 	db !castle_flooded_vram_payload_id
-	dw !tileset_NMI_001E
-	dw !tileset_logic_001C
+	dw !nmi_sub_mode_001E
+	dw !game_sub_mode_001C
 	db !castle_1_layout_id
 	%bit_flags_word(!hazardous_water_effect)
 
 castle_crush_tileset_config:
-	dw !tileset_init_0013
-	dw !tileset_HDMA_init_001A
+	dw !graphics_init_0013
+	dw !dma_init_001A
 	dw !music_castle
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !castle_generic_ppu_config_id
 	db !castle_generic_vram_payload_id
-	dw !tileset_NMI_0015
-	dw !tileset_logic_0014
+	dw !nmi_sub_mode_0015
+	dw !game_sub_mode_0014
 	db !castle_2_layout_id			;Note: this id is the same as castle 1, they both point to the same data
 	%bit_flags_word(!climbable_ropes_2_effect, !door_occlusion_effect)
 
 krool_duel_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0000
+	dw !graphics_init_0011
+	dw !dma_init_0000
 	dw !music_forest
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw CODE_BBAD19
 	db !krool_duel_ppu_config_id
 	db !krool_duel_vram_payload_id
-	dw !tileset_NMI_0019
-	dw !tileset_logic_0017
+	dw !nmi_sub_mode_0019
+	dw !game_sub_mode_0017
 	db !krool_duel_layout_id
 	%bit_flags_word()
 
 krocodile_kore_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_000B
+	dw !graphics_init_0011
+	dw !dma_init_000B
 	dw !music_forest
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !krocodile_kore_ppu_config_id
 	db !krocodile_kore_vram_payload_id
-	dw !tileset_NMI_0014
-	dw !tileset_logic_0013
+	dw !nmi_sub_mode_0014
+	dw !game_sub_mode_0013
 	db !krocodile_kore_layout_id
 	%bit_flags_word()
 
 forest_generic_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0000
+	dw !graphics_init_0011
+	dw !dma_init_0000
 	dw !music_forest
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !forest_generic_ppu_config_id
 	db !forest_generic_vram_payload_id
-	dw !tileset_NMI_0001
-	dw !tileset_logic_0001
+	dw !nmi_sub_mode_0001
+	dw !game_sub_mode_0001
 	db !forest_layout_id
 	%bit_flags_word(!door_occlusion_effect)
 
 forest_misty_tileset_config:
-	dw !tileset_init_0010
-	dw !tileset_HDMA_init_0016
+	dw !graphics_init_0010
+	dw !dma_init_0016
 	dw !music_forest
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !forest_misty_ppu_config_id
 	db !forest_misty_vram_payload_id
-	dw !tileset_NMI_0021
-	dw !tileset_logic_001F
+	dw !nmi_sub_mode_0021
+	dw !game_sub_mode_001F
 	db !forest_layout_id
 	%bit_flags_word(!door_occlusion_effect)
 
 forest_light_shafts_tileset_config:
-	dw !tileset_init_000F
-	dw !tileset_HDMA_init_0015
+	dw !graphics_init_000F
+	dw !dma_init_0015
 	dw !music_forest
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !forest_light_shafts_ppu_config_id
 	db !forest_light_shafts_vram_payload_id
-	dw !tileset_NMI_000E
-	dw !tileset_logic_000D
+	dw !nmi_sub_mode_000E
+	dw !game_sub_mode_000D
 	db !forest_layout_id
 	%bit_flags_word(!door_occlusion_effect)
 
 forest_windy_tileset_config:
-	dw !tileset_init_000E
-	dw !tileset_HDMA_init_0014
+	dw !graphics_init_000E
+	dw !dma_init_0014
 	dw !music_forest
 	dw gusty_glade_level_palette
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !forest_windy_ppu_config_id
 	db !forest_windy_vram_payload_id
-	dw !tileset_NMI_000F
-	dw !tileset_logic_000E
+	dw !nmi_sub_mode_000F
+	dw !game_sub_mode_000E
 	db !forest_layout_id
 	%bit_flags_word(!door_occlusion_effect, !wind_sound_effect)
 
 ship_hold_generic_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0013
+	dw !graphics_init_0011
+	dw !dma_init_0013
 	dw !music_ship_hold
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_hold_generic_ppu_config_id
 	db !ship_hold_generic_vram_payload_id
-	dw !tileset_NMI_0002
-	dw !tileset_logic_0002
+	dw !nmi_sub_mode_0002
+	dw !game_sub_mode_0002
 	db !ship_hold_layout_id
 	%bit_flags_word(!door_occlusion_effect)
 
 ship_hold_hot_tileset_config:
-	dw !tileset_init_000D
-	dw !tileset_HDMA_init_0012
+	dw !graphics_init_000D
+	dw !dma_init_0012
 	dw !music_ship_hold
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_hold_generic_ppu_config_id
 	db !ship_hold_generic_vram_payload_id
-	dw !tileset_NMI_0018
-	dw !tileset_logic_0002
+	dw !nmi_sub_mode_0018
+	dw !game_sub_mode_0002
 	db !ship_hold_layout_id
 	%bit_flags_word(!door_occlusion_effect, !hazardous_water_effect)
 
 ship_hold_dark_tileset_config:
-	dw !tileset_init_000C
-	dw !tileset_HDMA_init_0011
+	dw !graphics_init_000C
+	dw !dma_init_0011
 	dw !music_ship_hold
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_hold_dark_ppu_config_id
 	db !ship_hold_dark_vram_payload_id
-	dw !tileset_NMI_0012
-	dw !tileset_logic_0011
+	dw !nmi_sub_mode_0012
+	dw !game_sub_mode_0011
 	db !ship_hold_layout_id
 	%bit_flags_word(!door_occlusion_effect, !inverted_sprite_palette_effect)
 
 wasp_hive_generic_1_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0010
+	dw !graphics_init_0011
+	dw !dma_init_0010
 	dw !music_wasp_hive
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !wasp_hive_generic_ppu_config_id
 	db !wasp_hive_generic_vram_payload_id
-	dw !tileset_NMI_0003
-	dw !tileset_logic_0003
+	dw !nmi_sub_mode_0003
+	dw !game_sub_mode_0003
 	db !wasp_hive_1_layout_id
 	%bit_flags_word(!door_occlusion_effect, !sticky_honey_effect)
 
 wasp_hive_king_zing_sting_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_000F
+	dw !graphics_init_0011
+	dw !dma_init_000F
 	dw !music_wasp_hive
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !wasp_hive_generic_ppu_config_id
 	db !wasp_hive_generic_vram_payload_id
-	dw !tileset_NMI_0003
-	dw !tileset_logic_0003
+	dw !nmi_sub_mode_0003
+	dw !game_sub_mode_0003
 	db !wasp_hive_2_layout_id
 	%bit_flags_word(!door_occlusion_effect, !sticky_honey_effect)
 
 wasp_hive_generic_2_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0010
+	dw !graphics_init_0011
+	dw !dma_init_0010
 	dw !music_wasp_hive
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !wasp_hive_generic_ppu_config_id
 	db !wasp_hive_generic_vram_payload_id
-	dw !tileset_NMI_0003
-	dw !tileset_logic_0003
+	dw !nmi_sub_mode_0003
+	dw !game_sub_mode_0003
 	db !wasp_hive_2_layout_id
 	%bit_flags_word(!door_occlusion_effect, !sticky_honey_effect)
 
 ship_deck_pirate_panic_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0004
+	dw !graphics_init_0011
+	dw !dma_init_0004
 	dw !music_ship_deck
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_deck_generic_ppu_config_id
 	db !ship_deck_generic_vram_payload_id
-	dw !tileset_NMI_0006
-	dw !tileset_logic_0006
+	dw !nmi_sub_mode_0006
+	dw !game_sub_mode_0006
 	db !ship_deck_layout_id
 	%bit_flags_word(!unknown_camera_effect, !door_occlusion_effect, !offscreen_water_splash_effect)
 
 ship_deck_gangplank_galley_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0017
+	dw !graphics_init_0011
+	dw !dma_init_0017
 	dw !music_ship_deck
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_deck_generic_ppu_config_id
 	db !ship_deck_generic_vram_payload_id
-	dw !tileset_NMI_001A
-	dw !tileset_logic_0018
+	dw !nmi_sub_mode_001A
+	dw !game_sub_mode_0018
 	db !ship_deck_layout_id
 	%bit_flags_word(!unknown_camera_effect, !door_occlusion_effect, !offscreen_water_splash_effect)
 
 ship_deck_rattle_battle_tileset_config:
-	dw !tileset_init_0004
-	dw !tileset_HDMA_init_0004
+	dw !graphics_init_0004
+	dw !dma_init_0004
 	dw !music_ship_deck_2
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_deck_generic_ppu_config_id
 	db !ship_deck_generic_vram_payload_id
-	dw !tileset_NMI_0006
-	dw !tileset_logic_0006
+	dw !nmi_sub_mode_0006
+	dw !game_sub_mode_0006
 	db !ship_deck_layout_id
 	%bit_flags_word(!unknown_camera_effect, !door_occlusion_effect, !offscreen_water_splash_effect)
 
 lava_hot_head_hop_tileset_config:
-	dw !tileset_init_0009
-	dw !tileset_HDMA_init_000A
+	dw !graphics_init_0009
+	dw !dma_init_000A
 	dw !music_lava
 	dw !null_pointer
 	dw CODE_BBACEE
 	dw spawn_kongs_in_level
 	db !lava_generic_ppu_config_id
 	db !lava_generic_vram_payload_id
-	dw !tileset_NMI_0007
-	dw !tileset_logic_0007
+	dw !nmi_sub_mode_0007
+	dw !game_sub_mode_0007
 	db !lava_layout_id
 	%bit_flags_word(!offscreen_water_splash_effect)
 
 lava_fiery_furnace_tileset_config:
-	dw !tileset_init_0009
-	dw !tileset_HDMA_init_000A
+	dw !graphics_init_0009
+	dw !dma_init_000A
 	dw !music_lava
 	dw fiery_furnace_level_palette
 	dw CODE_BBACEE
 	dw spawn_kongs_in_level
 	db !lava_generic_ppu_config_id
 	db !lava_generic_vram_payload_id
-	dw !tileset_NMI_0007
-	dw !tileset_logic_0007
+	dw !nmi_sub_mode_0007
+	dw !game_sub_mode_0007
 	db !lava_layout_id
 	%bit_flags_word(!offscreen_water_splash_effect)
 
 lava_red_hot_ride_tileset_config:
-	dw !tileset_init_0008
-	dw !tileset_HDMA_init_0009
+	dw !graphics_init_0008
+	dw !dma_init_0009
 	dw !music_lava
 	dw !null_pointer
 	dw CODE_BBACEE
 	dw spawn_kongs_in_level
 	db !lava_geysers_ppu_config_id
 	db !lava_geysers_vram_payload_id
-	dw !tileset_NMI_0013
-	dw !tileset_logic_0012
+	dw !nmi_sub_mode_0013
+	dw !game_sub_mode_0012
 	db !lava_layout_id
 	%bit_flags_word(!platform_sprite_edge_guard_effect)
 
 ship_mast_slime_climb_tileset_config:
-	dw !tileset_init_0005
-	dw !tileset_HDMA_init_0006
+	dw !graphics_init_0005
+	dw !dma_init_0006
 	dw !music_rigging
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_mast_flooded_ppu_config_id
 	db !ship_mast_flooded_vram_payload_id
-	dw !tileset_NMI_0017
-	dw !tileset_logic_0016
+	dw !nmi_sub_mode_0017
+	dw !game_sub_mode_0016
 	db !ship_mast_layout_id
 	%bit_flags_word(!door_occlusion_effect, !climbable_ropes_effect)
 
 ship_mast_unused_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0005
+	dw !graphics_init_0011
+	dw !dma_init_0005
 	dw !music_rigging
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_mast_rainy_ppu_config_id
 	db !ship_mast_rainy_vram_payload_id
-	dw !tileset_NMI_0008
-	dw !tileset_logic_0008
+	dw !nmi_sub_mode_0008
+	dw !game_sub_mode_0008
 	db !ship_mast_layout_id
 	%bit_flags_word(!door_occlusion_effect, !climbable_ropes_effect)
 
 ship_mast_topsail_trouble_tileset_config:
-	dw !tileset_init_0007
-	dw !tileset_HDMA_init_0005
+	dw !graphics_init_0007
+	dw !dma_init_0005
 	dw !music_rigging
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_mast_rainy_ppu_config_id
 	db !ship_mast_rainy_vram_payload_id
-	dw !tileset_NMI_0008
-	dw !tileset_logic_0008
+	dw !nmi_sub_mode_0008
+	dw !game_sub_mode_0008
 	db !ship_mast_layout_id
 	%bit_flags_word(!door_occlusion_effect, !climbable_ropes_effect, !icy_slope_slide_effect)
 
 ship_mast_krows_nest_tileset_config:
-	dw !tileset_init_0014
-	dw !tileset_HDMA_init_0005
+	dw !graphics_init_0014
+	dw !dma_init_0005
 	dw !music_big_boss
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_mast_cloudy_ppu_config_id
 	db !ship_mast_cloudy_vram_payload_id
-	dw !tileset_NMI_000D
-	dw !tileset_logic_0008
+	dw !nmi_sub_mode_000D
+	dw !game_sub_mode_0008
 	db !ship_mast_layout_id
 	%bit_flags_word(!door_occlusion_effect)
 
 ship_mast_mainbrace_mayhem_tileset_config:
-	dw !tileset_init_0014
-	dw !tileset_HDMA_init_0005
+	dw !graphics_init_0014
+	dw !dma_init_0005
 	dw !music_rigging
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_mast_cloudy_ppu_config_id
 	db !ship_mast_cloudy_vram_payload_id
-	dw !tileset_NMI_000D
-	dw !tileset_logic_0008
+	dw !nmi_sub_mode_000D
+	dw !game_sub_mode_0008
 	db !ship_mast_layout_id
 	%bit_flags_word(!door_occlusion_effect, !climbable_ropes_effect)
 
 ship_mast_kreepy_krow_tileset_config:
-	dw !tileset_init_0007
-	dw !tileset_HDMA_init_0005
+	dw !graphics_init_0007
+	dw !dma_init_0005
 	dw !music_rigging
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_mast_rainy_sprite_transparency_ppu_config_id
 	db !ship_mast_rainy_vram_payload_id
-	dw !tileset_NMI_0008
-	dw !tileset_logic_0008
+	dw !nmi_sub_mode_0008
+	dw !game_sub_mode_0008
 	db !ship_mast_layout_id
 	%bit_flags_word(!door_occlusion_effect, !climbable_ropes_effect)
 
 carnival_generic_1_tileset_config:
-	dw !tileset_init_0000
-	dw !tileset_HDMA_init_0000
+	dw !graphics_init_0000
+	dw !dma_init_0000
 	dw !music_roller_coaster
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !carnival_generic_ppu_config_id
 	db !carnival_generic_vram_payload_id
-	dw !tileset_NMI_0009
-	dw !tileset_logic_0009
+	dw !nmi_sub_mode_0009
+	dw !game_sub_mode_0009
 	db !carnival_1_layout_id
 	%bit_flags_word(!unknown_4000_effect)
 
 carnival_generic_2_tileset_config:
-	dw !tileset_init_0000
-	dw !tileset_HDMA_init_0000
+	dw !graphics_init_0000
+	dw !dma_init_0000
 	dw !music_roller_coaster
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !carnival_generic_ppu_config_id
 	db !carnival_generic_vram_payload_id
-	dw !tileset_NMI_0009
-	dw !tileset_logic_0009
+	dw !nmi_sub_mode_0009
+	dw !game_sub_mode_0009
 	db !carnival_2_layout_id
 	%bit_flags_word(!unknown_4000_effect)
 
 haunted_generic_1_tileset_config:
-	dw !tileset_init_0006
-	dw !tileset_HDMA_init_0008
+	dw !graphics_init_0006
+	dw !dma_init_0008
 	dw !music_haunted
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !haunted_generic_ppu_config_id
 	db !haunted_generic_vram_payload_id
-	dw !tileset_NMI_0016
-	dw !tileset_logic_0015
+	dw !nmi_sub_mode_0016
+	dw !game_sub_mode_0015
 	db !carnival_2_layout_id
 	%bit_flags_word(!unknown_4000_effect)
 
 haunted_generic_2_tileset_config:
-	dw !tileset_init_0006
-	dw !tileset_HDMA_init_0008
+	dw !graphics_init_0006
+	dw !dma_init_0008
 	dw !music_haunted
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !haunted_generic_ppu_config_id
 	db !haunted_generic_vram_payload_id
-	dw !tileset_NMI_0016
-	dw !tileset_logic_0015
+	dw !nmi_sub_mode_0016
+	dw !game_sub_mode_0015
 	db !carnival_1_layout_id
 	%bit_flags_word(!unknown_4000_effect)
 
 mine_windy_well_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0018
+	dw !graphics_init_0011
+	dw !dma_init_0018
 	dw !music_mine
 	dw windy_well_level_palette
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !mine_windy_ppu_config_id
 	db !mine_windy_vram_payload_id
-	dw !tileset_NMI_0020
-	dw !tileset_logic_001E
+	dw !nmi_sub_mode_0020
+	dw !game_sub_mode_001E
 	db !mine_layout_id
 	%bit_flags_word(!wind_sound_effect)
 
 mine_kannons_klaim_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0007
+	dw !graphics_init_0011
+	dw !dma_init_0007
 	dw !music_mine
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !mine_generic_ppu_config_id
 	db !mine_generic_vram_payload_id
-	dw !tileset_NMI_000C
-	dw !tileset_logic_000C
+	dw !nmi_sub_mode_000C
+	dw !game_sub_mode_000C
 	db !mine_layout_id
 	%bit_flags_word()
 
 mine_squawks_shaft_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0007
+	dw !graphics_init_0011
+	dw !dma_init_0007
 	dw !music_mine
 	dw squawks_shaft_level_palette
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !mine_generic_ppu_config_id
 	db !mine_generic_vram_payload_id
-	dw !tileset_NMI_000C
-	dw !tileset_logic_000C
+	dw !nmi_sub_mode_000C
+	dw !game_sub_mode_000C
 	db !mine_layout_id
 	%bit_flags_word()
 
 bramble_light_1_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0002
+	dw !graphics_init_0011
+	dw !dma_init_0002
 	dw !music_brambles
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !bramble_generic_ppu_config_id
 	db !bramble_generic_vram_payload_id
-	dw !tileset_NMI_0011
-	dw !tileset_logic_0010
+	dw !nmi_sub_mode_0011
+	dw !game_sub_mode_0010
 	db !brambles_1_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect, !unused_bramble_effect)
 
 bramble_brown_1_tileset_config:
-	dw !tileset_init_0003
-	dw !tileset_HDMA_init_0002
+	dw !graphics_init_0003
+	dw !dma_init_0002
 	dw !music_brambles
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !bramble_generic_ppu_config_id
 	db !bramble_generic_vram_payload_id
-	dw !tileset_NMI_0011
-	dw !tileset_logic_0010
+	dw !nmi_sub_mode_0011
+	dw !game_sub_mode_0010
 	db !brambles_1_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect, !unused_bramble_effect)
 
 bramble_dark_1_tileset_config:
-	dw !tileset_init_0002
-	dw !tileset_HDMA_init_0002
+	dw !graphics_init_0002
+	dw !dma_init_0002
 	dw !music_brambles
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !bramble_generic_ppu_config_id
 	db !bramble_generic_vram_payload_id
-	dw !tileset_NMI_0011
-	dw !tileset_logic_0010
+	dw !nmi_sub_mode_0011
+	dw !game_sub_mode_0010
 	db !brambles_1_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect, !unused_bramble_effect)
 
 bramble_light_windy_tileset_config:
-	dw !tileset_init_0001
-	dw !tileset_HDMA_init_0001
+	dw !graphics_init_0001
+	dw !dma_init_0001
 	dw !music_brambles
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !bramble_windy_ppu_config_id
 	db !bramble_windy_vram_payload_id
-	dw !tileset_NMI_001F
-	dw !tileset_logic_001D
+	dw !nmi_sub_mode_001F
+	dw !game_sub_mode_001D
 	db !brambles_2_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect, !unused_bramble_effect)
 
 bramble_light_2_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0002
+	dw !graphics_init_0011
+	dw !dma_init_0002
 	dw !music_brambles
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !bramble_generic_ppu_config_id
 	db !bramble_generic_vram_payload_id
-	dw !tileset_NMI_0011
-	dw !tileset_logic_0010
+	dw !nmi_sub_mode_0011
+	dw !game_sub_mode_0010
 	db !brambles_2_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect, !unused_bramble_effect)
 
 bramble_dark_2_tileset_config:
-	dw !tileset_init_0002
-	dw !tileset_HDMA_init_0002
+	dw !graphics_init_0002
+	dw !dma_init_0002
 	dw !music_brambles
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !bramble_generic_ppu_config_id
 	db !bramble_generic_vram_payload_id
-	dw !tileset_NMI_0011
-	dw !tileset_logic_0010
+	dw !nmi_sub_mode_0011
+	dw !game_sub_mode_0010
 	db !brambles_2_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect, !unused_bramble_effect)
 
 bramble_brown_2_tileset_config:
-	dw !tileset_init_0003
-	dw !tileset_HDMA_init_0002
+	dw !graphics_init_0003
+	dw !dma_init_0002
 	dw !music_brambles
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !bramble_generic_ppu_config_id
 	db !bramble_generic_vram_payload_id
-	dw !tileset_NMI_0011
-	dw !tileset_logic_0010
+	dw !nmi_sub_mode_0011
+	dw !game_sub_mode_0010
 	db !brambles_2_layout_id
 	%bit_flags_word(!climbable_ropes_2_effect, !unused_bramble_effect)
 
 ship_cabin_tileset_config:
-	dw !tileset_init_000A
-	dw !tileset_HDMA_init_000C
+	dw !graphics_init_000A
+	dw !dma_init_000C
 	dw !music_bonus
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !ship_cabin_generic_ppu_config_id
 	db !ship_cabin_generic_vram_payload_id
-	dw !tileset_NMI_000A
-	dw !tileset_logic_000A
+	dw !nmi_sub_mode_000A
+	dw !game_sub_mode_000A
 	db !ship_cabin_layout_id
 	%bit_flags_word(!no_tilemap_effect)
 
 swamp_barrel_bayou_tileset_config:
-	dw !tileset_init_0011
-	dw !tileset_HDMA_init_0003
+	dw !graphics_init_0011
+	dw !dma_init_0003
 	dw !music_swamp
 	dw !null_pointer
 	dw CODE_BBACE2
 	dw spawn_kongs_in_level
 	db !swamp_generic_ppu_config_id
 	db !swamp_generic_vram_payload_id
-	dw !tileset_NMI_0010
-	dw !tileset_logic_000F
+	dw !nmi_sub_mode_0010
+	dw !game_sub_mode_000F
 	db !swamp_layout_id
 	%bit_flags_word(!offscreen_water_splash_effect, !icy_slope_slide_effect)
 

@@ -7402,14 +7402,14 @@ puftup_death:
 
 ;$F96054
 puftup_spike:
-	db $04 : dw $01F8
-	db $04 : dw $01FC
-	db $04 : dw $0200
-	db $04 : dw $0204
-	db $04 : dw $0208
-	db $04 : dw $020C
-	db $04 : dw $0210
-	db $04 : dw $0214
+	db $04 : dw !spike_frame1
+	db $04 : dw !spike_frame2
+	db $04 : dw !spike_frame3
+	db $04 : dw !spike_frame4
+	db $04 : dw !spike_frame5
+	db $04 : dw !spike_frame6
+	db $04 : dw !spike_frame7
+	db $04 : dw !spike_frame8
 	db !animation_command_80, $00
 
 ;$F9606E

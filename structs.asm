@@ -103,7 +103,7 @@ endstruct
 
 struct main_level main_level_config
 	.type:				skip 2	;$0515/$0553 $00,x config+$00 level type
-	.tileset_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
+	.graphics_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
 	.HDMA_init_number:		skip 2	;$0519/$0557 $04,x theme+$02 HDMA init routine index
 	.song:				skip 2	;$051B/$0559 $06,x theme+$04 music track index
 	.init_routine:			skip 2	;$051D/$055B $08,x theme+$0A level init routine pointer (bank BB)
@@ -139,7 +139,7 @@ endstruct
 
 struct alt_level alt_level_config
 	.type:				skip 2	;$0515/$0553 $00,x config+$00 level type
-	.tileset_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
+	.graphics_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
 	.HDMA_init_number:		skip 2	;$0519/$0557 $04,x theme+$02 HDMA init routine index
 	.song:				skip 2	;$051B/$0559 $06,x theme+$04 music track index
 	.init_routine:			skip 2	;$051D/$055B $08,x theme+$0A level init routine pointer (bank BB)
@@ -175,7 +175,7 @@ endstruct
 
 struct rel_level $0000
 	.type:				skip 2	;$0515/$0553 $00,x config+$00 level type
-	.tileset_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
+	.graphics_init_number:		skip 2	;$0517/$0555 $02,x theme+$00 graphics init routine index
 	.HDMA_init_number:		skip 2	;$0519/$0557 $04,x theme+$02 HDMA init routine index
 	.song:				skip 2	;$051B/$0559 $06,x theme+$04 music track index
 	.init_routine:			skip 2	;$051D/$055B $08,x theme+$0A level init routine pointer (bank BB)
@@ -214,7 +214,7 @@ endstruct
 main_sprite_table = $0DE2
 main_sprite_table_end = $0DE2+(sizeof(sprite)*24)
 
-struct sprite_DMA sprite_DMA_buffer
+struct sprite_dma sprite_dma_buffer
 	.size:		skip 2
 	.destination:	skip 2
 	.source_word:	skip 2
@@ -222,7 +222,7 @@ struct sprite_DMA sprite_DMA_buffer
 	.source_bank:	skip 2
 endstruct
 
-struct sprite_palette_DMA sprite_palette_DMA_buffer
+struct sprite_palette_dma sprite_palette_dma_buffer
 	.source_word:	skip 2
 	.source_bank:	skip 2
 endstruct
@@ -262,21 +262,52 @@ endstruct
 ;SRAM structures
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-struct subfile $0000
-	.data: skip $014E
+struct sub_file $0000
+	.time_played:				skip 4
+	.completion_percentage:			skip 2
+	.tokens:				skip 1
+	.hero_coins:				skip 1
+	.competitor_hero_coins:			skip 1
+	.level_number:				skip 1
+	.game_state_flags:			skip 2
+	.game_state_flags_2:			skip 2
+	.map_icon_unlocks:			skip 32
+	.map_path_unlocks:			skip 32
+	.collected_tokens:			skip 32
+	.collected_hero_coins:			skip 32
+	.completed_levels:			skip 32
+	.world_number:				skip 2
+	.map_node_number:			skip 2
+	.returning_map_node_number:		skip 2
+	.active_kong_number:			skip 1
+	.completed_cranky_dialogue:		skip 8
+	.completed_cranky_lost_2_dialogue:	skip 1
+	.completed_cranky_lost_3_dialogue:	skip 1
+	.completed_cranky_lost_4_dialogue:	skip 1
+	.completed_cranky_lost_5_dialogue:	skip 1
+	.completed_cranky_lost_6_dialogue:	skip 1
+	.completed_wrinkly_dialogue:		skip 8
+	.completed_funky_dialogue:		skip 8
+	.completed_swanky_dialogue:		skip 8
+	.completed_lost_world_levels:		skip 1
+	.klubba_payments:			skip 1
+	.visited_kong_family_members:		skip 1
+	.world_map_events:			skip 2
+	.world_map_event_step_counter:		skip 2
+	skip $6D
 endstruct
 
 struct save_file $0000
 	.header:
-	.additive_checksum: 	skip 2
-	.xor_checksum: 		skip 2
+		.additive_checksum: 	skip 2
+		.xor_checksum: 		skip 2
 	.file_signature:
-	.active_player:		skip 1
-	.file_type:		skip 1
+		.active_player:		skip 1
+		.file_type:		skip 1
 	.contents:
-	.player_1:		skip sizeof(subfile)
-	.player_2:		skip sizeof(subfile)
-	.data:			skip 6
+		.player_1:		skip sizeof(sub_file)
+		.player_2:		skip sizeof(sub_file)
+		.data:			skip 6
 endstruct
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -437,9 +437,9 @@ CODE_BEBB2A:
 	LDY #DATA_C02501			;$BEBB4D   | kong letters bottom tiledata
 	JSR CODE_BEBD5C				;$BEBB50   |
 	BCC CODE_BEBB61				;$BEBB53   |
-	LDA next_sprite_DMA_buffer_slot		;$BEBB55   |
-	SBC #sizeof(sprite_DMA)			;$BEBB58   |
-	STA next_sprite_DMA_buffer_slot		;$BEBB5B   |
+	LDA next_sprite_dma_buffer_slot		;$BEBB55   |
+	SBC #sizeof(sprite_dma)			;$BEBB58   |
+	STA next_sprite_dma_buffer_slot		;$BEBB5B   |
 CODE_BEBB5E:					;	   |
 	JML [sprite_return_address]		;$BEBB5E  /
 
@@ -748,27 +748,27 @@ DATA_BEBD4C:
 
 CODE_BEBD5C:
 	STX $32					;$BEBD5C  \
-	LDX next_sprite_DMA_buffer_slot		;$BEBD5E   |
+	LDX next_sprite_dma_buffer_slot		;$BEBD5E   |
 	CPX $78					;$BEBD61   |
 	BCS CODE_BEBD8D				;$BEBD63   |
-	STA sprite_DMA[0].destination,x		;$BEBD65   |
+	STA sprite_dma[0].destination,x		;$BEBD65   |
 	TYA					;$BEBD68   |
-	STA sprite_DMA[0].source_word,x		;$BEBD69   |
+	STA sprite_dma[0].source_word,x		;$BEBD69   |
 	LDA $32					;$BEBD6C   |
 	AND #$00FF				;$BEBD6E   |
 	ORA #$8000				;$BEBD71   |
-	STA sprite_DMA[0].source_bank,x		;$BEBD74   |
+	STA sprite_dma[0].source_bank,x		;$BEBD74   |
 	LDA $32					;$BEBD77   |
 	AND #$FF00				;$BEBD79   |
 	LSR A					;$BEBD7C   |
 	LSR A					;$BEBD7D   |
 	LSR A					;$BEBD7E   |
-	STA sprite_DMA[0].size,x		;$BEBD7F   |
+	STA sprite_dma[0].size,x		;$BEBD7F   |
 	TXA					;$BEBD82   |
 	CLC					;$BEBD83   |
-	ADC #sizeof(sprite_DMA)			;$BEBD84   |
-	STA next_sprite_DMA_buffer_slot		;$BEBD87   |
-	STZ sprite_DMA[1].terminate,x		;$BEBD8A   |
+	ADC #sizeof(sprite_dma)			;$BEBD84   |
+	STA next_sprite_dma_buffer_slot		;$BEBD87   |
+	STZ sprite_dma[1].terminate,x		;$BEBD8A   |
 CODE_BEBD8D:					;	   |
 	RTS					;$BEBD8D  /
 
@@ -2631,7 +2631,7 @@ CODE_BECAB7:
 CODE_BECAD8:					;	   |
 	JSR CODE_BECB3A				;$BECAD8   |
 	BNE CODE_BECB1E				;$BECADB   |
-	JSL CODE_808E4F				;$BECADD   |
+	JSL get_random_number_2_global		;$BECADD   |
 	TAY					;$BECAE1   |
 	AND #$01FF				;$BECAE2   |
 	STA $32					;$BECAE5   |
@@ -5424,7 +5424,7 @@ CODE_BEDF8A:
 	BCS CODE_BEDFDC				;$BEDFAF   |
 	LDA $20,x				;$BEDFB1   |
 	BMI CODE_BEDFDC				;$BEDFB3   |
-	JSL CODE_808E4F				;$BEDFB5   |
+	JSL get_random_number_2_global		;$BEDFB5   |
 	LSR A					;$BEDFB9   |
 	CMP $20,x				;$BEDFBA   |
 	BCS CODE_BEDFDC				;$BEDFBC   |
@@ -7587,7 +7587,7 @@ chest_spawner_sprite_code:
 	STA current_sprite_constants		;$BEEF23   | Set constants address
 	LDA $2E,x				;$BEEF25   | Get current state
 	BNE .spawn_chest			;$BEEF27   | If 1, spawn chest
-	JSL CODE_808E4F				;$BEEF29   | Else get RNG
+	JSL get_random_number_2_global		;$BEEF29   | Else get RNG
 	STA CPU.dividen				;$BEEF2D   |
 	LDX current_sprite			;$BEEF30   | Redundant, X still has the spawner sprite by this point
 	SEP #$20				;$BEEF32   | 8-Bit A

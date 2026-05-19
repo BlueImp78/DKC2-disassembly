@@ -3179,7 +3179,7 @@ init_bonus_screen:
 	LDA bonus_screen_config_table,x		;$BAB1D2   |
 	STA $000650				;$BAB1D5   |
 	JSL disable_screen			;$BAB1D9   |
-	JSL clear_VRAM_global			;$BAB1DD   |
+	JSL clear_vram_global			;$BAB1DD   |
 	JSL CODE_BAC7C0				;$BAB1E1   |
 	SEP #$20				;$BAB1E5   |
 	STZ PPU.layer_2_scroll_x		;$BAB1E7   |
@@ -3200,26 +3200,26 @@ init_bonus_screen:
 	LDA $0000,x				;$BAB212   |
 	AND #$00FF				;$BAB215   |
 	PHX					;$BAB218   |
-	JSL VRAM_payload_handler_global		;$BAB219   |
+	JSL vram_payload_handler_global		;$BAB219   |
 	PLX					;$BAB21D   |
 	LDA $0001,x				;$BAB21E   |
 	AND #$00FF				;$BAB221   |
 	PHX					;$BAB224   |
-	JSL set_PPU_registers_global		;$BAB225   |
+	JSL set_ppu_registers_global		;$BAB225   |
 	LDA #$00AA				;$BAB229   |
 	LDY #$00E0				;$BAB22C   |
 	LDX #$0004				;$BAB22F   |
-	JSL DMA_sprite_palette_from_index	;$BAB232   |
+	JSL dma_sprite_palette_from_index	;$BAB232   |
 	LDA #DATA_FD3DAE			;$BAB236   |
 	LDY #$0000				;$BAB239   |
 	LDX #$0008				;$BAB23C   |
-	JSL DMA_palette				;$BAB23F   |
+	JSL dma_palette				;$BAB23F   |
 	PLX					;$BAB243   |
 	PHX					;$BAB244   |
 	LDA $0002,x				;$BAB245   |
 	LDY #$0020				;$BAB248   |
 	LDX #$0018				;$BAB24B   |
-	JSL DMA_palette				;$BAB24E   |
+	JSL dma_palette				;$BAB24E   |
 	PLA					;$BAB252   |
 	ADC #$0006				;$BAB253   |
 	TAX					;$BAB256   |
@@ -3241,7 +3241,7 @@ init_bonus_screen:
 	STA DMA[0].settings			;$BAB27D   |
 	LDA #$18				;$BAB280   |
 	STA DMA[0].destination			;$BAB282   |
-	LDX #text_VRAM_buffer			;$BAB285   |
+	LDX #text_vram_buffer			;$BAB285   |
 	STX DMA[0].source			;$BAB288   |
 	LDA #$7E				;$BAB28B   |
 	STA DMA[0].source_bank			;$BAB28D   |
@@ -3386,7 +3386,7 @@ CODE_BAB3D1:					;	   |
 	AND #$000F				;$BAB3D9   |
 	BNE CODE_BAB3E5				;$BAB3DC   |
 	LDA #CODE_8087E1			;$BAB3DE   |
-	JML CODE_808C9E				;$BAB3E1  /
+	JML set_game_mode_and_return		;$BAB3E1  /
 
 CODE_BAB3E5:
 	CMP #$000F				;$BAB3E5  \
@@ -3472,7 +3472,7 @@ CODE_BAB4AE:					;	   |
 	STX $CB					;$BAB4D8   |
 	LDA #$3A00				;$BAB4DA   |
 	STA $CE					;$BAB4DD   |
-	LDY #text_VRAM_buffer			;$BAB4DF   |
+	LDY #text_vram_buffer			;$BAB4DF   |
 	SEP #$20				;$BAB4E2   |
 	LDA #$7E				;$BAB4E4   |
 	STA $D0					;$BAB4E6   |
@@ -3620,7 +3620,7 @@ CODE_BAB5EB:
 	BRA CODE_BAB5CD				;$BAB5F3  /
 
 CODE_BAB5F5:
-	LDA #text_VRAM_buffer			;$BAB5F5  \
+	LDA #text_vram_buffer			;$BAB5F5  \
 	STA $C8					;$BAB5F8   |
 	STZ $065C				;$BAB5FA   |
 	LDA #$BA00				;$BAB5FD   |
@@ -3668,7 +3668,7 @@ init_credits_screen:
 	PLA					;$BAB646   |
 	STA $CC					;$BAB647   |
 	JSL disable_screen			;$BAB649   |
-	JSL clear_VRAM_global			;$BAB64D   |
+	JSL clear_vram_global			;$BAB64D   |
 	JSL CODE_BAC7C0				;$BAB651   |
 	JSL clear_wram_tables			;$BAB655   |
 	JSL init_sprite_render_order_global	;$BAB659   |
@@ -3683,9 +3683,9 @@ CODE_BAB671:					;	   |
 	DEC $0650				;$BAB674   |
 	BNE CODE_BAB671				;$BAB677   |
 	LDA #!credits_vram_payload_id		;$BAB679   |
-	JSL VRAM_payload_handler_global		;$BAB67C   |
+	JSL vram_payload_handler_global		;$BAB67C   |
 	LDA #!credits_ppu_config_id		;$BAB680   |
-	JSL set_PPU_registers_global		;$BAB683   |
+	JSL set_ppu_registers_global		;$BAB683   |
 	LDA #credits_text_data			;$BAB687   |
 	STA $000662				;$BAB68A   |
 	LDA #$0008				;$BAB68E   |
@@ -3695,19 +3695,19 @@ CODE_BAB671:					;	   |
 	LDA #DATA_FD3DAE			;$BAB69C   |
 	LDY #$0000				;$BAB69F   |
 	LDX #$0008				;$BAB6A2   |
-	JSL DMA_palette				;$BAB6A5   |
+	JSL dma_palette				;$BAB6A5   |
 	LDA #credits_header_layer_1_palette	;$BAB6A9   |
 	LDY #$0030				;$BAB6AC   |
 	LDX #$0004				;$BAB6AF   |
-	JSL DMA_palette				;$BAB6B2   |
+	JSL dma_palette				;$BAB6B2   |
 	LDA #$00AA				;$BAB6B6   |
 	LDY #$0020				;$BAB6B9   |
 	LDX #$0004				;$BAB6BC   |
-	JSL DMA_sprite_palette_from_index	;$BAB6BF   |
+	JSL dma_sprite_palette_from_index	;$BAB6BF   |
 	LDA #credits_name_text_layer_1_palette	;$BAB6C3   |
 	LDY #$0040				;$BAB6C6   |
 	LDX #$0004				;$BAB6C9   |
-	JSL DMA_palette				;$BAB6CC   |
+	JSL dma_palette				;$BAB6CC   |
 	LDA #$73C0				;$BAB6D0   |
 	STA $000652				;$BAB6D3   |
 	LDA #$FF08				;$BAB6D7   |
@@ -3778,7 +3778,7 @@ CODE_BAB768:					;	   |
 	STA DMA[0].settings			;$BAB789   |
 	LDA #$18				;$BAB78C   |
 	STA DMA[0].destination			;$BAB78E   |
-	LDX #text_VRAM_buffer			;$BAB791   |
+	LDX #text_vram_buffer			;$BAB791   |
 	STX DMA[0].source			;$BAB794   |
 	LDA #$7E				;$BAB797   |
 	STA DMA[0].source_bank			;$BAB799   |
@@ -3938,8 +3938,8 @@ CODE_BAB8F9:
 	JML restart_rareware_logo		;$BAB8F9  |
 
 CODE_BAB8FD:
-	LDA #ending_museum_NMI			;$BAB8FD  \
-	STA NMI_pointer				;$BAB900   |
+	LDA #run_ending_monkey_museum		;$BAB8FD  \
+	STA nmi_pointer				;$BAB900   |
 	LDA #CODE_B490D9			;$BAB902   |
 	STA $00067D				;$BAB905   |
 	BRA CODE_BAB8F8				;$BAB909  /

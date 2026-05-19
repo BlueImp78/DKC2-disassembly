@@ -127,13 +127,13 @@ copy_future_word_2_entry:
 	NOP					;$BB807B  \ Decompression command entry
 	JMP copy_future_word_2			;$BB807C  /
 
-DMA_sprite_palette_from_index:
+dma_sprite_palette_from_index:
 	STX $32					;$BB807F  \ Store palette size in scratch RAM
 	ASL A					;$BB8081   |\ Double palette id and transfer to index register
 	TAX					;$BB8082   |/
 	LDA.l sprite_palette_table,x		;$BB8083   | Load DMA source
 	LDX $32					;$BB8087   | Reload palette size
-DMA_palette:					;	   |
+dma_palette:					;	   |
 	STA DMA[0].source			;$BB8089   | Set DMA source word
 	TXA					;$BB808C   |\ Set DMA size to 8 times the input
 	ASL A					;$BB808D   | | Double for number of bytes
@@ -152,12 +152,12 @@ DMA_palette:					;	   |
 	REP #$20				;$BB80A9   |
 	RTL					;$BB80AB  /
 
-set_PPU_registers_global:
-	JSR set_PPU_registers			;$BB80AC  \ Trampoline to the main PPU register routine
+set_ppu_registers_global:
+	JSR set_ppu_registers			;$BB80AC  \ Trampoline to the main PPU register routine
 	RTL					;$BB80AF  /
 
-VRAM_payload_handler_global:
-	JSR VRAM_payload_handler		;$BB80B0  \ Trampoline to the main VRAM upload
+vram_payload_handler_global:
+	JSR vram_payload_handler		;$BB80B0  \ Trampoline to the main VRAM upload
 	RTL					;$BB80B3  /
 
 CODE_BB80B4:
@@ -1154,7 +1154,7 @@ CODE_BB870B:					;	   |
 	TAX					;$BB8716   |
 	CPX #main_sprite_table_end		;$BB8717   |
 	BNE CODE_BB870B				;$BB871A   |
-	LDA next_sprite_DMA_buffer_slot		;$BB871C   |
+	LDA next_sprite_dma_buffer_slot		;$BB871C   |
 	CMP #$0018				;$BB871F   |
 	BPL CODE_BB876F				;$BB8722   |
 	LDX alternate_sprite			;$BB8724   |
@@ -1162,19 +1162,19 @@ CODE_BB870B:					;	   |
 	JSR allocate_sprite_vram_slot		;$BB8727   |
 	PLY					;$BB872A   |
 	BCS CODE_BB876F				;$BB872B   |
-	LDX next_sprite_DMA_buffer_slot		;$BB872D   |
+	LDX next_sprite_dma_buffer_slot		;$BB872D   |
 	LDA $36					;$BB8730   |
-	STA sprite_DMA[0].source_word,x		;$BB8732   |
+	STA sprite_dma[0].source_word,x		;$BB8732   |
 	LDA $38					;$BB8735   |
 	AND #$00FF				;$BB8737   |
 	ORA #$8000				;$BB873A   |
-	STA sprite_DMA[0].source_bank,x		;$BB873D   |
+	STA sprite_dma[0].source_bank,x		;$BB873D   |
 	LDA $38					;$BB8740   |
 	AND #$FF00				;$BB8742   |
 	LSR A					;$BB8745   |
 	LSR A					;$BB8746   |
 	LSR A					;$BB8747   |
-	STA sprite_DMA[0].size,x		;$BB8748   |
+	STA sprite_dma[0].size,x		;$BB8748   |
 	PHY					;$BB874B   |
 	LDY alternate_sprite			;$BB874C   |
 	LDA.w sprite.oam_property,y		;$BB874E   |
@@ -1183,12 +1183,12 @@ CODE_BB870B:					;	   |
 	ASL A					;$BB8755   |
 	ASL A					;$BB8756   |
 	ASL A					;$BB8757   |
-	STA sprite_DMA[0].destination,x		;$BB8758   |
+	STA sprite_dma[0].destination,x		;$BB8758   |
 	PLY					;$BB875B   |
 	TXA					;$BB875C   |
 	CLC					;$BB875D   |
-	ADC #sizeof(sprite_DMA)			;$BB875E   |
-	STA next_sprite_DMA_buffer_slot		;$BB8761   |
+	ADC #sizeof(sprite_dma)			;$BB875E   |
+	STA next_sprite_dma_buffer_slot		;$BB8761   |
 	LDX alternate_sprite			;$BB8764   |
 	LDA $32					;$BB8766   |
 	STA sprite.type,x			;$BB8768   |
@@ -1267,7 +1267,7 @@ CODE_BB87D4:					;	   |
 	TAX					;$BB87DF   |
 	CPX #main_sprite_table_end		;$BB87E0   |
 	BNE CODE_BB87D4				;$BB87E3   |
-	LDA next_sprite_DMA_buffer_slot		;$BB87E5   |
+	LDA next_sprite_dma_buffer_slot		;$BB87E5   |
 	CMP #$0018				;$BB87E8   |
 	BPL CODE_BB8838				;$BB87EB   |
 	LDX alternate_sprite			;$BB87ED   |
@@ -1275,19 +1275,19 @@ CODE_BB87D4:					;	   |
 	JSR allocate_sprite_vram_slot		;$BB87F0   |
 	PLY					;$BB87F3   |
 	BCS CODE_BB8838				;$BB87F4   |
-	LDX next_sprite_DMA_buffer_slot		;$BB87F6   |
+	LDX next_sprite_dma_buffer_slot		;$BB87F6   |
 	LDA $36					;$BB87F9   |
-	STA sprite_DMA[0].source_word,x		;$BB87FB   |
+	STA sprite_dma[0].source_word,x		;$BB87FB   |
 	LDA $38					;$BB87FE   |
 	AND #$00FF				;$BB8800   |
 	ORA #$8000				;$BB8803   |
-	STA sprite_DMA[0].source_bank,x		;$BB8806   |
+	STA sprite_dma[0].source_bank,x		;$BB8806   |
 	LDA $38					;$BB8809   |
 	AND #$FF00				;$BB880B   |
 	LSR A					;$BB880E   |
 	LSR A					;$BB880F   |
 	LSR A					;$BB8810   |
-	STA sprite_DMA[0].size,x		;$BB8811   |
+	STA sprite_dma[0].size,x		;$BB8811   |
 	PHY					;$BB8814   |
 	LDY alternate_sprite			;$BB8815   |
 	LDA.w sprite.oam_property,y		;$BB8817   |
@@ -1296,12 +1296,12 @@ CODE_BB87D4:					;	   |
 	ASL A					;$BB881E   |
 	ASL A					;$BB881F   |
 	ASL A					;$BB8820   |
-	STA sprite_DMA[0].destination,x		;$BB8821   |
+	STA sprite_dma[0].destination,x		;$BB8821   |
 	PLY					;$BB8824   |
 	TXA					;$BB8825   |
 	CLC					;$BB8826   |
-	ADC #sizeof(sprite_DMA)			;$BB8827   |
-	STA next_sprite_DMA_buffer_slot		;$BB882A   |
+	ADC #sizeof(sprite_dma)			;$BB8827   |
+	STA next_sprite_dma_buffer_slot		;$BB882A   |
 	LDX alternate_sprite			;$BB882D   |
 	LDA $32					;$BB882F   |
 	STA sprite.type,x			;$BB8831   |
@@ -1351,9 +1351,9 @@ CODE_BB886D:
 	JSR CODE_BB896A				;$BB8873   |
 	LDX #$0000				;$BB8876   |
 .next_word:					;	   |
-	LDA.l writable_palette_RAM,x		;$BB8879   |
+	LDA.l writable_palette_ram,x		;$BB8879   |
 	EOR #$FFFF				;$BB887D   |
-	STA writable_palette_RAM,x		;$BB8880   |
+	STA writable_palette_ram,x		;$BB8880   |
 	INX					;$BB8884   |
 	INX					;$BB8885   |
 	CPX #!writable_palette_data_size	;$BB8886   |
@@ -1394,7 +1394,7 @@ CODE_BB888F:					;	   |
 CODE_BB88C9:					;	   |
 	AND #!blue_color_channel		;$BB88C9   |
 	ORA $34					;$BB88CC   |
-	STA writable_palette_RAM,x		;$BB88CE   |
+	STA writable_palette_ram,x		;$BB88CE   |
 	INX					;$BB88D2   |
 	INX					;$BB88D3   |
 	CPX #!unused_writable_palette_data_size	;$BB88D4   |
@@ -1435,7 +1435,7 @@ CODE_BB88E3:					;	   |
 	ASL A					;$BB8911   |
 	ASL A					;$BB8912   |
 	ORA $32					;$BB8913   |
-	STA writable_palette_RAM,x		;$BB8915   |
+	STA writable_palette_ram,x		;$BB8915   |
 	INX					;$BB8919   |
 	INX					;$BB891A   |
 	CPX #!door_sprite_palettes_size		;$BB891B   |> Number of bytes
@@ -1461,7 +1461,7 @@ CODE_BB8920:					;	   |
 	CLC					;$BB8943   |
 	ADC $34					;$BB8944   |
 	ORA $32					;$BB8946   |
-	STA writable_palette_RAM,x		;$BB8948   |
+	STA writable_palette_ram,x		;$BB8948   |
 	INX					;$BB894C   |
 	INX					;$BB894D   |
 	CPX #!unused_writable_palette_data_size	;$BB894E   |
@@ -1472,7 +1472,7 @@ CODE_BB8920:					;	   |
 
 copy_writable_palettes_to_RAM:
 	LDA.l writable_palette_data_start,x	;$BB895A  \
-	STA writable_palette_RAM,x		;$BB895E   |
+	STA writable_palette_ram,x		;$BB895E   |
 	INX					;$BB8962   |
 	INX					;$BB8963   |
 	CPX #!writable_palette_data_size	;$BB8964   |
@@ -1503,7 +1503,7 @@ CODE_BB8979:					;	   |
 	ASL A					;$BB8991   |
 	ASL A					;$BB8992   |
 	ORA $32					;$BB8993   |
-	STA writable_palette_RAM,x		;$BB8995   |
+	STA writable_palette_ram,x		;$BB8995   |
 	INX					;$BB8999   |
 	INX					;$BB899A   |
 	CPX #!door_sprite_palettes_size		;$BB899B   |> Number of bytes
@@ -1532,7 +1532,7 @@ CODE_BB89A0:					;	   |
 	LSR A					;$BB89C9   |
 	AND #$1C00				;$BB89CA   |
 	ORA $32					;$BB89CD   |
-	STA writable_palette_RAM,x		;$BB89CF   |
+	STA writable_palette_ram,x		;$BB89CF   |
 	INX					;$BB89D3   |
 	INX					;$BB89D4   |
 	CPX #!unused_writable_palette_data_size	;$BB89D5   |
@@ -1559,7 +1559,7 @@ CODE_BB89E4:					;	   |
 	ASL A					;$BB89FC   |
 	ASL A					;$BB89FD   |
 	ORA $32					;$BB89FE   |
-	STA writable_palette_RAM,x		;$BB8A00   |
+	STA writable_palette_ram,x		;$BB8A00   |
 	INX					;$BB8A04   |
 	INX					;$BB8A05   |
 	CPX #!door_sprite_palettes_size		;$BB8A06   |> Number of bytes
@@ -1599,7 +1599,7 @@ CODE_BB8A0B:					;	   |
 	ADC #$0C00				;$BB8A47   |
 	AND #!blue_color_channel		;$BB8A4A   |
 	ORA $32					;$BB8A4D   |
-	STA writable_palette_RAM,x		;$BB8A4F   |
+	STA writable_palette_ram,x		;$BB8A4F   |
 	INX					;$BB8A53   |
 	INX					;$BB8A54   |
 	CPX #!unused_writable_palette_data_size	;$BB8A55   |
@@ -1710,7 +1710,7 @@ CODE_BB8AF6:
 	ASL A					;$BB8B01   |
 	TAX					;$BB8B02   |
 	JSR CODE_BB8B66				;$BB8B03   |
-	STA sprite_palette_DMA.source_word,x	;$BB8B06   |
+	STA sprite_palette_dma.source_word,x	;$BB8B06   |
 	LDA $5E					;$BB8B09   |
 	ASL A					;$BB8B0B   |
 	ASL A					;$BB8B0C   |
@@ -1719,7 +1719,7 @@ CODE_BB8AF6:
 	ADC #$0081				;$BB8B0F   |
 	XBA					;$BB8B12   |
 	ORA.w #<:palette_data_bank		;$BB8B13   |
-	STA sprite_palette_DMA.source_bank,x	;$BB8B16   |
+	STA sprite_palette_dma.source_bank,x	;$BB8B16   |
 	LDA current_palette_buffer_slot		;$BB8B19   |
 	INC A					;$BB8B1B   |
 	AND #$000F				;$BB8B1C   |
@@ -1741,7 +1741,7 @@ CODE_BB8AF6:
 	JSR CODE_BB8B66				;$BB8B35   |
 	CLC					;$BB8B38   |
 	ADC #!writable_palette_data_addr_offset	;$BB8B39   |> Writable palette ROM start address - writable palette RAM address
-	STA sprite_palette_DMA.source_word,x	;$BB8B3C   |
+	STA sprite_palette_dma.source_word,x	;$BB8B3C   |
 	LDA $5E					;$BB8B3F   |
 	ASL A					;$BB8B41   |
 	ASL A					;$BB8B42   |
@@ -1749,8 +1749,8 @@ CODE_BB8AF6:
 	CLC					;$BB8B44   |
 	ADC #$0081				;$BB8B45   |
 	XBA					;$BB8B48   |
-	ORA.w #<:writable_palette_RAM		;$BB8B49   |> Bank of writable palette RAM
-	STA sprite_palette_DMA.source_bank,x	;$BB8B4C   |
+	ORA.w #<:writable_palette_ram		;$BB8B49   |> Bank of writable palette RAM
+	STA sprite_palette_dma.source_bank,x	;$BB8B4C   |
 	LDA current_palette_buffer_slot		;$BB8B4F   |
 	INC A					;$BB8B51   |
 	AND #$000F				;$BB8B52   |
@@ -1946,7 +1946,7 @@ CODE_BB8C6E:					;	   |
 	STA sprite.oam_property,x		;$BB8C7C   |
 	RTS					;$BB8C7E  /
 
-set_PPU_registers:
+set_ppu_registers:
 	PHB					;$BB8C7F  \ Preserve current data bank
 	%pea_shift_dbr(ppu_config_table)	;$BB8C80   |\ Change data bank to FD
 	PLB					;$BB8C83   | |
@@ -1982,7 +1982,7 @@ set_PPU_registers:
 	PLB					;$BB8CB3   | Restore the data bank
 	RTS					;$BB8CB4  / Finished setting registers
 
-VRAM_payload_handler:
+vram_payload_handler:
 	PHB					;$BB8CB5  \ Preserve current data bank
 	%pea_shift_dbr(vram_payload_table)	;$BB8CB6   |\ Change data bank to FD
 	PLB					;$BB8CB9   | |
@@ -2872,7 +2872,7 @@ CODE_BB9265:					;	   |
 	JSL init_registers_global		;$BB926E   |
 	JSL clear_wram_tables			;$BB9272   |
 	JSR init_sprite_render_order		;$BB9276   |
-	JSL clear_VRAM_global			;$BB9279   |
+	JSL clear_vram_global			;$BB9279   |
 	LDA level_entrance_number		;$BB927D   |
 	XBA					;$BB9280   |
 	ORA level_number			;$BB9281   |
@@ -2889,10 +2889,10 @@ CODE_BB929D:					;	   |
 	LDA main_level.tileset_type		;$BB929D   | Get level 32x32 tilemap index
 	JSL CODE_B5BCA8				;$BB92A0   |
 	JSR CODE_BB886D				;$BB92A4   |
-	LDA main_level.tileset_init_number	;$BB92A7   |\ Get graphics init routine index
+	LDA main_level.graphics_init_number	;$BB92A7   |\ Get graphics init routine index
 	ASL A					;$BB92AA   | |
 	TAX					;$BB92AB   | |
-	JSR (tileset_init_table,x)		;$BB92AC   |/ Run level graphics uploader
+	JSR (graphics_init_table,x)		;$BB92AC   |/ Run level graphics uploader
 	LDA main_level.type			;$BB92AF   |\ Get level type
 	CMP #!bonus_level_type			;$BB92B2   | |
 	BNE .done_handling_stars		;$BB92B5   |/ If level isnt a bonus skip handling star graphics
@@ -2901,7 +2901,7 @@ CODE_BB929D:					;	   |
 	CMP #!collect_the_stars_bonus_type	;$BB92BD   | | Check if its collect the stars
 	BNE .done_handling_stars		;$BB92C0   |/ If not dont upload star graphics
 	LDA #!stars_only_vram_payload_id	;$BB92C2   |\ Upload star collectible graphics
-	JSL VRAM_payload_handler_global		;$BB92C5   |/
+	JSL vram_payload_handler_global		;$BB92C5   |/
 .done_handling_stars:				;	   |
 	LDX.w #rel_level.slope_init_routine	;$BB92C9   |\
 	JSR (main_level,x)			;$BB92CC   |/ Setup terrain slope attributes
@@ -2968,10 +2968,10 @@ endif						;	   |
 	LDA main_level.HDMA_init_number		;$BB9358   |\
 	ASL A					;$BB935B   | |
 	TAX					;$BB935C   | |
-	JSR (tileset_HDMA_init_table,x)		;$BB935D   |/ run hdma init routine
+	JSR (dma_init_table,x)			;$BB935D   |/ run hdma init routine
 	LDA #$002C				;$BB9360   |
 	STA $0B00				;$BB9363   |
-	STZ next_sprite_DMA_buffer_slot		;$BB9366   |
+	STZ next_sprite_dma_buffer_slot		;$BB9366   |
 	JSR CODE_BB93E7				;$BB9369   |
 	LDA main_level.type			;$BB936C   |
 	CMP #!bonus_level_type			;$BB936F   |
@@ -2982,7 +2982,7 @@ CODE_BB9379:					;	   |
 	RTL					;$BB9379  /
 
 ;Dead code
-	JSL clear_VRAM_global			;$BB937A   |
+	JSL clear_vram_global			;$BB937A   |
 	SEP #$20				;$BB937E   |
 	LDA #$03				;$BB9380   |
 	STA PPU.main_screen			;$BB9382   |
@@ -3157,7 +3157,7 @@ CODE_BB94B6:
 	LDY #$0000				;$BB94B6  \
 	LDA level_palette_address		;$BB94B9   |
 	LDX #$0020				;$BB94BC   |
-	JSL DMA_palette				;$BB94BF   |
+	JSL dma_palette				;$BB94BF   |
 	RTS					;$BB94C3  /
 
 DATA_BB94C4:
@@ -3368,119 +3368,119 @@ DATA_BB94C4:
 	db !music_null				;CC
 	db !music_null				;CD
 
-tileset_init_table:
-	dw CODE_BB9788				;00
-	dw CODE_BB966F				;01
-	dw CODE_BB9650				;02
-	dw CODE_BB9631				;03
-	dw CODE_BB96F8				;04
-	dw CODE_BB971B				;05
-	dw CODE_BB9761				;06
-	dw CODE_BB960B				;07
-	dw CODE_BB9874				;08
-	dw CODE_BB99DB				;09
-	dw CODE_BB9828				;0A
-	dw CODE_BB9993				;0B
-	dw CODE_BB97B4				;0C
-	dw CODE_BB973E				;0D
-	dw CODE_BB97F9				;0E
-	dw CODE_BB96BC				;0F
-	dw CODE_BB96D5				;10
-	dw CODE_BB95F2				;11
-	dw CODE_BB98B4				;12
-	dw CODE_BB9885				;13
-	dw CODE_BB97DA				;14
+graphics_init_table:
+	dw graphics_init_00				;00
+	dw graphics_init_01				;01
+	dw graphics_init_02				;02
+	dw graphics_init_03				;03
+	dw graphics_init_04				;04
+	dw graphics_init_05				;05
+	dw graphics_init_06				;06
+	dw graphics_init_07				;07
+	dw graphics_init_08				;08
+	dw graphics_init_09				;09
+	dw graphics_init_0A				;0A
+	dw graphics_init_0B				;0B
+	dw graphics_init_0C				;0C
+	dw graphics_init_0D				;0D
+	dw graphics_init_0E				;0E
+	dw graphics_init_0F				;0F
+	dw graphics_init_10				;10
+	dw graphics_init_11				;11
+	dw graphics_init_12				;12
+	dw graphics_init_13				;13
+	dw graphics_init_14				;14
 
-tileset_HDMA_init_table:
-	dw CODE_BB9E6A				;00
-	dw CODE_BBA20B				;01
-	dw CODE_BBA1FF				;02
-	dw CODE_BB9ACA				;03
-	dw CODE_BBA5DA				;04
-	dw CODE_BBA5A9				;05
-	dw CODE_BBA416				;06
-	dw CODE_BB9E59				;07
-	dw CODE_BB9A93				;08
-	dw CODE_BB9B79				;09
-	dw CODE_BB9D1D				;0A
-	dw CODE_BB9E74				;0B
-	dw CODE_BBA5C9				;0C
-	dw CODE_BBA00D				;0D
-	dw CODE_BB9E80				;0E
-	dw CODE_BBA031				;0F
-	dw CODE_BBA031				;10
-	dw CODE_BBA726				;11
-	dw CODE_BBA9D2				;12
-	dw CODE_BBA9E0				;13
-	dw CODE_BB9B18				;14
-	dw CODE_BBA2E2				;15
-	dw CODE_BBA24F				;16
-	dw CODE_BBA5D0				;17
-	dw CODE_BB9E0F				;18
-	dw CODE_BBA8E3				;19
-	dw CODE_BBA8F3				;1A
+dma_init_table:
+	dw dma_init_00					;00
+	dw dma_init_01					;01
+	dw dma_init_02					;02
+	dw dma_init_03					;03
+	dw dma_init_04					;04
+	dw dma_init_05					;05
+	dw dma_init_06					;06
+	dw dma_init_07					;07
+	dw dma_init_08					;08
+	dw dma_init_09					;09
+	dw dma_init_0A					;0A
+	dw dma_init_0B					;0B
+	dw dma_init_0C					;0C
+	dw dma_init_0D					;0D
+	dw dma_init_0E					;0E
+	dw dma_init_0F					;0F
+	dw dma_init_0F					;10
+	dw dma_init_11					;11
+	dw dma_init_12					;12
+	dw dma_init_13					;13
+	dw dma_init_14					;14
+	dw dma_init_15					;15
+	dw dma_init_16					;16
+	dw dma_init_17					;17
+	dw dma_init_18					;18
+	dw dma_init_19					;19
+	dw dma_init_20					;1A
 
 
-CODE_BB95F2:
+graphics_init_11:
 	LDA #!hud_only_vram_payload_id		;$BB95F2  \
-	JSL VRAM_payload_handler_global		;$BB95F5   |
+	JSL vram_payload_handler_global		;$BB95F5   |
 	LDA main_level.vram_payload_number	;$BB95F9   |
-	JSL VRAM_payload_handler_global		;$BB95FC   |
+	JSL vram_payload_handler_global		;$BB95FC   |
 	JSR CODE_BB94B6				;$BB9600   |
 	LDA main_level.ppu_config_number	;$BB9603   |
-	JSL set_PPU_registers_global		;$BB9606   |
+	JSL set_ppu_registers_global		;$BB9606   |
 	RTS					;$BB960A  /
 
-CODE_BB960B:
+graphics_init_07:
 	LDA #!hud_only_vram_payload_id		;$BB960B  \
-	JSL VRAM_payload_handler_global		;$BB960E   |
+	JSL vram_payload_handler_global		;$BB960E   |
 	LDA main_level.vram_payload_number	;$BB9612   |
-	JSL VRAM_payload_handler_global		;$BB9615   |
+	JSL vram_payload_handler_global		;$BB9615   |
 	JSR CODE_BB94B6				;$BB9619   |
 	LDY #$0070				;$BB961C   |
 	LDA #topsail_trouble_bg_layer_2_palette	;$BB961F   |
 	LDX #$0004				;$BB9622   |
-	JSL DMA_palette				;$BB9625   |
+	JSL dma_palette				;$BB9625   |
 	LDA main_level.ppu_config_number	;$BB9629   |
-	JSL set_PPU_registers_global		;$BB962C   |
+	JSL set_ppu_registers_global		;$BB962C   |
 	RTS					;$BB9630  /
 
-CODE_BB9631:
+graphics_init_03:
 	LDA #!hud_only_vram_payload_id		;$BB9631  \
-	JSL VRAM_payload_handler_global		;$BB9634   |
+	JSL vram_payload_handler_global		;$BB9634   |
 	LDA main_level.vram_payload_number	;$BB9638   |
-	JSL VRAM_payload_handler_global		;$BB963B   |
+	JSL vram_payload_handler_global		;$BB963B   |
 	LDA #screechs_sprint_level_palette	;$BB963F   |
 	STA level_palette_address		;$BB9642   |
 	JSR CODE_BB94B6				;$BB9645   |
 	LDA main_level.ppu_config_number	;$BB9648   |
-	JSL set_PPU_registers_global		;$BB964B   |
+	JSL set_ppu_registers_global		;$BB964B   |
 	RTS					;$BB964F  /
 
-CODE_BB9650:
+graphics_init_02:
 	LDA #!hud_only_vram_payload_id		;$BB9650  \
-	JSL VRAM_payload_handler_global		;$BB9653   |
+	JSL vram_payload_handler_global		;$BB9653   |
 	LDA main_level.vram_payload_number	;$BB9657   |
-	JSL VRAM_payload_handler_global		;$BB965A   |
+	JSL vram_payload_handler_global		;$BB965A   |
 	LDA #bramble_scramble_level_palette	;$BB965E   |
 	STA level_palette_address		;$BB9661   |
 	JSR CODE_BB94B6				;$BB9664   |
 	LDA main_level.ppu_config_number	;$BB9667   |
-	JSL set_PPU_registers_global		;$BB966A   |
+	JSL set_ppu_registers_global		;$BB966A   |
 	RTS					;$BB966E  /
 
-CODE_BB966F:
+graphics_init_01:
 	LDA #!hud_only_vram_payload_id		;$BB966F  \
-	JSL VRAM_payload_handler_global		;$BB9672   |
+	JSL vram_payload_handler_global		;$BB9672   |
 	LDA main_level.vram_payload_number	;$BB9676   |
-	JSL VRAM_payload_handler_global		;$BB9679   |
+	JSL vram_payload_handler_global		;$BB9679   |
 	JSR CODE_BB94B6				;$BB967D   |
 	LDY #$0010				;$BB9680   |
 	LDA #falling_leaves_layer_1_palette	;$BB9683   |
 	LDX #$0004				;$BB9686   |
-	JSL DMA_palette				;$BB9689   |
+	JSL dma_palette				;$BB9689   |
 	LDA main_level.ppu_config_number	;$BB968D   |
-	JSL set_PPU_registers_global		;$BB9690   |
+	JSL set_ppu_registers_global		;$BB9690   |
 	LDX #falling_leaves_8x8_tilemap		;$BB9694   |
 	LDY.w #falling_leaves_8x8_tilemap>>16	;$BB9697   |
 	LDA #$F800				;$BB969A   |
@@ -3498,88 +3498,88 @@ CODE_BB96AA:					;	   |
 	BNE CODE_BB96AA				;$BB96B9   |
 	RTS					;$BB96BB  /
 
-CODE_BB96BC:
+graphics_init_0F:
 	LDA #!hud_only_vram_payload_id		;$BB96BC  \
-	JSL VRAM_payload_handler_global		;$BB96BF   |
+	JSL vram_payload_handler_global		;$BB96BF   |
 	LDA main_level.vram_payload_number	;$BB96C3   |
-	JSL VRAM_payload_handler_global		;$BB96C6   |
+	JSL vram_payload_handler_global		;$BB96C6   |
 	JSR CODE_BB94B6				;$BB96CA   |
 	LDA main_level.ppu_config_number	;$BB96CD   |
-	JSL set_PPU_registers_global		;$BB96D0   |
+	JSL set_ppu_registers_global		;$BB96D0   |
 	RTS					;$BB96D4  /
 
-CODE_BB96D5:
+graphics_init_10:
 	LDA #!hud_only_vram_payload_id		;$BB96D5  \
-	JSL VRAM_payload_handler_global		;$BB96D8   |
+	JSL vram_payload_handler_global		;$BB96D8   |
 	LDA main_level.vram_payload_number	;$BB96DC   |
-	JSL VRAM_payload_handler_global		;$BB96DF   |
+	JSL vram_payload_handler_global		;$BB96DF   |
 	LDA main_level.ppu_config_number	;$BB96E3   |
-	JSL set_PPU_registers_global		;$BB96E6   |
+	JSL set_ppu_registers_global		;$BB96E6   |
 	LDY #$0000				;$BB96EA   |
 	LDA #web_woods_level_palette		;$BB96ED   |
 	LDX #$0020				;$BB96F0   |
-	JSL DMA_palette				;$BB96F3   |
+	JSL dma_palette				;$BB96F3   |
 	RTS					;$BB96F7  /
 
-CODE_BB96F8:
+graphics_init_04:
 	LDA #!hud_only_vram_payload_id		;$BB96F8  \
-	JSL VRAM_payload_handler_global		;$BB96FB   |
+	JSL vram_payload_handler_global		;$BB96FB   |
 	LDA main_level.vram_payload_number	;$BB96FF   |
-	JSL VRAM_payload_handler_global		;$BB9702   |
+	JSL vram_payload_handler_global		;$BB9702   |
 	LDA main_level.ppu_config_number	;$BB9706   |
-	JSL set_PPU_registers_global		;$BB9709   |
+	JSL set_ppu_registers_global		;$BB9709   |
 	LDY #$0000				;$BB970D   |
 	LDA #rattle_battle_level_palette	;$BB9710   |
 	LDX #$0020				;$BB9713   |
-	JSL DMA_palette				;$BB9716   |
+	JSL dma_palette				;$BB9716   |
 	RTS					;$BB971A  /
 
-CODE_BB971B:
+graphics_init_05:
 	LDA #!hud_only_vram_payload_id		;$BB971B  \
-	JSL VRAM_payload_handler_global		;$BB971E   |
+	JSL vram_payload_handler_global		;$BB971E   |
 	LDA main_level.vram_payload_number	;$BB9722   |
-	JSL VRAM_payload_handler_global		;$BB9725   |
+	JSL vram_payload_handler_global		;$BB9725   |
 	LDA main_level.ppu_config_number	;$BB9729   |
-	JSL set_PPU_registers_global		;$BB972C   |
+	JSL set_ppu_registers_global		;$BB972C   |
 	LDY #$0000				;$BB9730   |
 	LDA #slime_climb_level_palette		;$BB9733   |
 	LDX #$0020				;$BB9736   |
-	JSL DMA_palette				;$BB9739   |
+	JSL dma_palette				;$BB9739   |
 	RTS					;$BB973D  /
 
-CODE_BB973E:
+graphics_init_0D:
 	LDA #!hud_only_vram_payload_id		;$BB973E  \
-	JSL VRAM_payload_handler_global		;$BB9741   |
+	JSL vram_payload_handler_global		;$BB9741   |
 	LDA main_level.vram_payload_number	;$BB9745   |
-	JSL VRAM_payload_handler_global		;$BB9748   |
+	JSL vram_payload_handler_global		;$BB9748   |
 	LDA main_level.ppu_config_number	;$BB974C   |
-	JSL set_PPU_registers_global		;$BB974F   |
+	JSL set_ppu_registers_global		;$BB974F   |
 	LDY #$0000				;$BB9753   |
 	LDA #lava_lagoon_level_palette		;$BB9756   |
 	LDX #$0020				;$BB9759   |
-	JSL DMA_palette				;$BB975C   |
+	JSL dma_palette				;$BB975C   |
 	RTS					;$BB9760  /
 
-CODE_BB9761:
+graphics_init_06:
 	LDA #!hud_only_vram_payload_id		;$BB9761  \
-	JSL VRAM_payload_handler_global		;$BB9764   |
+	JSL vram_payload_handler_global		;$BB9764   |
 	LDA main_level.vram_payload_number	;$BB9768   |
-	JSL VRAM_payload_handler_global		;$BB976B   |
+	JSL vram_payload_handler_global		;$BB976B   |
 	JSR CODE_BB94B6				;$BB976F   |
 	LDA main_level.ppu_config_number	;$BB9772   |
-	JSL set_PPU_registers_global		;$BB9775   |
+	JSL set_ppu_registers_global		;$BB9775   |
 	LDY #$0000				;$BB9779   |
 	LDA #haunted_hall_level_palette		;$BB977C   |
 	LDX #$0020				;$BB977F   |
-	JSL DMA_palette				;$BB9782   |
+	JSL dma_palette				;$BB9782   |
 	BRA CODE_BB9798				;$BB9786  /
 
-CODE_BB9788:
-	JSR CODE_BB95F2				;$BB9788  \
+graphics_init_00:
+	JSR graphics_init_11			;$BB9788  \
 	LDY #$0000				;$BB978B   |
 	LDA #carnival_level_palette		;$BB978E   |
 	LDX #$0020				;$BB9791   |
-	JSL DMA_palette				;$BB9794   |
+	JSL dma_palette				;$BB9794   |
 CODE_BB9798:					;	   |
 	SEP #$20				;$BB9798   |
 	LDA #$03				;$BB979A   |
@@ -3595,51 +3595,51 @@ CODE_BB97AB:					;	   |
 	STX $092D				;$BB97B0   |
 	RTS					;$BB97B3  /
 
-CODE_BB97B4:
+graphics_init_0C:
 	LDA #!hud_only_vram_payload_id		;$BB97B4  \
-	JSL VRAM_payload_handler_global		;$BB97B7   |
+	JSL vram_payload_handler_global		;$BB97B7   |
 	LDA main_level.vram_payload_number	;$BB97BB   |
-	JSL VRAM_payload_handler_global		;$BB97BE   |
+	JSL vram_payload_handler_global		;$BB97BE   |
 	JSR CODE_BB94B6				;$BB97C2   |
 	LDA main_level.ppu_config_number	;$BB97C5   |
-	JSL set_PPU_registers_global		;$BB97C8   |
+	JSL set_ppu_registers_global		;$BB97C8   |
 	LDY #$0000				;$BB97CC   |
 	LDA #glimmers_galleon_level_palette	;$BB97CF   |
 	LDX #$0020				;$BB97D2   |
-	JSL DMA_palette				;$BB97D5   |
+	JSL dma_palette				;$BB97D5   |
 	RTS					;$BB97D9  /
 
-CODE_BB97DA:
+graphics_init_14:
 	LDA #!hud_only_vram_payload_id		;$BB97DA  \
-	JSL VRAM_payload_handler_global		;$BB97DD   |
+	JSL vram_payload_handler_global		;$BB97DD   |
 	LDA main_level.vram_payload_number	;$BB97E1   |
-	JSL VRAM_payload_handler_global		;$BB97E4   |
+	JSL vram_payload_handler_global		;$BB97E4   |
 	LDA #mainbrace_mayhem_level_palette	;$BB97E8   |
 	STA level_palette_address		;$BB97EB   |
 	JSR CODE_BB94B6				;$BB97EE   |
 	LDA main_level.ppu_config_number	;$BB97F1   |
-	JSL set_PPU_registers_global		;$BB97F4   |
+	JSL set_ppu_registers_global		;$BB97F4   |
 	RTS					;$BB97F8  /
 
-CODE_BB97F9:
+graphics_init_0E:
 	LDA #!hud_only_vram_payload_id		;$BB97F9  \
-	JSL VRAM_payload_handler_global		;$BB97FC   |
+	JSL vram_payload_handler_global		;$BB97FC   |
 	LDA main_level.vram_payload_number	;$BB9800   |
-	JSL VRAM_payload_handler_global		;$BB9803   |
+	JSL vram_payload_handler_global		;$BB9803   |
 	JSR CODE_BB94B6				;$BB9807   |
 	LDY #$0070				;$BB980A   |
 	LDA #falling_leaves_layer_1_palette	;$BB980D   |
 	LDX #$0004				;$BB9810   |
-	JSL DMA_palette				;$BB9813   |
+	JSL dma_palette				;$BB9813   |
 	LDA main_level.ppu_config_number	;$BB9817   |
-	JSL set_PPU_registers_global		;$BB981A   |
+	JSL set_ppu_registers_global		;$BB981A   |
 	LDA #$0300				;$BB981E   |
 	STA $19BE				;$BB9821   |
 	STZ $19C2				;$BB9824   |
 	RTS					;$BB9827  /
 
-CODE_BB9828:
-	JSR CODE_BB95F2				;$BB9828  \
+graphics_init_0A:
+	JSR graphics_init_11			;$BB9828  \
 	PHB					;$BB982B   |
 	JSL CODE_B4AC65				;$BB982C   |
 	PLB					;$BB9830   |
@@ -3650,9 +3650,9 @@ CODE_BB9828:
 	STA DMA[0].settings			;$BB983B   |
 	LDA #$18				;$BB983E   |
 	STA DMA[0].destination			;$BB9840   |
-	LDX #text_VRAM_buffer			;$BB9843   |
+	LDX #text_vram_buffer			;$BB9843   |
 	STX DMA[0].source			;$BB9846   |
-	LDA.b #<:text_VRAM_buffer		;$BB9849   |
+	LDA.b #<:text_vram_buffer		;$BB9849   |
 	STA DMA[0].source_bank			;$BB984B   |
 	LDX #$0600				;$BB984E   |
 	STX DMA[0].size				;$BB9851   |
@@ -3669,19 +3669,19 @@ CODE_BB9866:
 	LDY #$0010				;$BB9866  \
 	LDA #rattle_battle_level_palette+$20	;$BB9869   |
 	LDX #$0004				;$BB986C   |
-	JSL DMA_palette				;$BB986F   |
+	JSL dma_palette				;$BB986F   |
 	RTS					;$BB9873  /
 
-CODE_BB9874:
-	JSR CODE_BB99DB				;$BB9874  \
+graphics_init_08:
+	JSR graphics_init_09			;$BB9874  \
 	LDY #$0000				;$BB9877   |
 	LDA #red_hot_ride_smoke_layer_3_palette	;$BB987A   |
 	LDX #$0004				;$BB987D   |
-	JSL DMA_palette				;$BB9880   |
+	JSL dma_palette				;$BB9880   |
 	RTS					;$BB9884  /
 
-CODE_BB9885:
-	JSR CODE_BB95F2				;$BB9885  \
+graphics_init_13:
+	JSR graphics_init_11			;$BB9885  \
 	LDA #$6700				;$BB9888   |
 	STA PPU.vram_address			;$BB988B   |
 	LDX #$0000				;$BB988E   |
@@ -3697,20 +3697,20 @@ CODE_BB9891:					;	   |
 	STA $0000DD				;$BB98A5   |
 	LDA #CODE_BB98E8			;$BB98A9   |
 	STA $0000DF				;$BB98AC   |
-	JSR CODE_BBABE2				;$BB98B0   |
+	JSR init_level_water_height		;$BB98B0   |
 	RTS					;$BB98B3  /
 
-CODE_BB98B4:
+graphics_init_12:
 	LDA #$6000				;$BB98B4  \
 	STA level_tilemap_vram_address		;$BB98B7   |
-	JSR CODE_BB95F2				;$BB98BA   |
+	JSR graphics_init_11			;$BB98BA   |
 	LDY #$0000				;$BB98BD   |
 	LDA #water_toxic_layer_3_palette	;$BB98C0   |
 	LDX #$0004				;$BB98C3   |
-	JSL DMA_palette				;$BB98C6   |
+	JSL dma_palette				;$BB98C6   |
 	LDA #$2700				;$BB98CA   |
 	STA water_y_position			;$BB98CD   |
-	JSR CODE_BBABE2				;$BB98D0   |
+	JSR init_level_water_height		;$BB98D0   |
 	LDA #CODE_BB98E2			;$BB98D3   |
 	STA $0000DD				;$BB98D6   |
 	LDA #CODE_BB98E8			;$BB98DA   |
@@ -3760,7 +3760,7 @@ CODE_BB9926:					;	   |
 	LDA #$FB00				;$BB993F   |
 	LDX #$007F				;$BB9942   |
 	LDY #$0300				;$BB9945   |
-	JSL DMA_to_VRAM				;$BB9948   |
+	JSL dma_to_vram_global			;$BB9948   |
 	LDX #DATA_C6FC11			;$BB994C   |
 	LDY.w #DATA_C6FC11>>16			;$BB994F   |
 	LDA #$F800				;$BB9952   |
@@ -3783,7 +3783,7 @@ CODE_BB9962:					;	   |
 	LDA #$FB00				;$BB997B   |
 	LDX #$007F				;$BB997E   |
 	LDY #$0300				;$BB9981   |
-	JSL DMA_to_VRAM				;$BB9984   |
+	JSL dma_to_vram_global			;$BB9984   |
 	PLA					;$BB9988   |
 	STA level_tilemap_vram_address		;$BB9989   |
 	PLA					;$BB998C   |
@@ -3792,8 +3792,8 @@ CODE_BB9962:					;	   |
 	STA $98					;$BB9990   |
 	RTS					;$BB9992  /
 
-CODE_BB9993:
-	JSR CODE_BB95F2				;$BB9993  \
+graphics_init_0B:
+	JSR graphics_init_11			;$BB9993  \
 	LDA #CODE_BB99A5			;$BB9996   |
 	STA $0000DD				;$BB9999   |
 	LDA #CODE_BB99AB			;$BB999D   |
@@ -3828,8 +3828,8 @@ CODE_BB99AB:
 	STA $98					;$BB99D8   |
 	RTS					;$BB99DA  /
 
-CODE_BB99DB:
-	JSR CODE_BB95F2				;$BB99DB  \
+graphics_init_09:
+	JSR graphics_init_11			;$BB99DB  \
 	LDA #CODE_BB99ED			;$BB99DE   |
 	STA $0000DD				;$BB99E1   |
 	LDA #CODE_BB99F3			;$BB99E5   |
@@ -3888,7 +3888,7 @@ CODE_BB9A23:
 CODE_BB9A59:					;	   |
 	PHA					;$BB9A59   |
 	JSR CODE_BB9A73				;$BB9A5A   |
-	JSL DMA_level_columns			;$BB9A5D   |
+	JSL dma_level_columns			;$BB9A5D   |
 	LDA #$0008				;$BB9A61   |
 	STA $17D6				;$BB9A64   |
 	CLC					;$BB9A67   |
@@ -3918,9 +3918,9 @@ CODE_BB9A88:
 	JSR CODE_BBB104				;$BB9A8F   |
 	RTS					;$BB9A92  /
 
-CODE_BB9A93:
+dma_init_08:
 	LDA #$0024				;$BB9A93  \
-	STA $78					;$BB9A96   |
+	STA sprite_dma_buffer_limit		;$BB9A96   |
 	LDA #$0060				;$BB9A98   |
 	STA $7E8012				;$BB9A9B   |
 	LDA #$0001				;$BB9A9F   |
@@ -3940,13 +3940,13 @@ CODE_BB9A93:
 	STA pending_dma_hdma_channels		;$BB9AC6   |
 	RTS					;$BB9AC9  /
 
-CODE_BB9ACA:
-	JSR CODE_BBA8DD				;$BB9ACA  \
+dma_init_03:
+	JSR set_default_sprite_dma_buffer_size	;$BB9ACA  \
 	LDA level_number			;$BB9ACD   |
 	CMP #!level_kudgels_kontest		;$BB9ACF   |
 	BNE CODE_BB9AD9				;$BB9AD2   |
 	LDA #$001C				;$BB9AD4   |
-	STA $78					;$BB9AD7   |
+	STA sprite_dma_buffer_limit		;$BB9AD7   |
 CODE_BB9AD9:					;	   |
 	LDA #$0040				;$BB9AD9   |
 	STA $7E8012				;$BB9ADC   |
@@ -3970,8 +3970,8 @@ CODE_BB9AD9:					;	   |
 	STA pending_dma_hdma_channels		;$BB9B14   |
 	RTS					;$BB9B17  /
 
-CODE_BB9B18:
-	JSR CODE_BBA8DD				;$BB9B18  \
+dma_init_14:
+	JSR set_default_sprite_dma_buffer_size	;$BB9B18  \
 	LDX #$0000				;$BB9B1B   |
 CODE_BB9B1E:					;	   |
 	LDA #$0010				;$BB9B1E   |
@@ -4014,7 +4014,7 @@ CODE_BB9B71:
 	JSL spawn_BB83EF_special_sprite_index	;$BB9B74   | Spawn horizontal wind controller
 	RTS					;$BB9B78  /
 
-CODE_BB9B79:
+dma_init_09:
 	LDA #$0002				;$BB9B79  \
 	LDY level_number			;$BB9B7C   |
 	CPY #!level_red_hot_ride		;$BB9B7E   |
@@ -4023,7 +4023,7 @@ CODE_BB9B79:
 CODE_BB9B86:					;	   |
 	STA $0959				;$BB9B86   |
 	LDA #$001C				;$BB9B89   |
-	STA $78					;$BB9B8C   |
+	STA sprite_dma_buffer_limit		;$BB9B8C   |
 	LDA #$0040				;$BB9B8E   |
 	STA $7E8012				;$BB9B91   |
 	STA $7E8022				;$BB9B95   |
@@ -4134,8 +4134,8 @@ DATA_BB9CBC:
 	db $00
 
 
-CODE_BB9D1D:
-	JSR CODE_BBA8DD				;$BB9D1D  \
+dma_init_0A:
+	JSR set_default_sprite_dma_buffer_size	;$BB9D1D  \
 	LDA #$0040				;$BB9D20   |
 	STA $7E8012				;$BB9D23   |
 	STA $7E8022				;$BB9D27   |
@@ -4209,8 +4209,8 @@ CODE_BB9D1D:
 	STA pending_dma_hdma_channels		;$BB9E0B   |
 	RTS					;$BB9E0E  /
 
-CODE_BB9E0F:
-	JSR CODE_BBA8DD				;$BB9E0F  \
+dma_init_18:
+	JSR set_default_sprite_dma_buffer_size	;$BB9E0F  \
 	LDX #$0000				;$BB9E12   |
 	LDA #$0010				;$BB9E15   |
 CODE_BB9E18:					;	   |
@@ -4243,29 +4243,29 @@ CODE_BB9E51:
 	JSL spawn_BB83EF_special_sprite_index	;$BB9E54   |
 	RTS					;$BB9E58  /
 
-CODE_BB9E59:
-	JSR CODE_BBA8DD				;$BB9E59  \
+dma_init_07:
+	JSR set_default_sprite_dma_buffer_size	;$BB9E59  \
 	LDA #$0000				;$BB9E5C   |
 	STA $7E8012				;$BB9E5F   |
 	LDA #$0001				;$BB9E63   |
 	STA pending_dma_hdma_channels		;$BB9E66   |
 	RTS					;$BB9E69  /
 
-CODE_BB9E6A:
-	JSR CODE_BBA8DD				;$BB9E6A  \
+dma_init_00:
+	JSR set_default_sprite_dma_buffer_size	;$BB9E6A  \
 	LDA #$0001				;$BB9E6D   |
 	STA pending_dma_hdma_channels		;$BB9E70   |
 	RTS					;$BB9E73  /
 
-CODE_BB9E74:
+dma_init_0B:
 	LDA #$0004				;$BB9E74  \
-	STA $78					;$BB9E77   |
+	STA sprite_dma_buffer_limit		;$BB9E77   |
 	LDA #$0001				;$BB9E79   |
 	STA pending_dma_hdma_channels		;$BB9E7C   |
 	RTS					;$BB9E7F  /
 
-CODE_BB9E80:
-	JSR CODE_BBA8DD				;$BB9E80  \
+dma_init_0E:
+	JSR set_default_sprite_dma_buffer_size	;$BB9E80  \
 	LDA #$007F				;$BB9E83   |
 	STA $7E80E2				;$BB9E86   |
 	LDA #$0007				;$BB9E8A   |
@@ -4391,13 +4391,13 @@ CODE_BB9F4A:					;	   |
 	REP #$20				;$BB9FFA   |
 	LDY #DATA_FF0FD2			;$BB9FFC   |
 	JSL spawn_no_gfx_special_sprite_address	;$BB9FFF   |
-	JSR CODE_BBABE2				;$BBA003   |
+	JSR init_level_water_height		;$BBA003   |
 	LDA #$DC01				;$BBA006   |
 	STA pending_dma_hdma_channels		;$BBA009   |
 	RTS					;$BBA00C  /
 
-CODE_BBA00D:
-	JSR CODE_BBA8DD				;$BBA00D  \
+dma_init_0D:
+	JSR set_default_sprite_dma_buffer_size	;$BBA00D  \
 	SEP #$20				;$BBA010   |
 	LDX #$1142				;$BBA012   |
 	STX HDMA[1].settings			;$BBA015   |
@@ -4412,10 +4412,10 @@ CODE_BBA00D:
 	STA pending_dma_hdma_channels		;$BBA02D   |
 	RTS					;$BBA030  /
 
-CODE_BBA031:
-	JSR CODE_BBA8DD				;$BBA031  \
+dma_init_0F:
+	JSR set_default_sprite_dma_buffer_size	;$BBA031  \
 	LDA #$0024				;$BBA034   |
-	STA $78					;$BBA037   |
+	STA sprite_dma_buffer_limit		;$BBA037   |
 	LDY #$0000				;$BBA039   |
 	TYX					;$BBA03C   |
 CODE_BBA03D:					;	   |
@@ -4500,16 +4500,16 @@ DATA_BBA07E:
 	db $00
 
 
-CODE_BBA1FF:
+dma_init_02:
 	LDA #$0024				;$BBA1FF  \
-	STA $78					;$BBA202   |
+	STA sprite_dma_buffer_limit		;$BBA202   |
 	LDA #$0001				;$BBA204   |
 	STA pending_dma_hdma_channels		;$BBA207   |
 	RTS					;$BBA20A  /
 
-CODE_BBA20B:
+dma_init_01:
 	LDA #$0024				;$BBA20B  \
-	STA $78					;$BBA20E   |
+	STA sprite_dma_buffer_limit		;$BBA20E   |
 	LDX #$0000				;$BBA210   |
 CODE_BBA213:					;	   |
 	LDA #$0010				;$BBA213   |
@@ -4536,8 +4536,8 @@ CODE_BBA213:					;	   |
 	JSL spawn_BB83EF_special_sprite_index	;$BBA24A   |
 	RTS					;$BBA24E  /
 
-CODE_BBA24F:
-	JSR CODE_BBA8DD				;$BBA24F  \
+dma_init_16:
+	JSR set_default_sprite_dma_buffer_size	;$BBA24F  \
 	LDX #$0000				;$BBA252   |
 	TXY					;$BBA255   |
 CODE_BBA256:					;	   |
@@ -4599,8 +4599,8 @@ CODE_BBA289:					;	   |
 	STA pending_dma_hdma_channels		;$BBA2DE   |
 	RTS					;$BBA2E1  /
 
-CODE_BBA2E2:
-	JSR CODE_BBA8DD				;$BBA2E2  \
+dma_init_15:
+	JSR set_default_sprite_dma_buffer_size	;$BBA2E2  \
 	LDA #$0001				;$BBA2E5   |
 	STA $7E8332				;$BBA2E8   |
 	LDA #$FF00				;$BBA2EC   |
@@ -4673,8 +4673,8 @@ DATA_BBA408:
 DATA_BBA40F:
 	db $FF, $A3, $81, $C9, $A1, $82, $00
 
-CODE_BBA416:
-	JSR CODE_BBA8DD				;$BBA416  \
+dma_init_06:
+	JSR set_default_sprite_dma_buffer_size	;$BBA416  \
 	LDA #$007F				;$BBA419   |
 	STA $7E80E2				;$BBA41C   |
 	LDA #$0007				;$BBA420   |
@@ -4800,41 +4800,41 @@ CODE_BBA4E0:					;	   |
 	REP #$20				;$BBA590   |
 	LDA #$1680				;$BBA592   |
 	STA water_y_position			;$BBA595   |
-	JSR CODE_BBABE2				;$BBA598   |
+	JSR init_level_water_height		;$BBA598   |
 	LDY #DATA_FF0FD2			;$BBA59B   | Water bubbles
 	JSL spawn_no_gfx_special_sprite_address	;$BBA59E   |
 	LDA #$DC01				;$BBA5A2   |
 	STA pending_dma_hdma_channels		;$BBA5A5   |
 	RTS					;$BBA5A8  /
 
-CODE_BBA5A9:
+dma_init_05:
 	LDA main_level.type			;$BBA5A9  \
 	CMP #!boss_level_type			;$BBA5AC   |
 	BEQ CODE_BBA5BD				;$BBA5AF   |
 	LDA #$001C				;$BBA5B1   |
-	STA $78					;$BBA5B4   |
+	STA sprite_dma_buffer_limit		;$BBA5B4   |
 	LDA #$0001				;$BBA5B6   |
 	STA pending_dma_hdma_channels		;$BBA5B9   |
 	RTS					;$BBA5BC  /
 
 CODE_BBA5BD:
 	LDA #$0024				;$BBA5BD  \
-	STA $78					;$BBA5C0   |
+	STA sprite_dma_buffer_limit		;$BBA5C0   |
 	LDA #$0001				;$BBA5C2   |
 	STA pending_dma_hdma_channels		;$BBA5C5   |
 	RTS					;$BBA5C8  /
 
-CODE_BBA5C9:
-	JSR CODE_BBA8DD				;$BBA5C9  \
+dma_init_0C:
+	JSR set_default_sprite_dma_buffer_size	;$BBA5C9  \
 	JSR CODE_BBA662				;$BBA5CC   |
 	RTS					;$BBA5CF  /
 
-CODE_BBA5D0:
+dma_init_17:
 	LDY #!special_sprite_spawn_id_0002	;$BBA5D0  \
 	JSL spawn_special_sprite_index		;$BBA5D3   |
 	JSR CODE_BBA5E1				;$BBA5D7   |
-CODE_BBA5DA:					;	   |
-	JSR CODE_BBA8DD				;$BBA5DA   |
+dma_init_04:					;	   |
+	JSR set_default_sprite_dma_buffer_size	;$BBA5DA   |
 	JSR CODE_BBA662				;$BBA5DD   |
 	RTS					;$BBA5E0  /
 
@@ -4953,8 +4953,8 @@ DATA_BBA6D3:
 	db $07, $73, $00
 
 
-CODE_BBA726:
-	JSR CODE_BBA8DD				;$BBA726  \
+dma_init_11:
+	JSR set_default_sprite_dma_buffer_size	;$BBA726  \
 	LDA #$0078				;$BBA729   |
 	STA $7E80D2				;$BBA72C   |
 	LDA #$0000				;$BBA730   |
@@ -5094,28 +5094,28 @@ CODE_BBA817:					;	   |
 	STA HDMA[6].source_bank			;$BBA8C4   |
 	STZ HDMA[6].indirect_source_bank	;$BBA8C7   |
 	REP #$20				;$BBA8CA   |
-	JSR CODE_BBABE2				;$BBA8CC   |
+	JSR init_level_water_height		;$BBA8CC   |
 	LDY #DATA_FF0FD2			;$BBA8CF   | Water bubbles
 	JSL spawn_no_gfx_special_sprite_address	;$BBA8D2   |
 	LDA #$6E01				;$BBA8D6   |
 	STA pending_dma_hdma_channels		;$BBA8D9   |
 	RTS					;$BBA8DC  /
 
-CODE_BBA8DD:
+set_default_sprite_dma_buffer_size:
 	LDA #$002C				;$BBA8DD  \
-	STA $78					;$BBA8E0   |
+	STA sprite_dma_buffer_limit		;$BBA8E0   |
 	RTS					;$BBA8E2  /
 
-CODE_BBA8E3:
-	JSR CODE_BBA9E0				;$BBA8E3  \
+dma_init_19:
+	JSR dma_init_13				;$BBA8E3  \
 	LDA #$0000				;$BBA8E6   |
 	STA $0911				;$BBA8E9   |
 	LDA #$03E0				;$BBA8EC   |
 	STA $0913				;$BBA8EF   |
 	RTS					;$BBA8F2  /
 
-CODE_BBA8F3:
-	JSR CODE_BBA8DD				;$BBA8F3  \
+dma_init_20:
+	JSR set_default_sprite_dma_buffer_size	;$BBA8F3  \
 	JSR CODE_BBA9F7				;$BBA8F6   |
 	LDA #$7FFF				;$BBA8F9   |
 	STA water_y_position			;$BBA8FC   |
@@ -5186,17 +5186,17 @@ CODE_BBA8F3:
 	REP #$20				;$BBA9CF   |
 	RTS					;$BBA9D1  /
 
-CODE_BBA9D2:
-	JSR CODE_BBA9E0				;$BBA9D2  \
+dma_init_12:
+	JSR dma_init_13				;$BBA9D2  \
 	LDA #DATA_8081E0			;$BBA9D5   |
 	STA $7E8865				;$BBA9D8   |
-	JSR CODE_BBABE2				;$BBA9DC   |
+	JSR init_level_water_height		;$BBA9DC   |
 	RTS					;$BBA9DF  /
 
-CODE_BBA9E0:
-	JSR CODE_BBA8DD				;$BBA9E0  \
+dma_init_13:
+	JSR set_default_sprite_dma_buffer_size	;$BBA9E0  \
 	JSR CODE_BBA9F7				;$BBA9E3   |
-	JSR CODE_BBABE2				;$BBA9E6   |
+	JSR init_level_water_height		;$BBA9E6   |
 	LDY #DATA_FF0FD2			;$BBA9E9   | Water bubbles
 	JSL spawn_no_gfx_special_sprite_address	;$BBA9EC   |
 	LDA #$FE01				;$BBA9F0   |
@@ -5361,31 +5361,31 @@ CODE_BBAB05:					;	   |
 	REP #$20				;$BBABDF   |
 	RTS					;$BBABE1  /
 
-CODE_BBABE2:
+init_level_water_height:
 	LDA screen_scroll_y_position		;$BBABE2  \
 	CLC					;$BBABE5   |
 	ADC #$0020				;$BBABE6   |
 	STA water_y_position			;$BBABE9   |
 	LDX #$FFFE				;$BBABEC   |
 	SEP #$20				;$BBABEF   |
-	LDA level_number			;$BBABF1   |
-	DEC A					;$BBABF3   |
-CODE_BBABF4:					;	   |
-	INX					;$BBABF4   |
-	INX					;$BBABF5   |
-	CMP.l DATA_BBAC4A,x			;$BBABF6   |
-	BCS CODE_BBABF4				;$BBABFA   |
+	LDA level_number			;$BBABF1   |\ Get current level number
+	DEC A					;$BBABF3   | |
+.next_level_entry:				;	   | |
+	INX					;$BBABF4   | |
+	INX					;$BBABF5   | |
+	CMP.l water_height_levels_table,x	;$BBABF6   | | Get level entry in water height table
+	BCS .next_level_entry			;$BBABFA   |/ If current entry isnt our level then next entry
 	EOR #$FF				;$BBABFC   |
-	ADC.l DATA_BBAC4A,x			;$BBABFE   |
+	ADC.l water_height_levels_table,x	;$BBABFE   |
 	REP #$20				;$BBAC02   |
 	BNE CODE_BBAC40				;$BBAC04   |
-	LDA.l DATA_BBAC4B,x			;$BBAC06   |
+	LDA.l water_height_index_table,x	;$BBAC06   |
 	AND #$00FF				;$BBAC0A   |
 	CLC					;$BBAC0D   |
 	ADC level_entrance_number		;$BBAC0E   |
 	ASL A					;$BBAC11   |
 	TAX					;$BBAC12   |
-	LDA.l DATA_BBAC76,x			;$BBAC13   |
+	LDA.l water_height_data_table,x		;$BBAC13   |
 	BMI CODE_BBAC23				;$BBAC17   |
 	STA $0D52				;$BBAC19   |
 	LDA #$8000				;$BBAC1C   |
@@ -5413,88 +5413,89 @@ CODE_BBAC40:
 
 
 ;Table denoting which level ID's have water in them (or moving floor in case of castle crush)
-;Level ID, Index into DATA_BBAC76 (Water/moving floor Y position values)
-DATA_BBAC4A:
-	%offset(DATA_BBAC4B, 1)
-	db !level_glimmers_galleon, $00
-	db !level_slime_climb, $05
-	db !level_lava_lagoon, $0A
-	db !level_lockjaws_locker, $0E
-	db !level_castle_crush, $13
-	db !level_lockjaws_locker_warp_room, $1A
-	db !level_lava_lagoon_warp_room, $1B
-	db !level_arctic_abyss, $1C
-	db !level_toxic_tower, $21
-	db !level_slime_climb_bonus_1, $25
-	db !level_slime_climb_bonus_2, $26
-	db !level_rattle_battle_bonus_2, $27
-	db !level_lockjaws_locker_bonus_1, $28
-	db !level_glimmers_galleon_bonus_2, $29
-	db !level_lava_lagoon_bonus_1, $2A
-	db !level_glimmers_galleon_bonus_1, $2B
-	db !level_clappers_cavern, $2C
-	db !level_animal_antics_enguarde_area, $31
-	db !level_clappers_cavern_bonus_2, $32
-	db !level_arctic_abyss_bonus_1, $33
-	db !level_castle_crush_bonus_1, $34
-	db !level_castle_crush_bonus_2, $35
+;Level ID, Index into water_height_data_table (Water/moving floor Y position values)
+water_height_levels_table:
+	%offset(water_height_index_table, 1)
+	db !level_glimmers_galleon,		$00
+	db !level_slime_climb,			$05
+	db !level_lava_lagoon,			$0A
+	db !level_lockjaws_locker,		$0E
+	db !level_castle_crush,			$13
+	db !level_lockjaws_locker_warp_room,	$1A
+	db !level_lava_lagoon_warp_room,	$1B
+	db !level_arctic_abyss,			$1C
+	db !level_toxic_tower,			$21
+	db !level_slime_climb_bonus_1,		$25
+	db !level_slime_climb_bonus_2,		$26
+	db !level_rattle_battle_bonus_2,	$27
+	db !level_lockjaws_locker_bonus_1,	$28
+	db !level_glimmers_galleon_bonus_2,	$29
+	db !level_lava_lagoon_bonus_1,		$2A
+	db !level_glimmers_galleon_bonus_1,	$2B
+	db !level_clappers_cavern,		$2C
+	db !level_animal_antics_enguarde_area,	$31
+	db !level_clappers_cavern_bonus_2,	$32
+	db !level_arctic_abyss_bonus_1,		$33
+	db !level_castle_crush_bonus_1,		$34
+	db !level_castle_crush_bonus_2,		$35
 
-DATA_BBAC76:
-	dw $0100
-	dw $0100
-	dw $0100
-	dw $0100
-	dw $0100
-	dw $1700
-	dw $0EE0
-	dw $0EE0
-	dw $0280
-	dw $0280
-	dw $07B8
-	dw $0550
-	dw $0230
-	dw $01F8
-	dw $0710
-	dw $0470
-	dw $0560
-	dw $0310
-	dw $0310
-	dw $D00B
-	dw $E5AB
-	dw $DFC0
-	dw $EC80
-	dw $F120
-	dw $F730
-	dw $FED5
-	dw $0258
-	dw $02F0
-	dw $05B0
-	dw $02B0
-	dw $0630
-	dw $0370
-	dw $0448
-	dw $27B0
-	dw $14F0
-	dw $0268
-	dw $0268
-	dw $1000
-	dw $1000
-	dw $1000
-	dw $0100
-	dw $0100
-	dw $0100
-	dw $0100
-	dw $0880
-	dw $0370
-	dw $0850
-	dw $0380
-	dw $01D0
-	dw $03D0
-	dw $0230
-	dw $0160
-	dw $FD00
-	dw $F4B0
 
+;Initial Water Heights
+water_height_data_table:
+	dw $0100				; $00 Glimmer's Galleon
+	dw $0100				; $01 Glimmer's Galleon
+	dw $0100				; $02 Glimmer's Galleon
+	dw $0100				; $03 Glimmer's Galleon
+	dw $0100				; $04 Glimmer's Galleon
+	dw $1700				; $05 Slime Climb
+	dw $0EE0				; $06 Slime Climb
+	dw $0EE0				; $07 Slime Climb
+	dw $0280				; $08 Slime Climb
+	dw $0280				; $09 Slime Climb
+	dw $07B8				; $0A Lava Lagoon
+	dw $0550				; $0B Lava Lagoon
+	dw $0230				; $0C Lava Lagoon
+	dw $01F8				; $0D Lava Lagoon
+	dw $0710				; $0E Lava Lagoon (Unused)/Lockjaw's Locker
+	dw $0470				; $0F Lockjaw's Locker
+	dw $0560				; $10 Lockjaw's Locker
+	dw $0310				; $11 Lockjaw's Locker
+	dw $0310				; $12 Lockjaw's Locker
+	dw $D00B				; $13 Castle Crush
+	dw $E5AB				; $14 Castle Crush
+	dw $DFC0				; $15 Castle Crush
+	dw $EC80				; $16 Castle Crush
+	dw $F120				; $17 Castle Crush
+	dw $F730				; $18 ???
+	dw $FED5				; $19 ???
+	dw $0258				; $1A Lockjaw's Locker Warp Room
+	dw $02F0				; $1B Lava Lagoon Warp Room
+	dw $05B0				; $1C Arctic Abyss
+	dw $02B0				; $1D Arctic Abyss
+	dw $0630				; $1E Arctic Abyss
+	dw $0370				; $1F Arctic Abyss
+	dw $0448				; $20 Arctic Abyss
+	dw $27B0				; $21 Toxic Tower
+	dw $14F0				; $22 Toxic Tower
+	dw $0268				; $23 Toxic Tower
+	dw $0268				; $24 Toxic Tower
+	dw $1000				; $25 Slime Climb Bonus 1
+	dw $1000				; $26 Slime Climb Bonus 2
+	dw $1000				; $27 Rattle Battle Bonus 2
+	dw $0100				; $28 Lockjaw's Locker Bonus 1
+	dw $0100				; $29 Glimmer's Galleon Bonus 2
+	dw $0100				; $2A Lava Lagoon Bonus 1
+	dw $0100				; $2B Glimmer's Galleon Bonus 1
+	dw $0880				; $2C Clapper's Cavern
+	dw $0370				; $2D Clapper's Cavern
+	dw $0850				; $2E Clapper's Cavern
+	dw $0380				; $2F Clapper's Cavern
+	dw $01D0				; $30 Clapper's Cavern
+	dw $03D0				; $31 Animal Antics Enguarde Area
+	dw $0230				; $32 Clapper's Cavern Bonus 2
+	dw $0160				; $33 Arctic Abyss Bonus 1
+	dw $FD00				; $34 Castle Crush Bonus 1
+	dw $F4B0				; $35 Castle Crush Bonus 2
 
 ;slope threshould presets?
 CODE_BBACE2:
@@ -5939,7 +5940,7 @@ CODE_BBB015:
 	LDA.w DATA_FD0000,y			;$BBB015  \
 	INY					;$BBB018   |
 	INY					;$BBB019   |
-	STA rel_level.tileset_init_number,x	;$BBB01A   |
+	STA rel_level.graphics_init_number,x	;$BBB01A   |
 	LDA.w DATA_FD0000,y			;$BBB01C   |
 	INY					;$BBB01F   |
 	INY					;$BBB020   |
@@ -6989,7 +6990,7 @@ CODE_BBB75D:					;	   |
 	TAX					;$BBB768   |
 	CPX #main_sprite_table_end		;$BBB769   |
 	BNE CODE_BBB75D				;$BBB76C   |
-	LDA next_sprite_DMA_buffer_slot		;$BBB76E   |
+	LDA next_sprite_dma_buffer_slot		;$BBB76E   |
 	CMP #$0018				;$BBB771   |
 	BPL CODE_BBB77F				;$BBB774   |
 	LDX alternate_sprite			;$BBB776   |
@@ -7024,19 +7025,19 @@ CODE_BBB797:
 	BRA CODE_BBB7DD				;$BBB7A4  /
 
 CODE_BBB7A6:
-	LDX next_sprite_DMA_buffer_slot		;$BBB7A6  \
+	LDX next_sprite_dma_buffer_slot		;$BBB7A6  \
 	LDA $36					;$BBB7A9   |
-	STA sprite_DMA[0].source_word,x		;$BBB7AB   |
+	STA sprite_dma[0].source_word,x		;$BBB7AB   |
 	LDA $38					;$BBB7AE   |
 	AND #$00FF				;$BBB7B0   |
 	ORA #$8000				;$BBB7B3   |
-	STA sprite_DMA[0].source_bank,x		;$BBB7B6   |
+	STA sprite_dma[0].source_bank,x		;$BBB7B6   |
 	LDA $38					;$BBB7B9   |
 	AND #$FF00				;$BBB7BB   |
 	LSR A					;$BBB7BE   |
 	LSR A					;$BBB7BF   |
 	LSR A					;$BBB7C0   |
-	STA sprite_DMA[0].size,x		;$BBB7C1   |
+	STA sprite_dma[0].size,x		;$BBB7C1   |
 	PHY					;$BBB7C4   |
 	LDY alternate_sprite			;$BBB7C5   |
 	LDA.w sprite.oam_property,y		;$BBB7C7   |
@@ -7045,12 +7046,12 @@ CODE_BBB7A6:
 	ASL A					;$BBB7CE   |
 	ASL A					;$BBB7CF   |
 	ASL A					;$BBB7D0   |
-	STA sprite_DMA[0].destination,x		;$BBB7D1   |
+	STA sprite_dma[0].destination,x		;$BBB7D1   |
 	PLY					;$BBB7D4   |
 	TXA					;$BBB7D5   |
 	CLC					;$BBB7D6   |
 	ADC #$0008				;$BBB7D7   |
-	STA next_sprite_DMA_buffer_slot		;$BBB7DA   |
+	STA next_sprite_dma_buffer_slot		;$BBB7DA   |
 CODE_BBB7DD:					;	   |
 	LDA $3A					;$BBB7DD   |
 	PHA					;$BBB7DF   |
@@ -7995,7 +7996,7 @@ CODE_BBBE54:
 	LDA life_count				;$BBBE72   |
 	BPL CODE_BBBE7E				;$BBBE75   |
 	LDA #init_game_over_screen		;$BBBE77   |
-	JSL CODE_808C9E				;$BBBE7A   |
+	JSL set_game_mode_and_return		;$BBBE7A   |
 CODE_BBBE7E:					;	   |
 	LDA #$0002				;$BBBE7E   |
 	TSB $06D1				;$BBBE81   |
@@ -8137,15 +8138,15 @@ CODE_BBBF81:
 	AND #$0003				;$BBBFB1   |
 	DEC A					;$BBBFB4   |
 	STA $000650				;$BBBFB5   |
-	LDA #bonus_and_credits_screen_NMI	;$BBBFB9   |
-	STA NMI_pointer				;$BBBFBC   |
+	LDA #run_bonus_and_credits_screen	;$BBBFB9   |
+	STA nmi_pointer				;$BBBFBC   |
 CODE_BBBFBE:					;	   |
 	WAI					;$BBBFBE   |
 	BRA CODE_BBBFBE				;$BBBFBF  /
 
 CODE_BBBFC1:
 	LDA #CODE_8087E1			;$BBBFC1  \
-	JML CODE_808C9E				;$BBBFC4  /
+	JML set_game_mode_and_return		;$BBBFC4  /
 
 CODE_BBBFC8:
 	LDA temp_level_number			;$BBBFC8  \
@@ -8154,7 +8155,7 @@ CODE_BBBFC8:
 	LDA #$8000				;$BBBFD0   |
 	TRB exiting_sub_level_flag		;$BBBFD3   |
 	LDA #CODE_8087E1			;$BBBFD6   |
-	JML CODE_808C9E				;$BBBFD9  /
+	JML set_game_mode_and_return		;$BBBFD9  /
 
 CODE_BBBFDD:					;	  \
 if !version == 1				;	   |
@@ -8172,7 +8173,7 @@ CODE_BBBFE3:					;	   |
 	LDA #$0080				;$BBBFFA   |
 	TSB game_state_flags			;$BBBFFD   |
 	LDA #CODE_8087E1			;$BBC000   |
-	JML CODE_808C9E				;$BBC003   |
+	JML set_game_mode_and_return		;$BBC003   |
 endif						;	  /
 
 CODE_BBC007:
@@ -8202,7 +8203,7 @@ CODE_BBBFE6:					;	   |
 	LDA #$0080				;$BBC031   |
 	TSB game_state_flags			;$BBC034   |
 	LDA #CODE_8087E1			;$BBC037   |
-	JML CODE_808C9E				;$BBC03A   |
+	JML set_game_mode_and_return		;$BBC03A   |
 endif						;	  /
 
 CODE_BBC019:
@@ -8877,16 +8878,16 @@ CODE_BBC5AB:
 	CMP #!gamemode_2_player_contest		;$BBC5AF   |
 	BNE CODE_BBC5C3				;$BBC5B2   |
 	JSL CODE_BBC85B				;$BBC5B4   |
-	JSL save_game				;$BBC5B8   |
-	JSR copy_save_to_SRAM			;$BBC5BC   |
+	JSL update_save_buffer			;$BBC5B8   |
+	JSR copy_save_to_sram			;$BBC5BC   |
 	JSL CODE_BBC85B				;$BBC5BF   |
 CODE_BBC5C3:					;	   |
-	JSL save_game				;$BBC5C3   |
-	JSR copy_save_to_SRAM			;$BBC5C7   |
+	JSL update_save_buffer			;$BBC5C3   |
+	JSR copy_save_to_sram			;$BBC5C7   |
 	PLB					;$BBC5CA   |
 	RTL					;$BBC5CB  /
 
-copy_save_to_SRAM:
+copy_save_to_sram:
 	LDA file_select_selection		;$BBC5CC  \ \
 	ASL A					;$BBC5CF   | |
 	TAX					;$BBC5D0   | |
@@ -8912,7 +8913,7 @@ save_file_addresses:
 	dw save_file2
 	dw save_file3
 
-save_game:
+update_save_buffer:
 	JSL calculate_completion_percentage	;$BBC5F4  \
 	LDA #sram_file_buffer			;$BBC5F8   |
 	STA $26					;$BBC5FB   |
@@ -9203,19 +9204,19 @@ CODE_BBC776:
 
 CODE_BBC85B:
 	JSR CODE_BBC86F				;$BBC85B  \
-	LDA $060F				;$BBC85E   |
+	LDA active_controller			;$BBC85E   |
 	EOR #$0001				;$BBC861   |
-	STA $060F				;$BBC864   |
+	STA active_controller			;$BBC864   |
 	JSR CODE_BBC8B7				;$BBC867   |
 	STZ animal_type				;$BBC86A   |
 	STZ current_player_mount		;$BBC86C   |
 	RTL					;$BBC86E  /
 
 CODE_BBC86F:
-	LDA.w #<:player_1_RAM_buffer		;$BBC86F  \
+	LDA.w #<:player_1_ram_buffer		;$BBC86F  \
 	STA $28					;$BBC872   |
-	LDA #player_1_RAM_buffer		;$BBC874   |
-	LDX $060F				;$BBC877   |\
+	LDA #player_1_ram_buffer		;$BBC874   |
+	LDX active_controller			;$BBC877   |\
 	BEQ CODE_BBC880				;$BBC87A   |/ If player 1 then dont offset buffer address for player 2
 	CLC					;$BBC87C   |\
 	ADC #!player_RAM_buffer_size		;$BBC87D   |/
@@ -9251,9 +9252,9 @@ CODE_BBC880:					;	   |
 	RTS					;$BBC8B6  /
 
 CODE_BBC8B7:
-	LDA.w #<:player_1_RAM_buffer		;$BBC8B7  \
+	LDA.w #<:player_1_ram_buffer		;$BBC8B7  \
 	STA $28					;$BBC8BA   |
-	LDA #player_1_RAM_buffer		;$BBC8BC   |
+	LDA #player_1_ram_buffer		;$BBC8BC   |
 	LDX $060F				;$BBC8BF   |\
 	BEQ CODE_BBC8C8				;$BBC8C2   |/ If player 1 then dont offset buffer address for player 2
 	CLC					;$BBC8C4   |\

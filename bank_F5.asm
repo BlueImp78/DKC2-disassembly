@@ -128,27 +128,27 @@ DATA_F547BC:
 	incbin "data/screens/8x8_tilemaps/rareware_logo_mode_7_8x8_tilemap.bin"
 
 ;$F5484A
-DATA_F5484A:
+castle_torch_tiledata_frame1:
 	incbin "data/backgrounds/animated_graphics/castle_torch_tiledata_frame1.bin"
 
 ;$F54BCA
-DATA_F54BCA:
+castle_torch_tiledata_frame2:
 	incbin "data/backgrounds/animated_graphics/castle_torch_tiledata_frame2.bin"
 
 ;$F54F4A
-DATA_F54F4A:
+castle_torch_tiledata_frame3:
 	incbin "data/backgrounds/animated_graphics/castle_torch_tiledata_frame3.bin"
 
 ;$F552CA
-DATA_F552CA:
+castle_torch_tiledata_frame4:
 	incbin "data/backgrounds/animated_graphics/castle_torch_tiledata_frame4.bin"
 
 ;$F5564A
-DATA_F5564A:
+castle_torch_tiledata_frame5:
 	incbin "data/backgrounds/animated_graphics/castle_torch_tiledata_frame5.bin"
 
 ;$F559CA
-DATA_F559CA:
+castle_torch_tiledata_frame6:
 	incbin "data/backgrounds/animated_graphics/castle_torch_tiledata_frame6.bin"
 
 ;$F55D4A	compressed

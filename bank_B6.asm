@@ -52,11 +52,11 @@ kudgel_sprite_code:
 	PHK					;$B68054   |
 	PLB					;$B68055   |
 	LDX current_sprite			;$B68056   |
-	LDA $42,x				;$B68058   |
+	LDA sprite.general_purpose_42,x		;$B68058   |
 	BNE .club_exists			;$B6805A   |
 	JSL CODE_B4AEAF				;$B6805C   | Clear block of boss RAM for Kudgel
 	STZ $073D				;$B68060   |
-	STZ $32,x				;$B68063   |
+	STZ sprite.carry_or_defeat_flags,x	;$B68063   |
 	STZ $06A1				;$B68065   |
 	STZ $06A3				;$B68068   |
 	STZ $06A5				;$B6806B   |
@@ -70,139 +70,141 @@ kudgel_sprite_code:
 	LDX current_sprite			;$B68085   |
 	STX $0654				;$B68087   | Store Kudgel in boss RAM
 	STY $0656				;$B6808A   | Store Kudgel's Club in boss RAM
-	STY $42,x				;$B6808D   | Store Kudgel's Club in sprite variable
-	STZ $44,x				;$B6808F   | Clear address of boss return command
+	STY sprite.general_purpose_42,x		;$B6808D   | Store Kudgel's Club in sprite variable
+	STZ sprite.general_purpose_44,x		;$B6808F   | Clear address of boss return command
 	JSR parse_boss_command			;$B68091   |
 .club_exists:					;	   |
 	LDX current_sprite			;$B68094   |
-	LDA $2E,x				;$B68096   |
+	LDA sprite.state,x			;$B68096   |
 	BIT #$0001				;$B68098   |
-	BNE CODE_B680A8				;$B6809B   |
+	BNE .process				;$B6809B   |
 	LDA time_stop_flags			;$B6809D   |
 	BIT #$0004				;$B680A0   |
-	BEQ CODE_B680A8				;$B680A3   |
-	BRL CODE_B68182				;$B680A5  /
+	BEQ .process				;$B680A3   |
+	BRL .kudgel_sprite_return		;$B680A5  /
 
-CODE_B680A8:
+.process:
 	LDA $0AB8				;$B680A8  \
 	AND #$BFFF				;$B680AB   |
 	ORA #$8000				;$B680AE   |
 	STA $0AB8				;$B680B1   |
-	LDX current_sprite			;$B680B4   |
-	LDY active_kong_sprite			;$B680B6   |
-	LDA $0006,y				;$B680B9   |
-	CMP $06,x				;$B680BC   |
-	BCC CODE_B680C5				;$B680BE   |
-	LDA #$C800				;$B680C0   |
-	BRA CODE_B680C8				;$B680C3  /
+	LDX current_sprite			;$B680B4   |\
+	LDY active_kong_sprite			;$B680B6   | |
+	LDA.w sprite.x_position,y		;$B680B9   | |
+	CMP sprite.x_position,x			;$B680BC   | |
+	BCC .camera_pan_right			;$B680BE   |/ If kudgel is to the right of kong, pan camera right
+	LDA #$C800				;$B680C0   | Else pan camera left
+	BRA .apply_camera_pan			;$B680C3  /
 
-CODE_B680C5:
-	LDA #$3800				;$B680C5  \
-CODE_B680C8:					;	   |
-	STA $0AEC				;$B680C8   |
-CODE_B680CB:					;	   |
-	LDA.l $000652				;$B680CB   |
-	BNE CODE_B680D4				;$B680CF   |
-	BRL CODE_B684BA				;$B680D1  /
+.camera_pan_right:
+	LDA #$3800				;$B680C5  \> Pan camera left
+.apply_camera_pan:				;	   |
+	STA $0AEC				;$B680C8   |> Apply camera panning
+.process_alive_or_dead:				;	   |
+	LDA.l $000652				;$B680CB   |\
+	BNE .alive				;$B680CF   |/ If kudgel isnt defeated then
+	BRL kudgel_defeated			;$B680D1  /
 
-CODE_B680D4:
-	LDX current_sprite			;$B680D4  \
-	LDA $2E,x				;$B680D6   |
-	BIT #$0100				;$B680D8   |
-	BEQ CODE_B680ED				;$B680DB   |
-	LDA $32,x				;$B680DD   |
-	BIT #$0008				;$B680DF   |
-	BEQ CODE_B680ED				;$B680E2   |
-	JSR CODE_B689F8				;$B680E4   |
-	LDA.l $000652				;$B680E7   |
-	BEQ CODE_B680CB				;$B680EB   |
-CODE_B680ED:					;	   |
-	LDA.l $00073D				;$B680ED   |
-	BEQ CODE_B680F9				;$B680F1   |
-	DEC $073D				;$B680F3   |
-	BRL CODE_B68147				;$B680F6  /
+.alive:
+	LDX current_sprite			;$B680D4  \> Get kudgel
+	LDA sprite.state,x			;$B680D6   |\
+	BIT #$0100				;$B680D8   | |
+	BEQ .process_collision_delay		;$B680DB   |/ If kudgel cant be hurt, skip kudgel hurt checks
+	LDA sprite.carry_or_defeat_flags,x	;$B680DD   |\
+	BIT #$0008				;$B680DF   | |
+	BEQ .process_collision_delay		;$B680E2   |/ If kudgel wasnt hurt
+	JSR damage_kudgel			;$B680E4   |> Hurt kudgel
+	LDA.l $000652				;$B680E7   |\
+	BEQ .process_alive_or_dead		;$B680EB   |/ If kudgel has no health then kudgel defeated
+.process_collision_delay:			;	   |
+	LDA.l $00073D				;$B680ED   |\
+	BEQ .process_collision			;$B680F1   |/ If collision delay timer 0, check kudgel collision
+	DEC $073D				;$B680F3   |> Else skip collision and decrease collision delay timer
+	BRL .process_commands			;$B680F6  /
 
-CODE_B680F9:
+.process_collision:
 	LDX current_sprite			;$B680F9  \
-	LDA $2E,x				;$B680FB   |
-	BIT #$0200				;$B680FD   |
-	BEQ CODE_B6812C				;$B68100   |
-	JSL get_current_sprite_clipping		;$B68102   |
-	LDA #$0C7B				;$B68106   |
-	JSL check_complex_player_collision_B6	;$B68109   |
-	BCC CODE_B68147				;$B6810D   |
-	LDA #$001E				;$B6810F   |
-	LDY #$FE00				;$B68112   |
-	JSL CODE_B3A600				;$B68115   |
-	LDX $0654				;$B68119   |
-	LDA $2E,x				;$B6811C   |
-	ORA #$0200				;$B6811E   |
-	STA $2E,x				;$B68121   |
-	LDA #$0014				;$B68123   |
-	STA $00073D				;$B68126   |
-	BRA CODE_B68147				;$B6812A  /
+	LDA sprite.state,x			;$B680FB   |\
+	BIT #$0200				;$B680FD   | |
+	BEQ .process_normal_collision		;$B68100   |/ If kudgel bonk not enabled then check normal collision
+	JSL get_current_sprite_clipping		;$B68102   |\
+	LDA #$0C7B				;$B68106   | |
+	JSL check_complex_player_collision_B6	;$B68109   | |
+	BCC .process_commands			;$B6810D   |/ If no collision, then continue to command processing
+	LDA #$001E				;$B6810F   |\ Knockback interaction
+	LDY #$FE00				;$B68112   | | Knockback speed
+	JSL CODE_B3A600				;$B68115   |/ Set bonk interaction with knockback
+	LDX $0654				;$B68119   |\
+	LDA sprite.state,x			;$B6811C   | |
+	ORA #$0200				;$B6811E   | | Enable bonking with kudgel
+	STA sprite.state,x			;$B68121   |/
+	LDA #$0014				;$B68123   |\
+	STA $00073D				;$B68126   |/ Set delay until next kudgel collision check
+	BRA .process_commands			;$B6812A  /
 
-CODE_B6812C:
+.process_normal_collision:
 	JSL get_current_sprite_clipping		;$B6812C  \
 	LDA #$0000				;$B68130   |
 	JSL check_complex_player_collision_B6	;$B68133   |
-	BCC CODE_B68147				;$B68137   |
+	BCC .process_commands			;$B68137   |
 	LDX current_sprite			;$B68139   |
-	LDA #$0014				;$B6813B   |
-	STA $00073D				;$B6813E   |
-	LDX current_held_sprite			;$B68142   |
-	BEQ CODE_B68147				;$B68145   |
-CODE_B68147:					;	   |
-	LDX current_sprite			;$B68147   |
-	LDA $44,x				;$B68149   | Get command return address
-	BNE CODE_B68152				;$B6814B   | If it exists, parse it
-	JSR parse_boss_command			;$B6814D   |
-	BRA CODE_B6815E				;$B68150  /
+	LDA #$0014				;$B6813B   |\
+	STA $00073D				;$B6813E   |/ Set delay until next kudgel collision check
+	LDX current_held_sprite			;$B68142   |\
+	BEQ .process_commands			;$B68145   | | Stupid
+.process_commands:				;	   |/
+	LDX current_sprite			;$B68147   |\
+	LDA sprite.general_purpose_44,x		;$B68149   | |
+	BNE .execute_variable_44_routine	;$B6814B   |/ If variable 44 has a routine queued then execute it
+	JSR parse_boss_command			;$B6814D   |\ Else parse boss commands instead
+	BRA .animate_and_process_tnt_and_stun	;$B68150  /_/
 
-CODE_B68152:
-	JSR ($0044,x)				;$B68152  \
-	LDX current_sprite			;$B68155   |
-	LDA $44,x				;$B68157   | Get command return address
-	BNE CODE_B6815E				;$B68159   | If executing return command, skip parsing boss command
-	JSR parse_boss_command			;$B6815B   |
-CODE_B6815E:					;	   |
-	JSR CODE_B68186				;$B6815E   |
-	JSR handle_kudgel_stun			;$B68161   |
+.execute_variable_44_routine:
+	JSR (sprite.general_purpose_44,x)	;$B68152  \> Execute routine in variable 44
+	LDX current_sprite			;$B68155   |\
+	LDA sprite.general_purpose_44,x		;$B68157   | |
+	BNE .animate_and_process_tnt_and_stun	;$B68159   |/ If var 44 still has routine queued, dont parse commands
+	JSR parse_boss_command			;$B6815B   |> Else parse boss commands
+.animate_and_process_tnt_and_stun:		;	   |
+	JSR .ensure_kudgel_indexed_tnt_sprite	;$B6815E   |> If tracked TNT sprite isnt TNT then stop tracking it
+	JSR .handle_kudgel_stun			;$B68161   |> Has an embedded anti-piracy check
 	JSL process_sprite_animation		;$B68164   |
-	JSR handle_kudgel_destroying_tnt	;$B68168   |
-CODE_B6816B:					;	   |
-	LDX current_sprite			;$B6816B   |
-	LDA #$0120				;$B6816D   |
-	CMP $06,x				;$B68170   |
-	BCC CODE_B68176				;$B68172   |
-	STA $06,x				;$B68174   |
-CODE_B68176:					;	   |
-	LDA #$0260				;$B68176   |
-	CMP $06,x				;$B68179   |
-	BCS CODE_B6817F				;$B6817B   |
-	STA $06,x				;$B6817D   |
-CODE_B6817F:					;	   |
-	JSR move_child_to_controller_spr	;$B6817F   |
-CODE_B68182:					;	   |
-	PLB					;$B68182   |
-	JML [sprite_return_address]		;$B68183  /
+	JSR .handle_kudgel_destroying_tnt	;$B68168   |
+#process_kudgel_positioning:			;	   |
+	LDX current_sprite			;$B6816B   |> Get kudgel
+	LDA #$0120				;$B6816D   |\
+	CMP sprite.x_position,x			;$B68170   | |
+	BCC .check_right_bounds			;$B68172   |/ If kudgel is inside left bounds of arena then continue
+	STA sprite.x_position,x			;$B68174   |> Else cap kudgel x position to keep him in area
+.check_right_bounds:				;	   |
+	LDA #$0260				;$B68176   |\
+	CMP sprite.x_position,x			;$B68179   | |
+	BCS .process_club_positioning		;$B6817B   |/ If kudgel is inside right bounds of arena then continue
+	STA sprite.x_position,x			;$B6817D   |> Else cap kudgel x position to keep him in area
+.process_club_positioning:			;	   |
+	JSR move_child_to_controller_spr	;$B6817F   |> Move club to kudgels position
+.kudgel_sprite_return:				;	   |
+	PLB					;$B68182   |\ Retrieve bank
+	JML [sprite_return_address]		;$B68183  /_/ Sprite return
 
-CODE_B68186:
+
+;If tracked TNT sprite isnt TNT then stop tracking it
+.ensure_kudgel_indexed_tnt_sprite:
 	LDY $074F				;$B68186  \
-	BEQ .return				;$B68189   |
-	LDA $0000,y				;$B6818B   |
+	BEQ ..return				;$B68189   |
+	LDA.w sprite.type,y			;$B6818B   |
 	CMP #!sprite_tntbarrel			;$B6818E   |
-	BEQ .return				;$B68191   |
+	BEQ ..return				;$B68191   |
 	CMP #!sprite_kleever_falling_canball	;$B68193   |
-	BEQ .return				;$B68196   |
+	BEQ ..return				;$B68196   |
 	STZ $074F				;$B68198   |
-.return:					;	   |
+..return:					;	   |
 	RTS					;$B6819B  /
 
 
-handle_kudgel_stun:
+.handle_kudgel_stun:
 	LDA.l $00074D				;$B6819C  \
-	BEQ .return				;$B681A0   |
+	BEQ ..return				;$B681A0   |
 	PHB					;$B681A2   |> Piracy check, preserve bank
 	LDA #$00FF				;$B681A3   |\ Load FF
 	SEP #$20				;$B681A6   | |
@@ -218,39 +220,39 @@ handle_kudgel_stun:
 	TAX					;$B681B4   |/
 	LDY $0038,x				;$B681B5   |\ $8400 + $38 = $808438
 	CPY #$00AF				;$B681B8   |/ Check if instruction is an LDA.l
-	BEQ .piracy_check_done			;$B681BB   |> If so then dont break Kudgel
+	BEQ ..piracy_check_done			;$B681BB   |> If so then dont break Kudgel
 	STZ $0656				;$B681BD   |\ Delete reference to club sprite
 	LDX $0654				;$B681C0   | |
-	DEC $44,x				;$B681C3   | | Decrease command return address so Kudgel idles forever
-	DEC $44,x				;$B681C5   |/
-.piracy_check_done:				;	   |
+	DEC sprite.general_purpose_44,x		;$B681C3   | | Decrease command return address so Kudgel idles forever
+	DEC sprite.general_purpose_44,x		;$B681C5   |/
+..piracy_check_done:				;	   |
 	PLB					;$B681C7   |
 	DEC $074D				;$B681C8   | Decrease screen shake timer
 	LDY active_kong_sprite			;$B681CB   |
-	LDA $002E,y				;$B681CE   |
+	LDA.w sprite.state,y			;$B681CE   |
 	CMP #!kong_state_63			;$B681D1   |
-	BEQ .return				;$B681D4   | If kong is alread stunned, return
-	LDA $0030,y				;$B681D6   |
+	BEQ ..return				;$B681D4   | If kong is alread stunned, return
+	LDA.w sprite.interaction_flags,y	;$B681D6   |
 	BIT #$0080				;$B681D9   |
-	BNE .return				;$B681DC   |
-	LDA $001E,y				;$B681DE   |
+	BNE ..return				;$B681DC   |
+	LDA.w sprite.terrain_interaction,y	;$B681DE   |
 	BIT #$0001				;$B681E1   |
-	BEQ .return				;$B681E4   | If kong is not grounded, return
+	BEQ ..return				;$B681E4   | If kong is not grounded, return
 	STZ $074D				;$B681E6   |
 	LDA #!player_interaction_0B		;$B681E9   |
 	JSL set_player_interaction_global	;$B681EC   | Set stunned by enemy on ground interaction
-	BCS .return				;$B681F0   |
+	BCS ..return				;$B681F0   |
 	LDA.l $000652				;$B681F2   | Get Kudgel hit points
 	ASL A					;$B681F6   |
 	TAY					;$B681F7   |
-	LDA kudgel_land_stun_timers,y		;$B681F8   |
+	LDA .kudgel_land_stun_timers,y		;$B681F8   |
 	STA interaction_RAM_0A86		;$B681FB   | Set stun timer
-.return:					;	   |
+..return:					;	   |
 	RTS					;$B681FE  /
 
 
 ;each phase stuns the player for a different amount of time
-kudgel_land_stun_timers:
+.kudgel_land_stun_timers:
 	dw $0000
 	dw $0016
 	dw $0015
@@ -259,14 +261,14 @@ kudgel_land_stun_timers:
 	dw $001C
 	dw $0020
 
-handle_kudgel_destroying_tnt:
+.handle_kudgel_destroying_tnt:
 	LDX current_sprite			;$B6820D  \
-	LDA $2E,x				;$B6820F   |
+	LDA sprite.state,x			;$B6820F   |
 	BIT #$2000				;$B68211   |
 	BNE .return				;$B68214   |
 	BIT #$0100				;$B68216   |
 	BEQ .in_air				;$B68219   |
-	LDA $44,x				;$B6821B   |
+	LDA sprite.general_purpose_44,x		;$B6821B   |
 	CMP #CODE_B6BAD8			;$B6821D   |
 	BEQ .grounded				;$B68220   |
 	BRL .return				;$B68222  /
@@ -278,12 +280,12 @@ handle_kudgel_destroying_tnt:
 	JSL check_for_sprite_collisions		;$B6822E   | Check sprite collision
 	BCC .return				;$B68232   |
 	LDY colliding_sprite			;$B68234   | Get sprite we collided with
-	LDA $0000,y				;$B68236   |
+	LDA.w sprite.type,y			;$B68236   |
 	CMP #!sprite_tntbarrel			;$B68239   |
 	BNE .return				;$B6823C   | If not a TNT barrel, return
-	LDA $0020,y				;$B6823E   | Else get sprite`s current X speed
+	LDA.w sprite.x_speed,y			;$B6823E   | Else get sprite`s current X speed
 	BNE .set_attack_animation		;$B68241   | If it has any X velocity, skip held sprite check
-	LDA $6A					;$B68243   |
+	LDA colliding_sprite			;$B68243   |
 	CMP current_held_sprite			;$B68245   | Else check if its the sprite held by the kong
 	BNE .return				;$B68248   | If not, return
 .set_attack_animation:				;	   |
@@ -294,9 +296,9 @@ handle_kudgel_destroying_tnt:
 	LDA #!kudgel_club_fall_attack_anim_id	;$B68257   |
 	JSL set_alt_sprite_animation		;$B6825A   |
 	LDX current_sprite			;$B6825E   | Get kudgel sprite
-	LDA $2E,x				;$B68260   |
+	LDA sprite.state,x			;$B68260   |
 	ORA #$2000				;$B68262   |
-	STA $2E,x				;$B68265   |
+	STA sprite.state,x			;$B68265   |
 .return:					;	   |
 	RTS					;$B68267  / Return
 
@@ -307,10 +309,10 @@ handle_kudgel_destroying_tnt:
 	JSL check_for_sprite_collisions		;$B6826E   |
 	BCC .return				;$B68272   |
 	LDY colliding_sprite			;$B68274   |
-	LDA $0000,y				;$B68276   |
+	LDA.w sprite.type,y			;$B68276   |
 	CMP #!sprite_tntbarrel			;$B68279   |
 	BNE .return				;$B6827C   |
-	LDA $0020,y				;$B6827E   |
+	LDA.w sprite.x_speed,y			;$B6827E   |
 	BNE .return				;$B68281   |
 	LDA colliding_sprite			;$B68283   |
 	CMP current_held_sprite			;$B68285   |
@@ -319,12 +321,12 @@ handle_kudgel_destroying_tnt:
 
 ;Manually injects kudgel's special hitbox for destroying held TNT
 .inject_special_hitbox:
-	LDA $12,x				;$B6828C  \
+	LDA sprite.oam_property,x		;$B6828C  \
 	BIT #$4000				;$B6828E   |
 	BEQ ..CODE_B682B3			;$B68291   |
 	LDA #$FFFF				;$B68293   |
 	CLC					;$B68296   |
-	ADC $06,x				;$B68297   |
+	ADC sprite.x_position,x			;$B68297   |
 	STA sprite_clipping[6].right		;$B68299   |
 	STA sprite_clipping[8].right		;$B6829C   |
 	STA $000650				;$B6829F   |
@@ -336,7 +338,7 @@ handle_kudgel_destroying_tnt:
 	BRA ..CODE_B682C9			;$B682B1  /
 
 ..CODE_B682B3:
-	LDA $06,x				;$B682B3  \
+	LDA sprite.x_position,x			;$B682B3  \
 	CLC					;$B682B5   |
 	ADC #$0001				;$B682B6   |
 	STA sprite_clipping[6].left		;$B682B9   |
@@ -346,7 +348,7 @@ handle_kudgel_destroying_tnt:
 	STA sprite_clipping[6].right		;$B682C3   |
 	STA sprite_clipping[8].right		;$B682C6   |
 ..CODE_B682C9:					;	   |
-	LDA $0A,x				;$B682C9   |
+	LDA sprite.y_position,x			;$B682C9   |
 	CLC					;$B682CB   |
 	ADC #$FFC3				;$B682CC   |
 	STA sprite_clipping[6].top		;$B682CF   |
@@ -358,7 +360,7 @@ handle_kudgel_destroying_tnt:
 
 kudgels_club_sprite_code:
 	LDX $0654				;$B682DF  \
-	LDA $2E,x				;$B682E2   |
+	LDA sprite.state,x			;$B682E2   |
 	BIT #$0001				;$B682E4   |
 	BNE CODE_B682F4				;$B682E7   |
 	LDA time_stop_flags			;$B682E9   |
@@ -377,19 +379,19 @@ CODE_B682F4:
 CODE_B68300:
 	JSL process_sprite_animation		;$B68300  \
 	LDX $0654				;$B68304   |
-	LDA $2E,x				;$B68307   |
+	LDA sprite.state,x			;$B68307   |
 	BIT #$0100				;$B68309   |
 	BEQ CODE_B6831D				;$B6830C   |
 	LDX current_sprite			;$B6830E   |
-	LDA $32,x				;$B68310   |
+	LDA sprite.carry_or_defeat_flags,x	;$B68310   |
 	BIT #$0008				;$B68312   |
 	BEQ CODE_B6831D				;$B68315   |
-	JSR CODE_B689F8				;$B68317   |
+	JSR damage_kudgel			;$B68317   |
 	BRL CODE_B684B6				;$B6831A  /
 
 CODE_B6831D:
 	LDX $0654				;$B6831D  \
-	LDA $2E,x				;$B68320   |
+	LDA sprite.state,x			;$B68320   |
 	BIT #$2000				;$B68322   |
 	BNE CODE_B6832A				;$B68325   |
 	BRL CODE_B683F7				;$B68327  /
@@ -418,11 +420,11 @@ CODE_B6832A:
 	STZ current_held_sprite			;$B68368   |
 CODE_B6836B:					;	   |
 	LDX $0656				;$B6836B   |
-	LDA $30,x				;$B6836E   |
+	LDA sprite.interaction_flags,x		;$B6836E   |
 	AND #$FFDF				;$B68370   |
-	STA $30,x				;$B68373   |
+	STA sprite.interaction_flags,x		;$B68373   |
 	LDX $0654				;$B68375   |
-	STA $30,x				;$B68378   |
+	STA sprite.interaction_flags,x		;$B68378   |
 	LDA.l $00073D				;$B6837A   |
 	BEQ CODE_B68383				;$B6837E   |
 	BRL CODE_B684B6				;$B68380  /
@@ -434,8 +436,8 @@ CODE_B68383:
 	BCC CODE_B683F7				;$B6838E   |
 	LDX $0654				;$B68390   |
 	LDY active_kong_sprite			;$B68393   |
-	LDA $06,x				;$B68396   |
-	CMP $0006,y				;$B68398   |
+	LDA sprite.x_position,x			;$B68396   |
+	CMP.w sprite.x_position,y		;$B68398   |
 	BCC CODE_B683A2				;$B6839B   |
 	LDA #$FD00				;$B6839D   |
 	BRA CODE_B683A5				;$B683A0  /
@@ -562,11 +564,11 @@ CODE_B684B6:					;	   |
 CODE_B684B7:					;	   |
 	JML [sprite_return_address]		;$B684B7  /
 
-CODE_B684BA:
+kudgel_defeated:
 	LDX current_sprite			;$B684BA  \
-	JSR ($0044,x)				;$B684BC   |
+	JSR (sprite.general_purpose_44,x)	;$B684BC   |
 	JSL process_sprite_animation		;$B684BF   |
-	BRL CODE_B6816B				;$B684C3  /
+	BRL process_kudgel_positioning		;$B684C3  /
 
 kudgel_boss_command_sequence:
 	dw !null_pointer
@@ -836,64 +838,64 @@ DATA_B689CA:
 	dw !boss_command_rise, $0150, $F800, $FC00, $0003
 	dw !boss_command_goto_or_reset, !null_pointer
 
-CODE_B689F8:
-	LDA.l $000652				;$B689F8  \
-	CMP #$0001				;$B689FC   |
-	BEQ setup_kudgel_death			;$B689FF   |
-	LDX $0654				;$B68A01   |
-	LDY active_kong_sprite			;$B68A04   |
-	LDA $06,x				;$B68A07   |
-	CMP $0006,y				;$B68A09   |
-	BCC CODE_B68A13				;$B68A0C   |
-	LDY #$0460				;$B68A0E   |
-	BRA CODE_B68A16				;$B68A11  /
+damage_kudgel:
+	LDA.l $000652				;$B689F8  \ \ Get boss health
+	CMP #$0001				;$B689FC   | |
+	BEQ .defeat_kudgel			;$B689FF   |/ If kudgel has no more health then defeat him
+	LDX $0654				;$B68A01   |\
+	LDY active_kong_sprite			;$B68A04   | |
+	LDA sprite.x_position,x			;$B68A07   | |
+	CMP.w sprite.x_position,y		;$B68A09   | |
+	BCC .hurt_kudgel_knock_left		;$B68A0C   |/ If kong is right of kudgel then knock kudgel left
+	LDY #$0460				;$B68A0E   |\ Else knock kudgel right
+	BRA .hurt_kudgel			;$B68A11  /_/
 
-CODE_B68A13:
+.hurt_kudgel_knock_left:
 	LDY #$FBA0				;$B68A13  \
-CODE_B68A16:					;	   |
-	STY $20,x				;$B68A16   |
-	LDA $2E,x				;$B68A18   |
+.hurt_kudgel:					;	   |
+	STY sprite.x_speed,x			;$B68A16   |
+	LDA sprite.state,x			;$B68A18   |
 	ORA #$0200				;$B68A1A   |
 	AND #$FEFF				;$B68A1D   |
-	STA $2E,x				;$B68A20   |
-	LDA #$0014				;$B68A22   |
-	STA $00073D				;$B68A25   |
+	STA sprite.state,x			;$B68A20   |
+	LDA #$0014				;$B68A22   |\
+	STA $00073D				;$B68A25   |/ Set delay until next kudgel collision check
 	LDA #CODE_B68C82			;$B68A29   |
-	STA $44,x				;$B68A2C   |
+	STA sprite.general_purpose_44,x		;$B68A2C   |
 	LDA #$FC00				;$B68A2E   |
-	STA $24,x				;$B68A31   |
+	STA sprite.y_speed,x			;$B68A31   |
 	LDA #$0600				;$B68A33   |
-	STA $2A,x				;$B68A36   |
-	STZ $26,x				;$B68A38   |
-	LDA $32,x				;$B68A3A   | Redundant
+	STA sprite.max_y_speed,x		;$B68A36   |
+	STZ sprite.max_x_speed,x		;$B68A38   |
+	LDA sprite.carry_or_defeat_flags,x	;$B68A3A   | Redundant
 	LDX $0654				;$B68A3C   |
-	STZ $32,x				;$B68A3F   |
+	STZ sprite.carry_or_defeat_flags,x	;$B68A3F   |
 	LDX $0656				;$B68A41   |
 	STZ $32,x				;$B68A44   |
-	LDA.l $000654				;$B68A46   |
-	STA alternate_sprite			;$B68A4A   |
-	LDA #!kudgel_hurt_anim_id		;$B68A4C   |
-	JSL set_alt_sprite_animation		;$B68A4F   |
-	LDA.l $000656				;$B68A53   |
-	STA alternate_sprite			;$B68A57   |
-	LDA #!kudgel_club_hurt_anim_id		;$B68A59   |
-	JSL set_alt_sprite_animation		;$B68A5C   |
-CODE_B68A60:					;	   |
+	LDA.l $000654				;$B68A46   |\
+	STA alternate_sprite			;$B68A4A   | |
+	LDA #!kudgel_hurt_anim_id		;$B68A4C   | |
+	JSL set_alt_sprite_animation		;$B68A4F   | | Play kudgel hurt animation
+	LDA.l $000656				;$B68A53   | |
+	STA alternate_sprite			;$B68A57   | |
+	LDA #!kudgel_club_hurt_anim_id		;$B68A59   | |
+	JSL set_alt_sprite_animation		;$B68A5C   |/ Play club hurt animation
+.CODE_B68A60:					;	   |
 	RTS					;$B68A60  /
 
-setup_kudgel_death:
+.defeat_kudgel:
 	%lda_sound(5, kudgel_hit)		;$B68A61  \
 	JSL queue_sound_effect			;$B68A64   |
 	STZ $0652				;$B68A68   | Zero Kudgel's hit points
 	LDX $0654				;$B68A6B   |
 	LDA #$F780				;$B68A6E   |
-	STA $24,x				;$B68A71   | Set current Y speed
+	STA sprite.y_speed,x			;$B68A71   | Set current Y speed
 	LDA #$FC80				;$B68A73   |
-	STA $2A,x				;$B68A76   | Set target Y speed
-	STZ $20,x				;$B68A78   |\
-	STZ $26,x				;$B68A7A   |/ Clear X speeds
+	STA sprite.max_y_speed,x		;$B68A76   | Set target Y speed
+	STZ sprite.x_speed,x			;$B68A78   |\
+	STZ sprite.max_x_speed,x		;$B68A7A   |/ Clear X speeds
 	LDA #kudgel_death_return_command	;$B68A7C   |
-	STA $44,x				;$B68A7F   | Set return command to execute
+	STA sprite.general_purpose_44,x		;$B68A7F   | Set return command to execute
 	LDA #$0001				;$B68A81   |
 	STA $000751				;$B68A84   |
 	LDA #DATA_B68B07			;$B68A88   |
@@ -906,7 +908,7 @@ setup_kudgel_death:
 	STA alternate_sprite			;$B68AA0   |
 	LDA #!kudgel_club_hurt_anim_id		;$B68AA2   |
 	JSL set_alt_sprite_animation		;$B68AA5   |
-	BRA CODE_B68A60				;$B68AA9  / Return
+	BRA .CODE_B68A60			;$B68AA9  / Return
 
 CODE_B68AAB:
 	DEC $0751				;$B68AAB  \
@@ -944,61 +946,60 @@ CODE_B68AFA:					;	   |
 
 ;Particle sprite spawning data for when Kudgel or Krocodile Kore K.rool are defeated
 
-
-;0000	current x velocity
-;0002	target x velocity
-;0004	current y velocity
-;0006	target y velocity
+;0000	current x speed
+;0002	target x speed
+;0004	current y speed
+;0006	target y speed
 ;0008	duration
 ;000A	sprite
 
 DATA_B68AFB:
-	dw $FFA0, $0000, $FFE0, $FF00, $0005, $0174
+	dw $FFA0, $0000, $FFE0, $FF00, $0005, !special_sprite_spawn_id_0174
 
 DATA_B68B07:
-	dw $0000, $0000, $0000, $FF00, $0005, $0176
+	dw $0000, $0000, $0000, $FF00, $0005, !special_sprite_spawn_id_0176
 
 DATA_B68B13:
-	dw $0060, $0000, $0000, $FF40, $0004, $0172
+	dw $0060, $0000, $0000, $FF40, $0004, !special_sprite_spawn_id_0172
 
 DATA_B68B1F:
-	dw $FFE0, $FFE0, $0000, $FF00, $4E20, $0178
+	dw $FFE0, $FFE0, $0000, $FF00, $4E20, !special_sprite_spawn_id_0178
 
 DATA_B68B2B:
-	dw $0040, $0000, $FFC0, $0080, $0003, $0170
+	dw $0040, $0000, $FFC0, $0080, $0003, !special_sprite_spawn_id_0170
 
 DATA_B68B37:
-	dw $FFC0, $0000, $0000, $0080, $0004, $0170
+	dw $FFC0, $0000, $0000, $0080, $0004, !special_sprite_spawn_id_0170
 
 DATA_B68B43:
-	dw $FFE0, $0000, $0000, $0080, $0002, $0170
+	dw $FFE0, $0000, $0000, $0080, $0002, !special_sprite_spawn_id_0170
 
 DATA_B68B4F:
-	dw $0020, $0000, $0000, $0080, $0003, $0170
+	dw $0020, $0000, $0000, $0080, $0003, !special_sprite_spawn_id_0170
 
 DATA_B68B5B:
-	dw $0000, $0000, $0080, $0080, $0002, $0170
+	dw $0000, $0000, $0080, $0080, $0002, !special_sprite_spawn_id_0170
 
 DATA_B68B67:
-	dw $FFC0, $FFE0, $0080, $0080, $0003, $0170
+	dw $FFC0, $FFE0, $0080, $0080, $0003, !special_sprite_spawn_id_0170
 
 DATA_B68B73:
-	dw $FFC0, $0000, $FFC0, $0080, $0003, $0170
+	dw $FFC0, $0000, $FFC0, $0080, $0003, !special_sprite_spawn_id_0170
 
 DATA_B68B7F:
-	dw $0040, $0000, $0000, $0080, $0004, $0170
+	dw $0040, $0000, $0000, $0080, $0004, !special_sprite_spawn_id_0170
 
 DATA_B68B8B:
-	dw $0020, $0000, $0000, $0080, $0003, $0170
+	dw $0020, $0000, $0000, $0080, $0003, !special_sprite_spawn_id_0170
 
 DATA_B68B97:
-	dw $FFE0, $0000, $0000, $0080, $0004, $0170
+	dw $FFE0, $0000, $0000, $0080, $0004, !special_sprite_spawn_id_0170
 
 DATA_B68BA3:
-	dw $0000, $0000, $0080, $0080, $0003, $0170
+	dw $0000, $0000, $0080, $0080, $0003, !special_sprite_spawn_id_0170
 
 DATA_B68BAF:
-	dw $0040, $0020, $0080, $0080, $2710, $0170
+	dw $0040, $0020, $0080, $0080, $2710, !special_sprite_spawn_id_0170
 
 
 kudgel_death_return_command:
@@ -2916,7 +2917,7 @@ CODE_B69D75:					;	   |
 	PLX					;$B69D7F   |
 	STX current_sprite			;$B69D80   |
 	LDY $0654				;$B69D82   |
-	LDA #boss_command_code_03		;$B69D85   |
+	LDA #boss_command_return		;$B69D85   |
 	STA $0044,y				;$B69D88   |
 	JSR release_held_sprite_from_kong	;$B69D8B   |
 	STZ $0735				;$B69D8E   |
@@ -4774,7 +4775,7 @@ CODE_B6AC01:					;	   |
 	LDX $0654				;$B6AC0D   |
 	DEC $070B				;$B6AC10   |
 	BNE CODE_B6AC7F				;$B6AC13   |
-	LDA #boss_command_code_03		;$B6AC15   |
+	LDA #boss_command_return		;$B6AC15   |
 	STA $44,x				;$B6AC18   |
 	LDA level_number			;$B6AC1A   |
 	CMP #!level_krocodile_kore		;$B6AC1C   |
@@ -5551,82 +5552,82 @@ execute_boss_command:
 boss_commands_table:
 	%offset(boss_commands_return_table, 2)
 	dw boss_command_code_00, CODE_B6CC53
-	dw boss_command_code_01, boss_command_code_03
-	dw boss_command_code_02, boss_command_code_03
-	dw boss_command_code_03, CODE_B6CAD7
-	dw boss_command_code_04, boss_command_code_03
-	dw boss_command_code_05, boss_command_code_03
-	dw boss_command_code_06, boss_command_code_03
-	dw boss_command_code_07, boss_command_code_03
+	dw boss_command_code_01, boss_command_return
+	dw boss_command_code_02, boss_command_return
+	dw boss_command_return, CODE_B6CAD7
+	dw boss_command_code_04, boss_command_return
+	dw boss_command_code_05, boss_command_return
+	dw boss_command_code_06, boss_command_return
+	dw boss_command_code_07, boss_command_return
 	dw boss_command_code_08, CODE_B6CA27
-	dw boss_command_code_09, boss_command_code_03
-	dw boss_command_code_0A, boss_command_code_03
-	dw boss_command_code_0B, boss_command_code_03
+	dw boss_command_code_09, boss_command_return
+	dw boss_command_code_0A, boss_command_return
+	dw boss_command_code_0B, boss_command_return
 	dw boss_command_code_0C, CODE_B6CC53
-	dw boss_command_code_0D, boss_command_code_03
-	dw boss_command_code_0E, boss_command_code_03
+	dw boss_command_code_0D, boss_command_return
+	dw boss_command_code_0E, boss_command_return
 	dw boss_command_code_0F, CODE_B6CA27
-	dw boss_command_code_10, boss_command_code_03
-	dw boss_command_code_11, boss_command_code_03
+	dw boss_command_code_10, boss_command_return
+	dw boss_command_code_11, boss_command_return
 	dw boss_command_code_12, CODE_B6CC53
-	dw boss_command_code_13, boss_command_code_03
-	dw boss_command_code_14, boss_command_code_03
-	dw boss_command_code_15, boss_command_code_03
-	dw boss_command_code_16, boss_command_code_03
-	dw boss_command_code_17, boss_command_code_03
-	dw boss_command_code_18, boss_command_code_03
-	dw boss_command_code_19, boss_command_code_03
+	dw boss_command_code_13, boss_command_return
+	dw boss_command_code_14, boss_command_return
+	dw boss_command_code_15, boss_command_return
+	dw boss_command_code_16, boss_command_return
+	dw boss_command_code_17, boss_command_return
+	dw boss_command_code_18, boss_command_return
+	dw boss_command_code_19, boss_command_return
 	dw boss_command_code_1A, CODE_B6CA27
-	dw boss_command_code_1B, boss_command_code_03
-	dw boss_command_code_1C, boss_command_code_03
-	dw boss_command_code_1D, boss_command_code_03
+	dw boss_command_code_1B, boss_command_return
+	dw boss_command_code_1C, boss_command_return
+	dw boss_command_code_1D, boss_command_return
 	dw boss_command_code_1E, CODE_B6CC53
-	dw boss_command_code_1F, boss_command_code_03
-	dw boss_command_code_20, boss_command_code_03
+	dw boss_command_code_1F, boss_command_return
+	dw boss_command_code_20, boss_command_return
 	dw boss_command_code_21, CODE_B6C50E
-	dw boss_command_code_22, boss_command_code_03
-	dw boss_command_code_23, boss_command_code_03
-	dw boss_command_code_24, boss_command_code_03
-	dw boss_command_code_25, boss_command_code_03
+	dw boss_command_code_22, boss_command_return
+	dw boss_command_code_23, boss_command_return
+	dw boss_command_code_24, boss_command_return
+	dw boss_command_code_25, boss_command_return
 	dw boss_command_code_26, CODE_B6CC53
-	dw boss_command_code_27, boss_command_code_03
+	dw boss_command_code_27, boss_command_return
 	dw boss_command_code_28, CODE_B6C464
 	dw boss_command_code_29, CODE_B6C36C
 	dw boss_command_code_2A, CODE_B6C256
 	dw boss_command_code_2B, CODE_B6C122
-	dw boss_command_code_2C, boss_command_code_03
-	dw boss_command_code_2D, boss_command_code_03
-	dw boss_command_code_2E, boss_command_code_03
+	dw boss_command_code_2C, boss_command_return
+	dw boss_command_code_2D, boss_command_return
+	dw boss_command_code_2E, boss_command_return
 	dw boss_command_code_2F, CODE_B6BF11
-	dw boss_command_code_30, boss_command_code_03
-	dw boss_command_code_31, boss_command_code_03
-	dw boss_command_code_32, boss_command_code_03
-	dw boss_command_code_33, boss_command_code_03
-	dw boss_command_code_34, boss_command_code_03
+	dw boss_command_code_30, boss_command_return
+	dw boss_command_code_31, boss_command_return
+	dw boss_command_code_32, boss_command_return
+	dw boss_command_code_33, boss_command_return
+	dw boss_command_code_34, boss_command_return
 	dw boss_command_code_35, CODE_B6C122
 	dw boss_command_code_36, CODE_B6C464
 	dw boss_command_code_37, CODE_B6BDA4
-	dw boss_command_code_38, boss_command_code_03
-	dw boss_command_code_39, boss_command_code_03
+	dw boss_command_code_38, boss_command_return
+	dw boss_command_code_39, boss_command_return
 	dw boss_command_code_3A, CODE_B6BCCF
 	dw boss_command_code_3B, CODE_B6BC3E
-	dw boss_command_code_3C, boss_command_code_03
-	dw boss_command_code_3D, boss_command_code_03
-	dw boss_command_code_3E, boss_command_code_03
-	dw boss_command_code_3F, boss_command_code_03
+	dw boss_command_code_3C, boss_command_return
+	dw boss_command_code_3D, boss_command_return
+	dw boss_command_code_3E, boss_command_return
+	dw boss_command_code_3F, boss_command_return
 	dw boss_command_code_40, CODE_B6BB2B
 	dw boss_command_code_41, CODE_B6BAD8
-	dw boss_command_code_42, boss_command_code_03
-	dw boss_command_code_43, boss_command_code_03
+	dw boss_command_code_42, boss_command_return
+	dw boss_command_code_43, boss_command_return
 	dw boss_command_code_44, CODE_B6BA3F
-	dw boss_command_code_45, boss_command_code_03
-	dw boss_command_code_46, boss_command_code_03
-	dw boss_command_code_47, boss_command_code_03
+	dw boss_command_code_45, boss_command_return
+	dw boss_command_code_46, boss_command_return
+	dw boss_command_code_47, boss_command_return
 	dw boss_command_code_48, CODE_B6B874
-	dw boss_command_code_49, boss_command_code_03
+	dw boss_command_code_49, boss_command_return
 
 
-boss_command_code_03:
+boss_command_return:
 	RTS					;$B6B7C7  /
 
 boss_command_code_49:
@@ -6368,7 +6369,7 @@ boss_command_code_35:
 boss_command_code_34:
 	PHY					;$B6BE0D  \
 	LDY #$7FFF				;$B6BE0E   |
-	JSL CODE_808E4F				;$B6BE11   |
+	JSL get_random_number_2_global		;$B6BE11   |
 	LDX current_sprite			;$B6BE15   |
 	BIT #$0001				;$B6BE17   |
 	BEQ CODE_B6BE2D				;$B6BE1A   |
@@ -6841,7 +6842,7 @@ CODE_B6C1EE:					;	   |
 	LDA $0004,y				;$B6C1EF   |
 	PHY					;$B6C1F2   |
 	TAY					;$B6C1F3   |
-	JSL CODE_808E4F				;$B6C1F4   |
+	JSL get_random_number_2_global		;$B6C1F4   |
 	BPL CODE_B6C200				;$B6C1F8   |
 	TYA					;$B6C1FA   |
 	EOR #$FFFF				;$B6C1FB   |
@@ -8668,12 +8669,12 @@ check_complex_player_collision_B6:
 	PHX					;$B6CF65  \
 	PHY					;$B6CF66   |
 	LDY current_sprite			;$B6CF67   |
-	LDX $12,y				;$B6CF69   |
+	LDX sprite.oam_property,y		;$B6CF69   |
 	PHX					;$B6CF6B   |
 	JSL CODE_BEBE8B				;$B6CF6C   |
 	LDY current_sprite			;$B6CF70   |
 	PLX					;$B6CF72   |
-	STX $12,y				;$B6CF73   |
+	STX sprite.oam_property,y		;$B6CF73   |
 	PLY					;$B6CF75   |
 	PLX					;$B6CF76   |
 	RTL					;$B6CF77  /
@@ -8771,27 +8772,27 @@ CODE_B6D007:					;	   |
 
 parse_boss_command:
 	JSR .parse_command			;$B6D008  \> Parse the next boss command
-	LDA $44,x				;$B6D00B   |\
+	LDA sprite.general_purpose_44,x		;$B6D00B   |\
 	BEQ parse_boss_command			;$B6D00D   |/ If no return command code is present, process next command
 	RTS					;$B6D00F  /> Return
 
 .parse_command
-	LDY $46,x				;$B6D010  \ \ Get attack pattern index
+	LDY sprite.general_purpose_46,x		;$B6D010  \ \ Get command sequence pointer
 	LDA $0000,y				;$B6D012   |/ Get boss command
 	ASL A					;$B6D015   |\
 	ASL A					;$B6D016   |/
 	PHY					;$B6D017   |> Preserve pattern index
 	TAY					;$B6D018   |\
 	LDA boss_commands_table,y		;$B6D019   | | Get command code pointer
-	STA $46,x				;$B6D01C   |/ Write pointer to sprite variable
+	STA sprite.general_purpose_46,x		;$B6D01C   |/ Write pointer to sprite variable
 	LDA boss_commands_return_table,y	;$B6D01E   |\ Get command return code pointer
-	STA $44,x				;$B6D021   |/ Write pointer to sprite variable
+	STA sprite.general_purpose_44,x		;$B6D021   |/ Write pointer to sprite variable
 	PLY					;$B6D023   |> Retrieve pattern index
 	INY					;$B6D024   |\
 	INY					;$B6D025   |/ Increment pattern index for next command or operand
-	JSR ($0046,x)				;$B6D026   |> Execute command
+	JSR (sprite.general_purpose_46,x)	;$B6D026   |> Execute command
 	LDX current_sprite			;$B6D029   |\ Get current sprite
-	STY $46,x				;$B6D02B   |/ Restore pattern index to sprite variable
+	STY sprite.general_purpose_46,x		;$B6D02B   |/ Restore pattern index to sprite variable
 	RTS					;$B6D02D  /> Return
 
 klubba_sprite_code:

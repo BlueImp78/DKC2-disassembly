@@ -288,11 +288,11 @@ CODE_B4826F:					;	   |
 	TXA					;$B4826F   |
 	LDY #$00F0				;$B48270   |
 	LDX #$0004				;$B48273   |
-	JSL DMA_sprite_palette_from_index	;$B48276   |
+	JSL dma_sprite_palette_from_index	;$B48276   |
 	LDA #$00AB				;$B4827A   |
 	LDY #$00D0				;$B4827D   |
 	LDX #$0004				;$B48280   |
-	JSL DMA_sprite_palette_from_index	;$B48283   |
+	JSL dma_sprite_palette_from_index	;$B48283   |
 	LDA $060F				;$B48287   |
 	BEQ CODE_B48291				;$B4828A   |
 	LDA #$0080				;$B4828C   |
@@ -303,25 +303,25 @@ CODE_B48291:
 CODE_B48294:					;	   |
 	LDY #$00E0				;$B48294   |
 	LDX #$0004				;$B48297   |
-	JSL DMA_sprite_palette_from_index	;$B4829A   |
+	JSL dma_sprite_palette_from_index	;$B4829A   |
 	LDA world_number			;$B4829E   |
 	BEQ CODE_B482D7				;$B482A1   |
 	LDA #$00AD				;$B482A3   |
 	LDY #$0080				;$B482A6   |
 	LDX #$0004				;$B482A9   |
-	JSL DMA_sprite_palette_from_index	;$B482AC   |
+	JSL dma_sprite_palette_from_index	;$B482AC   |
 	LDA #$00AE				;$B482B0   |
 	LDY #$0090				;$B482B3   |
 	LDX #$0004				;$B482B6   |
-	JSL DMA_sprite_palette_from_index	;$B482B9   |
+	JSL dma_sprite_palette_from_index	;$B482B9   |
 	LDA #$00A5				;$B482BD   |
 	LDY #$00A0				;$B482C0   |
 	LDX #$0004				;$B482C3   |
-	JSL DMA_sprite_palette_from_index	;$B482C6   |
+	JSL dma_sprite_palette_from_index	;$B482C6   |
 	LDA #$00A6				;$B482CA   |
 	LDY #$00B0				;$B482CD   |
 	LDX #$0004				;$B482D0   |
-	JSL DMA_sprite_palette_from_index	;$B482D3   |
+	JSL dma_sprite_palette_from_index	;$B482D3   |
 CODE_B482D7:					;	   |
 	LDA #$000A				;$B482D7   |
 	STA $069F				;$B482DA   |
@@ -572,9 +572,9 @@ CODE_B484BC:					;	   |
 	STA DMA[0].settings			;$B484DB   |
 	LDA #$18				;$B484DE   |
 	STA DMA[0].destination			;$B484E0   |
-	LDX #text_VRAM_buffer			;$B484E3   |
+	LDX #text_vram_buffer			;$B484E3   |
 	STX DMA[0].source			;$B484E6   |
-	LDA.b #<:text_VRAM_buffer		;$B484E9   |
+	LDA.b #<:text_vram_buffer		;$B484E9   |
 	STA DMA[0].source_bank			;$B484EB   |
 	STZ DMA[0].unused_1			;$B484EE   |
 	LDA #$01				;$B484F1   |
@@ -712,7 +712,7 @@ CODE_B485E6:
 	JSR ($0000,x)				;$B485FB   |
 	JSL disable_screen			;$B485FE   |
 	LDA #CODE_8087D9			;$B48602   |
-	JML CODE_808C9E				;$B48605  /
+	JML set_game_mode_and_return		;$B48605  /
 
 	LDA $06A1				;$B48609   |
 	BIT #$0008				;$B4860C   |
@@ -1153,8 +1153,8 @@ CODE_B4896A:					;	   |
 	BEQ CODE_B48989				;$B48970   |
 	LDA screen_brightness			;$B48972   |
 	BNE CODE_B48985				;$B48975   |
-	LDA #CODE_808D02			;$B48977   |
-	STA NMI_pointer				;$B4897A   |
+	LDA #run_808D02			;$B48977   |
+	STA nmi_pointer				;$B4897A   |
 	LDA $06A3				;$B4897C   |
 	AND #$FFFD				;$B4897F   |
 	STA $06A3				;$B48982   |
@@ -1348,7 +1348,7 @@ CODE_B48AEF:
 	BRL CODE_B48927				;$B48B12  /
 
 CODE_B48B15:
-	LDA #text_VRAM_buffer			;$B48B15  \
+	LDA #text_vram_buffer			;$B48B15  \
 	STA $0D2C				;$B48B18   |
 	SEP #$20				;$B48B1B   |
 	STZ CPU.enable_interrupts		;$B48B1D   |
@@ -1439,13 +1439,13 @@ CODE_B48BDF:					;	   |
 	JSL spawn_BB83EF_special_sprite_address	;$B48BEA   |
 CODE_B48BEE:					;	   |
 	JSR spawn_npc_hud_coin			;$B48BEE   |
-	LDA #CODE_808CF5			;$B48BF1   |
-	STA NMI_pointer				;$B48BF4   |
+	LDA #run_808CF5				;$B48BF1   |
+	STA nmi_pointer				;$B48BF4   |
 	LDA #$0100				;$B48BF6   |
 	JSL set_fade_global			;$B48BF9   |
 	LDA #$0005				;$B48BFD   |
 	STA $0676				;$B48C00   |
-	JML CODE_808C84				;$B48C03  /
+	JML wait_for_next_nmi			;$B48C03  /
 
 CODE_B48C07:
 	JSR get_player_coin_count_npc		;$B48C07  \
@@ -1476,11 +1476,11 @@ CODE_B48C07:
 	STZ $065C				;$B48C52   |
 	LDA #CODE_B4A2A4			;$B48C55   |
 	STA $079C				;$B48C58   |
-	LDA #CODE_808D4E			;$B48C5B   |
-	STA NMI_pointer				;$B48C5E   |
+	LDA #run_808D4E				;$B48C5B   |
+	STA nmi_pointer				;$B48C5E   |
 	LDA #$0100				;$B48C60   |
 	JSL set_fade_global			;$B48C63   |
-	JML CODE_808C84				;$B48C67  /
+	JML wait_for_next_nmi			;$B48C67  /
 
 CODE_B48C6B:
 	LDA $44,x				;$B48C6B  \
@@ -1518,7 +1518,7 @@ CODE_B48C9D:
 	AND #$DDFF				;$B48CA7   |
 	STA $06A1				;$B48CAA   |
 	JSL disable_screen			;$B48CAD   |
-	JSL clear_VRAM_global			;$B48CB1   |
+	JSL clear_vram_global			;$B48CB1   |
 	JSL CODE_BAC7C0				;$B48CB5   |
 	LDA #$0200				;$B48CB9   |
 	STA DMA[0].source			;$B48CBC   |
@@ -1546,27 +1546,27 @@ CODE_B48C9D:
 	LDA $0000,x				;$B48CFD   |
 	AND #$00FF				;$B48D00   |
 	PHX					;$B48D03   |
-	JSL VRAM_payload_handler_global		;$B48D04   |
+	JSL vram_payload_handler_global		;$B48D04   |
 	PLX					;$B48D08   |
 	LDA $0001,x				;$B48D09   |
 	AND #$00FF				;$B48D0C   |
 	PHX					;$B48D0F   |
-	JSL set_PPU_registers_global		;$B48D10   |
+	JSL set_ppu_registers_global		;$B48D10   |
 	PLX					;$B48D14   |
 	LDA $0002,x				;$B48D15   |
 	LDY #$0000				;$B48D18   |
 	LDX #$0020				;$B48D1B   |
-	JSL DMA_palette				;$B48D1E   |
+	JSL dma_palette				;$B48D1E   |
 	LDA #$00AA				;$B48D22   |
 	LDY #$00E0				;$B48D25   |
 	LDX #$0004				;$B48D28   |
-	JSL DMA_sprite_palette_from_index	;$B48D2B   |
+	JSL dma_sprite_palette_from_index	;$B48D2B   |
 	LDA #global_sprite_palette		;$B48D2F   |
 	LDY #$00F0				;$B48D32   |
 	LDX #$0004				;$B48D35   |
-	JSL DMA_palette				;$B48D38   |
+	JSL dma_palette				;$B48D38   |
 	JSL clear_wram_tables			;$B48D3C   |
-	JSL setup_npc_screen_kongs		;$B48D40   |
+	JSL init_npc_screen_kongs		;$B48D40   |
 	STZ $067A				;$B48D44   |
 	STZ $065E				;$B48D47   |
 	SEP #$20				;$B48D4A   |
@@ -1689,13 +1689,13 @@ CODE_B48E49:					;	   |
 	JSL set_fade_global			;$B48E5E   |
 	LDA #$0001				;$B48E62   |
 	STA $064E				;$B48E65   |
-	JML CODE_808C84				;$B48E68  /
+	JML wait_for_next_nmi			;$B48E68  /
 
 CODE_B48E6C:
 	PHK					;$B48E6C  \
 	PLB					;$B48E6D   |
-	JSL DMA_queued_sprite_graphics		;$B48E6E   |
-	JSL DMA_queued_sprite_palette_global	;$B48E72   |
+	JSL dma_queued_sprite_graphics		;$B48E6E   |
+	JSL dma_queued_sprite_palette_global	;$B48E72   |
 	DEC $064E				;$B48E76   |
 	BEQ CODE_B48E7E				;$B48E79   |
 	BRL CODE_B48F07				;$B48E7B  /
@@ -1738,9 +1738,9 @@ CODE_B48EC2:
 	STA DMA[0].settings			;$B48ECC   |
 	LDA #$18				;$B48ECF   |
 	STA DMA[0].destination			;$B48ED1   |
-	LDX #text_VRAM_buffer			;$B48ED4   |
+	LDX #text_vram_buffer			;$B48ED4   |
 	STX DMA[0].source			;$B48ED7   |
-	LDA.b #<:text_VRAM_buffer		;$B48EDA   |
+	LDA.b #<:text_vram_buffer		;$B48EDA   |
 	STA DMA[0].source_bank			;$B48EDC   |
 	LDX #$0180				;$B48EDF   |
 	STX DMA[0].size				;$B48EE2   |
@@ -1893,8 +1893,8 @@ CODE_B49043:
 	STA game_state_flags			;$B49046   |
 	LDA $0660				;$B49049   |
 	STA active_kong_number			;$B4904C   |
-	LDA #ending_museum_NMI			;$B4904F   |
-	STA NMI_pointer				;$B49052   |
+	LDA #run_ending_monkey_museum		;$B4904F   |
+	STA nmi_pointer				;$B49052   |
 	LDA #CODE_B4BEEF			;$B49054   |
 	STA $067D				;$B49057   |
 	LDA #CODE_B4C139			;$B4905A   |
@@ -1986,7 +1986,7 @@ CODE_B490FF:					;	   |
 	JSL set_fade_global			;$B49114   |
 	LDA #$0001				;$B49118   |
 	STA $064E				;$B4911B   |
-	JML CODE_808C84				;$B4911E  /
+	JML wait_for_next_nmi			;$B4911E  /
 
 CODE_B49122:
 	JML restart_rareware_logo		;$B49122  |
@@ -2024,15 +2024,15 @@ CODE_B49159:					;	   |
 	LDA $06A5				;$B4917B   |
 	ORA #$0800				;$B4917E   |
 	STA $06A5				;$B49181   |
-	JML CODE_808C84				;$B49184  /
+	JML wait_for_next_nmi			;$B49184  /
 
 CODE_B49188:
 	LDA $0676				;$B49188  \
 	STA game_state_flags			;$B4918B   |
 	LDA $0660				;$B4918E   |
 	STA active_kong_number			;$B49191   |
-	LDA #ending_museum_NMI			;$B49194   |
-	STA NMI_pointer				;$B49197   |
+	LDA #run_ending_monkey_museum		;$B49194   |
+	STA nmi_pointer				;$B49197   |
 	LDA #CODE_B4BEEF			;$B49199   |
 	STA $067D				;$B4919C   |
 	LDA #CODE_B491C5			;$B4919F   |
@@ -2066,8 +2066,8 @@ CODE_B491D7:
 	PHK					;$B491D7  \
 	PLB					;$B491D8   |
 	JSR CODE_B4A11F				;$B491D9   |
-	JSL DMA_queued_sprite_graphics		;$B491DC   |
-	JSL DMA_queued_sprite_palette_global	;$B491E0   |
+	JSL dma_queued_sprite_graphics		;$B491DC   |
+	JSL dma_queued_sprite_palette_global	;$B491E0   |
 	JSR CODE_B4996E				;$B491E4   |
 	LDA screen_brightness			;$B491E7   |
 	CMP #$000F				;$B491EA   |
@@ -2089,15 +2089,15 @@ CODE_B491FF:
 	LDA klubba_payments			;$B4920A   |
 	BIT $0666				;$B4920D   |
 	BEQ CODE_B4921F				;$B49210   |
-	LDA #CODE_808D3D			;$B49212   |
-	STA NMI_pointer				;$B49215   |
+	LDA #run_808D3D				;$B49212   |
+	STA nmi_pointer				;$B49215   |
 	LDA #$0001				;$B49217   |
 	STA $0654				;$B4921A   |
 	BRA CODE_B49224				;$B4921D  /
 
 CODE_B4921F:
-	LDA #CODE_808D0E			;$B4921F  \
-	STA NMI_pointer				;$B49222   |
+	LDA #run_npc_intro_dialogue		;$B4921F  \
+	STA nmi_pointer				;$B49222   |
 CODE_B49224:					;	   |
 	LDA #$0200				;$B49224   |
 	STA DMA[0].source			;$B49227   |
@@ -2251,8 +2251,8 @@ CODE_B4935D:					;	   |
 CODE_B4935E:
 	PHK					;$B4935E  \
 	PLB					;$B4935F   |
-	JSL DMA_queued_sprite_graphics		;$B49360   |
-	JSL DMA_queued_sprite_palette_global	;$B49364   |
+	JSL dma_queued_sprite_graphics		;$B49360   |
+	JSL dma_queued_sprite_palette_global	;$B49364   |
 	JSR CODE_B4996E				;$B49368   |
 	DEC $064E				;$B4936B   |
 	BEQ CODE_B49373				;$B4936E   |
@@ -2296,9 +2296,9 @@ CODE_B493B7:
 	STA DMA[0].settings			;$B493C1   |
 	LDA #$18				;$B493C4   |
 	STA DMA[0].destination			;$B493C6   |
-	LDX #text_VRAM_buffer			;$B493C9   |
+	LDX #text_vram_buffer			;$B493C9   |
 	STX DMA[0].source			;$B493CC   |
-	LDA.b #<:text_VRAM_buffer		;$B493CF   |
+	LDA.b #<:text_vram_buffer		;$B493CF   |
 	STA DMA[0].source_bank			;$B493D1   |
 	LDX #$0180				;$B493D4   |
 	STX DMA[0].size				;$B493D7   |
@@ -2338,8 +2338,8 @@ CODE_B49425:					;	   |
 	LDA screen_brightness			;$B4942D   |
 	CMP #$000F				;$B49430   |
 	BNE CODE_B49441				;$B49433   |
-	LDA #CODE_808D7D			;$B49435   |
-	STA NMI_pointer				;$B49438   |
+	LDA #run_npc_exit				;$B49435   |
+	STA nmi_pointer				;$B49438   |
 	LDA #$810F				;$B4943A   |
 	JSL set_fade_global			;$B4943D   |
 CODE_B49441:					;	   |
@@ -2436,9 +2436,9 @@ CODE_B4951B:
 	LDA #$0001				;$B4951B  \
 	STA $0654				;$B4951E   |
 	JSR CODE_B4974F				;$B49521   |
-	LDA #CODE_808D30			;$B49524   |
-	STA NMI_pointer				;$B49527   |
-	LDA #CODE_808D1F			;$B49529   |
+	LDA #run_808D30				;$B49524   |
+	STA nmi_pointer				;$B49527   |
+	LDA #run_npc_dialogue_selection		;$B49529   |
 	STA $065E				;$B4952C   |
 	LDA $06A1				;$B4952F   |
 	ORA #$0400				;$B49532   |
@@ -2454,7 +2454,7 @@ CODE_B49541:
 	LDA completed_swanky_dialogue,x		;$B49548   |
 	BIT #$0001				;$B4954B   |
 	BEQ CODE_B49556				;$B4954E   |
-	LDY #text_VRAM_buffer			;$B49550   |
+	LDY #text_vram_buffer			;$B49550   |
 	JSR CODE_B49704				;$B49553   |
 CODE_B49556:					;	   |
 	LDX $0666				;$B49556   |
@@ -2527,7 +2527,7 @@ CODE_B495D3:
 	LDA completed_wrinkly_dialogue,x	;$B495DF   |
 	BIT #$0001				;$B495E2   |
 	BEQ CODE_B495F0				;$B495E5   |
-	LDY #text_VRAM_buffer			;$B495E7   |
+	LDY #text_vram_buffer			;$B495E7   |
 	LDX $0666				;$B495EA   |
 	JSR CODE_B496BB				;$B495ED   |
 CODE_B495F0:					;	   |
@@ -2632,9 +2632,9 @@ CODE_B496BB:
 	TAX					;$B496C0   |
 	LDA $0000,x				;$B496C1   |
 	TAX					;$B496C4   |
-	LDY #text_VRAM_buffer			;$B496C5   |
+	LDY #text_vram_buffer			;$B496C5   |
 CODE_B496C8:					;	   |
-	LDA #bank_high(text_VRAM_buffer)	;$B496C8   |
+	LDA #bank_high(text_vram_buffer)	;$B496C8   |
 	PHA					;$B496CB   |
 	PLB					;$B496CC   |
 	PLB					;$B496CD   |
@@ -2844,8 +2844,8 @@ CODE_B49886:
 	PHB					;$B49886  \
 	PHK					;$B49887   |
 	PLB					;$B49888   |
-	JSL DMA_queued_sprite_graphics		;$B49889   |
-	JSL DMA_queued_sprite_palette_global	;$B4988D   |
+	JSL dma_queued_sprite_graphics		;$B49889   |
+	JSL dma_queued_sprite_palette_global	;$B4988D   |
 	JSR CODE_B4996E				;$B49891   |
 	LDA $06A1				;$B49894   |
 	BIT #$0400				;$B49897   |
@@ -2860,9 +2860,9 @@ CODE_B4989F:
 	STA DMA[0].settings			;$B498A9   |
 	LDA #$18				;$B498AC   |
 	STA DMA[0].destination			;$B498AE   |
-	LDX #text_VRAM_buffer			;$B498B1   |
+	LDX #text_vram_buffer			;$B498B1   |
 	STX DMA[0].source			;$B498B4   |
-	LDA.b #<:text_VRAM_buffer		;$B498B7   |
+	LDA.b #<:text_vram_buffer		;$B498B7   |
 	STA DMA[0].source_bank			;$B498B9   |
 	LDX $0658				;$B498BC   |
 	STX DMA[0].size				;$B498BF   |
@@ -2884,7 +2884,7 @@ CODE_B498DB:					;	   |
 	AND #$EFFF				;$B498E9   |
 	STA $06A1				;$B498EC   |
 	LDA $065E				;$B498EF   |
-	STA NMI_pointer				;$B498F2   |
+	STA nmi_pointer				;$B498F2   |
 CODE_B498F4:					;	   |
 	JSR CODE_B49EF1				;$B498F4   |
 	JSL CODE_BAC7C0				;$B498F7   |
@@ -2901,8 +2901,8 @@ CODE_B4990F:
 	PHB					;$B4990F  \
 	PHK					;$B49910   |
 	PLB					;$B49911   |
-	JSL DMA_queued_sprite_graphics		;$B49912   |
-	JSL DMA_queued_sprite_palette_global	;$B49916   |
+	JSL dma_queued_sprite_graphics		;$B49912   |
+	JSL dma_queued_sprite_palette_global	;$B49916   |
 	JSR CODE_B4996E				;$B4991A   |
 	LDA $06A1				;$B4991D   |
 	BIT #$1000				;$B49920   |
@@ -2923,7 +2923,7 @@ CODE_B49934:					;	   |
 	LDA #$0001				;$B49948   |
 	STA $064E				;$B4994B   |
 	LDA $065E				;$B4994E   |
-	STA NMI_pointer				;$B49951   |
+	STA nmi_pointer				;$B49951   |
 CODE_B49953:					;	   |
 	JSR CODE_B49EF1				;$B49953   |
 	JSL CODE_BAC7C0				;$B49956   |
@@ -2945,8 +2945,8 @@ CODE_B4996E:
 CODE_B49978:
 	PHK					;$B49978  \
 	PLB					;$B49979   |
-	JSL DMA_queued_sprite_graphics		;$B4997A   |
-	JSL DMA_queued_sprite_palette_global	;$B4997E   |
+	JSL dma_queued_sprite_graphics		;$B4997A   |
+	JSL dma_queued_sprite_palette_global	;$B4997E   |
 	JSR CODE_B4996E				;$B49982   |
 	LDA $067A				;$B49985   |
 	BEQ CODE_B4998D				;$B49988   |
@@ -3168,8 +3168,8 @@ CODE_B49B55:
 CODE_B49B63:
 	PHK					;$B49B63  \
 	PLB					;$B49B64   |
-	JSL DMA_queued_sprite_graphics		;$B49B65   |
-	JSL DMA_queued_sprite_palette_global	;$B49B69   |
+	JSL dma_queued_sprite_graphics		;$B49B65   |
+	JSL dma_queued_sprite_palette_global	;$B49B69   |
 	JSR CODE_B4996E				;$B49B6D   |
 	LDA screen_brightness			;$B49B70   |
 	BEQ CODE_B49BBB				;$B49B73   |
@@ -3208,9 +3208,9 @@ CODE_B49BBB:
 	LDA #$0001				;$B49BCA   |
 	TRB file_select_action			;$B49BCD   |
 	LDA #CODE_8087D9			;$B49BD0   |
-	STA gamemode_pointer			;$B49BD3   |
-	LDA #simple_gamemode_nmi		;$B49BD5   |
-	JML set_nmi_pointer			;$B49BD8  /
+	STA game_mode_pointer			;$B49BD3   |
+	LDA #run_simple_game_mode		;$B49BD5   |
+	JML set_nmi_and_wait			;$B49BD8  /
 
 CODE_B49BDC:
 	JSR CODE_B4AED3				;$B49BDC  \
@@ -3373,15 +3373,15 @@ CODE_B49CE1:					;	   |
 	SBC $0000,x				;$B49CF2   | subtract player coin count from the requested price
 	BPL CODE_B49D4F				;$B49CF5   | if player has enough coins, proceed to checkout
 CODE_B49CF7:					;	   |
-	LDA $065C				;$B49CF7   | else load adress of current dialogue table in use
+	LDA $065C				;$B49CF7   | else load address of current dialogue table in use
 if !version == 1				;	   |
 	AND #$00FF				;$B49CFA   |
 endif						;	   |
 	CMP #$0000				;$B49CFD   | check if it contains anything
 	BNE CODE_B49D3D				;$B49D00   |
-	LDA #CODE_808D70			;$B49D02   | else update NMI pointer
-	STA NMI_pointer				;$B49D05   |
-	LDA #CODE_808D5F			;$B49D07   |
+	LDA #run_808D70				;$B49D02   | else update NMI pointer
+	STA nmi_pointer				;$B49D05   |
+	LDA #run_808D5F				;$B49D07   |
 	STA $065E				;$B49D0A   |
 	LDA npc_screen_type			;$B49D0D   | get npc screen type
 	TAX					;$B49D10   | transfer it to X to use as index
@@ -3587,9 +3587,9 @@ CODE_B49E48:
 	CMP #water_drop_graphics		;$B49E85   |
 	BNE CODE_B49E9B				;$B49E88   |
 	STZ $0699				;$B49E8A   |
-	LDA #CODE_808D70			;$B49E8D   |
-	STA NMI_pointer				;$B49E90   |
-	LDA #CODE_808D3D			;$B49E92   |
+	LDA #run_808D70				;$B49E8D   |
+	STA nmi_pointer				;$B49E90   |
+	LDA #run_808D3D				;$B49E92   |
 	STA $065E				;$B49E95   |
 	BRL CODE_B49EBF				;$B49E98  /
 
@@ -3622,8 +3622,8 @@ CODE_B49EBF:					;	   |
 CODE_B49ED7:
 	PHK					;$B49ED7  \
 	PLB					;$B49ED8   |
-	JSL DMA_queued_sprite_graphics		;$B49ED9   |
-	JSL DMA_queued_sprite_palette_global	;$B49EDD   |
+	JSL dma_queued_sprite_graphics		;$B49ED9   |
+	JSL dma_queued_sprite_palette_global	;$B49EDD   |
 	JSR CODE_B4996E				;$B49EE1   |
 	JSR CODE_B49EF1				;$B49EE4   |
 	LDX #$079C				;$B49EE7   |
@@ -3653,8 +3653,8 @@ CODE_B49EF1:
 CODE_B49F1D:
 	PHK					;$B49F1D  \
 	PLB					;$B49F1E   |
-	JSL DMA_queued_sprite_graphics		;$B49F1F   |
-	JSL DMA_queued_sprite_palette_global	;$B49F23   |
+	JSL dma_queued_sprite_graphics		;$B49F1F   |
+	JSL dma_queued_sprite_palette_global	;$B49F23   |
 	JSR CODE_B4996E				;$B49F27   |
 	JSR CODE_B49EF1				;$B49F2A   |
 	LDA npc_screen_type			;$B49F2D   |
@@ -3692,8 +3692,8 @@ CODE_B49F61:
 	JSR move_kong_to_golden_barrel		;$B49F6A   |
 	LDA #CODE_B4A00D			;$B49F6D   |
 	STA $079C				;$B49F70   |
-	LDA #CODE_808D4E			;$B49F73   |
-	STA NMI_pointer				;$B49F76   |
+	LDA #run_808D4E				;$B49F73   |
+	STA nmi_pointer				;$B49F76   |
 	JSR CODE_B49FFD				;$B49F78   |
 	LDA klubba_payments			;$B49F7B   |
 	ORA $0666				;$B49F7E   | Set payment flag
@@ -3801,8 +3801,8 @@ CODE_B4A051:
 	LDA screen_brightness			;$B4A059   |
 	CMP #$000F				;$B4A05C   |
 	BNE CODE_B4A06D				;$B4A05F   |
-	LDA #CODE_808D7D			;$B4A061   |
-	STA NMI_pointer				;$B4A064   |
+	LDA #run_npc_exit				;$B4A061   |
+	STA nmi_pointer				;$B4A064   |
 	LDA #$810F				;$B4A066   |
 	JSL set_fade_global			;$B4A069   |
 CODE_B4A06D:					;	   |
@@ -3831,8 +3831,8 @@ CODE_B4A088:
 	BNE CODE_B4A0A7				;$B4A099   |
 	LDA #$810F				;$B4A09B   |
 	JSL set_fade_global			;$B4A09E   |
-	LDA #CODE_808D7D			;$B4A0A2   |
-	STA NMI_pointer				;$B4A0A5   |
+	LDA #run_npc_exit				;$B4A0A2   |
+	STA nmi_pointer				;$B4A0A5   |
 CODE_B4A0A7:					;	   |
 	RTS					;$B4A0A7  /
 
@@ -3869,8 +3869,8 @@ CODE_B4A0C0:					;	   |
 	JSR CODE_B4ADEB				;$B4A0E5   |
 	LDA #CODE_B4A135			;$B4A0E8   |
 	STA $079C				;$B4A0EB   |
-	LDA #CODE_808D4E			;$B4A0EE   |
-	STA NMI_pointer				;$B4A0F1   |
+	LDA #run_808D4E				;$B4A0EE   |
+	STA nmi_pointer				;$B4A0F1   |
 	LDA #$0001				;$B4A0F3   |
 	STA $064E				;$B4A0F6   |
 	JSR CODE_B4974F				;$B4A0F9   |
@@ -3944,9 +3944,9 @@ CODE_B4A170:
 	AND #$FDFF				;$B4A181   |
 	STA $06A1				;$B4A184   |
 	JSR CODE_B4A11F				;$B4A187   |
-	LDA #CODE_808D30			;$B4A18A   |
-	STA NMI_pointer				;$B4A18D   |
-	LDA #CODE_808D1F			;$B4A18F   |
+	LDA #run_808D30				;$B4A18A   |
+	STA nmi_pointer				;$B4A18D   |
+	LDA #run_npc_dialogue_selection		;$B4A18F   |
 	STA $065E				;$B4A192   |
 	STZ $067A				;$B4A195   |
 	LDA $06A1				;$B4A198   |
@@ -4020,9 +4020,9 @@ CODE_B4A21B:
 	STA DMA[0].settings			;$B4A225   |
 	LDA #$18				;$B4A228   |
 	STA DMA[0].destination			;$B4A22A   |
-	LDX #text_VRAM_buffer_2			;$B4A22D   |
+	LDX #text_vram_buffer_2			;$B4A22D   |
 	STX DMA[0].source			;$B4A230   |
-	LDA.b #<:text_VRAM_buffer_2		;$B4A233   |
+	LDA.b #<:text_vram_buffer_2		;$B4A233   |
 	STA DMA[0].source_bank			;$B4A235   |
 	LDX #$0180				;$B4A238   |
 	STX DMA[0].size				;$B4A23B   |
@@ -4053,8 +4053,8 @@ CODE_B4A26F:
 	STA file_select_action			;$B4A272   |
 	LDA #CODE_B4A288			;$B4A275   |
 	STA $079C				;$B4A278   |
-	LDA #CODE_808D4E			;$B4A27B   |
-	STA NMI_pointer				;$B4A27E   |
+	LDA #run_808D4E				;$B4A27B   |
+	STA nmi_pointer				;$B4A27E   |
 	LDA #$810F				;$B4A280   |
 	JSL set_fade_global			;$B4A283   |
 	RTS					;$B4A287  /
@@ -4067,7 +4067,7 @@ CODE_B4A288:
 
 CODE_B4A292:
 	JSL disable_screen			;$B4A292  \
-	JSL save_game				;$B4A296   |
+	JSL update_save_buffer			;$B4A296   |
 	LDA #$0001				;$B4A29A   |
 	STA file_select_action			;$B4A29D   |
 	JML init_file_select			;$B4A2A0  /
@@ -4077,9 +4077,9 @@ CODE_B4A2A4:
 	LDA screen_brightness			;$B4A2A8   |
 	CMP #$000F				;$B4A2AB   |
 	BNE CODE_B4A2BB				;$B4A2AE   |
-	LDA #CODE_808D30			;$B4A2B0   |
-	STA NMI_pointer				;$B4A2B3   |
-	LDA #CODE_808D1F			;$B4A2B5   |
+	LDA #run_808D30				;$B4A2B0   |
+	STA nmi_pointer				;$B4A2B3   |
+	LDA #run_npc_dialogue_selection		;$B4A2B5   |
 	STA $065E				;$B4A2B8   |
 CODE_B4A2BB:					;	   |
 	RTS					;$B4A2BB  /
@@ -4090,8 +4090,8 @@ move_kong_to_funky_plane:
 	JSR .move_kong_to_plane			;$B4A2BF   |
 	LDX inactive_kong_sprite		;$B4A2C2   |
 	JSR .move_kong_to_plane			;$B4A2C5   |
-	LDA #CODE_808D4E			;$B4A2C8   |
-	STA NMI_pointer				;$B4A2CB   |
+	LDA #run_808D4E				;$B4A2C8   |
+	STA nmi_pointer				;$B4A2CB   |
 	LDA #CODE_B4A313			;$B4A2CD   |
 	STA $079C				;$B4A2D0   |
 	LDA $06A3				;$B4A2D3   |
@@ -4175,14 +4175,14 @@ CODE_B4A371:
 	BNE CODE_B4A390				;$B4A382   |
 	LDA #$810F				;$B4A384   |
 	JSL set_fade_global			;$B4A387   |
-	LDA #CODE_808D7D			;$B4A38B   |
-	STA NMI_pointer				;$B4A38E   |
+	LDA #run_npc_exit				;$B4A38B   |
+	STA nmi_pointer				;$B4A38E   |
 CODE_B4A390:					;	   |
 	RTS					;$B4A390  /
 
 CODE_B4A391:
-	LDA #CODE_808D4E			;$B4A391  \
-	STA NMI_pointer				;$B4A394   |
+	LDA #run_808D4E				;$B4A391  \
+	STA nmi_pointer				;$B4A394   |
 	LDA #CODE_B4A3EE			;$B4A396   |
 	STA $079C				;$B4A399   |
 	LDA $06A1				;$B4A39C   |
@@ -4529,9 +4529,9 @@ CODE_B4A69A:
 	BIT #$0800				;$B4A6A6   |
 	BNE CODE_B4A6CE				;$B4A6A9   |
 	JSR CODE_B4A11F				;$B4A6AB   |
-	LDA #CODE_808D30			;$B4A6AE   |
-	STA NMI_pointer				;$B4A6B1   |
-	LDA #CODE_808D1F			;$B4A6B3   |
+	LDA #run_808D30				;$B4A6AE   |
+	STA nmi_pointer				;$B4A6B1   |
+	LDA #run_npc_dialogue_selection		;$B4A6B3   |
 	STA $065E				;$B4A6B6   |
 	STZ $067A				;$B4A6B9   |
 	LDA $06A1				;$B4A6BC   |
@@ -4555,9 +4555,9 @@ CODE_B4A6CE:
 	JSR CODE_B4A11F				;$B4A6E7   |
 	LDA $0670				;$B4A6EA   |
 	STA $06B5				;$B4A6ED   |
-	LDA #CODE_808D30			;$B4A6F0   |
-	STA NMI_pointer				;$B4A6F3   |
-	LDA #CODE_808D1F			;$B4A6F5   |
+	LDA #run_808D30				;$B4A6F0   |
+	STA nmi_pointer				;$B4A6F3   |
+	LDA #run_npc_dialogue_selection		;$B4A6F5   |
 	STA $065E				;$B4A6F8   |
 	STZ $067A				;$B4A6FB   |
 	LDA $06A1				;$B4A6FE   |
@@ -4716,8 +4716,8 @@ move_kong_to_golden_barrel:
 	JSR CODE_B4A97C				;$B4A849   |
 	LDA #CODE_B4A87F			;$B4A84C   |
 	STA $079C				;$B4A84F   |
-	LDA #CODE_808D4E			;$B4A852   |
-	STA NMI_pointer				;$B4A855   |
+	LDA #run_808D4E				;$B4A852   |
+	STA nmi_pointer				;$B4A855   |
 	LDA #$0001				;$B4A857   |
 	STA $064E				;$B4A85A   |
 	LDA $06A1				;$B4A85D   |
@@ -4739,8 +4739,8 @@ CODE_B4A87F:
 	LDX inactive_kong_sprite		;$B4A87F  \
 	LDA $42,x				;$B4A882   |
 	BNE CODE_B4A89B				;$B4A884   |
-	LDA #CODE_808D7D			;$B4A886   |
-	STA NMI_pointer				;$B4A889   |
+	LDA #run_npc_exit				;$B4A886   |
+	STA nmi_pointer				;$B4A889   |
 	LDA screen_brightness			;$B4A88B   |
 	CMP #$000F				;$B4A88E   |
 	BNE CODE_B4A89B				;$B4A891   |
@@ -4784,11 +4784,11 @@ CODE_B4A8D6:
 	LDA $06A1				;$B4A8E4   |
 	AND #$FDFF				;$B4A8E7   |
 	STA $06A1				;$B4A8EA   |
-	LDA NMI_pointer				;$B4A8ED   |
-	CMP #CODE_808D7D			;$B4A8EF   |
+	LDA nmi_pointer				;$B4A8ED   |
+	CMP #run_npc_exit				;$B4A8EF   |
 	BEQ CODE_B4A908				;$B4A8F2   |
-	LDA #CODE_808D7D			;$B4A8F4   |
-	STA NMI_pointer				;$B4A8F7   |
+	LDA #run_npc_exit				;$B4A8F4   |
+	STA nmi_pointer				;$B4A8F7   |
 	LDA screen_brightness			;$B4A8F9   |
 	CMP #$000F				;$B4A8FC   |
 	BNE CODE_B4A908				;$B4A8FF   |
@@ -4808,9 +4808,9 @@ CODE_B4A90E:
 	STA DMA[0].settings			;$B4A918   |
 	LDA #$18				;$B4A91B   |
 	STA DMA[0].destination			;$B4A91D   |
-	LDX #text_VRAM_buffer			;$B4A920   |
+	LDX #text_vram_buffer			;$B4A920   |
 	STX DMA[0].source			;$B4A923   |
-	LDA.b #<:text_VRAM_buffer		;$B4A926   |
+	LDA.b #<:text_vram_buffer		;$B4A926   |
 	STA DMA[0].source_bank			;$B4A928   |
 	LDX #$0180				;$B4A92B   |
 	STX DMA[0].size				;$B4A92E   |
@@ -4837,8 +4837,8 @@ CODE_B4A959:					;	   |
 	BNE CODE_B4A97B				;$B4A967   |
 	LDA #$0001				;$B4A969   |
 	STA $064E				;$B4A96C   |
-	LDA #CODE_808D7D			;$B4A96F   |
-	STA NMI_pointer				;$B4A972   |
+	LDA #run_npc_exit				;$B4A96F   |
+	STA nmi_pointer				;$B4A972   |
 	LDA #$810F				;$B4A974   |
 	JSL set_fade_global			;$B4A977   |
 CODE_B4A97B:					;	   |
@@ -4860,8 +4860,8 @@ leave_npc_screen:
 	JSR CODE_B4A9CB				;$B4A995   |
 	LDA #CODE_B4A87F			;$B4A998   |
 	STA $079C				;$B4A99B   |
-	LDA #CODE_808D4E			;$B4A99E   |
-	STA NMI_pointer				;$B4A9A1   |
+	LDA #run_808D4E				;$B4A99E   |
+	STA nmi_pointer				;$B4A9A1   |
 	LDA #$0001				;$B4A9A3   |
 	STA $064E				;$B4A9A6   |
 	LDA $06A1				;$B4A9A9   |
@@ -4895,8 +4895,8 @@ CODE_B4A9DB:
 	JSR CODE_B4AA1A				;$B4A9E4   |
 	LDA #CODE_B4A87F			;$B4A9E7   |
 	STA $079C				;$B4A9EA   |
-	LDA #CODE_808D4E			;$B4A9ED   |
-	STA NMI_pointer				;$B4A9F0   |
+	LDA #run_808D4E				;$B4A9ED   |
+	STA nmi_pointer				;$B4A9F0   |
 	LDA #$0001				;$B4A9F2   |
 	STA $064E				;$B4A9F5   |
 	LDA $06A1				;$B4A9F8   |
@@ -4930,8 +4930,8 @@ CODE_B4AA2A:
 	JSR CODE_B4AA69				;$B4AA33   |
 	LDA #CODE_B4AA79			;$B4AA36   |
 	STA $079C				;$B4AA39   |
-	LDA #CODE_808D4E			;$B4AA3C   |
-	STA NMI_pointer				;$B4AA3F   |
+	LDA #run_808D4E				;$B4AA3C   |
+	STA nmi_pointer				;$B4AA3F   |
 	LDA #$0001				;$B4AA41   |
 	STA $064E				;$B4AA44   |
 	LDA npc_screen_type			;$B4AA47   |
@@ -4962,8 +4962,8 @@ CODE_B4AA79:
 	LDX inactive_kong_sprite		;$B4AA79  \
 	LDA $42,x				;$B4AA7C   |
 	BNE CODE_B4AA95				;$B4AA7E   |
-	LDA #CODE_808D7D			;$B4AA80   |
-	STA NMI_pointer				;$B4AA83   |
+	LDA #run_npc_exit				;$B4AA80   |
+	STA nmi_pointer				;$B4AA83   |
 	LDA screen_brightness			;$B4AA85   |
 	CMP #$000F				;$B4AA88   |
 	BNE CODE_B4AA95				;$B4AA8B   |
@@ -5007,11 +5007,11 @@ CODE_B4AAD0:
 	LDA $06A1				;$B4AADE   |
 	AND #$FDFF				;$B4AAE1   |
 	STA $06A1				;$B4AAE4   |
-	LDA NMI_pointer				;$B4AAE7   |
-	CMP #CODE_808D7D			;$B4AAE9   |
+	LDA nmi_pointer				;$B4AAE7   |
+	CMP #run_npc_exit				;$B4AAE9   |
 	BEQ CODE_B4AAFA				;$B4AAEC   |
-	LDA #CODE_808D7D			;$B4AAEE   |
-	STA NMI_pointer				;$B4AAF1   |
+	LDA #run_npc_exit				;$B4AAEE   |
+	STA nmi_pointer				;$B4AAF1   |
 	LDA #$810F				;$B4AAF3   |
 	JSL set_fade_global			;$B4AAF6   |
 CODE_B4AAFA:					;	   |
@@ -5028,9 +5028,9 @@ CODE_B4AB00:
 	STA DMA[0].settings			;$B4AB0A   |
 	LDA #$18				;$B4AB0D   |
 	STA DMA[0].destination			;$B4AB0F   |
-	LDX #text_VRAM_buffer			;$B4AB12   |
+	LDX #text_vram_buffer			;$B4AB12   |
 	STX DMA[0].source			;$B4AB15   |
-	LDA.b #<:text_VRAM_buffer		;$B4AB18   |
+	LDA.b #<:text_vram_buffer		;$B4AB18   |
 	STA DMA[0].source_bank			;$B4AB1A   |
 	LDX #$0180				;$B4AB1D   |
 	STX DMA[0].size				;$B4AB20   |
@@ -5057,8 +5057,8 @@ CODE_B4AB4B:					;	   |
 	BNE CODE_B4AB6D				;$B4AB59   |
 	LDA #$0001				;$B4AB5B   |
 	STA $064E				;$B4AB5E   |
-	LDA #CODE_808D7D			;$B4AB61   |
-	STA NMI_pointer				;$B4AB64   |
+	LDA #run_npc_exit				;$B4AB61   |
+	STA nmi_pointer				;$B4AB64   |
 	LDA #$810F				;$B4AB66   |
 	JSL set_fade_global			;$B4AB69   |
 CODE_B4AB6D:					;	   |
@@ -5067,8 +5067,8 @@ CODE_B4AB6D:					;	   |
 CODE_B4AB6E:
 	PHK					;$B4AB6E  \
 	PLB					;$B4AB6F   |
-	JSL DMA_queued_sprite_graphics		;$B4AB70   |
-	JSL DMA_queued_sprite_palette_global	;$B4AB74   |
+	JSL dma_queued_sprite_graphics		;$B4AB70   |
+	JSL dma_queued_sprite_palette_global	;$B4AB74   |
 	JSR CODE_B4996E				;$B4AB78   |
 	DEC $064E				;$B4AB7B   |
 	BEQ CODE_B4AB83				;$B4AB7E   |
@@ -5103,9 +5103,9 @@ CODE_B4ABB3:
 	AND #$FDFF				;$B4ABC4   |
 	STA $06A1				;$B4ABC7   |
 	JSR CODE_B4A11F				;$B4ABCA   |
-	LDA #CODE_808D30			;$B4ABCD   |
-	STA NMI_pointer				;$B4ABD0   |
-	LDA #CODE_808D1F			;$B4ABD2   |
+	LDA #run_808D30				;$B4ABCD   |
+	STA nmi_pointer				;$B4ABD0   |
+	LDA #run_npc_dialogue_selection		;$B4ABD2   |
 	STA $065E				;$B4ABD5   |
 	STZ $067A				;$B4ABD8   |
 	LDA $06A1				;$B4ABDB   |
@@ -5245,9 +5245,9 @@ CODE_B4AE08:					;	   |
 	PHK					;$B4AE08   |
 	PLB					;$B4AE09   |
 	STA $0681				;$B4AE0A   |
-	LDA #bank_high(text_VRAM_buffer)	;$B4AE0D   |
+	LDA #bank_high(text_vram_buffer)	;$B4AE0D   |
 	STA $C9					;$B4AE10   |
-	LDA #text_VRAM_buffer			;$B4AE12   |
+	LDA #text_vram_buffer			;$B4AE12   |
 	STA $C8					;$B4AE15   |
 	STX $CE					;$B4AE17   |
 CODE_B4AE19:					;	   |
@@ -5324,7 +5324,7 @@ CODE_B4AE85:
 	LDA #$0400				;$B4AE8D   |
 	STA oam_size_index			;$B4AE90   |
 	LDA #$003C				;$B4AE92   |
-	STA $78					;$B4AE95   |
+	STA sprite_dma_buffer_limit		;$B4AE95   |
 	LDA npc_screen_type			;$B4AE97   |
 	CMP #!npc_screen_type_swanky		;$B4AE9A   |
 	BNE CODE_B4AEA6				;$B4AE9D   |
@@ -5332,7 +5332,7 @@ CODE_B4AE85:
 	JSL CODE_BEC695				;$B4AEA2   |
 CODE_B4AEA6:					;	   |
 	JSL CODE_B59F40				;$B4AEA6   |
-	STZ next_sprite_DMA_buffer_slot		;$B4AEAA   |
+	STZ next_sprite_dma_buffer_slot		;$B4AEAA   |
 	PLB					;$B4AEAD   |
 	RTS					;$B4AEAE  /
 
@@ -5850,8 +5850,8 @@ CODE_B4B27D:					;	   |
 	JSR CODE_B4B0CF				;$B4B283   |
 	LDA #CODE_B49126			;$B4B286   |
 	STA $067D				;$B4B289   |
-	LDA #ending_museum_NMI			;$B4B28C   |
-	JML set_nmi_pointer			;$B4B28F  /
+	LDA #run_ending_monkey_museum		;$B4B28C   |
+	JML set_nmi_and_wait			;$B4B28F  /
 
 CODE_B4B293:
 	LDA level_number			;$B4B293  \
@@ -6102,9 +6102,9 @@ CODE_B4B46D:					;	   |
 	JSL input_and_pause_handler_global	;$B4B479   |
 	JSL CODE_B4AEAF				;$B4B47D   |
 	LDA #CODE_8087D9			;$B4B481   |
-	STA gamemode_pointer			;$B4B484   |
-	LDA #simple_gamemode_nmi		;$B4B486   |
-	JML set_nmi_pointer			;$B4B489  /
+	STA game_mode_pointer			;$B4B484   |
+	LDA #run_simple_game_mode		;$B4B486   |
+	JML set_nmi_and_wait			;$B4B489  /
 
 CODE_B4B48D:
 	JSR CODE_B4AED3				;$B4B48D   |
@@ -6113,12 +6113,12 @@ CODE_B4B48D:
 	LDA #$0063				;$B4B496   |
 	STA banana_coin_count			;$B4B499   |
 	LDA #CODE_8087D9			;$B4B49C   |
-	STA gamemode_pointer			;$B4B49F   |
+	STA game_mode_pointer			;$B4B49F   |
 	JSR CODE_B4B42D				;$B4B4A1   |
 	JSL input_and_pause_handler_global	;$B4B4A4   |
 	JSL CODE_B4AEAF				;$B4B4A8   |
-	LDA #simple_gamemode_nmi		;$B4B4AC   |
-	JML set_nmi_pointer			;$B4B4AF  /
+	LDA #run_simple_game_mode		;$B4B4AC   |
+	JML set_nmi_and_wait			;$B4B4AF  /
 
 CODE_B4B4B3:					;	  \
 	STZ world_number			;$B4B4B3   |
@@ -6128,9 +6128,9 @@ CODE_B4B4B3:					;	  \
 	JSR CODE_B4B42D				;$B4B4C0   |
 	JSL CODE_B4AEAF				;$B4B4C3   |
 	LDA #CODE_8087D9			;$B4B4C7   |
-	STA gamemode_pointer			;$B4B4CA   |
-	LDA #simple_gamemode_nmi		;$B4B4CC   |
-	JML set_nmi_pointer			;$B4B4CF  /
+	STA game_mode_pointer			;$B4B4CA   |
+	LDA #run_simple_game_mode		;$B4B4CC   |
+	JML set_nmi_and_wait			;$B4B4CF  /
 
 CODE_B4B4D3:
 	PHB					;$B4B4D3  \
@@ -6813,7 +6813,7 @@ CODE_B4B9B6:					;	   |
 	STX $CB					;$B4B9D6   |
 	LDA #$3A00				;$B4B9D8   |
 	STA $CE					;$B4B9DB   |
-	LDY #text_VRAM_buffer			;$B4B9DD   |
+	LDY #text_vram_buffer			;$B4B9DD   |
 CODE_B4B9E0:					;	   |
 	LDA $06A1				;$B4B9E0   |
 	BIT #$0080				;$B4B9E3   |
@@ -6861,7 +6861,7 @@ CODE_B4BA25:
 	TAX					;$B4BA33   |
 	LDA #$003F				;$B4BA34   |
 	PHB					;$B4BA37   |
-	MVN <:text_VRAM_buffer, $FC		;$B4BA38   |
+	MVN <:text_vram_buffer, $FC		;$B4BA38   |
 	PLB					;$B4BA3B   |
 	LDA $0652				;$B4BA3C   |
 	STA [$CE]				;$B4BA3F   |
@@ -7489,11 +7489,11 @@ CODE_B4BEEF:
 	LDA #global_sprite_palette		;$B4BF06   |
 	LDY #$00F0				;$B4BF09   |
 	LDX #$0004				;$B4BF0C   |
-	JSL DMA_palette				;$B4BF0F   |
+	JSL dma_palette				;$B4BF0F   |
 	LDA #$00AA				;$B4BF13   |
 	LDY #$00E0				;$B4BF16   |
 	LDX #$0004				;$B4BF19   |
-	JSL DMA_sprite_palette_from_index	;$B4BF1C   |
+	JSL dma_sprite_palette_from_index	;$B4BF1C   |
 	LDA $0672				;$B4BF20   |
 	STA $065C				;$B4BF23   |
 	LDA $067F				;$B4BF26   |
@@ -7505,7 +7505,7 @@ CODE_B4BEEF:
 	JSL play_song				;$B4BF36   |
 CODE_B4BF3A:					;	   |
 	JSL disable_screen			;$B4BF3A   |
-	JSL clear_VRAM_global			;$B4BF3E   |
+	JSL clear_vram_global			;$B4BF3E   |
 	JSL CODE_BAC7C0				;$B4BF42   |
 	JSL clear_wram_tables			;$B4BF46   |
 	PHK					;$B4BF4A   |
@@ -7535,19 +7535,19 @@ CODE_B4BF3A:					;	   |
 	PLA					;$B4BF88   |
 	STA $CC					;$B4BF89   |
 	LDA #!video_game_heros_vram_payload_id	;$B4BF8B   |
-	JSL VRAM_payload_handler_global		;$B4BF8E   |
+	JSL vram_payload_handler_global		;$B4BF8E   |
 	LDA #!video_game_heros_ppu_config_id	;$B4BF92   |
-	JSL set_PPU_registers_global		;$B4BF95   |
+	JSL set_ppu_registers_global		;$B4BF95   |
 	LDA #video_game_hero_screen_palette	;$B4BF99   |
 	LDY #$0000				;$B4BF9C   |
 	LDX #$0020				;$B4BF9F   |
-	JSL DMA_palette				;$B4BFA2   |
+	JSL dma_palette				;$B4BFA2   |
 	LDA #$0100				;$B4BFA6   |
 	JSL set_fade_global			;$B4BFA9   |
 	LDA active_kong_number			;$B4BFAD   |
 	STA $0660				;$B4BFB0   |
 	STZ active_kong_number			;$B4BFB3   |
-	JSL setup_npc_screen_kongs		;$B4BFB6   |
+	JSL init_npc_screen_kongs		;$B4BFB6   |
 	LDX inactive_kong_sprite		;$B4BFBA   |
 	LDA #$C000				;$B4BFBD   |
 	STA $1C,x				;$B4BFC0   |
@@ -7636,7 +7636,7 @@ CODE_B4C07B:					;	   |
 	STA $067D				;$B4C08D   |
 	LDA $0660				;$B4C090   |
 	JSL set_active_kong_global		;$B4C093   |
-	JML CODE_808C84				;$B4C097  /
+	JML wait_for_next_nmi			;$B4C097  /
 
 CODE_B4C09B:
 	LDY active_kong_sprite			;$B4C09B  \
@@ -7720,7 +7720,7 @@ CODE_B4C139:
 	TRB world_map_events			;$B4C140   |
 	STZ world_map_event_step_counter	;$B4C143   |
 	JSL CODE_BBC5AB				;$B4C146   |
-	JML CODE_8087B9				;$B4C14A  /
+	JML start_ending_parade			;$B4C14A  /
 
 CODE_B4C14E:
 	LDA #$0040				;$B4C14E  \
@@ -7734,9 +7734,9 @@ CODE_B4C14E:
 CODE_B4C165:					;	   |
 	JSL CODE_B4AEAF				;$B4C165   |
 	LDA #CODE_8087D9			;$B4C169   |
-	STA gamemode_pointer			;$B4C16C   |
-	LDA #simple_gamemode_nmi		;$B4C16E   |
-	JML set_nmi_pointer			;$B4C171  /
+	STA game_mode_pointer			;$B4C16C   |
+	LDA #run_simple_game_mode		;$B4C16E   |
+	JML set_nmi_and_wait			;$B4C171  /
 
 CODE_B4C175:
 	LDA rng_result				;$B4C175  \

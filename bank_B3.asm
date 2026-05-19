@@ -4766,9 +4766,9 @@ CODE_B3A3B4:
 	ASL A					;$B3A3B9   |
 	TAY					;$B3A3BA   |
 	TXA					;$B3A3BB   |
-	STA sprite_palette_DMA.source_word,y	;$B3A3BC   |
+	STA sprite_palette_dma.source_word,y	;$B3A3BC   |
 	LDA temp_5E				;$B3A3BF   |
-	STA sprite_palette_DMA.source_bank,y	;$B3A3C1   |
+	STA sprite_palette_dma.source_bank,y	;$B3A3C1   |
 	LDA current_palette_buffer_slot		;$B3A3C4   |
 	INC A					;$B3A3C6   |
 	AND #$000F				;$B3A3C7   |
@@ -5103,9 +5103,9 @@ CODE_B3A600:
 CODE_B3A604:
 	CMP current_interaction			;$B3A604  \ \
 	BEQ .update_interaction_variable	;$B3A607   |/ If the interaction is already applied, dont apply it again
-	PHY					;$B3A609   |> Preserve extra interaction variable
-	JSL set_player_interaction_global	;$B3A60A   |> Apply interaction
-	PLY					;$B3A60E   |> Recover extra interaction variable
+	PHY					;$B3A609   |\ Preserve extra interaction variable
+	JSL set_player_interaction_global	;$B3A60A   | | Apply interaction
+	PLY					;$B3A60E   |/ Recover extra interaction variable
 	BCS .return				;$B3A60F   |> If interaction wasnt applied, dont apply knockback speed
 .update_interaction_variable			;	   |
 	TYA					;$B3A611   |> Transfer interaction variable to A
@@ -10603,7 +10603,7 @@ cat_o9tails_main:
 	AND #$00FF				;$B3CE11   |
 	STA interaction_RAM_0A86		;$B3CE14   |
 	STZ $0A89				;$B3CE17   |
-	JSL CODE_808E4F				;$B3CE1A   |
+	JSL get_random_number_2_global		;$B3CE1A   |
 	LSR A					;$B3CE1E   |
 	STA temp_32				;$B3CE1F   |
 	LDY #$0004				;$B3CE21   |
